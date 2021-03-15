@@ -118,6 +118,7 @@ if (isset($_POST["usergroup_id"])) {
 										<li class="active"><a href="#tab_1" data-toggle="tab"><?php $lh->translateText("basic_settings"); ?></a></li>
 										<li><a href="#tab_2" data-toggle="tab"><?php $lh->translateText("allowed_campaigns"); ?> </a></li>
 										<li><a href="#tab_3" data-toggle="tab"><?php $lh->translateText("group_permissions"); ?> </a></li>
+										<li><a href="#tab_4" data-toggle="tab"><?php $lh->translateText("group_manage"); ?> </a></li>
 									</ul>
 									<!-- Tab panes-->
 									<div class="tab-content">
