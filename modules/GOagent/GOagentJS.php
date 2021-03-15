@@ -6435,7 +6435,20 @@ function DispoSelectSubmit() {
     
                 waiting_on_dispo = 0;
             });
-            
+            //EASY CREDIT
+            //CLEAR ALL FORM VARIABLES
+            try{
+                clearForm($("#full-loan-form"));
+            }catch(err){
+                console.log("Clear Full Loan Form: "+err);
+            }
+            $(".formMain input[name='identity_number']").val('');
+            $(".formMain input[name='identity_issued_on']").val('');
+            $(".formMain input[name='identity_issued_by']").val('');
+            $(".formMain input[name='vendor_lead_code']").val('');
+            $(".formMain input[name='partner_code']").val('');
+            $(".formMain input[name='request_id']").val('');
+            //EASY CREDIT
             //CLEAR ALL FORM VARIABLES
             $('[id^=dispo-add-]').css('color','red');
             $('[id^=dispo-add-]').css('cursor','pointer');
@@ -6694,6 +6707,12 @@ function ManualDialSkip() {
                         type: 'error',
                     });
                 } else {
+                    //CLEAR ALL FORM VARIABLES
+                    $(".formMain input[name='identity_number']").val('');
+                    $(".formMain input[name='identity_issued_on']").val('');
+                    $(".formMain input[name='identity_issued_by']").val('');
+                    $(".formMain input[name='vendor_lead_code']").val('');
+                    $(".formMain input[name='partner_code']").val('');
                     $(".formMain input[name='lead_id']").val('');
                     $(".formMain input[name='vendor_lead_code']").val('');
                     $(".formMain input[name='list_id']").val('');
@@ -6827,6 +6846,13 @@ function CustomerData_update() {
         goEmail: $(".formMain input[name='email']").val(),
         goSecurity: $(".formMain input[name='security_phrase']").val(),
         goLeadID: $(".formMain input[name='lead_id']").val(),
+        //EASYCREDIT
+        goIdentityNumber: $(".formMain input[name='identity_number']").val(),
+        goIdentityIssuedOn: $(".formMain input[name='identity_issued_on']").val(),
+        goIdentityIssuedBy: $(".formMain input[name='identity_issued_by']").val(),
+        goPartnerCode: $(".formMain input[name='partner_code']").val(),
+        goRequestId: $(".formMain input[name='request_id']").val(),
+        //EASYCREDIT
         goCustomFields: '',
         responsetype: 'json'
     };
@@ -7474,7 +7500,14 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     }
                 } else {
                     var thisVdata = result.data;
-                    
+                    //Integrate EASYCREDIT
+                    try {
+                        ECShowProducts(thisVdata.partner_code, thisVdata.request_id);
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
+                    //EASY CREDIT
                     MDnextCID = thisVdata.MqueryCID;
                     
                     fronter                                 = uName;
@@ -7482,7 +7515,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     lead_id                                 = thisVdata.lead_id;
                     $(".formMain input[name='lead_id']").val(lead_id);
                     LeadPrevDispo                           = thisVdata.status;
-                    $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
+                    // $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
                     list_id                                 = thisVdata.list_id;
                     $(".formMain input[name='list_id']").val(list_id);
                     $(".formMain input[name='gmt_offset_now']").val(thisVdata.gmt_offset_now);
@@ -7526,7 +7559,16 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                         //$("#cust_full_name a[id='last_name']").editable('setValue', null, true);
                         $("#cust_full_name a[id='last_name']").html('');
                     }
-                    
+                    //EASY CREDIT
+                    //Identity
+                    $(".formMain input[name='identity_number']").val(thisVdata.identity_number).trigger('change');
+                    $(".formMain input[name='identity_issued_on']").val(thisVdata.identity_issued_on);
+                    $(".formMain input[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
+                    //Vendor
+                    $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code).trigger('change');
+                    $(".formMain input[name='partner_code']").val(thisVdata.partner_code).trigger('change');
+                    $(".formMain input[name='request_id']").val(thisVdata.request_id).trigger('change');
+                    //EASY CREDIT
                     // ECCS Customization
                     <?php
     if (ECCS_BLIND_MODE === 'y') {
