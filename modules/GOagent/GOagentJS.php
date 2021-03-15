@@ -1699,12 +1699,16 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                                         $.globalEval(key+" = '"+value+"';");
                                     } else if (key == 'enable_callback_alert') {
                                         if (value == ""){
-                                            $.globalEval(key+" = false;");
+                                            $.globalEval(key+" = 0;");
                                         } else {
                                             $.globalEval(key+" = "+value+";");
                                         }
                                     } else if (key == 'cb_noexpire') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = 0;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'cb_sendemail') {
                                         $.globalEval(key+" = "+value+";");
                                     } else if (key == 'manual_dial_min_digits') {
