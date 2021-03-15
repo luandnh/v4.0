@@ -41,6 +41,8 @@ if (isset($_POST["usergroup_id"])) {
 	$usergroup_id = $_POST["usergroup_id"];
 }
 
+$usergroups = $api->API_getUserGroups();
+
 ?>
 <html>
 
@@ -430,8 +432,14 @@ if (isset($_POST["usergroup_id"])) {
 
 				$("#resultmessage").html();
 				$("#resultmessage").fadeOut();
+				let groups_select = $.makeArray($("#filter_groups_multiselect_to option"));
+				let groups_arr = [];
+				groups_select.forEach((id, el) => {
+					groups_arr.push($(id).val());
+				});
+
 				$.post("./php/ModifyUsergroup.php", //post
-					$("#modifyvoicemail").serialize(),
+					$("#modifyvoicemail").serialize() + "&groups_assign=" + groups_arr.toString(),
 					function(data) {
 						//if message is sent
 						//console.log($("#modifyvoicemail").serialize());
