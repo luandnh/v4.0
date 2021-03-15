@@ -1698,7 +1698,11 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                                     } else if (key == 'custom_fields_list_id') {
                                         $.globalEval(key+" = '"+value+"';");
                                     } else if (key == 'enable_callback_alert') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = false;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'cb_noexpire') {
                                         $.globalEval(key+" = "+value+";");
                                     } else if (key == 'cb_sendemail') {
