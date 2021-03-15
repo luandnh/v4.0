@@ -1764,7 +1764,7 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                         }
 			
 			if (typeof default_country_code !== 'undefined') {
-				var defaultCode = (default_country_code) ? default_country_code : "USA_1";
+				var defaultCode = (default_country_code) ? default_country_code : "VNM_0";
 				var thisObj = country_codes[defaultCode];
 				$("#code_flag").attr('class', 'flag flag-'+thisObj['tld']);
 				$("#MDDiaLCodE").val(thisObj['code']);
