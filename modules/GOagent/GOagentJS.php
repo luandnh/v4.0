@@ -1699,11 +1699,23 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                                     } else if (key == 'custom_fields_list_id') {
                                         $.globalEval(key+" = '"+value+"';");
                                     } else if (key == 'enable_callback_alert') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = 0;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'cb_noexpire') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = 0;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'cb_sendemail') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = 0;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'manual_dial_min_digits') {
                                         var defaultValue = (typeof value !== 'undefined' && value > 0) ? value : 6;
                                         $.globalEval(key+" = "+defaultValue+";");
@@ -1753,7 +1765,7 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                         }
 			
 			if (typeof default_country_code !== 'undefined') {
-				var defaultCode = (default_country_code) ? default_country_code : "USA_1";
+				var defaultCode = (default_country_code) ? default_country_code : "VNM_0";
 				var thisObj = country_codes[defaultCode];
 				$("#code_flag").attr('class', 'flag flag-'+thisObj['tld']);
 				$("#MDDiaLCodE").val(thisObj['code']);
