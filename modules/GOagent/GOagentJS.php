@@ -1710,7 +1710,11 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                                             $.globalEval(key+" = "+value+";");
                                         }
                                     } else if (key == 'cb_sendemail') {
-                                        $.globalEval(key+" = "+value+";");
+                                        if (value == ""){
+                                            $.globalEval(key+" = 0;");
+                                        } else {
+                                            $.globalEval(key+" = "+value+";");
+                                        }
                                     } else if (key == 'manual_dial_min_digits') {
                                         var defaultValue = (typeof value !== 'undefined' && value > 0) ? value : 6;
                                         $.globalEval(key+" = "+defaultValue+";");
