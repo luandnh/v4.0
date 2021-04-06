@@ -25,92 +25,54 @@
 	require_once('APIHandler.php');
 	$api 										= \creamy\APIHandler::getInstance();
 	$list_id									= $_POST["listid"];
-    /*$output										= $api->API_listExport($list_id);
+    $output										= $api->API_listExport($list_id);
 	
     if ($output->result == "success") {
         //$filename = $output->getReports->filename;
         
-        $header 								= implode(",", $output->header);        
+        // $header 								= implode(",", $output->header);        
         $filename 								= "LIST_.".$_POST["listid"]."_".date("Ymd")."_".date("His").".csv";
         //$fp = fopen($filename, 'w');
         
-        header('Content-type: application/csv');
-        header('Content-Disposition: attachment; filename='.$filename);
-        
-        echo $header."\n";
+        // header('Content-type: application/csv');
+        // header('Content-Disposition: attachment; filename='.$filename);
 		
-        for($i=0; $i < count($output->row); $i++){
-			$row = $output->row[$i];
-			
-			// filter data replaces comma with |
-			for($x=0; $x < count($row);$x++){
-				$row_data = str_replace(",","|",$row[$x]);
-				$filtered_row[] = $row_data;
-			}
-			
-			$array_filtered_row = implode(",",$filtered_row);
-			echo $array_filtered_row;
-			echo "\n";
-			
-			$array_filtered_row = "";
-			unset($filtered_row);			
-        }
-        
-      */
-
-	$postfields["goAction"] = "goListExportCountRows";
-	$postfields["list_id"] = $list_id;
-
-	$row_output = $api->API_Request("goLists", $postfields);
-
-	$limit = 20000;
-	$offset = 0;
-
-	$data_header = [];
-	$data_row = "";
-	$display = "";
-
-	$postfields["goAction"] = "goListExport";
-
-	if ($row_output->result == "success") {
-		$count = $row_output->row_count;
-
-		if($count > $limit){
-			
-			$postfields["limit"] = $limit;
-			$postfields["offset"] = $offset;
-			while($last_row_offset <= $count){
-				$postfields["offset"] = $offset;
-				$output = $api->API_Request("goLists", $postfields);
-	
-				if($output->result == "success"){
-					if($offset == 0){
-						$data_header = $output->header;
-					}
-					$data_row .= $output->row;
-				}
-				$last_row_offset = $offset;
-				$offset = $offset + $limit;
-			}
-			$i = 0;        
-			
-			$display = $data_row;
-		} else {
-			$output = $api->API_Request("goLists", $postfields);
-			$data_header = $output->header;
-			$data_row = $output->row;
-			
-			$display = $data_row;
+		header('Content-Description: File Transfer');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename="'.$filename);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+		
+		$sep  = "\t";
+		$eol  = "\n";
+		$csv  =  count($output->header) ? '"'. implode('"'.$sep.'"', $output->header).'"'.$eol : '';
+		foreach($output->row as $line) {
+			$csv .= '"'. implode('"'.$sep.'"', $line).'"'.$eol;
 		}
+		$encoded_csv = mb_convert_encoding($csv, 'UTF-16LE', 'UTF-8');
+		header('Content-Length: '. strlen($encoded_csv));
+        echo chr(255) . chr(254) . $encoded_csv;
+		
+        // for($i=0; $i < count($output->row); $i++){
+		// 	$row = $output->row[$i];
+			
+		// 	// filter data replaces comma with |
+		// 	for($x=0; $x < count($row);$x++){
+		// 		$row_data = str_replace(",","|",$row[$x]);
+		// 		$filtered_row[] = $row_data;
+		// 	}
+			
+		// 	$array_filtered_row = implode(",",$filtered_row);
+		// 	echo $array_filtered_row;
+		// 	echo "\n";
+			
+		// 	$array_filtered_row = "";
+		// 	unset($filtered_row);			
+        // }
         
-		$header 								= implode(",", $data_header);        
-        	$filename 								= "LIST_.".$_POST["listid"]."_".date("Ymd")."_".date("His").".csv";
         
-	        header('Content-type: application/csv');
-        	header('Content-Disposition: attachment; filename='.$filename);
-        
-	        echo $header."\n";
-		echo $display;  
     } else {
 		echo "Failed to Process Request... Please inform the administrator.";
 	}

@@ -2,7 +2,7 @@
 /**
  * @file        ExportAgentDetails.php
  * @brief       Handles Exporting of Agent Details Report Requests
- * @copyright   Copyright (c) 2018 GOautodial Inc.
+ * @copyright   Copyright (c) 2018 Pitel Inc.
  * @author      Alexander Jim H. Abenoja
  *
  * @par <b>License</b>:
@@ -59,11 +59,13 @@ $campaignID = $_POST['campaignID'];
 	
     //var_dump($output);
     if($output->result == "success"){
+        $sep  = "\t";
+        $eol  = "\n";
         if($pageTitle === "agent_detail"){
             $filename = "Agent_Time_Detail.".date("Y-m-d").".csv";
             $header = "Agent Time Detail     ".date("Y-m-d H:i:s")."\n";
             $header .= "Time Range: ".$fromDate." to ".$toDate."\n\n";
-            $header .= "Full Name, User Name, Calls, Agent Time, WAIT, Talk, Dispo, Pause, Wrap-Up, Customer";
+            $header .= '"'."Full Name".'"'.$sep.'"'."User Name".'"'.$sep.'"'."Calls".'"'.$sep.'"'."Agent Time".'"'.$sep.'"'."WAIT".'"'.$sep.'"'."Talk".'"'.$sep.'"'."Dispo".'"'.$sep.'"'."Pause".'"'.$sep.'"'."Wrap-Up".'"'.$sep.'"'."Customer".'"';
             /*if(!empty($output->getReports->sub_statusesTOP)){
                 //$header .= ",";
                 for($i=0; $i < count($output->getReports->sub_statusesTOP); $i++){
@@ -76,12 +78,21 @@ $campaignID = $_POST['campaignID'];
             }*/
         }
         
-        header('Content-type: application/csv');
-        header('Content-Disposition: attachment; filename='.$filename);
-        
-		echo $header."\n";
+        // header('Content-type: application/csv');
+        // header('Content-Disposition: attachment; filename='.$filename);
+
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename="'.$filename);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+
+        $csv = $header . $eol;        
+		// echo $header.$eol;
 		
-        $row = "";
+        // $row = "";
             for($i=0; $i < count($output->getReports->FileExport); $i++){
                 $name = $output->getReports->FileExport[$i]->name;
                 $user = $output->getReports->FileExport[$i]->user;
@@ -95,8 +106,10 @@ $campaignID = $_POST['campaignID'];
                 $customer_time = $output->getReports->FileExport[$i]->customer_time;
                 $statuses = explode(",", $output->getReports->FileExport[$i]->statuses);
                 
-                $row .= $name.",".$user.",".$number_of_calls.",".$agent_time.",".$wait_time.",".$talk_time.",".$dispo_time.",".$pause_time.",".$wrap_up.",".$customer_time;
+                //$row .= $name.",".$user.",".$number_of_calls.",".$agent_time.",".$wait_time.",".$talk_time.",".$dispo_time.",".$pause_time.",".$wrap_up.",".$customer_time;
 
+                $csv .= '"'.$name.'"'.$sep.'"'.$user.'"'.$sep.'"'.$number_of_calls.'"'.$sep.'"'.$agent_time.'"'.$sep.'"'.$wait_time.'"'.$sep.'"'.$talk_time.'"'.$sep.'"'.$dispo_time.'"'.$sep.'"'.$pause_time.'"'.$sep.'"'.$wrap_up.'"'.$sep.'"'.$customer_time.'"'.$eol;
+                
                 /*if(!empty($output->getReports->sub_statusesTOP)){
                     for($a=0; $a < count($output->getReports->sub_statusesTOP); $a++){
                         if(!empty($statuses[$a]))
@@ -105,10 +118,10 @@ $campaignID = $_POST['campaignID'];
                             $row .= ',00:00:00';
                     }
                 }*/
-                $row .= "\n";
+                // $row .= $eol;
             }
-        echo $row;
-        
+        // echo $row;
+        $encoded_csv = mb_convert_encoding($csv, 'UTF-16LE', 'UTF-8');
+        header('Content-Length: '. strlen($encoded_csv));
+        echo chr(255) . chr(254) . $encoded_csv;
     }
-   
-?>

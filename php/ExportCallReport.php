@@ -2,7 +2,7 @@
 /**
  * @file        ExportAgentDetails.php
  * @brief       Handles Exporting of Call Report Requests
- * @copyright   Copyright (c) 2018 GOautodial Inc.
+ * @copyright   Copyright (c) 2018 Pitel Inc.
  * @author      Alexander Jim H. Abenoja
  *
  * @par <b>License</b>:
@@ -151,21 +151,46 @@ if($row_output->result == "success"){
 
     if($output->result == "success"){
     
-    //$header = implode(",",$output->header);
-    $header = implode(",",$data_header);
+    // //$header = implode(",",$output->header);
+    // $header = implode(",",$data_header);
 
-    $filename = "Export_Call_Report.".date("Y-m-d").".csv";
+    // $filename = "Export_Call_Report.".date("Y-m-d").".csv";
     
-    header('Content-type: application/csv');
-    header('Content-Disposition: attachment; filename='.$filename);
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-    header('Pragma: public');
-    ob_clean();
-    flush();
+    // header('Content-type: application/csv');
+    // header('Content-Disposition: attachment; filename='.$filename);
+    // header('Expires: 0');
+    // header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    // header('Pragma: public');
+    // ob_clean();
+    // flush();
 
-    echo $header."\n";
-    echo $display;
+    // echo $header."\n";
+    // echo $display;
+
+        $sep  = "\t";
+        $eol  = "\n";
+
+        $csv  =  count($data_header) ? '"'. implode('"'.$sep.'"', $data_header).'"'.$eol : '';
+        foreach($display as $obj) {
+            $row_obj = "";
+            foreach($obj as $key => $value){
+                $csv .= '"'.$value.'"'.$sep;
+            }
+            $csv .= $eol;
+        }
+        $encoded_csv = mb_convert_encoding($csv, 'UTF-16LE', 'UTF-8');
+        $filename = "Export_Call_Report.".date("Y-m-d").".csv";
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename="'.$filename);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: '. strlen($encoded_csv));
+        ob_clean();
+        flush();
+        echo chr(255) . chr(254) . $encoded_csv;
     
     }
 
