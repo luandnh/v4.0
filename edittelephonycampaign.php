@@ -394,13 +394,13 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													<label class="col-sm-3 control-label"><?php $lh->translateText("omit_phone_code"); ?>:</label>
 													<div class="col-sm-9 mb">
 														<select name="omit_phone_code" id="omit_phone_code" class="form-control">
-															<option value="N" >>N</option>
+															<option value="N">>N</option>
 															<option value="Y" selected>Y</option>
 														</select>
 													</div>
 												</div>
 												<?php if ($campaign->campaign_type != "SURVEY") { ?>
-													<div class="form-group" hidden> 
+													<div class="form-group" hidden>
 														<label class="col-sm-3 control-label"><?php $lh->translateText("web"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" id="web_form_address" name="web_form_address" class="form-control" value="<?php echo $campaign->data->web_form_address; ?>">
@@ -420,7 +420,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 														</div>
 													</div>
 												<?php } ?>
-												<div class="form-group" >
+												<div class="form-group">
 													<label class="col-sm-3 control-label"><?php $lh->translateText("campaign_caller_id"); ?>:</label>
 													<div class="col-sm-9 mb">
 														<input type="text" class="form-control" id="campaign_cid" name="campaign_cid" value="<?php echo $campaign->data->campaign_cid; ?>">
@@ -794,6 +794,18 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																	<?php } ?>
 																<?php } ?>
 															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><?php $lh->translateText("call_count_limit"); ?>:</label>
+														<div class="col-sm-9 mb">
+															<input type="number" class="form-control" id="call_count_limit" name="call_count_limit" min="0" value="<?php echo $campaign->data->call_count_limit; ?>">
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><?php $lh->translateText("call_count_target"); ?>:</label>
+														<div class="col-sm-9 mb">
+															<input type="number" class="form-control" id="call_count_target" name="call_count_target" min="0" value="<?php echo $campaign->data->call_count_target; ?>">
 														</div>
 													</div>
 													<div class="form-group">
@@ -1522,6 +1534,18 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																	<?php } ?>
 																<?php } ?>
 															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><?php $lh->translateText("call_count_limit"); ?>:</label>
+														<div class="col-sm-9 mb">
+															<input type="number" class="form-control" id="call_count_limit" name="call_count_limit" value="<?php echo $campaign->data->call_count_limit; ?>">
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><?php $lh->translateText("call_count_target"); ?>:</label>
+														<div class="col-sm-9 mb">
+															<input type="number" class="form-control" id="call_count_target" name="call_count_target" value="<?php echo $campaign->data->call_count_target; ?>">
 														</div>
 													</div>
 													<div class="form-group">
@@ -2420,7 +2444,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group"  hidden>
+													<div class="form-group" hidden>
 														<label class="col-sm-3 control-label"><?php $lh->translateText("cb_sendemail"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select id="cb_sendemail" name="cb_sendemail" class="form-control select2">

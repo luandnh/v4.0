@@ -1651,7 +1651,7 @@ function goGetInSession(type) {
     <script src="js/dashboard/js/jquery-knob/dist/jquery.knob.min.js"></script>
 
 	<!-- Live Helper Chat -->
-	<script src="js/livehelperchat.js" type="text/javascript" ></script>
+	<!-- <script src="js/livehelperchat.js" type="text/javascript" ></script> -->
         
 	<!-- Vue Avatar -->
 	<script src="js/vue-avatar/vue.min.js" type="text/javascript"></script>

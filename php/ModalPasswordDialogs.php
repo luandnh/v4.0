@@ -1,4 +1,5 @@
 <?php
+
 /**
 	The MIT License (MIT)
 	
@@ -21,77 +22,81 @@
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
-*/
+ */
 require_once('CRMDefaults.php');
 require_once('LanguageHandler.php');
-if (!isset($lh)) { $lh = \creamy\LanguageHandler::getInstance(); }
+if (!isset($lh)) {
+	$lh = \creamy\LanguageHandler::getInstance();
+}
 require_once('UIHandler.php');
-if (!isset($ui)) { $ui = \creamy\UIHandler::getInstance(); }
+if (!isset($ui)) {
+	$ui = \creamy\UIHandler::getInstance();
+}
 require_once('Session.php');
 $user = \creamy\CreamyUser::currentUser();
 ?>
 <script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <script>
-$(document).ready(function() {
-	jQuery.validator.addMethod("notEqual", function(value, element, param) {
-		return this.optional(element) || value != param;
-	}, "Please specify a value");
-	
-	/**
-	 * Changes user password
-	 */
-	$("#passwordform").validate({
-	 	rules: {
-			userid: "required",
-			old_password: {
-				required: true,
-				notEqual: "<?=$lh->translationFor("insert_old_password")?>"
-			},
-			new_password_1: {
-				required: true,
-				notEqual: "<?=$lh->translationFor("insert_new_password")?>"
-			},
-			new_password_2: {
-				minlength: 6,
-				equalTo: "#new_password_1",
-				notEqual: "<?=$lh->translationFor("insert_new_password_again")?>"
-			}
-   		},
-		submitHandler: function() {
-			//submit the form
-			$("#changepasswordresult").html();
-			$("#changepasswordresult").fadeOut();
-			$.post("./php/ChangePassword.php", //post
-			$("#passwordform").serialize(), 
-			function(data) {
-				//if message is sent
-				if (data == '<?php print CRM_DEFAULT_SUCCESS_RESPONSE; ?>') {
-					<?php 
-					// show ok message
-					$errorMsg = $ui->dismissableAlertWithMessage($lh->translationFor("password_successfully_changed"), true, false);
-					print $ui->fadingInMessageJS($errorMsg, "changepasswordresult"); 
-					?>
-					$("#changepassCancelButton").html("<i class=\"fa fa-check-circle\"></i> <?php $lh->translateText("exit"); ?>");
-					$("#changepassOkButton").fadeOut();
-				} else {
-					<?php 
-					$errorMsg = $ui->dismissableAlertWithMessage($lh->translationFor("error_changing_password"), false, true);
-					print $ui->fadingInMessageJS($errorMsg, "changepasswordresult"); 
-					?>
+	$(document).ready(function() {
+		jQuery.validator.addMethod("notEqual", function(value, element, param) {
+			return this.optional(element) || value != param;
+		}, "Please specify a value");
+
+		/**
+		 * Changes user password
+		 */
+		$("#passwordform").validate({
+			rules: {
+				userid: "required",
+				old_password: {
+					required: true,
+					notEqual: "<?= $lh->translationFor("insert_old_password") ?>"
+				},
+				new_password_1: {
+					required: true,
+					notEqual: "<?= $lh->translationFor("insert_new_password") ?>"
+				},
+				new_password_2: {
+					minlength: 6,
+					equalTo: "#new_password_1",
+					notEqual: "<?= $lh->translationFor("insert_new_password_again") ?>"
 				}
-				//
-			});
-			return false; //don't let the form refresh the page...
-		}					
+			},
+			submitHandler: function() {
+				//submit the form
+				$("#changepasswordresult").html();
+				$("#changepasswordresult").fadeOut();
+				$.post("./php/ChangePassword.php", //post
+					$("#passwordform").serialize(),
+					function(data) {
+						//if message is sent
+						if (data == '<?php print CRM_DEFAULT_SUCCESS_RESPONSE; ?>') {
+							<?php
+							// show ok message
+							$errorMsg = $ui->dismissableAlertWithMessage($lh->translationFor("password_successfully_changed"), true, false);
+							print $ui->fadingInMessageJS($errorMsg, "changepasswordresult");
+							?>
+							$("#changepassCancelButton").html("<i class=\"fa fa-check-circle\"></i> <?php $lh->translateText("exit"); ?>");
+							$("#changepassOkButton").fadeOut();
+						} else {
+							<?php
+							$errorMsg = $ui->dismissableAlertWithMessage($lh->translationFor("error_changing_password"), false, true);
+							print $ui->fadingInMessageJS($errorMsg, "changepasswordresult");
+							?>
+						}
+						//
+					});
+				return false; //don't let the form refresh the page...
+			}
+		});
+		/** Reset form fields when clicked */
+		$('#change-password-toggle').click(function() {
+			$('#passwordform')[0].reset();
+			$("#changepasswordresult").hide();
+			$("#changepassOkButton").fadeIn();
+			$("#changepassCancelButton").html("<i class=\"fa fa-times\"></i> <?php $lh->translateText("cancel"); ?>");
+		});
 	});
-	/** Reset form fields when clicked */
-	$('#change-password-toggle').click(function() {
-		$('#passwordform')[0].reset();
-		$("#changepasswordresult").hide();
-		$("#changepassOkButton").fadeIn();
-		$("#changepassCancelButton").html("<i class=\"fa fa-times\"></i> <?php $lh->translateText("cancel"); ?>");
-	});
-});
 </script>
 <!-- MODAL FORM -->
 <?php
@@ -105,18 +110,18 @@ $new2_f = $ui->singleFormGroupWithInputGroup($ui->singleFormInputElement("new_pa
 // hidden user id
 $hidden_f = $ui->hiddenFormField("userid", $user->getUserId());
 // fields
-$fields = $old_f.$new1_f.$new2_f.$hidden_f;
+$fields = $old_f . $new1_f . $new2_f . $hidden_f;
 // buttons
 $okButton = $ui->buttonWithLink("changepassOkButton", "", $lh->translationFor("change_password"), "submit", "check-circle", CRM_UI_STYLE_DEFAULT, "pull-right");
 $koButton = $ui->modalDismissButton("changepassCancelButton", $lh->translationFor("cancel"), "left", true);
-$buttons = $okButton.$koButton;
+$buttons = $okButton . $koButton;
 
 // form
 $form = $ui->modalFormStructure("change-password-dialog-modal", "passwordform", $lh->translationFor("change_password"), null, $fields, $buttons, "lock", "changepasswordresult", '');
 print $form;
 ?>
 <script>
-$(function() {
-	$(this).find(".modal-body").css('margin', '15px');
-});
+	$(function() {
+		$(this).find(".modal-body").css('margin', '15px');
+	});
 </script>

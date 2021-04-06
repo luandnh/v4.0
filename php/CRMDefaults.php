@@ -222,8 +222,8 @@ define ('CRM_SETTING_TYPE_SELECT', "select");
 
 // misc constants
 define ('CRM_DEFAULT_SUCCESS_RESPONSE', "success");
-define ('CRM_GOADMIN_TITLE', "GOautodial Admin");
-define ('CRM_GOAGENT_TITLE', "GOagent Web Client");
+define ('CRM_GOADMIN_TITLE', "Pitel Admin");
+define ('CRM_GOAGENT_TITLE', "Pitel Web Client");
 define ('CRM_GO_VERSION', "v4.0");
 
 // Customizations

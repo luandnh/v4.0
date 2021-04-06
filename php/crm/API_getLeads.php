@@ -1,8 +1,9 @@
 <?php
+
 /**
  * @file        API_getLeads.php
  * @brief       Handles requests for displaying leads in the CRM
- * @copyright   Copyright (c) 2018 GOautodial Inc.
+ * @copyright   Copyright (c) 2018 Pitel Inc.
  * @author		Demian Lizandro A, Biscocho
  * @author      Alexander Jim H. Abenoja
  *
@@ -19,54 +20,74 @@
  *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
-	require_once('APIHandler.php');
-			
-	$api 										= \creamy\APIHandler::getInstance();
-	
-	$search 									= $_POST['search'];
-	$disposition 								= $_POST['disposition_filter'];
-	$list 										= $_POST['list_filter'];
-	$address 									= $_POST['address_filter'];
-	$city 										= $_POST['city_filter'];
-	$state 										= $_POST['state_filter'];
-	$start_date									= $_POST['start_contact_filterdate'];
-        $end_date                                                                       = $_POST['end_contact_filterdate'];
-	$limit										= 300;
-	$search_customers							= $_POST['search_customers'];
-	$output 									= $api->API_getLeads($search, $disposition, $list, $address, $city, $state, $limit, $search_customers, $start_date, $end_date);	
-	$table 										= '[';
-	
-	foreach ($output->data as $key => $value) {
-		$lead_id								= $value->lead_id;
-		$phone_number							= $value->phone_number;
-		$first_name								= $value->first_name;
-		$middle_initial							= $value->middle_initial;
-		$last_name								= $value->last_name;
-		$full_name								= $first_name.' '.$middle_initial.' '.$last_name;
-		$status									= $value->status;
-		$action 								= actionMenu($lead_id);
-		
-		if (!empty($phone_number)) {
-			$table 								.= '[';
-			$table 								.= '"<a class=\"edit-contact\" data-id=\"'.$lead_id.'\">'.$lead_id.'</a>",';
-			$table 								.= '"'.$full_name.'",';
-			$table 								.= '"'.$phone_number.'",';
-			$table 								.= '"'.$status.'",';
-			$table 								.= '"'.$action.'"';
-			$table 								.= '],';
-		}
-	}
-	
-	$table 										= rtrim($table, ",");    
-	$table 										.= ']';		
-	
-	echo json_encode($table);
+require_once('APIHandler.php');
 
-    function actionMenu($lead_id) {
-		$actionmenu = '<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\">Choose Action<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" style=\"height: 34px;\"><span class=\"caret\"></span><span class=\"sr-only\">Toggle Dropdown</span></button><ul class=\"dropdown-menu\" role=\"menu\"><li><a class=\"edit-contact\" data-id=\"'.$lead_id.'\">Contact Details</a></li><li class=\"divider\"></li><li><a class=\"delete-contact\" data-id=\"'.$lead_id.'\">Delete</a></li></ul></div>';
-		
-		return $actionmenu;
-	}
-?>
+$api = \creamy\APIHandler::getInstance();
+
+$search = $_POST['search'];
+$disposition = $_POST['disposition_filter'];
+$list = $_POST['list_filter'];
+$address = $_POST['address_filter'];
+$city = $_POST['city_filter'];
+$state = $_POST['state_filter'];
+$start_date = $_POST['start_contact_filterdate'];
+$end_date = $_POST['end_contact_filterdate'];
+$limit = $_POST['limit'];
+$offset = $_POST['offset'];
+$search_customers = $_POST['search_customers'];
+$identity = $_POST['identity_filter'];
+$leadcode = $_POST['leadcode_filter'];
+$leadsubid = $_POST['leadsubid_filter'];
+
+//NEW - LUANDNH
+$output = $api->API_getLeads($search, $disposition, $list, $address, $city, $state, $identity, $leadcode, $leadsubid, $limit, $offset, $search_customers, $start_date, $end_date);
+// $table 										= '[';
+$data = [];
+
+foreach ($output->data as $key => $value) {
+    $lead_id = $value->lead_id;
+    $phone_number = $value->phone_number;
+    $first_name = $value->first_name;
+    $middle_initial = $value->middle_initial;
+    $last_name = $value->last_name;
+    $full_name = $first_name . ' ' . $middle_initial . ' ' . $last_name;
+    $status = $value->status;
+    // $action 								= actionMenu($lead_id);
+    if (!empty($phone_number)) {
+        array_push($data, array(
+            "id" => $value->lead_id,
+            "phone_number" => $value->phone_number,
+            "first_name" => $value->first_name,
+            "middle_initial" => $value->middle_initial,
+            "last_name" => $value->last_name,
+            "full_name" => $first_name . ' ' . $middle_initial . ' ' . $last_name,
+            "status" => $value->status,
+        ));
+        // $table 								.= '[';
+        // $table 								.= '"<a class=\"edit-contact\" data-id=\"' . $lead_id . '\">' . $lead_id . '</a>",';
+        // $table 								.= '"' . $full_name . '",';
+        // $table 								.= '"' . $phone_number . '",';
+        // $table 								.= '"' . $status . '",';
+        // $table 								.= '"' . $action . '"';
+        // $table 								.= '],';
+
+    }
+}
+
+// $table 										= rtrim($table, ",");
+// $table 										.= ']';
+$total = $output->total;
+
+echo json_encode(array(
+    "data" => $data,
+    "total" => $total
+));
+
+function actionMenu($lead_id)
+{
+    $actionmenu = '<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\">Choose Action<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" style=\"height: 34px;\"><span class=\"caret\"></span><span class=\"sr-only\">Toggle Dropdown</span></button><ul class=\"dropdown-menu\" role=\"menu\"><li><a class=\"edit-contact\" data-id=\"' . $lead_id . '\">Contact Details</a></li><li class=\"divider\"></li><li><a class=\"delete-contact\" data-id=\"' . $lead_id . '\">Delete</a></li></ul></div>';
+
+    return $actionmenu;
+}
