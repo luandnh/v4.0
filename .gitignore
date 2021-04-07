@@ -3,3 +3,4 @@ php/goCRMAPISettings.php
 .gitignore
 astguiclient.conf
 goautodial.conf
+goAPIv2
