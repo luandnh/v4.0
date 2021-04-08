@@ -186,7 +186,7 @@ $gopackage = $api->API_getGOPackage();
 						$carriers = $api->API_getAllCarriers();
 						$checkbox_all = $ui->getCheckAll("campaign");
 						$areacode = $api->API_getAllAreacodes();
-						$categories = $api->API_getAllCategories()->data;
+
 						//echo "<pre>";
 						//var_dump($areacodes);
 						?>
@@ -276,13 +276,13 @@ $gopackage = $api->API_getGOPackage();
 														<td><?php if ($perm->campaign->campaign_update !== 'N') {
 																echo '<a class="edit-campaign" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
 															} ?><avatar username='<?php echo $campaign->campaign_name[$i]; ?>' :size='32'></avatar><?php if ($perm->campaign->campaign_update !== 'N') {
-																																						echo '</a>';
-																																					} ?></td>
+																																																																																	echo '</a>';
+																																																																																} ?></td>
 														<td><strong><?php if ($perm->campaign->campaign_update !== 'N') {
 																		echo '<a class="edit-campaign" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
 																	} ?><?php echo $campaign->campaign_id[$i]; ?><?php if ($perm->campaign->campaign_update !== 'N') {
-																														echo '</a>';
-																													} ?></strong></td>
+																																																																									echo '</a>';
+																																																																								} ?></strong></td>
 														<td><?php echo $campaign->campaign_name[$i]; ?></td>
 														<td><?php echo $dial_method; ?></td>
 														<td><?php echo $campaign->active[$i]; ?></td>
@@ -340,8 +340,8 @@ $gopackage = $api->API_getGOPackage();
 															<td><strong><?php if ($perm->disposition->disposition_update !== 'N') {
 																			echo '<a class="view_disposition" data-toggle="modal" data-target="#modal_view_dispositions" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
 																		} ?><?php echo $campaign->campaign_id[$i]; ?><?php if ($perm->disposition->disposition_update !== 'N') {
-																															echo '</a>';
-																														} ?></strong></td>
+																																																																																											echo '</a>';
+																																																																																										} ?></strong></td>
 															<td><?php echo $campaign->campaign_name[$i]; ?></td>
 															<td>
 																<?php
@@ -382,75 +382,13 @@ $gopackage = $api->API_getGOPackage();
 														<td><?php if ($perm->disposition->disposition_update !== 'N') {
 																echo '<a class="view_leadrecycling" data-toggle="modal" data-target="#modal_view_leadrecycling" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
 															} ?><avatar username='<?php echo $campaign->campaign_name[$i]; ?>' :size='32'></avatar><?php if ($perm->disposition->disposition_update !== 'N') {
-																																						echo '</a>';
-																																					} ?></td>
+																																																																																																			echo '</a>';
+																																																																																																		} ?></td>
 														<td><strong><?php if ($perm->disposition->disposition_update !== 'N') {
 																		echo '<a class="view_leadrecycling" data-toggle="modal" data-target="#modal_view_leadrecycling" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
 																	} ?><?php echo $campaign->campaign_id[$i]; ?><?php if ($perm->disposition->disposition_update !== 'N') {
-																														echo '</a>';
-																													} ?></strong></td>
-														<td><?php echo $campaign->campaign_name[$i]; ?></td>
-														<td>
-															<?php
-															$leadrecycle = "";
-															//if($disposition->campaign_id[$i] == $campaign->campaign_id[$i]){												
-															for ($a = 0; $a < count($leadrecycling->campaign_id); $a++) {
-																$leadrecycles[] = $leadrecycling->status[$a];
-																if ($leadrecycling->campaign_id[$a] == $campaign->campaign_id[$i]) {
-																	//$leadrecycles[] = $leadrecycling->status[$a];
-																	$leadrecycle	= $leadrecycles[$a];
-																	echo "<i>" . $leadrecycle . "</i>";
-
-																	if ($leadrecycling->campaign_id[$a + 1] == $campaign->campaign_id[$i]) {
-																		echo ", ";
-																	}
-																}
-															}
-															$action_LeadRecycling = $ui->ActionMenuForLeadRecycling($campaign->campaign_id[$i]);
-															?>
-														</td>
-														<td><?php echo $action_LeadRecycling; ?></td>
-													</tr>
-											<?php
-												}
-											}
-											?>
-										</tbody>
-									</table>
-								</div>
-
-
-								<!--==== Lead Recycling ====-->
-								<div id="T_categories" role="tabpanel" class="tab-pane <?php if (isset($_GET['T_categories'])) echo 'active'; ?> ">
-									<table class="display responsive no-wrap table-bordered table-striped" width="100%" id="table_category">
-										<thead>
-											<tr>
-												<th></th>
-												<th><?php $lh->translateText("vsc_id"); ?></th>
-												<th><?php $lh->translateText("vsc_name"); ?></th>
-												<th><?php $lh->translateText("vsc_description"); ?></th>
-												<th><?php $lh->translateText("tovdad_display"); ?></th>
-												<th><?php $lh->translateText("sale_category"); ?></th>
-												<th><?php $lh->translateText("dead_lead_category"); ?></th>
-												<th class='action_disposition'><?php $lh->translateText("action"); ?></th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
-											if (count($leadrecycling->campaign_id) > 0) {
-												for ($i = 0; $i < count($campaign->campaign_id); $i++) {
-											?>
-													<tr>
-														<td><?php if ($perm->disposition->disposition_update !== 'N') {
-																echo '<a class="view_leadrecycling" data-toggle="modal" data-target="#modal_view_leadrecycling" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
-															} ?><avatar username='<?php echo $campaign->campaign_name[$i]; ?>' :size='32'></avatar><?php if ($perm->disposition->disposition_update !== 'N') {
-																																						echo '</a>';
-																																					} ?></td>
-														<td><strong><?php if ($perm->disposition->disposition_update !== 'N') {
-																		echo '<a class="view_leadrecycling" data-toggle="modal" data-target="#modal_view_leadrecycling" data-id="' . $campaign->campaign_id[$i] . '" data-name="' . $campaign->campaign_name[$i] . '">';
-																	} ?><?php echo $campaign->campaign_id[$i]; ?><?php if ($perm->disposition->disposition_update !== 'N') {
-																														echo '</a>';
-																													} ?></strong></td>
+																																																																																											echo '</a>';
+																																																																																										} ?></strong></td>
 														<td><?php echo $campaign->campaign_name[$i]; ?></td>
 														<td>
 															<?php
@@ -545,13 +483,13 @@ $gopackage = $api->API_getGOPackage();
 														<td><?php if ($perm->campaign->campaign_update !== 'N') {
 																echo '<a class="view_areacode" data-toggle="modal" data-target="#modal_edit_areacode" data-camp="' . $areacode->campaign_id[$i] . '" data-ac="' . $areacode->areacode[$i] . '">';
 															} ?><avatar username='<?php echo $areacode->campaign_name[$i]; ?>' :size='32'></avatar><?php if ($perm->campaign->campaign_update !== 'N') {
-																																						echo '</a>';
-																																					} ?></td>
+																																																																																														echo '</a>';
+																																																																																													} ?></td>
 														<td><strong><?php if ($perm->campaign->campaign_update !== 'N') {
 																		echo '<a class="view_areacode" data-toggle="modal" data-target="#modal_edit_areacode"  data-camp="' . $areacode->campaign_id[$i] . '" data-ac="' . $areacode->areacode[$i] . '">';
 																	} ?><?php echo $areacode->campaign_id[$i]; ?><?php if ($perm->campaign->campaign_update !== 'N') {
-																														echo '</a>';
-																													} ?></strong></td>
+																																																																																						echo '</a>';
+																																																																																					} ?></strong></td>
 														<td><?php echo $areacode->campaign_name[$i]; ?></td>
 														<td><?php echo $areacode->areacode[$i]; ?></td>
 														<td><?php echo $areacode->outbound_cid[$i]; ?></td>
@@ -581,8 +519,8 @@ $gopackage = $api->API_getGOPackage();
 						</div>
 						<div class="fab-div-area" id="fab-div-area">
 							<?php
-							$menu = 5;
-							$menuHeight = '410px';
+							$menu = 4;
+							$menuHeight = '310px';
 							$hideInbound = '';
 							$hideIVR = '';
 							$hideDID = '';
@@ -615,7 +553,6 @@ $gopackage = $api->API_getGOPackage();
 							<ul class="fab-ul" style="height: <?= $menuHeight ?>;">
 								<li class="li-style<?= $hideCampaign ?>"><a class="fa fa-dashboard fab-div-item" data-toggle="modal" data-target="#add_campaign" title="Add Campaign"></a></li><br />
 								<li class="li-style<?= $hideDisposition ?>"><a class="fa fa-tty fab-div-item" data-toggle="modal" data-target="#modal_add_disposition" title="Add Disposition"></a></li><br />
-								<li class="li-style"><a class="fa fa-flag-o fab-div-item" data-toggle="modal" data-target="#modal_add_category" title="Add Category"></a></li><br />
 								<li class="li-style<?= $hideLeadRecycling ?>"><a class="fa fa-recycle fab-div-item" data-toggle="modal" data-target="#add_leadrecycling" title="Add Lead Recycling"></a></li><br />
 								<!--<li class="li-style"><a class="fa fa-phone-square fab-div-item" data-toggle="modal" data-target="#add_leadfilter" title="Add Phone Numbers"> </a></li>-->
 								<li class="li-style<?= $hideAreacode ?>"><a class="fa fa-paper-plane fab-div-item" data-toggle="modal" data-target="#add_areacode" title="Add Areacode"></a></li>
@@ -1155,21 +1092,6 @@ $gopackage = $api->API_getGOPackage();
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label" for="disposition_status_category"><?php $lh->translateText("status_category"); ?></label>
-								<div class="col-sm-9 mb">
-									<select id="disposition_status_category" name="disposition_status_category" class="form-control select2" style="width:100%;" count="<?= count($categories) ?>">
-										<?php
-										for ($i = 0; $i < count($categories); $i++) {
-										?>
-											<option value="<?php echo $categories[$i]->vsc_id; ?>"><?php echo $categories[$i]->vsc_name; ?> </option>
-										<?php
-										}
-										?>
-									</select>
-
-								</div>
-							</div>
-							<div class="form-group">
 								<label class="col-sm-3 control-label" for="disposition_status"><?php $lh->translateText("status"); ?></label>
 								<div class="col-sm-9 mb">
 									<input type="text" name="disposition_status" id="disposition_status" class="form-control" placeholder="<?php $lh->translateText("status_mandatory"); ?>" minlength="1" maxlength="6" required>
@@ -1179,7 +1101,7 @@ $gopackage = $api->API_getGOPackage();
 							<div class="form-group">
 								<label class="col-sm-3 control-label" for="status_name"><?php $lh->translateText("status_capital"); ?></label>
 								<div class="col-sm-9 mb">
-									<input type="text" name="disposition_status_name" id="disposition_status_name" class="form-control" placeholder="<?php $lh->translateText("status_name"); ?>" maxlength="100" required>
+									<input type="text" name="disposition_status_name" id="disposition_status_name" class="form-control" placeholder="<?php $lh->translateText("status_name"); ?>" maxlength="30" required>
 								</div>
 							</div>
 							<div class="form-group">
@@ -1213,37 +1135,37 @@ $gopackage = $api->API_getGOPackage();
 											<input type="checkbox" id="selectable" name="selectable" checked>
 											<span class="fa fa-check"></span> <?php $lh->translateText("selectable"); ?>
 										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="scheduled_callback">
-											<input type="checkbox" id="scheduled_callback" name="scheduled_callback">
-											<span class="fa fa-check"></span> <?php $lh->translateText("scheduled_callback"); ?>
-										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="human_answered" style="display: none;">
+										<label class="col-sm-4 checkbox-inline c-checkbox" for="human_answered">
 											<input type="checkbox" id="human_answered" name="human_answered">
 											<span class="fa fa-check"></span> <?php $lh->translateText("human_answered"); ?>
 										</label>
-										<label class="col-sm-3 checkbox-inline c-checkbox" for="sale" style="display: none;">
+										<label class="col-sm-3 checkbox-inline c-checkbox" for="sale">
 											<input type="checkbox" id="sale" name="sale">
 											<span class="fa fa-check"></span> <?php $lh->translateText("sale"); ?>
 										</label>
 									</div>
 									<div class="row">
-										<label class="col-sm-3 checkbox-inline c-checkbox" for="dnc" style="display: none;">
+										<label class="col-sm-3 checkbox-inline c-checkbox" for="dnc">
 											<input type="checkbox" id="dnc" name="dnc">
 											<span class="fa fa-check"></span> <?php $lh->translateText("dnc"); ?>
 										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="customer_contact" style="display: none;">
+										<label class="col-sm-4 checkbox-inline c-checkbox" for="customer_contact">
 											<input type="checkbox" id="customer_contact" name="customer_contact">
 											<span class="fa fa-check"></span> <?php $lh->translateText("customer_contact"); ?>
 										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="not_interested" style="display: none;">
+										<label class="col-sm-4 checkbox-inline c-checkbox" for="not_interested">
 											<input type="checkbox" id="not_interested" name="not_interested">
 											<span class="fa fa-check"></span> <?php $lh->translateText("not_interested"); ?>
 										</label>
 									</div>
 									<div class="row">
-										<label class="col-sm-3 checkbox-inline c-checkbox" for="unworkable" style="display: none;">
+										<label class="col-sm-3 checkbox-inline c-checkbox" for="unworkable">
 											<input type="checkbox" id="unworkable" name="unworkable">
 											<span class="fa fa-check"></span> <?php $lh->translateText("unworkable"); ?>
+										</label>
+										<label class="col-sm-4 checkbox-inline c-checkbox" for="scheduled_callback">
+											<input type="checkbox" id="scheduled_callback" name="scheduled_callback">
+											<span class="fa fa-check"></span> <?php $lh->translateText("scheduled_callback"); ?>
 										</label>
 									</div>
 								</div>
@@ -1251,75 +1173,6 @@ $gopackage = $api->API_getGOPackage();
 						</fieldset>
 					</div><!-- end of step -->
 					<input type="hidden" id="disposition_checker" value="0">
-				</form>
-
-			</div> <!-- end of modal body -->
-		</div>
-	</div>
-</div>
-<!-- end of modal -->
-
-<!-- Category Modal -->
-<div class="modal fade" id="modal_add_category" aria-labelledby="modal_add_disposition">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<!-- Header -->
-			<div class="modal-header">
-				<h4 class="modal-title animated bounceInRight" id="ingroup_modal">
-					<b><?php $lh->translateText("status_wizard"); ?> » <?php $lh->translateText("create_new_category"); ?></b>
-					<button type="button" class="close" data-dismiss="modal" aria-label="close_ingroup"><span aria-hidden="true">&times;</span></button>
-				</h4>
-			</div>
-			<div class="modal-body">
-				<form action="#" method="POST" id="create_category" role="form">
-					<input type="hidden" name="userid" id="userid" value="<?php echo $user->getUserId(); ?>" />
-					<div class="row">
-						<h4><?php $lh->translateText("create_category"); ?>
-							<br>
-							<small><?php $lh->translateText("description_category"); ?></small>
-						</h4>
-						<fieldset>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="category_id"><?php $lh->translateText("category_id"); ?></label>
-								<div class="col-sm-9 mb">
-									<input type="text" name="category_id" id="category_id" class="form-control" placeholder="<?php $lh->translateText("category_id"); ?>" maxlength="100" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="category_name"><?php $lh->translateText("category_name"); ?></label>
-								<div class="col-sm-9 mb">
-									<input type="text" name="category_name" id="category_name" class="form-control" placeholder="<?php $lh->translateText("category_name"); ?>" maxlength="100" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label" for="category_description"><?php $lh->translateText("category_description"); ?></label>
-								<div class="col-sm-9 mb">
-									<input type="text" name="category_description" id="category_description" class="form-control" placeholder="<?php $lh->translateText("category_description"); ?>" maxlength="100">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-lg-1 mt">
-								</div>
-								<div class="col-lg-11 mt">
-									<div class="row">
-										<label class="col-sm-3 checkbox-inline c-checkbox" for="c_tovdad_display">
-											<input type="checkbox" id="c_tovdad_display" name="c_tovdad_display">
-											<span class="fa fa-check"></span> <?php $lh->translateText("c_tovdad_display"); ?>
-										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="sale_category">
-											<input type="checkbox" id="sale_category" name="sale_category">
-											<span class="fa fa-check"></span> <?php $lh->translateText("sale_category"); ?>
-										</label>
-										<label class="col-sm-4 checkbox-inline c-checkbox" for="dead_lead"">
-											<input type=" checkbox" id="dead_lead" name="dead_lead">
-											<span class="fa fa-check"></span> <?php $lh->translateText("dead_lead"); ?>
-										</label>
-									</div>
-								</div>
-							</div>
-						</fieldset>
-					</div><!-- end of step -->
-					<input type="hidden" id="category_checker" value="0">
 				</form>
 
 			</div> <!-- end of modal body -->
@@ -1373,7 +1226,7 @@ $gopackage = $api->API_getGOPackage();
 							<div class="form-group mt">
 								<label class="col-sm-3 control-label" for="leadrecycling_status"><?php $lh->translateText("status"); ?>: </label>
 								<div class="col-sm-9 mb">
-									<select id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%; height:100%;">
+									<select id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%;">
 										<optgroup label="System Statuses">
 											<?php
 											//$dialStatus = $api->API_getAllDialStatuses('ALL', 1);
@@ -2304,6 +2157,7 @@ echo $modalForm;
 		});
 
 		$(document).on('click', '.view-pause-codes', function() {
+			$('#pause_codes_list').DataTable().clear().draw();
 			$('#modal_view_pause_codes').modal("toggle");
 			var campaign_id = $(this).data('id');
 			$('.btn-new-pause-code').attr('data-campaign', campaign_id);
@@ -2324,9 +2178,13 @@ echo $modalForm;
 						destroy: true,
 						responsive: true,
 						stateSave: true,
+						processing: true,
 						drawCallback: function(settings) {
 							var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
 							pagination.toggle(this.api().page.info().pages > 1);
+						},
+						language: {
+							processing: "Loading data... Please wait..."
 						},
 						columnDefs: [{
 							width: "25%",
@@ -2406,7 +2264,7 @@ echo $modalForm;
 		});
 
 		$(document).on('click', '.btn-new-pause-code', function() {
-			var campaign_id = $(this).data('campaign');
+			var campaign_id = $(this).attr('data-campaign');
 			$('.campaign-id').val(campaign_id);
 
 			$('.pause-code').val('');
@@ -3153,88 +3011,7 @@ echo $modalForm;
 
 			}
 		});
-		/*************
-		 ** category Events
-		 *************/
 
-		// initialization and add of category
-		$('#modal_add_category').on('shown.bs.modal', function() {
-			$("#status-color").colorpicker();
-		});
-
-		var category_form = $("#create_category"); // init form wizard
-
-		category_form.validate({
-			errorPlacement: function errorPlacement(error, element) {
-				element.after(error);
-			}
-		});
-
-		category_form.children("div").steps({
-			headerTag: "h4",
-			bodyTag: "fieldset",
-			transitionEffect: "slideLeft",
-			onStepChanging: function(event, currentIndex, newIndex) {
-				// Allways allow step back to the previous step even if the current step is not valid!
-				if (currentIndex > newIndex) {
-					return true;
-				}
-
-				// Clean up if user went backward before
-				if (currentIndex < newIndex) {
-					// To remove error styles
-					$(".body:eq(" + newIndex + ") label.error", category_form).remove();
-					$(".body:eq(" + newIndex + ") .error", category_form).removeClass("error");
-				}
-
-				category_form.validate().settings.ignore = ":disabled,:hidden";
-				return category_form.valid();
-			},
-			onFinishing: function(event, currentIndex) {
-				category_form.validate().settings.ignore = ":disabled";
-
-				var num_errors = $("#category_checker").val();
-				console.log(num_errors);
-				// Disable submit if there are duplicates
-				if (num_errors > 0) {
-					$(".body:eq(" + currentIndex + ") .error", category_form).addClass("error");
-					return false;
-				}
-
-				return category_form.valid();
-			},
-			onFinished: function(event, currentIndex) {
-				console.log("TEST");
-				$('#finish').text("Loading...");
-				$('#finish').attr("disabled", true);
-				$.ajax({
-					url: "./php/AddCategory.php",
-					type: 'POST',
-					data: $("#create_category").serialize(),
-					success: function(data) {
-						console.log(data);
-						console.log($("#create_category").serialize());
-						if (data == 1) {
-							swal({
-									title: "<?php $lh->translateText("success"); ?>",
-									text: "<?php $lh->translateText("success_category"); ?>!",
-									type: "success"
-								},
-								function() {
-									window.location.href = 'telephonycampaigns.php?T_category';
-									$(".preloader").fadeIn();
-								});
-						} else {
-							sweetAlert("Oops...", "<?php $lh->translateText("something_went_wrong"); ?>! " + data, "error");
-							$('#finish').val("Submit");
-							$('#finish').prop("disabled", false);
-							category_form.children("div").steps("previous");
-							$('#modal_add_category').modal('hide');
-						}
-					}
-				});
-			}
-		});
 		//edit disposition
 		$(document).on('click', '.view_disposition,.delete_disposition_modal', function() {
 			var campaign_id = $(this).attr('data-id');
