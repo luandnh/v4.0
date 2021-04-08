@@ -3,7 +3,7 @@
 /**
  * @file 		callreports.php
  * @brief 		Reports and Analytics
- * @copyright 	Copyright (c) 2018 GOautodial Inc. 
+ * @copyright 	Copyright (c) 2018 Pitel Inc. 
  * @author     	Alexander Jim H. Abenoja 
  * @author		Demian Lizandro A. Biscocho
  *
@@ -142,8 +142,7 @@ foreach ($perm as $key => $value) {
 							<h3 class="m0 pb-lg"><?php $lh->translateText("filters"); ?></h3>
 
 							<!-- HIDDEN POSTS -->
-							<!-- <input type="hidden" name="userID" id="userID" value="<?php //echo $user->getUserName();
-																						?>"> deprecated -->
+							<input type="hidden" name="userID" id="userID" value="<?php echo $user->getUserId(); ?>">
 							<div class="form-group">
 								<label for="filter_type"><?php $lh->translateText("type"); ?></label>
 								<select class="form-control select2" id="filter_type" style="width:100%;">
@@ -151,6 +150,10 @@ foreach ($perm as $key => $value) {
 									if ($perm->reportsanalytics_display == 'Y' && $user->getUserRole() == CRM_DEFAULTS_USER_ROLE_ADMIN) {
 									?>
 										<option value="stats" selected><?php echo $lh->translationFor("stats"); ?></option>
+										<option value="agent_team"><?php echo $lh->translationFor("agent_team"); ?></option>
+										<option value="agent_personal"><?php echo $lh->translationFor("agent_personal"); ?></option>
+										<option value="productivity_call_status"><?php echo $lh->translationFor("productivity_call_status"); ?></option>
+										<option value="productivity_campain"><?php echo $lh->translationFor("productivity_campain"); ?></option>
 										<option value="agent_detail"><?php echo $lh->translationFor("agent_detail"); ?></option>
 										<option value="agent_pdetail"><?php echo $lh->translationFor("agent_pdetail"); ?></option>
 										<option value="dispo"><?php echo $lh->translationFor("dispo"); ?></option>
@@ -213,7 +216,6 @@ foreach ($perm as $key => $value) {
 								<select class="form-control select2" name="ingroup_id" id="ingroup_id" style="width:100%;">
 									<?php
 									for ($i = 0; $i < count($ingroups->group_id); $i++) {
-										if ($_SESSION['usergroup'] !== "ADMIN" && preg_match("/^AGENTDIRECT/", $ingroups->group_id[$i])) continue;
 									?>
 										<option value="<?php echo $ingroups->group_id[$i]; ?>"><?php echo $ingroups->group_id[$i] . ' - ' . $ingroups->group_name[$i]; ?></option>
 									<?php
@@ -281,7 +283,7 @@ foreach ($perm as $key => $value) {
 								<label><?php $lh->translateText("start_date"); ?></label>
 								<div class="form-group">
 									<div class='input-group date' id='datetimepicker1'>
-										<input type='text' class="form-control" id="start_filterdate" name="start_filterdate" placeholder="<?php echo date("m/d/Y"); ?> 12:00 AM" value="<?php echo date("m/d/Y"); ?> 00:00:00" />
+										<input type='text' class="form-control" id="start_filterdate" name="start_filterdate" placeholder="03/29/2020 00:00:00" value="03/29/2020 00:00:00" />
 										<span class="input-group-addon">
 											<!-- <span class="glyphicon glyphicon-calendar"></span>-->
 											<span class="fa fa-calendar"></span>
@@ -348,7 +350,6 @@ foreach ($perm as $key => $value) {
 			theme: 'bootstrap'
 		});
 		$.fn.select2.defaults.set("theme", "bootstrap");
-
 		$('#datetimepicker1').datetimepicker({
 			icons: {
 				//time: 'fa fa-clock-o',
@@ -362,7 +363,6 @@ foreach ($perm as $key => $value) {
 			}
 			//format: 'MM/DD/YYYY'
 		});
-
 		$('#datetimepicker2').datetimepicker({
 			icons: {
 				//time: 'fa fa-clock-o',
@@ -646,6 +646,20 @@ foreach ($perm as $key => $value) {
 			URL = './php/reports/dispo.php';
 		}
 
+		if (filter_type == "agent_personal") {
+			URL = './php/reports/agentreport.php';
+		}
+		if (filter_type == "productivity_campain") {
+			URL = './php/reports/productivity_campain.php';
+		}
+		if (filter_type == "productivity_call_status") {
+			URL = './php/reports/productivity_call_status.php';
+		}
+
+		if (filter_type == "agent_team") {
+			URL = './php/reports/agent_team.php';
+		}
+
 		if (filter_type == "sales_agent") {
 			URL = './php/reports/salesagent.php';
 			request = $("#request2").val();
@@ -690,7 +704,139 @@ foreach ($perm as $key => $value) {
 						$('.campaign_div').show();
 						$('.ingroup_div').hide();
 					}
+					if (filter_type == "agent_personal") {
+						var title = "<?php $lh->translateText("agent_personal"); ?>";
+						$('#agent_personal').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').show();
+						$('.ingroup_div').hide();
+					}
+					if (filter_type == "productivity_campain") {
+						var title = "<?php $lh->translateText("productivity_campain"); ?>";
+						$('#productivity_campain').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').show();
+						$('.ingroup_div').hide();
+					}
 
+					if (filter_type == "productivity_call_status") {
+						var title = "<?php $lh->translateText("productivity_call_status"); ?>";
+						$('#productivity_call_status').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').show();
+						$('.ingroup_div').hide();
+					}
+					if (filter_type == "agent_team") {
+						var title = "<?php $lh->translateText("agent_team"); ?>";
+						$('#agent_team').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').show();
+						$('.ingroup_div').hide();
+					}
 					if (filter_type == "agent_detail") {
 						var title = "<?php $lh->translateText("agent_detail"); ?>";
 						$('#agent_detail_top').DataTable({

@@ -110,10 +110,8 @@ $uname = (isset($_GET['username'])) ? $_GET['username'] : '';
 $upass = (isset($_GET['password'])) ? $_GET['password'] : '';
 //https://github.com/goautodial/v4.0/issues/48
 //prevent xss
-$uname = "AdminTel4vn";
-$upass = "tel4vn.com";
-// $uname = htmlentities($uname);
-// $upass = htmlentities($upass);
+$uname = htmlentities($uname);
+$upass = htmlentities($upass);
 ?>
 <html>
 
