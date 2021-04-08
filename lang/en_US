@@ -884,7 +884,7 @@ category_description = "Category Description"
 c_tovdad_display = "Total VDAD Display"
 sale_category = "Sale Description"
 dead_lead = "Dead Lead"
-
+view_status = "Category Status"
 status_name = "Status Name"
 selectable = "Selectable"
 human_answered = "Human Answered"

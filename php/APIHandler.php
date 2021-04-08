@@ -1057,6 +1057,15 @@ class APIHandler
 		return $this->API_Request("goCampaigns", $postfields);
 	}
 
+	public function API_getCategoryDispositions($category_id)
+	{
+		$postfields = array(
+			'goAction' => 'goGetCategoryDisposition',
+			'category_id' => $category_id
+		);
+		return $this->API_Request("goCategories", $postfields);
+	}
+
 	public function API_getCampaignLeadRecycling($campaign_id)
 	{
 		$postfields = array(
