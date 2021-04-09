@@ -74,6 +74,7 @@
 
 	$postfields 						= array(
 		'goAction' 							=> 'goAddDisposition',
+		'category' 							=> $_POST['disposition_status_category'],
 		'userid' 							=> $_POST['userid'],
 		'campaign_id' 						=> $_POST['disposition_campaign'],
 		'status' 							=> $_POST['disposition_status'],
