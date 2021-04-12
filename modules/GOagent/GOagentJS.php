@@ -32,6 +32,7 @@ require_once (GO_BASE_DIRECTORY . '/php/DbHandler.php');
 include (GO_BASE_DIRECTORY . '/php/Session.php');
 require_once (GO_BASE_DIRECTORY . '/php/goCRMAPISettings.php');
 $goAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', gourl) : str_replace('http:', 'https:', gourl);
+$goSubAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', goapiurl) : str_replace('http:', 'https:', goapiurl);
 $api = \creamy\APIHandler::getInstance();
 $ui = \creamy\UIHandler::getInstance();
 $lh = \creamy\LanguageHandler::getInstance();
@@ -3021,9 +3022,9 @@ function checkIfStillLoggedIn(logged_out, last_call) {
     
         $.ajax({
             type: 'POST',
-            url: '<?=$goAPI ?>/goAgent/goAPI.php',
+            url: '<?=$goSubAPI ?>/v1/agent/checkifloggedin',
             processData: true,
-            data: postData,
+            data: JSON.stringify(postData),
             dataType: "json",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -3098,9 +3099,9 @@ function CheckForConfCalls (confnum, force) {
 
     $.ajax({
         type: 'POST',
-        url: '<?=$goAPI ?>/goAgent/goAPI.php',
+        url: '<?=$goSubAPI ?>/v1/agent/checkconference',
         processData: true,
-        data: postData,
+        data: JSON.stringify(postData),
         dataType: "json",
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
