@@ -907,7 +907,50 @@ input:checked + .slider:before {
 														</div>
 													</div>
 													<!-- /.gender & title -->
-
+												<form role="form" id="vendor_form" class="formMain form-inline">
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="partner_code" name="partner_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
+																<label for="partner_code"><?php $lh->translateText("partner_code"); ?></label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="vendor_lead_code" name="vendor_lead_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="vendor_lead_code"><?php $lh->translateText("vendor_lead_code"); ?></label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
+																<label for="request_id">Request Id</label>
+															</div>
+														</div>
+													</div>
+												</form>
+												<form role="form" id="identity_form" class="formMain form-inline">
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="identity_number" name="identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="identity_number"><?php $lh->translateText("identity_number"); ?></label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="identity_issued_on" name="identity_issued_on" type="date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="identity_issued_on"><?php $lh->translateText("identity_issued_on"); ?></label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="identity_issued_by" name="identity_issued_by" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="identity_issued_by"><?php $lh->translateText("identity_issued_by"); ?></label>
+															</div>
+														</div>
+													</div><!-- /.identity_number,identity_issued_on,identity_issued_by -->
+												</form>
 													<div id="call_notes_content" class="col-sm-12">
 														<div class="form-group" style="width:100%;">
 															<textarea rows="3" id="call_notes" name="call_notes" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched textarea note-editor note-editor-margin" style="resize:none; width: 100%;"></textarea>
@@ -978,7 +1021,7 @@ input:checked + .slider:before {
 											</div><!-- /.row -->
 										</div>
 										<!-- End of Scripts -->
-										
+										<?php include_once "agent/module/products.php" ?>
 										<?php if(ROCKETCHAT_ENABLE === 'y'){?>
 										<!-- Rocket Chat -->
                                                                                 <div id="rc" role="tabpanel" class="tab-pane">
@@ -2909,5 +2952,8 @@ dding-top: 10px;">
 			});
 		</script>
 		<?php } //end if ECCS_BLIND_MODE ?>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js" defer></script>
     </body>
 </html>
