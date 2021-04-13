@@ -639,7 +639,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" id="offer-datatable">
                                 <div class="col-xl-12 col-lg-8">
                                     <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
 
@@ -653,7 +653,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <button class="btn btn-primary" id="submit-full-loan" type="submit">Submit</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <button class="btn btn-primary" id="submit-offer" hidden>Submit Offer</button>
                                 </div>
                             </div>
                         </form>

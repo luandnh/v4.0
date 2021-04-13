@@ -6439,7 +6439,7 @@ function DispoSelectSubmit() {
             //EASY CREDIT
             //CLEAR ALL FORM VARIABLES
             try{
-                clearForm($("#full-loan-form"));
+                ECShowProducts("", "");
             }catch(err){
                 console.log("Clear Full Loan Form: "+err);
             }

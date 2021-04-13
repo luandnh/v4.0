@@ -1,8 +1,11 @@
-const EC_API_URL = "http://localhost:8000";
-const TEL4VN_API_URL = "http://localhost:8000";
+const EC_API_URL = "https://tlink02-api.tel4vn.com/";
+const TEL4VN_API_URL = "https://tlink02-api.tel4vn.com/";
 const EC_API_USERNAME = "";
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
+var selected_offer_id = "";
+var selected_offer_amount = 0;
+var selected_offer_insurance_type = "";
 
 let box_color = [
   "box-primary",
@@ -53,6 +56,17 @@ let ECShowProducts = (partner_code, request_id) => {
   $("#hide_div_eligible").hide();
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
+  $("#offer-datatable").empty();
+  $("#offer-datatable")[0].innerHTML = `
+	<div class="col-xl-12 col-lg-8">
+	    <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+	    </table>
+	</div>
+	<div class="col-xl-12 col-lg-4">
+	    <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+	    </table>
+	</div>
+`;
   clearForm($("#full-loan-form"));
   if (request_id != "" && request_id.length > 0) {
     SyncFullLoanFromAPI(request_id);
@@ -287,7 +301,53 @@ let ajaxGetECProducts = (partner_code) => {
     swal("Get products data fail!", msg, "error");
   });
 };
+$(document).on('click','#submit-offer', function(e){
+  e.preventDefault();
+  let loan_request_id = $(".formMain input[name='request_id']").val();
+  let partner_code = $(".formMain input[name='partner_code']").val();
+  console.log(selected_offer_amount,selected_offer_id, loan_request_id, partner_code);
+  selected_offer_insurance_type = $("input[type='radio'][name='select_insurance']:checked").val();
+  if (selected_offer_insurance_type == undefined || selected_offer_insurance_type == ""){
+    alert("Please Choose Insurace Type");
+    swal("Choose offer fail!", "Please Choose Insurace Type", "error");
+  }
+  let offer_data = {
+    "loan_request_id": loan_request_id,
+    "partner_code ":  partner_code,
+    "selected_offer_id": selected_offer_id,
+    "selected_offer_amount": selected_offer_amount.toString(),
+    "selected_offer_insurance_type": selected_offer_insurance_type
+  };
 
+  $.ajax({
+    type: "POST",
+    url: EC_API_URL + "/v1/offer/select",
+    processData: true,
+    data: JSON.stringify(offer_data),
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .fail((result, status, error) => {
+      console.log(result);
+      let msg = "Please contact developer!";
+      if (result.message !== undefined) {
+        msg = result.message;
+      }
+      swal("Send offer data fail!", msg, "error");
+    })
+    .done((result) => {
+      console.log(result);
+    if (result.code == "RECEIVED") {
+      swal("Success", result.message, "success");
+    } else {
+      swal("Error!", result.message, "error");
+    }
+    });
+  
+})
 $("#eligible_btn").on("click", (e) => {
   e.preventDefault();
   let partner_code = $(".formMain input[name='partner_code']").val();
@@ -568,6 +628,8 @@ function clearForm($form) {
     .not(":button, :submit, :reset, :hidden, :checkbox, :radio")
     .val("");
   $form.find(":checkbox, :radio").prop("checked", false);
+  $("#submit-full-loan").attr("hidden", false);
+  $("#submit-offer").attr("hidden", true);
 }
 
 $("#full-loan-form").on("submit", (e) => {
@@ -751,6 +813,8 @@ function SetOfferDetail(offerList) {
   $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function (e) {
     e.preventDefault();
     let tmp_data = offerTable.row($(this).closest("tr").prev()[0]).data();
+    selected_offer_amount = tmp_data.offer_amount;
+    selected_offer_id = tmp_data.offer_id;
     $("#offer-insurance-list-table").DataTable({
       destroy: true,
       responsive: true,
@@ -787,9 +851,27 @@ function SetOfferDetail(offerList) {
           title: "Base Calculation",
           data: "base_calculation",
         },
+        {
+          title: "Select",
+          data : "insurance_type",
+          render: (data)=>{
+            return `<input type="radio" name="select_insurance" value="${data}" />`;
+          }
+        },
+        {
+          visible : false,
+          data : "insurance_amount",
+          render: (data)=>{
+            return `<input type="text" name="select_insurance_amount" value="${data}" />`;
+          }
+        },
+        
       ],
     });
   });
+  
+  $("#submit-full-loan").attr("hidden", true);
+  $("#submit-offer").attr("hidden", false);
 }
 
 function capitalize(string) {

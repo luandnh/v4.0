@@ -978,9 +978,13 @@ input:checked + .slider:before {
 												</div>
 											</div>-->
 
-							                <div class="hide_div">
+											<div class="hide_div">
 							                	<button type="submit" name="submit" id="submit_edit_form" class="btn btn-primary btn-block btn-flat"><?=$lh->translationFor('submit')?></button>
 							                </div>
+											<!--  -->
+											<div id="hide_div_eligible" style="display: none;">
+												<button type="button" name="eligible_btn" id="eligible_btn" class="btn btn-warning btn-block btn-flat"><?= $lh->translationFor('eligible') ?></button>
+											</div>
 							               </fieldset>
 										</div><!--End of Profile-->
 										
