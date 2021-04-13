@@ -3092,7 +3092,7 @@ function CheckForConfCalls (confnum, force) {
         goSessionName: session_name,
         goClient: "vdc",
         goConfExten: confnum,
-        goAutoDialLevel: auto_dial_level,
+        goAutoDialLevel: auto_dial_level.toString(),
         goCampAgentDisp: campagentstdisp,
         responsetype: 'json'
     };
