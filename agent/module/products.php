@@ -639,6 +639,14 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="row"  id="offer-waiting" hidden>
+                            <div class="col-xl-12 col-lg-6" >
+                                <button class="buttonload" style="background-color: #3f51b5; border: none; border-radius: 10px; color: white; padding: 12px 24px;font-size: 16px;">
+                                <i class="fa fa-spinner fa-spin" style="margin: 0px 5px;"></i>Waiting for offer
+                                </button>
+                                </div>
+                            </div>
                             <div class="row" id="offer-datatable">
                                 <div class="col-xl-12 col-lg-8">
                                     <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
@@ -649,6 +657,14 @@
                                     <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
 
                                     </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-8">
+                                    <table id="create-offer-table" hidden>
+                                           
+                                    </table>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">

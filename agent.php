@@ -205,8 +205,89 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 
 		<!-- CHAT -->	
 	        <!-- <script src="modules/GoChat/js/chat.js"></script> -->
+		<style>
+		#create-offer-table {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			}
 
+			#create-offer-table td, #create-offer-table th {
+			border: 1px solid #3f51b5;
+			padding: 8px;
+			}
+
+			#create-offer-table tr:nth-child(even){background-color: #f2f2f2;}
+
+			#create-offer-table tr:hover {background-color: #ddd;}
+
+			#create-offer-table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #3f51b5;
+			color: white;
+			}
+			.customer-offer-input{
+				width: 100%;
+				border: none;
+				padding: 5px;
+				font-size: large;
+			}
+			.customer-offer-input-readonly{
+				display: none;
+				width: 100%;
+				border: none;
+				padding: 5px;
+				font-size: large;
+				background: none;
+			}
+			#GoToTop {
+				width: 40px;
+				line-height: 40px;
+				overflow: hidden;
+				z-index: 999;
+				display: none;
+				cursor: pointer;
+				-moz-transform: rotate(270deg);
+				-webkit-transform: rotate(270deg);
+				-o-transform: rotate(270deg);
+				-ms-transform: rotate(270deg);
+				transform: rotate(270deg);
+				position: fixed;
+				bottom: 20px;
+				left: 20;
+				background-color: #DDD;
+				color: #555;
+				text-align: center;
+				font-size: 30px;
+				text-decoration: none;
+			}
+			#GoToTop:hover {
+				background-color: #DDF;
+				color: #000;
+			}
+		</style>
         <script type="text/javascript">
+			function gotobottom(){
+				window.scrollTo(0,document.body.scrollHeight);
+			}
+			$(window).scroll(function() {
+				var height = $(window).scrollTop();
+				if (height > 100) {
+					$('#GoToTop').fadeIn();
+				} else {
+					$('#GoToTop').fadeOut();
+				}
+			});
+			$(document).ready(function() {
+				$("#GoToTop").click(function(event) {
+					event.preventDefault();
+					$("html, body").animate({ scrollTop: 0 }, "slow");
+					return false;
+				});
+
+			});
 			history.pushState('', document.title, window.location.pathname);
 			
 			$(window).load(function() {
@@ -1754,6 +1835,7 @@ input:checked + .slider:before {
                 </section><!-- /.content -->
 	</div>
 </div>	
+<a id="GoToTop" title="Back to top" href="#">&#10148;</a>
             </aside><!-- /.right-side -->
 
             <?php //print $ui->creamyFooter(); ?>

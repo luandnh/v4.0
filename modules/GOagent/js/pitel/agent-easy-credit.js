@@ -1,12 +1,22 @@
 const EC_API_URL = "https://tlink02-api.tel4vn.com/";
 const TEL4VN_API_URL = "https://tlink02-api.tel4vn.com/";
 const EC_API_USERNAME = "";
+const formatter = new Intl.NumberFormat('vi-VN', {
+  style: 'currency',
+  currency: 'VND',
+});
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
 var selected_offer_id = "";
 var selected_offer_amount = 0;
 var selected_offer_insurance_type = "";
-
+var selected_offer_tenor = 0;
+var selected_monthly_installment = 0;
+var selected_max_financed_amount = 0;
+var selected_min_financed_amount = 0;
+var percentage_insurance = 0;
+var offerinsurancetable;
+var insurance_amount = 0;
 let box_color = [
   "box-primary",
   "box-danger",
@@ -43,7 +53,7 @@ let removeElement = (btn_id) => {
 
 $(document).ready(() => {
   let fullLoanTab =
-    '<li role="presentation" id="full_loan_tab_href">' +
+    '<li role="presentation" id="full_loan_tab_href" ondblclick="gotobottom()">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
     '<span class="fa fa-file-text-o hidden"></span>' +
     "Full Loan</a>" +
@@ -54,6 +64,8 @@ $(document).ready(() => {
 
 let ECShowProducts = (partner_code, request_id) => {
   $("#hide_div_eligible").hide();
+  $("#create-offer-table").empty();
+  $("#create-offer-table").attr("hidden", true);
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
   $("#offer-datatable").empty();
@@ -305,11 +317,9 @@ $(document).on('click','#submit-offer', function(e){
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
   let partner_code = $(".formMain input[name='partner_code']").val();
-  console.log(selected_offer_amount,selected_offer_id, loan_request_id, partner_code);
-  selected_offer_insurance_type = $("input[type='radio'][name='select_insurance']:checked").val();
   if (selected_offer_insurance_type == undefined || selected_offer_insurance_type == ""){
-    alert("Please Choose Insurace Type");
     swal("Choose offer fail!", "Please Choose Insurace Type", "error");
+    return;
   }
   let offer_data = {
     "loan_request_id": loan_request_id,
@@ -630,8 +640,61 @@ function clearForm($form) {
   $form.find(":checkbox, :radio").prop("checked", false);
   $("#submit-full-loan").attr("hidden", false);
   $("#submit-offer").attr("hidden", true);
+  $("#offer-waiting").attr("hidden", true);
 }
 
+function SetCustomerOfferDetail(){
+
+  $("#create-offer-table")[0].innerHTML = `
+  <tr>
+    <th colspan="2">Offer Detail</th>
+  </tr>
+  <tr>
+      <td>Customer Offer Amount</td>
+      <td><input name="customer-offer-amount" type="text" value='' class="customer-offer-input"></td>
+  </tr>
+  <tr>
+    <td>Offer Amount</td>
+    <td><input name="offer-amount" type="number" value='${selected_offer_amount}' class="customer-offer-input-readonly">${formatter.format(selected_offer_amount)}</td>
+  </tr>
+  <tr>
+      <td>Offer Tenor</td>
+      <td><input name="customer-offer-tenor" value="${selected_offer_tenor}" type="number" class="customer-offer-input-readonly">${selected_offer_tenor} month</td>
+  </tr>
+  <tr>
+      <td>Percent</td>
+      <td><input name="customer-offer-percent" value="${percentage_insurance}" type="number" class="customer-offer-input-readonly">${percentage_insurance*100}%</td>
+  </tr>
+  <tr>
+      <td>Total Offer</td>
+      <td><input name="customer-offer-total" value="21200000" type="number" class="customer-offer-input-readonly">${formatter.format(21200000)}</td>
+  </tr>
+  <tr>
+      <td>Monthly</td>
+      <td><input name="customer-offer-monthly" value="1200000" type="number" class="customer-offer-input-readonly">${formatter.format(1200000)}</td>
+  </tr>
+  `;
+}
+$(document).on('keyup','input[name="customer-offer-amount"]', function(){
+  if (this.value == '' || this.value == undefined){
+    // 
+  }
+  this.value = this.value.replace(/[^0-9\.]/g,'');
+  this.value = this.value.replace(".",'');
+});
+ $(document).on('blur','input[name="customer-offer-amount"]', function(){
+  this.value = formatter.format(this.value);
+ });
+
+$(document).on('change','input[name="select_insurance"]', function(){
+  $("#create-offer-table").empty();
+  $("#create-offer-table").attr("hidden", false);
+  let tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+  selected_offer_insurance_type = tmp_data2.insurance_type;
+  percentage_insurance = tmp_data2.percentage_insurance;
+  insurance_amount = tmp_data2.insurance_amount;
+  SetCustomerOfferDetail();
+});
 $("#full-loan-form").on("submit", (e) => {
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
@@ -645,6 +708,7 @@ $("#full-loan-form").on("submit", (e) => {
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   let post_data = JSON.stringify(form_data);
+  $("#offer-waiting").attr("hidden", false);
   $.ajax({
     type: "POST",
     url: EC_API_URL + "/v1/dev/fullloan",
@@ -663,6 +727,7 @@ $("#full-loan-form").on("submit", (e) => {
         msg = result.message;
       }
       swal("Send full-loan data fail!", msg, "error");
+      $("#offer-waiting").attr("hidden", true);
     })
     .done((result) => {
       if (
@@ -678,6 +743,7 @@ $("#full-loan-form").on("submit", (e) => {
         }, 5000);
       } else {
         swal("Error!", "Send full-loan data fail!", "error");
+        $("#offer-waiting").attr("hidden", true);
       }
     });
   $.ajax({
@@ -718,7 +784,6 @@ function PollingOfferFromEC(request_id) {
 }
 
 function SetOfferDetail(offerList) {
-  console.log(offerList);
   var offerTable = $("#offer-list-table").DataTable({
     destroy: true,
     responsive: true,
@@ -810,12 +875,19 @@ function SetOfferDetail(offerList) {
       },
     ],
   });
+
   $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function (e) {
     e.preventDefault();
+    $("#create-offer-table").empty();
+    $("#create-offer-table").attr("hidden", true);
     let tmp_data = offerTable.row($(this).closest("tr").prev()[0]).data();
     selected_offer_amount = tmp_data.offer_amount;
     selected_offer_id = tmp_data.offer_id;
-    $("#offer-insurance-list-table").DataTable({
+    selected_max_financed_amount = tmp_data.max_financed_amount;
+    selected_min_financed_amount = tmp_data.min_financed_amount;
+    selected_offer_tenor = tmp_data.offer_tenor;
+    selected_monthly_installment = tmp_data.monthly_installment;
+    offerinsurancetable =  $("#offer-insurance-list-table").DataTable({
       destroy: true,
       responsive: true,
       searching: false,
@@ -871,6 +943,7 @@ function SetOfferDetail(offerList) {
   });
   
   $("#submit-full-loan").attr("hidden", true);
+  $("#offer-waiting").attr("hidden", true);
   $("#submit-offer").attr("hidden", false);
 }
 
