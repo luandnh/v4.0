@@ -61,6 +61,11 @@
 			$allowed_usergroups 			= $_POST["admin_viewable_groups"]; 
 			$allowed_usergroups 			= stripslashes($allowed_usergroups);
 		}
+
+		$manage_usergroups = NULL; if (isset($_POST["groups_assign"])) { 
+			$manage_usergroups 			= $_POST["groups_assign"]; 
+			$manage_usergroups 			= stripslashes($manage_usergroups);
+		}
 		
 		$allowed_campaigns 					= " ";
 		$allowed_camp 						= $_REQUEST['allowed_camp'];
@@ -222,7 +227,8 @@
 			'shift_enforcement' 				=> $shift_enforcement,
 			'allowed_campaigns' 				=> $allowed_campaigns,
 			'allowed_usergroups' 				=> $allowed_usergroups,
-			'permissions' 						=> $group_permission
+			'permissions' 						=> $group_permission,
+			'manage_usergroups'					=> $manage_usergroups,
 		);				
 
 		$output 							= $api->API_editUserGroup($postfields);
