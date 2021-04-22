@@ -6904,9 +6904,9 @@ function CustomerData_update() {
 
     $.ajax({
         type: 'POST',
-        url: '<?=$goAPI ?>/goAgent/goAPI.php',
+        url: '<?=$goSubAPI ?>/v1/lead/update',
         processData: true,
-        data: postData,
+        data: JSON.stringify(postData),
         dataType: "json",
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
