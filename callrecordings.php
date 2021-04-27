@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @file 		callreports.php
- * @brief 		Reports and Analytics
- * @copyright 	Copyright (c) 2018 GOautodial Inc. 
- * @author     	Alexander Jim H. Abenoja 
+ * @file 		callrecordings.php
+ * @brief 		Display call recordings
+ * @copyright 	Copyright (c) 2018 Pitel Inc. 
  * @author		Demian Lizandro A. Biscocho
+ * @author     	Alexander Jim H. Abenoja
  *
  * @par <b>License</b>:
  *  This program is free software: you can redistribute it and/or modify
@@ -40,39 +40,27 @@ if ($user->getUserRole() != CRM_DEFAULTS_USER_ROLE_ADMIN) {
 	}
 }
 
-$perm = $api->goGetPermissions('reportsanalytics');
-
-$allowed_page = 0;
-foreach ($perm as $key => $value) {
-	if ($value == 'Y') {
-		$allowed_page++;
-	}
-}
+$perm = $api->goGetPermissions('recordings');
 ?>
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><?php $lh->translateText("reports_and_go_analytics"); ?></title>
+	<title><?php $lh->translateText("call_recordings"); ?></title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
 	<?php
 	print $ui->standardizedThemeCSS();
 	print $ui->creamyThemeCSS();
-	print $ui->DataTablesTheme();
+	print $ui->dataTablesTheme();
 	?>
 
-	<!-- FOR EXPORT -->
-	<!--<script src="js/plugins/datatables/bpampuch/pdfmake/vfs_fonts.js" type="text/javascript"></script>
-		<script src="js/plugins/datatables/bpampuch/pdfmake/pdfmake.min.js" type="text/javascript"></script>-->
-	<script src="js/plugins/datatables/buttons/buttons.html5.min.js" type="text/javascript"></script>
-	<script src="js/plugins/datatables/buttons/buttons.print.min.js" type="text/javascript"></script>
-	<script src="js/plugins/datatables/buttons/buttons.flash.min.js" type="text/javascript"></script>
-	<script src="js/plugins/datatables/buttons/dataTables.buttons.min.js" type="text/javascript"></script>
-	<script src="js/plugins/datatables/jszip.min.js" type="text/javascript"></script>
+	<!-- Bootstrap Player -->
+	<link href="css/bootstrap-player.css" rel="stylesheet" type="text/css" />
 
 	<!-- Datetime picker -->
 	<link rel="stylesheet" href="js/dashboard/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+
 	<!-- Date Picker -->
 	<script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/moment.js"></script>
 	<script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
@@ -80,6 +68,28 @@ foreach ($perm as $key => $value) {
 	<!-- CHOSEN-->
 	<link rel="stylesheet" src="js/dashboard/chosen_v1.2.0/chosen.min.css">
 
+	<script src="js/pitel/admin_call_recordings.js"></script>
+
+	<style>
+		/*
+		* CUSTOM CSS for disable function
+		*/
+		.c-checkbox input[type=checkbox]:disabled+span,
+		.c-radio input[type=checkbox]:disabled+span,
+		.c-checkbox input[type=radio]:disabled+span,
+		.c-radio input[type=radio]:disabled+span {
+			border-color: none !important;
+			background-color: none !important;
+		}
+
+		.c-checkbox input[type=checkbox]:checked+span,
+		.c-radio input[type=checkbox]:checked+span,
+		.c-checkbox input[type=radio]:checked+span,
+		.c-radio input[type=radio]:checked+span {
+			border-color: #3f51b5 !important;
+			background-color: #3f51b5 !important;
+		}
+	</style>
 </head>
 <?php print $ui->creamyBody(); ?>
 <div class="wrapper">
@@ -89,1182 +99,834 @@ foreach ($perm as $key => $value) {
 	<?php print $ui->getSidebar($user->getUserId(), $user->getUserName(), $user->getUserRole(), $user->getUserAvatar()); ?>
 
 	<!-- Right side column. Contains the navbar and content of the page -->
-	<aside class="right-side">
+	<aside class="right-side content-wrapper">
 		<!-- Content Header (Page header) -->
-		<section class="content-header">
+		<section class="content-header content-heading">
 			<h1>
-				<?php $lh->translateText("reports_and_go_analytics"); ?>
-				<small><?php $lh->translateText("call_reports"); ?></small>
+				<?php $lh->translateText("call_recordings"); ?>
+				<small><?php $lh->translateText("call_recordings"); ?></small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="./index.php"><i class="fa fa-phone"></i> <?php $lh->translateText("home"); ?></a></li>
-				<li><?php $lh->translateText("call_reports"); ?></li>
-				<li class="active"><?php $lh->translateText("reports_and_go_analytics"); ?>
+				<li><?php $lh->translateText("telephony"); ?></li>
+				<li class="active"><?php $lh->translateText("call_recordings"); ?>
 			</ol>
 		</section>
-
-		<?php
-		$campaigns = $api->API_getAllCampaigns();
-		$ingroups = $api->API_getAllInGroups();
-		$disposition = $api->API_getAllDispositions();
-		?>
 		<!-- Main content -->
 		<section class="content">
-			<?php if ($allowed_page > 0) { ?>
+			<?php
+			if ($perm->recordings_display !== 'N') {
+				$callrecs = $api->API_getCallRecordingList("", "", "", "");
+				// var_dump($callrecs);
+				// die();
+			?>
 				<div class="row">
 					<div class="col-lg-9">
+						<div class="form-group mb-xl">
+							<div class="has-clear">
+								<input type="text" placeholder="Search Phone Number, First or Last Name" id="search" class="form-control mb">
+								<span class="form-control-clear fa fa-close form-control-feedback"></span>
+							</div>
+							<div class="clearfix">
+								<button type="button" class="pull-left btn btn-default" id="search_button"> <?php $lh->translateText("search"); ?></button>
+								<div class="pull-right">
+									<label class="checkbox-inline c-checkbox" for="search_recordings">
+										<input id="search_recordings" name="table_filter" type="checkbox" checked disabled>
+										<span class="fa fa-check"></span><?php $lh->translateText("recordings"); ?>
+									</label>
+								</div>
+							</div>
+						</div>
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<legend><?php $lh->translateText("call_reports"); ?></legend>
 
-								<div class="report-loader" style="color:lightgray; display:none;">
-									<center>
-										<h3>
-											<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
-											<?php $lh->translateText("loading..."); ?>
-										</h3>
-									</center>
+								<div class="callrecordings_div">
+									<!-- Call Recordings panel tab -->
+									<legend><?php $lh->translateText("call_recordings"); ?></legend>
+
+									<!--==== Call Recordings ====-->
+									<table class="table table-striped table-bordered table-hover" id="table_callrecordings">
+										<thead>
+											<tr>
+												<th nowrap><?php $lh->translateText("date"); ?></th>
+												<th nowrap class='hide-on-low'><?php $lh->translateText("customer"); ?></th>
+												<th nowrap class='hide-on-low'><?php $lh->translateText("phone_number"); ?></th>
+												<th nowrap class='hide-on-medium hide-on-low'><?php $lh->translateText("agent"); ?></th>
+												<th nowrap class='hide-on-medium hide-on-low'><?php $lh->translateText("duration"); ?></th>
+												<th nowrap><?php $lh->translateText("action"); ?></th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php
+											for ($i = 0; $i < count($callrecs->uniqueid); $i++) {
+												$details = "<strong>" . $lh->translationFor("phone") . "</strong>: <i>" . $callrecs->phone_number[$i] . "</i><br/>";
+												$details .= "<strong>" . $lh->translationFor("agent") . "</strong>: <i>" . $callrecs->users[$i] . "</i><br/>";
+												$details .= "<strong>" . $lh->translationFor("date") . "</strong>: <i>" . date("M.d,Y h:i A", strtotime($callrecs->end_last_local_call_time[$i])) . "</i><br/>";
+
+												$d1 = strtotime($callrecs->start_last_local_call_time[$i]);
+												$d2 = strtotime($callrecs->end_last_local_call_time[$i]);
+												$diff = abs($d2 - $d1);
+												$action_Call = $ui->getUserActionMenuForCallRecording($callrecs->uniqueid[$i], $callrecs->location[$i], $details);
+
+											?>
+												<tr>
+													<td nowrap><?php echo date("M.d,Y h:i A", strtotime($callrecs->end_last_local_call_time[$i])); ?></td>
+													<td nowrap class='hide-on-low'><?php echo $callrecs->full_name[$i]; ?></td>
+													<td nowrap class='hide-on-low'><?php echo $callrecs->phone_number[$i]; ?></td>
+													<td nowrap class='hide-on-medium hide-on-low'><?php echo $callrecs->users[$i]; ?></td>
+													<td nowrap class='hide-on-medium hide-on-low'><?php echo gmdate('H:i:s', $diff); ?></td>
+													<td nowrap><?php echo $action_Call; ?></td>
+												</tr>
+											<?php
+											}
+											?>
+										</tbody>
+									</table>
 								</div>
-								<div class="box-body" id="table">
-									<div collapse="panelChart9" class="panel-wrapper">
-										<div class="panel-body">
-											<div class="chart-splinev3 flot-chart"></div> <!-- data is in JS -> demo-flot.js -> search (Overall/Home/Pagkain)-->
+							</div><!-- /.body -->
+						</div><!-- /.panel -->
+					</div><!-- /.col-lg-9 -->
+					<?php
+					$agents = $api->API_getAllUsers();
+					$lists = $api->API_getAllLists();
+					?>
+					<div class="col-lg-3">
+						<h3 class="m0 pb-lg"><?php $lh->translateText("filters"); ?></h3>
+						<form id="search_form">
+							<div class="form-group">
+								<label><?php $lh->translateText("add_filters"); ?>:</label>
+								<div class="mb">
+									<div class="add_callrecording_filters">
+										<select multiple="multiple" class="select2-3 form-control add_filters2" style="width:100%;">
+											<option value="filter_agent" class="contacts_filters"><?php $lh->translateText("agent"); ?> </option>
+											<option value="filter_list" class="contacts_filters"><?php $lh->translateText("filter_list_id"); ?></option>
+											<option value="filter_phone" class="contacts_filters"><?php $lh->translateText("filter_phone"); ?> </option>
+											<option value="filter_identity" class="contacts_filters"><?php $lh->translateText("filter_identity"); ?></option>
+											<option value="filter_leadcode" class="contacts_filters"><?php $lh->translateText("filter_leadcode"); ?></option>
+											<option value="filter_leadsubid" class="contacts_filters"><?php $lh->translateText("filter_leadsubid"); ?></option>
+											<option value="filter_direction" class="contacts_filters"><?php $lh->translateText("filter_direction"); ?></option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<!-- CALL RECORDINGS FILTER -->
+							<div class="all_callrecording_filters">
+								<div class="callrecordings_filter_div">
+									<div class="agent_filter_div" style="display:none;">
+										<div class="form-group">
+											<label><?php $lh->translateText("agent"); ?>: </label>
+											<div class="mb">
+												<select name="agent_filter" id="agent_filter" class="form-control">
+													<option value=""> <?php $lh->translateText("all_agents"); ?> </option>
+													<?php
+													for ($i = 0; $i < count($agents->user_id); $i++) {
+														echo '<option value="' . $agents->user[$i] . '"> ' . $agents->user[$i] . ' - ' . $agents->full_name[$i] . ' </option>';
+													}
+													?>
+												</select>
+											</div>
 										</div>
 									</div>
-								</div><!-- /.box-body -->
-
-							</div><!-- /.panel-body -->
-						</div>
-						<!--/.panel-->
-					</div>
-					<form id="search_form">
-						<div class="col-lg-3">
-							<h3 class="m0 pb-lg"><?php $lh->translateText("filters"); ?></h3>
-
-							<!-- HIDDEN POSTS -->
-							<input type="hidden" name="userID" id="userID" value="<?php echo $user->getUserId(); ?>">
-							<div class="form-group">
-								<label for="filter_type"><?php $lh->translateText("type"); ?></label>
-								<select class="form-control select2" id="filter_type" style="width:100%;">
-									<?php
-									if ($perm->reportsanalytics_display == 'Y' && $user->getUserRole() == CRM_DEFAULTS_USER_ROLE_ADMIN) {
-									?>
-										<option value="stats" selected><?php echo $lh->translationFor("stats"); ?></option>
-										<option value="agent_team"><?php echo $lh->translationFor("agent_team"); ?></option>
-										<option value="agent_personal"><?php echo $lh->translationFor("agent_personal"); ?></option>
-										<option value="productivity_call_status"><?php echo $lh->translationFor("productivity_call_status"); ?></option>
-										<option value="productivity_campain"><?php echo $lh->translationFor("productivity_campain"); ?></option>
-										<option value="agent_detail"><?php echo $lh->translationFor("agent_detail"); ?></option>
-										<option value="agent_pdetail"><?php echo $lh->translationFor("agent_pdetail"); ?></option>
-										<option value="dispo"><?php echo $lh->translationFor("dispo"); ?></option>
-										<option value="sales_agent"><?php echo $lh->translationFor("sales_agent"); ?></option>
-										<option value="sales_tracker"><?php echo $lh->translationFor("sales_tracker"); ?></option>
-										<option value="inbound_report"><?php echo $lh->translationFor("inbound_call_report"); ?></option>
-										<option value="call_export_report"><?php echo $lh->translationFor("export_call_report"); ?></option>
-									<?php
-									} else {
-										if ($perm->reportsanalytics_statistical_display == 'Y') {
-											echo '<option value="stats">' . $lh->translationFor("stats") . '</option>';
-										}
-										if ($perm->reportsanalytics_agent_time_display == 'Y') {
-											echo '<option value="agent_detail">' . $lh->translationFor("agent_detail") . '</option>';
-										}
-
-										if ($perm->reportsanalytics_agent_time_display == 'Y') {
-											echo '<option value="agent_pdetail">' . $lh->translationFor("agent_pdetail") . '</option>';
-										}
-										if ($perm->reportsanalytics_agent_time_display == 'Y' && REPORTS_SM_AGENT_PERFORMANCE_DETAIL === 'y') {
-											echo '<option value="agent_pdetailSM">' . $lh->translationFor("agent_pdetail") . ' SM</option>';
-										}
-										if ($perm->reportsanalytics_dial_status_display == 'Y') {
-											echo '<option value="dispo">' . $lh->translationFor("dispo") . '</option>';
-										}
-										if ($perm->reportsanalytics_agent_sales_display == 'Y') {
-											echo '<option value="sales_agent">' . $lh->translationFor("sales_agent") . '</option>';
-										}
-										if ($perm->reportsanalytics_sales_tracker_display == 'Y') {
-											echo '<option value="sales_tracker">' . $lh->translationFor("sales_tracker") . '</option>';
-										}
-										if ($perm->reportsanalytics_inbound_call_display == 'Y') {
-											echo '<option value="inbound_report">' . $lh->translationFor("inbound_call_report") . '</option>';
-										}
-										if ($perm->reportsanalytics_export_call_display == 'Y') {
-											echo '<option value="call_export_report">' . $lh->translationFor("export_call_report") . '</option>';
-										}
-									}
-									?>
-									<!--<option value="dashboard">Dashboard</option>
-                                        <option value="cdr">Call History (CDRs)</option>-->
-								</select>
-							</div>
-							<div class="form-group campaign_div">
-								<label for="campaign_id"><?php $lh->translateText("campaign"); ?></label>
-								<select class="form-control select2" name="campaign_id" id="campaign_id" style="width:100%;">
-									<option selected disabled></option>
-									<option value="ALL"><?php $lh->translateText("all_campaigns"); ?></option>
-									<?php
-									for ($i = 0; $i < count($campaigns->campaign_id); $i++) {
-									?>
-										<option value="<?php echo $campaigns->campaign_id[$i]; ?>"><?php echo $campaigns->campaign_id[$i] . " - " . $campaigns->campaign_name[$i]; ?></option>
-									<?php
-									}
-									?>
-								</select>
-							</div>
-							<div class="form-group ingroup_div" style="display:none;">
-								<label for="ingroup_id"><?php $lh->translateText("ingroups"); ?></label>
-								<select class="form-control select2" name="ingroup_id" id="ingroup_id" style="width:100%;">
-									<?php
-									for ($i = 0; $i < count($ingroups->group_id); $i++) {
-										if ($_SESSION['usergroup'] !== "ADMIN" && preg_match("/^AGENTDIRECT/", $ingroups->group_id[$i])) continue;
-									?>
-										<option value="<?php echo $ingroups->group_id[$i]; ?>"><?php echo $ingroups->group_id[$i] . ' - ' . $ingroups->group_name[$i]; ?></option>
-									<?php
-									}
-									?>
-								</select>
-							</div>
-							<div class="form-group ingroup_div" style="display:none;">
-								<label for="statuses"><?php $lh->translateText("statuses"); ?></label>
-								<select class="form-control select2" name="statuses" id="statuses" style="width:100%;">
-									<option value="">- - - ALL - - -</option>
-									<?php
-									for ($a = 0; $a < count($disposition->status); $a++) {
-										if ($disposition->campaign_id[$a] != NULL) {
-											if (in_array($disposition->status[$a], $campaigns->campaign_id)) {
-												echo '<option value="' . $disposition->status_name[$a] . '">' . $disposition->status[$a] . ' - ' . $disposition->status_name[$a] . '</option>';
-											}
-										} else {
-											echo '<option value="' . $disposition->status[$a] . '">' . $disposition->status[$a] . ' - ' . $disposition->status_name[$a] . '</option>';
-										}
-									}
-									?>
-
-									<?php
-									/*for($a=0; $a<count($disposition->status); $a++) {
-					?>
-						<option value="<?php echo $disposition->status[$a];?>"><?php echo $disposition->status[$a].' - '.$disposition->status_name[$a];?></option>
-					<?php
-						}*/
-									?>
-								</select>
-							</div>
-							<div class="form-group request_div" style="display:none;">
-								<label><?php $lh->translateText("request"); ?></label>
-								<div class="stats_request">
-									<select class="form-control select2" name="request1" id="request1" style="width:100%;">
-										<option value="daily"><?php $lh->translateText("daily"); ?></option>
-										<option value="weekly"><?php $lh->translateText("weekly"); ?></option>
-										<option value="monthly"><?php $lh->translateText("monthly"); ?></option>
-									</select>
-								</div>
-								<div class="sales_agent_request">
-									<select class="form-control select2" name="request2" id="request2" style="width:100%;">
-										<option value="outbound"><?php $lh->translateText("outbound"); ?></option>
-										<option value="inbound"><?php $lh->translateText("inbound"); ?></option>
-									</select>
-								</div>
-							</div>
-							<!-- /. daily weekly monthly -->
-
-							<!-- USING DATERANGE
-                                    <div class="form-group">
-                                        <button class="btn datetimepicker1"><i class="fa fa-calendar"></i></button>
-                                        <div class='input-group date'>
-                                            <input type='text' class="form-control" id="date_range"/>
-                                            <span class="input-group-addon">
-                                                <span class="fa fa-calendar"></span>
-                                            </span>
-                                        </div>
-                                        
-                                    </div>
-                                    -->
-
-							<div class="form-group">
-								<label><?php $lh->translateText("start_date"); ?></label>
-								<div class="form-group">
-									<div class='input-group date' id='datetimepicker1'>
-										<input type='text' class="form-control" id="start_filterdate" name="start_filterdate" placeholder="03/29/2020 00:00:00" value="03/29/2020 00:00:00" />
-										<span class="input-group-addon">
-											<!-- <span class="glyphicon glyphicon-calendar"></span>-->
-											<span class="fa fa-calendar"></span>
-										</span>
+									<div class="list_filter_div" style="display:none;">
+										<div class="form-group">
+											<label><?php $lh->translateText("list_id"); ?>:</label>
+											<div class="mb">
+												<select name="list_filter" id="list_filter" class="form-control">
+													<option value="">- - - <?php $lh->translateText("-none-"); ?> - - -</option>
+													<?php
+													for ($i = 0; $i < count($lists->list_id); $i++) {
+														echo "<option value='" . $lists->list_id[$i] . "'> " . $lists->list_name[$i] . " </option>";
+													}
+													?>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="phone_filter_div" style="display:none;">
+										<div class="form-group has-clear">
+											<label><?php $lh->translateText("phone"); ?>: </label>
+											<div class="mb has-clear">
+												<input type="text" class="form-control" id="phone_filter" name="phone_filter" placeholder="<?php $lh->translateText("phone"); ?>" />
+												<span class="form-control-clear fa fa-close form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+									<div class="identity_filter_div" style="display:none;">
+										<div class="form-group has-clear">
+											<label><?php $lh->translateText("identity"); ?>: </label>
+											<div class="mb has-clear">
+												<input type="text" class="form-control" id="identity_filter" name="identity_filter" placeholder="<?php $lh->translateText("identity"); ?>" />
+												<span class="form-control-clear fa fa-close form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+									<div class="leadcode_filter_div" style="display:none;">
+										<div class="form-group has-clear">
+											<label><?php $lh->translateText("leadcode"); ?>: </label>
+											<div class="mb has-clear">
+												<input type="text" class="form-control" id="leadcode_filter" name="leadcode_filter" placeholder="<?php $lh->translateText("leadcode"); ?>" />
+												<span class="form-control-clear fa fa-close form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+									<div class="leadsubid_filter_div" style="display:none;">
+										<div class="form-group has-clear">
+											<label><?php $lh->translateText("leadsubid"); ?>: </label>
+											<div class="mb has-clear">
+												<input type="text" class="form-control" id="leadsubid_filter" name="leadsubid_filter" placeholder="<?php $lh->translateText("leadsubid"); ?>" />
+												<span class="form-control-clear fa fa-close form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+									<div class="direction_filter_div" style="display:none;">
+										<div class="form-group">
+											<label><?php $lh->translateText("direction"); ?>: </label>
+											<div class="mb">
+												<select name="direction_filter" id="direction_filter" class="form-control">
+													<option value="inbound"> <?php $lh->translateText("inbound"); ?> </option>
+													<option value="outbound"> <?php $lh->translateText("outbound"); ?> </option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>Start Date:</label>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker3'>
+												<input type='text' class="form-control" id="start_filterdate" placeholder="MM/DD/YYYY" />
+												<span class="input-group-addon">
+													<!-- <span class="glyphicon glyphicon-calendar"></span>-->
+													<span class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>End Date:</label>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker4'>
+												<input type='text' class="form-control" id="end_filterdate" placeholder="MM/DD/YYYY" value="<?php echo date("m/d/Y H:i:s"); ?>" />
+												<span class="input-group-addon">
+													<!-- <span class="glyphicon glyphicon-calendar"></span>-->
+													<span class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /.start date -->
 
-							<div class="form-group">
-								<label><?php $lh->translateText("end_date"); ?></label>
-								<div class="form-group">
-									<div class='input-group date' id='datetimepicker2'>
-										<input type='text' class="form-control" id="end_filterdate" name="end_filterdate" placeholder="<?php echo date("m/d/Y H:i:s"); ?>" value="<?php echo date("m/d/Y"); ?> 11:59 PM" />
-										<span class="input-group-addon">
-											<!-- <span class="glyphicon glyphicon-calendar"></span>-->
-											<span class="fa fa-calendar"></span>
-										</span>
+							<fieldset>
+								<!--
+							    <div class="campaign_filter_div" style="display:none;">
+								    <div class="form-group">
+										<label>Campaign: </label>
+										<div class="mb">
+											<select name="campaign_filter" class="form-control">
+												<?php
+												/*
+													for($i=0; $i < count($campaign->campaign_id);$i++){
+														echo "<option value='".$campaign->campaign_id[$i]."'> ".$campaign->campaign_name[$i]." </option>";
+													}
+												*/
+												?>
+											</select>
+										</div>
 									</div>
 								</div>
-							</div>
-							<!-- /.end date -->
+								-->
+							</fieldset>
 
-					</form>
-				</div>
-</div>
-<!-- /fila con acciones, formularios y demás -->
-<?php
+						</form>
+						<!--<button type="button" class="pull-left btn btn-default" id="search_button">Apply</button>-->
+					</div><!-- ./filters -->
+				</div><!-- /. row -->
+			<?php
 			} else {
 				print $ui->calloutErrorMessage($lh->translationFor("you_dont_have_permission"));
 			}
-?>
-</section><!-- /.content -->
-</aside><!-- /.right-side -->
-<?php print $ui->getRightSidebar($user->getUserId(), $user->getUserName(), $user->getUserAvatar()); ?>
+			?>
+		</section><!-- /.content -->
+	</aside><!-- /.right-side -->
+	<?php print $ui->getRightSidebar($user->getUserId(), $user->getUserName(), $user->getUserAvatar()); ?>
 </div><!-- ./wrapper -->
+
+<!-- Modal -->
+<div id="call-playback-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-sm">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title"><b><?php $lh->translateText("call_recording_playback"); ?></b></h4>
+			</div>
+			<div class="modal-body">
+				<center class="mt"><em class="fa fa-music fa-5x"></em></center>
+				<div class="row mt mb">
+					<center><span class="voice-details"></span></center>
+				</div>
+				<br />
+				<div class="audio-player" style="width:100%"></div>
+				<!-- <audio controls>
+				<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+				<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+				<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
+			</audio> -->
+			</div>
+			<div class="modal-footer">
+				<a href="" class="btn btn-primary download-audio-file" download><?php $lh->translateText("download_file"); ?></a>
+				<button type="button" class="btn btn-default" data-dismiss="modal"><?php $lh->translateText("close"); ?></button>
+			</div>
+		</div>
+		<!-- End of modal content -->
+	</div>
+</div>
+<!-- End of modal -->
 
 <?php print $ui->standardizedThemeJS(); ?>
 
-<!-- FLOT CHART-->
-<script src="js/dashboard/js/Flot/jquery.flot.js"></script>
-<script src="js/dashboard/js/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-<script src="js/dashboard/js/Flot/jquery.flot.resize.js"></script>
-<script src="js/dashboard/js/Flot/jquery.flot.pie.js"></script>
-<script src="js/dashboard/js/Flot/jquery.flot.time.js"></script>
-<script src="js/dashboard/js/Flot/jquery.flot.categories.js"></script>
-<script src="js/dashboard/js/flot-spline/js/jquery.flot.spline.min.js"></script>
-
+<!-- CHOSEN-->
+<script src="js/dashboard/chosen_v1.2.0/chosen.jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(document).on('click', '.edit-contact', function() {
-			var url = './editcontacts.php';
-			var id = $(this).attr('data-id');
-			//alert(extenid);
-			var form = $('<form action="' + url + '" method="post"><input type="hidden" name="modifyid" value="' + id + '" /></form>');
-			$('body').append(form); // This line is not necessary
-			$(form).submit();
-		});
-		filterchange();
-		$('#agent_detail_login').DataTable();
-		$('#table_agent_pdetailSM').DataTable();
 
+		$('body').on('keypress', '#search', function(args) {
+			if (args.keyCode == 13) {
+				$("#search_button").click();
+				return false;
+			}
+		});
+
+		var init_callrecs_table = $('#table_callrecordings').DataTable({
+			"bDestroy": true
+		});
+
+		// initialize multiple selecting
 		$('.select2-3').select2({
-			theme: 'bootstrap'
+			theme: "bootstrap"
 		});
 		$.fn.select2.defaults.set("theme", "bootstrap");
 
-		$('#datetimepicker1').datetimepicker({
-			icons: {
-				//time: 'fa fa-clock-o',
-				date: 'fa fa-calendar',
-				up: 'fa fa-chevron-up',
-				down: 'fa fa-chevron-down',
-				previous: 'fa fa-chevron-left',
-				next: 'fa fa-chevron-right',
-				today: 'fa fa-crosshairs',
-				clear: 'fa fa-trash'
+		// limits checkboxes to single selecting
+		$("input:checkbox").on('click', function() {
+			var $box = $(this);
+			if ($box.is(":checked")) {
+				var group = "input:checkbox[name='" + $box.attr("name") + "']";
+				$(group).prop("checked", false);
+				$box.prop("checked", true);
+			} else {
+				$box.prop("checked", false);
 			}
-			//format: 'MM/DD/YYYY'
 		});
 
-		$('#datetimepicker2').datetimepicker({
-			icons: {
-				//time: 'fa fa-clock-o',
-				date: 'fa fa-calendar',
-				up: 'fa fa-chevron-up',
-				down: 'fa fa-chevron-down',
-				previous: 'fa fa-chevron-left',
-				next: 'fa fa-chevron-right',
-				today: 'fa fa-crosshairs',
-				clear: 'fa fa-trash'
-			},
-			//format: 'MM/DD/YYYY',
-			useCurrent: false
-		});
+		/****
+		 ** Change between Contacts and Recordings
+		 ****/
+		// shows call recordings datatable if Recordings tickbox is checked
+		$(document).on('change', '#search_recordings', function() {
+			$("#search_recordings").prop("disabled", true);
 
-		$("#datetimepicker1").on("dp.change", function(e) {
-			$('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-			filterchange();
-		});
+			if ($('#search_recordings').is(":checked")) {
 
-		$("#datetimepicker2").on("dp.change", function(e) {
-			$('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-			filterchange();
-		});
+				$(".callrecordings_div").show(); // show recordings table
+				$(".callrecordings_filter_div").show(); // show recording filter
 
-		/* changing reports */
-		$('#filter_type').on('change', function() {
-			filterchange();
-		});
+				$(".all_callrecording_filters").show(); // show filters
+				$(".add_callrecording_filters").show(); // enable add filter
 
-		/* changing reports */
-		$('#campaign_id').on('change', function() {
-			filterchange();
-		});
-
-		$('#request1').on('change', function() {
-			filterchange();
-		});
-
-		$('#request2').on('change', function() {
-			filterchange();
-		});
-
-		$('#ingroup_id').on('change', function() {
-			var filter_type = $('#filter_type').val();
-			var request = "";
-			var URL = "./php/reports/inboundreport.php";
-
-			$('#table').empty();
-			$(".report-loader").fadeIn("slow");
-
-			$.ajax({
-				url: URL,
-				type: 'POST',
-				data: {
-					pageTitle: filter_type,
-					campaignID: $("#ingroup_id").val(),
-					request: request,
-					userID: $("#userID").val(),
-					userGroup: $("#userGroup").val(),
-					fromDate: $("#start_filterdate").val(),
-					toDate: $("#end_filterdate").val(),
-					statuses: $("#statuses").val()
-				},
-				success: function(data) {
-					console.log(data);
-					if (data !== "") {
-						$(".report-loader").fadeOut("slow");
-						$('#table').html(data);
-
-						if (filter_type == "inbound_report") {
-							var title = "<?php $lh->translateText("inbound"); ?> Call Report";
-
-							$('#inbound_report').DataTable({
-								destroy: true,
-								responsive: true,
-								dom: 'Bfrtip',
-								buttons: [{
-										extend: 'copy',
-										title: title
-									},
-									{
-										extend: 'csv',
-										title: title
-									},
-									{
-										extend: 'excel',
-										title: title
-									},
-									{
-										extend: 'print',
-										title: title
-									}
-								]
-							});
-
-							$('.request_div').hide();
-							$('.campaign_div').hide();
-							$('.ingroup_div').show();
-						}
-
-					} else {
-						$(".report-loader").fadeOut("slow");
-						$('#table').html("<?php $lh->translateText("no_data"); ?>");
-					}
-				}
-			});
-		});
-
-		$('#statuses').on('change', function() {
-			var filter_type = $('#filter_type').val();
-			var request = "";
-			var URL = "./php/reports/inboundreport.php";
-
-			$('#table').empty();
-			$(".report-loader").fadeIn("slow");
-
-			$.ajax({
-				url: URL,
-				type: 'POST',
-				data: {
-					pageTitle: filter_type,
-					campaignID: $("#ingroup_id").val(),
-					request: request,
-					userID: $("#userID").val(),
-					userGroup: $("#userGroup").val(),
-					fromDate: $("#start_filterdate").val(),
-					toDate: $("#end_filterdate").val(),
-					statuses: $("#statuses").val()
-				},
-				success: function(data) {
-					console.log(data);
-					if (data !== "") {
-						$(".report-loader").fadeOut("slow");
-						$('#table').html(data);
-
-						if (filter_type == "inbound_report") {
-							var title = "<?php $lh->translateText("inbound"); ?> Call Report";
-							$('#inbound_report').DataTable({
-								destroy: true,
-								responsive: true,
-								dom: 'Bfrtip',
-								buttons: [{
-										extend: 'copy',
-										title: title
-									},
-									{
-										extend: 'csv',
-										title: title
-									},
-									{
-										extend: 'excel',
-										title: title
-									},
-									{
-										extend: 'print',
-										title: title
-									}
-								]
-							});
-							$('.request_div').hide();
-							$('.campaign_div').hide();
-							$('.ingroup_div').show();
-						}
-
-					} else {
-						$(".report-loader").fadeOut("slow");
-						$('#table').html("<?php $lh->translateText("no_data"); ?>");
-					}
-				}
-			});
-		});
-
-		/*
-		 * <?php $lh->translateText("inbound"); ?> and <?php $lh->translateText("outbound"); ?> Calls Per Hour Data
-		 */
-		(function(window, document, $, undefined) {
-			$(function() {
-				var datav3 = [{
-					"label": "",
-					"color": "#009688",
-					"data": [
-						<?php
-
-						echo '["12 MN", 0],';
-						echo '["12 MN", 0],';
-						echo '["1 AM", 0],';
-						echo '["1 AM", 0]';
-						?>
-					]
-				}];
-
-				var options = {
-					series: {
-						lines: {
-							show: false
-						},
-						points: {
-							show: true,
-							radius: 4
-						},
-						splines: {
-							show: true,
-							tension: 0.4,
-							lineWidth: 1,
-							fill: 0.5
-						}
-					},
-					grid: {
-						borderColor: '#eee',
-						borderWidth: 1,
-						hoverable: true,
-						backgroundColor: '#fcfcfc'
-					},
-					tooltip: true,
-					tooltipOpts: {
-						content: function(label, x, y) {
-							return y + ' Calls / Day';
-						}
-					},
-					xaxis: {
-						tickColor: '#fcfcfc',
-						mode: 'categories'
-					},
-					yaxis: {
-						min: 0,
-						max: 4, // optional: use it for a clear represetation
-						tickColor: '#eee',
-						//position: 'right' or 'left',
-						tickFormatter: function(v) {
-							return v /* + ' visitors'*/ ;
-						}
-					},
-					shadowSize: 0
-				};
-				var chartv3 = $('.chart-splinev3');
-				if (chartv3.length)
-					$.plot(chartv3, datav3, options);
-			});
-		})(window, document, window.jQuery);
-
-		/* Daterange
-		$('#date_range').daterangepicker({
-			"autoApply": true,
-			"endDate": "08/17/2016"
-		}, function(start, end, label) {
-			console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-		});
-		*/
-	});
-
-	function filterchange() {
-		var filter_type = $('#filter_type').val();
-		var request = "";
-		var URL = 'reports.php';
-		var campaign_ID = $("#campaign_id").val();
-
-		$('.campaign_div').show();
-
-		$('#table').empty();
-		$(".report-loader").fadeIn("slow");
-
-		if (filter_type == "stats") {
-			request = $("#request1").val();
-			URL = './php/reports/statisticalreports.php';
-		}
-
-		if (filter_type == "agent_detail") {
-			URL = './php/reports/agenttimedetails.php';
-		}
-
-		if (filter_type == "agent_pdetail") {
-			URL = './php/reports/agentperformancedetails.php';
-		}
-		<?php if (REPORTS_SM_AGENT_PERFORMANCE_DETAIL === 'y') { ?>
-			if (filter_type == "agent_pdetailSM") {
-				URL = './php/reports/SM_agentperformancedetails.php';
+			} else {
+				$(".callrecordings_div").hide();
+				$(".all_callrecording_filters").hide();
+				$(".add_callrecording_filters").hide(); // disable add filter
 			}
-		<?php } ?>
-		if (filter_type == "dispo") {
-			URL = './php/reports/dispo.php';
-		}
 
-		if (filter_type == "agent_personal") {
-			URL = './php/reports/agentreport.php';
-		}
-		if (filter_type == "productivity_campain") {
-			URL = './php/reports/productivity_campain.php';
-		}
-		if (filter_type == "productivity_call_status") {
-			URL = './php/reports/productivity_call_status.php';
-		}
+		});
 
-		if (filter_type == "agent_team") {
-			URL = './php/reports/agent_team.php';
-		}
+		/***
+		 ** Add Filters
+		 ***/
+		// add filters
 
-		if (filter_type == "sales_agent") {
-			URL = './php/reports/salesagent.php';
-			request = $("#request2").val();
-		}
+		$(".add_filters2").change(function() {
+			$(".agent_filter_div").fadeIn("slow")[$.inArray('filter_agent', $(this).val()) >= 0 ? 'show' : 'hide']();
+			//NEW - LUANDNH
+			$(".list_filter_div").fadeIn("slow")[$.inArray('filter_list', $(this).val()) >= 0 ? 'show' : 'hide']();
+			$(".phone_filter_div").fadeIn("slow")[$.inArray('filter_phone', $(this).val()) >= 0 ? 'show' : 'hide']();
+			$(".direction_filter_div").fadeIn("slow")[$.inArray('filter_direction', $(this).val()) >= 0 ? 'show' : 'hide']();
+			$(".identity_filter_div").fadeIn("slow")[$.inArray('filter_identity', $(this).val()) >= 0 ? 'show' : 'hide']();
+			$(".leadcode_filter_div").fadeIn("slow")[$.inArray('filter_leadcode', $(this).val()) >= 0 ? 'show' : 'hide']();
+			$(".leadsubid_filter_div").fadeIn("slow")[$.inArray('filter_leadsubid', $(this).val()) >= 0 ? 'show' : 'hide']();
 
-		if (filter_type == "sales_tracker") {
-			URL = './php/reports/salestracker.php';
-			request = $("#request2").val();
-		}
+		}).change();
 
-		if (filter_type == "inbound_report") {
-			URL = './php/reports/inboundreport.php';
-			campaign_ID = $("#ingroup_id").val();
-		}
+		/****
+		 ** Call Recording filters
+		 ****/
 
-		if (filter_type === "call_export_report") {
-			URL = './php/reports/exportcallreport.php';
-		}
+		// ---- DATETIME PICKER INITIALIZATION
 
-		$.ajax({
-			url: URL,
-			type: 'POST',
-			data: {
-				pageTitle: filter_type,
-				campaignID: campaign_ID,
-				request: request,
-				userID: $("#userID").val(),
-				userGroup: $("#userGroup").val(),
-				fromDate: $("#start_filterdate").val(),
-				toDate: $("#end_filterdate").val()
-			},
-			success: function(data) {
-				console.log(data);
-				if (data !== "") {
-					$(".report-loader").fadeOut("slow");
-					$('#table').html(data);
+		$('#datetimepicker3').datetimepicker({
+			icons: {
+				time: "fa fa-clock-o",
+				date: "fa fa-calendar",
+				up: "fa fa-arrow-up",
+				down: "fa fa-arrow-down"
+			}
+		});
 
-					if (filter_type == "stats") {
-						$('.request_div').show();
-						$('.stats_request').show();
-						$('.sales_agent_request').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-					if (filter_type == "agent_personal") {
-						var title = "<?php $lh->translateText("agent_personal"); ?>";
-						$('#agent_personal').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							drawCallback: function(settings) {
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
-							},
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-					if (filter_type == "productivity_campain") {
-						var title = "<?php $lh->translateText("productivity_campain"); ?>";
-						$('#productivity_campain').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							drawCallback: function(settings) {
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
-							},
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
+		$('#datetimepicker4').datetimepicker({
+			useCurrent: false,
+			icons: {
+				time: "fa fa-clock-o",
+				date: "fa fa-calendar",
+				up: "fa fa-arrow-up",
+				down: "fa fa-arrow-down"
+			}
+		});
 
-					if (filter_type == "productivity_call_status") {
-						var title = "<?php $lh->translateText("productivity_call_status"); ?>";
-						$('#productivity_call_status').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							drawCallback: function(settings) {
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
-							},
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-					if (filter_type == "agent_team") {
-						var title = "<?php $lh->translateText("agent_team"); ?>";
-						$('#agent_team').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							drawCallback: function(settings) {
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
-							},
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-					if (filter_type == "agent_detail") {
-						var title = "<?php $lh->translateText("agent_detail"); ?>";
-						$('#agent_detail_top').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							drawCallback: function(settings) {
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
-							},
-							dom: 'Bfrtip',
-							buttons: [{
-								text: 'Export Agent Time Detail',
-								action: function() {
-									console.log("Exporting...");
-									$("#export_agentdetail_form").submit();
-								}
-							}]
-						});
+		// ---- DATE FILTERS
 
-						var goTable = $('#agent_detail_login').DataTable({
-							destroy: true,
-							responsive: true,
-							//stateSave: true,
-							//sort: false,
-							//pagination: false,
-							drawCallback: function() {
-								var api = this.api();
+		$("#datetimepicker3").on("dp.change", function(e) {
+			$('#datetimepicker4').data("DateTimePicker").minDate(e.date);
+			// if ($('#search').val() == "") {
+			// 	$('#search_button').attr("disabled", false);
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// } else {
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// 	$('#search_button').attr("disabled", true);
+			// }
+			// if ($('#agent_filter').is(':visible')) {
+			// 	var agent_filter_val = $('#agent_filter').val();
+			// } else {
+			// 	var agent_filter_val = "";
+			// }
+			// var start_filterdate_val = $('#start_filterdate').val();
+			// var end_filterdate_val = $('#end_filterdate').val();
+			// $.ajax({
+			// 	url: "filter_callrecs.php",
+			// 	type: 'POST',
+			// 	data: {
+			// 		search_recordings: $('#search').val(),
+			// 		start_filterdate: start_filterdate_val,
+			// 		end_filterdate: end_filterdate_val,
+			// 		agent_filter: agent_filter_val
+			// 	},
+			// 	success: function(data) {
+			// 		$('#search_button').text('<?php $lh->translateText("search"); ?>');
+			// 		$('#search_button').attr("disabled", false)
+			// 		console.log(data);
+			// 		if (data != "") {
 
-								api.columns({
-									page: 'current'
-								}).every(function() {
-									var sum = this
-										.data()
-										.reduce(function(a, b) {
-											var x = parseFloat(a) || 0;
-											var y = parseFloat(b) || 0;
-											return x + y;
-										}, 0);
-									$(this.footer()).html(sformat(sum));
-									$('#tfoottotal').html('TOTAL');
+			// 			$('#table_callrecordings').html(data);
+			// 			$('#table_callrecordings').DataTable({
+			// 				"bDestroy": true
+			// 			});
+			// 		} else {
+			// 			init_callrecs_table.fnClearTable();
+			// 		}
+			// 	}
+			// });
+		});
 
-								});
+		$("#datetimepicker4").on("dp.change", function(e) {
+			$('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
+			// if ($('#search').val() == "") {
+			// 	$('#search_button').attr("disabled", false);
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// } else {
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// 	$('#search_button').attr("disabled", true);
+			// }
 
-								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
-								pagination.toggle(this.api().page.info().pages > 1);
+			// if ($('#agent_filter').is(':visible')) {
+			// 	var agent_filter_val = $('#agent_filter').val();
+			// } else {
+			// 	var agent_filter_val = "";
+			// }
 
-								$('#agent_detail_tbody').find('tr.odd, tr.even').hide();
+			// var start_filterdate_val = $('#start_filterdate').val();
+			// var end_filterdate_val = $('#end_filterdate').val();
 
-							},
-							orderFixed: [
-								[0, 'asc']
-							],
-							rowGroup: {
-								startRender: null,
-								endRender: function(rows, group) {
-									var colcount = rows.columns().indexes().length;
+			// $.ajax({
+			// 	url: "filter_callrecs.php",
+			// 	type: 'POST',
+			// 	data: {
+			// 		search_recordings: $('#search').val(),
+			// 		start_filterdate: start_filterdate_val,
+			// 		end_filterdate: end_filterdate_val,
+			// 		agent_filter: agent_filter_val
+			// 	},
+			// 	success: function(data) {
+			// 		$('#search_button').text('<?php $lh->translateText("search"); ?>');
+			// 		$('#search_button').attr("disabled", false)
+			// 		console.log(data);
+			// 		if (data != "") {
 
-									var statuses = new Array();
-									for (var count = 1; count < colcount; count++) {
-										var status = rows
-											.data()
-											.pluck(count)
-											.reduce(function(a, b) {
-												return a + b * 1;
-											}, 0) / 1;
-										statuses.push('<td>' + sformat(status) + '</td>');
-										//console.log(status);
-									}
+			// 			$('#table_callrecordings').html(data);
+			// 			$('#table_callrecordings').DataTable({
+			// 				"bDestroy": true
+			// 			});
+			// 		} else {
+			// 			init_callrecs_table.fnClearTable();
+			// 		}
+			// 	}
+			// });
+		});
 
-									return $('<tr/>').append('<td>' + group + '</td>' + statuses);
+		// AGENT FILTER
+		$(document).on('change', '#agent_filter', function() {
+			// if ($('#search').val() == "") {
+			// 	$('#search_button').attr("disabled", false);
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// } else {
+			// 	$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			// 	$('#search_button').attr("disabled", true);
+			// }
 
-								},
-
-								dataSrc: 0
-							}
-						});
-
-						// Change the fixed ordering when the data source is updated
-						goTable.on('rowgroup-datasrc', function(e, dt, val) {
-							goTable.order.fixed({
-								pre: [
-									[val, 'asc']
-								]
-							}).draw();
-						});
-
-						$('a.group-by').on('click', function(e) {
-							e.preventDefault();
-
-							goTable.rowGroup().dataSrc($(this).data('column'));
-						});
-
-						$('#agent_detail_tbody').find('tr.odd, tr.even').hide();
-
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-
-					if (filter_type == "agent_pdetail") {
-						var title = "<?php $lh->translateText("agent_pdetail"); ?>";
-
-						$('#agent_pdetail_top').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('#agent_pdetail_mid').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('#agent_pdetail_bottom').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip'
-							//buttons: [ 
-							//	{ extend: 'copy', title: title }, 
-							//	{ extend: 'csv', title: title }, 
-							//	{ extend: 'excel', title: title }, 
-							//	{ extend: 'print', title: title } 
-							//]
-						});
-
-						$('#agent_pdetail_login').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip'
-							//buttons: [ 
-							//	{ extend: 'copy', title: title }, 
-							//	{ extend: 'csv', title: title }, 
-							//	{ extend: 'excel', title: title }, 
-							//	{ extend: 'print', title: title } 
-							//] 
-						});
-
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-
-					// SERVICE MONKEY AGENT PERFORMANCE DETAIL
-					<?php //if(REPORTS_SM_AGENT_PERFORMANCE_DETAIL === 'y'){ 
-					?>
-					if (filter_type == "agent_detailSM") {
-						var title = "<?php $lh->translateText("agent_detail"); ?> SM";
-						$('#table_agent_pdetailSM').DataTable({
-							destroy: true,
-							responsive: true,
-							stateSave: true,
-							dom: 'Bfrtip'
-							//buttons: [
-							//	{ extend: 'csv', title: title },
-							//        {
-							//                text: 'Export Agent Performance Detail',
-							//                action: function ( ) {
-							//                        console.log("Exporting...");
-							//                        $( "#export_agentPdetailSM_form" ).submit();
-							//                }
-							//        }
-							//]
-						});
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-					<?php //} 
-					?>
-					if (filter_type == "dispo") {
-						var title = "<?php $lh->translateText("dispo"); ?>";
-
-						$('#dispo').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('.request_div').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-
-					if (filter_type == "sales_agent") {
-						var title = "<?php $lh->translateText("sales_agent"); ?>";
-
-						if ($("#request2").val() == "outbound") {
-							title = title + " - <?php $lh->translateText("outbound"); ?>";
-						} else {
-							title = title + " - <?php $lh->translateText("inbound"); ?>";
-						}
-
-						$('#outbound').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('#inbound').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('.request_div').show();
-						$('.sales_agent_request').show();
-						$('.stats_request').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-
-					if (filter_type == "sales_tracker") {
-						var title = "<?php $lh->translateText("sales_tracker"); ?>";
-
-						if ($("#request2").val() == "outbound") {
-							title = title + " - <?php $lh->translateText("outbound"); ?>";
-						} else {
-							title = title + " - <?php $lh->translateText("inbound"); ?>";
-						}
-
-						$('#outbound_table').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('#inbound_table').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('.request_div').show();
-						$('.sales_agent_request').show();
-						$('.stats_request').hide();
-						$('.campaign_div').show();
-						$('.ingroup_div').hide();
-					}
-
-					if (filter_type == "inbound_report") {
-						var title = "<?php $lh->translateText("inbound"); ?> Call Report";
-						$('#inbound_report').DataTable({
-							destroy: true,
-							responsive: true,
-							dom: 'Bfrtip',
-							buttons: [{
-									extend: 'copy',
-									title: title
-								},
-								{
-									extend: 'csv',
-									title: title
-								},
-								{
-									extend: 'excel',
-									title: title
-								},
-								{
-									extend: 'print',
-									title: title
-								}
-							]
-						});
-
-						$('.request_div').hide();
-						$('.campaign_div').hide();
-						$('.ingroup_div').show();
-					}
-
-					if (filter_type == "call_export_report") {
-						var title = "Export Call Report";
-						$('.campaign_div').hide();
-						$('.ingroup_div').hide();
-						$('.request_div').hide();
-					}
+			if ($('#agent_filter').is(':visible')) {
+				if ($('#agent_filter').is(':visible')) {
+					var agent_filter_val = $('#agent_filter').val();
 				} else {
-					$(".report-loader").fadeOut("slow");
-					$('#table').html("<?php $lh->translateText("no_data"); ?>");
+					var agent_filter_val = "";
+				}
+			} else {
+				var agent_filter_val = "";
+			}
+			// var start_filterdate_val = $('#start_filterdate').val();
+			// var end_filterdate_val = $('#end_filterdate').val();
+			// $.ajax({
+			// 	url: "filter_callrecs.php",
+			// 	type: 'POST',
+			// 	data: {
+			// 		search_recordings: $('#search').val(),
+			// 		start_filterdate: start_filterdate_val,
+			// 		end_filterdate: end_filterdate_val,
+			// 		agent_filter: agent_filter_val
+			// 	},
+			// 	success: function(data) {
+			// 		$('#search_button').text('<?php $lh->translateText("search"); ?>');
+			// 		$('#search_button').attr("disabled", false)
+			// 		console.log(data);
+			// 		if (data != "") {
+
+			// 			$('#table_callrecordings').html(data);
+			// 			$('#table_callrecordings').DataTable({
+			// 				"bDestroy": true
+			// 			});
+			// 		} else {
+			// 			init_callrecs_table.fnClearTable();
+			// 		}
+			// 	}
+			// });
+
+		});
+
+		/****
+		 ** Search function
+		 ****/
+		$(document).on('click', '#search_button', function() {
+			//init_contacts_table.destroy();
+
+			if ($('#search').val() == "") {
+				$('#search_button').attr("disabled", false);
+				$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+			} else {
+				$('#search_button').text('<?php $lh->translateText("searching"); ?>');
+				$('#search_button').attr("disabled", true);
+			}
+
+			var init_callrecs_table = $('#table_callrecordings').DataTable({
+				destroy: true,
+				responsive: true,
+				stateSave: true,
+				processing: true,
+				serverSide: true,
+				lengthMenu: [
+					[10, 25, 50, -1],
+					["10", "25", "50", "Show all"],
+				],
+				iDisplayLength: 10,
+				drawCallback: function(settings) {
+					var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+					pagination.toggle(this.api().page.info().pages > 1);
+				},
+				ajax: $.fn.dataTable.pipeline({
+					pages: 5,
+				}),
+				// b64encoded: null
+				// end_time: "2021-02-26 12:02:14"
+				// filename: "20210226-120212_838627317_59942150_agent001"
+				// full_name: "Nguyễn Tuấn 3"
+				// last_local_call_time: "0000-00-00 00:00:00"
+				// lead_id: 6
+				// length_in_sec: 1
+				// location: "http://103.92.26.123/RECORDINGS/MP3/20210226-120212_838627317_59942150_agent001-all.mp3"
+				// phone_number: "838627317"
+				// recording_id: 173
+				// start_time: "2021-02-26 12:02:13"
+				// user: "agent001"
+				// vicidial_id: "
+				columnDefs: [{
+						width: "30%",
+						targets: 0
+					},
+					{
+						width: "20%",
+						targets: 1
+					},
+					{
+						searchable: false,
+						targets: 4
+					},
+					{
+						sortable: false,
+						targets: 4
+					},
+					{
+						responsivePriority: 1,
+						targets: 4
+					},
+					{
+						responsivePriority: 2,
+						targets: 1
+					},
+					{
+						responsivePriority: 2,
+						targets: 4
+					}
+				],
+				columns: [{
+						data: "start_time"
+					},
+					{
+						data: "full_name"
+					},
+					{
+						data: "phone_number"
+					},
+					{
+						data: "user"
+					},
+					{
+						data: "length_in_sec"
+					},
+					{
+						data: null,
+						render: function(data, type, row) {
+							return `<div class='btn-group'>
+							<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>Choose Action
+							<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' style='height: 34px;'>
+										<span class='caret'></span>
+										<span class='sr-only'>Toggle Dropdown</span>
+							</button>
+							<ul class='dropdown-menu' role='menu'>
+								<li><a class='play_audio' href='#' data-location='${data.location.replace("http://","https://")}' data-details='<strong>Phone</strong>: <i>${data.phone_number}</i><br/><strong>Date</strong>: <i>${data.start_time}</i><br/>'>Play Recording</a></li>
+								<li><a class='download-call-recording' href='${data.location.replace("http://","https://")}' download>Download Call Recording</a></li>
+								<li><a onClick='delete_call_recording(${data.recording_id})' href='#'>Delete Call Recording</a></li>
+							</ul>
+						</div>`;
+						}
+					}
+				]
+			});
+
+		});
+		$.fn.dataTable.pipeline = function(opts) {
+			if ($('#search_recordings').is(":checked")) {
+				var start_filterdate_val = $('#start_filterdate').val();
+				var end_filterdate_val = $('#end_filterdate').val();
+				// Agent Filter
+				if ($('#agent_filter').is(':visible')) {
+					var agent_filter_val = $('#agent_filter').val();
+				} else {
+					var agent_filter_val = "";
+				}
+				// List Filter
+				if ($('#list_filter').is(':visible')) {
+					var list_filter_val = $('#list_filter').val();
+				} else {
+					var list_filter_val = "";
+				}
+				// Phone Filter
+				if ($('#phone_filter').is(':visible')) {
+					var phone_filter_val = $('#phone_filter').val();
+				} else {
+					var phone_filter_val = "";
+				}
+				// Identity Filter
+				if ($('#identity_filter').is(':visible')) {
+					var identity_filter_val = $('#identity_filter').val();
+				} else {
+					var identity_filter_val = "";
+				}
+				// LeadCode Filter
+				if ($('#leadcode_filter').is(':visible')) {
+					var leadcode_filter_val = $('#leadcode_filter').val();
+				} else {
+					var leadcode_filter_val = "";
+				}
+				// LeadSubId Filter
+				if ($('#leadcode_filter').is(':visible')) {
+					var leadsubid_filter_val = $('#leadcode_filter').val();
+				} else {
+					var leadsubid_filter_val = "";
+				}
+				// Direction Filter
+				if ($('#direction_filter').is(':visible')) {
+					var direction_filter_val = $('#direction_filter').val();
+				} else {
+					var direction_filter_val = "";
 				}
 			}
+			let conf = $.extend({
+					pages: 5,
+					url: "",
+					data: null,
+					method: "GET",
+				},
+				opts
+			);
+			let cacheLower = -1;
+			let cacheUpper = null;
+			let cacheLastRequest = null;
+			let cacheLastJson = null;
+			return (request, callback, settings) => {
+				let ajax = false;
+				let requestStart = request.start;
+				let drawStart = request.start;
+				let requestLength = request.length;
+				let requestEnd = requestStart + requestLength;
+
+				if (settings.clearCache) {
+					ajax = true;
+					settings.clearCache = false;
+				} else if (
+					cacheLower < 0 ||
+					requestStart < cacheLower ||
+					requestEnd > cacheUpper
+				) {
+					ajax = true;
+				} else if (
+					JSON.stringify(request.order) !==
+					JSON.stringify(cacheLastRequest.order) ||
+					JSON.stringify(request.columns) !==
+					JSON.stringify(cacheLastRequest.columns) ||
+					JSON.stringify(request.search) !==
+					JSON.stringify(cacheLastRequest.search)
+				) {
+					ajax = true;
+				}
+				cacheLastRequest = $.extend(true, {}, request);
+
+				if (ajax) {
+					if (requestStart < cacheLower) {
+						requestStart = requestStart - requestLength * (conf.pages - 1);
+
+						if (requestStart < 0) {
+							requestStart = 0;
+						}
+					}
+					cacheLower = requestStart;
+					cacheUpper = requestStart + requestLength * conf.pages;
+					request.start = requestStart;
+					request.length = requestLength * conf.pages;
+					if (typeof conf.data === "function") {
+						var d = conf.data(request);
+						if (d) {
+							$.extend(request, d);
+						}
+					} else if ($.isPlainObject(conf.data)) {
+						$.extend(request, conf.data);
+					}
+					let json = {};
+					let out = [];
+					let total = 0;
+					let offset = request.start;
+					let limit = request.length;
+					let data_counter = 1;
+					$.ajax({
+						url: "search.php",
+						type: 'POST',
+						data: {
+							search_recordings: $('#search').val(),
+							start_filterdate: start_filterdate_val,
+							end_filterdate: end_filterdate_val,
+							agent_filter: agent_filter_val,
+							list_filter: list_filter_val,
+							phone_filter: phone_filter_val,
+							identity_filter: identity_filter_val,
+							leadcode_filter: leadcode_filter_val,
+							leadsubid_filter: leadsubid_filter_val,
+							direction_filter: direction_filter_val
+						},
+						dataType: 'json',
+						success: function(data) {
+							$('#search_button').text("<?php print $lh->translationFor("search"); ?>");
+							$('#search_button').attr("disabled", false);
+							json.data = data.data;
+							json.recordsTotal = data.total;
+							json.recordsFiltered = data.total;
+							cacheLastJson = $.extend(true, {}, json);
+							if (cacheLower != drawStart) {
+								json.data.splice(0, drawStart - cacheLower);
+							}
+							if (requestLength > 0) {
+								json.data.splice(requestLength, json.data.length);
+							}
+							json.draw = request.draw;
+							callback(json);
+						}
+					});
+				} else {
+					json = $.extend(true, {}, cacheLastJson);
+					json.draw = request.draw; // Update the echo for each response
+					json.data.splice(0, requestStart - cacheLower);
+					json.data.splice(requestLength, json.data.length);
+					callback(json);
+				}
+			};
+		};
+		/*****
+		 ** For playing Call Recordings
+		 *****/
+		$(document).on('click', '.play_audio', function() {
+			var audioFile = $(this).attr('data-location');
+			//audioFile = audioFile.replace("http", "https");
+			//console.log(audioFile);
+			var voicedetails = "";
+			var sourceFile = '<audio class="audio_file" controls style="width:100%">';
+			sourceFile += '<source src="' + audioFile + '" type="audio/mpeg" download="true"/>';
+			sourceFile += '</audio>';
+
+			if (audioFile === "") {
+				voicedetails = "Recording is being processed... Please wait a few minutes and try again.";
+				$('.download-audio-file').attr('disabled', true);
+			} else {
+				voicedetails = $(this).attr('data-details');
+				$('.download-audio-file').attr('href', audioFile);
+				$('.audio-player').html(sourceFile);
+			}
+
+			$('.voice-details').html(voicedetails);
+			goAvatar._init(goOptions);
+
+			$('#call-playback-modal').modal('show');
+
+			var aud = $('.audio_file').get(0);
+			aud.play();
 		});
-	}
 
-	function sformat(seconds) {
-		if (seconds >= 86400) {
-			var fm = [
-				Math.floor(seconds / 60 / 60 / 24), // DAYS
-				Math.floor(seconds / 60 / 60) % 24, // HOURS
-				Math.floor(seconds / 60) % 60, // MINUTES
-				seconds % 60 // SECONDS
-			];
-		} else {
-			var fm = [
-				Math.floor(seconds / 60 / 60) % 24, // HOURS
-				Math.floor(seconds / 60) % 60, // MINUTES
-				seconds % 60 // SECONDS
-			];
-		}
+		$('#call-playback-modal').on('hidden.bs.modal', function() {
+			var aud = $('.audio_file').get(0);
+			aud.pause();
+		});
 
-		return $.map(fm, function(v, i) {
-			return ((v < 10) ? '0' : '') + v;
-		}).join(':');
-	}
+		$("#search_button").click();
+	});
 </script>
+
 <?php print $ui->creamyFooter(); ?>
 </body>
 

@@ -1,5 +1,5 @@
-const EC_API_URL = "https://tlink02-api.tel4vn.com/";
-const TEL4VN_API_URL = "https://tlink02-api.tel4vn.com/";
+const EC_API_URL = "https://ec01-api.tel4vn.com/";
+const TEL4VN_API_URL = "https://ec01-api.tel4vn.com/";
 const EC_API_USERNAME = "";
 const formatter = new Intl.NumberFormat('vi-VN', {
   style: 'currency',
