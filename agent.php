@@ -31,6 +31,7 @@ define('GO_BASE_DIRECTORY', str_replace($_SERVER['DOCUMENT_ROOT'], "", dirname(_
 
 // initialize structures
 require_once('./php/Session.php');
+require_once('./php/goCRMAPISettings.php');
 try {
 	$api = \creamy\APIHandler::getInstance();
 	$ui = \creamy\UIHandler::getInstance();
@@ -269,6 +270,10 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 			}
 		</style>
         <script type="text/javascript">
+			<?php 
+			echo("const EC_API_URL = '".goapiurl."/';");
+			echo("const TEL4VN_API_URL = '".goapiurl."/';");
+			?>
 			function gotobottom(){
 				window.scrollTo(0,document.body.scrollHeight);
 			}
