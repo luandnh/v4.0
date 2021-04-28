@@ -166,10 +166,13 @@ foreach ($perm as $key => $value) {
 										if ($perm->reportsanalytics_statistical_display == 'Y') {
 											echo '<option value="stats">' . $lh->translationFor("stats") . '</option>';
 										}
+										echo '<option value="agent_team">' . $lh->translationFor("agent_team") . '</option>';
+										echo '<option value="agent_personal">' . $lh->translationFor("agent_personal") . '</option>';
+										echo '<option value="productivity_call_status">' . $lh->translationFor("productivity_call_status") . '</option>';
+										echo '<option value="productivity_campain">' . $lh->translationFor("productivity_campain") . '</option>';
 										if ($perm->reportsanalytics_agent_time_display == 'Y') {
 											echo '<option value="agent_detail">' . $lh->translationFor("agent_detail") . '</option>';
 										}
-
 										if ($perm->reportsanalytics_agent_time_display == 'Y') {
 											echo '<option value="agent_pdetail">' . $lh->translationFor("agent_pdetail") . '</option>';
 										}
