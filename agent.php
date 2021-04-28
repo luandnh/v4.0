@@ -865,7 +865,7 @@ input:checked + .slider:before {
 													</div>
 													<div class="col-sm-4">
 														<div class="mda-form-group label-floating">
-															<input id="middle_initial" name="middle_initial" type="text" maxlength="1" value="<?php echo $middle_initial;?>"
+															<input id="middle_initial" name="middle_initial" type="text" maxlength="30" value="<?php echo $middle_initial;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 															<label for="middle_initial">Middle Initial</label>
 														</div>
@@ -931,7 +931,7 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="state" name="state" type="text" maxlength="2" value="<?php echo $state;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
+																<input id="state" name="state" type="text" maxlength="50" value="<?php echo $state;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="state"><?=$lh->translationFor('state')?></label>
 															</div>
 														</div>
