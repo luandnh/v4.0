@@ -32,6 +32,7 @@ require_once (GO_BASE_DIRECTORY . '/php/DbHandler.php');
 include (GO_BASE_DIRECTORY . '/php/Session.php');
 require_once (GO_BASE_DIRECTORY . '/php/goCRMAPISettings.php');
 $goAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', gourl) : str_replace('http:', 'https:', gourl);
+$goSubAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', goapiurl) : str_replace('http:', 'https:', goapiurl);
 $api = \creamy\APIHandler::getInstance();
 $ui = \creamy\UIHandler::getInstance();
 $lh = \creamy\LanguageHandler::getInstance();
@@ -3033,9 +3034,9 @@ function checkIfStillLoggedIn(logged_out, last_call) {
     
         $.ajax({
             type: 'POST',
-            url: '<?=$goAPI ?>/goAgent/goAPI.php',
+            url: '<?=$goSubAPI ?>/v1/agent/checkifloggedin',
             processData: true,
-            data: postData,
+            data: JSON.stringify(postData),
             dataType: "json",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -6447,7 +6448,7 @@ function DispoSelectSubmit() {
     
                 waiting_on_dispo = 0;
             });
-            
+
             //CLEAR ALL FORM VARIABLES
             $('[id^=dispo-add-]').css('color','red');
             $('[id^=dispo-add-]').css('cursor','pointer');
@@ -6706,6 +6707,11 @@ function ManualDialSkip() {
                         type: 'error',
                     });
                 } else {
+                    //CLEAR ALL FORM VARIABLES
+                    $(".formMain input[name='identity_number']").val('');
+                    $(".formMain input[name='identity_issued_on']").val('');
+                    $(".formMain input[name='identity_issued_by']").val('');
+                    $(".formMain input[name='vendor_lead_code']").val('');
                     $(".formMain input[name='lead_id']").val('');
                     $(".formMain input[name='vendor_lead_code']").val('');
                     $(".formMain input[name='list_id']").val('');
@@ -6839,6 +6845,11 @@ function CustomerData_update() {
         goEmail: $(".formMain input[name='email']").val(),
         goSecurity: $(".formMain input[name='security_phrase']").val(),
         goLeadID: $(".formMain input[name='lead_id']").val(),
+        //EASYCREDIT
+        goIdentityNumber: $(".formMain input[name='identity_number']").val(),
+        goIdentityIssuedOn: $(".formMain input[name='identity_issued_on']").val(),
+        goIdentityIssuedBy: $(".formMain input[name='identity_issued_by']").val(),
+        //EASYCREDIT
         goCustomFields: '',
         responsetype: 'json'
     };
@@ -6889,9 +6900,9 @@ function CustomerData_update() {
 
     $.ajax({
         type: 'POST',
-        url: '<?=$goAPI ?>/goAgent/goAPI.php',
+        url: '<?=$goSubAPI ?>/v1/lead/update',
         processData: true,
-        data: postData,
+        data: JSON.stringify(postData),
         dataType: "json",
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -7538,7 +7549,14 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                         //$("#cust_full_name a[id='last_name']").editable('setValue', null, true);
                         $("#cust_full_name a[id='last_name']").html('');
                     }
-                    
+                    //EASY CREDIT
+                    //Identity
+                    $(".formMain input[name='identity_number']").val(thisVdata.identity_number).trigger('change');
+                    $(".formMain input[name='identity_issued_on']").val(thisVdata.identity_issued_on);
+                    $(".formMain input[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
+                    //Vendor
+                    $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code).trigger('change');
+                    //EASY CREDIT
                     // ECCS Customization
                     <?php
     if (ECCS_BLIND_MODE === 'y') {

@@ -715,7 +715,7 @@ $perm = $api->goGetPermissions('recordings');
 					{
 						data: null,
 						render: function(data, type, row) {
-							return `<div class='btn-group'>
+							return data.location == null ? "" : `<div class='btn-group'>
 							<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>Choose Action
 							<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' style='height: 34px;'>
 										<span class='caret'></span>

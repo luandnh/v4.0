@@ -966,12 +966,14 @@ class APIHandler
 	// }
 
 	//NEW - LUANDNH
-	public function API_getLeads($search, $disposition_filter, $list_filter, $address_filter, $city_filter, $state_filter, $identity_filter,  $leadcode_filter, $leadsubid_filter, $limit = 100, $offset = 0, $search_customers = 0, $start_date = null, $end_date = null)
+	public function API_getLeads($search, $disposition_filter, $list_filter, $address_filter, $city_filter, $state_filter, $identity_filter,  $leadcode_filter, $leadsubid_filter, $limit=100, $offset=0, $search_customers = 0, $start_date = null, $end_date = null)
 	{
-		if ($limit == 0) {
+		if ($limit == 0 || !isset($limit)) {
 			$limit = 50;
 		}
-
+		if (!isset($offset)){
+			$offset = 0;
+		}
 		$postfields = array(
 			"goAction" => "goGetLeads",
 			"search" => $search,
@@ -983,7 +985,9 @@ class APIHandler
 			"search_customers" => $search_customers,
 			"goVarLimit" => $limit,
 			"start_date" => $start_date,
-			"end_date" => $end_date
+			"end_date" => $end_date,
+			"limit" => $limit,
+			"offset"=> $offset
 		);
 		return $this->API_Request("goGetLeads", $postfields);
 	}
