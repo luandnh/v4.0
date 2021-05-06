@@ -430,8 +430,9 @@ var group = '<?=$camp_info->campaign_id
     echo "var country_codes = $country_code_list;\n";
 ?>
 var defaultFields = "vendor_lead_code,source_id,list_id,gmt_offset_now,called_since_last_reset,phone_code,phone_number,title,first_name,middle_initial,last_name,address1,address2,address3,city,state,province,postal_code,country_code,gender,date_of_birth,alt_phone,email,security_phrase,comments,called_count,last_local_call_time,rank,owner";
-
+let incomingCallAudio = null;
 $(document).ready(function() {
+    incomingCallAudio = new window.Audio("./sounds/ting.mp3");
 // Load current server time
 setInterval("displaytime()", 1000);
 checkLogin = 0;
@@ -1040,14 +1041,21 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                     swal.close();
 		    //Whatsapp
 		    var userid = $('#wa-userid').val();
-		    $.ajax({
+            try {
+                $.ajax({
                         url:"php/WhatsappLogout.php",
                         method:"POST",
                         data:{userid:userid, action:'0'},
                         success:function(data){
                             console.log("Whatsapp Logged Out...");
+                        },
+                        fail:function(err){
+                            console.log("Whatsapp Logged Out - error : " + err);
                         }
                     });
+            } catch(err) {
+                console.log("Whatsapp Logged Out - error : " + err);
+            }
 		    // ./Whatsapp
 
            <?php if (ROCKETCHAT_ENABLE === 'y') { ?> 
@@ -3004,6 +3012,7 @@ function toggleStatus (status) {
         case "LIVE":
             statusClass = 'livecall';
             statusLabel = '<?=$lh->translationFor('live_call') ?>';
+            incomingCallAudio.play();
             break;
         case "HANGUP":
             statusClass = 'callhangup';
