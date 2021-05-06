@@ -3034,9 +3034,9 @@ function checkIfStillLoggedIn(logged_out, last_call) {
     
         $.ajax({
             type: 'POST',
-            url: '<?=$goSubAPI ?>/v1/agent/checkifloggedin',
+            url: '<?=$goAPI ?>/goAgent/goAPI.php',
             processData: true,
-            data: JSON.stringify(postData),
+            data: postData,
             dataType: "json",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -6900,9 +6900,9 @@ function CustomerData_update() {
 
     $.ajax({
         type: 'POST',
-        url: '<?=$goSubAPI ?>/v1/lead/update',
+        url: '<?=$goAPI ?>/goAgent/goAPI.php',
         processData: true,
-        data: JSON.stringify(postData),
+        data: postData,
         dataType: "json",
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
