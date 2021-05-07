@@ -286,7 +286,7 @@ foreach ($perm as $key => $value) {
 								<label><?php $lh->translateText("start_date"); ?></label>
 								<div class="form-group">
 									<div class='input-group date' id='datetimepicker1'>
-										<input type='text' class="form-control" id="start_filterdate" name="start_filterdate" placeholder="03/29/2020 00:00:00" value="03/29/2020 00:00:00" />
+										<input type='text' class="form-control" id="start_filterdate" name="start_filterdate" placeholder="<?php echo date("m/d/Y")." 00:00:00";?>" value="<?php echo date("m/d/Y")." 12:00 AM";?>" />
 										<span class="input-group-addon">
 											<!-- <span class="glyphicon glyphicon-calendar"></span>-->
 											<span class="fa fa-calendar"></span>
