@@ -1,4 +1,5 @@
 const EC_API_USERNAME = "";
+const EC_PROD_API_URL = "https://apipreprod.easycredit.vn/api/loanServices/v1/product-list"
 const formatter = new Intl.NumberFormat('vi-VN', {
   style: 'currency',
   currency: 'VND',
@@ -50,6 +51,28 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
+  $(document).on('click','#submit_attachment', function(e){
+    e.preventDefault();
+    const multiple_files = $(".MultiFile-applied.MultiFile");
+    if (multiple_files.length == 0){
+      alert("No file to upload");
+      return;
+    }
+    var request_id = $("#request_id").val();
+    var phone_number = $("#phone_number").val();
+    var attachments =  multiple_files[0].MultiFile.files;
+    attachments.forEach(function(file){
+      var file_type =  $(`select[name='${file.lastModified}']`).val();
+      var formData = new FormData();
+      formData.append("request_id", request_id);
+      formData.append("phone_number", phone_number);
+      formData.append("file_type", file_type);
+      formData.append("file", file);
+      console.log(formData)
+    })
+
+
+  });
   let fullLoanTab =
     '<li role="presentation" id="full_loan_tab_href" ondblclick="gotobottom()">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
@@ -289,12 +312,28 @@ let ECShowProducts = (partner_code, request_id) => {
 let ECProducts = null;
 
 let ajaxGetECProducts = (partner_code) => {
+  // post to
+  let request_id = $(".formMain input[name='request_id']").val();
   let postdata = {
-    partner: partner_code,
+    request_id:request_id,
+    partner_code: partner_code,
+    product_line: "BUSINESS",
+    channel : "DSA"
   };
+  var settings = {
+    "url": "https://apipreprod.easycredit.vn/api/loanServices/v1/product-list",
+    
+  };
+  let request_id = $(".formMain input[name='request_id']").val();
   return $.ajax({
     type: "POST",
-    url: EC_API_URL + "/v1/dev/product",
+    url: EC_PROD_API_URL,
+    headers: {
+      "Authorization": api_key,
+      "Content-Type": "application/json",
+      "clientid": clientid,
+      "clientsecret": clientsecret
+    },
     processData: true,
     data: postdata,
     async: true,
@@ -312,6 +351,7 @@ let ajaxGetECProducts = (partner_code) => {
   });
 };
 $(document).on('click','#submit-offer', function(e){
+  // post to EC
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
   let partner_code = $(".formMain input[name='partner_code']").val();
@@ -948,3 +988,80 @@ function SetOfferDetail(offerList) {
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
+// 
+$(function(){
+
+  // 
+  $('#attachment_files').MultiFile({
+    onFileRemove: function(element, value, master_element) {
+      console.log("Remove");
+      $('#F9-Log').append('<li>onFileRemove - ' + value + '</li>')
+    },
+    afterFileRemove: function(element, value, master_element) {
+      console.log('After remove');
+      $('#F9-Log').append('<li>afterFileRemove - ' + value + '</li>')
+    },
+    onFileAppend: function(element, value, master_element) {   console.log('After Append');
+
+    },
+    afterFileAppend: function(element, value, master_element) {
+      var last_mdf = element.files[0].lastModified;
+      $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML = 
+      `<SELECT name='${last_mdf}' class="select_file_type">
+          <OPTION VALUE="LCT" SELECTED>HỢP ĐỒNG VAY (HĐV)/ LOAN CONTRACT</OPTION>
+          <OPTION VALUE="PIC">HÌNH KHÁCH HÀNG/ CLIENT PHOTO</OPTION>
+          <OPTION VALUE="NID">CHỨNG MINH NHÂN NHÂN (CMND)/ NATIONAL ID</OPTION>
+          <OPTION VALUE="PID">THẺ CĂN CƯỚC CÔNG DÂN/ PEOPLE'S IDENTITY CARD</OPTION>
+          <OPTION VALUE="DRL">GIẤY PHÉP LÁI XE (GPLX)/ DRIVING LICENSE</OPTION>
+          <OPTION VALUE="FRB">SỔ HỘ KHẨU (SHK)/ FAMILY REGISTRATION BOOK</OPTION>
+          <OPTION VALUE="PPT">HỘ CHIẾU (PP)/ PASSPORT</OPTION>
+          <OPTION VALUE="LBC">HĐLĐ (LB)/ LABOR CONTRACT</OPTION>
+          <OPTION VALUE="BAS">SAO KÊ LƯƠNG/ BANK ACCOUNT STATEMENT</OPTION>
+          <OPTION VALUE="BIZ">GIẤY PHÉP KINH DOANH/ BUSINESS LICENSE</OPTION>
+          <OPTION VALUE="TAX">CHỨNG TỪ THUẾ/ TAX INVOICE</OPTION>
+          <OPTION VALUE="PEN">SỔ HƯU TRÍ/ PENSION BOOK</OPTION>
+          <OPTION VALUE="INP">HĐBH/ INSURANCE POLICY</OPTION>
+          <OPTION VALUE="CCS">SAO KÊ THẺ TÍN DỤNG/ CREDIT CARD STATEMENT</OPTION>
+          <OPTION VALUE="EB1">HÓA ĐƠN ĐIỆN DƯỚI 600,000 VND/ ELECTRICITY BILL LESS 600</OPTION>
+          <OPTION VALUE="EB2">HÓA ĐƠN ĐIỆN TỪ 600,000 VND/ ELECTRICITY BILL MORE 600</OPTION>
+          <OPTION VALUE="HIC">THẺ BHYT/ HEALTH INSURANCE CARD</OPTION>
+          <OPTION VALUE="PMS">LỊCH THANH TOÁN</OPTION>
+          <OPTION VALUE="SPMS">LỊCH THANH TOÁN SCAN</OPTION>
+          <OPTION VALUE="ICS">MÀN HÌNH THÔNG TIN ICIC</OPTION>
+          <OPTION VALUE="SICS">MÀN HÌNH THÔNG TIN ICIC SCAN</OPTION>
+          <OPTION VALUE="PPA">HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+          <OPTION VALUE="VAT">HÓA ĐƠN VAT</OPTION>
+          <OPTION VALUE="RIN">HÓA ĐƠN BÁN LẺ</OPTION>
+          <OPTION VALUE="BPM">HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+          <OPTION VALUE="GDN">PHIẾU XUẤT KHO</OPTION>
+          <OPTION VALUE="PTC">HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+          <OPTION VALUE="BAS">SAO KÊ LƯƠNG/ BANK ACCOUNT STATEMENT</OPTION>
+      </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML
+      ;
+      $(".select_file_type").select2( {
+        allowClear: true
+      } );
+    },
+    onFileSelect: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileSelect - ' + value + '</li>')
+    },
+    afterFileSelect: function(element, value, master_element) {
+      $('#F9-Log').append('<li>afterFileSelect - ' + value + '</li>')
+    },
+    onFileInvalid: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileInvalid - ' + value + '</li>')
+    },
+    onFileDuplicate: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileDuplicate - ' + value + '</li>')
+    },
+    onFileTooMany: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileTooMany - ' + value + '</li>')
+    },
+    onFileTooBig: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileTooBig - ' + value + '</li>')
+    },
+    onFileTooMuch: function(element, value, master_element) {
+      $('#F9-Log').append('<li>onFileTooMuch - ' + value + '</li>')
+    }
+  });
+});

@@ -964,3 +964,42 @@ span.month, span.year, span.decade {
 	background-color: #000;
 	opacity: .5;
 }
+/* 
+ */
+
+ 
+ .attachment-input::-webkit-file-upload-button {
+	visibility: hidden;
+  }
+.attachment-input::before {
+  content: 'Choose attachment';
+  display: inline-block;
+  color: black;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.attachment-input:hover::before {
+border-color: black;
+}
+.attachment-input:active::before {
+background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+input[type='file'] {
+  color: transparent;    /* Hides your "No File Selected" */
+  direction: ltr;        /* Sets the Control to Right-To-Left */
+}
+.select_file_type{
+  margin-right: 10px;
+}
+.MultiFile-title{
+  font-size: large;
+  margin-left: 20px;
+}

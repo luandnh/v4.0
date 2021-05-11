@@ -1037,6 +1037,17 @@ input:checked + .slider:before {
 														</div>
 													</div><!-- /.identity_number,identity_issued_on,identity_issued_by -->
 												</form>
+												<form role="form" id="file_form" class="formMain form-inline">
+													<div class="row">
+														<div class="col-sm-12" style="padding-bottom: 10px;">
+																<label for="attachment_files">Upload attachments</label>
+																<input multiple type="file" id="attachment_files" class="attachment-input"/>
+														</div>
+														<div class="col-sm-12">
+															<button id="submit_attachment">Submit attachment</button>
+														</div>
+													</div>
+												</form>
 													<div id="call_notes_content" class="col-sm-12">
 														<div class="form-group" style="width:100%;">
 															<textarea rows="3" id="call_notes" name="call_notes" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched textarea note-editor note-editor-margin" style="resize:none; width: 100%;"></textarea>
