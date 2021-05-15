@@ -150,7 +150,7 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
         <meta charset="UTF-8">
        <!-- <title><?=CRM_GOAGENT_TITLE?> - <?=$lh->translateText('GOautodial')." ".CRM_GO_VERSION?></title> -->
 	<!-- ECCS Customization -->
-	<title><?php echo $html_title; ?></title>
+	<title><?=CRM_GOAGENT_TITLE?></title>
 	<!-- /.ECCS Customization -->
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 		<!-- SnackbarJS -->
@@ -192,7 +192,10 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 		<!-- MD5 HASH-->
 		<script src="js/jquery.md5.js" type="text/javascript"></script>
         <!-- Date Picker -->
+		
+		<link rel="stylesheet" href="js/dashboard/js/bootstrap/dist/css/bootstrap-select.min.css">
         <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/moment.js"></script>
+		<script src="js/dashboard/js/bootstrap/dist/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>		
         <!-- X-Editable -->
         <!--<link rel="stylesheet" src="js/dashboard/x-editable/dist/css/bootstrap-editable.css">-->
@@ -825,7 +828,7 @@ input:checked + .slider:before {
 
 											<fieldset style="padding-bottom: 0px; margin-bottom: 0px;">
 												<h4 style="display: flex;">
-													<a href="#" data-role="button" class="pull-right edit-profile-button hidden" id="edit-profile" style="margin-left: auto;"><?=$lh->translationFor('edit_information')?></a>
+													<a href="#" data-role="button" class="btn btn-default pull-right edit-profile-button hidden" id="edit-profile" style="margin-left: auto;"><?=$lh->translationFor('edit_information')?></a>
 												</h4>
 												<!-- <br/> -->
 												<form role="form" id="name_form" class="formMain form-inline" >
@@ -860,21 +863,21 @@ input:checked + .slider:before {
 														<div class="mda-form-group label-floating">
 															<input id="first_name" name="first_name" type="text" maxlength="30"  value="<?php echo $first_name;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
-															<label for="first_name">First Name</label>
+															<label for="first_name"><?=$lh->translationFor('first_name')?></label>
 														</div>
 													</div>
 													<div class="col-sm-4">
 														<div class="mda-form-group label-floating">
 															<input id="middle_initial" name="middle_initial" type="text" maxlength="30" value="<?php echo $middle_initial;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
-															<label for="middle_initial">Middle Initial</label>
+															<label for="middle_initial"><?=$lh->translationFor('middle_initial')?></label>
 														</div>
 													</div>
 													<div class="col-sm-4">
 														<div class="mda-form-group label-floating">
 															<input id="last_name" name="last_name" type="text" maxlength="30" value="<?php echo $last_name;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
-															<label for="last_name">Last Name</label>
+															<label for="last_name"><?=$lh->translationFor('last_name')?></label>
 														</div>
 													</div>
 												</div>
@@ -923,19 +926,25 @@ input:checked + .slider:before {
 													</div>
 													<!-- /.address1 & address2 -->
 													<div class="row">
-														<div class="col-sm-4">
+														<div class="col-sm-3">
+															<div class="mda-form-group label-floating">
+																<input id="province" name="province" type="text" maxlength="50" value="<?php echo $city;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
+																<label for="province"><?=$lh->translationFor('tem_province')?></label>
+															</div>
+														</div>
+														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
 																<input id="city" name="city" type="text" maxlength="50" value="<?php echo $city;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="city"><?=$lh->translationFor('city')?></label>
 															</div>
 														</div>
-														<div class="col-sm-4">
+														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
 																<input id="state" name="state" type="text" maxlength="50" value="<?php echo $state;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="state"><?=$lh->translationFor('state')?></label>
 															</div>
 														</div>
-														<div class="col-sm-4">
+														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
 																<input id="postal_code" name="postal_code" type="text" maxlength="10" value="<?php echo $postal_code;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="postal_code"><?=$lh->translationFor('postal_code')?></label>
@@ -977,6 +986,13 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
+																<input id="job_type" name="job_type" type="text" maxlength="10" value=""
+																	class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
+																<label for="job_type">Job Type</label>
+															</div>
+														</div>
+														<div class="col-sm-3">
+															<div class="mda-form-group label-floating">
 																<select id="gender" name="gender" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" disabled>
 																	<option disabled value=""<?php if ($gender != 'M' && $gender != 'F') { echo " selected"; }?>></option>
 																	<option value="M"<?php if ($gender == 'M') { echo " selected"; }?>><?=$lh->translationFor('male')?></option>
@@ -985,7 +1001,7 @@ input:checked + .slider:before {
 																<label for="gender"><?=$lh->translationFor('gender')?></label>
 															</div>
 														</div>
-														<div class="col-sm-6">
+														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
 																<input type="date" id="date_of_birth" value="" name="date_of_birth" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="date_of_birth"><?=$lh->translationFor('date_of_birth')?></label>
@@ -1009,7 +1025,7 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
+																<input id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
 																<label for="request_id">Request Id</label>
 															</div>
 														</div>
@@ -1031,22 +1047,81 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="identity_issued_by" name="identity_issued_by" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
-																<label for="identity_issued_by"><?php $lh->translateText("identity_issued_by"); ?></label>
+															<select name="identity_issued_by" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+																	<option value="" selected></option>
+																	<option value="VIP15">Cục CSĐKQLCT&DLQGVDC</option>
+																	<option value="VIP16">Cục CSQLHC về TTXH</option>
+																	<option value="VIP67"></option>
+																	<option value="VIP66">Hà Tây</option>
+																	<option value="VIP22">Đồng Tháp</option>
+																	<option value="VIP23">Gia Lai</option>
+																	<option value="VIP24">Hà Giang</option>
+																	<option value="VIP25">Hà Nam</option>
+																	<option value="VIP20">Điện Biên</option>
+																	<option value="VIP21">Đồng Nai</option>
+																	<option value="VIP43">Nghệ An</option>
+																	<option value="VIP44">Ninh Bình</option>
+																	<option value="VIP37">Lai Châu</option>
+																	<option value="VIP38">Lâm Đồng</option>
+																	<option value="VIP39">Lạng Sơn</option>
+																	<option value="VIP40">Lào Cai</option>
+																	<option value="VIP41">Long An</option>
+																	<option value="VIP42">Nam Định</option>
+																	<option value="VIP01">An Giang</option>
+																	<option value="VIP02">Bà Rịa Vũng Tàu</option>
+																	<option value="VIP03">Bắc Cạn</option>
+																	<option value="VIP04">Bắc Giang</option>
+																	<option value="VIP05">Bạc Liêu</option>
+																	<option value="VIP06">Bắc Ninh</option>
+																	<option value="VIP07">Bến Tre</option>
+																	<option value="VIP08">Bình Định</option>
+																	<option value="VIP62">Tuyên Quang</option>
+																	<option value="VIP63">Vĩnh Long</option>
+																	<option value="VIP64">Vĩnh Phúc</option>
+																	<option value="VIP54">Sơn La</option>
+																	<option value="VIP55">Tây Ninh</option>
+																	<option value="VIP56">Thái Bình</option>
+																	<option value="VIP57">Thái Nguyên</option>
+																	<option value="VIP58">Thanh Hóa</option>
+																	<option value="VIP59">Thừa Thiên Huế</option>
+																	<option value="VIP60">Tiền Giang</option>
+																	<option value="VIP61">Trà Vinh</option>
+																	<option value="VIP53">Sóc Trăng</option>
+																	<option value="VIP65">Yên Bái</option>
+																	<option value="VIP19">Đắk Nông</option>
+																	<option value="VIP09">Bình Dương</option>
+																	<option value="VIP10">Bình Phước</option>
+																	<option value="VIP11">Bình Thuận</option>
+																	<option value="VIP12">Cà Mau</option>
+																	<option value="VIP13">Cần Thơ</option>
+																	<option value="VIP14">Cao Bằng</option>
+																	<option value="VIP17">Đà Nẵng</option>
+																	<option value="VIP18">Đắk Lắk</option>
+																	<option value="VIP26">Hà Nội</option>
+																	<option value="VIP34">Khánh Hòa</option>
+																	<option value="VIP35">Kiên Giang</option>
+																	<option value="VIP36">Kon Tum</option>
+																	<option value="VIP27">Hà Tĩnh</option>
+																	<option value="VIP28">Hải Dương</option>
+																	<option value="VIP29">Hải Phòng</option>
+																	<option value="VIP30">Hậu Giang</option>
+																	<option value="VIP47">Phú Yên</option>
+																	<option value="VIP48">Quảng Bình</option>
+																	<option value="VIP49">Quảng Nam</option>
+																	<option value="VIP50">Quảng Ngãi</option>
+																	<option value="VIP31">TP.Hồ Chí Minh</option>
+																	<option value="VIP32">Hòa Bình</option>
+																	<option value="VIP33">Hưng Yên</option>
+																	<option value="VIP51">Quảng Ninh</option>
+																	<option value="VIP52">Quảng Trị</option>
+																	<option value="VIP45">Ninh Thuận</option>
+																	<option value="VIP46">Phú Thọ</option>
+																</select>
+															<label for="identity_issued_by"><?php $lh->translateText("identity_issued_by"); ?></label>
 															</div>
 														</div>
 													</div><!-- /.identity_number,identity_issued_on,identity_issued_by -->
 												</form>
-												<form role="form" id="file_form" class="formMain form-inline">
-													<div class="row">
-														<div class="col-sm-12" style="padding-bottom: 10px;">
-																<label for="attachment_files">Upload attachments</label>
-																<input multiple type="file" id="attachment_files" class="attachment-input"/>
-														</div>
-														<div class="col-sm-12">
-															<button id="submit_attachment">Submit attachment</button>
-														</div>
-													</div>
 												</form>
 													<div id="call_notes_content" class="col-sm-12">
 														<div class="form-group" style="width:100%;">
@@ -3056,6 +3131,9 @@ dding-top: 10px;">
 		<?php } //end if ECCS_BLIND_MODE ?>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js" defer></script>
+		<script type="text/javascript" src="js/pitel/location_dictionary.js" defer></script>
     </body>
 </html>

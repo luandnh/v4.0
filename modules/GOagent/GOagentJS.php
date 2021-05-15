@@ -1231,7 +1231,7 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
     $("#AgentDialPad").append("<button type='button' id='dialer-pad-undo' class='btn btn-default btn-lg btn-raised' style='padding: 12.5px 22.6px; margin: 0 0 5px 0; font-size: 16px; font-family: monospace;' title='<?=$lh->translationFor('undo') ?>'> <i class='fa fa-undo'></i> </button>");
     $("#AgentDialPad").append("<span id='for_dtmf' style='display: block;' class='hidden'><small>(<?=$lh->translationFor('for_dtmf') ?>)</small></span>");
     
-    $("#go_agent_manualdial").append("<li><div class='input-group' style='padding: 0 3px;'><input type='text' maxlength='18' name='MDPhonENumbeR' id='MDPhonENumbeR' class='form-control phonenumbers-only' value='' placeholder='<?=$lh->translationFor('enter_phone_number') ?>' onkeyup='activateLinks();' onchange='activateLinks();' onkeydown='enableDialOnEnter(event);' style='padding: 3px 2px; color: #222; height: 30px;' aria-label='...' /><div class='input-group-btn' role='group'><button type='button' class='btn btn-success btn-raised' id='manual-dial-now' style='padding: 6px 10px; height: 30px;'><i class='fa fa-phone'></i></button><button type='button' class='btn btn-success dropdown-toggle' style='padding: 0 6px; height: 30px;' data-toggle='dropdown' id='manual-dial-dropdown'>&nbsp;<span id='code_flag' class='flag flag-us'></span><span class='sr-only'>Toggle Dropdown</span>&nbsp;</button><ul id='country_codes' class='dropdown-menu dropdown-menu-right scrollable-menu' role='menu'></ul></div></div><input type='hidden' name='MDDiaLCodE' id='MDDiaLCodE' class='digits-only' value='1' /><input type='hidden' name='MDPhonENumbeRHiddeN' id='MDPhonENumbeRHiddeN' value='' /><input type='hidden' name='MDLeadID' id='MDLeadID' value='' /><input type='hidden' name='MDType' id='MDType' value='' /><input type='checkbox' name='LeadLookUP' id='LeadLookUP' size='1' value='0' class='hidden' disabled /><input type='hidden' size='24' maxlength='20' name='MDDiaLOverridE' id='MDDiaLOverridE' class='cust_form' value='' /></li>");
+    $("#go_agent_manualdial").append("<li><div class='input-group' style='padding: 0 3px;'><input type='text' maxlength='18' name='MDPhonENumbeR' id='MDPhonENumbeR' class='form-control phonenumbers-only' value='789868290' placeholder='<?=$lh->translationFor('enter_phone_number') ?>' onkeyup='activateLinks();' onchange='activateLinks();' onkeydown='enableDialOnEnter(event);' style='padding: 3px 2px; color: #222; height: 30px;' aria-label='...' /><div class='input-group-btn' role='group'><button type='button' class='btn btn-success btn-raised' id='manual-dial-now' style='padding: 6px 10px; height: 30px;'><i class='fa fa-phone'></i></button><button type='button' class='btn btn-success dropdown-toggle' style='padding: 0 6px; height: 30px;' data-toggle='dropdown' id='manual-dial-dropdown'>&nbsp;<span id='code_flag' class='flag flag-us'></span><span class='sr-only'>Toggle Dropdown</span>&nbsp;</button><ul id='country_codes' class='dropdown-menu dropdown-menu-right scrollable-menu' role='menu'></ul></div></div><input type='hidden' name='MDDiaLCodE' id='MDDiaLCodE' class='digits-only' value='1' /><input type='hidden' name='MDPhonENumbeRHiddeN' id='MDPhonENumbeRHiddeN' value='' /><input type='hidden' name='MDLeadID' id='MDLeadID' value='' /><input type='hidden' name='MDType' id='MDType' value='' /><input type='checkbox' name='LeadLookUP' id='LeadLookUP' size='1' value='0' class='hidden' disabled /><input type='hidden' size='24' maxlength='20' name='MDDiaLOverridE' id='MDDiaLOverridE' class='cust_form' value='' /></li>");
 
     $("#go_agent_login").append("<li><button id='btnLogMeIn' class='btn btn-warning btn-lg center-block' style='margin-top: 2px;'><i class='fa fa-sign-in'></i> <?=$lh->translationFor('login_on_phone') ?></button></li>");
     $("#go_agent_logout").append("<li><button id='btnLogMeOut' class='btn btn-warning center-block' style='margin-top: 2px; padding: 5px 12px;'><i class='fa fa-sign-out'></i> <?=$lh->translationFor('logout_from_phone') ?></button></li>");
@@ -3645,10 +3645,16 @@ function CheckForIncoming () {
             //console.log(result);
             forTestingOnly = '';
         }
-
+        //QUANG DEBUG
         var this_VDIC_data = result.data;
         has_inbound_call = this_VDIC_data.has_call;
         if (this_VDIC_data.has_call == '1') {
+            try {
+                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id);
+            }
+            catch (err) {
+                console.log(err);
+            }
             AutoDialWaiting = 0;
             QUEUEpadding = 0;
             
@@ -7524,7 +7530,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     var thisVdata = result.data;
                     //Integrate EASYCREDIT
                     try {
-                        ECShowProducts(thisVdata.partner_code, thisVdata.request_id);
+                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id);
                     }
                     catch (err) {
                         console.log(err);
@@ -7585,7 +7591,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     //Identity
                     $(".formMain input[name='identity_number']").val(thisVdata.identity_number).trigger('change');
                     $(".formMain input[name='identity_issued_on']").val(thisVdata.identity_issued_on);
-                    $(".formMain input[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
+                    $(".formMain select[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
                     //Vendor
                     $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code).trigger('change');
                     $(".formMain input[name='partner_code']").val(thisVdata.partner_code).trigger('change');
