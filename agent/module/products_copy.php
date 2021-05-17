@@ -1,260 +1,26 @@
-<div id="products" role="tabpanel" class="tab-pane">
+
+<div id="full-loan_copy" role="tabpanel" class="tab-pane">
     <div class="row">
         <div class="col-sm-12">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Products</h3>
+                    <h4 class="box-title">1.<?=$lh->translationFor('full_loan_detail')?></h4>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="box-group" id="accordion">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="product-detail-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><b>Product Detail</b></h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <form id="product-detail-form">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="product_code" >Product Code</label>
-                                <input name="product_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <div class="mda-form-group label-floating">
-                                <label for="product_description" >Product Description</label>
-                                <textarea name="product_description" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="">
-
-                                </textarea>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row">
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_min_amount" >Loan Min Amount</label>
-                                <input name="loan_min_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_max_amount" >Loan Max Amount</label>
-                                <input name="loan_max_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_min_tenor" >Loan Min Tenor</label>
-                                <input name="loan_min_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_max_tenor" >Loan Max Tenor</label>
-                                <input name="loan_max_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div id="product-detail-form-bundle">
-                        </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?php $lh->translateText("close"); ?></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="offer-detail-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><b>Offer Detail</b></h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <form id="offer-detail-form">
-                        </form>
-                    </div>
-                    <div class="col-md-8" id="offer-detail-table">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?php $lh->translateText("close"); ?></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="full-loan" role="tabpanel" class="tab-pane">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="box box-solid">
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="box-group">
-                        <form action="#" id="full-loan-form">
-                        <!-- 6. LOAN -->
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <h4>1. <?= $lh->translationFor('loan_detail') ?></h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-1 col-lg-4">
-                                    <div class="mda-form-group label-floating" data-children-count="1">
-                                        <select name="employment_type" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                            <option value="E">Đi làm hưởng lương</option>
-                                            <option value="SE">Tự kinh doanh</option>
-                                            <option value="RP">Hưởng lương hưu</option>
-                                            <option value="FE">Làm nghề tự do</option>
-                                            </select>
-                                        <label class="select_label" for="employment_type">3.3. Employment Type</label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-xl-8 col-lg-8">
-                                    <div class="mda-form-group label-floating">
-                                        <!-- <input type="text" name="loan_purpose" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required> -->
-                                        <label class="select_label" for="loan_purpose">1.2. <?= $lh->translationFor('loan_purpose') ?></label>
-                                        <select name="loan_purpose"  class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                            <option value="HR">Chi phí sửa chữa nhà ở</option>
-                                            <option value="ROL">Mua phương tiện đi lại, đồ dùng, trang thiết bị gia đình</option>
-                                            <option value="EMT">Chi phí học tập, chữa bệnh, du lịch, văn hóa, thể dục, thể thao</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-12">
-                                    <div class="mda-form-group label-floating" data-children-count="1">
-                                        <!-- <select name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
-                                        </select> -->
-                                        <select name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required></select>
-                                        <label for="product_type">1.1. <?= $lh->translationFor('product_type') ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4">
-                                    <label for="loan_tenor">1.3. Loan Tenor</label>
-                                    <div class="row">
-                                            <div class="col-xl-4 col-lg-9">
-                                                <input type="range" name="range_loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" max="50" oninput="this.form.loan_tenor.value=this.value">
-                                            </div>
-                                            <div class="col-xl-4 col-lg-3">
-                                                <input type="input" name="loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" max="50" oninput="this.form.range_loan_tenor.value=this.value" required="">
-                                            </div>    
-                                        </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="loan_amount" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="loan_amount">1.4. <?= $lh->translationFor('loan_amount') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="text" name="lending_method" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="lending_method">1.5. <?= $lh->translationFor('lending_method') ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-6">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="text" name="business_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="business_date">1.6. <?= $lh->translationFor('business_date') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-6">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="text" name="business_license_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
-                                        <label for="business_license_number">1.7. <?= $lh->translationFor('business_license_number') ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-3">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="annual_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="annual_revenue">1.8. <?= $lh->translationFor('annual_revenue') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="annual_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="annual_profit">1.9. <?= $lh->translationFor('annual_profit') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="monthly_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="monthly_revenue">1.10. <?= $lh->translationFor('monthly_revenue') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="monthly_profit">1.11. <?= $lh->translationFor('monthly_profit') ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="text" name="3rd_Party_duration" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="3rd_Party_duration">1.12. <?= $lh->translationFor('3rd_Party_duration') ?></label>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="text" name="sale_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="sale_code">1.13. <?= $lh->translationFor('sale_code') ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END -->
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <h4>1.1. <?= $lh->translationFor('loan_detail') ?></h4>
-                                </div>
-                            </div>
+                        <form action="#" id="full-loan-form-copy">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-4">
                                     <div class="mda-form-group label-floating" data-children-count="1">
                                         <input name="request_id" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
-                                        <label for="request_id">1.1. <?=$lh->translationFor('id')?></label>
+                                        <label for="request_id">1. <?=$lh->translationFor('id')?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-4">
                                     <div class="mda-form-group label-floating" data-children-count="1">
                                         <input name="partner_code" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
-                                        <label for="partner_code">1.2. <?=$lh->translationFor('partner_code')?></label>
+                                        <label for="partner_code">2. <?=$lh->translationFor('partner_code')?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-4">
@@ -399,7 +165,7 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="mda-form-group label-floating">
-                                        <input type="text" name="email" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                        <input type="text" name="email" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                         <label for="email">2.9.  <?= $lh->translationFor('email') ?></label>
                                     </div>
                                 </div>
@@ -539,7 +305,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-2 col-lg-4">
+                                <div class="col-xl-2 col-lg-3">
                                     <div class="mda-form-group label-floating">
                                         <select name="job_type" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
                                             
@@ -580,7 +346,7 @@
                                         <label class="select_label" for="job_type">3.1. <?= $lh->translationFor('job_type') ?></label>
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-4">
+                                <div class="col-xl-2 col-lg-3">
                                     <div class="mda-form-group label-floating" data-children-count="1">
                                         <select name="profession" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
                                             
@@ -597,7 +363,19 @@
                                         <label class="select_label" for="profession">3.2. Profession</label>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4">
+                                <div class="col-xl-1 col-lg-3">
+                                    <div class="mda-form-group label-floating" data-children-count="1">
+                                        <select name="employment_type" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
+                                            
+                                            <option value="E">Đi làm hưởng lương</option>
+                                            <option value="SE">Tự kinh doanh</option>
+                                            <option value="RP">Hưởng lương hưu</option>
+                                            <option value="FE">Làm nghề tự do</option>
+                                            </select>
+                                        <label class="select_label" for="employment_type">3.3. Employment Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-3">
                                     <div class="mda-form-group label-floating">
                                         <input type="text" name="company_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                         <label for="company_name">3.4. <?= $lh->translationFor('company_name') ?></label>
@@ -787,7 +565,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-5 col-lg-5">
+                                <div class="col-xl-12 col-lg-12">
                                     <div class="mda-form-group label-floating">
                                         <label class="select_label" for="bank_code">5.3. <?= $lh->translationFor('bank_code') ?></label>
                                         <select name="bank_code"  class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
@@ -796,24 +574,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-5 col-lg-5">
+                                <div class="col-xl-12 col-lg-4">
                                     <div class="mda-form-group label-floating">
-                                        <label class="select_label" for="bank_area">5.3. <?= $lh->translationFor('bank_area') ?></label>
-                                        <select name="bank_area"  class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                        </select>
+                                        <input type="text" name="bank_branch_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                        <label for="bank_branch_code">5.4. <?= $lh->translationFor('bank_branch_code') ?></label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-5 col-lg-5">
-                                    <div class="mda-form-group label-floating">
-                                            <label class="select_label" for="bank_code">5.4. <?= $lh->translationFor('bank_branch_code') ?></label>
-                                            <select name="bank_branch_code"  class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                            </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-xl-12 col-lg-8">
                                     <div class="mda-form-group label-floating">
                                         <input type="text" name="bank_account" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
@@ -869,8 +635,107 @@
                                     </div>
                                 </div>
                             </div>
- 
-                            <!-- OFFER -->
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <h4>6. <?= $lh->translationFor('loan_detail') ?></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="mda-form-group label-floating" data-children-count="1">
+                                        <!-- <select name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+                                        </select> -->
+                                        <input type="text" name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="product_type">6.1. <?= $lh->translationFor('product_type') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-8">
+                                    <div class="mda-form-group label-floating">
+                                        <!-- <input type="text" name="loan_purpose" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required> -->
+                                        <label class="select_label" for="loan_purpose">6.2. <?= $lh->translationFor('loan_purpose') ?></label>
+                                        <select name="loan_purpose"  class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
+                                            <option value="HR">Chi phí sửa chữa nhà ở</option>
+                                            <option value="ROL">Mua phương tiện đi lại, đồ dùng, trang thiết bị gia đình</option>
+                                            <option value="EMT">Chi phí học tập, chữa bệnh, du lịch, văn hóa, thể dục, thể thao</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="loan_tenor">6.3. <?= $lh->translationFor('loan_tenor') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="number" min="0" max="999999999999" name="loan_amount" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="loan_amount">6.4. <?= $lh->translationFor('loan_amount') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="lending_method" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="lending_method">6.5. <?= $lh->translationFor('lending_method') ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-6">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="business_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="business_date">6.6. <?= $lh->translationFor('business_date') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-6">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="business_license_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                        <label for="business_license_number">6.7. <?= $lh->translationFor('business_license_number') ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="number" min="0" max="999999999999" name="annual_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="annual_revenue">6.8. <?= $lh->translationFor('annual_revenue') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="number" min="0" max="999999999999" name="annual_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="annual_profit">6.9. <?= $lh->translationFor('annual_profit') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="number" min="0" max="999999999999" name="monthly_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="monthly_revenue">6.10. <?= $lh->translationFor('monthly_revenue') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="monthly_profit">6.11. <?= $lh->translationFor('monthly_profit') ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="3rd_Party_duration" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="3rd_Party_duration">6.12. <?= $lh->translationFor('3rd_Party_duration') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="mda-form-group label-floating">
+                                        <input type="text" name="sale_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <label for="sale_code">6.13. <?= $lh->translationFor('sale_code') ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                    
                             <div class="row"  id="offer-waiting" hidden>
                             <div class="col-xl-12 col-lg-6" >
                                 <button class="buttonload" style="background-color: #3f51b5; border: none; border-radius: 10px; color: white; padding: 12px 24px;font-size: 16px;">

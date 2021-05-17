@@ -390,7 +390,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 														</div>
 													</div>
 												</div>
-												<div class="form-group" hidden>
+												<div class="form-group" >
 													<label class="col-sm-3 control-label"><?php $lh->translateText("omit_phone_code"); ?>:</label>
 													<div class="col-sm-9 mb">
 														<select name="omit_phone_code" id="omit_phone_code" class="form-control">
@@ -400,7 +400,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 												</div>
 												<?php if ($campaign->campaign_type != "SURVEY") { ?>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("web"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" id="web_form_address" name="web_form_address" class="form-control" value="<?php echo $campaign->data->web_form_address; ?>">
@@ -427,7 +427,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 												</div>
 
-												<div class="form-group" hidden>
+												<div class="form-group" >
 													<label class="col-sm-3 control-label"><?php $lh->translateText("custom_caller_id"); ?>:</label>
 													<div class="col-sm-9 mb">
 														<select id="use_custom_cid" class="form-control" name="use_custom_cid">
@@ -493,7 +493,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 												</div>
 												<?php if ($campaign->campaign_type == "OUTBOUND") { ?>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("minimum_hopper_level"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="hopper_level" name="hopper_level">
@@ -510,7 +510,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("force_reset_of_hopper"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="force_reset_hopper" name="force_reset_hopper">
@@ -619,7 +619,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 
 										<div class="tab-pane fade in" id="tab_2">
 											<fieldset>
-												<div class="form-group" hidden>
+												<div class="form-group" >
 													<label class="col-sm-3 control-label"><?php $lh->translateText("default_country_code"); ?>:</label>
 													<div class="col-sm-9 mb">
 														<div id="flag" class="flag flag-<?php if (!empty($campaign->country_codes->{$campaign->default_country_code}->tld)) {
@@ -653,7 +653,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("custom_fields_list_id"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" class="form-control" value="<?php if (!empty($campaign->custom_fields_list_id)) {
@@ -670,7 +670,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">URL Tab 1:</label>
 														<div class="col-sm-3 mb">
 															<input type="text" class="form-control" placeholder="Enter Title" value="<?php if (!empty($campaign->url_tab_first_title)) {
@@ -683,7 +683,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																																																	} ?>" id="url_tab_first_url" name="url_tab_first_url">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">URL Tab 2:</label>
 														<div class="col-sm-3 mb">
 															<input type="text" class="form-control" placeholder="Enter Title" value="<?php if (!empty($campaign->url_tab_second_title)) {
@@ -715,7 +715,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 												<?php } ?>
 												<?php if ($campaign->campaign_type == "OUTBOUND") { ?>
-													<div class="form-group" style="margin-bottom: 10px;" hidden>
+													<div class="form-group" style="margin-bottom: 10px;">
 														<?php $dial_statuses = explode(" ", rtrim($campaign->data->dial_statuses, " -"));
 														$i = 1; ?>
 														<?php foreach ($dial_statuses as $dial_status) { ?>
@@ -731,7 +731,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															<?php } ?>
 														<?php } ?>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("dial_status"); ?>:</label>
 														<div class="col-sm-8 mb">
 															<select class="form-control" id="dial_status" name="dial_status">
@@ -765,14 +765,113 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("list_order"); ?>:</label>
 														<div class="col-sm-9 mb">
-															<select size="1" name="lead_order" id="lead_order" class="form-control">
+														<select size="1" name="lead_order" id="lead_order" class="form-control">
 																<option value="DOWN" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN") echo "selected"; ?>>DOWN</option>
 																<option value="UP" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP") echo "selected"; ?>>UP</option>
+																<option value="DOWN_PHONE" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE") echo "selected"; ?>>DOWN PHONE</option>
+																<option value="UP_PHONE" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE") echo "selected"; ?>>UP PHONE</option>
+																<option value="DOWN_LAST_NAME" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME") echo "selected"; ?>>DOWN LAST NAME</option>
+																<option value="UP_LAST_NAME" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME") echo "selected"; ?>>UP LAST NAME</option>
+																<option value="DOWN_COUNT" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT") echo "selected"; ?>>DOWN COUNT</option>
+																<option value="UP_COUNT" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT") echo "selected"; ?>>UP COUNT</option>
 																<option value="RANDOM" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM") echo "selected"; ?>>RANDOM</option>
+																<option value="DOWN_LAST_CALL_TIME" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME") echo "selected"; ?>>DOWN LAST CALL TIME</option>
+																<option value="UP_LAST_CALL_TIME" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME") echo "selected"; ?>>UP LAST CALL TIME</option>
+																<option value="DOWN_RANK" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK") echo "selected"; ?>>DOWN RANK</option>
+																<option value="UP_RANK" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK") echo "selected"; ?>>UP RANK</option>
+																<option value="DOWN_OWNER" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER") echo "selected"; ?>>DOWN OWNER</option>
+																<option value="UP_OWNER" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER") echo "selected"; ?>>UP OWNER</option>
+																<option value="DOWN_TIMEZONE" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE") echo "selected"; ?>>DOWN TIMEZONE</option>
+																<option value="UP_TIMEZONE" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE") echo "selected"; ?>>UP TIMEZONE</option>
+																<option value="DOWN_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_2nd_NEW") echo "selected"; ?>>DOWN 2nd NEW</option>
+																<option value="DOWN_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_3rd_NEW") echo "selected"; ?>>DOWN 3rd NEW</option>
+																<option value="DOWN_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_4th_NEW") echo "selected"; ?>>DOWN 4th NEW</option>
+																<option value="DOWN_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_5th_NEW") echo "selected"; ?>>DOWN 5th NEW</option>
+																<option value="DOWN_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_6th_NEW") echo "selected"; ?>>DOWN 6th NEW</option>
+																<option value="UP_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_2nd_NEW") echo "selected"; ?>>UP 2nd NEW</option>
+																<option value="UP_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_3rd_NEW") echo "selected"; ?>>UP 3rd NEW</option>
+																<option value="UP_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_4th_NEW") echo "selected"; ?>>UP 4th NEW</option>
+																<option value="UP_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_5th_NEW") echo "selected"; ?>>UP 5th NEW</option>
+																<option value="UP_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_6th_NEW") echo "selected"; ?>>UP 6th NEW</option>
+																<option value="DOWN_PHONE_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE_2nd_NEW") echo "selected"; ?>>DOWN PHONE 2nd NEW</option>
+																<option value="DOWN_PHONE_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE_3rd_NEW") echo "selected"; ?>>DOWN PHONE 3rd NEW</option>
+																<option value="DOWN_PHONE_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE_4th_NEW") echo "selected"; ?>>DOWN PHONE 4th NEW</option>
+																<option value="DOWN_PHONE_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE_5th_NEW") echo "selected"; ?>>DOWN PHONE 5th NEW</option>
+																<option value="DOWN_PHONE_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_PHONE_6th_NEW") echo "selected"; ?>>DOWN PHONE 6th NEW</option>
+																<option value="UP_PHONE_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE_2nd_NEW") echo "selected"; ?>>UP PHONE 2nd NEW</option>
+																<option value="UP_PHONE_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE_3rd_NEW") echo "selected"; ?>>UP PHONE 3rd NEW</option>
+																<option value="UP_PHONE_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE_4th_NEW") echo "selected"; ?>>UP PHONE 4th NEW</option>
+																<option value="UP_PHONE_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE_5th_NEW") echo "selected"; ?>>UP PHONE 5th NEW</option>
+																<option value="UP_PHONE_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_PHONE_6th_NEW") echo "selected"; ?>>UP PHONE 6th NEW</option>
+																<option value="DOWN_LAST_NAME_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME_2nd_NEW") echo "selected"; ?>>DOWN LAST NAME 2nd NEW</option>
+																<option value="DOWN_LAST_NAME_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME_3rd_NEW") echo "selected"; ?>>DOWN LAST NAME 3rd NEW</option>
+																<option value="DOWN_LAST_NAME_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME_4th_NEW") echo "selected"; ?>>DOWN LAST NAME 4th NEW</option>
+																<option value="DOWN_LAST_NAME_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME_5th_NEW") echo "selected"; ?>>DOWN LAST NAME 5th NEW</option>
+																<option value="DOWN_LAST_NAME_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_NAME_6th_NEW") echo "selected"; ?>>DOWN LAST NAME 6th NEW</option>
+																<option value="UP_LAST_NAME_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME_2nd_NEW") echo "selected"; ?>>UP LAST NAME 2nd NEW</option>
+																<option value="UP_LAST_NAME_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME_3rd_NEW") echo "selected"; ?>>UP LAST NAME 3rd NEW</option>
+																<option value="UP_LAST_NAME_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME_4th_NEW") echo "selected"; ?>>UP LAST NAME 4th NEW</option>
+																<option value="UP_LAST_NAME_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME_5th_NEW") echo "selected"; ?>>UP LAST NAME 5th NEW</option>
+																<option value="UP_LAST_NAME_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_NAME_6th_NEW") echo "selected"; ?>>UP LAST NAME 6th NEW</option>
+																<option value="DOWN_COUNT_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT_2nd_NEW") echo "selected"; ?>>DOWN COUNT 2nd NEW</option>
+																<option value="DOWN_COUNT_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT_3rd_NEW") echo "selected"; ?>>DOWN COUNT 3rd NEW</option>
+																<option value="DOWN_COUNT_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT_4th_NEW") echo "selected"; ?>>DOWN COUNT 4th NEW</option>
+																<option value="DOWN_COUNT_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT_5th_NEW") echo "selected"; ?>>DOWN COUNT 5th NEW</option>
+																<option value="DOWN_COUNT_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_COUNT_6th_NEW") echo "selected"; ?>>DOWN COUNT 6th NEW</option>
+																<option value="UP_COUNT_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT_2nd_NEW") echo "selected"; ?>>UP COUNT 2nd NEW</option>
+																<option value="UP_COUNT_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT_3rd_NEW") echo "selected"; ?>>UP COUNT 3rd NEW</option>
+																<option value="UP_COUNT_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT_4th_NEW") echo "selected"; ?>>UP COUNT 4th NEW</option>
+																<option value="UP_COUNT_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT_5th_NEW") echo "selected"; ?>>UP COUNT 5th NEW</option>
+																<option value="UP_COUNT_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_COUNT_6th_NEW") echo "selected"; ?>>UP COUNT 6th NEW</option>
+																<option value="RANDOM_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM_2nd_NEW") echo "selected"; ?>>RANDOM 2nd NEW</option>
+																<option value="RANDOM_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM_3rd_NEW") echo "selected"; ?>>RANDOM 3rd NEW</option>
+																<option value="RANDOM_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM_4th_NEW") echo "selected"; ?>>RANDOM 4th NEW</option>
+																<option value="RANDOM_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM_5th_NEW") echo "selected"; ?>>RANDOM 5th NEW</option>
+																<option value="RANDOM_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "RANDOM_6th_NEW") echo "selected"; ?>>RANDOM 6th NEW</option>
+																<option value="DOWN_LAST_CALL_TIME_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME_2nd_NEW") echo "selected"; ?>>DOWN LAST CALL TIME 2nd NEW</option>
+																<option value="DOWN_LAST_CALL_TIME_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME_3rd_NEW") echo "selected"; ?>>DOWN LAST CALL TIME 3rd NEW</option>
+																<option value="DOWN_LAST_CALL_TIME_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME_4th_NEW") echo "selected"; ?>>DOWN LAST CALL TIME 4th NEW</option>
+																<option value="DOWN_LAST_CALL_TIME_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME_5th_NEW") echo "selected"; ?>>DOWN LAST CALL TIME 5th NEW</option>
+																<option value="DOWN_LAST_CALL_TIME_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_LAST_CALL_TIME_6th_NEW") echo "selected"; ?>>DOWN LAST CALL TIME 6th NEW</option>
+																<option value="UP_LAST_CALL_TIME_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME_2nd_NEW") echo "selected"; ?>>UP LAST CALL TIME 2nd NEW</option>
+																<option value="UP_LAST_CALL_TIME_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME_3rd_NEW") echo "selected"; ?>>UP LAST CALL TIME 3rd NEW</option>
+																<option value="UP_LAST_CALL_TIME_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME_4th_NEW") echo "selected"; ?>>UP LAST CALL TIME 4th NEW</option>
+																<option value="UP_LAST_CALL_TIME_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME_5th_NEW") echo "selected"; ?>>UP LAST CALL TIME 5th NEW</option>
+																<option value="UP_LAST_CALL_TIME_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_LAST_CALL_TIME_6th_NEW") echo "selected"; ?>>UP LAST CALL TIME 6th NEW</option>
+																<option value="DOWN_RANK_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK_2nd_NEW") echo "selected"; ?>>DOWN RANK 2nd NEW</option>
+																<option value="DOWN_RANK_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK_3rd_NEW") echo "selected"; ?>>DOWN RANK 3rd NEW</option>
+																<option value="DOWN_RANK_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK_4th_NEW") echo "selected"; ?>>DOWN RANK 4th NEW</option>
+																<option value="DOWN_RANK_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK_5th_NEW") echo "selected"; ?>>DOWN RANK 5th NEW</option>
+																<option value="DOWN_RANK_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_RANK_6th_NEW") echo "selected"; ?>>DOWN RANK 6th NEW</option>
+																<option value="UP_RANK_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK_2nd_NEW") echo "selected"; ?>>UP RANK 2nd NEW</option>
+																<option value="UP_RANK_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK_3rd_NEW") echo "selected"; ?>>UP RANK 3rd NEW</option>
+																<option value="UP_RANK_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK_4th_NEW") echo "selected"; ?>>UP RANK 4th NEW</option>
+																<option value="UP_RANK_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK_5th_NEW") echo "selected"; ?>>UP RANK 5th NEW</option>
+																<option value="UP_RANK_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_RANK_6th_NEW") echo "selected"; ?>>UP RANK 6th NEW</option>
+																<option value="DOWN_OWNER_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER_2nd_NEW") echo "selected"; ?>>DOWN OWNER 2nd NEW</option>
+																<option value="DOWN_OWNER_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER_3rd_NEW") echo "selected"; ?>>DOWN OWNER 3rd NEW</option>
+																<option value="DOWN_OWNER_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER_4th_NEW") echo "selected"; ?>>DOWN OWNER 4th NEW</option>
+																<option value="DOWN_OWNER_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER_5th_NEW") echo "selected"; ?>>DOWN OWNER 5th NEW</option>
+																<option value="DOWN_OWNER_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_OWNER_6th_NEW") echo "selected"; ?>>DOWN OWNER 6th NEW</option>
+																<option value="UP_OWNER_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER_2nd_NEW") echo "selected"; ?>>UP OWNER 2nd NEW</option>
+																<option value="UP_OWNER_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER_3rd_NEW") echo "selected"; ?>>UP OWNER 3rd NEW</option>
+																<option value="UP_OWNER_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER_4th_NEW") echo "selected"; ?>>UP OWNER 4th NEW</option>
+																<option value="UP_OWNER_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER_5th_NEW") echo "selected"; ?>>UP OWNER 5th NEW</option>
+																<option value="UP_OWNER_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_OWNER_6th_NEW") echo "selected"; ?>>UP OWNER 6th NEW</option>
+																<option value="DOWN_TIMEZONE_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE_2nd_NEW") echo "selected"; ?>>DOWN TIMEZONE 2nd NEW</option>
+																<option value="DOWN_TIMEZONE_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE_3rd_NEW") echo "selected"; ?>>DOWN TIMEZONE 3rd NEW</option>
+																<option value="DOWN_TIMEZONE_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE_4th_NEW") echo "selected"; ?>>DOWN TIMEZONE 4th NEW</option>
+																<option value="DOWN_TIMEZONE_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE_5th_NEW") echo "selected"; ?>>DOWN TIMEZONE 5th NEW</option>
+																<option value="DOWN_TIMEZONE_6th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "DOWN_TIMEZONE_6th_NEW") echo "selected"; ?>>DOWN TIMEZONE 6th NEW</option>
+																<option value="UP_TIMEZONE_2nd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE_2nd_NEW") echo "selected"; ?>>UP TIMEZONE 2nd NEW</option>
+																<option value="UP_TIMEZONE_3rd_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE_3rd_NEW") echo "selected"; ?>>UP TIMEZONE 3rd NEW</option>
+																<option value="UP_TIMEZONE_4th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE_4th_NEW") echo "selected"; ?>>UP TIMEZONE 4th NEW</option>
+																<option value="UP_TIMEZONE_5th_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE_5th_NEW") echo "selected"; ?>>UP TIMEZONE 5th NEW</option>
+																<option value="UP_TIMEZONE_6TH_NEW" <?php if (str_replace(" ", "_", $campaign->data->lead_order) == "UP_TIMEZONE_6TH_NEW") echo "selected"; ?>>UP TIMEZONE 6th NEW</option>
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Lead Order Secondary:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="lead_order_secondary" name="lead_order_secondary">
@@ -783,7 +882,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("lead_filter"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="lead_filter" name="lead_filter">
@@ -814,7 +913,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															<input type="text" class="form-control" id="dial_time_out" name="dial_timeout" value="<?php echo $campaign->data->dial_timeout; ?>">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_prefix"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" class="form-control" id="manual_dial_prefix" name="manual_dial_prefix" value="<?php echo $campaign->data->manual_dial_prefix; ?>">
@@ -836,7 +935,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("answering_machine_message"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<div class="input-group">
@@ -855,7 +954,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("amd_send_to_action"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="amd_send_to_vmx" name="amd_send_to_vmx">
@@ -864,7 +963,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("waitforsilence_options"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" class="form-control" id="waitforsilence_options" name="waitforsilence_options" value="<?php echo $campaign->data->waitforsilence_options; ?>">
@@ -880,7 +979,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_filter"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="manual_dial_filter" name="manual_dial_filter">
@@ -896,11 +995,13 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_search_filter"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="manual_dial_search_filter" name="manual_dial_search_filter">
+																<option value="NONE" <?php if ($campaign->data->manual_dial_search_filter == "NONE") echo ""; ?>>NONE</option>
 																<option value="CAMPLISTS_ONLY" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ONLY") echo "selected"; ?>>CAMPLIST ONLY</option>
+																<option value="CAMPLISTS_ALL" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ALL") echo ""; ?>>CAMPLIST ALL</option>
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("use_internal_dnc"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="use_internal_dnc" name="use_internal_dnc">
@@ -910,7 +1011,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("use_campaign_dnc"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="use_campaign_dnc" name="use_campaign_dnc">
@@ -944,7 +1045,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																																								} ?>">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("alt_number_dialing"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="alt_number_dialing" name="alt_number_dialing">
@@ -953,7 +1054,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("available_only_tally"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="available_only_ratio_tally" name="available_only_ratio_tally">
@@ -981,7 +1082,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Transfer-Conf Number 1:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" class="form-control" value="<?php if (!empty($campaign->data->xferconf_a_number)) {
@@ -991,7 +1092,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																											} ?>" id="xferconf_a_number" name="xferconf_a_number">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Transfer-Conf Number 2:</label>
 														<div class="col-sm-9 mb">
 															<input type="text" class="form-control" value="<?php if (!empty($campaign->data->xferconf_b_number)) {
@@ -1001,7 +1102,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																											} ?>" id="xferconf_b_number" name="xferconf_b_number">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Disable Alter Customer Data:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="disable_alter_custdata" name="disable_alter_custdata">
@@ -1010,7 +1111,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Disable Alter Customer Phone:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="disable_alter_custphone" name="disable_alter_custphone">
@@ -1020,7 +1121,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Caller ID for 3-way Calls:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="three_way_call_cid" name="three_way_call_cid">
@@ -1031,7 +1132,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Dial Prefix for 3-way Calls:</label>
 														<div class="col-sm-9 mb">
 															<?php
@@ -1041,7 +1142,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															<input type="text" class="form-control" value="<?php echo $campaign->data->three_way_dial_prefix; ?>" id="three_way_dial_prefix" name="three_way_dial_prefix" maxlength="20">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Customer 3-way Hangup Logging:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="customer_3way_hangup_logging" name="customer_3way_hangup_logging">
@@ -1050,7 +1151,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Customer 3-way Hangup Seconds:</label>
 														<div class="col-sm-9 mb">
 															<input type="number" class="form-control" id="customer_3way_hangup_seconds" name="customer_3way_hangup_seconds" min="0" value="<?php if (!empty($campaign->data->customer_3way_hangup_seconds)) {
@@ -1060,7 +1161,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																																															} ?>" onkeydown="return FilterInput(event)">
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label">Customer 3-way Hangup Action:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="customer_3way_hangup_action" name="customer_3way_hangup_action">
@@ -2426,7 +2527,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("enable_callback_alert"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select id="enable_callback_alert" name="enable_callback_alert" class="form-control select2">
@@ -2435,7 +2536,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("cb_noexpire"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select id="cb_noexpire" name="cb_noexpire" class="form-control select2">
@@ -2444,7 +2545,7 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 															</select>
 														</div>
 													</div>
-													<div class="form-group" hidden>
+													<div class="form-group" >
 														<label class="col-sm-3 control-label"><?php $lh->translateText("cb_sendemail"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select id="cb_sendemail" name="cb_sendemail" class="form-control select2">

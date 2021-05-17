@@ -1,7 +1,8 @@
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
 var is_upload_id_card = false;
-
+var selected_product = null;
+var selected_employment_type = null;
 const EC_API_USERNAME = "";
 const EC_PROD_API_URL =
   "https://apipreprod.easycredit.vn/api/loanServices/v1/product-list";
@@ -56,13 +57,6 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
-  var bank_code_select = $("select[name='bank_code']")[0];
-  var i = 0;
-  $.each(bank_code.data, function (i, item) {
-    $(`<option value="${item.value}">${item.NOM}</option>`).appendTo(
-      bank_code_select
-    );
-  });
   $(document).on("click", "#submit_attachment", function (e) {
     e.preventDefault();
     const multiple_files = $(".MultiFile-applied.MultiFile");
@@ -107,11 +101,16 @@ $(document).ready(() => {
           if (resp.status == "success") {
             var doc = { file_type: resp.file_type, file_name: resp.file_name };
             list_doc_collecting.push(doc);
-            swal("Upload file success!", "Upload attachment success", "success");
+            swal(
+              "Upload file success!",
+              "Upload attachment success",
+              "success"
+            );
           }
         });
     });
   });
+
   // Upload img_selfie
   $(document).on("click", "#submit_img_selfie", function (e) {
     e.preventDefault();
@@ -303,9 +302,9 @@ let ECShowProducts = (partner_code, request_id) => {
                   result =
                     data != null
                       ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
+                          style: "currency",
+                          currency: "VND",
+                        })
                       : 0;
                   return result;
                 },
@@ -317,9 +316,9 @@ let ECShowProducts = (partner_code, request_id) => {
                   result =
                     data != null
                       ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
+                          style: "currency",
+                          currency: "VND",
+                        })
                       : 0;
                   return result;
                 },
@@ -351,9 +350,9 @@ let ECShowProducts = (partner_code, request_id) => {
                     value =
                       value != null
                         ? value.toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
+                            style: "currency",
+                            currency: "VND",
+                          })
                         : 0;
                   }
                   $("#product-detail-form input[name='" + property + "']").val(
@@ -389,10 +388,10 @@ let ECShowProducts = (partner_code, request_id) => {
                         let value = elem[prop];
                         $(
                           "#product-detail-form-bundle-" +
-                          table_index +
-                          " input[name='" +
-                          prop +
-                          "']"
+                            table_index +
+                            " input[name='" +
+                            prop +
+                            "']"
                         ).val(value);
                       } else {
                         let tmp_table =
@@ -510,8 +509,9 @@ $(document).on("click", "#submit-offer", function (e) {
     .fail((result, status, error) => {
       console.log(result);
       let msg = "Please contact developer!";
+      msg = result.responseJSON.message;
       if (result.message !== undefined) {
-        msg = result.responseJSON.message;
+        msg = result.message;
       }
       swal("Send offer data fail!", msg, "error");
     })
@@ -588,7 +588,11 @@ $("#eligible_btn").on("click", (e) => {
         if (result.message !== undefined) {
           msg = result.message;
         }
-        swal("Send eligible data fail!", erro.error.error_message, "error");
+        swal(
+          "Send eligible data fail!",
+          erro.error.error_message + "Please try again",
+          "error"
+        );
       })
       .done((result) => {
         console.log(result);
@@ -740,7 +744,7 @@ let CheckBoxSyncFieldFullLoan = (flag) => {
   }
 };
 
-$("#full-loan-form input[name='check_same_address']").on("change", (e) => {
+$("input[type='checkbox'][name='check_same_address']").on("change", (e) => {
   CheckBoxSyncFieldFullLoan(
     $("#full-loan-form input[name='check_same_address']").is(":checked")
   );
@@ -763,7 +767,7 @@ let SyncFullLoanFromContact = () => {
     date_of_birth: $(".formMain input[name='date_of_birth']").val(),
     identity_card_id: $(".formMain input[name='identity_number']").val(),
     issue_date: $(".formMain input[name='identity_issued_on']").val(),
-    issue_place: $(".formMain input[name='identity_issued_by']").val(),
+    issue_place: $(".formMain select[name='identity_issued_by']").val(),
     identity_card_id_2: "",
     phone_number: phone_number,
     email: $(".formMain input[name='email']").val(),
@@ -840,8 +844,25 @@ let SyncFullLoanFromContact = () => {
   if (!$("#full-loan-form input[name='check_same_address']").is(":checked")) {
     $("#full-loan-form input[name='check_same_address']").click();
   }
+  $("#full-loan-form select[name='issue_place']")
+    .val($(".formMain select[name='identity_issued_by']"))
+    .trigger("change");
 };
-
+function clearInputFile(f) {
+  if (f.value) {
+    try {
+      f.value = ""; //for IE11, latest Chrome/Firefox/Opera...
+    } catch (err) {}
+    if (f.value) {
+      //for IE5 ~ IE10
+      var form = document.createElement("form"),
+        ref = f.nextSibling;
+      form.appendChild(f);
+      form.reset();
+      ref.parentNode.insertBefore(f, ref);
+    }
+  }
+}
 function clearForm($form) {
   $form
     .find(":input")
@@ -851,6 +872,14 @@ function clearForm($form) {
   $("#submit-full-loan").attr("hidden", false);
   $("#submit-offer").attr("hidden", true);
   $("#offer-waiting").attr("hidden", true);
+  clearInputFile($("#img_selfie")[0]);
+  clearInputFile($("#img_id_card")[0]);
+  selected_offer_insurance_type = "";
+  var list_docs = $(".MultiFile-remove");
+  for (let index = 0; index < list_docs.length; index++) {
+    list_docs[index].click();
+  }
+  list_doc_collecting = [];
 }
 
 function SetCustomerOfferDetail() {
@@ -879,17 +908,39 @@ function SetCustomerOfferDetail() {
   <tr>
       <td>Total Offer</td>
       <td><input name="customer-offer-total" value="21200000" type="number" class="customer-offer-input-readonly">${formatter.format(
-      21200000
-    )}</td>
+        21200000
+      )}</td>
   </tr>
   <tr>
       <td>Monthly</td>
       <td><input name="customer-offer-monthly" value="1200000" type="number" class="customer-offer-input-readonly">${formatter.format(
-      1200000
-    )}</td>
+        1200000
+      )}</td>
   </tr>
   `;
 }
+$(document).on("change", 'select[name="product_type"]', function () {
+  let product_code = this.value;
+});
+
+$(document).on("change", 'select[name="employment_type"]', function () {
+  selected_employment_type = null;
+  let em_type = this.value;
+  if (ECProducts != undefined){
+      ECProducts.forEach((et) => {
+          if (et.employee_type == em_type){
+              selected_employment_type = et;
+              let product_lists = et.product_list;
+               let select_product_type = $("select[name='product_type']")[0];
+               select_product_type.innerHTML =""
+               for (prd of product_lists) {
+                    $(`<option value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`).appendTo(select_product_type);
+                }
+              return;
+          }
+      });
+  }
+});
 $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
   if (this.value == "" || this.value == undefined) {
     //
@@ -901,16 +952,20 @@ $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
   this.value = formatter.format(this.value);
 });
 
-$(document).on("change", 'input[name="select_insurance"]', function () {
+$(document).on("click", 'input[name="select_insurance"]', function () {
   $("#create-offer-table").empty();
   $("#create-offer-table").attr("hidden", false);
-  let tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+  let tmp_data2 = offerinsurancetable.row(this).data();
+  if (tmp_data2 == undefined) {
+    tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+  }
   selected_offer_insurance_type = tmp_data2.type;
   percent_insurance = tmp_data2.percent_insurance;
   insurance_amount = tmp_data2.mount;
   SetCustomerOfferDetail();
 });
 $("#full-loan-form").on("submit", (e) => {
+  lead_id = $(".formMain input[name='lead_id']").val() * 1;
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
@@ -995,10 +1050,10 @@ $("#full-loan-form").on("submit", (e) => {
       console.log(result);
     });
 });
-function updateRequestId(request_id, lead_id){
+function updateRequestId(request_id, lead_id) {
   $("#full-loan-form input[name='request_id']").val(request_id);
   $(".formMain input[name='request_id']").val(request_id);
-  $("#submit-full-loan")[0].disabled = true
+  $("#submit-full-loan")[0].disabled = true;
   $.ajax({
     type: "POST",
     url: "https://ec02-api.tel4vn.com/v1/lead/requestId",
@@ -1024,23 +1079,27 @@ function PollingOfferFromEC(request_id, lead_id) {
       if (result.data.app_status != "" && result.data.reject_reason != "") {
         if (result.data.app_status == "VALIDATED") {
           ajaxGetOffer(request_id).done((result) => {
-            if (result.data.document != undefined && result.data.document != null) {
+            if (
+              result.data.document != undefined &&
+              result.data.document != null
+            ) {
               IsSuccessPolled = true;
               offer = result.data.document;
               offerList = offer.data.offer_list;
               SetOfferDetail(offerList);
             }
           });
-        }
-        else {
+        } else {
           IsSuccessPolled = true;
           $("#create-offer-table").empty();
           $("#create-offer-table").attr("hidden", true);
           $("#offer-datatable").empty();
-          swal("Offer Reject", "Reason: "+result.data.reject_reason, "error");
+          swal("Offer Reject", "Reason: " + result.data.reject_reason, "error");
           // Update request_id
-          request_id = $("#full-loan-form input[name='partner_code']").val() + Date.now().toString();
-          updateRequestId(request_id, lead_id)
+          request_id =
+            $("#full-loan-form input[name='partner_code']").val() +
+            Date.now().toString();
+          updateRequestId(request_id, lead_id);
         }
       }
     });
@@ -1070,9 +1129,9 @@ function SetOfferDetail(offerList) {
           result =
             data != null
               ? data.toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })
+                  style: "currency",
+                  currency: "VND",
+                })
               : 0;
           return result;
         },
@@ -1088,9 +1147,9 @@ function SetOfferDetail(offerList) {
           result =
             data != null
               ? data.toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })
+                  style: "currency",
+                  currency: "VND",
+                })
               : 0;
           return result;
         },
@@ -1106,9 +1165,9 @@ function SetOfferDetail(offerList) {
           result =
             data != null
               ? data.toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })
+                  style: "currency",
+                  currency: "VND",
+                })
               : 0;
           return result;
         },
@@ -1120,9 +1179,9 @@ function SetOfferDetail(offerList) {
           result =
             data != null
               ? data.toLocaleString("vi-VN", {
-                style: "currency",
-                currency: "VND",
-              })
+                  style: "currency",
+                  currency: "VND",
+                })
               : 0;
           return result;
         },
@@ -1173,9 +1232,9 @@ function SetOfferDetail(offerList) {
             result =
               data != null
                 ? data.toLocaleString("vi-VN", {
-                  style: "currency",
-                  currency: "VND",
-                })
+                    style: "currency",
+                    currency: "VND",
+                  })
                 : 0;
             return result;
           },
@@ -1184,7 +1243,7 @@ function SetOfferDetail(offerList) {
           title: "Percentage",
           data: "percent_insurance",
           render: (data) => {
-            return data * 100 + "%";
+            return data + "%";
           },
         },
         {
@@ -1295,23 +1354,33 @@ $(function () {
 
 $(document).ready(() => {
   let permanentProvince = $("select[name='permanent_province']")[0];
+  $(`<option value="" selected></option>`).appendTo(permanentProvince);
   for (const [key, value] of Object.entries(PROVINCE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(permanentProvince);
   }
+
+  $("select[name='permanent_province']").selectpicker("refresh");
   let temProvince = $("select[name='tem_province']")[0];
+  $(`<option value="" selected></option>`).appendTo(temProvince);
   for (const [key, value] of Object.entries(PROVINCE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(temProvince);
   }
+
+  $("select[name='tem_province']").selectpicker("refresh");
   let workplaceProvince = $("select[name='workplace_province']")[0];
+  $(`<option value="" selected></option>`).appendTo(workplaceProvince);
   for (const [key, value] of Object.entries(PROVINCE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(workplaceProvince);
   }
+  $("select[name='workplace_province']").selectpicker("refresh");
+
   $("select[name='permanent_province']").on("change", () => {
     $("select[name='permanent_district']").empty().selectpicker("refresh");
     $("select[name='permanent_ward']").empty().selectpicker("refresh");
     let permanentProvinceId = $("select[name='permanent_province']").val();
     if (permanentProvinceId != "") {
       let permanentDistrict = $("select[name='permanent_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(permanentDistrict);
       for (const [key, value] of Object.entries(DISTRICT)) {
         if (value.province_id == permanentProvinceId) {
           $(`<option value="${key}">${value.district_name}</option>`).appendTo(
@@ -1327,6 +1396,7 @@ $(document).ready(() => {
     let permanentDistrictId = $("select[name='permanent_district']").val();
     if (permanentDistrictId != "") {
       let permanentWard = $("select[name='permanent_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(permanentWard);
       for (const [key, value] of Object.entries(WARD)) {
         if (value.district_id == permanentDistrictId) {
           $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
@@ -1343,6 +1413,7 @@ $(document).ready(() => {
     let temProvinceId = $("select[name='tem_province']").val();
     if (temProvinceId != "") {
       let temDistrict = $("select[name='tem_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(temDistrict);
       for (const [key, value] of Object.entries(DISTRICT)) {
         if (value.province_id == temProvinceId) {
           $(`<option value="${key}">${value.district_name}</option>`).appendTo(
@@ -1358,6 +1429,7 @@ $(document).ready(() => {
     let temDistrictId = $("select[name='tem_district']").val();
     if (temDistrictId != "") {
       let temWard = $("select[name='tem_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(temWard);
       for (const [key, value] of Object.entries(WARD)) {
         if (value.district_id == temDistrictId) {
           $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
@@ -1374,6 +1446,7 @@ $(document).ready(() => {
     let workplaceProvinceId = $("select[name='workplace_province']").val();
     if (workplaceProvinceId != "") {
       let workplaceDistrict = $("select[name='workplace_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(workplaceDistrict);
       for (const [key, value] of Object.entries(DISTRICT)) {
         if (value.province_id == workplaceProvinceId) {
           $(`<option value="${key}">${value.district_name}</option>`).appendTo(
@@ -1389,6 +1462,7 @@ $(document).ready(() => {
     let workplaceDistrictId = $("select[name='workplace_district']").val();
     if (workplaceDistrictId != "") {
       let workplaceWard = $("select[name='workplace_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(workplaceWard);
       for (const [key, value] of Object.entries(WARD)) {
         if (value.district_id == workplaceDistrictId) {
           $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
@@ -1397,6 +1471,55 @@ $(document).ready(() => {
         }
       }
       $("select[name='workplace_ward']").selectpicker("refresh");
+    }
+  });
+  let bankMainCode = $("select[name='bank_code']")[0];
+  $(`<option value="" selected></option>`).appendTo(bankMainCode);
+  for (const [key, value] of Object.entries(BANK_CODE)) {
+    $(`<option value="${key}">${value}</option>`).appendTo(bankMainCode);
+  }
+  $("select[name='bank_code']").selectpicker("refresh");
+
+  let bankArea = $("select[name='bank_area']")[0];
+  $(`<option value="" selected></option>`).appendTo(bankArea);
+
+  for (const [key, value] of Object.entries(BANK_AREA)) {
+    $(`<option value="${value}">${value}</option>`).appendTo(bankArea);
+  }
+  $("select[name='bank_area']").selectpicker("refresh");
+
+  $("select[name='bank_code']").on("change", () => {
+    let bankAreaValue = $("select[name='bank_area']").val();
+    let bankMainCodeId = $("select[name='bank_code']").val();
+    if (bankAreaValue != "" && bankMainCodeId != "") {
+      $("select[name='bank_branch_code']").empty().selectpicker("refresh");
+      let bankCode = $("select[name='bank_branch_code']")[0];
+      $(`<option value="" selected></option>`).appendTo(bankCode);
+      for (const [key, value] of Object.entries(BANK_BRANCH_CODE)) {
+        if (value.area == bankAreaValue && value.bank_id == bankMainCodeId) {
+          $(`<option value="${key}">${value.branch_name}</option>`).appendTo(
+            bankCode
+          );
+        }
+      }
+      $("select[name='bank_branch_code']").selectpicker("refresh");
+    }
+  });
+  $("select[name='bank_area']").on("change", () => {
+    let bankAreaValue = $("select[name='bank_area']").val();
+    let bankMainCodeId = $("select[name='bank_code']").val();
+    if (bankAreaValue != "" && bankMainCodeId != "") {
+      $("select[name='bank_branch_code']").empty().selectpicker("refresh");
+      let bankCode = $("select[name='bank_branch_code']")[0];
+      $(`<option value="" selected></option>`).appendTo(bankCode);
+      for (const [key, value] of Object.entries(BANK_BRANCH_CODE)) {
+        if (value.area == bankAreaValue && value.bank_id == bankMainCodeId) {
+          $(`<option value="${key}">${value.branch_name}</option>`).appendTo(
+            bankCode
+          );
+        }
+      }
+      $("select[name='bank_branch_code']").selectpicker("refresh");
     }
   });
 });

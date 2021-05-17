@@ -100,6 +100,7 @@
 														<th > Denied </th>
 														<th > Erro Sip</th>
 														<th > Cancel </th>
+														<th > Unknown </th>
 														<th > Answer not in queue </th>
 														<th > Answer in queue no agent</th>
 												</tr>

@@ -805,19 +805,6 @@ echo $ui->modalFormStructureAgentLog('modal_stats_userlog', 'userlog', $lh->tran
 				$('#password').attr("readonly", false);
 				$('#confirm').attr("readonly", false);
 				$('#submit-password-lbl').text('<?php $lh->translateText("password"); ?>: ');
-
-				if ($('#seats').val() > 1) {
-					$('#password').attr("readonly", true);
-					$('#confirm').attr("readonly", true);
-					$('#submit-password-lbl').text('<?php $lh->translateText("default_pass_is"); ?>: ');
-					$('#submit-password').html('<i><?php echo 'Go' . date("Y") ?></i>');
-				} else {
-					//var multipw = $('#password').val();
-					$('#password').attr("readonly", false);
-					$('#confirm').attr("readonly", false);
-					$('#submit-password-lbl').text('<?php $lh->translateText("password"); ?>: ');
-				}
-
 				// Clean up if user went backward before
 				if (currentIndex < newIndex) {
 					// To remove error styles

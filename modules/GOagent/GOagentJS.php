@@ -3651,6 +3651,16 @@ function CheckForIncoming () {
         if (this_VDIC_data.has_call == '1') {
             try {
                 this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id);
+                //EASY CREDIT
+                //Identity
+                $(".formMain input[name='identity_number']").val(this_VDIC_data.identity_number).trigger('change');
+                $(".formMain input[name='identity_issued_on']").val(this_VDIC_data.identity_issued_on);
+                $(".formMain select[name='identity_issued_by']").val(this_VDIC_data.identity_issued_by).trigger('change');
+                //Vendor
+                $(".formMain input[name='vendor_lead_code']").val(this_VDIC_data.vendor_lead_code).trigger('change');
+                $(".formMain input[name='partner_code']").val(this_VDIC_data.partner_code).trigger('change');
+                $(".formMain input[name='request_id']").val(this_VDIC_data.request_id).trigger('change');
+                //EASY CREDIT
             }
             catch (err) {
                 console.log(err);
@@ -3742,7 +3752,7 @@ function CheckForIncoming () {
                 if ( (this_VDIC_data.fronter_full_name.length > 1) && (VDCL_fronter_display == 'Y') )
                     {VDIC_fronter = "  Fronter: " + this_VDIC_data.fronter_full_name + " - " + this_VDIC_data.tsr;}
             }
-            
+            lead_id = this_VDIC_data.lead_id;
             $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
             $(".formMain input[name='uniqueid']").val(this_VDIC_data.uniqueid);
             CIDcheck                                    = this_VDIC_data.callerid;
@@ -9829,7 +9839,8 @@ function getContactList(search_string) {
                     
                     var customer_name = (value.first_name || '') + ' ' + (value.middle_initial || '') + ' ' + (value.last_name || '');
                     var last_call_time = (value.last_local_call_time || '0000-00-00 00:00:00');
-                    var appendThis = '<tr data-id="'+value.lead_id+'"><td>'+value.lead_id+'</td><td>'+customer_name+'</td><td>'+value.phone_number+'</td><td>'+last_call_time+'</td><td>'+value.campaign_id+'</td><td>'+value.status+'</td><td'+commentTitle+'>'+thisComments+'</td><td class="text-center" style="white-space: nowrap;"><button id="lead-info-'+value.lead_id+'" data-leadid="'+value.lead_id+'" onclick="ViewCustInfo('+value.lead_id+');" class="btn btn-info btn-sm" style="margin: 2px;" title="<?=$lh->translationFor('view_contact_info') ?>"><i class="fa fa-file-text-o"></i></button><button id="dial-lead-'+value.lead_id+'" data-leadid="'+value.lead_id+'" onclick="ManualDialNext(\'\','+value.lead_id+','+value.phone_code+','+value.phone_number+',\'\',\'0\');" class="btn btn-primary btn-sm disabled" style="margin: 2px;" title="<?=$lh->translationFor('call_contact_number') ?>"><i class="fa fa-phone"></i></button></td></tr>';
+                    status_name = (value.status_name == null) ? "" : value.status_name;
+                    var appendThis = '<tr data-id="'+value.lead_id+'"><td>'+value.lead_id+'</td><td>'+customer_name+'</td><td>'+value.phone_number+'</td><td>'+last_call_time+'</td><td>'+value.campaign_id+'</td><td>'+status_name+'</td><td'+commentTitle+'>'+thisComments+'</td><td class="text-center" style="white-space: nowrap;"><button id="lead-info-'+value.lead_id+'" data-leadid="'+value.lead_id+'" onclick="ViewCustInfo('+value.lead_id+');" class="btn btn-info btn-sm" style="margin: 2px;" title="<?=$lh->translationFor('view_contact_info') ?>"><i class="fa fa-file-text-o"></i></button><button id="dial-lead-'+value.lead_id+'" data-leadid="'+value.lead_id+'" onclick="ManualDialNext(\'\','+value.lead_id+','+value.phone_code+','+value.phone_number+',\'\',\'0\');" class="btn btn-primary btn-sm disabled" style="margin: 2px;" title="<?=$lh->translationFor('call_contact_number') ?>"><i class="fa fa-phone"></i></button></td></tr>';
                     $("#contacts-list tbody").append(appendThis);
                 });
             }
