@@ -10,7 +10,7 @@ const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",
 });
-const num_formatter = new Intl.NumberFormat('vi-VN');
+const num_formatter = new Intl.NumberFormat("vi-VN");
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
 var selected_offer_id = "";
@@ -23,7 +23,7 @@ var selected_min_financed_amount = 0;
 var percent_insurance = 0;
 var offerinsurancetable;
 var insurance_amount = 0;
-// 
+//
 let box_color = [
   "box-primary",
   "box-danger",
@@ -32,43 +32,92 @@ let box_color = [
   "box box-info",
   "box box-default",
 ];
-let changeLoanTennor = (e)=>{
-  e.form.loan_tenor.value=e.value;
+let changeLoanTennor = (e) => {
+  e.form.loan_tenor.value = e.value;
   simulator(e);
-}
-let changeLoanTennorRange = (e)=>{
-  e.form.range_loan_tenor.value=e.value;
+};
+let checkContract = (e) => {
+  if (parseInt(e.form.from.value) < parseInt(e.form.from.min)) {
+    e.form.from.value = e.form.from.min;
+  }
+  if (parseInt(e.form.from.value) > parseInt(e.form.from.max)) {
+    e.form.from.value = e.form.from.max;
+  }
+  if (parseInt(e.form.to.value) < parseInt(e.form.to.min)) {
+    e.form.to.value = e.form.from.min;
+  }
+  if (parseInt(e.form.to.value) > parseInt(e.form.to.max)) {
+    e.form.to.value = e.form.from.max;
+  }
+  let fr = e.form.from.value;
+  let to = e.form.to.value;
+  let ct = to - fr;
+  if (ct < 0) {
+    ct = 0;
+  }
+  e.form.contract_term.value = ct;
+};
+
+let triggerMinMax = (e) => {
+  if (parseInt(e.value) < parseInt(e.min)) {
+    e.value = e.min;
+  }
+  if (parseInt(e.value) > parseInt(e.max)) {
+    e.value = e.max;
+  }
+};
+let checkminmax = (e) => {
+  if (parseInt(e.value) < parseInt(e.min)) {
+    e.value = e.min;
+    simulator(e);
+  }
+  if (parseInt(e.value) > parseInt(e.max)) {
+    e.value = e.max;
+    simulator(e);
+  }
+};
+let changeLoanTennorRange = (e) => {
+  e.form.range_loan_tenor.value = e.value;
   simulator(e);
-}
-let changeLoanAmount = (e)=>{
-  e.form.loan_amount.value=e.value;
+};
+let changeLoanAmount = (e) => {
+  e.form.loan_amount.value = e.value;
   simulator(e);
-}
-let changeLoanAmountRange = (e)=>{
+};
+let changeLoanAmountRange = (e) => {
+  e.form.range_loan_amount.value = e.value;
   simulator(e);
-  e.form.range_loan_amount.value=e.value;
-}
-let simulator = (e)=>{
+};
+$("input[type='number]").on("blur", function () {
+  console.log("Sdasdasd");
+});
+let simulator = (e) => {
   console.log("simulator");
-  $("input[name='loan_amount']").trigger('blur')
   let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
   let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
   let sm_insu = $("input[name='simu_insurance']:checked").val();
-  if (sm_insu == undefined){
+  if (sm_insu == undefined) {
     $("input[name='simu_insurance']")[0].checked = true;
     sm_insu = 0;
   }
-  let sm_total_offer = parseInt(sm_loan_amount * (1+sm_insu/100))+"";
-  let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor)+"";
-  // 
-  $("#full-loan-form input[name='customer-offer-amount']").val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
-  $("#full-loan-form input[name='customer-offer-tenor']").val(sm_loan_tenor.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
-  $("#full-loan-form input[name='customer-offer-percent']").val(sm_insu+"%");
-  $("#full-loan-form input[name='customer-offer-total']").val(sm_total_offer.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
-  $("#full-loan-form input[name='customer-offer-monthly']").val(sm_monthly.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
-  // 
-  
-}
+  let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
+  let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
+  //
+  $("#full-loan-form input[name='customer-offer-amount']")
+    .val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", ""))
+    .trigger("blur");
+  $("#full-loan-form input[name='customer-offer-tenor']")
+    .val(sm_loan_tenor.replace(/[^0-9\.]/g, "").replace(".", ""))
+    .trigger("blur");
+  $("#full-loan-form input[name='customer-offer-percent']").val(sm_insu + "%");
+  $("#full-loan-form input[name='customer-offer-total']")
+    .val(sm_total_offer.replace(/[^0-9\.]/g, "").replace(".", ""))
+    .trigger("blur");
+  $("#full-loan-form input[name='customer-offer-monthly']")
+    .val(sm_monthly.replace(/[^0-9\.]/g, "").replace(".", ""))
+    .trigger("blur");
+  //
+};
 let removeElement = (btn_id) => {
   if ($("#" + btn_id) != null && $("#" + btn_id).length) {
     let elem = document.getElementById(btn_id);
@@ -238,36 +287,53 @@ $(document).ready(() => {
       });
   });
   let fullLoanTab =
-    '<li role="presentation" id="full_loan_tab_href" ondblclick="auto_fill()">' +
+    '<li role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
     '<span class="fa fa-file-text-o hidden"></span>' +
-    "Full Loan</a>" +
+    "Thông tin khoản vay</a>" +
     "</li>";
   $("#agent_tablist").append(fullLoanTab);
   clearForm($("#full-loan-form"));
 });
 
-let ECShowProducts = (partner_code, request_id) => {
+let ECShowProducts = (partner_code, request_id, app_status, status) => {
+  ShowStatusOnForm(status, app_status);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
   SetCustomerOfferDetail();
-  $("#offer-datatable").empty();
+  // $("#offer-datatable").empty();
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
-//   $("#offer-datatable")[0].innerHTML = `
-// 	<div class="col-xl-12 col-lg-8">
-// 	    <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
-// 	    </table>
-// 	</div>
-// 	<div class="col-xl-12 col-lg-4">
-// 	    <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
-// 	    </table>
-// 	</div>
-// `;
+  //   $("#offer-datatable")[0].innerHTML = `
+  // 	<div class="col-xl-12 col-lg-8">
+  // 	    <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+  // 	    </table>
+  // 	</div>
+  // 	<div class="col-xl-12 col-lg-4">
+  // 	    <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+  // 	    </table>
+  // 	</div>
+  // `;
   clearForm($("#full-loan-form"));
-  if (request_id != "" && request_id.length > 0) {
-    SyncFullLoanFromAPI(request_id);
-  } else {
+  if (app_status == "VALIDATED") {
+    let offerTab =
+      '<li role="presentation" id="offer_tab_href">' +
+      '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
+      '<span class="fa fa-file-text-o hidden"></span>' +
+      "Offer</a>" +
+      "</li>";
+    $("#agent_tablist").append(offerTab);
+    ajaxGetOffer(request_id).done((result) => {
+      if (result.data.document != undefined && result.data.document != null) {
+        IsSuccessPolled = true;
+        offer = result.data.document;
+        offerList = offer.data.offer_list;
+        SetOfferDetail(offerList);
+      }
+    });
+  }
+
+  if (request_id == "" || request_id.length == 0) {
     request_id = partner_code + Date.now().toString();
     $(".formMain input[name='request_id']").val(request_id);
   }
@@ -282,6 +348,7 @@ let ECShowProducts = (partner_code, request_id) => {
     $("#accordion").empty();
     $("#hide_div_eligible").show();
     ajaxGetECProducts(partner_code, request_id).done((result) => {
+      //
       if (result.code == "SUCCESS") {
         ECProducts = result.data;
         let color_index = 0;
@@ -323,19 +390,19 @@ let ECShowProducts = (partner_code, request_id) => {
             data: product.product_list,
             columns: [
               {
-                title: "Product Code",
+                title: "Mã sản phẩm",
                 data: "product_code",
               },
               {
-                title: "Min loan term",
+                title: "Thời hạn vay tối thiểu",
                 data: "loan_min_tenor",
               },
               {
-                title: "Max loan term",
+                title: "Thời hạn vay tối đa",
                 data: "loan_max_tenor",
               },
               {
-                title: "Min loan amount",
+                title: "Khoảng vay tối thiếu",
                 data: "loan_min_amount",
                 render: (data) => {
                   result =
@@ -349,7 +416,7 @@ let ECShowProducts = (partner_code, request_id) => {
                 },
               },
               {
-                title: "Max loan amount",
+                title: "Khoản vay tối đa",
                 data: "loan_max_amount",
                 render: (data) => {
                   result =
@@ -363,11 +430,11 @@ let ECShowProducts = (partner_code, request_id) => {
                 },
               },
               {
-                title: "Interest Rate",
+                title: "Tỉ lệ lãi",
                 data: "interest_rate",
               },
               {
-                title: "Action",
+                title: "Thao tác",
                 render: () => {
                   return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
                 },
@@ -483,6 +550,12 @@ let ECShowProducts = (partner_code, request_id) => {
             color_index = 0;
           }
         });
+        lead_id = $(".formMain input[name='lead_id']").val();
+        // TEST
+        lead_id = "1234";
+        if (lead_id != "" && lead_id.length > 0) {
+          SyncFullLoanFromAPI(lead_id);
+        }
       }
     });
   }
@@ -514,6 +587,19 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     swal("Get products data fail!", msg, "error");
   });
 };
+// let ajaxGetOldFullLoan = (lead_id) =>{
+//       var settings = {
+//         "url": "https://ec02-api.tel4vn.com/v1/fullloan/"+lead_id,
+//         "method": "GET",
+//         "timeout": 0,
+//         "headers": {
+//           "Content-Type": "text/plain"
+//         },
+//       };
+//       $.ajax(settings).done(function (response) {
+//         console.log(response);
+//       });
+// }
 $(document).on("click", "#submit-offer", function (e) {
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
@@ -660,8 +746,131 @@ $("#eligible_btn").on("click", (e) => {
       });
   }
 });
+let getProductType = () => {
+  var docs_string = "";
+  for (var i = 0; i < selected_product.document_collecting.length; i++) {
+    let docs = selected_product.document_collecting[i];
+    let tmp_string = "[";
+    for (var j = 0; j < docs.doc_list.length; j++) {
+      tmp_string += docs.doc_list[j].doc_type;
+      if (j != docs.doc_list.length - 1) {
+        tmp_string += "|";
+      }
+    }
+    tmp_string += "]";
+    docs_string += tmp_string;
 
+    if (i != docs.length - 1) {
+      docs_string += " && ";
+    }
+  }
+  $("input[name='product_required_document']").val(docs_string);
+  console.log(docs_string);
+};
+let  validateFullloan= () =>{
+  let check = true;
+  let msg = "";
+  $("#full-loan-form").find('input:required').each(function(){
+    let element = $(this);
+    if (element[0].validationMessage != ""){
+        msg += element.attr('name') +":" +element[0].validationMessage+"\n";
+        check = false;
+    }
+  })
+  $("#full-loan-form").find('select:required').each(function(){
+    let element = $(this);
+    if (element[0].validationMessage != ""){
+        msg += element.attr('name') +":" +element[0].validationMessage+"\n";
+        check = false;
+    }
+  })
+  if ($("input[name='condition_confirm']")[0].checked ==false){
+      check = false;
+      msg += "Chưa đồng ý điều khoản\n";
+  }
+  if ($("input[name='term_confirm']")[0].checked ==false){
+      check = false;
+      msg += "Chưa đồng ý điều khoản\n";
+  }
+  if (!check){
+    alert(msg);
+  }
+  return check;
+}
 let SyncFullLoanFromAPI = (request_id) => {
+  try {
+    ajaxGetOldFullLoan(request_id).done((result) => {
+      let data = result.data;
+      let document = data.document;
+      for (const property in document) {
+        $("#full-loan-form input[name='" + property + "']")
+          .val(document[property])
+          .trigger("change");
+        $("#full-loan-form select[name='" + property + "']")
+          .val(document[property])
+          .trigger("change");
+      }
+      $("select[name='tem_province']")
+        .val(document["tem_province"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='tem_district']")
+        .val(document["tem_district"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='tem_ward']")
+        .val(document["tem_ward"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='permanent_province']")
+        .val(document["permanent_province"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='permanent_district']")
+        .val(document["permanent_district"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='permanent_ward']")
+        .val(document["permanent_ward"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='workplace_province']")
+        .val(document["workplace_province"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='workplace_district']")
+        .val(document["workplace_district"])
+        .trigger("change")
+        .selectpicker("refresh");
+      $("select[name='workplace_ward']")
+        .val(document["workplace_ward"])
+        .trigger("change")
+        .selectpicker("refresh");
+      if ($("select[name='disbursement_method']").val() != "CASH") {
+        $("select[name='bank_code']")
+          .val(document["bank_code"])
+          .trigger("change")
+          .selectpicker("refresh");
+        $("select[name='bank_area']")
+          .val(document["bank_area"])
+          .trigger("change")
+          .selectpicker("refresh");
+        $("select[name='bank_branch_code']")
+          .val(document["bank_branch_code"])
+          .trigger("change")
+          .selectpicker("refresh");
+      }
+      $("#full-loan-form input[name='date_of_birth']").val(
+        moment(document["date_of_birth"], "DD-MM-YYYY").format("YYYY-MM-DD")
+      );
+      getProductType();
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+let SyncFullLoanFromAPIOld = (request_id) => {
   try {
     ajaxGetOldFullLoan(request_id).done((result) => {
       let data = result.data;
@@ -738,48 +947,58 @@ let CheckBoxSyncFieldFullLoan = (flag) => {
   if (!flag === true) {
     flag = false;
   }
-  $("#full-loan-form input[name='permanent_address']").prop("disabled", flag);
-  $("#full-loan-form input[name='permanent_province']").prop("disabled", flag);
-  $("#full-loan-form input[name='permanent_district']").prop("disabled", flag);
-  $("#full-loan-form input[name='permanent_ward']").prop("disabled", flag);
+  // $("#full-loan-form input[name='permanent_address']").prop("disabled", flag);
+  // $("#full-loan-form input[name='permanent_province']").prop("disabled", flag);
+  // $("#full-loan-form input[name='permanent_district']").prop("disabled", flag);
+  // $("#full-loan-form input[name='permanent_ward']").prop("disabled", flag);
   if (flag == true) {
-    $("#full-loan-form input[name='permanent_province']").val(
-      $("#full-loan-form input[name='tem_province']").val()
-    );
+    $("#full-loan-form select[name='permanent_province']")
+      .val($("#full-loan-form select[name='tem_province']").val())
+      .trigger("change");
+    $("#full-loan-form select[name='permanent_district']")
+      .val($("#full-loan-form select[name='tem_district']").val())
+      .trigger("change");
+    $("#full-loan-form select[name='permanent_ward']")
+      .val($("#full-loan-form select[name='tem_ward']").val())
+      .trigger("change");
     $("#full-loan-form input[name='permanent_address']").val(
       $("#full-loan-form input[name='tem_address']").val()
-    );
-    $("#full-loan-form input[name='permanent_district']").val(
-      $("#full-loan-form input[name='tem_district']").val()
-    );
-    $("#full-loan-form input[name='permanent_ward']").val(
-      $("#full-loan-form input[name='tem_ward']").val()
     );
     $("#full-loan-form input[name='tem_address']").on("change", (e) => {
       $("#full-loan-form input[name='permanent_address']").val(
         $("#full-loan-form input[name='tem_address']").val()
       );
     });
-    $("#full-loan-form input[name='tem_province']").on("change", (e) => {
-      $("#full-loan-form input[name='permanent_province']").val(
-        $("#full-loan-form input[name='tem_province']").val()
-      );
+    $("#full-loan-form select[name='tem_province']").on("change", (e) => {
+      $("#full-loan-form select[name='permanent_province']")
+        .val($("#full-loan-form select[name='tem_province']").val())
+        .trigger("change");
     });
-    $("#full-loan-form input[name='tem_district']").on("change", (e) => {
-      $("#full-loan-form input[name='permanent_district']").val(
-        $("#full-loan-form input[name='tem_district']").val()
-      );
+    $("#full-loan-form select[name='tem_district']").on("change", (e) => {
+      $("#full-loan-form select[name='permanent_district']")
+        .val($("#full-loan-form select[name='tem_district']").val())
+        .trigger("change");
     });
-    $("#full-loan-form input[name='tem_ward']").on("change", (e) => {
-      $("#full-loan-form input[name='permanent_ward']").val(
-        $("#full-loan-form input[name='tem_ward']").val()
-      );
+    $("#full-loan-form select[name='tem_ward']").on("change", (e) => {
+      $("#full-loan-form select[name='permanent_ward']")
+        .val($("#full-loan-form select[name='tem_ward']").val())
+        .trigger("change");
     });
   } else {
     $("#full-loan-form input[name='permanent_address']").unbind();
-    $("#full-loan-form input[name='permanent_province']").unbind();
-    $("#full-loan-form input[name='permanent_district']").unbind();
-    $("#full-loan-form input[name='permanent_ward']").unbind();
+    $("#full-loan-form select[name='permanent_province']").unbind();
+    $("select[name='permanent_province']")
+      .selectpicker("destroy")
+      .selectpicker("render");
+    $("#full-loan-form select[name='permanent_district']").unbind();
+    $("select[name='permanent_district']")
+      .selectpicker("destroy")
+      .selectpicker("render");
+    $("#full-loan-form select[name='permanent_ward']").unbind();
+    $("select[name='permanent_ward']")
+      .selectpicker("destroy")
+      .selectpicker("render");
+    SetPermanentAddress();
   }
 };
 
@@ -887,6 +1106,7 @@ let SyncFullLoanFromContact = () => {
     .val($(".formMain select[name='identity_issued_by']"))
     .trigger("change");
 };
+
 function clearInputFile(f) {
   if (f.value) {
     try {
@@ -927,23 +1147,23 @@ function SetCustomerOfferDetail() {
     <th colspan="2">Offer Detail</th>
   </tr>
   <tr>
-      <td>Customer Offer Amount</td>
-      <td><input name="customer-offer-amount" type="text" value='123123' class="customer-offer-input" readonly></td>
+      <td>Khoản vay</td>
+      <td><input name="customer-offer-amount" type="text" value='' class="customer-offer-input" readonly></td>
   </tr>
   <tr>
-      <td>Offer Tenor</td>
+      <td>Kỳ hạn vay</td>
       <td><input name="customer-offer-tenor" value="" type="number" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
-      <td>Percent</td>
+      <td>Bảo hiểm</td>
       <td><input name="customer-offer-percent" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
-      <td>Total Offer</td>
+      <td>Tổng khoản vay</td>
       <td><input name="customer-offer-total" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
-      <td>Monthly</td>
+      <td>Khoản trả hàng tháng</td>
       <td><input name="customer-offer-monthly" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   `;
@@ -956,62 +1176,76 @@ $(document).on("click", 'input[name="simu_insurance"]', function (e) {
 $(document).on("change", 'select[name="product_type"]', function () {
   let product_code = this.value;
   $("input[name='simu_insurance']")[0].checked = true;
-  selected_employment_type.product_list.forEach((prd)=>{
-      if (prd.product_code == product_code){
-          selected_product = prd;
-          // 
-          // Loan tenor
-          $("#full-loan-form input[name='range_loan_tenor']")[0].max = prd.loan_max_tenor;
-          $("#full-loan-form input[name='range_loan_tenor']")[0].min = prd.loan_min_tenor;
-          $("#full-loan-form input[name='range_loan_tenor']")[0].value = prd.loan_min_tenor;
-          // 
-          $("#full-loan-form input[name='loan_tenor']")[0].max = prd.loan_max_tenor;
-          $("#full-loan-form input[name='loan_tenor']")[0].min = prd.loan_min_tenor;
-          $("#full-loan-form input[name='loan_tenor']")[0].value = prd.loan_min_tenor;
-          // 
-          // Loan amount
-          $("#full-loan-form input[name='range_loan_amount']")[0].max = prd.loan_max_amount;
-          $("#full-loan-form input[name='range_loan_amount']")[0].min = prd.loan_min_amount;
-          $("#full-loan-form input[name='range_loan_amount']")[0].value = prd.loan_min_amount;
-          // 
-          $("#full-loan-form input[name='loan_amount']")[0].max = prd.loan_max_amount;
-          $("#full-loan-form input[name='loan_amount']")[0].min = prd.loan_min_amount;
-          $("#full-loan-form input[name='loan_amount']")[0].value = prd.loan_min_amount;
-          // 
-          
-          return;
-      }
-  })
+  selected_employment_type.product_list.forEach((prd) => {
+    if (prd.product_code == product_code) {
+      selected_product = prd;
+      //
+      // Loan tenor
+      $("#full-loan-form input[name='range_loan_tenor']")[0].max =
+        prd.loan_max_tenor;
+      $("#full-loan-form input[name='range_loan_tenor']")[0].min =
+        prd.loan_min_tenor;
+      $("#full-loan-form input[name='range_loan_tenor']")[0].value =
+        prd.loan_min_tenor;
+      //
+      $("#full-loan-form input[name='loan_tenor']")[0].max = prd.loan_max_tenor;
+      $("#full-loan-form input[name='loan_tenor']")[0].min = prd.loan_min_tenor;
+      $("#full-loan-form input[name='loan_tenor']")[0].value =
+        prd.loan_min_tenor;
+      //
+      // Loan amount
+      $("#full-loan-form input[name='range_loan_amount']")[0].max =
+        prd.loan_max_amount;
+      $("#full-loan-form input[name='range_loan_amount']")[0].min =
+        prd.loan_min_amount;
+      $("#full-loan-form input[name='range_loan_amount']")[0].value =
+        prd.loan_min_amount;
+      //
+      $("#full-loan-form input[name='loan_amount']")[0].max =
+        prd.loan_max_amount;
+      $("#full-loan-form input[name='loan_amount']")[0].min =
+        prd.loan_min_amount;
+      $("#full-loan-form input[name='loan_amount']")[0].value =
+        prd.loan_min_amount;
+      //
+
+      return;
+    }
+  });
+  getProductType();
 });
 
 $(document).on("change", 'select[name="disbursement_method"]', function () {
-    let dis_method = this.value;
-    let req = false;
-    if (dis_method == "trans"){
-      req = true;
-    }
-    $("#full-loan-form select[name='bank_code']").attr('required',req);
-    $("#full-loan-form select[name='bank_area']").attr('required',req);
-    $("#full-loan-form select[name='bank_branch_code']").attr('required',req);
-    $("#full-loan-form input[name='bank_account']").attr('required',req);
-    $("#full-loan-form input[name='beneficiary_name']").attr('required',req);
+  let dis_method = this.value;
+  let req = false;
+  if (dis_method == "trans") {
+    req = true;
+  }
+  $("#full-loan-form select[name='bank_code']").attr("required", req);
+  $("#full-loan-form select[name='bank_area']").attr("required", req);
+  $("#full-loan-form select[name='bank_branch_code']").attr("required", req);
+  $("#full-loan-form input[name='bank_account']").attr("required", req);
+  $("#full-loan-form input[name='beneficiary_name']").attr("required", req);
 });
 $(document).on("change", 'select[name="employment_type"]', function () {
   selected_employment_type = null;
   let em_type = this.value;
-  if (ECProducts != undefined){
-      ECProducts.forEach((et) => {
-          if (et.employee_type == em_type){
-              selected_employment_type = et;
-              let product_lists = et.product_list;
-               let select_product_type = $("select[name='product_type']")[0];
-               select_product_type.innerHTML =""
-               for (prd of product_lists) {
-                    $(`<option value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`).appendTo(select_product_type);
-                }
-              return;
-          }
-      });
+  if (ECProducts != undefined) {
+    ECProducts.forEach((et) => {
+      if (et.employee_type == em_type) {
+        selected_employment_type = et;
+        let product_lists = et.product_list;
+        let select_product_type = $("select[name='product_type']")[0];
+        select_product_type.innerHTML = "";
+        $(`<option value=""></option>`).appendTo(select_product_type);
+        for (prd of product_lists) {
+          $(
+            `<option value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
+          ).appendTo(select_product_type);
+        }
+        return;
+      }
+    });
   }
 });
 
@@ -1029,49 +1263,53 @@ $(document).on("change", 'select[name="employment_type"]', function () {
 // });
 
 $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {}
+  if (this.value == "" || this.value == undefined) {
+  }
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replace(".", "");
 });
 
 $(document).on("keyup", 'input[name^="customer-offer"]', function () {
-  if (this.value == "" || this.value == undefined) {}
+  if (this.value == "" || this.value == undefined) {
+  }
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replace(".", "");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {}
+  if (this.value == "" || this.value == undefined) {
+  }
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
   this.value = formatter.format(this.value);
 });
 
-
 $(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
-  if (this.value == "" || this.value == undefined) {}
+  if (this.value == "" || this.value == undefined) {
+  }
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
   this.value = formatter.format(this.value);
 });
 $(document).on("blur", 'input[name="customer-offer-total"]', function () {
-  if (this.value == "" || this.value == undefined) {}
+  if (this.value == "" || this.value == undefined) {
+  }
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
   this.value = formatter.format(this.value);
 });
 
-$(document).on("click", 'input[name="select_insurance"]', function () {
-  $("#create-offer-table").empty();
-  $("#create-offer-table").attr("hidden", false);
-  let tmp_data2 = offerinsurancetable.row(this).data();
-  if (tmp_data2 == undefined) {
-    tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
-  }
-  selected_offer_insurance_type = tmp_data2.type;
-  percent_insurance = tmp_data2.percent_insurance;
-  insurance_amount = tmp_data2.mount;
-  SetCustomerOfferDetail();
-});
+// $(document).on("click", 'input[name="select_insurance"]', function () {
+//   $("#create-offer-table").empty();
+//   $("#create-offer-table").attr("hidden", false);
+//   let tmp_data2 = offerinsurancetable.row(this).data();
+//   if (tmp_data2 == undefined) {
+//     tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+//   }
+//   selected_offer_insurance_type = tmp_data2.type;
+//   percent_insurance = tmp_data2.percent_insurance;
+//   insurance_amount = tmp_data2.mount;
+//   SetCustomerOfferDetail();
+// });
 $("#full-loan-form").on("submit", (e) => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   e.preventDefault();
@@ -1086,7 +1324,7 @@ $("#full-loan-form").on("submit", (e) => {
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  form_data.dsa_agent_code = "DSAMKK1233";
+  // form_data.dsa_agent_code = "DSAMKK1233";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1097,7 +1335,8 @@ $("#full-loan-form").on("submit", (e) => {
   );
   form_data.doc_collecting_list = form_data.list_doc_collecting;
   console.log(form_data);
-  //
+  // TEST
+  form_data = getFormData();
 
   //
   let post_data = JSON.stringify(form_data);
@@ -1124,21 +1363,23 @@ $("#full-loan-form").on("submit", (e) => {
       $("#offer-waiting").attr("hidden", true);
     })
     .done((result) => {
-      if (
-        result.status_code == 200 &&
-        result.body != undefined &&
-        result.body.code == "RECEIVED"
-      ) {
-        swal("OK!", result.body.message, "success");
-        IsSuccessPolled = false;
-        PolledTotal = 1;
-        PolledOfferInterval = setInterval(() => {
-          PollingOfferFromEC(form_data.request_id, lead_id);
-        }, 5000);
-      } else {
-        swal("Error!", "Send full-loan data fail!", "error");
-        $("#offer-waiting").attr("hidden", true);
-      }
+      swal("OK!", result.body.message, "success");
+      // DONE
+      // if (
+      //   result.status_code == 200 &&
+      //   result.body != undefined &&
+      //   result.body.code == "RECEIVED"
+      // ) {
+      //   swal("OK!", result.body.message, "success");
+      //   IsSuccessPolled = false;
+      //   PolledTotal = 1;
+      //   PolledOfferInterval = setInterval(() => {
+      //     PollingOfferFromEC(form_data.request_id, lead_id);
+      //   }, 5000);
+      // } else {
+      //   swal("Error!", "Send full-loan data fail!", "error");
+      //   $("#offer-waiting").attr("hidden", true);
+      // }
     });
   $.ajax({
     type: "POST",
@@ -1181,44 +1422,45 @@ let IsSuccessPolled = false;
 let PolledTotal = 1;
 let PolledOfferInterval = null;
 function PollingOfferFromEC(request_id, lead_id) {
-  PolledTotal++;
-  if (IsSuccessPolled === false && PolledTotal < 180) {
-    ajaxGetStatus(lead_id).done((result) => {
-      if (result.data.app_status != "" && result.data.reject_reason != "") {
-        if (result.data.app_status == "VALIDATED") {
-          ajaxGetOffer(request_id).done((result) => {
-            if (
-              result.data.document != undefined &&
-              result.data.document != null
-            ) {
-              IsSuccessPolled = true;
-              offer = result.data.document;
-              offerList = offer.data.offer_list;
-              SetOfferDetail(offerList);
-            }
-          });
-        } else {
-          IsSuccessPolled = true;
-          $("#create-offer-table").empty();
-          $("#create-offer-table").attr("hidden", true);
-          $("#offer-datatable").empty();
-          swal("Offer Reject", "Reason: " + result.data.reject_reason, "error");
-          // Update request_id
-          request_id =
-            $("#full-loan-form input[name='partner_code']").val() +
-            Date.now().toString();
-          updateRequestId(request_id, lead_id);
-        }
+  // PolledTotal++;
+  // if (IsSuccessPolled === false && PolledTotal < 180) {
+  ajaxGetStatus(lead_id).done((result) => {
+    if (result.data.app_status != "" && result.data.reject_reason != "") {
+      if (result.data.app_status == "VALIDATED") {
+        ajaxGetOffer(request_id).done((result) => {
+          if (
+            result.data.document != undefined &&
+            result.data.document != null
+          ) {
+            IsSuccessPolled = true;
+            offer = result.data.document;
+            offerList = offer.data.offer_list;
+            SetOfferDetail(offerList);
+          }
+        });
+      } else {
+        IsSuccessPolled = true;
+        $("#create-offer-table").empty();
+        $("#create-offer-table").attr("hidden", true);
+        // $("#offer-datatable").empty();
+        swal("Offer Reject", "Reason: " + result.data.reject_reason, "error");
+        // Update request_id
+        request_id =
+          $("#full-loan-form input[name='partner_code']").val() +
+          Date.now().toString();
+        updateRequestId(request_id, lead_id);
       }
-    });
-  } else {
-    clearInterval(PolledOfferInterval);
-  }
+    }
+  });
+  // }
+  // else {
+  //   clearInterval(PolledOfferInterval);
+  // }
 }
 
 function SetOfferDetail(offerList) {
   console.log(offerList);
-  $("#offer-datatable").removeClass("hidden");
+  // $("#offer-datatable").removeClass("hidden");
   var offerTable = $("#offer-list-table").DataTable({
     destroy: true,
     responsive: true,
@@ -1227,11 +1469,11 @@ function SetOfferDetail(offerList) {
     data: offerList,
     columns: [
       {
-        title: "Offer Id",
+        title: "Mã offer",
         data: "offer_id",
       },
       {
-        title: "Offer Amount",
+        title: "Khoản vay",
         data: "offer_amount",
         render: (data) => {
           result =
@@ -1249,7 +1491,7 @@ function SetOfferDetail(offerList) {
         data: "interest_rate",
       },
       {
-        title: "Monthly Installment",
+        title: "Khoản thanh toàn hằng thàng",
         data: "monthly_installment",
         render: (data) => {
           result =
@@ -1263,11 +1505,11 @@ function SetOfferDetail(offerList) {
         },
       },
       {
-        title: "Offer Tenor",
+        title: "Kỳ hạn",
         data: "tenor",
       },
       {
-        title: "Min Financed Amount",
+        title: "Số tiền vay ít nhất",
         data: "min_financed_amount",
         render: (data) => {
           result =
@@ -1281,7 +1523,7 @@ function SetOfferDetail(offerList) {
         },
       },
       {
-        title: "Max Financed Amount",
+        title: "Số tiền vay cao nhất",
         data: "max_financed_amount",
         render: (data) => {
           result =
@@ -1299,11 +1541,11 @@ function SetOfferDetail(offerList) {
         data: "offer_var",
       },
       {
-        title: "Offer Type",
+        title: "Loại",
         data: "offer_type",
       },
       {
-        title: "View",
+        title: "Bảo hiểm",
         render: () => {
           return '<button class="btn btn-sm btn-success btn-offer-view"><i class="fa fa-fw fa-eye"></i></button>';
         },
@@ -1330,11 +1572,11 @@ function SetOfferDetail(offerList) {
       data: tmp_data.insurance_list,
       columns: [
         {
-          title: "Type",
+          title: "Loại",
           data: "type",
         },
         {
-          title: "Amount",
+          title: "Phí bảo hiểm",
           data: "amount",
           render: (data) => {
             result =
@@ -1348,18 +1590,18 @@ function SetOfferDetail(offerList) {
           },
         },
         {
-          title: "Percentage",
+          title: "Tỉ lệ",
           data: "percent_insurance",
           render: (data) => {
             return data + "%";
           },
         },
         {
-          title: "Base Calculation",
+          title: "BC",
           data: "base_calculation",
         },
         {
-          title: "Select",
+          title: "Chọn bảo hiểm",
           data: "type",
           render: (data) => {
             return `<input type="radio" name="select_insurance" value="${data}" />`;
@@ -1459,132 +1701,115 @@ $(function () {
     },
   });
 });
+var saveFullLoan = () => {
+  lead_id = $(".formMain input[name='lead_id']").val() * 1;
+  let form_data = $("#full-loan-form").serializeFormJSON();
+  form_data.lead_id = parseInt(lead_id);
+  form_data.monthly_income = parseInt(form_data.monthly_income);
+  form_data.other_income = parseInt(form_data.other_income);
+  form_data.monthly_expense = parseInt(form_data.monthly_expense);
+  form_data.loan_amount = parseInt(form_data.loan_amount);
+  form_data.annual_revenue = parseInt(form_data.annual_revenue);
+  form_data.annual_profit = parseInt(form_data.annual_profit);
+  form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
+  form_data.monthly_profit = parseInt(form_data.monthly_profit);
+  // QUANG
+  // form_data.dsa_agent_code = "DSAMKK1233";
+  form_data.list_doc_collecting = list_doc_collecting;
+  form_data.date_of_birth = moment(
+    form_data.date_of_birth,
+    "YYYY-MM-DD"
+  ).format("DD-MM-YYYY");
+  form_data.issue_date = moment(form_data.issue_date, "YYYY-MM-DD").format(
+    "DD-MM-YYYY"
+  );
+  form_data.doc_collecting_list = form_data.list_doc_collecting;
+  // TEST
+  form_data.lead_id = 1234;
+  form_data.request_id = "TEL412414";
+  form_data.partner_code = "TEL";
 
+  // END TEST
+  var settings = {
+    url: "https://ec02-api.tel4vn.com/v1/fullloan",
+    method: "POST",
+    timeout: 0,
+    headers: {
+      "Content-Type": "text/plain",
+    },
+    data: JSON.stringify(form_data),
+  };
+  $.ajax(settings)
+    .done(function (response) {
+      console.log("Done");
+      console.log(response);
+    })
+    .fail(function (response) {
+      console.log("Fail");
+      console.log(response);
+    });
+};
 $(document).ready(() => {
+  var btnSave = $("<button></button>")
+    .text("Lưu lại")
+    .addClass("btn sw-btn-save")
+    .on("click", function (e) {
+      e.preventDefault();
+      saveFullLoan();
+    });
+  //
+  var btnFinish = $("<button></button>")
+    .text("Gửi hồ sơ")
+    .addClass("btn sw-btn-finish disabled")
+    .on("click", function (e) {
+      e.preventDefault();
+      let checkValidate = validateFullloan();
+      if (checkValidate){
+        $("#full-loan-form").submit();
+      }
+    });
+
+  // var validate_each = ()=>{
+  //   console.log("Sdasdas");
+  //   $("#full-loan-form").submit();
+  // }
   $("#smartwizard").smartWizard({
     selected: 0,
     theme: "arrows",
+    lang: {
+      next: "Tiếp tục",
+      previous: "Lùi lại",
+    },
+    toolbarSettings: {
+      toolbarExtraButtons: [btnSave, btnFinish],
+    },
+    keyboardSettings: {
+      keyNavigation: false,
+    },
+    enableURLhash: false,
   });
-  let permanentProvince = $("select[name='permanent_province']")[0];
-  $(`<option value="" selected></option>`).appendTo(permanentProvince);
-  for (const [key, value] of Object.entries(PROVINCE)) {
-    $(`<option value="${key}">${value}</option>`).appendTo(permanentProvince);
-  }
+    $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+      $("input[name='condition_confirm']")[0].checked
+      $("input[name='term_confirm']")[0].checked
+   });
+  $("#smartwizard").on(
+    "showStep",
+    function (e, anchorObject, stepNumber, stepDirection) {
+      if (stepDirection == "forward" && stepNumber == 4) {
+        if ($(".btn.sw-btn-finish").hasClass("disabled")) {
+          $(".btn.sw-btn-finish").removeClass("disabled");
+        }
+      }
+      // if($('.btn.sw-btn-save').hasClass('disabled')){
+      //     $('.btn.sw-btn-save').removeClass('disabled');
+      // }
+    }
+  );
 
-  $("select[name='permanent_province']").selectpicker("refresh");
-  let temProvince = $("select[name='tem_province']")[0];
-  $(`<option value="" selected></option>`).appendTo(temProvince);
-  for (const [key, value] of Object.entries(PROVINCE)) {
-    $(`<option value="${key}">${value}</option>`).appendTo(temProvince);
-  }
+  SetPermanentAddress();
+  SetTemAddress();
+  SetWorkAddress();
 
-  $("select[name='tem_province']").selectpicker("refresh");
-  let workplaceProvince = $("select[name='workplace_province']")[0];
-  $(`<option value="" selected></option>`).appendTo(workplaceProvince);
-  for (const [key, value] of Object.entries(PROVINCE)) {
-    $(`<option value="${key}">${value}</option>`).appendTo(workplaceProvince);
-  }
-  $("select[name='workplace_province']").selectpicker("refresh");
-
-  $("select[name='permanent_province']").on("change", () => {
-    $("select[name='permanent_district']").empty().selectpicker("refresh");
-    $("select[name='permanent_ward']").empty().selectpicker("refresh");
-    let permanentProvinceId = $("select[name='permanent_province']").val();
-    if (permanentProvinceId != "") {
-      let permanentDistrict = $("select[name='permanent_district']")[0];
-      $(`<option value="" selected></option>`).appendTo(permanentDistrict);
-      for (const [key, value] of Object.entries(DISTRICT)) {
-        if (value.province_id == permanentProvinceId) {
-          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
-            permanentDistrict
-          );
-        }
-      }
-      $("select[name='permanent_district']").selectpicker("refresh");
-    }
-  });
-  $("select[name='permanent_district']").on("change", () => {
-    $("select[name='permanent_ward']").empty().selectpicker("refresh");
-    let permanentDistrictId = $("select[name='permanent_district']").val();
-    if (permanentDistrictId != "") {
-      let permanentWard = $("select[name='permanent_ward']")[0];
-      $(`<option value="" selected></option>`).appendTo(permanentWard);
-      for (const [key, value] of Object.entries(WARD)) {
-        if (value.district_id == permanentDistrictId) {
-          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
-            permanentWard
-          );
-        }
-      }
-      $("select[name='permanent_ward']").selectpicker("refresh");
-    }
-  });
-  $("select[name='tem_province']").on("change", () => {
-    $("select[name='tem_district']").empty().selectpicker("refresh");
-    $("select[name='tem_ward']").empty().selectpicker("refresh");
-    let temProvinceId = $("select[name='tem_province']").val();
-    if (temProvinceId != "") {
-      let temDistrict = $("select[name='tem_district']")[0];
-      $(`<option value="" selected></option>`).appendTo(temDistrict);
-      for (const [key, value] of Object.entries(DISTRICT)) {
-        if (value.province_id == temProvinceId) {
-          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
-            temDistrict
-          );
-        }
-      }
-      $("select[name='tem_district']").selectpicker("refresh");
-    }
-  });
-  $("select[name='tem_district']").on("change", () => {
-    $("select[name='tem_ward']").empty().selectpicker("refresh");
-    let temDistrictId = $("select[name='tem_district']").val();
-    if (temDistrictId != "") {
-      let temWard = $("select[name='tem_ward']")[0];
-      $(`<option value="" selected></option>`).appendTo(temWard);
-      for (const [key, value] of Object.entries(WARD)) {
-        if (value.district_id == temDistrictId) {
-          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
-            temWard
-          );
-        }
-      }
-      $("select[name='tem_ward']").selectpicker("refresh");
-    }
-  });
-  $("select[name='workplace_province']").on("change", () => {
-    $("select[name='workplace_district']").empty().selectpicker("refresh");
-    $("select[name='workplace_ward']").empty().selectpicker("refresh");
-    let workplaceProvinceId = $("select[name='workplace_province']").val();
-    if (workplaceProvinceId != "") {
-      let workplaceDistrict = $("select[name='workplace_district']")[0];
-      $(`<option value="" selected></option>`).appendTo(workplaceDistrict);
-      for (const [key, value] of Object.entries(DISTRICT)) {
-        if (value.province_id == workplaceProvinceId) {
-          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
-            workplaceDistrict
-          );
-        }
-      }
-      $("select[name='workplace_district']").selectpicker("refresh");
-    }
-  });
-  $("select[name='workplace_district']").on("change", () => {
-    $("select[name='workplace_ward']").empty().selectpicker("refresh");
-    let workplaceDistrictId = $("select[name='workplace_district']").val();
-    if (workplaceDistrictId != "") {
-      let workplaceWard = $("select[name='workplace_ward']")[0];
-      $(`<option value="" selected></option>`).appendTo(workplaceWard);
-      for (const [key, value] of Object.entries(WARD)) {
-        if (value.district_id == workplaceDistrictId) {
-          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
-            workplaceWard
-          );
-        }
-      }
-      $("select[name='workplace_ward']").selectpicker("refresh");
-    }
-  });
   let bankMainCode = $("select[name='bank_code']")[0];
   $(`<option value="" selected></option>`).appendTo(bankMainCode);
   for (const [key, value] of Object.entries(BANK_CODE)) {
@@ -1635,3 +1860,160 @@ $(document).ready(() => {
     }
   });
 });
+
+let SetPermanentAddress = () => {
+  let permanentProvince = $("select[name='permanent_province']")[0];
+  $("select[name='permanent_province']").empty();
+  $(`<option value="" selected></option>`).appendTo(permanentProvince);
+  for (const [key, value] of Object.entries(PROVINCE)) {
+    $(`<option value="${key}">${value}</option>`).appendTo(permanentProvince);
+  }
+  $("select[name='permanent_province']").selectpicker("refresh");
+
+  $("select[name='permanent_province']").on("change", () => {
+    $("select[name='permanent_district']").empty().selectpicker("refresh");
+    $("select[name='permanent_ward']").empty().selectpicker("refresh");
+    let permanentProvinceId = $("select[name='permanent_province']").val();
+    if (permanentProvinceId != "") {
+      let permanentDistrict = $("select[name='permanent_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(permanentDistrict);
+      for (const [key, value] of Object.entries(DISTRICT)) {
+        if (value.province_id == permanentProvinceId) {
+          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
+            permanentDistrict
+          );
+        }
+      }
+      $("select[name='permanent_district']").selectpicker("refresh");
+    }
+  });
+
+  $("select[name='permanent_district']").on("change", () => {
+    $("select[name='permanent_ward']").empty().selectpicker("refresh");
+    let permanentDistrictId = $("select[name='permanent_district']").val();
+    if (permanentDistrictId != "") {
+      let permanentWard = $("select[name='permanent_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(permanentWard);
+      for (const [key, value] of Object.entries(WARD)) {
+        if (value.district_id == permanentDistrictId) {
+          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
+            permanentWard
+          );
+        }
+      }
+      $("select[name='permanent_ward']").selectpicker("refresh");
+    }
+  });
+  $("select[name='permanent_province']").val("").trigger("change");
+};
+
+let SetTemAddress = () => {
+  let temProvince = $("select[name='tem_province']")[0];
+  $(`<option value="" selected></option>`).appendTo(temProvince);
+  for (const [key, value] of Object.entries(PROVINCE)) {
+    $(`<option value="${key}">${value}</option>`).appendTo(temProvince);
+  }
+  $("select[name='tem_province']").selectpicker("refresh");
+
+  $("select[name='tem_province']").on("change", () => {
+    $("select[name='tem_district']").empty().selectpicker("refresh");
+    $("select[name='tem_ward']").empty().selectpicker("refresh");
+    let temProvinceId = $("select[name='tem_province']").val();
+    if (temProvinceId != "") {
+      let temDistrict = $("select[name='tem_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(temDistrict);
+      for (const [key, value] of Object.entries(DISTRICT)) {
+        if (value.province_id == temProvinceId) {
+          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
+            temDistrict
+          );
+        }
+      }
+      $("select[name='tem_district']").selectpicker("refresh");
+    }
+  });
+
+  $("select[name='tem_district']").on("change", () => {
+    $("select[name='tem_ward']").empty().selectpicker("refresh");
+    let temDistrictId = $("select[name='tem_district']").val();
+    if (temDistrictId != "") {
+      let temWard = $("select[name='tem_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(temWard);
+      for (const [key, value] of Object.entries(WARD)) {
+        if (value.district_id == temDistrictId) {
+          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
+            temWard
+          );
+        }
+      }
+      $("select[name='tem_ward']").selectpicker("refresh");
+    }
+  });
+  $("select[name='tem_province']").val("").trigger("change");
+};
+
+let SetWorkAddress = () => {
+  let workplaceProvince = $("select[name='workplace_province']")[0];
+  $(`<option value="" selected></option>`).appendTo(workplaceProvince);
+  for (const [key, value] of Object.entries(PROVINCE)) {
+    $(`<option value="${key}">${value}</option>`).appendTo(workplaceProvince);
+  }
+  $("select[name='workplace_province']").selectpicker("refresh");
+
+  $("select[name='workplace_province']").on("change", () => {
+    $("select[name='workplace_district']").empty().selectpicker("refresh");
+    $("select[name='workplace_ward']").empty().selectpicker("refresh");
+    let workplaceProvinceId = $("select[name='workplace_province']").val();
+    if (workplaceProvinceId != "") {
+      let workplaceDistrict = $("select[name='workplace_district']")[0];
+      $(`<option value="" selected></option>`).appendTo(workplaceDistrict);
+      for (const [key, value] of Object.entries(DISTRICT)) {
+        if (value.province_id == workplaceProvinceId) {
+          $(`<option value="${key}">${value.district_name}</option>`).appendTo(
+            workplaceDistrict
+          );
+        }
+      }
+      $("select[name='workplace_district']").selectpicker("refresh");
+    }
+  });
+
+  $("select[name='workplace_district']").on("change", () => {
+    $("select[name='workplace_ward']").empty().selectpicker("refresh");
+    let workplaceDistrictId = $("select[name='workplace_district']").val();
+    if (workplaceDistrictId != "") {
+      let workplaceWard = $("select[name='workplace_ward']")[0];
+      $(`<option value="" selected></option>`).appendTo(workplaceWard);
+      for (const [key, value] of Object.entries(WARD)) {
+        if (value.district_id == workplaceDistrictId) {
+          $(`<option value="${key}">${value.ward_name}</option>`).appendTo(
+            workplaceWard
+          );
+        }
+      }
+      $("select[name='workplace_ward']").selectpicker("refresh");
+    }
+  });
+  $("select[name='workplace_province']").val("").trigger("change");
+};
+
+let ShowStatusOnForm = (prev_status, app_status) => {
+  ajaxGetCallStatus(prev_status).done((result) => {
+    $("#name_form input[name='prev_status']").val(result.data.status_name);
+  });
+  $("#name_form input[name='app_status']").val(app_status);
+};
+
+let ajaxGetCallStatus = (status) => {
+  return $.ajax({
+    type: "GET",
+    url: CRM_API_URL + `/v1/status/${status}`,
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).fail((result, status, error) => {
+    console.log(result);
+  });
+};

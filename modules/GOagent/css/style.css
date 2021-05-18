@@ -1016,7 +1016,7 @@ input[type='file'] {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Select some files';
+  content: 'Chọn tập tin';
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 3px solid #b9c0b8;
@@ -1037,4 +1037,7 @@ input[type='file'] {
 
 .insurance {
   font-size: large;
+}
+.form_label{
+  font-family: Helvetica !important;
 }

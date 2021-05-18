@@ -3650,7 +3650,12 @@ function CheckForIncoming () {
         has_inbound_call = this_VDIC_data.has_call;
         if (this_VDIC_data.has_call == '1') {
             try {
-                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id);
+                lead_id = this_VDIC_data.lead_id;
+                $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
+                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status);
+                console.log(this_VDIC_data.request_id)
+                console.log(this_VDIC_data.app_status)
+
                 //EASY CREDIT
                 //Identity
                 $(".formMain input[name='identity_number']").val(this_VDIC_data.identity_number).trigger('change');
@@ -3752,8 +3757,6 @@ function CheckForIncoming () {
                 if ( (this_VDIC_data.fronter_full_name.length > 1) && (VDCL_fronter_display == 'Y') )
                     {VDIC_fronter = "  Fronter: " + this_VDIC_data.fronter_full_name + " - " + this_VDIC_data.tsr;}
             }
-            lead_id = this_VDIC_data.lead_id;
-            $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
             $(".formMain input[name='uniqueid']").val(this_VDIC_data.uniqueid);
             CIDcheck                                    = this_VDIC_data.callerid;
             CallCID                                     = this_VDIC_data.callerid;
@@ -6476,7 +6479,7 @@ function DispoSelectSubmit() {
             //EASY CREDIT
             //CLEAR ALL FORM VARIABLES
             try{
-                ECShowProducts("", "");
+                ECShowProducts("", "","");
             }catch(err){
                 console.log("Clear Full Loan Form: "+err);
             }
@@ -7537,10 +7540,15 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                         toggleButton('DialHangup', 'dial');
                     }
                 } else {
+                    
                     var thisVdata = result.data;
                     //Integrate EASYCREDIT
+                    lead_id                                 = thisVdata.lead_id;
+                    $(".formMain input[name='lead_id']").val(lead_id);
                     try {
-                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id);
+                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status);
+                        console.log(thisVdata.request_id)
+                        console.log(thisVdata.status)
                     }
                     catch (err) {
                         console.log(err);
@@ -7550,8 +7558,6 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     
                     fronter                                 = uName;
                     LastCID                                 = thisVdata.MqueryCID;
-                    lead_id                                 = thisVdata.lead_id;
-                    $(".formMain input[name='lead_id']").val(lead_id);
                     LeadPrevDispo                           = thisVdata.status;
                     // $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
                     list_id                                 = thisVdata.list_id;

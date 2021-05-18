@@ -2,42 +2,6 @@
     <div class="card row" style="padding: 15px;">
         <div class="col-md-9">
             <table id="calllogs-list" class="display" style="border: 1px solid #f4f4f4">
-                <thead>
-                    <tr>
-                        <th>
-                            <?= $lh->translationFor('date') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('customer') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('phone_number') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('status') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('duration') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('campaign_id') ?>
-                        </th>
-                        <th>
-                            <?= $lh->translationFor('list_id') ?>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
             </table>
         </div>
         <div class="col-md-3">

@@ -42,15 +42,12 @@ try {
 	header("location: ./logout.php");
 	die();
 }
-
 if($user->getUserRole() != CRM_DEFAULTS_USER_ROLE_AGENT){
     header("location: index.php");
 }
-
 $lead_id = $_GET['lead_id'];
 $output = $api->API_getLeadsInfo($lead_id);
 $list_id_ct = count($output->list_id);
-
 if ($list_id_ct > 0) {
 	for($i=0;$i < $list_id_ct;$i++){
 		$first_name 	= $output->first_name[$i];
@@ -200,7 +197,8 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
         <!-- X-Editable -->
         <!--<link rel="stylesheet" src="js/dashboard/x-editable/dist/css/bootstrap-editable.css">-->
         <!--<script type="text/javascript" src="js/dashboard/x-editable/dist/js/bootstrap-editable.min.js"></script>-->
-
+		<link rel="stylesheet" href="css/bootstrap-multiselect.css">
+		<script type="text/javascript" src="js/bootstrap-multiselect.min.js"></script>
         <!-- preloader -->
         <link rel="stylesheet" href="css/customizedLoader.css">
 		
@@ -209,27 +207,25 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 
 		<!-- CHAT -->	
 	        <!-- <script src="modules/GoChat/js/chat.js"></script> -->
+		<link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
 		<style>
 		#create-offer-table {
 			font-family: Arial, Helvetica, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
 			}
-
 			#create-offer-table td, #create-offer-table th {
 			border: 1px solid #3f51b5;
-			padding: 8px;
+			padding: 5px;
 			}
-
 			#create-offer-table tr:nth-child(even){background-color: #f2f2f2;}
-
 			#create-offer-table tr:hover {background-color: #ddd;}
 
 			#create-offer-table th {
 			padding-top: 12px;
 			padding-bottom: 12px;
 			text-align: left;
-			background-color: #3f51b5;
+			background-color:#5bc0de;
 			color: white;
 			}
 			.customer-offer-input{
@@ -239,7 +235,6 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 				font-size: large;
 			}
 			.customer-offer-input-readonly{
-				display: none;
 				width: 100%;
 				border: none;
 				padding: 5px;
@@ -657,6 +652,7 @@ input:checked + .slider:before {
         <!-- header logo: style can be found in header.less -->
 		<?php print $ui->creamyAgentHeader($user); ?>
             <!-- Left side column. contains the logo and sidebar -->
+		
 		<?php print $ui->getAgentSidebar($user->getUserId(), $user->getUserName(), $user->getUserRole(), $user->getUserAvatar()); ?>
 
             <!-- Right side column. Contains the navbar and content of the page -->
@@ -695,6 +691,9 @@ input:checked + .slider:before {
 	div.tab-content, div.tab-pane section.content{
 		/*padding-top: 2.5px;*/
 		padding-top: 0px !important;
+	}
+	.tab-content {
+		height: auto! Important;
 	}
     </style>
 <!-- WhatsApp Button
@@ -859,6 +858,22 @@ input:checked + .slider:before {
 												<input type="hidden" value="<?php echo $address3;?>" name="address3">
 												
 												<div class="row">
+													<div class="col-sm-6">
+														<div class="mda-form-group label-floating">
+															<input id="prev_status" name="prev_status" type="text" maxlength="30"  value=""
+																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" readonly>
+															<label for="prev_status"><?=$lh->translationFor('prev_status')?></label>
+														</div>
+													</div>
+													<div class="col-sm-6">
+														<div class="mda-form-group label-floating">
+															<input id="app_status" name="app_status" type="text" maxlength="30" value=""
+																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" readonly>
+															<label for="app_status"><?=$lh->translationFor('app_status')?></label>
+														</div>
+													</div>
+												</div>
+												<div class="row">
 													<div class="col-sm-4">
 														<div class="mda-form-group label-floating">
 															<input id="first_name" name="first_name" type="text" maxlength="30"  value="<?php echo $first_name;?>"
@@ -926,19 +941,27 @@ input:checked + .slider:before {
 													</div>
 													<!-- /.address1 & address2 -->
 													<div class="row">
-														<div class="col-sm-3">
+														<div class="col-xl-12 col-lg-6">
+															<div class="mda-form-group label-floating">
+																<select id="country_code" name="country_code" type="text" maxlength="3"	class="mda-form-control select2 ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" title="<?=$lh->translationFor('select_country_code')?>" disabled>
+																	<option value="">- - - <?=$lh->translationFor('select_country_code')?> - - -</option>
+																</select>
+																<label for="country_code"><?=$lh->translationFor('country_code')?></label>
+															</div>
+														</div>
+														<div class="col-lg-3">
 															<div class="mda-form-group label-floating">
 																<input id="province" name="province" type="text" maxlength="50" value="<?php echo $city;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="province"><?=$lh->translationFor('tem_province')?></label>
 															</div>
 														</div>
-														<div class="col-sm-3">
+														<div class="col-sm-3" hidden>
 															<div class="mda-form-group label-floating">
 																<input id="city" name="city" type="text" maxlength="50" value="<?php echo $city;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="city"><?=$lh->translationFor('city')?></label>
 															</div>
 														</div>
-														<div class="col-sm-3">
+														<div class="col-sm-3" hidden>
 															<div class="mda-form-group label-floating">
 																<input id="state" name="state" type="text" maxlength="50" value="<?php echo $state;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="state"><?=$lh->translationFor('state')?></label>
@@ -953,31 +976,18 @@ input:checked + .slider:before {
 													</div>
 													<!-- /.city,state,postalcode -->
 												
-	 												<!-- country_code & email -->
-                                                                                                        <div class="row">
-                                                                                                                <div class="col-xl-12 col-lg-6">
-															<div class="mda-form-group label-floating">
-																<select id="country_code" name="country_code" type="text" maxlength="3"	class="mda-form-control select2 ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" title="<?=$lh->translationFor('select_country_code')?>" disabled>
-																	<option value="">- - - <?=$lh->translationFor('select_country_code')?> - - -</option>
-																</select>
-																<label for="country_code"><?=$lh->translationFor('country_code')?></label>
-															</div>
-						                						</div>
-                                        	                                                                <div class="col-xl-12 col-lg-6">
-															<div class="mda-form-group label-floating"><!-- add "mda-input-group" if with image -->
-																<input id="email" name="email" type="text" width="auto" value="<?php echo $email;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
-																<label for="email"><?=$lh->translationFor('email_add')?></label>
-														<!--<span class="mda-input-group-addon">
-															<em class="fa fa-at fa-lg"></em>
-														</span>-->
-															</div>
-														</div>
-													</div>
-													<!-- /.country_code & email -->
 												</form> 
 												<form role="form" id="gender_form" class="formMain form-inline" >
 													<div class="row">
-														<div class="col-sm-3">
+													
+	 												<!-- country_code & email -->
+														<div class="col-xl-12 col-lg-3">
+															<div class="mda-form-group label-floating"><!-- add "mda-input-group" if with image -->
+																<input id="email" name="email" type="text" width="auto" value="<?php echo $email;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
+																<label for="email"><?=$lh->translationFor('email_add')?></label>
+															</div>
+														</div>
+														<div class="col-sm-3" hidden>
 															<div class="mda-form-group label-floating">
 																<input id="title" name="title" type="text" maxlength="4" value="<?php echo $title;?>"
 																	class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
@@ -988,7 +998,7 @@ input:checked + .slider:before {
 															<div class="mda-form-group label-floating">
 																<input id="job_type" name="job_type" type="text" maxlength="10" value=""
 																	class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
-																<label for="job_type">Job Type</label>
+																<label for="job_type"><?=$lh->translationFor('job_type')?></label>
 															</div>
 														</div>
 														<div class="col-sm-3">
@@ -1014,7 +1024,7 @@ input:checked + .slider:before {
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
 																<input id="partner_code" name="partner_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
-																<label for="partner_code"><?php $lh->translateText("partner_code"); ?></label>
+																<label required for="partner_code"><?php $lh->translateText("partner_code"); ?></label>
 															</div>
 														</div>
 														<div class="col-sm-4">
@@ -1025,7 +1035,7 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
+																<input required id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
 																<label for="request_id">Request Id</label>
 															</div>
 														</div>
@@ -1035,7 +1045,7 @@ input:checked + .slider:before {
 													<div class="row">
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="identity_number" name="identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<input required id="identity_number" name="identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
 																<label for="identity_number"><?php $lh->translateText("identity_number"); ?></label>
 															</div>
 														</div>
@@ -1909,6 +1919,8 @@ input:checked + .slider:before {
 							?>
 						</div><!-- /.row -->
 						<!-- End Contacts -->
+						<?php include_once "agent/module/calllogs.php" ?>
+
 					</div>
 					<!-- popup-hotkeys -->	
 					<!--div id="popup-hotkeys" class="panel clearfix">
@@ -2014,7 +2026,7 @@ input:checked + .slider:before {
 			</li>
         </ul>
 		
-        <ul class="control-sidebar-menu" id="go_agent_login" style="width: 100%; margin: 15px auto 15px; text-align: center;">
+        <ul class="control-sidebar-menu" id="go_agent_login" style="font-size:unset; width: 100%; margin: 15px auto 15px; text-align: center;">
 			
         </ul>
 		
@@ -2069,6 +2081,7 @@ input:checked + .slider:before {
 				if ($user_info->data->agent_lead_search_override != 'DISABLED') {
 					echo $ui->getSidebarItem("#customerslist", "", $lh->translationFor("contacts"), null, "", "agent-lead-search");
 				}
+				echo $ui->getSidebarItem("#call-logs", "", "Lịch sử", null, "", "agent-call-log");
 			}
 			?>
 			<li id="pause_code_link" class="hidden">
@@ -3131,9 +3144,13 @@ dding-top: 10px;">
 		<?php } //end if ECCS_BLIND_MODE ?>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+		<script type="text/javascript" src="modules/GOagent/js/pitel/variable.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js" defer></script>
+		<script type="text/javascript" src="js/pitel/bank_dictionary.js" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-call-log.js" defer></script>
     </body>
 </html>
