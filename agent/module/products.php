@@ -27,50 +27,50 @@
                 <div class="row">
                     <div class="col-md-12">
                         <form id="product-detail-form">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="product_code" >Product Code</label>
-                                <input name="product_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="product_code">Product Code</label>
+                                        <input name="product_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <div class="mda-form-group label-floating">
-                                <label for="product_description" >Product Description</label>
-                                <textarea name="product_description" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="">
+                                <div class="col-xs-9">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="product_description">Product Description</label>
+                                        <textarea name="product_description" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="">
 
                                 </textarea>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="row">
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_min_amount" >Loan Min Amount</label>
-                                <input name="loan_min_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                <div class="col-xs-3">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="loan_min_amount">Loan Min Amount</label>
+                                        <input name="loan_min_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="loan_max_amount">Loan Max Amount</label>
+                                        <input name="loan_max_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="loan_min_tenor">Loan Min Tenor</label>
+                                        <input name="loan_min_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="mda-form-group label-floating">
+                                        <label for="loan_max_tenor">Loan Max Tenor</label>
+                                        <input name="loan_max_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_max_amount" >Loan Max Amount</label>
-                                <input name="loan_max_amount" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
+                            <div id="product-detail-form-bundle">
                             </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_min_tenor" >Loan Min Tenor</label>
-                                <input name="loan_min_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="mda-form-group label-floating">
-                                <label for="loan_max_tenor" >Loan Max Tenor</label>
-                                <input name="loan_max_tenor" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly="" value="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div id="product-detail-form-bundle">
-                        </div>
                         </form>
                     </div>
                 </div>
@@ -111,19 +111,45 @@
     </div>
 </div>
 
-
 <div id="full-loan" role="tabpanel" class="tab-pane">
     <div class="row">
         <div class="col-sm-12">
             <div class="box box-solid">
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="box-group">
-                        <form action="#" id="full-loan-form">
-                        <!-- 6. LOAN -->
+                <div id="smartwizard">
+                    <ul class="nav">
+                        <li>
+                            <a class="nav-link" href="#step-1">
+                                AF <br/>Chọn sản phẩm
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#step-2">
+                                AF1 <br/>Thông tin cơ bản
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#step-3">
+                                AF2 <br/>Thông tin chi tiết
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#step-4">
+                                AF3 <br/>Thông tin thu nhập
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#step-5">
+                                AF4 <br/>Thông tin bổ sung
+                            </a>
+                        </li>
+                    </ul>
+                    <form action="#" id="full-loan-form">
+                    <div class="tab-content">
+                        <div id="step-1" class="tab-pane active" role="tabpanel">
+                            <!-- 1.PRODUCT -->
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <h4>1. <?= $lh->translationFor('loan_detail') ?></h4>
+                                    <h4 ondblclick='ECShowProducts("TEL","TEL123")'>1. <?= $lh->translationFor('loan_detail') ?></h4>
                                 </div>
                             </div>
                             <div class="row">
@@ -160,24 +186,90 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4">
-                                    <label for="loan_tenor">1.3. Loan Tenor</label>
+                                <div class="col-xl-4 col-lg-6">
                                     <div class="row">
-                                            <div class="col-xl-4 col-lg-9">
-                                                <input type="range" name="range_loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" max="50" oninput="this.form.loan_tenor.value=this.value">
+                                        <div class="col-xl-4 col-lg-12">
+                                            <label for="loan_tenor">1.3. Loan Tenor</label>
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-9">
+                                                    <input type="range" name="range_loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" value="0" min="0" max="50" oninput="changeLoanTennor(this);">
+                                                </div>
+                                                <div class="col-xl-4 col-lg-3">
+                                                    <input type="number" step="1" name="loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" value="0"  max="50" oninput="changeLoanTennorRange(this);" required="">
+                                                </div>    
                                             </div>
-                                            <div class="col-xl-4 col-lg-3">
-                                                <input type="input" name="loan_tenor" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" max="50" oninput="this.form.range_loan_tenor.value=this.value" required="">
-                                            </div>    
                                         </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4">
-                                    <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="loan_amount" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
-                                        <label for="loan_amount">1.4. <?= $lh->translationFor('loan_amount') ?></label>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-12">
+                                            <label for="loan_amount">1.4. <?= $lh->translationFor('loan_amount') ?></label>
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-9">
+                                                    <input type="range" step="50000" name="range_loan_amount" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" value="0" min="0" max="999999999999" oninput="changeLoanAmount(this);">
+                                                </div>
+                                                <div class="col-xl-4 col-lg-3">
+                                                    <input type="number" pattern="^\d+(?:\.\d{1,2})?$" step="50000" name="loan_amount" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" min="0" value="0" max="999999999999" oninput="changeLoanAmountRange(this);" required="">
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-12">
+                                            <label for="product_type">Gói bảo hiểm</label>
+                                            <div class="radio">
+                                                <label>
+                                                <input type="radio" name="simu_insurance" class="insurance" value="0" checked>
+                                                Không bảo hiểm - 0%
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                <input type="radio" name="simu_insurance" class="insurance" value="6">
+                                                Gói cơ bản - 6%
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                <input type="radio" name="simu_insurance" class="insurance" value="8">
+                                                Gói nâng cao - 8%
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                <div class="col-xl-4 col-lg-4">
+                                <!--  -->
+                                <div class="col-xl-12 col-lg-6">
+                                    <table id="create-offer-table">
+                                    <tr>
+                                        <th colspan="2">Offer Detail</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Customer Offer Amount</td>
+                                        <td><input name="customer-offer-amount" type="text" value='' class="customer-offer-input" onchange="simulator(this)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offer Tenor</td>
+                                        <td><input name="customer-offer-tenor" value="" type="number" class="customer-offer-input-readonly" onchange="simulator(this)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Percent</td>
+                                        <td><input name="customer-offer-percent" value="" type="text" class="customer-offer-input-readonly" onchange="simulator(this)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Offer</td>
+                                        <td><input name="customer-offer-total" value="" type="number" class="customer-offer-input-readonly" onchange="simulator(this)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monthly</td>
+                                        <td><input name="customer-offer-monthly" value="1200000" type="number" class="customer-offer-input-readonly" onchange="simulator(this)"></td>
+                                    </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-12">
                                     <div class="mda-form-group label-floating">
                                         <input type="text" name="lending_method" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                         <label for="lending_method">1.5. <?= $lh->translationFor('lending_method') ?></label>
@@ -187,7 +279,7 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-6">
                                     <div class="mda-form-group label-floating">
-                                        <input type="text" name="business_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input type="text" name="business_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                         <label for="business_date">1.6. <?= $lh->translationFor('business_date') ?></label>
                                     </div>
                                 </div>
@@ -198,47 +290,76 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" hidden>
                                 <div class="col-xl-3 col-lg-3">
                                     <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="annual_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input disabled type="number" min="0" max="999999999999" name="annual_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                         <label for="annual_revenue">1.8. <?= $lh->translationFor('annual_revenue') ?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3">
                                     <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="annual_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input disabled type="number" min="0" max="999999999999" name="annual_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
                                         <label for="annual_profit">1.9. <?= $lh->translationFor('annual_profit') ?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3">
                                     <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="monthly_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input type="number" min="0" max="999999999999" name="monthly_revenue" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
                                         <label for="monthly_revenue">1.10. <?= $lh->translationFor('monthly_revenue') ?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3">
                                     <div class="mda-form-group label-floating">
-                                        <input type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input  type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                         <label for="monthly_profit">1.11. <?= $lh->translationFor('monthly_profit') ?></label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" hidden>
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="mda-form-group label-floating">
-                                        <input type="text" name="3rd_Party_duration" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input disabled type="text" name="3rd_Party_duration" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                         <label for="3rd_Party_duration">1.12. <?= $lh->translationFor('3rd_Party_duration') ?></label>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="mda-form-group label-floating">
-                                        <input type="text" name="sale_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                        <input disabled type="text" name="sale_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                         <label for="sale_code">1.13. <?= $lh->translationFor('sale_code') ?></label>
                                     </div>
                                 </div>
                             </div>
                             <!-- END -->
+                        </div>
+                        <div id="step-2" class="tab-pane active" role="tabpanel">
+                            Step content 2
+                        </div>
+                        <div id="step-3" class="tab-pane active" role="tabpanel">
+                            Step content 3
+                        </div>
+                        <div id="step-4" class="tab-pane active" role="tabpanel">
+                            Step content 4
+                        </div>
+                        <div id="step-5" class="tab-pane active" role="tabpanel">
+                            Step content 4
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="full-loan-old" role="tabpanel" class="tab-pane">
+<div class="row">
+        <div class="col-sm-12">
+            <div class="box box-solid">
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="box-group">
+                        <form action="#" id="full-loan-form_old">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <h4>1.1. <?= $lh->translationFor('loan_detail') ?></h4>
@@ -538,7 +659,7 @@
                                     <h4>3. <?= $lh->translationFor('work') ?></h4>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" hidden disabled readonly>
                                 <div class="col-xl-2 col-lg-4">
                                     <div class="mda-form-group label-floating">
                                         <select name="job_type" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
@@ -771,10 +892,10 @@
                             <div class="row">
                                 <div class="col-xl-2 col-lg-4">
                                     <div class="mda-form-group label-floating" data-children-count="1">
-                                        <select name="disbursement_method" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
-                                            <option value="cash">Tiền mặt</option>
+                                        <select name="disbursement_method" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select">
+                                            <option value="cash" selected>Tiền mặt</option>
                                             <option value="trans">Chuyển khoản</option>
-                                            <option value="mixed">Chuyển khoản và tiền mặt</option>
+                                            <!-- <option value="mixed">Chuyển khoản và tiền mặt</option> -->
                                         </select>
                                         <label  class="select_label" for="disbursement_method">5.1. <?= $lh->translationFor('disbursement_method') ?></label>
                                     </div>
@@ -807,7 +928,7 @@
                             <div class="row">
                                 <div class="col-xl-5 col-lg-5">
                                     <div class="mda-form-group label-floating">
-                                            <label class="select_label" for="bank_code">5.4. <?= $lh->translationFor('bank_branch_code') ?></label>
+                                            <label class="select_label" for="bank_branch_code">5.4. <?= $lh->translationFor('bank_branch_code') ?></label>
                                             <select name="bank_branch_code"  class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
                                             </select>
                                     </div>
@@ -885,17 +1006,32 @@
                                     </table>
                                 </div>
                                 <div class="col-xl-12 col-lg-4">
+                                    <div class="form-group">
+                                    <div class="radio">
+                                        <label>
+                                        <input type="radio" name="optionsRadios" value="option1" checked="">
+                                        Option one is this and that—be sure to include why it's great
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                        <input type="radio" name="optionsRadios" value="option2">
+                                        Option two can be something else and selecting it will deselect option one
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                        <input type="radio" name="optionsRadios"  value="option3">
+                                        Option three is disabled
+                                        </label>
+                                    </div>
+                                    </div>
+                                    <label class="select_label" for="employment_type">3.3. Consurent Type</label>
+                                </div>
+                                <div class="col-xl-12 col-lg-4">
                                     <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
 
                                     </table>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-8">
-                                    <table id="create-offer-table" hidden>
-                                           
-                                    </table>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row" style="margin-bottom: 10px;">
