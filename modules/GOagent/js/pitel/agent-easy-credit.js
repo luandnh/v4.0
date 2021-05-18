@@ -10,6 +10,7 @@ const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",
 });
+const num_formatter = new Intl.NumberFormat('vi-VN');
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
 var selected_offer_id = "";
@@ -22,6 +23,7 @@ var selected_min_financed_amount = 0;
 var percent_insurance = 0;
 var offerinsurancetable;
 var insurance_amount = 0;
+// 
 let box_color = [
   "box-primary",
   "box-danger",
@@ -30,7 +32,43 @@ let box_color = [
   "box box-info",
   "box box-default",
 ];
-
+let changeLoanTennor = (e)=>{
+  e.form.loan_tenor.value=e.value;
+  simulator(e);
+}
+let changeLoanTennorRange = (e)=>{
+  e.form.range_loan_tenor.value=e.value;
+  simulator(e);
+}
+let changeLoanAmount = (e)=>{
+  e.form.loan_amount.value=e.value;
+  simulator(e);
+}
+let changeLoanAmountRange = (e)=>{
+  simulator(e);
+  e.form.range_loan_amount.value=e.value;
+}
+let simulator = (e)=>{
+  console.log("simulator");
+  $("input[name='loan_amount']").trigger('blur')
+  let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
+  let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
+  let sm_insu = $("input[name='simu_insurance']:checked").val();
+  if (sm_insu == undefined){
+    $("input[name='simu_insurance']")[0].checked = true;
+    sm_insu = 0;
+  }
+  let sm_total_offer = parseInt(sm_loan_amount * (1+sm_insu/100))+"";
+  let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor)+"";
+  // 
+  $("#full-loan-form input[name='customer-offer-amount']").val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
+  $("#full-loan-form input[name='customer-offer-tenor']").val(sm_loan_tenor.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
+  $("#full-loan-form input[name='customer-offer-percent']").val(sm_insu+"%");
+  $("#full-loan-form input[name='customer-offer-total']").val(sm_total_offer.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
+  $("#full-loan-form input[name='customer-offer-monthly']").val(sm_monthly.replace(/[^0-9\.]/g, "").replace(".", "")).trigger('blur');
+  // 
+  
+}
 let removeElement = (btn_id) => {
   if ($("#" + btn_id) != null && $("#" + btn_id).length) {
     let elem = document.getElementById(btn_id);
@@ -57,6 +95,7 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
+  $("input[name='simu_insurance']")[0].checked = true;
   $(document).on("click", "#submit_attachment", function (e) {
     e.preventDefault();
     const multiple_files = $(".MultiFile-applied.MultiFile");
@@ -211,20 +250,20 @@ $(document).ready(() => {
 let ECShowProducts = (partner_code, request_id) => {
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
-  $("#create-offer-table").attr("hidden", true);
+  SetCustomerOfferDetail();
   $("#offer-datatable").empty();
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
-  $("#offer-datatable")[0].innerHTML = `
-	<div class="col-xl-12 col-lg-8">
-	    <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
-	    </table>
-	</div>
-	<div class="col-xl-12 col-lg-4">
-	    <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
-	    </table>
-	</div>
-`;
+//   $("#offer-datatable")[0].innerHTML = `
+// 	<div class="col-xl-12 col-lg-8">
+// 	    <table id="offer-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+// 	    </table>
+// 	</div>
+// 	<div class="col-xl-12 col-lg-4">
+// 	    <table id="offer-insurance-list-table" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">
+// 	    </table>
+// 	</div>
+// `;
   clearForm($("#full-loan-form"));
   if (request_id != "" && request_id.length > 0) {
     SyncFullLoanFromAPI(request_id);
@@ -889,40 +928,74 @@ function SetCustomerOfferDetail() {
   </tr>
   <tr>
       <td>Customer Offer Amount</td>
-      <td><input name="customer-offer-amount" type="text" value='' class="customer-offer-input"></td>
-  </tr>
-  <tr>
-    <td>Offer Amount</td>
-    <td><input name="offer-amount" type="number" value='${selected_offer_amount}' class="customer-offer-input-readonly">${formatter.format(
-    selected_offer_amount
-  )}</td>
+      <td><input name="customer-offer-amount" type="text" value='123123' class="customer-offer-input" readonly></td>
   </tr>
   <tr>
       <td>Offer Tenor</td>
-      <td><input name="customer-offer-tenor" value="${selected_offer_tenor}" type="number" class="customer-offer-input-readonly">${selected_offer_tenor} month</td>
+      <td><input name="customer-offer-tenor" value="" type="number" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
       <td>Percent</td>
-      <td><input name="customer-offer-percent" value="${percent_insurance}" type="number" class="customer-offer-input-readonly">${percent_insurance}%</td>
+      <td><input name="customer-offer-percent" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
       <td>Total Offer</td>
-      <td><input name="customer-offer-total" value="21200000" type="number" class="customer-offer-input-readonly">${formatter.format(
-        21200000
-      )}</td>
+      <td><input name="customer-offer-total" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   <tr>
       <td>Monthly</td>
-      <td><input name="customer-offer-monthly" value="1200000" type="number" class="customer-offer-input-readonly">${formatter.format(
-        1200000
-      )}</td>
+      <td><input name="customer-offer-monthly" value="" type="text" class="customer-offer-input-readonly" readonly></td>
   </tr>
   `;
+  $("input[name='simu_insurance']")[0].checked = true;
 }
+
+$(document).on("click", 'input[name="simu_insurance"]', function (e) {
+  simulator(e);
+});
 $(document).on("change", 'select[name="product_type"]', function () {
   let product_code = this.value;
+  $("input[name='simu_insurance']")[0].checked = true;
+  selected_employment_type.product_list.forEach((prd)=>{
+      if (prd.product_code == product_code){
+          selected_product = prd;
+          // 
+          // Loan tenor
+          $("#full-loan-form input[name='range_loan_tenor']")[0].max = prd.loan_max_tenor;
+          $("#full-loan-form input[name='range_loan_tenor']")[0].min = prd.loan_min_tenor;
+          $("#full-loan-form input[name='range_loan_tenor']")[0].value = prd.loan_min_tenor;
+          // 
+          $("#full-loan-form input[name='loan_tenor']")[0].max = prd.loan_max_tenor;
+          $("#full-loan-form input[name='loan_tenor']")[0].min = prd.loan_min_tenor;
+          $("#full-loan-form input[name='loan_tenor']")[0].value = prd.loan_min_tenor;
+          // 
+          // Loan amount
+          $("#full-loan-form input[name='range_loan_amount']")[0].max = prd.loan_max_amount;
+          $("#full-loan-form input[name='range_loan_amount']")[0].min = prd.loan_min_amount;
+          $("#full-loan-form input[name='range_loan_amount']")[0].value = prd.loan_min_amount;
+          // 
+          $("#full-loan-form input[name='loan_amount']")[0].max = prd.loan_max_amount;
+          $("#full-loan-form input[name='loan_amount']")[0].min = prd.loan_min_amount;
+          $("#full-loan-form input[name='loan_amount']")[0].value = prd.loan_min_amount;
+          // 
+          
+          return;
+      }
+  })
 });
 
+$(document).on("change", 'select[name="disbursement_method"]', function () {
+    let dis_method = this.value;
+    let req = false;
+    if (dis_method == "trans"){
+      req = true;
+    }
+    $("#full-loan-form select[name='bank_code']").attr('required',req);
+    $("#full-loan-form select[name='bank_area']").attr('required',req);
+    $("#full-loan-form select[name='bank_branch_code']").attr('required',req);
+    $("#full-loan-form input[name='bank_account']").attr('required',req);
+    $("#full-loan-form input[name='beneficiary_name']").attr('required',req);
+});
 $(document).on("change", 'select[name="employment_type"]', function () {
   selected_employment_type = null;
   let em_type = this.value;
@@ -941,14 +1014,49 @@ $(document).on("change", 'select[name="employment_type"]', function () {
       });
   }
 });
+
+// $(document).on("keyup", 'input[type="number"]', function () {
+//   if (this.value == "" || this.value == undefined) {}
+//   this.value = this.value.replace(/[^0-9\.]/g, "");
+//   this.value = this.value.replaceAll(".", "");
+// });
+
+// $(document).on("blur", 'input[type="number"]', function () {
+//   if (this.value == "" || this.value == undefined) {}
+//   this.value = this.value.replace(/[^0-9\.]/g, "");
+//   this.value = this.value.replaceAll(".", "");
+//   this.value = num_formatter.format(this.value);
+// });
+
 $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {
-    //
-  }
+  if (this.value == "" || this.value == undefined) {}
+  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = this.value.replace(".", "");
+});
+
+$(document).on("keyup", 'input[name^="customer-offer"]', function () {
+  if (this.value == "" || this.value == undefined) {}
   this.value = this.value.replace(/[^0-9\.]/g, "");
   this.value = this.value.replace(".", "");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
+  if (this.value == "" || this.value == undefined) {}
+  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = this.value.replaceAll(".", "");
+  this.value = formatter.format(this.value);
+});
+
+
+$(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
+  if (this.value == "" || this.value == undefined) {}
+  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = this.value.replaceAll(".", "");
+  this.value = formatter.format(this.value);
+});
+$(document).on("blur", 'input[name="customer-offer-total"]', function () {
+  if (this.value == "" || this.value == undefined) {}
+  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = this.value.replaceAll(".", "");
   this.value = formatter.format(this.value);
 });
 
@@ -1353,6 +1461,10 @@ $(function () {
 });
 
 $(document).ready(() => {
+  $("#smartwizard").smartWizard({
+    selected: 0,
+    theme: "arrows",
+  });
   let permanentProvince = $("select[name='permanent_province']")[0];
   $(`<option value="" selected></option>`).appendTo(permanentProvince);
   for (const [key, value] of Object.entries(PROVINCE)) {
