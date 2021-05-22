@@ -144,7 +144,7 @@ function LoadCallLogs() {
           },
           {
             title: "Mã hợp đồng",
-            data: "request_id",
+            data: "proposal_id",
           },
           {
             title: "Mã Yêu cầu",

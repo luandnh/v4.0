@@ -1,4 +1,4 @@
-var CRM_API_URL = "https://tlink02-api.tel4vn.com";
+var CRM_API_URL = "https://ec02-api.tel4vn.com";
 var translator = {
     'term_confirm' : 'Cam kết thông tin',
     'condition_confirm' : 'Đồng ý điều khoản',
