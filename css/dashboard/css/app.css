@@ -8589,7 +8589,7 @@ fieldset[disabled] .btn-pink.focus {
   position: absolute;
   top: 0;
   left: 0;
-  font-family: auto;
+  font-family: Helvetica !important;
   z-index: 0;
   display: inline-block;
   font-size: 1em;
@@ -9026,4 +9026,26 @@ md-tabs .md-tab.md-focused md-icon {
 }
 .tab-pane{
   margin-top: 10px;
+}
+label{
+
+  font-family: Helvetica !important;
+}
+.sweet-alert {
+  position: unset;
+  background-color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 17px;
+  width: 70% !important;
+  display: block;
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  left: 15% !important;
+  top: 30%;
+  margin-top: -200px;
+  margin-left: unset !important;
+  overflow: hidden;
+  display: none;
+  z-index: 99999;
 }

@@ -1041,3 +1041,7 @@ input[type='file'] {
 .form_label{
   font-family: Helvetica !important;
 }
+.sw-theme-arrows .toolbar>.btn {
+  font-size: large !important;
+  padding: 0.375rem 3.75rem !important;
+}

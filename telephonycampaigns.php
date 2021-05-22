@@ -876,7 +876,7 @@ $gopackage = $api->API_getGOPackage();
 									</div>
 								</div>
 								<div class="form-group carrier-to-use">
-									<label class="control-label col-lg-4"><small><?php $lh->translateText("carrier_use_for_campaign"); ?></small>:</label>
+									<label class="control-label col-lg-4"><?php $lh->translateText("carrier_use_for_campaign"); ?>:</label>
 									<div class="col-lg-8 mb">
 										<select name="dial_prefix" id="dial_prefix" class="form-control">
 											<option value="CUSTOM" <?php if ($campaign->data->dial_prefix == "CUSTOM") {
