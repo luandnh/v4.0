@@ -1,5 +1,6 @@
 $(document).ready(function () {
   LoadAllowedCampaigns();
+  LoadAllCallStatus();
   const start = moment();
   const end = moment();
   $("#daterange-btn-calllogs").daterangepicker(
@@ -36,9 +37,7 @@ $(document).ready(function () {
   $("#agent-call-log").on("click", (e) => {
     e.preventDefault();
 
-    $("#cust_info").hide();
-    $("#loaded-contents").show();
-    $("#agent_dashboard").hide();
+    ShowContentModule("calllogs")
     $("#calllogs-list")
       .removeClass("display")
       .addClass("table table-striped table-bordered");
@@ -48,20 +47,38 @@ $(document).ready(function () {
   });
 });
 
+let ShowContentModule = (content) => {
+  var thisContents = $("#loaded-contents div[id^='contents-']");
+  $.each(thisContents, function () {
+    var contentID = $(this).prop('id').replace('contents-', '');
+    if (contentID == content) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+  $("#cust_info").hide();
+  $("#loaded-contents").show();
+  $("#agent_dashboard").hide();
+}
+
 let allowed_campaigns = [];
-$("#calllogs-href").click(function (e) {});
+$("#calllogs-href").click(function (e) { });
 
 function LoadCallLogs() {
   $("#calllogs-list").css("width", "100%");
   const daterange = $("#daterange-value-calllogs").val().split(" - ");
-  let campaigns_id = $("#calllogs-select-campaigns").val();
   let param = {
     from_date: `${daterange[0]} 00:00:00`,
     to_date: `${daterange[1]} 23:59:59`,
-    campaigns: campaigns_id.join(),
+    campaign: $("#calllogs-select-campaigns").val(),
+    status: $("#calllogs-select-status").val(),
+    partner_code: $("#calllogs-input-partner-code").val(),
     limit: 999999,
     offset: 0,
   };
+
+  console.log($.param(param, true))
   $.ajax({
     type: "GET",
     url:
@@ -69,7 +86,7 @@ function LoadCallLogs() {
       "/v1/report/agent/call-log/" +
       user_id +
       "?" +
-      $.param(param),
+      $.param(param, true),
     async: true,
     dataType: "json",
     headers: {
@@ -77,6 +94,7 @@ function LoadCallLogs() {
     },
     success: function (result, status, xhr) {
       $("#calllogs-list").DataTable({
+        responsive: true,
         info: false,
         destroy: true,
         paging: true,
@@ -92,8 +110,11 @@ function LoadCallLogs() {
             },
           },
           {
+            title: "Partner Code",
+            data: "partner_code"
+          },
+          {
             title: "Khách hàng",
-
             data: {
               last_name: "last_name",
               middle_initial: "middle_initial",
@@ -122,6 +143,10 @@ function LoadCallLogs() {
             data: "call_duration",
           },
           {
+            title: "Mã hợp đồng",
+            data: "request_id",
+          },
+          {
             title: "Mã Yêu cầu",
             data: "request_id",
           },
@@ -129,6 +154,18 @@ function LoadCallLogs() {
             title: "Trạng thái hợp đồng",
             data: "app_status",
           },
+          {
+            title: "#",
+            data: {
+              lead_id: "lead_id",
+              phone_number: "phone_number",
+              phone_code: "phone_code",
+            },
+            render: (data) => {
+              return '<button id="lead-info-'+data.lead_id+'" data-leadid="'+data.lead_id+'" onclick="ViewCustInfo('+data.lead_id+');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>'+
+              '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
+            }
+          }
         ],
       });
     },
@@ -160,7 +197,11 @@ LoadAllowedCampaigns = () => {
       for (const [key, value] of Object.entries(
         result.data.allowed_campaigns
       )) {
-        AddCampaignOptions(key, value);
+        const options_campaign = $("<option>", {
+          value: key,
+          text: value,
+        });
+        $("#calllogs-select-campaigns").append(options_campaign);
       }
       $("#calllogs-select-campaigns").multiselect({
         buttonWidth: "100%",
@@ -178,13 +219,42 @@ LoadAllowedCampaigns = () => {
     },
   });
 };
-function AddCampaignOptions(key, value) {
-  const options_campaign = $("<option>", {
-    value: key,
-    text: value,
-  });
-  $("#calllogs-select-campaigns").append(options_campaign);
-}
 $("#calllogs-search-btn").on("click", () => {
   LoadCallLogs();
 });
+
+LoadAllCallStatus = () => {
+  return $.ajax({
+    type: "GET",
+    url: CRM_API_URL +
+      "/v1/status",
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    success: function (result, status, xhr) {
+      statuses = result.data;
+      statuses.forEach(status => {
+        let opt = $("<option>", {
+          value: status.status,
+          text: status.status_name,
+        });
+        $("#calllogs-select-status").append(opt);
+      });
+      $("#calllogs-select-status").multiselect({
+        buttonWidth: "100%",
+        maxHeight: 450,
+        includeSelectAllOption: false,
+        buttonClass: "btn btn-light",
+        templates: {
+          li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
+        },
+        selectedClass: "btn-light",
+      });
+    },
+    error: function (xhr, status, error) {
+      console.log("Get allowed campaigns fail!");
+    },
+  });
+};
