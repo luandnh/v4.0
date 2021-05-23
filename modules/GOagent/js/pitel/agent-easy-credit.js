@@ -765,8 +765,8 @@ $("#eligible_btn").on("click", (e) => {
           // }).done((update_result) => {
           //   swal("Success", "Update request_id success", "success");
           // });
-          SyncFullLoanFromContact();
           SyncFullLoanFromAPI(lead_id);
+          SyncFullLoanFromContact();
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
           $("#full-loan-form input[name='term_confirm']").prop('checked', true);
@@ -789,7 +789,7 @@ let getProductType = () => {
     product_names += `<div class="row">`;
     product_names += `
     <div class="col-lg-12">
-      <label>${i + 1}/ ${docs.bundle_code} -  ${docs.bundle_name} </label>
+      <label>${i + 1}/ ${docs.bundle_code} -  ${docs.bundle_name} . Tối thiểu: ${docs.min_request} loại giấy tờ</label>
     </div>`;
     let tmp_string = "[";
     for (var j = 0; j < docs.doc_list.length; j++) {
@@ -1082,6 +1082,9 @@ let SyncFullLoanFromContact = () => {
   let phone_number =
     $(".formMain input[name='phone_code']").val() +
     $(".formMain input[name='phone_number']").val();
+  if ($(".formMain input[name='alt_phone']").val()){
+    phone_number = $(".formMain input[name='alt_phone']").val();
+  }
   tmp_data = {
     request_id: $(".formMain input[name='request_id']").val(),
     partner_code: $(".formMain input[name='partner_code']").val(),
@@ -1095,71 +1098,71 @@ let SyncFullLoanFromContact = () => {
     identity_card_id_2: "",
     phone_number: phone_number,
     email: $(".formMain input[name='email']").val(),
-    employment_type: $(".formMain input[name='email']").val(),
-    product_type: "As",
-    loan_amount: 0,
-    loan_tenor: "",
-    tem_province: "",
-    tem_district: "",
+    // employment_type: $(".formMain input[name='email']").val(),
+    // product_type: "As",
+    // loan_amount: 0,
+    // loan_tenor: "",
+    // tem_province: "",
+    // tem_district: "",
     tem_ward: $(".formMain input[name='city']").val(),
     tem_address: $(".formMain input[name='address1']").val(),
-    years_of_stay: 0,
-    permanent_province: "",
-    permanent_district: "",
-    permanent_ward: "",
-    permanent_address: "",
-    profession: "",
-    married_status: "",
-    house_type: "",
-    number_of_dependents: "0",
-    disbursement_method: "1",
-    beneficiary_name: "",
-    beneficiary_bank: "",
-    bank_branch: "",
-    bank_account: "",
-    monthly_income: 0,
-    other_income: 0,
-    income_method: "CASH",
-    income_frequency: "M",
-    income_receiving_date: "15",
-    monthly_expense: 0,
-    job_title: "",
-    company_name: "",
-    workplace_city: "",
-    workplace_district: "",
-    workplace_ward: "",
-    workplace_address: "",
+    // years_of_stay: 0,
+    // permanent_province: "",
+    // permanent_district: "",
+    // permanent_ward: "",
+    // permanent_address: "",
+    // profession: "",
+    // married_status: "",
+    // house_type: "",
+    // number_of_dependents: "0",
+    // disbursement_method: "1",
+    // beneficiary_name: "",
+    // beneficiary_bank: "",
+    // bank_branch: "",
+    // bank_account: "",
+    // monthly_income: 0,
+    // other_income: 0,
+    // income_method: "CASH",
+    // income_frequency: "M",
+    // income_receiving_date: "15",
+    // monthly_expense: 0,
+    // job_title: "",
+    // company_name: "",
+    // workplace_city: "",
+    // workplace_district: "",
+    // workplace_ward: "",
+    // workplace_address: "",
     workplace_phone: "1234567890",
-    employment_contract: "",
-    from: "2021",
-    to: "2021",
-    contract_term: "0",
-    tax: "",
-    loan_purpose: "",
-    other_contact: "",
-    detail_contact: "",
-    relation_1: "",
-    relation_1_name: "",
-    relation_1_phone_number: "",
-    relation_2: "",
-    relation_2_name: "",
-    relation_2_phone_number: "",
-    mailing_address: "",
-    lending_method: "",
-    business_date: "",
-    business_license_number: "",
-    annual_revenue: 0,
-    annual_profit: 0,
-    monthly_revenue: 0,
-    monthly_profit: 0,
-    "3rd_Party_duration": "",
-    list_doc_collecting: {
-      file_type_id: ["PIC", "PID"],
-      file_name: [
-        "PIC_212546374_0988834589_SAP159569495581.pdf",
-        "PID_212546374_0988834589_SAP159569495581.pdf",
-      ],
-    },
+    // employment_contract: "",
+    // from: "2021",
+    // to: "2021",
+    // contract_term: "0",
+    // tax: "",
+    // loan_purpose: "",
+    // other_contact: "",
+    // detail_contact: "",
+    // relation_1: "",
+    // relation_1_name: "",
+    // relation_1_phone_number: "",
+    // relation_2: "",
+    // relation_2_name: "",
+    // relation_2_phone_number: "",
+    // mailing_address: "",
+    // lending_method: "",
+    // business_date: "",
+    // business_license_number: "",
+    // annual_revenue: 0,
+    // annual_profit: 0,
+    // monthly_revenue: 0,
+    // monthly_profit: 0,
+    // "3rd_Party_duration": "",
+    // list_doc_collecting: {
+    //   file_type_id: ["PIC", "PID"],
+    //   file_name: [
+    //     "PIC_212546374_0988834589_SAP159569495581.pdf",
+    //     "PID_212546374_0988834589_SAP159569495581.pdf",
+    //   ],
+    // },
   };
   for (const property in tmp_data) {
     $("#full-loan-form input[name='" + property + "']").val(tmp_data[property]);
@@ -1347,14 +1350,14 @@ $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
   if (this.value == "" || this.value == undefined) {
   }
   this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replace(".", "");
+  this.value = this.value.replaceAll(".", "");
 });
 
 $(document).on("keyup", 'input[name^="customer-offer"]', function () {
   if (this.value == "" || this.value == undefined) {
   }
   this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replace(".", "");
+  this.value = this.value.replaceAll(".", "");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
   if (this.value == "" || this.value == undefined) {

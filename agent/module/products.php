@@ -421,13 +421,13 @@
                                 <div class="row">
                                     <div class="col-xl-8 col-lg-6">
                                         <div class="mda-form-group label-floating" data-children-count="1">
-                                            <input name="customer_name" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly  name="customer_name" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="customer_name"><?= $lh->translationFor('customer_name') ?></label>
                                         </div>
                                     </div>
                                     <div class="col-xl-4 col-lg-6">
                                         <div class="mda-form-group label-floating" data-children-count="1">
-                                            <select name="gender" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+                                            <select readonly name="gender" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
                                                 <option value="M"><?= $lh->translationFor('male') ?></label></option>
                                                 <option value="F"><?= $lh->translationFor('female') ?></label></option>
                                             </select>
@@ -438,7 +438,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="date" name="date_of_birth" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly type="date" name="date_of_birth" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="date_of_birth"><?= $lh->translationFor('date_of_birth') ?></label>
                                         </div>
                                     </div>
@@ -477,20 +477,20 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="identity_card_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly type="text" name="identity_card_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="identity_card_id"><?= $lh->translationFor('identity_card_id') ?></label>
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input  min="01-01-1990" type="date" name="issue_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly min="01-01-1990" type="date" name="issue_date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="issue_date"><?= $lh->translationFor('identity_issue_date') ?></label>
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
                                             <label class="form_label" for="issue_place"><?= $lh->translationFor('identity_issue_place') ?></label>
-                                            <select name="issue_place" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+                                            <select readonly name="issue_place" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
                                                 <option value="VIP15">Cục CSĐKQLCT&DLQGVDC</option>
                                                 <option value="VIP16">Cục CSQLHC về TTXH</option>
                                                 <option value="VIP67"></option>

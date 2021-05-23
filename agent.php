@@ -943,9 +943,7 @@ input:checked + .slider:before {
 													<div class="row">
 														<div class="col-xl-12 col-lg-6">
 															<div class="mda-form-group label-floating">
-																<select id="country_code" name="country_code" type="text" maxlength="3"	class="mda-form-control select2 ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" title="<?=$lh->translationFor('select_country_code')?>" disabled>
-																	<option value="">- - - <?=$lh->translationFor('select_country_code')?> - - -</option>
-																</select>
+																<input id="country_code" name="country_code" type="text" maxlength="50" value="Việt Nam" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" readonly disabled>
 																<label for="country_code"><?=$lh->translationFor('country_code')?></label>
 															</div>
 														</div>
@@ -1029,20 +1027,20 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input id="vendor_lead_code" name="vendor_lead_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<input readonly id="vendor_lead_code" name="vendor_lead_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
 																<label for="vendor_lead_code"><?php $lh->translateText("vendor_lead_code"); ?></label>
 															</div>
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input required id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
+																<input readonly required id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
 																<label for="request_id">Request Id</label>
 															</div>
 														</div>
 													</div>
 												</form>
 												<form role="form" id="identity_form" class="formMain form-inline">
-													<div class="row">
+												<div class="row">
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
 																<input required id="identity_number" name="identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
@@ -1131,6 +1129,96 @@ input:checked + .slider:before {
 															</div>
 														</div>
 													</div><!-- /.identity_number,identity_issued_on,identity_issued_by -->
+													<div class="row">
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input required id="alt_identity_number" name="alt_identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="alt_identity_number"><?php $lh->translateText("identity_number"); ?> thay thế</label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+																<input id="alt_identity_issued_on" name="alt_identity_issued_on" type="date" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<label for="alt_identity_issued_on"><?php $lh->translateText("identity_issued_on"); ?></label>
+															</div>
+														</div>
+														<div class="col-sm-4">
+															<div class="mda-form-group label-floating">
+															<select name="alt_identity_issued_by" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+																	<option value="" selected></option>
+																	<option value="VIP15">Cục CSĐKQLCT&DLQGVDC</option>
+																	<option value="VIP16">Cục CSQLHC về TTXH</option>
+																	<option value="VIP67"></option>
+																	<option value="VIP66">Hà Tây</option>
+																	<option value="VIP22">Đồng Tháp</option>
+																	<option value="VIP23">Gia Lai</option>
+																	<option value="VIP24">Hà Giang</option>
+																	<option value="VIP25">Hà Nam</option>
+																	<option value="VIP20">Điện Biên</option>
+																	<option value="VIP21">Đồng Nai</option>
+																	<option value="VIP43">Nghệ An</option>
+																	<option value="VIP44">Ninh Bình</option>
+																	<option value="VIP37">Lai Châu</option>
+																	<option value="VIP38">Lâm Đồng</option>
+																	<option value="VIP39">Lạng Sơn</option>
+																	<option value="VIP40">Lào Cai</option>
+																	<option value="VIP41">Long An</option>
+																	<option value="VIP42">Nam Định</option>
+																	<option value="VIP01">An Giang</option>
+																	<option value="VIP02">Bà Rịa Vũng Tàu</option>
+																	<option value="VIP03">Bắc Cạn</option>
+																	<option value="VIP04">Bắc Giang</option>
+																	<option value="VIP05">Bạc Liêu</option>
+																	<option value="VIP06">Bắc Ninh</option>
+																	<option value="VIP07">Bến Tre</option>
+																	<option value="VIP08">Bình Định</option>
+																	<option value="VIP62">Tuyên Quang</option>
+																	<option value="VIP63">Vĩnh Long</option>
+																	<option value="VIP64">Vĩnh Phúc</option>
+																	<option value="VIP54">Sơn La</option>
+																	<option value="VIP55">Tây Ninh</option>
+																	<option value="VIP56">Thái Bình</option>
+																	<option value="VIP57">Thái Nguyên</option>
+																	<option value="VIP58">Thanh Hóa</option>
+																	<option value="VIP59">Thừa Thiên Huế</option>
+																	<option value="VIP60">Tiền Giang</option>
+																	<option value="VIP61">Trà Vinh</option>
+																	<option value="VIP53">Sóc Trăng</option>
+																	<option value="VIP65">Yên Bái</option>
+																	<option value="VIP19">Đắk Nông</option>
+																	<option value="VIP09">Bình Dương</option>
+																	<option value="VIP10">Bình Phước</option>
+																	<option value="VIP11">Bình Thuận</option>
+																	<option value="VIP12">Cà Mau</option>
+																	<option value="VIP13">Cần Thơ</option>
+																	<option value="VIP14">Cao Bằng</option>
+																	<option value="VIP17">Đà Nẵng</option>
+																	<option value="VIP18">Đắk Lắk</option>
+																	<option value="VIP26">Hà Nội</option>
+																	<option value="VIP34">Khánh Hòa</option>
+																	<option value="VIP35">Kiên Giang</option>
+																	<option value="VIP36">Kon Tum</option>
+																	<option value="VIP27">Hà Tĩnh</option>
+																	<option value="VIP28">Hải Dương</option>
+																	<option value="VIP29">Hải Phòng</option>
+																	<option value="VIP30">Hậu Giang</option>
+																	<option value="VIP47">Phú Yên</option>
+																	<option value="VIP48">Quảng Bình</option>
+																	<option value="VIP49">Quảng Nam</option>
+																	<option value="VIP50">Quảng Ngãi</option>
+																	<option value="VIP31">TP.Hồ Chí Minh</option>
+																	<option value="VIP32">Hòa Bình</option>
+																	<option value="VIP33">Hưng Yên</option>
+																	<option value="VIP51">Quảng Ninh</option>
+																	<option value="VIP52">Quảng Trị</option>
+																	<option value="VIP45">Ninh Thuận</option>
+																	<option value="VIP46">Phú Thọ</option>
+																</select>
+															<label for="alt_identity_issued_by"><?php $lh->translateText("identity_issued_by"); ?></label>
+															</div>
+														</div>
+													</div><!-- /.identity_number,identity_issued_on,identity_issued_by -->
+													
 												</form>
 												</form>
 													<div id="call_notes_content" class="col-sm-12">
