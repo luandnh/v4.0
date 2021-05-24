@@ -318,8 +318,7 @@ $(document).ready(() => {
     "</li>";
   $("#agent_tablist").append(fullLoanTab);
   clearForm($("#full-loan-form"));
-  $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
-  $("#full-loan-form input[name='term_confirm']").prop('checked', true)
+  clearAFForm();
 });
 
 let ECShowProducts = (partner_code, request_id, app_status, status) => {
@@ -341,6 +340,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status) => {
   // 	</div>
   // `;
   clearForm($("#full-loan-form"));
+  clearAFForm();
   if (app_status == "VALIDATED") {
     let offerTab =
       '<li role="presentation" id="offer_tab_href">' +
@@ -1203,6 +1203,22 @@ function clearInputFile(f) {
     }
   }
 }
+function clearAFForm(){
+  
+  $("a[role='tab']")[0].click();
+  $('#smartwizard').smartWizard("reset");
+  $("#full-loan-form select[name='issue_place']").val("").trigger("change").selectpicker("refresh");
+  $("#full-loan-form select[name='tem_province']").val("").trigger("change").selectpicker("refresh");
+  $("#full-loan-form select[name='permanent_province']").val("").trigger("change").selectpicker("refresh");
+  $("#full-loan-form select[name='job_type']").val("SFF").trigger("change");
+  $("#full-loan-form select[name='employment_contract']").val("IT").trigger("change");
+  $("#full-loan-form input[name='tem_address']").val("");
+  $("#full-loan-form input[name='permanent_address']").val("");
+  $("#full-loan-form input[name='from']").val(2021).trigger("blur");
+  $("#full-loan-form input[name='to']").val(2021).trigger("blur");
+  $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
+  $("#full-loan-form input[name='term_confirm']").prop('checked', true)
+}
 function clearForm($form) {
   $form
     .find(":input")
@@ -1220,8 +1236,6 @@ function clearForm($form) {
     list_docs[index].click();
   }
   list_doc_collecting = [];
-  $("#full-loan-form select[name='tem_province']").val("").trigger("change").selectpicker("refresh");
-  $("#full-loan-form select[name='permanent_province']").val("").trigger("change").selectpicker("refresh");
 }
 
 function SetCustomerOfferDetail() {
@@ -1468,9 +1482,8 @@ $("#full-loan-form").on("submit", (e) => {
     })
     .done((result) => {
       swal("OK!", result.body.message, "success");
-      $("a[role='tab']")[0].click();
-      $('#smartwizard').smartWizard("reset");
       clearForm($("#full-loan-form"));
+      clearAFForm();
       // $("select[name='identity_issued_by']").val("");
       // DONE
       // if (
