@@ -9049,3 +9049,9 @@ label{
   display: none;
   z-index: 99999;
 }
+#product_tab_href{
+  display: none;
+}
+.product_tab_href{
+  display: none;
+}

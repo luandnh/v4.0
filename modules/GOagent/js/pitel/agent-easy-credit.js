@@ -365,7 +365,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status) => {
   }
   if (partner_code != "" && partner_code.length > 0) {
     let productTab =
-      '<li role="presentation" id="product_tab_href">' +
+      '<li role="presentation" id="product_tab_href" hidden>' +
       '<a href="#products" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
       '<span class="fa fa-file-text-o hidden"></span>' +
       "Products</a>" +
@@ -766,7 +766,6 @@ $("#eligible_btn").on("click", (e) => {
           //   swal("Success", "Update request_id success", "success");
           // });
           SyncFullLoanFromAPI(lead_id);
-          SyncFullLoanFromContact();
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
           $("#full-loan-form input[name='term_confirm']").prop('checked', true);
@@ -851,6 +850,7 @@ let SyncFullLoanFromAPI = (request_id) => {
   try {
     ajaxGetOldFullLoan(request_id).done((result) => {
       if (result.error == "Not found") {
+        SyncFullLoanFromContact()
         return;
       }
       try {
@@ -927,11 +927,14 @@ let SyncFullLoanFromAPI = (request_id) => {
         $("#full-loan-form input[name='term_confirm']").prop('checked', true)
         $("input[tag='currency']").trigger('blur');
         getProductType();
+        SyncFullLoanFromContact();
       } catch (error) {
+        SyncFullLoanFromContact();
       }
     }
     );
   } catch (err) {
+    SyncFullLoanFromContact();
     console.log(err);
   }
 };
@@ -977,6 +980,7 @@ let ajaxGetOldFullLoan = (request_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
+    SyncFullLoanFromContact();
     console.log(result);
   });
 };
@@ -1181,6 +1185,7 @@ let SyncFullLoanFromContact = () => {
   $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
   $("#full-loan-form input[name='term_confirm']").prop('checked', true)
   $("input[tag='currency']").trigger('blur');
+  $("select[name='issue_place']").next("button")[0].disabled = true;
 };
 
 function clearInputFile(f) {
@@ -1215,6 +1220,8 @@ function clearForm($form) {
     list_docs[index].click();
   }
   list_doc_collecting = [];
+  $("#full-loan-form select[name='tem_province']").val("").trigger("change").selectpicker("refresh");
+  $("#full-loan-form select[name='permanent_province']").val("").trigger("change").selectpicker("refresh");
 }
 
 function SetCustomerOfferDetail() {
@@ -1249,7 +1256,7 @@ function SetCustomerOfferDetail() {
 $(document).on("click", 'input[name="simu_insurance"]', function (e) {
   simulator(e);
 });
-$(document).on("change", 'select[name="product_type"]', function () {
+$(document).on("change", 'select[name="product_type"]', function (e) {
   let product_code = this.value;
   $("input[name='simu_insurance']")[0].checked = true;
   selected_employment_type.product_list.forEach((prd) => {
@@ -1284,7 +1291,7 @@ $(document).on("change", 'select[name="product_type"]', function () {
       $("#full-loan-form input[name='loan_amount']")[0].value =
         prd.loan_min_amount;
       //
-
+      simulator(e)
       return;
     }
   });
@@ -1464,6 +1471,7 @@ $("#full-loan-form").on("submit", (e) => {
       $("a[role='tab']")[0].click();
       $('#smartwizard').smartWizard("reset");
       clearForm($("#full-loan-form"));
+      // $("select[name='identity_issued_by']").val("");
       // DONE
       // if (
       //   result.status_code == 200 &&
@@ -1745,60 +1753,79 @@ $(function () {
       var last_mdf = element.files[0].lastModified + element.files[0].name;
       $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
         `<SELECT name='${last_mdf}' class="select_file_type">
-              <OPTION VALUE="SLCT">SLCT - Hợp đồng vay (HĐV)/ Loan contract</OPTION>
-              <OPTION VALUE="SPIC">SPIC - Hình khách hàng/ Client photo</OPTION>
-              <OPTION VALUE="SNID">SNID - Chứng minh nhân nhân (CMND)/ National ID</OPTION>
-              <OPTION VALUE="SPID">SPID - Thẻ căn cước công dân/ People's Identity card</OPTION>
-              <OPTION VALUE="SDRL">SDRL - Giấy phép lái xe (GPLX)/ Driving license</OPTION>
-              <OPTION VALUE="SFRB">SFRB - Sổ hộ khẩu (SHK)/ Family registration book</OPTION>
-              <OPTION VALUE="SPPT">SPPT - Hộ chiếu (PP)/ Passport</OPTION>
-              <OPTION VALUE="SLBC">SLBC - HĐLĐ (LB)/ Labor contract</OPTION>
-              <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
-              <OPTION VALUE="SBIZ">SBIZ - Giấy phép kinh doanh/ Business license</OPTION>
-              <OPTION VALUE="STAX">STAX - Chứng từ thuế/ Tax invoice</OPTION>
-              <OPTION VALUE="SPEN">SPEN - Sổ hưu trí/ Pension book</OPTION>
-              <OPTION VALUE="SINP">SINP - HĐBH/ Insurance policy</OPTION>
-              <OPTION VALUE="SCCS">SCCS - Sao kê thẻ tín dụng/ Credit card statement</OPTION>
-              <OPTION VALUE="SEB1">SEB1 - Hóa đơn điện dưới 600,000 VND/ Electricity bill less 600</OPTION>
-              <OPTION VALUE="SEB2">SEB2 - Hóa đơn điện từ 600,000 VND/ Electricity bill more 600</OPTION>
-              <OPTION VALUE="SHIC">SHIC - Thẻ BHYT/ Health insurance card</OPTION>
-              <OPTION VALUE="SPMS">SPMS - LỊCH THANH TOÁN</OPTION>
-              <OPTION VALUE="SSPMS">SSPMS - LỊCH THANH TOÁN</OPTION>
-              <OPTION VALUE="SICS">SICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
-              <OPTION VALUE="SSICS">SSICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
-              <OPTION VALUE="SCFC">SCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
-              <OPTION VALUE="SSCFC">SSCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
-              <OPTION VALUE="SPIN">SPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
-              <OPTION VALUE="SSPIN">SSPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
-              <OPTION VALUE="SPPA">SPPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
-              <OPTION VALUE="SVAT">SVAT - HÓA ĐƠN VAT</OPTION>
-              <OPTION VALUE="SRIN">SRIN - HÓA ĐƠN BÁN LẺ</OPTION>
-              <OPTION VALUE="SBPM">SBPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
-              <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
-              <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
-              <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
-              <OPTION VALUE="SMBFP">SMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
-              <OPTION VALUE="SSMBFP">SSMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
-              <OPTION VALUE="SMIN">SMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
-              <OPTION VALUE="SSMIN">SSMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
-              <OPTION VALUE="SMCA">SMCA - THẺ HỘI VIÊN</OPTION>
-              <OPTION VALUE="SSMCA">SSMCA - THẺ HỘI VIÊN</OPTION>
-              <OPTION VALUE="SSIW">SSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
-              <OPTION VALUE="SSSIW">SSSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
-              <OPTION VALUE="SLIC">SLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
-              <OPTION VALUE="SSLIC">SSLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
-              <OPTION VALUE="SLICE">SLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
-              <OPTION VALUE="SSLICE">SSLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
-              <OPTION VALUE="SPAD">SPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
-              <OPTION VALUE="SSPAD">SSPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
-              <OPTION VALUE="SUPA">SUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
-              <OPTION VALUE="SSUPA">SSUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
-              <OPTION VALUE="SGOD">SGOD - CHỨNG TỪ GIAO HÀNG</OPTION>
-              <OPTION VALUE="SPEC">SPEC - BIÊN NHẬN SỐ TIỀN TRẢ TRƯỚC CỦA KH</OPTION>
-              <OPTION VALUE="SCOV">SCOV - BẢN SAO HÓA ĐƠN GIÁ TRỊ GIA TĂNG</OPTION>
-              <OPTION VALUE="SCDR">SCDR - BIÊN BẢN BÀN GIAO HÀNG HÓA</OPTION>
-              <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
-              <OPTION VALUE="SDEB">SDEB - PHIẾU GIAO HÀNG</OPTION>
+        <OPTION VALUE="BPM">BPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="GDN">GDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="HK9">HK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="KT3">KT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="PBL">PBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="PLW">PLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="POG">POG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="PPA">PPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="PTC">PTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="RIN">RIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
+        <OPTION VALUE="SBIZ">SBIZ - Giấy phép kinh doanh/ Business license</OPTION>
+        <OPTION VALUE="SBPM">SBPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="SCCS">SCCS - Sao kê thẻ tín dụng/ Credit card statement</OPTION>
+        <OPTION VALUE="SCDR">SCDR - BIÊN BẢN BÀN GIAO HÀNG HÓA</OPTION>
+        <OPTION VALUE="SCFC">SCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SCOV">SCOV - BẢN SAO HÓA ĐƠN GIÁ TRỊ GIA TĂNG</OPTION>
+        <OPTION VALUE="SDEB">SDEB - PHIẾU GIAO HÀNG</OPTION>
+        <OPTION VALUE="SDRL">SDRL - Giấy phép lái xe (GPLX)/ Driving license</OPTION>
+        <OPTION VALUE="SEB1">SEB1 - Hóa đơn điện dưới 600,000 VND/ Electricity bill less 600</OPTION>
+        <OPTION VALUE="SEB2">SEB2 - Hóa đơn điện từ 600,000 VND/ Electricity bill more 600</OPTION>
+        <OPTION VALUE="SFRB">SFRB - Sổ hộ khẩu (SHK)/ Family registration book</OPTION>
+        <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="SGOD">SGOD - CHỨNG TỪ GIAO HÀNG</OPTION>
+        <OPTION VALUE="SHIC">SHIC - Thẻ BHYT/ Health insurance card</OPTION>
+        <OPTION VALUE="SHK9">SHK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="SICS">SICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SINP">SINP - HĐBH/ Insurance policy</OPTION>
+        <OPTION VALUE="SKT3">SKT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="SLBC">SLBC - HĐLĐ (LB)/ Labor contract</OPTION>
+        <OPTION VALUE="SLCT">SLCT - Hợp đồng vay (HĐV)/ Loan contract</OPTION>
+        <OPTION VALUE="SLIC">SLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SLICE">SLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SMBFP">SMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SMCA">SMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SMIN">SMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SNID">SNID - Chứng minh nhân nhân (CMND)/ National ID</OPTION>
+        <OPTION VALUE="SPAD">SPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SPBL">SPBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="SPEC">SPEC - BIÊN NHẬN SỐ TIỀN TRẢ TRƯỚC CỦA KH</OPTION>
+        <OPTION VALUE="SPEN">SPEN - Sổ hưu trí/ Pension book</OPTION>
+        <OPTION VALUE="SPIC">SPIC - Hình khách hàng/ Client photo</OPTION>
+        <OPTION VALUE="SPID">SPID - Thẻ căn cước công dân/ People's Identity card</OPTION>
+        <OPTION VALUE="SPIN">SPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SPLW">SPLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="SPMS">SPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SPOG">SPOG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="SPPA">SPPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="SPPT">SPPT - Hộ chiếu (PP)/ Passport</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SRIN">SRIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SSCFC">SSCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SSICS">SSICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SSIW">SSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSLIC">SSLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSLICE">SSLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSMBFP">SSMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SSMCA">SSMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSMIN">SSMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSPAD">SSPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SSPIN">SSPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SSPMS">SSPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SSSIW">SSSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSUPA">SSUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="STAX">STAX - Chứng từ thuế/ Tax invoice</OPTION>
+        <OPTION VALUE="STCA">STCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="STRC">STRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="SUPA">SUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="SVAT">SVAT - HÓA ĐƠN VAT</OPTION>
+        <OPTION VALUE="TCA">TCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="TRC">TRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="VAT">VAT - HÓA ĐƠN VAT</OPTION>
       </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML;
       $(".select_file_type").select2({
         allowClear: true,
