@@ -2008,6 +2008,7 @@ input:checked + .slider:before {
 						</div><!-- /.row -->
 						<!-- End Contacts -->
 						<?php include_once "agent/module/calllogs.php" ?>
+						<?php include_once "agent/module/productivity.php" ?>
 
 					</div>
 					<!-- popup-hotkeys -->	
@@ -2170,6 +2171,7 @@ input:checked + .slider:before {
 					echo $ui->getSidebarItem("#customerslist", "", $lh->translationFor("contacts"), null, "", "agent-lead-search");
 				}
 				echo $ui->getSidebarItem("#call-logs", "", "Lịch sử", null, "", "agent-call-log");
+				echo $ui->getSidebarItem("#productivity", "", "Productivity", null, "", "productivity");
 			}
 			?>
 			<li id="pause_code_link" class="hidden">

@@ -94,6 +94,7 @@
 														<th > User</th>
 														<th > Total call </th>
 														<th > Answer</th>
+														<th > Customer</th>
 														<th > No Answer </th>
 														<th > Congestion </th>
 														<th > Busy </th>

@@ -3652,7 +3652,7 @@ function CheckForIncoming () {
             try {
                 lead_id = this_VDIC_data.lead_id;
                 $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
-                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status);
+                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status, this_VDIC_data.call_status);
                 console.log(this_VDIC_data.request_id)
                 console.log(this_VDIC_data.app_status)
 
@@ -3661,6 +3661,8 @@ function CheckForIncoming () {
                 $(".formMain input[name='identity_number']").val(this_VDIC_data.identity_number).trigger('change');
                 $(".formMain input[name='identity_issued_on']").val(this_VDIC_data.identity_issued_on);
                 $(".formMain select[name='identity_issued_by']").val(this_VDIC_data.identity_issued_by).trigger('change');
+                
+                $("#call_notes").val(thisVdata.call_notes)
                 //Vendor
                 $(".formMain input[name='vendor_lead_code']").val(this_VDIC_data.vendor_lead_code).trigger('change');
                 $(".formMain input[name='partner_code']").val(this_VDIC_data.partner_code).trigger('change');
@@ -6175,9 +6177,15 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
         }
         if (per_call_notes == 'ENABLED') {
             var test_notes = $("[name='call_notes_dispo']").val();
+            var input_call_notes = $("#call_notes").val();
+            if (test_notes == "" || test_notes.length == ""){
+                test_notes = input_call_notes;
+            }
             if (test_notes.length > 0 && test_notes !== '')
+                $("[name='call_notes_dispo']").val()
+                $("#call_notes").val(test_notes);
                 {$(".formMain textarea[name='call_notes']").val(test_notes);}
-            $("#PerCallNotesContent").html("<b><font size='3'><?=$lh->translationFor('call_notes') ?>: </font></b><br /><textarea name='call_notes_dispo' id='call_notes_dispo' rows='2' class='form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched textarea note-editor note-editor-margin'>" + $(".formMain textarea[name='call_notes']").val() + "</textarea><br>");
+            $("#PerCallNotesContent").html("<b><font size='3'><?=$lh->translationFor('call_notes') ?>: </font></b><br /><textarea name='call_notes_dispo' id='call_notes_dispo' rows='2' class='form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched textarea note-editor note-editor-margin'>" + test_notes + "</textarea><br>");
         } else {
             $("#PerCallNotesContent").html("<input type='hidden' name='call_notes_dispo' id='call_notes_dispo' value='' />");
         }
@@ -6497,7 +6505,8 @@ function DispoSelectSubmit() {
             $('[id^=dispo-add-]').css('cursor','pointer');
             $('[id^=dispo-add-]').css('font-size','unset');
             $('[id^=dispo-add-]').css('font-style','unset');
-            $("#DispoSelection").val('')
+            $("#DispoSelection").val('');
+            $("#call_notes").val('');
             // 
             $(".formMain input[name='lead_id']").val('');
             $(".formMain input[name='vendor_lead_code']").val('');
@@ -6762,6 +6771,7 @@ function ManualDialSkip() {
                     $(".formMain input[name='entry_list_id']").val('');
                     $(".formMain input[name='gmt_offset_now']").val('');
                     $(".formMain input[name='phone_code']").val('');
+                    $("#call_notes").val('');
                     if ( (disable_alter_custphone == 'Y') || (disable_alter_custphone == 'HIDE') ) {
                         var tmp_pn = $("#phone_numberDISP");
                         tmp_pn.html(' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ');
@@ -7548,7 +7558,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     lead_id                                 = thisVdata.lead_id;
                     $(".formMain input[name='lead_id']").val(lead_id);
                     try {
-                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status);
+                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status);
                         console.log(thisVdata.request_id)
                         console.log(thisVdata.status)
                     }
@@ -7610,6 +7620,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     $(".formMain input[name='identity_number']").val(thisVdata.identity_number).trigger('change');
                     $(".formMain input[name='identity_issued_on']").val(thisVdata.identity_issued_on);
                     $(".formMain select[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
+                    $("#call_notes").val(thisVdata.call_notes)
                     //Vendor
                     $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code).trigger('change');
                     $(".formMain input[name='partner_code']").val(thisVdata.partner_code).trigger('change');
@@ -9318,7 +9329,18 @@ function ViewCustInfo(leadid) {
                             </div>\
                         </div>';
                     }
-                } else {
+                } else if (key == 'call_notes') {
+                    infoHtml += '<div class="row">\
+                        <div class="col-sm-12">\
+                            <div class="mda-form-group label-floating">\
+                                <input id="viewCust_'+key+'" name="viewCust_'+key+'" type="text" maxlength="'+maxLength+'" value="'+val+'" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">\
+                                <label for="viewCust_'+key+'">Call Note</label>\
+                            </div>\
+                        </div>\
+                    </div>';
+                    }
+                
+                else {
                     //do nothing right now
                 }
             });

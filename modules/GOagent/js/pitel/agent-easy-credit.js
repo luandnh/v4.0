@@ -4,8 +4,6 @@ var is_upload_id_card = false;
 var selected_product = null;
 var selected_employment_type = null;
 const EC_API_USERNAME = "";
-const EC_PROD_API_URL =
-  "https://apipreprod.easycredit.vn/api/loanServices/v1/product-list";
 const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",
@@ -191,7 +189,7 @@ $(document).ready(() => {
       formData.append("file", file);
       var upload_status = true;
       var settings = {
-        url: "https://ec02-api.tel4vn.com/v1/document/upload",
+        url: CRM_API_URL+"/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -241,7 +239,7 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: "https://ec02-api.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -285,7 +283,7 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: "https://ec02-api.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -321,8 +319,8 @@ $(document).ready(() => {
   clearAFForm();
 });
 
-let ECShowProducts = (partner_code, request_id, app_status, status) => {
-  ShowStatusOnForm(status, app_status);
+let ECShowProducts = (partner_code, request_id, app_status, status, call_status) => {
+  ShowStatusOnForm(status, call_status, app_status);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
   SetCustomerOfferDetail();
@@ -591,11 +589,11 @@ let ECProducts = null;
 
 let ajaxGetECProducts = (partner_code, request_id) => {
   return $.ajax({
-    url: "https://ec02-api.tel4vn.com/ec/api/loanServices/v1/product-list",
+    url: EC_PROD_API_URL+"/api/loanServices/v1/product-list",
     method: "POST",
     timeout: 0,
     headers: {
-      Authorization: "Bearer 98530a76-4198-4b60-a99a-0489e2dd4b4f",
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: JSON.stringify({
@@ -615,7 +613,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
 };
 // let ajaxGetOldFullLoan = (lead_id) =>{
 //       var settings = {
-//         "url": "https://ec02-api.tel4vn.com/v1/fullloan/"+lead_id,
+//         "url": CRM_API_URL+"/v1/fullloan/"+lead_id,
 //         "method": "GET",
 //         "timeout": 0,
 //         "headers": {
@@ -647,13 +645,13 @@ $(document).on("click", "#submit-offer", function (e) {
 
   $.ajax({
     type: "POST",
-    url: "https://ec02-api.tel4vn.com/ec/api/loanRequestServices/v1/dsa/select-offer",
+    url: EC_PROD_API_URL+"/api/loanRequestServices/v1/dsa/select-offer",
     processData: true,
     data: JSON.stringify(offer_data),
     async: true,
     dataType: "json",
     headers: {
-      Authorization: "Bearer 98530a76-4198-4b60-a99a-0489e2dd4b4f",
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
   })
@@ -720,14 +718,14 @@ $("#eligible_btn").on("click", (e) => {
     //
     $.ajax({
       type: "POST",
-      url: "https://ec02-api.tel4vn.com/ec/api/eligibleService/v1/eligible/check",
+      url: EC_PROD_API_URL+"/api/eligibleService/v1/eligible/check",
       processData: true,
       data: JSON.stringify(eligible_data),
       async: true,
       dataType: "json",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer 98530a76-4198-4b60-a99a-0489e2dd4b4f",
+        // Authorization: "Bearer "+CRM_TOKEN,
       },
     })
       .fail((result, status, error) => {
@@ -739,11 +737,20 @@ $("#eligible_btn").on("click", (e) => {
         if (result.message !== undefined) {
           msg = result.message;
         }
-        swal(
-          "Send eligible data fail!",
-          erro.error.error_message + "Please try again",
-          "error"
-        );
+        if (erro != undefined){
+          swal(
+            "Send eligible data fail!",
+            erro.error.error_message + "Please try again",
+            "error"
+          );
+        }
+        else{
+          swal(
+            "Send eligible data fail!",
+            error + "Please try again",
+            "error"
+          );
+        }
       })
       .done((result) => {
         console.log(result);
@@ -754,7 +761,7 @@ $("#eligible_btn").on("click", (e) => {
           // $(".formMain input[name='request_id']").val(result.data.request_id);
           // $.ajax({
           //   type: "POST",
-          //   url: "https://ec02-api.tel4vn.com/v1/lead/requestId",
+          //   url: CRM_API_URL+"/v1/lead/requestId",
           //   processData: true,
           //   data: JSON.stringify({
           //     lead_id: "" + lead_id,
@@ -1002,7 +1009,7 @@ let ajaxGetOffer = (request_id) => {
 let ajaxGetStatus = (lead_id) => {
   return $.ajax({
     type: "GET",
-    url: `https://ec02-api.tel4vn.com/v1/lead/${lead_id}/status`,
+    url: CRM_API_URL+`/v1/lead/${lead_id}/status`,
     async: true,
     dataType: "json",
     headers: {
@@ -1429,7 +1436,7 @@ $("#full-loan-form").on("submit", (e) => {
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1448,16 +1455,16 @@ $("#full-loan-form").on("submit", (e) => {
   form_data.identity_card_id = $('#full-loan-form input[name="identity_card_id"]').val()
   //
   let post_data = JSON.stringify(form_data);
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
 
   $("#offer-waiting").attr("hidden", false);
   // post to EC
   $.ajax({
-    url: "https://ec02-api.tel4vn.com/ec/api/loanRequestServices/v1/dsa/send-loan-application",
+    url: EC_PROD_API_URL+"/api/loanRequestServices/v1/dsa/send-loan-application",
     method: "POST",
     timeout: 0,
     headers: {
-      Authorization: "Bearer 98530a76-4198-4b60-a99a-0489e2dd4b4f",
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: post_data,
@@ -1526,7 +1533,7 @@ function updateRequestId(request_id, lead_id) {
   // $("#submit-full-loan")[0].disabled = true;
   $.ajax({
     type: "POST",
-    url: "https://ec02-api.tel4vn.com/v1/lead/requestId",
+    url: CRM_API_URL+"/v1/lead/requestId",
     processData: true,
     data: JSON.stringify({
       lead_id: "" + lead_id,
@@ -1880,7 +1887,7 @@ var saveFullLoan = () => {
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1898,7 +1905,7 @@ var saveFullLoan = () => {
 
   // END TEST
   var settings = {
-    url: "https://ec02-api.tel4vn.com/v1/fullloan",
+    url: CRM_API_URL+"/v1/fullloan",
     method: "POST",
     timeout: 0,
     headers: {
@@ -2194,8 +2201,9 @@ let SetWorkAddress = () => {
   $("select[name='workplace_province']").val("").trigger("change");
 };
 
-let ShowStatusOnForm = (prev_status, app_status) => {
-  ajaxGetCallStatus(prev_status).done((result) => {
+let ShowStatusOnForm = (prev_status, call_status, app_status) => {
+  let status = (call_status != "") ? call_status : prev_status;
+  ajaxGetCallStatus(status).done((result) => {
     $("#name_form input[name='prev_status']").val(result.data.status_name);
   });
   $("#name_form input[name='app_status']").val(app_status);

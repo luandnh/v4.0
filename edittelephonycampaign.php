@@ -665,8 +665,8 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 														<label class="col-sm-3 control-label"><?php $lh->translateText("call_notes_per_call"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="per_call_notes" name="per_call_notes">
-																<option value="DISABLED" <?php if ($campaign->data->per_call_notes == "DISABLED") echo "selected"; ?>>DISABLED</option>
-																<option value="ENABLED" <?php if ($campaign->data->per_call_notes == "ENABLED") echo "selected"; ?>>ENABLED</option>
+																<option value="DISABLED">DISABLED</option>
+																<option value="ENABLED" selected>ENABLED</option>
 															</select>
 														</div>
 													</div>

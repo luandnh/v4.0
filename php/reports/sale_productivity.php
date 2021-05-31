@@ -21,16 +21,13 @@
 */
 
 	require_once('APIHandler.php');
-	
 	$api 										= \creamy\APIHandler::getInstance();
 	$fromDate 									= date('Y-m-d 00:00:01');
 	$toDate 									= date('Y-m-d 23:59:59');
 	$campaign_id 								= NULL;
-	$request									= NULL;
 	$userID										= NULL;
 	$userGroup									= NULL;
 	$statuses									= NULL;
-	
 	if (isset($_POST['pageTitle']) && $pageTitle != "call_export_report") {
 		$pageTitle = $_POST['pageTitle'];
 		$pageTitle = stripslashes($pageTitle);
@@ -63,13 +60,11 @@
 	}
 		
 	$postfields = array(
-		'goAction' => 'goGetAgentReport',		
-		'pageTitle' => $pageTitle,
+		'goAction' => 'goSaleProductivity',		
 		'fromDate' => $fromDate,
 		'toDate' => $toDate,
 		'campaignID'=>$campaign_id,
 		'userId' => $userID,
-		'request' => $request
 	);
 
 	$output = $api->API_getReports($postfields);
@@ -86,24 +81,27 @@
 
                 $inbound_report .= '
 				<div>
-						<legend><small><em class="fa fa-arrow-right"></em><i> Agent Sale</i></small></legend>
-								<table class="display responsive no-wrap table table-striped table-bordered table-hover"  id="agent_personal">
-										<thead>
-												<tr>
-														<th > Sale</th>
-														<th > Total call</th>
-														<th > Total contacted </th>
-														<th > Customer</th>
-														<th > Follow up </th>
-														<th > Not interested </th>
-														<th > Not eligible </th>
-														<th > App created </th>
-														<th > App approved</th>
-														<th > Total disbursed </th>
-														<th > Disbursed amount </th>
-												</tr>
-										</thead>
-										<tbody>
+				<legend><small><em class="fa fa-arrow-right"></em><i> Report by call status</i></small></legend>
+				<table class="display responsive no-wrap table table-striped table-bordered table-hover"  id="productivity_call_status">
+					<thead>
+							<tr>
+									<th > Team</th>
+									<th > User</th>
+									<th > Total call </th>
+									<th > Answer</th>
+									<th > Customer</th>
+									<th > No Answer </th>
+									<th > Congestion </th>
+									<th > Busy </th>
+									<th > Denied </th>
+									<th > Erro Sip</th>
+									<th > Cancel </th>
+									<th > Unknown </th>
+									<th > Answer not in queue </th>
+									<th > Answer in queue no agent</th>
+							</tr>
+					</thead>
+				<tbody>
 				';
                 if ($output->TOPsorted_output != NULL) {
 			foreach($output->TOPsorted_output as $row){
