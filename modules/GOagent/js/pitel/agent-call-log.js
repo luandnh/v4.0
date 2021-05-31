@@ -28,15 +28,49 @@ $(document).ready(function () {
       );
     }
   );
+  // PRODUCTIVITY
+
+  $("#daterange-btn-productivity").daterangepicker(
+    {
+      startDate: start,
+      endDate: end,
+      ranges: {
+        Today: [moment(), moment()],
+        Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+        "Last 7 Days": [moment().subtract(6, "days"), moment()],
+        "Last 30 Days": [moment().subtract(29, "days"), moment()],
+        "This Month": [moment().startOf("month"), moment().endOf("month")],
+        "Last Month": [
+          moment().subtract(1, "month").startOf("month"),
+          moment().subtract(1, "month").endOf("month"),
+        ],
+      },
+    },
+    (start, end) => {
+      $("#daterange-btn-productivity span").html(
+        start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
+      );
+      $("#daterange-value-productivity").val(
+        start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
+      );
+    }
+  );
+
   $("#daterange-btn-calllogs span").html(
     start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
   );
   $("#daterange-value-calllogs").val(
     start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
   );
+  // PRODUCTIVITY
+  $("#daterange-btn-productivity span").html(
+    start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
+  );
+  $("#daterange-value-productivity").val(
+    start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
+  );
   $("#agent-call-log").on("click", (e) => {
     e.preventDefault();
-
     ShowContentModule("calllogs")
     $("#calllogs-list")
       .removeClass("display")
@@ -44,6 +78,17 @@ $(document).ready(function () {
     $("#contents-calllogs").css("margin", "1em");
     $("#contents-calllogs").show();
     LoadCallLogs();
+  });
+
+  $("#productivity").on("click", (e) => {
+    e.preventDefault();
+    ShowContentModule("productivity")
+    $("#productivity-list")
+      .removeClass("display")
+      .addClass("table table-striped table-bordered");
+    $("#contents-productivity").css("margin", "1em");
+    $("#contents-productivity").show();
+    LoadProductivityLogs();
   });
 });
 
@@ -106,12 +151,16 @@ function LoadCallLogs() {
             title: "Ngày gọi",
             data: "call_date",
             render: (data) => {
-              return moment(data).format("DD-MM-YYYY HH:mm:ss");
+              return moment(data).subtract(7, "h").format("DD-MM-YYYY HH:mm:ss");
             },
           },
           {
             title: "Partner Code",
             data: "partner_code"
+          },
+          {
+            title: "Lead Code",
+            data: "vendor_lead_code"
           },
           {
             title: "Khách hàng",
@@ -162,9 +211,101 @@ function LoadCallLogs() {
               phone_code: "phone_code",
             },
             render: (data) => {
-              return '<button id="lead-info-'+data.lead_id+'" data-leadid="'+data.lead_id+'" onclick="ViewCustInfo('+data.lead_id+');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>'+
-              '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
+              return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
+                '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
             }
+          }
+        ],
+      });
+    },
+    error: function (xhr, status, error) {
+      console.log("Get calllogs fail!");
+    },
+  });
+}
+
+function LoadProductivityLogs() {
+  $("#productivity-list").css("width", "100%");
+  const daterange = $("#daterange-value-productivity").val().split(" - ");
+  let param = {
+    from_date: `${daterange[0]} 00:00:00`,
+    to_date: `${daterange[1]} 23:59:59`,
+    user: user,
+    campaign: $("#productivity-select-campaigns").val(),
+    limit: 999999,
+    offset: 0,
+  };
+  console.log($.param(param, true))
+  $.ajax({
+    type: "GET",
+    url:
+      CRM_API_URL +
+      "/v1/report/agent/productivity"+"?" +
+      $.param(param, true),
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    success: function (result, status, xhr) {
+      $("#productivity-list").DataTable({
+        responsive: true,
+        info: false,
+        destroy: true,
+        paging: true,
+        ordering: true,
+        lengthChange: false,
+        data: result.data,
+        columns: [
+          {
+            title: "Team",
+            data: "user_group"
+          },
+          {
+            title: "USER",
+            data: "user"
+          },
+          {
+            title: "Customer",
+            data: "total_talk",
+            render(data){
+              let date = new Date(0);
+              date.setSeconds(data); // specify value for SECONDS here
+              var timeString = date.toISOString().substr(11, 8);
+              return timeString;
+            }
+          },
+          {
+            title: "Total call",
+            data: "total_call",
+          },
+          {
+            title: "Answer",
+            data: "answer",
+          },
+          {
+            title: "No answer",
+            data: "noanswer",
+          },
+          {
+            title: "Busy",
+            data: "busy",
+          },
+          {
+            title: "Cancel",
+            data: "cancel",
+          },
+          {
+            title: "Denied",
+            data: "denied",
+          },
+          {
+            title: "Sip_erro",
+            data: "sip_erro",
+          },
+          {
+            title: "Unknown",
+            data: "unknown",
           }
         ],
       });
@@ -202,8 +343,19 @@ LoadAllowedCampaigns = () => {
           text: value,
         });
         $("#calllogs-select-campaigns").append(options_campaign);
+        $("#productivity-select-campaigns").append(options_campaign);
       }
       $("#calllogs-select-campaigns").multiselect({
+        buttonWidth: "100%",
+        maxHeight: 450,
+        includeSelectAllOption: false,
+        buttonClass: "btn btn-light",
+        templates: {
+          li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
+        },
+        selectedClass: "btn-light",
+      });
+      $("#productivity-select-campaigns").multiselect({
         buttonWidth: "100%",
         maxHeight: 450,
         includeSelectAllOption: false,
@@ -223,6 +375,9 @@ $("#calllogs-search-btn").on("click", () => {
   LoadCallLogs();
 });
 
+$("#productivity-search-btn").on("click", () => {
+  LoadProductivityLogs();
+});
 LoadAllCallStatus = () => {
   return $.ajax({
     type: "GET",
