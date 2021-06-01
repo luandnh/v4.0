@@ -2009,6 +2009,7 @@ input:checked + .slider:before {
 						<!-- End Contacts -->
 						<?php include_once "agent/module/calllogs.php" ?>
 						<?php include_once "agent/module/productivity.php" ?>
+						<?php include_once "agent/module/performance.php" ?>
 
 					</div>
 					<!-- popup-hotkeys -->	
@@ -2170,8 +2171,9 @@ input:checked + .slider:before {
 				if ($user_info->data->agent_lead_search_override != 'DISABLED') {
 					echo $ui->getSidebarItem("#customerslist", "", $lh->translationFor("contacts"), null, "", "agent-lead-search");
 				}
-				echo $ui->getSidebarItem("#call-logs", "", "Lịch sử", null, "", "agent-call-log");
+				echo $ui->getSidebarItem("#call-logs", "", "History", null, "", "agent-call-log");
 				echo $ui->getSidebarItem("#productivity", "", "Productivity", null, "", "productivity");
+				echo $ui->getSidebarItem("#performance", "", "Performance", null, "", "performance");
 			}
 			?>
 			<li id="pause_code_link" class="hidden">

@@ -29,7 +29,6 @@ $(document).ready(function () {
     }
   );
   // PRODUCTIVITY
-
   $("#daterange-btn-productivity").daterangepicker(
     {
       startDate: start,
@@ -55,7 +54,33 @@ $(document).ready(function () {
       );
     }
   );
-
+  // PERFORM
+  $("#daterange-btn-performance").daterangepicker(
+    {
+      startDate: start,
+      endDate: end,
+      ranges: {
+        Today: [moment(), moment()],
+        Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+        "Last 7 Days": [moment().subtract(6, "days"), moment()],
+        "Last 30 Days": [moment().subtract(29, "days"), moment()],
+        "This Month": [moment().startOf("month"), moment().endOf("month")],
+        "Last Month": [
+          moment().subtract(1, "month").startOf("month"),
+          moment().subtract(1, "month").endOf("month"),
+        ],
+      },
+    },
+    (start, end) => {
+      $("#daterange-btn-performance span").html(
+        start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
+      );
+      $("#daterange-value-performance").val(
+        start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
+      );
+    }
+  );
+  // 
   $("#daterange-btn-calllogs span").html(
     start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
   );
@@ -69,6 +94,14 @@ $(document).ready(function () {
   $("#daterange-value-productivity").val(
     start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
   );
+  // PERFORM
+  $("#daterange-btn-performance span").html(
+    start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
+  );
+  $("#daterange-value-performance").val(
+    start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
+  );
+  // 
   $("#agent-call-log").on("click", (e) => {
     e.preventDefault();
     ShowContentModule("calllogs")
@@ -89,6 +122,17 @@ $(document).ready(function () {
     $("#contents-productivity").css("margin", "1em");
     $("#contents-productivity").show();
     LoadProductivityLogs();
+  });
+  
+  $("#performance").on("click", (e) => {
+    e.preventDefault();
+    ShowContentModule("performance")
+    $("#performance-list")
+      .removeClass("display")
+      .addClass("table table-striped table-bordered");
+    $("#contents-performance").css("margin", "1em");
+    $("#contents-performance").show();
+    LoadPerformance();
   });
 });
 
@@ -315,6 +359,194 @@ function LoadProductivityLogs() {
     },
   });
 }
+let converter = (time)=>{
+  let date = new Date(0);
+  date.setSeconds(time);
+  var timeString = date.toISOString().substr(11, 8);
+  return timeString;
+}
+function LoadPerformance() {
+  $("#performance-list").css("width", "100%");
+  const daterange = $("#daterange-value-performance").val().split(" - ");
+  let param = {
+    from_date: `${daterange[0]} 00:00:00`,
+    to_date: `${daterange[1]} 23:59:59`,
+    user: user,
+    campaign: $("#performance-select-campaigns").val(),
+    limit: 999999,
+    offset: 0,
+  };
+  console.log($.param(param, true))
+  $.ajax({
+    type: "GET",
+    url:
+      CRM_API_URL +
+      "/v1/report/agent/performance"+"?" +
+      $.param(param, true),
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    success: function (result, status, xhr) {
+      let performance = []
+      performance.push(result.data.performance)
+      $("#performance-list").DataTable({
+        responsive: true,
+        info: false,
+        destroy: true,
+        paging: true,
+        ordering: true,
+        lengthChange: false,
+        data: performance,
+        columns: [
+          {
+            title: "Name",
+            data: "Name"
+          },
+          {
+            title: "Calls",
+            data: "Scalls"
+          },
+          {
+            title: "Pause",
+            data: "Spause_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Pause",
+            data: null,
+            render(data){
+              return converter(data.Spause_sec / data.Scalls);
+            }
+          },
+          {
+            title: "Wait",
+            data: "Swait_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Wait",
+            data: null,
+            render(data){
+              return converter(data.Swait_sec / data.Scalls);
+            }
+          },
+          {
+            title: "Talk",
+            data: "Stalk_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Talk",
+            data: null,
+            render(data){
+              return converter(data.Stalk_sec / data.Scalls);
+            }
+          },
+          {
+            title: "Dispo",
+            data: "Sdispo_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Dispo",
+            data: null,
+            render(data){
+              return converter(data.Sdispo_sec / data.Scalls);
+            }
+          },
+          {
+            title: "Wrap Up",
+            data: "Sdead_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Wrap Up",
+            data: null,
+            render(data){
+              return converter(data.Sdead_sec / data.Scalls);
+            }
+          },
+          {
+            title: "Customer",
+            data: "Scustomer_sec",
+            render(data){
+              return converter(data);
+            }
+          },
+          {
+            title: "AVG Customer",
+            data: null,
+            render(data){
+              return converter(data.Scustomer_sec / data.Scalls);
+            }
+          },
+        ],
+      });
+    },
+    error: function (xhr, status, error) {
+      console.log("Get calllogs fail!");
+    },
+  });
+}
+// 
+$("#calllogs-search-btn").on("click", () => {
+  LoadCallLogs();
+});
+
+$("#productivity-search-btn").on("click", () => {
+  LoadProductivityLogs();
+});
+
+$("#performance-search-btn").on("click", () => {
+  LoadPerformance();
+});
+LoadAllCallStatus = () => {
+  return $.ajax({
+    type: "GET",
+    url: CRM_API_URL +
+      "/v1/status",
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    success: function (result, status, xhr) {
+      statuses = result.data;
+      statuses.forEach(status => {
+        let opt = $("<option>", {
+          value: status.status,
+          text: status.status_name,
+        });
+        $("#calllogs-select-status").append(opt);
+      });
+      $("#calllogs-select-status").multiselect({
+        buttonWidth: "100%",
+        maxHeight: 450,
+        includeSelectAllOption: false,
+        buttonClass: "btn btn-light",
+        templates: {
+          li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
+        },
+        selectedClass: "btn-light",
+      });
+    },
+    error: function (xhr, status, error) {
+      console.log("Get allowed campaigns fail!");
+    },
+  });
+};
 LoadAllowedCampaigns = () => {
   const postData = {
     goAction: "goGetAllowedCampaigns",
@@ -344,6 +576,7 @@ LoadAllowedCampaigns = () => {
         });
         $("#calllogs-select-campaigns").append(options_campaign);
         $("#productivity-select-campaigns").append(options_campaign);
+        $("#performance-select-campaigns").append(options_campaign);
       }
       $("#calllogs-select-campaigns").multiselect({
         buttonWidth: "100%",
@@ -365,39 +598,7 @@ LoadAllowedCampaigns = () => {
         },
         selectedClass: "btn-light",
       });
-    },
-    error: function (xhr, status, error) {
-      console.log("Get allowed campaigns fail!");
-    },
-  });
-};
-$("#calllogs-search-btn").on("click", () => {
-  LoadCallLogs();
-});
-
-$("#productivity-search-btn").on("click", () => {
-  LoadProductivityLogs();
-});
-LoadAllCallStatus = () => {
-  return $.ajax({
-    type: "GET",
-    url: CRM_API_URL +
-      "/v1/status",
-    async: true,
-    dataType: "json",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    success: function (result, status, xhr) {
-      statuses = result.data;
-      statuses.forEach(status => {
-        let opt = $("<option>", {
-          value: status.status,
-          text: status.status_name,
-        });
-        $("#calllogs-select-status").append(opt);
-      });
-      $("#calllogs-select-status").multiselect({
+      $("#performance-select-campaigns").multiselect({
         buttonWidth: "100%",
         maxHeight: 450,
         includeSelectAllOption: false,
