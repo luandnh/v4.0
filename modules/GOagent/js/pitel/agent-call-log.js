@@ -313,10 +313,7 @@ function LoadProductivityLogs() {
             title: "Customer",
             data: "total_talk",
             render(data){
-              let date = new Date(0);
-              date.setSeconds(data); // specify value for SECONDS here
-              var timeString = date.toISOString().substr(11, 8);
-              return timeString;
+              return converter(data);
             }
           },
           {
@@ -360,10 +357,18 @@ function LoadProductivityLogs() {
   });
 }
 let converter = (time)=>{
+  if (time == "" || time == "0" || time == 0){
+    return "00:00:00";
+  }
+  try {
+    
   let date = new Date(0);
   date.setSeconds(time);
   var timeString = date.toISOString().substr(11, 8);
   return timeString;
+  } catch (error) {
+    return "00:00:00";
+  }
 }
 function LoadPerformance() {
   $("#performance-list").css("width", "100%");
@@ -403,6 +408,10 @@ function LoadPerformance() {
           {
             title: "Name",
             data: "Name"
+          },
+          {
+            title: "User",
+            data: "User"
           },
           {
             title: "Calls",
