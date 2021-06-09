@@ -661,13 +661,26 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 																											} ?>" id="custom_fields_list_id" name="custom_fields_list_id">
 														</div>
 													</div>
-													<div class="form-group">
+													<!-- <div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("call_notes_per_call"); ?>:</label>
 														<div class="col-sm-9 mb">
 															<select class="form-control" id="per_call_notes" name="per_call_notes">
 																<option value="DISABLED">DISABLED</option>
 																<option value="ENABLED" selected>ENABLED</option>
 															</select>
+														</div>
+													</div> -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><?php $lh->translateText("call_notes_per_call"); ?>:</label>
+														<div class="col-sm-5 mb">
+															<select class="form-control" id="per_call_notes" name="per_call_notes">
+																<option value="DISABLED">DISABLED</option>
+																<option value="ENABLED" selected>ENABLED</option>
+															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->call_notes_per_call; ?>">
 														</div>
 													</div>
 													<div class="form-group" >
@@ -909,8 +922,12 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("dial_timeout"); ?>:</label>
-														<div class="col-sm-9 mb">
-															<input type="text" class="form-control" id="dial_time_out" name="dial_timeout" value="<?php echo $campaign->data->dial_timeout; ?>">
+														<div class="col-sm-5 mb">
+															<input type="text" class="form-control" id="dial_time_out" name="dial_timeout" value="40">
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->dial_timeout; ?>">
 														</div>
 													</div>
 													<div class="form-group" >
@@ -993,12 +1010,16 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_search_filter"); ?>:</label>
-														<div class="col-sm-9 mb">
+														<div class="col-sm-5 mb">
 															<select class="form-control" id="manual_dial_search_filter" name="manual_dial_search_filter">
-																<option value="NONE" <?php if ($campaign->data->manual_dial_search_filter == "NONE") echo ""; ?>>NONE</option>
-																<option value="CAMPLISTS_ONLY" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ONLY") echo "selected"; ?>>CAMPLIST ONLY</option>
-																<option value="CAMPLISTS_ALL" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ALL") echo ""; ?>>CAMPLIST ALL</option>
+																<option value="NONE">NONE</option>
+																<option value="CAMPLISTS_ONLY" <?php echo "selected"; ?>>CAMPLIST ONLY</option>
+																<option value="CAMPLISTS_ALL">CAMPLIST ALL</option>
 															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->manual_dial_search_filter; ?>">
 														</div>
 													</div>
 													<div class="form-group" >
@@ -1286,12 +1307,16 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_search_filter"); ?>:</label>
-														<div class="col-sm-9 mb">
+														<div class="col-sm-5 mb">
 															<select class="form-control" id="manual_dial_search_filter" name="manual_dial_search_filter">
-																<option value="NONE" <?php if ($campaign->data->manual_dial_search_filter == "NONE") echo "selected"; ?>>NONE</option>
-																<option value="CAMPLISTS_ONLY" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ONLY") echo "selected"; ?>>CAMPLIST ONLY</option>
-																<option value="CAMPLISTS_ALL" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ALL") echo "selected"; ?>>CAMPLIST ALL</option>
+																<option value="NONE">NONE</option>
+																<option value="CAMPLISTS_ONLY" <?php echo "selected"; ?>>CAMPLIST ONLY</option>
+																<option value="CAMPLISTS_ALL">CAMPLIST ALL</option>
 															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->manual_dial_search_filter; ?>">
 														</div>
 													</div>
 													<div class="form-group">
@@ -1744,12 +1769,16 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("manual_dial_search_filter"); ?>:</label>
-														<div class="col-sm-9 mb">
+														<div class="col-sm-5 mb">
 															<select class="form-control" id="manual_dial_search_filter" name="manual_dial_search_filter">
-																<option value="NONE" <?php if ($campaign->data->manual_dial_search_filter == "NONE") echo "selected"; ?>>NONE</option>
-																<option value="CAMPLISTS_ONLY" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ONLY") echo "selected"; ?>>CAMPLIST ONLY</option>
-																<option value="CAMPLISTS_ALL" <?php if ($campaign->data->manual_dial_search_filter == "CAMPLISTS_ALL") echo "selected"; ?>>CAMPLIST ALL</option>
+																<option value="NONE">NONE</option>
+																<option value="CAMPLISTS_ONLY" <?php echo "selected"; ?>>CAMPLIST ONLY</option>
+																<option value="CAMPLISTS_ALL">CAMPLIST ALL</option>
 															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->manual_dial_search_filter; ?>">
 														</div>
 													</div>
 													<div class="form-group">
@@ -2079,11 +2108,15 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 													</div>
 													<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("agent_lead_search"); ?>:</label>
-														<div class="col-sm-9 mb">
+														<div class="col-sm-5 mb">
 															<select id="agent_lead_search" name="agent_lead_search" class="form-control">
 																<option value="ENABLED" selected>ENABLED</option>
 																<option value="DISABLED">DISABLED</option>
 															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->agent_lead_search; ?>">
 														</div>
 													</div>
 													<div class="form-group">
@@ -2509,13 +2542,17 @@ $assigned_users = $api->API_getAssignedUsers($campaign_id);
 
 												if ($campaign->campaign_type != "SURVEY") {
 												?>
-													<div class="form-group">
+																						<div class="form-group">
 														<label class="col-sm-3 control-label"><?php $lh->translateText("agent_lead_search"); ?>:</label>
-														<div class="col-sm-9 mb">
-															<select id="agent_lead_search" name="agent_lead_search" class="form-control select2">
-																<option value="ENABLED" <?php if ($campaign->data->agent_lead_search == "ENABLED") echo "selected"; ?>>ENABLED</option>
-																<option value="DISABLED" <?php if ($campaign->data->agent_lead_search == "DISABLED") echo "selected"; ?>>DISABLED</option>
+														<div class="col-sm-5 mb">
+															<select id="agent_lead_search" name="agent_lead_search" class="form-control">
+																<option value="ENABLED" selected>ENABLED</option>
+																<option value="DISABLED">DISABLED</option>
 															</select>
+														</div>
+														<label style="text-align:center" class="col-sm-2 control-label">Hiện tại:</label>
+														<div class="col-sm-2 mb">
+															<input disabled type="text" class="form-control" value="<?php echo $campaign->data->agent_lead_search; ?>">
 														</div>
 													</div>
 													<div class="form-group">
