@@ -780,11 +780,11 @@
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
                                             <select name="employment_contract" class="selectpicker ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                                <option value="IT" selected>HĐLĐ toàn thời gian không xác định thời hạn</option>
-                                                <option value="DT">HĐLĐ toàn thời gian có xác định thời hạn</option>
+                                                <option value="IT" selected>HĐLĐ toàn Thời gian không xác định thời hạn</option>
+                                                <option value="DT">HĐLĐ toàn Thời gian có xác định thời hạn</option>
                                                 <option value="ST">HĐ mùa vụ</option>
                                                 <option value="PC">HĐ thử việc</option>
-                                                <option value="PT">HĐLĐ bán thời gian</option>
+                                                <option value="PT">HĐLĐ bán Thời gian</option>
                                                 <option value="OTH">Khác</option>
                                             </select>
                                             <label class="select_label" for="employment_contract"><?= $lh->translationFor('employment_contract') ?></label>

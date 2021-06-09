@@ -1132,7 +1132,7 @@ input:checked + .slider:before {
 													<div class="row">
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-																<input required id="alt_identity_number" name="alt_identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+																<input  id="alt_identity_number" name="alt_identity_number" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
 																<label for="alt_identity_number"><?php $lh->translateText("identity_number"); ?> thay thế</label>
 															</div>
 														</div>
@@ -1144,7 +1144,7 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
-															<select name="alt_identity_issued_by" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
+															<select name="alt_identity_issued_by" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" >
 																	<option value="" selected></option>
 																	<option value="VIP15">Cục CSĐKQLCT&DLQGVDC</option>
 																	<option value="VIP16">Cục CSQLHC về TTXH</option>

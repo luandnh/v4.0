@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="filter_date">ThờI gian</label>
+                            <label for="filter_date">Thời gian</label>
                             <div class="">
                                 <button type="button" class="form-control btn btn-default" id="daterange-btn-performance" style="width: 100%;" name="filter_date">
                                     <span></span>

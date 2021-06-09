@@ -418,6 +418,13 @@ function LoadPerformance() {
             data: "Scalls"
           },
           {
+            title: "Agent Time",
+            data: null,
+            render(data){
+              return converter(data.Swait_sec + data.Sdispo_sec + data.Stalk_sec + data.Spause_sec);
+            }
+          },
+          {
             title: "Pause",
             data: "Spause_sec",
             render(data){
@@ -474,14 +481,14 @@ function LoadPerformance() {
             }
           },
           {
-            title: "Wrap Up",
+            title: "Dead",
             data: "Sdead_sec",
             render(data){
               return converter(data);
             }
           },
           {
-            title: "AVG Wrap Up",
+            title: "AVG Dead",
             data: null,
             render(data){
               return converter(data.Sdead_sec / data.Scalls);
