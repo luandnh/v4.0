@@ -112,6 +112,11 @@
 			success: function(values){
 				var JSONStringcluster = values;
 				var JSONObjectcluster = JSON.parse(JSONStringcluster);
+				let index = 0;
+                JSONObjectcluster.forEach(function(entry) {
+                    JSONObjectcluster[index][0] = "Server "+ JSONObjectcluster[index][1];
+                    index++;
+                });
 				$('#cluster-status').DataTable({ 
 					destroy: true,
 					responsive: true,
