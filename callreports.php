@@ -150,10 +150,10 @@ foreach ($perm as $key => $value) {
 									if ($perm->reportsanalytics_display == 'Y' && $user->getUserRole() == CRM_DEFAULTS_USER_ROLE_ADMIN) {
 									?>
 										<option value="stats" selected><?php echo $lh->translationFor("stats"); ?></option>
-										<option value="agent_team"><?php echo $lh->translationFor("agent_team"); ?></option>
-										<option value="agent_personal"><?php echo $lh->translationFor("agent_personal"); ?></option>
+										<!-- <option value="agent_team"><?php echo $lh->translationFor("agent_team"); ?></option> -->
+										<!-- <option value="agent_personal"><?php echo $lh->translationFor("agent_personal"); ?></option>
 										<option value="productivity_call_status"><?php echo $lh->translationFor("productivity_call_status"); ?></option>
-										<option value="productivity_campain"><?php echo $lh->translationFor("productivity_campain"); ?></option>
+										<option value="productivity_campain"><?php echo $lh->translationFor("productivity_campain"); ?></option> -->
 										<option value="agent_detail"><?php echo $lh->translationFor("agent_detail"); ?></option>
 										<option value="agent_pdetail"><?php echo $lh->translationFor("agent_pdetail"); ?></option>
 										<option value="dispo"><?php echo $lh->translationFor("dispo"); ?></option>
