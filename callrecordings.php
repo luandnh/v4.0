@@ -859,7 +859,9 @@ $perm = $api->goGetPermissions('recordings');
 							identity_filter: identity_filter_val,
 							leadcode_filter: leadcode_filter_val,
 							leadsubid_filter: leadsubid_filter_val,
-							direction_filter: direction_filter_val
+							direction_filter: direction_filter_val,
+							offset: offset,
+							limit: limit,
 						},
 						dataType: 'json',
 						success: function(data) {

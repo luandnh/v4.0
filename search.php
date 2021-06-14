@@ -61,6 +61,12 @@ if (isset($_POST['search_recordings'])) {
       $end = "";
     }
   }
+  if (isset($_POST['limit'])) {
+    $limit = $_POST['limit'];
+  }
+  if (isset($_POST['offset'])) {
+    $offset = $_POST['offset'];
+  }
 
   $postfields = array(
     "goAction" => "goGetCallRecordingList",
@@ -74,8 +80,11 @@ if (isset($_POST['search_recordings'])) {
     "identity_filter"=> $identity_filter ,
     "leadcode_filter"=> $leadcode_filter ,
     "leadsubid_filter"=> $leadsubid_filter,
-    "direction_filter"=> $direction_filter
+    "direction_filter"=> $direction_filter,
+    "limit"=> $limit,
+    "offset"=> $offset,
   );
+
   if ($start !== "")
     $postfields["start_filterdate"] = $start;
 
