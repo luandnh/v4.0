@@ -3794,6 +3794,8 @@ function CheckForIncoming () {
             LeadPrevDispo                               = this_VDIC_data.dispo;
             fronter                                     = this_VDIC_data.tsr;
             $(".formMain input[name='vendor_lead_code']").val(this_VDIC_data.vendor_id);
+            $(".formMain input[name='partner_code']").val(this_VDIC_data.partner_code);
+            $(".formMain select[name='identity_issued_by']").val(this_VDIC_data.identity_issued_by).trigger('change');;
             $(".formMain input[name='list_id']").val(this_VDIC_data.list_id);
             $(".formMain input[name='gmt_offset_now']").val(this_VDIC_data.gmt_offset_now);
             cust_phone_code                         = this_VDIC_data.phone_code;
@@ -6766,7 +6768,6 @@ function ManualDialSkip() {
                     $(".formMain input[name='vendor_lead_code']").val('');
                     $(".formMain input[name='partner_code']").val('');
                     $(".formMain input[name='lead_id']").val('');
-                    $(".formMain input[name='vendor_lead_code']").val('');
                     $(".formMain input[name='list_id']").val('');
                     $(".formMain input[name='entry_list_id']").val('');
                     $(".formMain input[name='gmt_offset_now']").val('');

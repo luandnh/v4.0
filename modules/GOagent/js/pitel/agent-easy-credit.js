@@ -119,8 +119,11 @@ let simulator = (e) => {
     $("input[name='simu_insurance']")[0].checked = true;
     sm_insu = 0;
   }
+  let ir = selected_product.interest_rate;
   let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
-  let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
+  // let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
+  let sm_monthly = parseInt( (sm_total_offer / sm_loan_tenor) + sm_total_offer*(ir/100)/12)+ "";
+  
   //
   $("#full-loan-form input[name='customer-offer-amount']")
     .val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", ""))
@@ -701,7 +704,7 @@ $("#eligible_btn").on("click", (e) => {
       request_id: request_id,
       channel: "DSA",
       partner_code: partner_code,
-      dsa_agent_code: "trainee.01",
+      dsa_agent_code: user,
       identity_card_id: $(".formMain input[name='identity_number']").val(),
       date_of_birth: date_of_birth,
       customer_name: customer_name,
