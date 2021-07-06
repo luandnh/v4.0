@@ -307,8 +307,8 @@ $gopackage = $api->API_getGOPackage();
 										</tbody>
 									</table>
 								</div>
-								
-								
+
+
 								<!--==== Category ====-->
 								<div id="T_Categories" role="tabpanel" class="tab-pane <?php if (isset($_GET['T_Categories'])) echo 'active'; ?> ">
 									<table class="display responsive no-wrap table-bordered table-striped" width="100%" id="table_category">
@@ -325,9 +325,9 @@ $gopackage = $api->API_getGOPackage();
 										</thead>
 										<tbody>
 											<?php
-											if (count($categories)>0) {
+											if (count($categories) > 0) {
 												for ($i = 0; $i < count($categories); $i++) {
-												?>
+											?>
 													<tr>
 														<td><?php echo $categories[$i]->vsc_id; ?></td>
 														<td><?php echo $categories[$i]->vsc_name; ?></td>
@@ -336,17 +336,17 @@ $gopackage = $api->API_getGOPackage();
 														<td><?php echo $categories[$i]->sale_category; ?></td>
 														<td><?php echo $categories[$i]->total_status; ?></td>
 														<td>
-														<div class="btn-group">
-															<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Choose action
-															<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="height: 34px;">
+															<div class="btn-group">
+																<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Choose action
+																	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="height: 34px;">
 																		<span class="caret"></span>
 																		<span class="sr-only">Toggle Dropdown</span>
-															</button>
-															<ul class="dropdown-menu" role="menu">
-															
-															<li><?php echo '<a class="view_status" data-toggle="modal" data-target="#modal_view_status" data-id="' . $categories[$i]->vsc_id . '" data-name="' . $categories[$i]->vsc_id . '">';?>View Status</a></li>
-															</ul>
-														</div>
+																	</button>
+																	<ul class="dropdown-menu" role="menu">
+
+																		<li><?php echo '<a class="view_status" data-toggle="modal" data-target="#modal_view_status" data-id="' . $categories[$i]->vsc_id . '" data-name="' . $categories[$i]->vsc_id . '">'; ?>View Status</a></li>
+																	</ul>
+															</div>
 														</td>
 													</tr>
 											<?php
@@ -1427,14 +1427,16 @@ $gopackage = $api->API_getGOPackage();
 							<div class="form-group mt">
 								<label class="col-sm-3 control-label" for="leadrecycling_status"><?php $lh->translateText("status"); ?>: </label>
 								<div class="col-sm-9 mb">
-									<select id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%; height:100%;">
+
+									<select style="height: unset !important;" id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%; height:100%;">
 										<optgroup label="System Statuses">
 											<?php
+											$showing_status = array("AB", "ADC", "B", "CALLBK", "CBHOLD", "DC", "DROP", "ERI", "INCALL", "N", "NA", "NEW", "NI", "PM", "PU");
 											//$dialStatus = $api->API_getAllDialStatuses('ALL', 1);
 											//foreach($output->status as key => $val){
 											for ($i = 0; $i <= count($dialStatus->status->system); $i++) {
 											?>
-												<?php if (!empty($dialStatus->status->system[$i]) && !in_array($dialStatus->status->system[$i], $dial_statuses)) { ?>
+												<?php if (!empty($dialStatus->status->system[$i]) && !in_array($dialStatus->status->system[$i], $dial_statuses) && in_array($dialStatus->status->system[$i], $showing_status)) { ?>
 													<option value="<?php echo $dialStatus->status->system[$i] ?>" selected>
 														<?php echo $dialStatus->status->system[$i] . " - " . $dialStatus->status_name->system[$i] ?>
 													</option>
@@ -1444,13 +1446,14 @@ $gopackage = $api->API_getGOPackage();
 										<?php if (count($disposition) > 0) { ?>
 											<optgroup label="Campaign Statuses">
 												<?php
+												$arr_dispo = array();
 												foreach ($disposition->custom_dispo as $cCamp => $cDispo) {
 													foreach ($cDispo as $idx => $val) {
 												?>
-														<option value="<?php echo $idx; ?>">
-															<?php
-															echo $cCamp . " - " . $idx . " - " . $val ?>
-														</option>
+														<?php if (!in_array($idx, $arr_dispo)) { ?>
+															<option value="<?php echo $idx; ?>"><?php echo $idx . " - " . $val ?></option>
+															<?php array_push($arr_dispo,$idx); ?>
+														<?php } ?>
 												<?php
 													}
 												}
@@ -3470,7 +3473,7 @@ echo $modalForm;
 				},
 				dataType: 'json',
 				success: function(data) {
-					if (data.result!="success"){
+					if (data.result != "success") {
 						alert("Error");
 						return;
 					}

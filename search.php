@@ -84,7 +84,7 @@ if (isset($_POST['search_recordings'])) {
     "limit"=> $limit,
     "offset"=> $offset,
   );
-
+  
   if ($start !== "")
     $postfields["start_filterdate"] = $start;
 

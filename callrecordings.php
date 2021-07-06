@@ -390,8 +390,8 @@ $perm = $api->goGetPermissions('recordings');
 <!-- CHOSEN-->
 <script src="js/dashboard/chosen_v1.2.0/chosen.jquery.min.js"></script>
 <script type="text/javascript">
+	var isClean = true;
 	$(document).ready(function() {
-
 		$('body').on('keypress', '#search', function(args) {
 			if (args.keyCode == 13) {
 				$("#search_button").click();
@@ -628,7 +628,7 @@ $perm = $api->goGetPermissions('recordings');
 		 ****/
 		$(document).on('click', '#search_button', function() {
 			//init_contacts_table.destroy();
-
+			isClean = true;
 			if ($('#search').val() == "") {
 				$('#search_button').attr("disabled", false);
 				$('#search_button').text('<?php $lh->translateText("searching"); ?>');
@@ -655,19 +655,6 @@ $perm = $api->goGetPermissions('recordings');
 				ajax: $.fn.dataTable.pipeline({
 					pages: 5,
 				}),
-				// b64encoded: null
-				// end_time: "2021-02-26 12:02:14"
-				// filename: "20210226-120212_838627317_59942150_agent001"
-				// full_name: "Nguyễn Tuấn 3"
-				// last_local_call_time: "0000-00-00 00:00:00"
-				// lead_id: 6
-				// length_in_sec: 1
-				// location: "http://103.92.26.123/RECORDINGS/MP3/20210226-120212_838627317_59942150_agent001-all.mp3"
-				// phone_number: "838627317"
-				// recording_id: 173
-				// start_time: "2021-02-26 12:02:13"
-				// user: "agent001"
-				// vicidial_id: "
 				columnDefs: [{
 						width: "30%",
 						targets: 0
@@ -796,6 +783,11 @@ $perm = $api->goGetPermissions('recordings');
 				let ajax = false;
 				let requestStart = request.start;
 				let drawStart = request.start;
+				if (isClean){
+					requestStart = 0;
+					drawStart = 0;
+					isClean = false;
+				}
 				let requestLength = request.length;
 				let requestEnd = requestStart + requestLength;
 
