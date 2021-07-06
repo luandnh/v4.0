@@ -72,7 +72,7 @@ $postfields["custom_fields"] = $custom_fields;
 $postfields["per_call_notes"] = $per_call_notes;
 $postfields["rec_location"] = $rec_location;
 
-$limit = 5000;
+$limit = 20000;
 $offset = 0;
 
 if($toDate != NULL)

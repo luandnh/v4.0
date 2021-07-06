@@ -34,9 +34,13 @@
 		
 		if (count($output->status->system) > 0) {
 			$data								.= '<optgroup label="System Statuses">';
+			
+			$showing_status = array("AB", "ADC", "B", "CALLBK", "CBHOLD", "DC", "DROP", "ERI", "INCALL", "N", "NA", "NEW", "NI", "PM", "PU");
 			foreach($output->status->system as $key => $val){
 			// for($i=0;$i<=count($output->status);$i++) {
-				$data 							.= '<option value="'.$val.'" data-name="'.$output->status_name->system[$key].'">'.$val.' - '.$output->status_name->system[$key].'</option>';
+				if (in_array($val, $showing_status)){
+					$data 							.= '<option value="'.$val.'" data-name="'.$output->status_name->system[$key].'">'.$val.' - '.$output->status_name->system[$key].'</option>';
+				}
 			}
 			$data								.= '</optgroup>';
 		}
@@ -52,5 +56,3 @@
 	}
 	
 	echo json_encode($data);
-
-?>
