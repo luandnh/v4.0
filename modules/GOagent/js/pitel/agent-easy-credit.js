@@ -109,7 +109,12 @@ $(document).on('blur', 'input[tag="phone"]', function () {
     }
   } 
 });
-
+function pmt(monthlyRate, monthlyPayments, presentValue, residualValue, advancedPayments) {
+  t1 = 1+monthlyRate
+  t2 = Math.pow(t1,monthlyPayments)
+  t3 = Math.pow(t1,(monthlyPayments-advancedPayments))
+  return (presentValue-(residualValue/t2))/(((1-(1/(t3)))/monthlyRate)+advancedPayments);
+}
 let simulator = (e) => {
   console.log("simulator");
   let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
@@ -122,7 +127,9 @@ let simulator = (e) => {
   let ir = selected_product.interest_rate;
   let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
   // let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
-  let sm_monthly = parseInt( (sm_total_offer / sm_loan_tenor) + sm_total_offer*(ir/100)/12)+ "";
+  // let sm_monthly = parseInt( (sm_total_offer / sm_loan_tenor) + sm_total_offer*(ir/100)/12)+ "";
+  // pmt(0.35/12,0.5*12,10000000,1,0)
+  let sm_monthly = parseInt( pmt((ir/100)/12,sm_loan_tenor,sm_total_offer,1,0)) + "";
   
   //
   $("#full-loan-form input[name='customer-offer-amount']")
