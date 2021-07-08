@@ -245,7 +245,7 @@ $(document).ready(() => {
         });
     });
   });
-
+  // SELECT OFFER
   // Upload img_selfie
   $(document).on("click", "#submit_img_selfie", function (e) {
     e.preventDefault();
@@ -350,6 +350,115 @@ $(document).ready(() => {
         }
       });
   });
+
+  // 
+  // SUBMIT FULLLOAN
+  // Upload img_selfie
+  $(document).on("click", "#submit_img_selfie2", function (e) {
+    e.preventDefault();
+    const files = $("#img_selfie2")[0].files;
+    if (files.length == 0) {
+      sweetAlert("No img_selfie file to upload");
+      return;
+    }
+    // TEST 
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    var request_id = $("#request_id").val();
+    var phone_number = $("#phone_number").val();
+    var identity_number = $("#identity_number").val();
+    var formData = new FormData();
+    formData.append("request_id", request_id);
+    formData.append("file_type", "PIC");
+    formData.append("phone_number", "0" + phone_number);
+    formData.append("file", files[0]);
+    formData.append("identity_number", identity_number);
+    var settings = {
+      url: CRM_API_URL+"/v1/document/upload",
+      method: "POST",
+      timeout: 0,
+      processData: false,
+      mimeType: "multipart/form-data",
+      contentType: false,
+      data: formData,
+    };
+    $.ajax(settings)
+      .fail((result, status, error) => {
+        console.log(result);
+        isUploadedDocs[0] = false;
+        AllowSelectOffer();
+        let msg = "Please contact developer!";
+        if (result.message !== undefined) {
+          msg = result.message;
+        }
+        swal("Upload file fail!", msg, "error");
+      })
+      .success((result, status, error) => {
+        let resp = JSON.parse(result);
+        if (resp.status == "success") {
+          $("input[name='img_selfie']")[0].value = resp.file_name;
+          isUploadedDocs[0] = true;
+          AllowSelectOffer();
+          swal("OK!", "Upload Image Selfie Success", "success");
+          console.log(resp);
+        }
+      });
+  });
+  // Upload img_id_card
+  $(document).on("click", "#submit_img_id_card2", function (e) {
+    e.preventDefault();
+    const files = $("#img_id_card2")[0].files;
+    if (files.length == 0) {
+      sweetAlert("No img_id_card file to upload");
+      return;
+    }
+    // TEST
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    
+    var request_id = $("#request_id").val();
+    var phone_number = $("#phone_number").val();
+    var identity_number = $("#identity_number").val();
+    var formData = new FormData();
+    formData.append("request_id", request_id);
+    formData.append("file_type", "PID");
+    formData.append("phone_number", "0" + phone_number);
+    formData.append("file", files[0]);
+    formData.append("identity_number", identity_number);
+    var settings = {
+      url: CRM_API_URL+"/v1/document/upload",
+      method: "POST",
+      timeout: 0,
+      processData: false,
+      mimeType: "multipart/form-data",
+      contentType: false,
+      data: formData,
+    };
+    $.ajax(settings)
+      .fail((result, status, error) => {
+        console.log(result);
+        isUploadedDocs[1] = false;
+        AllowSelectOffer();
+        let msg = "Please contact developer!";
+        if (result.message !== undefined) {
+          msg = result.message;
+        }
+        swal("Upload file fail!", msg, "error");
+      })
+      .success((result, status, error) => {
+        let resp = JSON.parse(result);
+        if (resp.status == "success") {
+          $("input[name='img_id_card']")[0].value = resp.file_name;
+          swal("OK!", "Upload Image ID Card Success", "success");
+          isUploadedDocs[1] = true;
+          AllowSelectOffer();
+        }
+      });
+  });
+
+  // 
   let fullLoanTab =
     '<li role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
