@@ -35,10 +35,105 @@
                             </table>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
+                </div>
+                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="col-lg-2">
+                                    <div class="iconCircle">
+                                        <i class="fa fa-info fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <h3 class="text-light-blue">
+                                        UPLOAD CHECK ELIGIBLE
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-12" style="padding-bottom: 10px;">
+                                <label class="form_label" for="img_id_card">ID CARD</label>
+                                <input type="text" name="img_id_card" class="id_img_hide" required />
+                                <input type="file" id="img_id_card" class="id_img custom-file-input" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-sm-12">
+                                <button id="submit_img_id_card" class="btn btn-warning">submit_img_id_card</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-12" style="padding-bottom: 10px;">
+                                <label class="form_label" for="img_selfie">img_selfie</label>
+                                    <input type="text" name="img_selfie" class="id_img_hide" required />
+                                    <input type="file" id="img_selfie" class="id_img custom-file-input" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button id="submit_img_selfie" class="btn btn-warning">submit_img_selfie</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <!-- PRODUCT DETAIL DEBUG-->
+                <!--  -->
+                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="col-lg-2">
+                                    <div class="iconCircle">
+                                        <i class="fa fa-envelope fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <h3 class="text-light-blue">
+                                        UPLOAD CHECK DOCS
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div id="product_detail" class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <label style="font-size: large;" id="product_required_description">Chứng từ bắt buộc </label>
+                            </div>
+                            <div class="col-xl-12 col-lg-12">
+                                <hr style="margin: 5px !important;">
+                            </div>
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="mda-form-group label-floating">
+                                    <input type="text" name="product_required_document" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
+                                    <label style="font-size: large;">Mã chứng từ bắt buộc: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" id="product_name_detail">
+                    </div>
+                    <div class="col-sm-12" style="padding-bottom: 10px;">
+                        <label class="form_label" for="attachment_files">upload_attach</label>
+                        <input multiple type="file" id="attachment_files" class="attachment-input" />
+                    </div>
+                    <div class="col-sm-12">
+                        <button class="btn btn-warning" id="submit_attachment">submit_attachment</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <button class="btn btn-primary" id="submit-docs" > Gửi Chứng Từ </button>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
                     </div>
                 </div>
             </div>
@@ -382,7 +477,7 @@
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
                                         <div class="mda-form-group label-floating">
-                                            <input type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
+                                            <input type="number" min="0" max="999999999999" name="monthly_profit" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                             <label class="form_label" for="monthly_profit">1.11. <?= $lh->translationFor('monthly_profit') ?></label>
                                         </div>
                                     </div>
@@ -421,7 +516,7 @@
                                 <div class="row">
                                     <div class="col-xl-8 col-lg-6">
                                         <div class="mda-form-group label-floating" data-children-count="1">
-                                            <input readonly  name="customer_name" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly name="customer_name" type="text" width="auto" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="customer_name"><?= $lh->translationFor('customer_name') ?></label>
                                         </div>
                                     </div>
@@ -579,7 +674,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input readonly tag="phone"  type="text" name="phone_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly tag="phone" type="text" name="phone_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="phone_number"><?= $lh->translationFor('phone_number') ?></label>
                                         </div>
                                     </div>
@@ -999,7 +1094,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input tag="phone" value="1234567890"  type="text" name="workplace_phone" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input tag="phone" value="1234567890" type="text" name="workplace_phone" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="workplace_phone"><?= $lh->translationFor('workplace_phone') ?></label>
                                         </div>
                                     </div>
@@ -1250,7 +1345,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input tag="phone"  type="text" name="relation_2_phone_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                                <input tag="phone" type="text" name="relation_2_phone_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                                 <label class="form_label" for="relation_2_phone_number"><?= $lh->translationFor('relation_2_phone_number') ?></label>
                                             </div>
                                         </div>
@@ -1313,10 +1408,8 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <!--  -->
                                 <!-- PRODUCT DETAIL DEBUG-->
-                                
                                 <!--  -->
                                 <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
                                     <div class="col-xl-6 col-lg-12">
@@ -1340,7 +1433,9 @@
                                             <div class="col-xl-12 col-lg-12">
                                                 <label style="font-size: large;" id="product_required_description">Chứng từ bắt buộc </label>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12"><hr style="margin: 5px !important;"></div>
+                                            <div class="col-xl-12 col-lg-12">
+                                                <hr style="margin: 5px !important;">
+                                            </div>
                                             <div class="col-xl-12 col-lg-12">
                                                 <div class="mda-form-group label-floating">
                                                     <input type="text" name="product_required_document" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
@@ -1349,8 +1444,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12" id="product_name_detail" >
-                                       
+                                    <div class="col-sm-12" id="product_name_detail">
                                     </div>
                                     <div class="col-sm-12" style="padding-bottom: 10px;">
                                         <label class="form_label" for="attachment_files"><?= $lh->translationFor('upload_attach') ?></label>

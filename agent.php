@@ -270,7 +270,7 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
         <script type="text/javascript">
 			<?php 
 			echo("const EC_API_URL = '".goapiurl."/';");
-			echo("const TEL4VN_API_URL = '".goapiurl."/';");
+			echo("const TEL4VN_API_URL = '".goapiurl."';");
 			?>
 			function gotobottom(){
 				window.scrollTo(0,document.body.scrollHeight);

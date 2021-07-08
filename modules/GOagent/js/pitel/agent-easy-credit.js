@@ -21,6 +21,16 @@ var selected_min_financed_amount = 0;
 var percent_insurance = 0;
 var offerinsurancetable;
 var insurance_amount = 0;
+// 
+var isUploadedDocs = [false,false,false];
+let AllowSelectOffer = function(){
+  if (isUploadedDocs[0] & isUploadedDocs[1] & isUploadedDocs[2]){
+    $("#submit-offer").attr('disabled',false);
+  }
+  else{
+    $("#submit-offer").attr('disabled',true);
+  }
+}
 //
 let box_color = [
   "box-primary",
@@ -211,6 +221,8 @@ $(document).ready(() => {
         .fail((result, status, error) => {
           console.log(result);
           let msg = "Please contact developer!";
+          isUploadedDocs[2] = false;
+          AllowSelectOffer();
           if (result.message !== undefined) {
             msg = result.message;
           }
@@ -221,6 +233,9 @@ $(document).ready(() => {
           if (resp.status == "success") {
             var doc = { file_type: resp.file_type, file_name: resp.file_name };
             list_doc_collecting.push(doc);
+            
+            isUploadedDocs[2] = true;
+            AllowSelectOffer();
             swal(
               "Upload file success!",
               "Upload attachment success",
@@ -239,6 +254,10 @@ $(document).ready(() => {
       sweetAlert("No img_selfie file to upload");
       return;
     }
+    // TEST 
+    $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    $("#identity_number").val("215491214");
+    // 
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
     var identity_number = $("#identity_number").val();
@@ -260,6 +279,8 @@ $(document).ready(() => {
     $.ajax(settings)
       .fail((result, status, error) => {
         console.log(result);
+        isUploadedDocs[0] = false;
+        AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -270,6 +291,8 @@ $(document).ready(() => {
         let resp = JSON.parse(result);
         if (resp.status == "success") {
           $("input[name='img_selfie']")[0].value = resp.file_name;
+          isUploadedDocs[0] = true;
+          AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
           console.log(resp);
         }
@@ -283,6 +306,11 @@ $(document).ready(() => {
       sweetAlert("No img_id_card file to upload");
       return;
     }
+    // TEST
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
     var identity_number = $("#identity_number").val();
@@ -304,6 +332,8 @@ $(document).ready(() => {
     $.ajax(settings)
       .fail((result, status, error) => {
         console.log(result);
+        isUploadedDocs[1] = false;
+        AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -315,6 +345,8 @@ $(document).ready(() => {
         if (resp.status == "success") {
           $("input[name='img_id_card']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
+          isUploadedDocs[1] = true;
+          AllowSelectOffer();
         }
       });
   });
@@ -328,8 +360,17 @@ $(document).ready(() => {
   clearForm($("#full-loan-form"));
   clearAFForm();
 });
-
+let CreateOfferTab = function(){
+  let offerTab =
+  '<li role="presentation" id="offer_tab_href">' +
+  '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
+  '<span class="fa fa-file-text-o hidden"></span>' +
+  "Offer</a>" +
+  "</li>";
+$("#agent_tablist").append(offerTab);
+}
 let ECShowProducts = (partner_code, request_id, app_status, status, call_status) => {
+  removeElement("offer_tab_href");
   ShowStatusOnForm(status, call_status, app_status);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
@@ -350,13 +391,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status)
   clearForm($("#full-loan-form"));
   clearAFForm();
   if (app_status == "VALIDATED") {
-    let offerTab =
-      '<li role="presentation" id="offer_tab_href">' +
-      '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
-      '<span class="fa fa-file-text-o hidden"></span>' +
-      "Offer</a>" +
-      "</li>";
-    $("#agent_tablist").append(offerTab);
+    CreateOfferTab();
     ajaxGetOffer(request_id).done((result) => {
       if (result.data.document != undefined && result.data.document != null) {
         IsSuccessPolled = true;
@@ -603,7 +638,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     method: "POST",
     timeout: 0,
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: JSON.stringify({
@@ -661,7 +696,7 @@ $(document).on("click", "#submit-offer", function (e) {
     async: true,
     dataType: "json",
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
   })
@@ -735,7 +770,7 @@ $("#eligible_btn").on("click", (e) => {
       dataType: "json",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: "Bearer "+CRM_TOKEN,
+        Authorization: "Bearer "+CRM_TOKEN,
       },
     })
       .fail((result, status, error) => {
@@ -988,6 +1023,8 @@ let SyncFullLoanFromAPIOld = (request_id) => {
 };
 
 let ajaxGetOldFullLoan = (request_id) => {
+  // TEST
+  // request_id = "5228003"
   return $.ajax({
     type: "GET",
     url: TEL4VN_API_URL + `/v1/fullloan/${request_id}`,
@@ -1003,6 +1040,8 @@ let ajaxGetOldFullLoan = (request_id) => {
 };
 
 let ajaxGetOffer = (request_id) => {
+  // TEST
+  // request_id = "SPO1610530540234"
   return $.ajax({
     type: "GET",
     url: TEL4VN_API_URL + `/v1/offer/${request_id}`,
@@ -1420,18 +1459,28 @@ $(document).on("blur", 'input[name="customer-offer-total"]', function () {
   this.value = formatter.format(this.value);
 });
 
-// $(document).on("click", 'input[name="select_insurance"]', function () {
-//   $("#create-offer-table").empty();
-//   $("#create-offer-table").attr("hidden", false);
-//   let tmp_data2 = offerinsurancetable.row(this).data();
-//   if (tmp_data2 == undefined) {
-//     tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
-//   }
-//   selected_offer_insurance_type = tmp_data2.type;
-//   percent_insurance = tmp_data2.percent_insurance;
-//   insurance_amount = tmp_data2.mount;
-//   SetCustomerOfferDetail();
-// });
+$(document).on("click", 'input[name="select_insurance"]', function () {
+  $("#create-offer-table").empty();
+  $("#create-offer-table").attr("hidden", false);
+  let tmp_data2 = offerinsurancetable.row(this).data();
+  if (tmp_data2 == undefined) {
+    tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+  }
+  selected_offer_insurance_type = tmp_data2.type;
+  percent_insurance = tmp_data2.percent_insurance;
+  insurance_amount = tmp_data2.mount;
+  // SetCustomerOfferDetail();
+});
+
+$("#submit-docs").on("click", (e) => {
+  // TEST 
+  $(".formMain input[name='request_id']").val("SPO1610530540234")
+  // 
+  $("#submit_img_selfie").click();
+  $("#submit_attachment").click();
+  $("#submit_img_id_card").click();
+});
+
 $("#full-loan-form").on("submit", (e) => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   e.preventDefault();
@@ -1474,7 +1523,7 @@ $("#full-loan-form").on("submit", (e) => {
     method: "POST",
     timeout: 0,
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: post_data,
@@ -1759,6 +1808,8 @@ function SetOfferDetail(offerList) {
   $("#submit-full-loan").attr("hidden", true);
   $("#offer-waiting").attr("hidden", true);
   $("#submit-offer").attr("hidden", false);
+  isUploadedDocs = [false,false, false]
+  $("#submit-offer").attr('disabled',true);
 }
 
 function capitalize(string) {
