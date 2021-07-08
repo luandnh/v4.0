@@ -1382,28 +1382,28 @@
                                     <div class="col-xl-6 col-lg-12">
                                         <div class="row">
                                             <div class="col-sm-12" style="padding-bottom: 10px;">
-                                                <label class="form_label" for="img_id_card"><?= $lh->translationFor('img_id_card') ?></label>
-                                                <input type="text" name="img_id_card" class="id_img_hide" required />
-                                                <input type="file" id="img_id_card" class="id_img custom-file-input" />
+                                                <label class="form_label" for="img_id_card2"><?= $lh->translationFor('img_id_card') ?></label>
+                                                <input type="text" name="img_id_card2" class="id_img_hide" required />
+                                                <input type="file" id="img_id_card2" class="id_img custom-file-input" />
                                             </div>
                                         </div>
                                         <div class="row" style="margin-bottom: 10px;">
                                             <div class="col-sm-12">
-                                                <button id="submit_img_id_card" class="btn btn-warning"><?= $lh->translationFor('submit_img_id_card') ?></button>
+                                                <button id="submit_img_id_card2" class="btn btn-warning"><?= $lh->translationFor('submit_img_id_card') ?></button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-12">
                                         <div class="row">
                                             <div class="col-sm-12" style="padding-bottom: 10px;">
-                                                <label class="form_label" for="img_selfie"><?= $lh->translationFor('img_selfie') ?></label>
-                                                <input type="text" name="img_selfie" class="id_img_hide" required />
-                                                <input type="file" id="img_selfie" class="id_img custom-file-input" />
+                                                <label class="form_label" for="img_selfie2"><?= $lh->translationFor('img_selfie') ?></label>
+                                                <input type="text" name="img_selfie2" class="id_img_hide" required />
+                                                <input type="file" id="img_selfie2" class="id_img custom-file-input" />
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <button id="submit_img_selfie" class="btn btn-warning"><?= $lh->translationFor('submit_img_selfie') ?></button>
+                                                <button id="submit_img_selfie2" class="btn btn-warning"><?= $lh->translationFor('submit_img_selfie') ?></button>
                                             </div>
                                         </div>
                                     </div>
