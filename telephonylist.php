@@ -454,35 +454,35 @@ $next_listdesc = "Auto-generated - ListID - " . $datenow;
 						</h4>
 						<fieldset>
 							<div class="form-group mt">
-								<label class="col-sm-3 control-label" for="auto_generate"><?php $lh->translateText("auto_generated"); ?>:</label>
-								<div class="col-sm-9 mb">
-									<label class="col-sm-3 checkbox-inline c-checkbox" for="auto_generate">
+								<label class="col-sm-4 control-label" for="auto_generate"><?php $lh->translateText("auto_generated"); ?>:</label>
+								<div class="col-sm-8 mb">
+									<label class="col-sm-4 checkbox-inline c-checkbox" for="auto_generate">
 										<input type="checkbox" id="auto_generate" checked>
 										<span class="fa fa-check"></span>
 									</label>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label" for="add_list_id"><?php $lh->translateText("list_id"); ?>:</label>
-								<div class="col-sm-9 mb">
+								<label class="col-sm-4 control-label" for="add_list_id"><?php $lh->translateText("list_id"); ?>:</label>
+								<div class="col-sm-8 mb">
 									<input type="number" class="form-control" name="add_list_id" id="add_list_id" placeholder="<?php $lh->translateText("list_id"); ?>" value="<?php echo $lists->next_listID; ?>" minlength="1" maxlength="8" disabled required />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label" for="list_name"><?php $lh->translateText("list_name"); ?>:</label>
-								<div class="col-sm-9 mb">
+								<label class="col-sm-4 control-label" for="list_name"><?php $lh->translateText("list_name"); ?>:</label>
+								<div class="col-sm-8 mb">
 									<input type="text" class="form-control" name="list_name" id="list_name" placeholder="<?php $lh->translateText("list_name"); ?>" value="<?php echo $next_listname; ?>" maxlength="30" required />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label text-nowrap" for="list_desc"><?php $lh->translateText("list_description"); ?>:</label>
-								<div class="col-sm-9 mb">
+								<label class="col-sm-4 control-label text-nowrap" for="list_desc"><?php $lh->translateText("list_description"); ?>:</label>
+								<div class="col-sm-8 mb">
 									<input type="text" class="form-control" name="list_desc" id="list_desc" placeholder="<?php $lh->translateText("list_description"); ?>" value="<?php echo $next_listdesc; ?>" maxlength="255" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label" for="campaign_select"><?php $lh->translateText("campaign"); ?>: </label>
-								<div class="col-sm-9 mb">
+								<label class="col-sm-4 control-label" for="campaign_select"><?php $lh->translateText("campaign"); ?>: </label>
+								<div class="col-sm-8 mb">
 									<select name="campaign_select" class="form-control">
 										<?php
 										echo '<option value="">' . $lh->translationFor("-none-") . '</option>';
@@ -494,8 +494,8 @@ $next_listdesc = "Auto-generated - ListID - " . $datenow;
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-3 control-label" for="status"><?php $lh->translateText("active"); ?>: </label>
-								<div class="col-sm-9 mb">
+								<label class="col-sm-4 control-label" for="status"><?php $lh->translateText("active"); ?>: </label>
+								<div class="col-sm-8 mb">
 									<select name="status" class="form-control">
 										<option value="Y" selected><?php $lh->translateText("go_yes"); ?></option>
 										<option value="N"><?php $lh->translateText("go_no"); ?></option>
