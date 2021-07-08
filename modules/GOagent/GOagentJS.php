@@ -3650,8 +3650,8 @@ function CheckForIncoming () {
         has_inbound_call = this_VDIC_data.has_call;
         if (this_VDIC_data.has_call == '1') {
             try {
-                <!-- this_VDIC_data.partner_code = "TEL";
-                this_VDIC_data.app_status = "VALIDATED"; -->
+                <!-- this_VDIC_data.partner_code = "TEL"; -->
+                <!-- this_VDIC_data.app_status = "VALIDATED"; -->
                 lead_id = this_VDIC_data.lead_id;
                 <!-- this_VDIC_data.request_id = "SPO1610530540234"; -->
                 $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
