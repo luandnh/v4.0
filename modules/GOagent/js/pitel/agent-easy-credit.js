@@ -1,3 +1,4 @@
+console.log("agent-easy-credit-v1");
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
 var is_upload_id_card = false;
@@ -21,6 +22,16 @@ var selected_min_financed_amount = 0;
 var percent_insurance = 0;
 var offerinsurancetable;
 var insurance_amount = 0;
+// 
+var isUploadedDocs = [false,false,false];
+let AllowSelectOffer = function(){
+  if (isUploadedDocs[0] & isUploadedDocs[1] & isUploadedDocs[2]){
+    $("#submit-offer").attr('disabled',false);
+  }
+  else{
+    $("#submit-offer").attr('disabled',true);
+  }
+}
 //
 let box_color = [
   "box-primary",
@@ -199,7 +210,8 @@ $(document).ready(() => {
       formData.append("file", file);
       var upload_status = true;
       var settings = {
-        url: CRM_API_URL+"/v1/document/upload",
+        //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -211,6 +223,8 @@ $(document).ready(() => {
         .fail((result, status, error) => {
           console.log(result);
           let msg = "Please contact developer!";
+          isUploadedDocs[2] = false;
+          AllowSelectOffer();
           if (result.message !== undefined) {
             msg = result.message;
           }
@@ -221,6 +235,9 @@ $(document).ready(() => {
           if (resp.status == "success") {
             var doc = { file_type: resp.file_type, file_name: resp.file_name };
             list_doc_collecting.push(doc);
+            
+            isUploadedDocs[2] = true;
+            AllowSelectOffer();
             swal(
               "Upload file success!",
               "Upload attachment success",
@@ -230,7 +247,7 @@ $(document).ready(() => {
         });
     });
   });
-
+  // SELECT OFFER
   // Upload img_selfie
   $(document).on("click", "#submit_img_selfie", function (e) {
     e.preventDefault();
@@ -239,6 +256,10 @@ $(document).ready(() => {
       sweetAlert("No img_selfie file to upload");
       return;
     }
+    // TEST 
+    $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    $("#identity_number").val("215491214");
+    // 
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
     var identity_number = $("#identity_number").val();
@@ -249,7 +270,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -260,6 +282,8 @@ $(document).ready(() => {
     $.ajax(settings)
       .fail((result, status, error) => {
         console.log(result);
+        isUploadedDocs[0] = false;
+        AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -270,6 +294,8 @@ $(document).ready(() => {
         let resp = JSON.parse(result);
         if (resp.status == "success") {
           $("input[name='img_selfie']")[0].value = resp.file_name;
+          isUploadedDocs[0] = true;
+          AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
           console.log(resp);
         }
@@ -283,6 +309,11 @@ $(document).ready(() => {
       sweetAlert("No img_id_card file to upload");
       return;
     }
+    // TEST
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
     var identity_number = $("#identity_number").val();
@@ -293,7 +324,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -304,6 +336,8 @@ $(document).ready(() => {
     $.ajax(settings)
       .fail((result, status, error) => {
         console.log(result);
+        isUploadedDocs[1] = false;
+        AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -315,9 +349,122 @@ $(document).ready(() => {
         if (resp.status == "success") {
           $("input[name='img_id_card']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
+          isUploadedDocs[1] = true;
+          AllowSelectOffer();
         }
       });
   });
+
+  // 
+  // SUBMIT FULLLOAN
+  // Upload img_selfie
+  $(document).on("click", "#submit_img_selfie2", function (e) {
+    e.preventDefault();
+    const files = $("#img_selfie2")[0].files;
+    if (files.length == 0) {
+      sweetAlert("No img_selfie file to upload");
+      return;
+    }
+    // TEST 
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    var request_id = $("#request_id").val();
+    var phone_number = $("#phone_number").val();
+    var identity_number = $("#identity_number").val();
+    var formData = new FormData();
+    formData.append("request_id", request_id);
+    formData.append("file_type", "PIC");
+    formData.append("phone_number", "0" + phone_number);
+    formData.append("file", files[0]);
+    formData.append("identity_number", identity_number);
+    var settings = {
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      method: "POST",
+      timeout: 0,
+      processData: false,
+      mimeType: "multipart/form-data",
+      contentType: false,
+      data: formData,
+    };
+    $.ajax(settings)
+      .fail((result, status, error) => {
+        console.log(result);
+        isUploadedDocs[0] = false;
+        AllowSelectOffer();
+        let msg = "Please contact developer!";
+        if (result.message !== undefined) {
+          msg = result.message;
+        }
+        swal("Upload file fail!", msg, "error");
+      })
+      .success((result, status, error) => {
+        let resp = JSON.parse(result);
+        if (resp.status == "success") {
+          $("input[name='img_selfie2']")[0].value = resp.file_name;
+          isUploadedDocs[0] = true;
+          AllowSelectOffer();
+          swal("OK!", "Upload Image Selfie Success", "success");
+          console.log(resp);
+        }
+      });
+  });
+  // Upload img_id_card
+  $(document).on("click", "#submit_img_id_card2", function (e) {
+    e.preventDefault();
+    const files = $("#img_id_card2")[0].files;
+    if (files.length == 0) {
+      sweetAlert("No img_id_card file to upload");
+      return;
+    }
+    // TEST
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
+    // 
+    
+    var request_id = $("#request_id").val();
+    var phone_number = $("#phone_number").val();
+    var identity_number = $("#identity_number").val();
+    var formData = new FormData();
+    formData.append("request_id", request_id);
+    formData.append("file_type", "PID");
+    formData.append("phone_number", "0" + phone_number);
+    formData.append("file", files[0]);
+    formData.append("identity_number", identity_number);
+    var settings = {
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      method: "POST",
+      timeout: 0,
+      processData: false,
+      mimeType: "multipart/form-data",
+      contentType: false,
+      data: formData,
+    };
+    $.ajax(settings)
+      .fail((result, status, error) => {
+        console.log(result);
+        isUploadedDocs[1] = false;
+        AllowSelectOffer();
+        let msg = "Please contact developer!";
+        if (result.message !== undefined) {
+          msg = result.message;
+        }
+        swal("Upload file fail!", msg, "error");
+      })
+      .success((result, status, error) => {
+        let resp = JSON.parse(result);
+        if (resp.status == "success") {
+          $("input[name='img_id_card2']")[0].value = resp.file_name;
+          swal("OK!", "Upload Image ID Card Success", "success");
+          isUploadedDocs[1] = true;
+          AllowSelectOffer();
+        }
+      });
+  });
+
+  // 
   let fullLoanTab =
     '<li role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
@@ -328,8 +475,17 @@ $(document).ready(() => {
   clearForm($("#full-loan-form"));
   clearAFForm();
 });
-
+let CreateOfferTab = function(){
+  let offerTab =
+  '<li role="presentation" id="offer_tab_href">' +
+  '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
+  '<span class="fa fa-file-text-o hidden"></span>' +
+  "Offer</a>" +
+  "</li>";
+$("#agent_tablist").append(offerTab);
+}
 let ECShowProducts = (partner_code, request_id, app_status, status, call_status) => {
+  removeElement("offer_tab_href");
   ShowStatusOnForm(status, call_status, app_status);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
@@ -350,13 +506,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status)
   clearForm($("#full-loan-form"));
   clearAFForm();
   if (app_status == "VALIDATED") {
-    let offerTab =
-      '<li role="presentation" id="offer_tab_href">' +
-      '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
-      '<span class="fa fa-file-text-o hidden"></span>' +
-      "Offer</a>" +
-      "</li>";
-    $("#agent_tablist").append(offerTab);
+    CreateOfferTab();
     ajaxGetOffer(request_id).done((result) => {
       if (result.data.document != undefined && result.data.document != null) {
         IsSuccessPolled = true;
@@ -603,7 +753,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     method: "POST",
     timeout: 0,
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: JSON.stringify({
@@ -661,7 +811,7 @@ $(document).on("click", "#submit-offer", function (e) {
     async: true,
     dataType: "json",
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
   })
@@ -735,7 +885,7 @@ $("#eligible_btn").on("click", (e) => {
       dataType: "json",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: "Bearer "+CRM_TOKEN,
+        Authorization: "Bearer "+CRM_TOKEN,
       },
     })
       .fail((result, status, error) => {
@@ -988,6 +1138,8 @@ let SyncFullLoanFromAPIOld = (request_id) => {
 };
 
 let ajaxGetOldFullLoan = (request_id) => {
+  // TEST
+  // request_id = "5228003"
   return $.ajax({
     type: "GET",
     url: TEL4VN_API_URL + `/v1/fullloan/${request_id}`,
@@ -1003,6 +1155,8 @@ let ajaxGetOldFullLoan = (request_id) => {
 };
 
 let ajaxGetOffer = (request_id) => {
+  // TEST
+  // request_id = "SPO1610530540234"
   return $.ajax({
     type: "GET",
     url: TEL4VN_API_URL + `/v1/offer/${request_id}`,
@@ -1420,33 +1574,43 @@ $(document).on("blur", 'input[name="customer-offer-total"]', function () {
   this.value = formatter.format(this.value);
 });
 
-// $(document).on("click", 'input[name="select_insurance"]', function () {
-//   $("#create-offer-table").empty();
-//   $("#create-offer-table").attr("hidden", false);
-//   let tmp_data2 = offerinsurancetable.row(this).data();
-//   if (tmp_data2 == undefined) {
-//     tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
-//   }
-//   selected_offer_insurance_type = tmp_data2.type;
-//   percent_insurance = tmp_data2.percent_insurance;
-//   insurance_amount = tmp_data2.mount;
-//   SetCustomerOfferDetail();
-// });
+$(document).on("click", 'input[name="select_insurance"]', function () {
+  $("#create-offer-table").empty();
+  $("#create-offer-table").attr("hidden", false);
+  let tmp_data2 = offerinsurancetable.row(this).data();
+  if (tmp_data2 == undefined) {
+    tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
+  }
+  selected_offer_insurance_type = tmp_data2.type;
+  percent_insurance = tmp_data2.percent_insurance;
+  insurance_amount = tmp_data2.mount;
+  // SetCustomerOfferDetail();
+});
+
+$("#submit-docs").on("click", (e) => {
+  // TEST 
+  $(".formMain input[name='request_id']").val("SPO1610530540234")
+  // 
+  $("#submit_img_selfie").click();
+  $("#submit_attachment").click();
+  $("#submit_img_id_card").click();
+});
+
 $("#full-loan-form").on("submit", (e) => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replace(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replace(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replace(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  // form_data.dsa_agent_code = "trainee.01";
+  form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1461,11 +1625,16 @@ $("#full-loan-form").on("submit", (e) => {
   // form_data = getFormData();
   form_data.request_id = request_id.value;
   form_data.partner_code = partner_code.value
-
   form_data.identity_card_id = $('#full-loan-form input[name="identity_card_id"]').val()
   //
+  if (form_data.img_selfie == undefined || form_data.img_selfie == ""){
+    form_data.img_selfie = form_data.img_selfie2;
+  }
+  if (form_data.img_id_card == undefined || form_data.img_id_card == ""){
+    form_data.img_id_card = form_data.img_id_card2;
+  }
+  form_data.dsa_agent_code = "trainee.01";
   let post_data = JSON.stringify(form_data);
-  // form_data.dsa_agent_code = "trainee.01";
 
   $("#offer-waiting").attr("hidden", false);
   // post to EC
@@ -1474,7 +1643,7 @@ $("#full-loan-form").on("submit", (e) => {
     method: "POST",
     timeout: 0,
     headers: {
-      // Authorization: "Bearer "+CRM_TOKEN,
+      Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: post_data,
@@ -1759,6 +1928,8 @@ function SetOfferDetail(offerList) {
   $("#submit-full-loan").attr("hidden", true);
   $("#offer-waiting").attr("hidden", true);
   $("#submit-offer").attr("hidden", false);
+  isUploadedDocs = [false,false, false]
+  $("#submit-offer").attr('disabled',true);
 }
 
 function capitalize(string) {
@@ -1883,21 +2054,138 @@ $(function () {
       $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
     },
   });
+  
+  $("#attachment_files2").MultiFile({
+    onFileRemove: function (element, value, master_element) {
+      console.log("Remove");
+      $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
+    },
+    afterFileRemove: function (element, value, master_element) {
+      console.log("After remove");
+      $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
+    },
+    onFileAppend: function (element, value, master_element) {
+      console.log("After Append");
+    },
+    afterFileAppend: function (element, value, master_element) {
+      var last_mdf = element.files[0].lastModified + element.files[0].name;
+      $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
+        `<SELECT name='${last_mdf}' class="select_file_type">
+        <OPTION VALUE="BPM">BPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="GDN">GDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="HK9">HK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="KT3">KT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="PBL">PBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="PLW">PLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="POG">POG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="PPA">PPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="PTC">PTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="RIN">RIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
+        <OPTION VALUE="SBIZ">SBIZ - Giấy phép kinh doanh/ Business license</OPTION>
+        <OPTION VALUE="SBPM">SBPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="SCCS">SCCS - Sao kê thẻ tín dụng/ Credit card statement</OPTION>
+        <OPTION VALUE="SCDR">SCDR - BIÊN BẢN BÀN GIAO HÀNG HÓA</OPTION>
+        <OPTION VALUE="SCFC">SCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SCOV">SCOV - BẢN SAO HÓA ĐƠN GIÁ TRỊ GIA TĂNG</OPTION>
+        <OPTION VALUE="SDEB">SDEB - PHIẾU GIAO HÀNG</OPTION>
+        <OPTION VALUE="SDRL">SDRL - Giấy phép lái xe (GPLX)/ Driving license</OPTION>
+        <OPTION VALUE="SEB1">SEB1 - Hóa đơn điện dưới 600,000 VND/ Electricity bill less 600</OPTION>
+        <OPTION VALUE="SEB2">SEB2 - Hóa đơn điện từ 600,000 VND/ Electricity bill more 600</OPTION>
+        <OPTION VALUE="SFRB">SFRB - Sổ hộ khẩu (SHK)/ Family registration book</OPTION>
+        <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="SGOD">SGOD - CHỨNG TỪ GIAO HÀNG</OPTION>
+        <OPTION VALUE="SHIC">SHIC - Thẻ BHYT/ Health insurance card</OPTION>
+        <OPTION VALUE="SHK9">SHK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="SICS">SICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SINP">SINP - HĐBH/ Insurance policy</OPTION>
+        <OPTION VALUE="SKT3">SKT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="SLBC">SLBC - HĐLĐ (LB)/ Labor contract</OPTION>
+        <OPTION VALUE="SLCT">SLCT - Hợp đồng vay (HĐV)/ Loan contract</OPTION>
+        <OPTION VALUE="SLIC">SLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SLICE">SLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SMBFP">SMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SMCA">SMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SMIN">SMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SNID">SNID - Chứng minh nhân nhân (CMND)/ National ID</OPTION>
+        <OPTION VALUE="SPAD">SPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SPBL">SPBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="SPEC">SPEC - BIÊN NHẬN SỐ TIỀN TRẢ TRƯỚC CỦA KH</OPTION>
+        <OPTION VALUE="SPEN">SPEN - Sổ hưu trí/ Pension book</OPTION>
+        <OPTION VALUE="SPIC">SPIC - Hình khách hàng/ Client photo</OPTION>
+        <OPTION VALUE="SPID">SPID - Thẻ căn cước công dân/ People's Identity card</OPTION>
+        <OPTION VALUE="SPIN">SPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SPLW">SPLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="SPMS">SPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SPOG">SPOG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="SPPA">SPPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="SPPT">SPPT - Hộ chiếu (PP)/ Passport</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SRIN">SRIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SSCFC">SSCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SSICS">SSICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SSIW">SSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSLIC">SSLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSLICE">SSLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSMBFP">SSMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SSMCA">SSMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSMIN">SSMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSPAD">SSPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SSPIN">SSPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SSPMS">SSPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SSSIW">SSSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSUPA">SSUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="STAX">STAX - Chứng từ thuế/ Tax invoice</OPTION>
+        <OPTION VALUE="STCA">STCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="STRC">STRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="SUPA">SUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="SVAT">SVAT - HÓA ĐƠN VAT</OPTION>
+        <OPTION VALUE="TCA">TCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="TRC">TRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="VAT">VAT - HÓA ĐƠN VAT</OPTION>
+      </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML;
+      $(".select_file_type").select2({
+        allowClear: true,
+      });
+    },
+    onFileSelect: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileSelect - " + value + "</li>");
+    },
+    afterFileSelect: function (element, value, master_element) {
+      $("#F9-Log").append("<li>afterFileSelect - " + value + "</li>");
+    },
+    onFileInvalid: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileInvalid - " + value + "</li>");
+    },
+    onFileDuplicate: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileDuplicate - " + value + "</li>");
+    },
+    onFileTooMany: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooMany - " + value + "</li>");
+    },
+    onFileTooBig: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooBig - " + value + "</li>");
+    },
+    onFileTooMuch: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
+    },
+  });
 });
 var saveFullLoan = () => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income);
-  form_data.other_income = parseInt(form_data.other_income);
-  form_data.monthly_expense = parseInt(form_data.monthly_expense);
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  // form_data.dsa_agent_code = "trainee.01";
+  form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
