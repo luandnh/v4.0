@@ -1447,8 +1447,8 @@
                                     <div class="col-sm-12" id="product_name_detail">
                                     </div>
                                     <div class="col-sm-12" style="padding-bottom: 10px;">
-                                        <label class="form_label" for="attachment_files"><?= $lh->translationFor('upload_attach') ?></label>
-                                        <input multiple type="file" id="attachment_files" class="attachment-input" />
+                                        <label class="form_label" for="attachment_files2"><?= $lh->translationFor('upload_attach') ?></label>
+                                        <input multiple type="file" id="attachment_files2" class="attachment-input" />
                                     </div>
                                     <div class="col-sm-12">
                                         <button class="btn btn-warning" id="submit_attachment"><?= $lh->translationFor('submit_attachment') ?></button>

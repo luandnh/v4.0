@@ -1,3 +1,4 @@
+console.log("agent-easy-credit-v1");
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
 var is_upload_id_card = false;
@@ -209,7 +210,8 @@ $(document).ready(() => {
       formData.append("file", file);
       var upload_status = true;
       var settings = {
-        url: CRM_API_URL+"/v1/document/upload",
+        //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -268,7 +270,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -321,7 +324,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -375,7 +379,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -397,7 +402,7 @@ $(document).ready(() => {
       .success((result, status, error) => {
         let resp = JSON.parse(result);
         if (resp.status == "success") {
-          $("input[name='img_selfie']")[0].value = resp.file_name;
+          $("input[name='img_selfie2']")[0].value = resp.file_name;
           isUploadedDocs[0] = true;
           AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
@@ -428,7 +433,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
+      //url: CRM_API_URL+"/v1/document/upload",
+      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -450,7 +456,7 @@ $(document).ready(() => {
       .success((result, status, error) => {
         let resp = JSON.parse(result);
         if (resp.status == "success") {
-          $("input[name='img_id_card']")[0].value = resp.file_name;
+          $("input[name='img_id_card2']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
           isUploadedDocs[1] = true;
           AllowSelectOffer();
@@ -1595,16 +1601,16 @@ $("#full-loan-form").on("submit", (e) => {
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replace(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replace(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replace(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  // form_data.dsa_agent_code = "trainee.01";
+  form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1619,11 +1625,16 @@ $("#full-loan-form").on("submit", (e) => {
   // form_data = getFormData();
   form_data.request_id = request_id.value;
   form_data.partner_code = partner_code.value
-
   form_data.identity_card_id = $('#full-loan-form input[name="identity_card_id"]').val()
   //
+  if (form_data.img_selfie == undefined || form_data.img_selfie == ""){
+    form_data.img_selfie = form_data.img_selfie2;
+  }
+  if (form_data.img_id_card == undefined || form_data.img_id_card == ""){
+    form_data.img_id_card = form_data.img_id_card2;
+  }
+  form_data.dsa_agent_code = "trainee.01";
   let post_data = JSON.stringify(form_data);
-  // form_data.dsa_agent_code = "trainee.01";
 
   $("#offer-waiting").attr("hidden", false);
   // post to EC
@@ -2043,21 +2054,138 @@ $(function () {
       $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
     },
   });
+  
+  $("#attachment_files2").MultiFile({
+    onFileRemove: function (element, value, master_element) {
+      console.log("Remove");
+      $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
+    },
+    afterFileRemove: function (element, value, master_element) {
+      console.log("After remove");
+      $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
+    },
+    onFileAppend: function (element, value, master_element) {
+      console.log("After Append");
+    },
+    afterFileAppend: function (element, value, master_element) {
+      var last_mdf = element.files[0].lastModified + element.files[0].name;
+      $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
+        `<SELECT name='${last_mdf}' class="select_file_type">
+        <OPTION VALUE="BPM">BPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="GDN">GDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="HK9">HK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="KT3">KT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="PBL">PBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="PLW">PLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="POG">POG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="PPA">PPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="PTC">PTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="RIN">RIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
+        <OPTION VALUE="SBIZ">SBIZ - Giấy phép kinh doanh/ Business license</OPTION>
+        <OPTION VALUE="SBPM">SBPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
+        <OPTION VALUE="SCCS">SCCS - Sao kê thẻ tín dụng/ Credit card statement</OPTION>
+        <OPTION VALUE="SCDR">SCDR - BIÊN BẢN BÀN GIAO HÀNG HÓA</OPTION>
+        <OPTION VALUE="SCFC">SCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SCOV">SCOV - BẢN SAO HÓA ĐƠN GIÁ TRỊ GIA TĂNG</OPTION>
+        <OPTION VALUE="SDEB">SDEB - PHIẾU GIAO HÀNG</OPTION>
+        <OPTION VALUE="SDRL">SDRL - Giấy phép lái xe (GPLX)/ Driving license</OPTION>
+        <OPTION VALUE="SEB1">SEB1 - Hóa đơn điện dưới 600,000 VND/ Electricity bill less 600</OPTION>
+        <OPTION VALUE="SEB2">SEB2 - Hóa đơn điện từ 600,000 VND/ Electricity bill more 600</OPTION>
+        <OPTION VALUE="SFRB">SFRB - Sổ hộ khẩu (SHK)/ Family registration book</OPTION>
+        <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
+        <OPTION VALUE="SGOD">SGOD - CHỨNG TỪ GIAO HÀNG</OPTION>
+        <OPTION VALUE="SHIC">SHIC - Thẻ BHYT/ Health insurance card</OPTION>
+        <OPTION VALUE="SHK9">SHK9 - SỔ TẠM TRÚ HK09</OPTION>
+        <OPTION VALUE="SICS">SICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SINP">SINP - HĐBH/ Insurance policy</OPTION>
+        <OPTION VALUE="SKT3">SKT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
+        <OPTION VALUE="SLBC">SLBC - HĐLĐ (LB)/ Labor contract</OPTION>
+        <OPTION VALUE="SLCT">SLCT - Hợp đồng vay (HĐV)/ Loan contract</OPTION>
+        <OPTION VALUE="SLIC">SLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SLICE">SLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SMBFP">SMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SMCA">SMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SMIN">SMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SNID">SNID - Chứng minh nhân nhân (CMND)/ National ID</OPTION>
+        <OPTION VALUE="SPAD">SPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SPBL">SPBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
+        <OPTION VALUE="SPEC">SPEC - BIÊN NHẬN SỐ TIỀN TRẢ TRƯỚC CỦA KH</OPTION>
+        <OPTION VALUE="SPEN">SPEN - Sổ hưu trí/ Pension book</OPTION>
+        <OPTION VALUE="SPIC">SPIC - Hình khách hàng/ Client photo</OPTION>
+        <OPTION VALUE="SPID">SPID - Thẻ căn cước công dân/ People's Identity card</OPTION>
+        <OPTION VALUE="SPIN">SPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SPLW">SPLW - HÌNH ẢNH WEBSITE</OPTION>
+        <OPTION VALUE="SPMS">SPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SPOG">SPOG - HÌNH ẢNH HÀNG HÓA</OPTION>
+        <OPTION VALUE="SPPA">SPPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
+        <OPTION VALUE="SPPT">SPPT - Hộ chiếu (PP)/ Passport</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
+        <OPTION VALUE="SRIN">SRIN - HÓA ĐƠN BÁN LẺ</OPTION>
+        <OPTION VALUE="SSCFC">SSCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
+        <OPTION VALUE="SSICS">SSICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
+        <OPTION VALUE="SSIW">SSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSLIC">SSLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSLICE">SSLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
+        <OPTION VALUE="SSMBFP">SSMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
+        <OPTION VALUE="SSMCA">SSMCA - THẺ HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSMIN">SSMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
+        <OPTION VALUE="SSPAD">SSPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
+        <OPTION VALUE="SSPIN">SSPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
+        <OPTION VALUE="SSPMS">SSPMS - LỊCH THANH TOÁN</OPTION>
+        <OPTION VALUE="SSSIW">SSSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
+        <OPTION VALUE="SSUPA">SSUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="STAX">STAX - Chứng từ thuế/ Tax invoice</OPTION>
+        <OPTION VALUE="STCA">STCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="STRC">STRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="SUPA">SUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
+        <OPTION VALUE="SVAT">SVAT - HÓA ĐƠN VAT</OPTION>
+        <OPTION VALUE="TCA">TCA - THẺ TẠM TRÚ</OPTION>
+        <OPTION VALUE="TRC">TRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
+        <OPTION VALUE="VAT">VAT - HÓA ĐƠN VAT</OPTION>
+      </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML;
+      $(".select_file_type").select2({
+        allowClear: true,
+      });
+    },
+    onFileSelect: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileSelect - " + value + "</li>");
+    },
+    afterFileSelect: function (element, value, master_element) {
+      $("#F9-Log").append("<li>afterFileSelect - " + value + "</li>");
+    },
+    onFileInvalid: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileInvalid - " + value + "</li>");
+    },
+    onFileDuplicate: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileDuplicate - " + value + "</li>");
+    },
+    onFileTooMany: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooMany - " + value + "</li>");
+    },
+    onFileTooBig: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooBig - " + value + "</li>");
+    },
+    onFileTooMuch: function (element, value, master_element) {
+      $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
+    },
+  });
 });
 var saveFullLoan = () => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income);
-  form_data.other_income = parseInt(form_data.other_income);
-  form_data.monthly_expense = parseInt(form_data.monthly_expense);
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  // form_data.dsa_agent_code = "trainee.01";
+  form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
