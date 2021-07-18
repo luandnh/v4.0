@@ -207,7 +207,7 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 
 		<!-- CHAT -->	
 	        <!-- <script src="modules/GoChat/js/chat.js"></script> -->
-		<link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
+		<link href="modules/GOagent/js/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
 		<style>
 		#create-offer-table {
 			font-family: Arial, Helvetica, sans-serif;
@@ -3234,13 +3234,13 @@ dding-top: 10px;">
 			});
 		</script>
 		<?php } //end if ECCS_BLIND_MODE ?>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+		<script type="text/javascript" src="modules/GOagent/js/daterangepicker.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="modules/GOagent/js/daterangepicker.css" />
 		<script type="text/javascript" src="modules/GOagent/js/pitel/variable.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js" defer></script>
-		<script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-call-log.js" defer></script>
