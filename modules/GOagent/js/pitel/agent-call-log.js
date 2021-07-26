@@ -302,52 +302,45 @@ function LoadProductivityLogs() {
         data: result.data,
         columns: [
           {
-            title: "Team",
-            data: "user_group"
-          },
-          {
-            title: "USER",
+            title: "Ngày tạo",
+            data: "entry_date",
+            render: (data) => {
+              return moment(data).subtract(7, "h").format("DD-MM-YYYY HH:mm:ss");
+            },
+          },{
+            title: "Người tạo",
             data: "user"
-          },
-          {
-            title: "Customer",
-            data: "total_talk",
-            render(data){
-              return converter(data);
+          },{
+            title: "Partner Code",
+            data: "partner_code"
+          },{
+            title: "SDT",
+            data: "phone_number"
+          },{
+            title: "Tên khách hàng",
+            data: "customername"
+          },{
+            title: "Request ID",
+            data: "request_id"
+          },{
+            title: "Trạng thái hợp đồng",
+            data: "app_status"
+          },{
+            title: "Mã hợp đồng",
+            data: "proposal_id"
+          },{
+            title: "#",
+            data: {
+              lead_id: "lead_id",
+              phone_number: "phone_number",
+              phone_code: "phone_code",
+            },
+            render: (data) => {
+              return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
+                '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
             }
-          },
-          {
-            title: "Total call",
-            data: "total_call",
-          },
-          {
-            title: "Answer",
-            data: "answer",
-          },
-          {
-            title: "No answer",
-            data: "noanswer",
-          },
-          {
-            title: "Busy",
-            data: "busy",
-          },
-          {
-            title: "Cancel",
-            data: "cancel",
-          },
-          {
-            title: "Denied",
-            data: "denied",
-          },
-          {
-            title: "Sip_erro",
-            data: "sip_erro",
-          },
-          {
-            title: "Unknown",
-            data: "unknown",
           }
+          // lead_id	entry_date	modify_date	user	list_id	phone_number	first_name	middle_initial	last_name	partner_code	sale_code	app_status	reject_reason	request_id	proposal_id	phone_code alt_phone	last_local_call_time
         ],
       });
     },
