@@ -210,8 +210,8 @@ $(document).ready(() => {
       formData.append("file", file);
       var upload_status = true;
       var settings = {
-        //url: CRM_API_URL+"/v1/document/upload",
-      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+        url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -224,7 +224,7 @@ $(document).ready(() => {
           console.log(result);
           let msg = "Please contact developer!";
           isUploadedDocs[2] = false;
-          AllowSelectOffer();
+          // AllowSelectOffer();
           if (result.message !== undefined) {
             msg = result.message;
           }
@@ -237,7 +237,7 @@ $(document).ready(() => {
             list_doc_collecting.push(doc);
             
             isUploadedDocs[2] = true;
-            AllowSelectOffer();
+            // AllowSelectOffer();
             swal(
               "Upload file success!",
               "Upload attachment success",
@@ -257,8 +257,8 @@ $(document).ready(() => {
       return;
     }
     // TEST 
-    $("#full-loan-form input[name='identity_card_id']").val("215491214");
-    $("#identity_number").val("215491214");
+    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
+    // $("#identity_number").val("215491214");
     // 
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
@@ -270,8 +270,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      //url: CRM_API_URL+"/v1/document/upload",
-      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -283,7 +283,7 @@ $(document).ready(() => {
       .fail((result, status, error) => {
         console.log(result);
         isUploadedDocs[0] = false;
-        AllowSelectOffer();
+        // AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -295,7 +295,7 @@ $(document).ready(() => {
         if (resp.status == "success") {
           $("input[name='img_selfie']")[0].value = resp.file_name;
           isUploadedDocs[0] = true;
-          AllowSelectOffer();
+          // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
           console.log(resp);
         }
@@ -324,8 +324,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      //url: CRM_API_URL+"/v1/document/upload",
-      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",0
       method: "POST",
       timeout: 0,
       processData: false,
@@ -337,7 +337,7 @@ $(document).ready(() => {
       .fail((result, status, error) => {
         console.log(result);
         isUploadedDocs[1] = false;
-        AllowSelectOffer();
+        // AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -350,7 +350,7 @@ $(document).ready(() => {
           $("input[name='img_id_card']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
           isUploadedDocs[1] = true;
-          AllowSelectOffer();
+          // AllowSelectOffer();
         }
       });
   });
@@ -379,8 +379,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      //url: CRM_API_URL+"/v1/document/upload",
-      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -392,7 +392,7 @@ $(document).ready(() => {
       .fail((result, status, error) => {
         console.log(result);
         isUploadedDocs[0] = false;
-        AllowSelectOffer();
+        // AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -404,7 +404,7 @@ $(document).ready(() => {
         if (resp.status == "success") {
           $("input[name='img_selfie2']")[0].value = resp.file_name;
           isUploadedDocs[0] = true;
-          AllowSelectOffer();
+          // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
           console.log(resp);
         }
@@ -433,8 +433,8 @@ $(document).ready(() => {
     formData.append("file", files[0]);
     formData.append("identity_number", identity_number);
     var settings = {
-      //url: CRM_API_URL+"/v1/document/upload",
-      url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -446,7 +446,7 @@ $(document).ready(() => {
       .fail((result, status, error) => {
         console.log(result);
         isUploadedDocs[1] = false;
-        AllowSelectOffer();
+        // AllowSelectOffer();
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
@@ -459,7 +459,7 @@ $(document).ready(() => {
           $("input[name='img_id_card2']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
           isUploadedDocs[1] = true;
-          AllowSelectOffer();
+          // AllowSelectOffer();
         }
       });
   });
@@ -753,7 +753,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     method: "POST",
     timeout: 0,
     headers: {
-      Authorization: "Bearer "+CRM_TOKEN,
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: JSON.stringify({
@@ -811,7 +811,7 @@ $(document).on("click", "#submit-offer", function (e) {
     async: true,
     dataType: "json",
     headers: {
-      Authorization: "Bearer "+CRM_TOKEN,
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
   })
@@ -885,7 +885,7 @@ $("#eligible_btn").on("click", (e) => {
       dataType: "json",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer "+CRM_TOKEN,
+        // Authorization: "Bearer "+CRM_TOKEN,
       },
     })
       .fail((result, status, error) => {
@@ -1023,6 +1023,7 @@ let SyncFullLoanFromAPI = (request_id) => {
       try {
         let data = result.data;
         let document = data.document;
+        
         for (const property in document) {
           $("#full-loan-form input[name='" + property + "']")
             .val(document[property])
@@ -1067,6 +1068,7 @@ let SyncFullLoanFromAPI = (request_id) => {
           .val(document["workplace_ward"])
           .trigger("change")
           .selectpicker("refresh");
+          
         if ($("select[name='disbursement_method']").val() != "CASH") {
           $("select[name='bank_code']")
             .val(document["bank_code"])
@@ -1093,6 +1095,25 @@ let SyncFullLoanFromAPI = (request_id) => {
         $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
         $("#full-loan-form input[name='term_confirm']").prop('checked', true)
         $("input[tag='currency']").trigger('blur');
+        $("input[name='range_loan_tenor']").trigger('input');
+        $("input[name='range_loan_amount']").trigger('input');
+        if (document['check_same_address'] == 'on'){
+          $("input[name='check_same_address']").prop('checked', true).trigger('change');
+        } else{
+          $("input[name='check_same_address']").prop('checked', false).trigger('change');
+            $("select[name='permanent_province']")
+            .val(document["permanent_province"])
+            .trigger("change")
+            .selectpicker("refresh");
+          $("select[name='permanent_district']")
+            .val(document["permanent_district"])
+            .trigger("change")
+            .selectpicker("refresh");
+          $("select[name='permanent_ward']")
+            .val(document["permanent_ward"])
+            .trigger("change")
+            .selectpicker("refresh");
+        }
         getProductType();
         SyncFullLoanFromContact();
       } catch (error) {
@@ -1343,9 +1364,9 @@ let SyncFullLoanFromContact = () => {
     $("#full-loan-form input[name='" + property + "']").val(tmp_data[property]);
   }
   $("#full-loan-form select[name='gender']").val(tmp_data.gender);
-  if (!$("#full-loan-form input[name='check_same_address']").is(":checked")) {
-    $("#full-loan-form input[name='check_same_address']").click();
-  }
+  // if (!$("#full-loan-form input[name='check_same_address']").is(":checked")) {
+  //   $("#full-loan-form input[name='check_same_address']").click();
+  // }
   $("#full-loan-form input[name='issue_date']")
     .val($(".formMain input[name='identity_issued_on']").val())
     .trigger("change");
@@ -1581,15 +1602,15 @@ $(document).on("click", 'input[name="select_insurance"]', function () {
   if (tmp_data2 == undefined) {
     tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
   }
-  selected_offer_insurance_type = tmp_data2.type;
-  percent_insurance = tmp_data2.percent_insurance;
-  insurance_amount = tmp_data2.mount;
+  selected_offer_insurance_type = tmp_data2.insurance_type;
+  percent_insurance = tmp_data2.percentage_insurance;
+  insurance_amount = tmp_data2.insurance_amount;
   // SetCustomerOfferDetail();
 });
 
 $("#submit-docs").on("click", (e) => {
   // TEST 
-  $(".formMain input[name='request_id']").val("SPO1610530540234")
+  // $(".formMain input[name='request_id']").val("SPO1610530540234")
   // 
   $("#submit_img_selfie").click();
   $("#submit_attachment").click();
@@ -1610,7 +1631,7 @@ $("#full-loan-form").on("submit", (e) => {
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
   // QUANG
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,
@@ -1633,7 +1654,7 @@ $("#full-loan-form").on("submit", (e) => {
   if (form_data.img_id_card == undefined || form_data.img_id_card == ""){
     form_data.img_id_card = form_data.img_id_card2;
   }
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
   let post_data = JSON.stringify(form_data);
 
   $("#offer-waiting").attr("hidden", false);
@@ -1643,7 +1664,7 @@ $("#full-loan-form").on("submit", (e) => {
     method: "POST",
     timeout: 0,
     headers: {
-      Authorization: "Bearer "+CRM_TOKEN,
+      // Authorization: "Bearer "+CRM_TOKEN,
       "Content-Type": "application/json",
     },
     data: post_data,
@@ -1813,7 +1834,7 @@ function SetOfferDetail(offerList) {
       },
       {
         title: "Kỳ hạn",
-        data: "tenor",
+        data: "offer_tenor",
       },
       {
         title: "Số tiền vay ít nhất",
@@ -1845,7 +1866,7 @@ function SetOfferDetail(offerList) {
       },
       {
         title: "Offer Variant",
-        data: "offer_var",
+        data: "offer_variant",
       },
       {
         title: "Loại",
@@ -1880,11 +1901,11 @@ function SetOfferDetail(offerList) {
       columns: [
         {
           title: "Loại",
-          data: "type",
+          data: "insurance_type",
         },
         {
           title: "Phí bảo hiểm",
-          data: "amount",
+          data: "insurance_amount",
           render: (data) => {
             result =
               data != null
@@ -1898,7 +1919,7 @@ function SetOfferDetail(offerList) {
         },
         {
           title: "Tỉ lệ",
-          data: "percent_insurance",
+          data: "percentage_insurance",
           render: (data) => {
             return data + "%";
           },
@@ -1909,7 +1930,7 @@ function SetOfferDetail(offerList) {
         },
         {
           title: "Chọn bảo hiểm",
-          data: "type",
+          data: "insurance_type",
           render: (data) => {
             return `<input type="radio" name="select_insurance" value="${data}" />`;
           },
@@ -1929,7 +1950,7 @@ function SetOfferDetail(offerList) {
   $("#offer-waiting").attr("hidden", true);
   $("#submit-offer").attr("hidden", false);
   isUploadedDocs = [false,false, false]
-  $("#submit-offer").attr('disabled',true);
+  $("#submit-offer").attr('disabled',false);
 }
 
 function capitalize(string) {
@@ -2184,8 +2205,11 @@ var saveFullLoan = () => {
   form_data.annual_profit = parseInt(form_data.annual_profit);
   form_data.monthly_revenue = parseInt(form_data.monthly_revenue);
   form_data.monthly_profit = parseInt(form_data.monthly_profit);
+  if (form_data.check_same_address != "on"){
+      form_data.check_same_address = "off" 
+  }
   // QUANG
-  form_data.dsa_agent_code = "trainee.01";
+  // form_data.dsa_agent_code = "trainee.01";
   form_data.list_doc_collecting = list_doc_collecting;
   form_data.date_of_birth = moment(
     form_data.date_of_birth,

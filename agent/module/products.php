@@ -63,21 +63,21 @@
                         </div>
                         <div class="row" style="margin-bottom: 10px;">
                             <div class="col-sm-12">
-                                <button id="submit_img_id_card" class="btn btn-warning">submit_img_id_card</button>
+                                <button id="submit_img_id_card" class="btn btn-warning">Upload ID Card</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="row">
                             <div class="col-sm-12" style="padding-bottom: 10px;">
-                                <label class="form_label" for="img_selfie">img_selfie</label>
+                                <label class="form_label" for="img_selfie">Image Selfie</label>
                                     <input type="text" name="img_selfie" class="id_img_hide" required />
                                     <input type="file" id="img_selfie" class="id_img custom-file-input" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <button id="submit_img_selfie" class="btn btn-warning">submit_img_selfie</button>
+                                <button id="submit_img_selfie" class="btn btn-warning">Upload Selfie</button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <!-- <div class="col-sm-12">
                         <div id="product_detail" class="row">
                             <div class="col-xl-12 col-lg-12">
                                 <label style="font-size: large;" id="product_required_description">Chứng từ bắt buộc </label>
@@ -115,23 +115,23 @@
                                     <input type="text" name="product_required_document" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
                                     <label style="font-size: large;">Mã chứng từ bắt buộc: </label>
                                 </div>
-                            </div>
                         </div>
-                    </div>
+                        </div>
+                    </div> -->
                     <div class="col-sm-12" id="product_name_detail">
                     </div>
                     <div class="col-sm-12" style="padding-bottom: 10px;">
-                        <label class="form_label" for="attachment_files">upload_attach</label>
+                        <label class="form_label" for="attachment_files">DOCUMENTS</label>
                         <input multiple type="file" id="attachment_files" class="attachment-input" />
                     </div>
                     <div class="col-sm-12">
-                        <button class="btn btn-warning" id="submit_attachment">submit_attachment</button>
+                        <button class="btn btn-warning" id="submit_attachment">Upload Docs</button>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6">
+                    <!-- <div class="col-xl-6 col-lg-6">
                         <button class="btn btn-primary" id="submit-docs" > Gửi Chứng Từ </button>
-                    </div>
+                    </div> -->
                     <div class="col-xl-6 col-lg-6">
                         <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
                     </div>
@@ -1354,7 +1354,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input value="<?= $_SESSION['user'] ?>" readonly type="text" name="dsa_agent_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input value="<?= $_SESSION['user'] ?>" type="text" name="dsa_agent_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="dsa_agent_code"><?= $lh->translationFor('dsa_agent_code') ?></label>
                                         </div>
                                     </div>
