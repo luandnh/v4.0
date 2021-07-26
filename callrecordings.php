@@ -860,6 +860,12 @@ $perm = $api->goGetPermissions('recordings');
 							$('#search_button').text("<?php print $lh->translationFor("search"); ?>");
 							$('#search_button').attr("disabled", false);
 							json.data = data.data;
+							if (data.data == null){
+								json.data = [];
+							}
+							if (data.total == null){
+								json.total = 0;
+							}
 							json.recordsTotal = data.total;
 							json.recordsFiltered = data.total;
 							cacheLastJson = $.extend(true, {}, json);
