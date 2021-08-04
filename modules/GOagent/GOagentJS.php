@@ -7630,6 +7630,13 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     $(".formMain input[name='identity_number']").val(thisVdata.identity_number).trigger('change');
                     $(".formMain input[name='identity_issued_on']").val(thisVdata.identity_issued_on);
                     $(".formMain select[name='identity_issued_by']").val(thisVdata.identity_issued_by).trigger('change');
+                    try {
+                        $(".formMain input[name='alt_identity_number']").val(thisVdata.alt_identity_number).trigger('change');
+                        $(".formMain input[name='alt_identity_issued_on']").val(thisVdata.alt_identity_issued_on);
+                        $(".formMain select[name='alt_identity_issued_by']").val(thisVdata.alt_identity_issued_by).trigger('change');
+                    } catch (error) {
+                        
+                    }
                     $("#call_notes").val(thisVdata.call_notes)
                     //Vendor
                     $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code).trigger('change');
