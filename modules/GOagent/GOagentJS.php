@@ -3665,7 +3665,7 @@ function CheckForIncoming () {
                 $(".formMain input[name='identity_issued_on']").val(this_VDIC_data.identity_issued_on);
                 $(".formMain select[name='identity_issued_by']").val(this_VDIC_data.identity_issued_by).trigger('change');
                 
-                $("#call_notes").val(thisVdata.call_notes)
+                $("#call_notes").val(this_VDIC_data.call_notes)
                 //Vendor
                 $(".formMain input[name='vendor_lead_code']").val(this_VDIC_data.vendor_lead_code).trigger('change');
                 $(".formMain input[name='partner_code']").val(this_VDIC_data.partner_code).trigger('change');
@@ -6906,7 +6906,13 @@ function CustomerData_update() {
         //EASYCREDIT
         goIdentityNumber: $(".formMain input[name='identity_number']").val(),
         goIdentityIssuedOn: $(".formMain input[name='identity_issued_on']").val(),
-        goIdentityIssuedBy: $(".formMain input[name='identity_issued_by']").val(),
+        goIdentityIssuedBy: $(".formMain select[name='identity_issued_by']").val(),
+        // 
+        
+        goAltIdentityNumber: $(".formMain input[name='alt_identity_number']").val(),
+        goAltIdentityIssuedOn: $(".formMain input[name='alt_identity_issued_on']").val(),
+        goAltIdentityIssuedBy: $(".formMain select[name='alt_identity_issued_by']").val(),
+        // 
         goPartnerCode: $(".formMain input[name='partner_code']").val(),
         goRequestId: $(".formMain input[name='request_id']").val(),
         //EASYCREDIT
