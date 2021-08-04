@@ -849,12 +849,28 @@ $("#eligible_btn").on("click", (e) => {
     let first_name = $(".formMain input[name='first_name']").val();
     let middle_initial = $(".formMain input[name='middle_initial']").val();
     let last_name = $(".formMain input[name='last_name']").val();
-    let customer_name = first_name + " " + middle_initial + " " + last_name;
+    let customer_name = first_name;
+    if (middle_initial == ""){
+      customer_name =customer_name+ " " + last_name;
+    }
+    else{
+      customer_name = customer_name
+      + " " + middle_initial + " " + last_name;
+    }
     let phone_number =
       $(".formMain input[name='phone_code']").val() +
       $(".formMain input[name='phone_number']").val();
     let date_of_birth = $(".formMain input[name='date_of_birth']").val();
+    // 
     let issue_date = $(".formMain input[name='identity_issued_on']").val();
+    let id_number = $(".formMain input[name='identity_number']").val();
+    let id_place = $(".formMain select[name='identity_issued_by']").val();
+    // CHECK ALT IDENTITY CARD
+    if ($(".formMain input[name='alt_identity_number']").val() != ""){
+      id_number = $(".formMain input[name='alt_identity_number']").val() ;
+      issue_date = $(".formMain input[name='alt_identity_issued_on']").val();
+      id_place = $(".formMain select[name='alt_identity_issued_by']").val();
+    }
     let tem_province = $(".formMain input[name='province']").val();
     let job_type = $(".formMain input[name='job_type']").val();
     date_of_birth = moment(date_of_birth, "YYYY-MM-DD").format("DD-MM-YYYY");
@@ -865,12 +881,12 @@ $("#eligible_btn").on("click", (e) => {
       channel: "DSA",
       partner_code: partner_code,
       dsa_agent_code: user,
-      identity_card_id: $(".formMain input[name='identity_number']").val(),
+      identity_card_id: id_number,
       date_of_birth: date_of_birth,
       customer_name: customer_name,
       issue_date: issue_date,
       phone_number: phone_number,
-      issue_place: $(".formMain select[name='identity_issued_by']").val(),
+      issue_place: id_place,
       email: $(".formMain input[name='email']").val(),
       tem_province: tem_province,
       job_type: job_type,
@@ -1111,6 +1127,7 @@ let SyncFullLoanFromAPI = (request_id) => {
         $("#full-loan-form input[name='date_of_birth']").val(
           moment(document["date_of_birth"], "DD-MM-YYYY").format("YYYY-MM-DD")
         );
+        // 
         $("#full-loan-form input[name='issue_date']")
           .val($(".formMain input[name='identity_issued_on']").val())
           .trigger("change");
@@ -1126,6 +1143,12 @@ let SyncFullLoanFromAPI = (request_id) => {
         $(`input[name='simu_insurance']`)[1].value = "6";
         $(`input[name='simu_insurance']`)[2].value = "8";
         $(`input[name='simu_insurance'][value='${data.document.simu_insurance}']`).click().trigger('change')
+        simulator();
+        $(".formMain input[name='city']").val(document.tem_ward)
+        $(".formMain input[name='address1']").val(document.tem_address)
+        $(".formMain select[name='gender']").val(document.gender);
+        console.log(document);
+        $("input[name='tem_address']").val(document.tem_address);
         // 
         if (document['check_same_address'] == 'on'){
           $("input[name='check_same_address']").prop('checked', true).trigger('change');
@@ -1404,6 +1427,12 @@ let SyncFullLoanFromContact = () => {
   $("#full-loan-form select[name='issue_place']")
     .val($(".formMain select[name='identity_issued_by']").val())
     .trigger("change").selectpicker("refresh");
+  // CHECK ALT IDENTITY
+  if ($(".formMain select[name='identity_issued_by']").val()!= ""){
+    $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='alt_identity_number']").val()).trigger("change");
+    $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='alt_identity_issued_on']").val()).trigger("change");
+    $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='alt_identity_issued_by']").val()).trigger("change").selectpicker("refresh");
+  }
   $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
   $("#full-loan-form input[name='term_confirm']").prop('checked', true)
   $("input[tag='currency']").trigger('blur');
