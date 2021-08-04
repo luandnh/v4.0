@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
+                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;" hidden>
                     <div class="col-xl-12 col-lg-12">
                         <div class="row">
                             <div class="col-xl-4 col-lg-4">
@@ -102,23 +102,23 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-12">
+                    <div class="col-sm-12">
                         <div id="product_detail" class="row">
-                            <div class="col-xl-12 col-lg-12">
-                                <label style="font-size: large;" id="product_required_description">Chứng từ bắt buộc </label>
+                            <!-- <div class="col-xl-12 col-lg-12">
+                                <label style="font-size: large;" id="product_required_description_offer">Chứng từ bắt buộc </label>
                             </div>
                             <div class="col-xl-12 col-lg-12">
                                 <hr style="margin: 5px !important;">
-                            </div>
-                            <div class="col-xl-12 col-lg-12">
+                            </div> -->
+                            <!-- <div class="col-xl-12 col-lg-12">
                                 <div class="mda-form-group label-floating">
-                                    <input type="text" name="product_required_document" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
+                                    <input type="text" name="product_required_document_offer" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
                                     <label style="font-size: large;">Mã chứng từ bắt buộc: </label>
                                 </div>
+                            </div> -->
                         </div>
-                        </div>
-                    </div> -->
-                    <div class="col-sm-12" id="product_name_detail">
+                    </div>
+                    <div class="col-sm-12" id="product_name_detail_offer">
                     </div>
                     <div class="col-sm-12" style="padding-bottom: 10px;">
                         <label class="form_label" for="attachment_files">DOCUMENTS</label>

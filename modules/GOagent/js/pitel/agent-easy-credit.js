@@ -795,11 +795,14 @@ $(document).on("click", "#submit-offer", function (e) {
     swal("Choose offer fail!", "Please Choose Insurace Type", "error");
     return;
   }
+  if (selected_offer_insurance_type=="NO"){
+    selected_offer_insurance_type = "";
+  }
   let offer_data = {
     request_id: loan_request_id,
     partner_code: partner_code,
     selected_offer_id: selected_offer_id,
-    selected_offer_amount: selected_offer_amount.toString(),
+    selected_offer_amount: selected_offer_amount,
     selected_offer_insurance_type: selected_offer_insurance_type,
   };
 
@@ -944,23 +947,36 @@ $("#eligible_btn").on("click", (e) => {
 });
 let getProductType = () => {
   var docs_string = "";
+  var offder_product_names;
+  var offder_docs_string = "";
+  var uploaded_docs = ["SPID","SFRB"]
   var product_names = `<div class="row">
                           <div class="col-lg-12">
                             <label style="font-size: large;">Chứng từ bắt buộc </label>
                           </div>
                         </div>`;
+  var offder_product_names = `<div class="row">
+  <div class="col-lg-12">
+    <label style="font-size: large;">Chứng từ bổ sung</label>
+  </div>
+</div>`;   
   for (var i = 0; i < selected_product.document_collecting.length; i++) {
-
+    let is_uploaded_docs = false;
     let docs = selected_product.document_collecting[i];
-    product_names += `<div class="row">`;
-    product_names += `
+    tmp_product_names = "";
+    tmp_product_names += `<div class="row">`;
+    tmp_product_names += `
     <div class="col-lg-12">
       <label>${i + 1}/ ${docs.bundle_code} -  ${docs.bundle_name} . Tối thiểu: ${docs.min_request} loại giấy tờ</label>
     </div>`;
     let tmp_string = "[";
     for (var j = 0; j < docs.doc_list.length; j++) {
       tmp_string += docs.doc_list[j].doc_type;
-      product_names += `
+      if (uploaded_docs.includes(docs.doc_list[j].doc_type))
+      {
+        is_uploaded_docs = true;
+      }
+      tmp_product_names += `
         <div class="col-lg-3">
           <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_description_vi}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
         </div>
@@ -971,8 +987,13 @@ let getProductType = () => {
     }
     tmp_string += "]";
     docs_string += tmp_string;
-    product_names += `</div><hr style="margin : 10px">`;
 
+    tmp_product_names += `</div><hr style="margin : 10px">`;
+    product_names+= tmp_product_names;
+    if (!is_uploaded_docs){
+      offder_product_names+= tmp_product_names.replaceAll("1/ ","- ").replaceAll("2/ ","- ").replaceAll("3/ ","- ")
+    }
+    // offder_product_names += `</div><hr style="margin : 10px">`;
     if (i != selected_product.document_collecting.length - 1) {
       docs_string += " && ";
     }
@@ -980,6 +1001,10 @@ let getProductType = () => {
   $("input[name='product_required_document']").val(docs_string);
   $("#product_name_detail").empty();
   $("#product_name_detail")[0].innerHTML = product_names;
+// 
+  // $("input[name='product_required_document_offer']").val(docs_string);
+  $("#product_name_detail_offer").empty();
+  $("#product_name_detail_offer")[0].innerHTML = offder_product_names;
 
   console.log(docs_string);
 };
@@ -1097,6 +1122,8 @@ let SyncFullLoanFromAPI = (request_id) => {
         $("input[tag='currency']").trigger('blur');
         $("input[name='range_loan_tenor']").trigger('input');
         $("input[name='range_loan_amount']").trigger('input');
+        $(`input[name='simu_insurance'][value='${data.document.simu_insurance}']`).click().trigger('change')
+        // 
         if (document['check_same_address'] == 'on'){
           $("input[name='check_same_address']").prop('checked', true).trigger('change');
         } else{
@@ -1602,9 +1629,9 @@ $(document).on("click", 'input[name="select_insurance"]', function () {
   if (tmp_data2 == undefined) {
     tmp_data2 = offerinsurancetable.row($(this).closest("tr")).data();
   }
-  selected_offer_insurance_type = tmp_data2.insurance_type;
-  percent_insurance = tmp_data2.percentage_insurance;
-  insurance_amount = tmp_data2.insurance_amount;
+  selected_offer_insurance_type = tmp_data2.insurance_type; // Exp : BASC
+  percent_insurance = tmp_data2.percentage_insurance; // Exp : 6
+  insurance_amount = tmp_data2.insurance_amount;  // Exp : 115000
   // SetCustomerOfferDetail();
 });
 
@@ -1819,7 +1846,7 @@ function SetOfferDetail(offerList) {
         data: "interest_rate",
       },
       {
-        title: "Khoản thanh toàn hằng thàng",
+        title: "Khoản thanh toán hằng tháng",
         data: "monthly_installment",
         render: (data) => {
           result =
@@ -1892,7 +1919,10 @@ function SetOfferDetail(offerList) {
     selected_min_financed_amount = tmp_data.min_financed_amount;
     selected_offer_tenor = tmp_data.offer_tenor;
     selected_monthly_installment = tmp_data.monthly_installment;
+    // let no_insurance  = {base_calculation: "",insurance_amount: 0,insurance_type: "NO",percentage_insurance: 0}
+    tmp_data.insurance_list.push({base_calculation: "",insurance_amount: 0,insurance_type: "NO",percentage_insurance: 0})
     offerinsurancetable = $("#offer-insurance-list-table").DataTable({
+      order: [[ 3, "asc" ]],
       destroy: true,
       responsive: true,
       searching: false,
@@ -1902,14 +1932,27 @@ function SetOfferDetail(offerList) {
         {
           title: "Loại",
           data: "insurance_type",
+        }, {
+          title: "Tổng khoản vay",
+          data: "percentage_insurance",
+          render: (data) => {
+            result =
+              data != null
+                ? (data*selected_offer_amount/100+selected_offer_amount).toLocaleString("vi-VN", {
+                  style: "currency",
+                  currency: "VND",
+                })
+                : 0;
+            return result;
+          },
         },
         {
-          title: "Phí bảo hiểm",
+          title: "Thanh toán hàng tháng có bảo hiểm",
           data: "insurance_amount",
           render: (data) => {
             result =
               data != null
-                ? data.toLocaleString("vi-VN", {
+                ? (data+selected_monthly_installment).toLocaleString("vi-VN", {
                   style: "currency",
                   currency: "VND",
                 })

@@ -237,7 +237,7 @@ function LoadCallLogs() {
           },
           {
             title: "Mã hợp đồng",
-            data: "proposal_id",
+            data: "contract_number",
           },
           {
             title: "Mã Yêu cầu",
@@ -284,7 +284,7 @@ function LoadProductivityLogs() {
     type: "GET",
     url:
       CRM_API_URL +
-      "/v1/report/agent/productivity"+"?" +
+      "/v1/report/agent/productivity" + "?" +
       $.param(param, true),
     async: true,
     dataType: "json",
@@ -302,45 +302,52 @@ function LoadProductivityLogs() {
         data: result.data,
         columns: [
           {
-            title: "Ngày tạo",
-            data: "entry_date",
-            render: (data) => {
-              return moment(data).subtract(7, "h").format("DD-MM-YYYY HH:mm:ss");
-            },
-          },{
-            title: "Người tạo",
+            title: "Team",
+            data: "user_group"
+          },
+          {
+            title: "USER",
             data: "user"
-          },{
-            title: "Partner Code",
-            data: "partner_code"
-          },{
-            title: "SDT",
-            data: "phone_number"
-          },{
-            title: "Tên khách hàng",
-            data: "customername"
-          },{
-            title: "Request ID",
-            data: "request_id"
-          },{
-            title: "Trạng thái hợp đồng",
-            data: "app_status"
-          },{
-            title: "Mã hợp đồng",
-            data: "proposal_id"
-          },{
-            title: "#",
-            data: {
-              lead_id: "lead_id",
-              phone_number: "phone_number",
-              phone_code: "phone_code",
-            },
-            render: (data) => {
-              return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
-                '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
+          },
+          {
+            title: "Customer",
+            data: "total_talk",
+            render(data) {
+              return converter(data);
             }
+          },
+          {
+            title: "Total call",
+            data: "total_call",
+          },
+          {
+            title: "Answer",
+            data: "answer",
+          },
+          {
+            title: "No answer",
+            data: "noanswer",
+          },
+          {
+            title: "Busy",
+            data: "busy",
+          },
+          {
+            title: "Cancel",
+            data: "cancel",
+          },
+          {
+            title: "Denied",
+            data: "denied",
+          },
+          {
+            title: "Sip_erro",
+            data: "sip_erro",
+          },
+          {
+            title: "Unknown",
+            data: "unknown",
           }
-          // lead_id	entry_date	modify_date	user	list_id	phone_number	first_name	middle_initial	last_name	partner_code	sale_code	app_status	reject_reason	request_id	proposal_id	phone_code alt_phone	last_local_call_time
         ],
       });
     },
@@ -349,16 +356,16 @@ function LoadProductivityLogs() {
     },
   });
 }
-let converter = (time)=>{
-  if (time == "" || time == "0" || time == 0){
+let converter = (time) => {
+  if (time == "" || time == "0" || time == 0) {
     return "00:00:00";
   }
   try {
-    
-  let date = new Date(0);
-  date.setSeconds(time);
-  var timeString = date.toISOString().substr(11, 8);
-  return timeString;
+
+    let date = new Date(0);
+    date.setSeconds(time);
+    var timeString = date.toISOString().substr(11, 8);
+    return timeString;
   } catch (error) {
     return "00:00:00";
   }
@@ -379,7 +386,7 @@ function LoadPerformance() {
     type: "GET",
     url:
       CRM_API_URL +
-      "/v1/report/agent/performance"+"?" +
+      "/v1/report/agent/performance" + "?" +
       $.param(param, true),
     async: true,
     dataType: "json",
@@ -387,8 +394,7 @@ function LoadPerformance() {
       "Content-Type": "application/json",
     },
     success: function (result, status, xhr) {
-      let performance = []
-      performance.push(result.data.performance)
+      let performance = [];
       $("#performance-list").DataTable({
         responsive: true,
         info: false,
@@ -396,111 +402,48 @@ function LoadPerformance() {
         paging: true,
         ordering: true,
         lengthChange: false,
-        data: performance,
+        data: result.data,
         columns: [
           {
-            title: "Name",
-            data: "Name"
-          },
-          {
-            title: "User",
-            data: "User"
-          },
-          {
-            title: "Calls",
-            data: "Scalls"
-          },
-          {
-            title: "Agent Time",
-            data: null,
-            render(data){
-              return converter(data.Swait_sec + data.Sdispo_sec + data.Stalk_sec + data.Spause_sec);
+            title: "Ngày tạo",
+            data: "entry_date",
+            render: (data) => {
+              return moment(data).subtract(7, "h").format("DD-MM-YYYY HH:mm:ss");
+            },
+          }, {
+            title: "Người tạo",
+            data: "user"
+          }, {
+            title: "Partner Code",
+            data: "partner_code"
+          }, {
+            title: "SDT",
+            data: "phone_number"
+          }, {
+            title: "Tên khách hàng",
+            data: "customername"
+          }, {
+            title: "Request ID",
+            data: "request_id"
+          }, {
+            title: "Trạng thái hợp đồng",
+            data: "app_status"
+          }, {
+            title: "Mã hợp đồng",
+            data: "contract_number"
+          }, {
+            title: "#",
+            data: {
+              lead_id: "lead_id",
+              phone_number: "phone_number",
+              phone_code: "phone_code",
+            },
+            render: (data) => {
+              return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
+                '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
             }
-          },
-          {
-            title: "Pause",
-            data: "Spause_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Pause",
-            data: null,
-            render(data){
-              return converter(data.Spause_sec / data.Scalls);
-            }
-          },
-          {
-            title: "Wait",
-            data: "Swait_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Wait",
-            data: null,
-            render(data){
-              return converter(data.Swait_sec / data.Scalls);
-            }
-          },
-          {
-            title: "Talk",
-            data: "Stalk_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Talk",
-            data: null,
-            render(data){
-              return converter(data.Stalk_sec / data.Scalls);
-            }
-          },
-          {
-            title: "Dispo",
-            data: "Sdispo_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Dispo",
-            data: null,
-            render(data){
-              return converter(data.Sdispo_sec / data.Scalls);
-            }
-          },
-          {
-            title: "Dead",
-            data: "Sdead_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Dead",
-            data: null,
-            render(data){
-              return converter(data.Sdead_sec / data.Scalls);
-            }
-          },
-          {
-            title: "Customer",
-            data: "Scustomer_sec",
-            render(data){
-              return converter(data);
-            }
-          },
-          {
-            title: "AVG Customer",
-            data: null,
-            render(data){
-              return converter(data.Scustomer_sec / data.Scalls);
-            }
-          },
+          }
+          // lead_id	entry_date	modify_date	user	list_id	phone_number	first_name	middle_initial	last_name	partner_code	sale_code	app_status	reject_reason	request_id	proposal_id	phone_code alt_phone	last_local_call_time
         ],
       });
     },
