@@ -3664,7 +3664,13 @@ function CheckForIncoming () {
                 $(".formMain input[name='identity_number']").val(this_VDIC_data.identity_number).trigger('change');
                 $(".formMain input[name='identity_issued_on']").val(this_VDIC_data.identity_issued_on);
                 $(".formMain select[name='identity_issued_by']").val(this_VDIC_data.identity_issued_by).trigger('change');
-                
+                try {
+                    $(".formMain input[name='alt_identity_number']").val(this_VDIC_data.alt_identity_number).trigger('change');
+                    $(".formMain input[name='alt_identity_issued_on']").val(this_VDIC_data.alt_identity_issued_on);
+                    $(".formMain select[name='alt_identity_issued_by']").val(this_VDIC_data.alt_identity_issued_by).trigger('change');
+                }
+                catch (error) {
+                }
                 $("#call_notes").val(this_VDIC_data.call_notes)
                 //Vendor
                 $(".formMain input[name='vendor_lead_code']").val(this_VDIC_data.vendor_lead_code).trigger('change');

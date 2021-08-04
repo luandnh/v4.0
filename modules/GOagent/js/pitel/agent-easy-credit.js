@@ -1122,6 +1122,9 @@ let SyncFullLoanFromAPI = (request_id) => {
         $("input[tag='currency']").trigger('blur');
         $("input[name='range_loan_tenor']").trigger('input');
         $("input[name='range_loan_amount']").trigger('input');
+        $(`input[name='simu_insurance']`)[0].value = "0";
+        $(`input[name='simu_insurance']`)[1].value = "6";
+        $(`input[name='simu_insurance']`)[2].value = "8";
         $(`input[name='simu_insurance'][value='${data.document.simu_insurance}']`).click().trigger('change')
         // 
         if (document['check_same_address'] == 'on'){
