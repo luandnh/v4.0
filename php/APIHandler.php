@@ -142,7 +142,6 @@ class APIHandler
 			'log_pass' => log_pass,
 			'hostname' => $_SERVER['REMOTE_ADDR']
 		);
-
 		$postdata = array_merge($default_entries, $postfields);
 
 		// Call the API
@@ -158,6 +157,7 @@ class APIHandler
 		curl_close($ch);
 		$output = json_decode($data);
 
+		// var_dump($output );
 		if ($request_data === true)
 			return $data;
 		else
@@ -927,11 +927,13 @@ class APIHandler
 		return $this->API_Request("goLists", $postfields);
 	}
 
-	public function API_listExport($list_id)
+	public function API_listExport($list_id, $offset, $limit)
 	{
 		$postfields = array(
 			'goAction' => 'goListExport',
-			'list_id' => $list_id
+			'list_id' => $list_id,
+			'offset' => $offset,
+			'limit' => $limit
 		);
 		return $this->API_Request("goLists", $postfields);
 	}
