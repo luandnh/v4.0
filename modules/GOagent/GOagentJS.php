@@ -51,6 +51,7 @@ if (!isset($_REQUEST['action']) && !isset($_REQUEST['module_name'])) {
     $default_settings = $result->default_settings;
     $agent = $result->user_info;
     $phone = $result->phone_info;
+    $_SESSION['quangtran'] =  $result->phone_info;
     $system = $result->system_info;
     $country_codes = $result->country_codes;
     if (isset($result->camp_info)) {
@@ -3655,7 +3656,7 @@ function CheckForIncoming () {
                 lead_id = this_VDIC_data.lead_id;
                 <!-- this_VDIC_data.request_id = "SPO1610530540234"; -->
                 $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
-                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status, this_VDIC_data.call_status);
+                this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status, this_VDIC_data.call_status, this_VDIC_data.reject_reason);
                 console.log(this_VDIC_data.request_id)
                 console.log(this_VDIC_data.app_status)
 
@@ -6500,7 +6501,7 @@ function DispoSelectSubmit() {
             try{
                 $('#smartwizard').smartWizard("reset");
                 clearForm($("#full-loan-form"));
-                ECShowProducts("", "","");
+                ECShowProducts("", "","","");
             }catch(err){
                 console.log("Clear Full Loan Form: "+err);
             }
@@ -7574,7 +7575,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     lead_id                                 = thisVdata.lead_id;
                     $(".formMain input[name='lead_id']").val(lead_id);
                     try {
-                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status);
+                        thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason);
                         console.log(thisVdata.request_id)
                         console.log(thisVdata.status)
                     }

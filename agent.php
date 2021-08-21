@@ -866,10 +866,11 @@ input:checked + .slider:before {
 														</div>
 													</div>
 													<div class="col-sm-6">
-														<div class="mda-form-group label-floating">
+														<div id="app_status_block" class="mda-form-group label-floating">
 															<input id="app_status" name="app_status" type="text" maxlength="30" value=""
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" readonly>
 															<label for="app_status"><?=$lh->translationFor('app_status')?></label>
+															<label id="app_reason" class="app_reason hiden">CKYC-WRI02 :  Wrong DOB</label>
 														</div>
 													</div>
 												</div>
@@ -2168,9 +2169,9 @@ input:checked + .slider:before {
 				$numMessages = $db->getUnreadMessagesNumber($user->getUserId());
 				echo $ui->getSidebarItem("#messages", "", $lh->translationFor("messages"), $numMessages, "green");
 				echo $ui->getSidebarItem("#callbackslist", "", $lh->translationFor("callbacks"), "0", "blue");
-				if ($user_info->data->agent_lead_search_override != 'DISABLED') {
-					echo $ui->getSidebarItem("#customerslist", "", $lh->translationFor("contacts"), null, "", "agent-lead-search");
-				}
+				// if ($user_info->data->agent_lead_search_override != 'DISABLED') {
+				// 	echo $ui->getSidebarItem("#customerslist", "", $lh->translationFor("contacts"), null, "", "agent-lead-search");
+				// }
 				echo $ui->getSidebarItem("#call-logs", "", "History", null, "", "agent-call-log");
 				echo $ui->getSidebarItem("#productivity", "", "Productivity", null, "", "productivity");
 				echo $ui->getSidebarItem("#performance", "", "Performance", null, "", "performance");
@@ -3237,11 +3238,12 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/daterangepicker.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="modules/GOagent/js/daterangepicker.css" />
 		<script type="text/javascript" src="modules/GOagent/js/pitel/variable.js" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/dsa_update_status.js?v=1" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=22" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=32" defer></script>
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=2" defer></script>
+		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=4" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-call-log.js?v=4" defer></script>
     </body>
