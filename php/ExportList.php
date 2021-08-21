@@ -48,11 +48,15 @@
 	
 	$sep  = "\t";
 	$eol  = "\n";
-	$csv  =  count($output->header) ? '"'. implode('"'.$sep.'"', $output->header).'"'.$eol : '';
 	// 
+	$create_header = false;
 	$pack = $limit;
 	while ($success == true && $limit == $pack){
 		$output	= $api->API_listExport($list_id, $offset, $limit);
+		if ($create_header==false){
+			$csv  =  count($output->header) ? '"'. implode('"'.$sep.'"', $output->header).'"'.$eol : '';
+			$create_header = true;
+		}
 		$pack = count($output->row);
 		$offset += $limit;
 		if ($output->result == "success") {
