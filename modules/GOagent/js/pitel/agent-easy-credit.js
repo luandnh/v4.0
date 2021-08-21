@@ -484,9 +484,9 @@ let CreateOfferTab = function(){
   "</li>";
 $("#agent_tablist").append(offerTab);
 }
-let ECShowProducts = (partner_code, request_id, app_status, status, call_status) => {
+let ECShowProducts = (partner_code, request_id, app_status, status, call_status, reject_reason= "") => {
   removeElement("offer_tab_href");
-  ShowStatusOnForm(status, call_status, app_status);
+  ShowStatusOnForm(status, call_status, app_status,reject_reason);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
   SetCustomerOfferDetail();
@@ -870,6 +870,10 @@ $("#eligible_btn").on("click", (e) => {
       id_number = $(".formMain input[name='alt_identity_number']").val() ;
       issue_date = $(".formMain input[name='alt_identity_issued_on']").val();
       id_place = $(".formMain select[name='alt_identity_issued_by']").val();
+    } else{
+      id_number = $(".formMain input[name='identity_number']").val() ;
+      issue_date = $(".formMain input[name='identity_issued_on']").val();
+      id_place = $(".formMain select[name='identity_issued_by']").val();
     }
     let tem_province = $(".formMain input[name='province']").val();
     let job_type = $(".formMain input[name='job_type']").val();
@@ -1124,6 +1128,16 @@ let SyncFullLoanFromAPI = (request_id) => {
             .trigger("change")
             .selectpicker("refresh");
         }
+        // CHECK ALT IDENTITY
+        if ($(".formMain input[name='alt_identity_number']").val()!= ""){
+          $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='alt_identity_number']").val()).trigger("change");
+          $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='alt_identity_issued_on']").val()).trigger("change");
+          $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='alt_identity_issued_by']").val()).trigger("change").selectpicker("refresh");
+        } else{
+          $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='identity_number']").val()).trigger("change");
+          $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='identity_issued_on']").val()).trigger("change");
+          $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='identity_issued_by']").val()).trigger("change").selectpicker("refresh");
+        }
         $("#full-loan-form input[name='date_of_birth']").val(
           moment(document["date_of_birth"], "DD-MM-YYYY").format("YYYY-MM-DD")
         );
@@ -1168,6 +1182,7 @@ let SyncFullLoanFromAPI = (request_id) => {
             .selectpicker("refresh");
         }
         getProductType();
+        $("#full-loan-form input[name='dsa_agent_code']").val("");
         SyncFullLoanFromContact();
       } catch (error) {
         SyncFullLoanFromContact();
@@ -1327,7 +1342,14 @@ let SyncFullLoanFromContact = () => {
   let first_name = $(".formMain input[name='first_name']").val();
   let middle_initial = $(".formMain input[name='middle_initial']").val();
   let last_name = $(".formMain input[name='last_name']").val();
-  let customer_name = first_name + " " + middle_initial + " " + last_name;
+  let customer_name = first_name;
+    if (middle_initial == ""){
+      customer_name =customer_name+ " " + last_name;
+    }
+    else{
+      customer_name = customer_name
+      + " " + middle_initial + " " + last_name;
+    }
   let phone_number =
     $(".formMain input[name='phone_code']").val() +
     $(".formMain input[name='phone_number']").val();
@@ -1428,10 +1450,14 @@ let SyncFullLoanFromContact = () => {
     .val($(".formMain select[name='identity_issued_by']").val())
     .trigger("change").selectpicker("refresh");
   // CHECK ALT IDENTITY
-  if ($(".formMain select[name='identity_issued_by']").val()!= ""){
+  if ($(".formMain input[name='alt_identity_number']").val()!= ""){
     $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='alt_identity_number']").val()).trigger("change");
     $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='alt_identity_issued_on']").val()).trigger("change");
     $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='alt_identity_issued_by']").val()).trigger("change").selectpicker("refresh");
+  } else{
+    $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='identity_number']").val()).trigger("change");
+    $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='identity_issued_on']").val()).trigger("change");
+    $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='identity_issued_by']").val()).trigger("change").selectpicker("refresh");
   }
   $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
   $("#full-loan-form input[name='term_confirm']").prop('checked', true)
@@ -1677,6 +1703,7 @@ $("#submit-docs").on("click", (e) => {
 });
 
 $("#full-loan-form").on("submit", (e) => {
+  
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
@@ -2597,8 +2624,16 @@ let SetWorkAddress = () => {
   });
   $("select[name='workplace_province']").val("").trigger("change");
 };
-
-let ShowStatusOnForm = (prev_status, call_status, app_status) => {
+let ShowStatusOnForm = (prev_status, call_status, app_status, reason = "") => {
+  let rj_message = DSA_STATUS[reason];
+  if (rj_message == "" || rj_message == undefined || reason == "" || reason == undefined){
+    $("#app_status_block").removeClass("app_status")
+    $("#app_reason").addClass("hiden")
+  }else{
+    $("#app_status_block").addClass("app_status")
+    $("#app_reason").removeClass("hiden")
+    $("#app_reason").text(reason +" : " + rj_message)
+  }
   let status = (call_status != "") ? call_status : prev_status;
   ajaxGetCallStatus(status).done((result) => {
     $("#name_form input[name='prev_status']").val(result.data.status_name);
