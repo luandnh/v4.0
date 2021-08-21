@@ -1354,7 +1354,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input value="<?= $_SESSION['user'] ?>" type="text" name="dsa_agent_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input readonly value="" type="text" name="dsa_agent_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="dsa_agent_code"><?= $lh->translationFor('dsa_agent_code') ?></label>
                                         </div>
                                     </div>

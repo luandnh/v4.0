@@ -884,7 +884,7 @@ $("#eligible_btn").on("click", (e) => {
       request_id: request_id,
       channel: "DSA",
       partner_code: partner_code,
-      dsa_agent_code: user,
+      dsa_agent_code: DSA_CODE,
       identity_card_id: id_number,
       date_of_birth: date_of_birth,
       customer_name: customer_name,
@@ -1181,8 +1181,8 @@ let SyncFullLoanFromAPI = (request_id) => {
             .trigger("change")
             .selectpicker("refresh");
         }
+        $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
         getProductType();
-        $("#full-loan-form input[name='dsa_agent_code']").val("");
         SyncFullLoanFromContact();
       } catch (error) {
         SyncFullLoanFromContact();

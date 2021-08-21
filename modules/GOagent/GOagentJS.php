@@ -51,7 +51,12 @@ if (!isset($_REQUEST['action']) && !isset($_REQUEST['module_name'])) {
     $default_settings = $result->default_settings;
     $agent = $result->user_info;
     $phone = $result->phone_info;
-    $_SESSION['quangtran'] =  $result->phone_info;
+    $dsa_code = $agent->dsa_code;
+    if (isset($dsa_code)){
+        echo("var DSA_CODE = '".$agent->dsa_code."';");
+    }else{
+        echo("var DSA_CODE = '';");
+    }
     $system = $result->system_info;
     $country_codes = $result->country_codes;
     if (isset($result->camp_info)) {
