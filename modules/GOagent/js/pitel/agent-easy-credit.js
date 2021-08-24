@@ -1622,7 +1622,7 @@ $(document).on("change", 'select[name="employment_type"]', function () {
         $(`<option value=""></option>`).appendTo(select_product_type);
         for (prd of product_lists) {
           $(
-            `<option value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
+            `<option des="${prd.product_description}" value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
           ).appendTo(select_product_type);
         }
         return;
@@ -1701,7 +1701,33 @@ $("#submit-docs").on("click", (e) => {
   $("#submit_attachment").click();
   $("#submit_img_id_card").click();
 });
-
+function creat_full_loan(form_data, mode){
+  let product_des = "";
+  let selected_product = $("select[name='product_type'] :selected").attr("des");
+  if (selected_product != undefined){
+      product_des = selected_product.split("(")[0].trim();
+  }
+  form_data.type = mode;
+  form_data.product_name = product_des;
+  let post_data = JSON.stringify(form_data);
+  $.ajax({
+    type: "POST",
+    url: TEL4VN_API_URL + "/v1/fullloan",
+    processData: true,
+    data: post_data,
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .fail((result, status, error) => {
+      console.log(result);
+    })
+    .done((result) => {
+      console.log(result);
+    });
+}
 $("#full-loan-form").on("submit", (e) => {
   
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
@@ -1756,6 +1782,7 @@ $("#full-loan-form").on("submit", (e) => {
     data: post_data,
   })
     .fail((result, status, error) => {
+      creat_full_loan(form_data, "update");
       var er_data = result.responseJSON.body;
       console.log(er_data.body);
       let msg = "Please contact developer!";
@@ -1774,6 +1801,7 @@ $("#full-loan-form").on("submit", (e) => {
       $("#offer-waiting").attr("hidden", true);
     })
     .done((result) => {
+      creat_full_loan(form_data,"create");
       swal("OK!", result.body.message, "success");
       clearForm($("#full-loan-form"));
       clearAFForm();
@@ -1795,23 +1823,7 @@ $("#full-loan-form").on("submit", (e) => {
       //   $("#offer-waiting").attr("hidden", true);
       // }
     });
-  $.ajax({
-    type: "POST",
-    url: TEL4VN_API_URL + "/v1/fullloan",
-    processData: true,
-    data: post_data,
-    async: true,
-    dataType: "json",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .fail((result, status, error) => {
-      console.log(result);
-    })
-    .done((result) => {
-      console.log(result);
-    });
+
 });
 function updateRequestId(request_id, lead_id) {
   $("#full-loan-form input[name='request_id']").val(request_id);
@@ -2325,8 +2337,12 @@ var saveFullLoan = () => {
   // form_data.lead_id = 1234;
   form_data.request_id = $('input[name="request_id"]').val();
   form_data.partner_code = $('input[name="partner_code"]').val();
-
-
+  let product_des = "";
+  let selected_product = $("select[name='product_type'] :selected").attr("des");
+  if (selected_product != undefined){
+      product_des = selected_product.split("(")[0].trim();
+  }
+  form_data.product_name = product_des;
   // END TEST
   var settings = {
     url: CRM_API_URL+"/v1/fullloan",
