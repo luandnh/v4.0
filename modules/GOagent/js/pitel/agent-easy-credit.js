@@ -485,6 +485,7 @@ let CreateOfferTab = function(){
 $("#agent_tablist").append(offerTab);
 }
 let ECShowProducts = (partner_code, request_id, app_status, status, call_status, reject_reason= "") => {
+  $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   removeElement("offer_tab_href");
   ShowStatusOnForm(status, call_status, app_status,reject_reason);
   $("#hide_div_eligible").hide();
@@ -837,6 +838,7 @@ $(document).on("click", "#submit-offer", function (e) {
     });
 });
 $("#eligible_btn").on("click", (e) => {
+  $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   e.preventDefault();
   let partner_code = $(".formMain input[name='partner_code']").val();
   if (partner_code.length < 1) {
