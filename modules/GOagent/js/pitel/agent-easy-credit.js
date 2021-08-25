@@ -228,6 +228,16 @@ $(document).ready(() => {
           if (result.message !== undefined) {
             msg = result.message;
           }
+          if (result.responseText != undefined){
+              try {
+                  let err = JSON.parse(result.responseText);
+                  if (err.error != undefined){
+                    msg = err.error;
+                  }
+              } catch (error) {
+                  msg = result.responseText;
+              }
+          }
           swal("Upload file fail!", msg, "error");
         })
         .success((result, status, error) => {
@@ -288,6 +298,16 @@ $(document).ready(() => {
         if (result.message !== undefined) {
           msg = result.message;
         }
+        if (result.responseText != undefined){
+          try {
+              let err = JSON.parse(result.responseText);
+              if (err.error != undefined){
+                msg = err.error;
+              }
+          } catch (error) {
+              msg = result.responseText;
+          }
+        }
         swal("Upload file fail!", msg, "error");
       })
       .success((result, status, error) => {
@@ -341,6 +361,16 @@ $(document).ready(() => {
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
+        }
+        if (result.responseText != undefined){
+          try {
+              let err = JSON.parse(result.responseText);
+              if (err.error != undefined){
+                msg = err.error;
+              }
+          } catch (error) {
+              msg = result.responseText;
+          }
         }
         swal("Upload file fail!", msg, "error");
       })
@@ -397,6 +427,16 @@ $(document).ready(() => {
         if (result.message !== undefined) {
           msg = result.message;
         }
+        if (result.responseText != undefined){
+          try {
+              let err = JSON.parse(result.responseText);
+              if (err.error != undefined){
+                msg = err.error;
+              }
+          } catch (error) {
+              msg = result.responseText;
+          }
+        }
         swal("Upload file fail!", msg, "error");
       })
       .success((result, status, error) => {
@@ -450,6 +490,16 @@ $(document).ready(() => {
         let msg = "Please contact developer!";
         if (result.message !== undefined) {
           msg = result.message;
+        }
+        if (result.responseText != undefined){
+          try {
+              let err = JSON.parse(result.responseText);
+              if (err.error != undefined){
+                msg = err.error;
+              }
+          } catch (error) {
+              msg = result.responseText;
+          }
         }
         swal("Upload file fail!", msg, "error");
       })
@@ -768,6 +818,17 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     if (result.message !== undefined) {
       msg = result.message;
     }
+    
+    if (result.responseText != undefined){
+      try {
+          let err = JSON.parse(result.responseText);
+          if (err.error != undefined){
+            msg = err.error;
+          }
+      } catch (error) {
+          msg = result.responseText;
+      }
+    }
     swal("Get products data fail!", msg, "error");
   });
 };
@@ -824,6 +885,16 @@ $(document).on("click", "#submit-offer", function (e) {
       msg = result.responseJSON.message;
       if (result.message !== undefined) {
         msg = result.message;
+      }
+      if (result.responseText != undefined){
+        try {
+            let err = JSON.parse(result.responseText);
+            if (err.error != undefined){
+              msg = err.error;
+            }
+        } catch (error) {
+            msg = result.responseText;
+        }
       }
       swal("Send offer data fail!", msg, "error");
     })
@@ -2385,7 +2456,9 @@ $(document).ready(() => {
       e.preventDefault();
       let app_status = $(".formMain input[name='app_status']").val();
       if (DO_NOT_REAPP.includes(app_status)){
-        swal("Error!", "Không được lên lại hồ sơ với hồ sơ trạng thái : "+app_status, "error");
+        swal("Error!", "Vui lòng không lên lại hồ sơ trạng thái : "+app_status+"\n"
+        + "Chỉ lên lại hồ sơ đối với các trạng thái : "+DO_NOT_REAPP.join(",")
+        , "error");
         return;
       }
       let checkValidate = validateFullloan();
