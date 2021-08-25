@@ -838,6 +838,11 @@ $(document).on("click", "#submit-offer", function (e) {
 });
 $("#eligible_btn").on("click", (e) => {
   e.preventDefault();
+  let app_status = $(".formMain input[name='app_status']").val();
+  if (DO_NOT_REAPP.includes(app_status)){
+    swal("Error!", "Không được lên lại hồ sơ với hồ sơ trạng thái : "+app_status, "error");
+    return;
+  }
   let partner_code = $(".formMain input[name='partner_code']").val();
   if (partner_code.length < 1) {
     swal("Error!", "Partner Code is empty!", "error");
@@ -2378,6 +2383,11 @@ $(document).ready(() => {
     .addClass("btn sw-btn-finish disabled")
     .on("click", function (e) {
       e.preventDefault();
+      let app_status = $(".formMain input[name='app_status']").val();
+      if (DO_NOT_REAPP.includes(app_status)){
+        swal("Error!", "Không được lên lại hồ sơ với hồ sơ trạng thái : "+app_status, "error");
+        return;
+      }
       let checkValidate = validateFullloan();
       if (checkValidate) {
         $("#full-loan-form").submit();
