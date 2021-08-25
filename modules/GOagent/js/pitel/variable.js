@@ -133,3 +133,6 @@ var translator = {
     "doc_collecting_list" : "Danh sách chứng từ",
     "doc_collecting_list is empty." : "Danh sách chứng từ trống"
 }
+
+var DO_NOT_REAPP = ['APPROVED','ACCEPT TO BE VALIDATED','VALIDATED','ACTIVED','SIGNED','TO BE DISBURSED','DISBURSED']
+var CAN_REAPP = ['REJECTED','TERMINATED','CANCELED','SYSTEM ERROR','NOT_ELIGIBLE','FAIL_EKYC','FAIL_MANUAL_KYC','NOT_SUITABLE_OFFER','DUPLICATED']
