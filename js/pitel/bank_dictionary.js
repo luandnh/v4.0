@@ -109,18182 +109,15147 @@ const BANK_CODE = {
 };
 
 const BANK_BRANCH_CODE = {
-  1204027: {
+  "01204027": {
     bank_id: 204,
     branch_name: "CN TRUNG YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  46204003: {
+  }, "46204003": {
     bank_id: 204,
     branch_name: "CN TRƯỜNG AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thừa Thiên Huế",
-  },
-  79204048: {
+  }, "79204048": {
     bank_id: 204,
     branch_name: "CN TRƯỜNG SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  49204009: {
+  }, "49204009": {
     bank_id: 204,
     branch_name: "CN TRƯỜNG XUÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  1204009: {
+  }, "01204009": {
     bank_id: 204,
     branch_name: "CN TT THANH TOÁN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  30204007: {
+  }, "30204007": {
     bank_id: 204,
     branch_name: "CN TỨ KỲ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  1204005: {
+  }, "01204005": {
     bank_id: 204,
     branch_name: "CN TỪ LIÊM HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  51204006: {
+  }, "51204006": {
     bank_id: 204,
     branch_name: "CN TƯ NGHĨA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  54204009: {
+  }, "54204009": {
     bank_id: 204,
     branch_name: "CN TUY AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  52204003: {
+  }, "52204003": {
     bank_id: 204,
     branch_name: "CN TUY PHƯỚC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  8204006: {
+  }, "08204006": {
     bank_id: 204,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tuyên Quang",
-  },
-  25204005: {
+  }, "25204005": {
     bank_id: 204,
     branch_name: "CN LÂM THAO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  38204031: {
+  }, "38204031": {
     bank_id: 204,
     branch_name: "CN LANG CHÁNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  1204010: {
+  }, "01204010": {
     bank_id: 204,
     branch_name: "CN LÁNG HẠ HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  45204003: {
+  }, "45204003": {
     bank_id: 204,
     branch_name: "CN LAO BẢO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Trị",
-  },
-  87204007: {
+  }, "87204007": {
     bank_id: 204,
     branch_name: "CN LẤP VÒ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  66204028: {
+  }, "66204028": {
     bank_id: 204,
     branch_name: "CN LÊ HỒNG PHONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  66204010: {
+  }, "66204010": {
     bank_id: 204,
     branch_name: "CN LÊ THÁNH TÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  44204003: {
+  }, "44204003": {
     bank_id: 204,
     branch_name: "CN LỆ THỦY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  48204008: {
+  }, "48204008": {
     bank_id: 204,
     branch_name: "CN LIÊN CHIỂU DN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  68204014: {
+  }, "68204014": {
     bank_id: 204,
     branch_name: "CN LỘC AN NAM LÂM ĐỒNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  20204007: {
+  }, "20204007": {
     bank_id: 204,
     branch_name: "CN LỘC BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  68204016: {
+  }, "68204016": {
     bank_id: 204,
     branch_name: "CN LỘC PHÁT LÂM ĐỒNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  1204019: {
+  }, "01204019": {
     bank_id: 204,
     branch_name: "CN LONG BIÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  86204004: {
+  }, "86204004": {
     bank_id: 204,
     branch_name: "CN LONG HỒ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  93204002: {
+  }, "93204002": {
     bank_id: 204,
     branch_name: "CN LONG MỸ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hậu Giang",
-  },
-  94204009: {
+  }, "94204009": {
     bank_id: 204,
     branch_name: "CN LONG PHÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  75204003: {
+  }, "75204003": {
     bank_id: 204,
     branch_name: "CN LONG THÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  15204006: {
+  }, "15204006": {
     bank_id: 204,
     branch_name: "CN LỤC YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  60204010: {
+  }, "60204010": {
     bank_id: 204,
     branch_name: "CN LƯƠNG SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  51204004: {
+  }, "51204004": {
     bank_id: 204,
     branch_name: "CN LÝ SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  44204011: {
+  }, "44204011": {
     bank_id: 204,
     branch_name: "CN LÝ THÁI TỔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  44204008: {
+  }, "44204008": {
     bank_id: 204,
     branch_name: "CN LÝ THƯỜNG KIỆT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  79204047: {
+  }, "79204047": {
     bank_id: 204,
     branch_name: "CN LÝ THƯỜNG KIỆT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  1204294: {
+  }, "01204294": {
     bank_id: 204,
     branch_name: "CN LÝ THƯỜNG KIỆT ĐÔNG HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  86204006: {
+  }, "86204006": {
     bank_id: 204,
     branch_name: "CN MĂNG THÍT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  22204020: {
+  }, "22204020": {
     bank_id: 204,
     branch_name: "CN MẠO KHÊ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  66204006: {
+  }, "66204006": {
     bank_id: 204,
     branch_name: "CN M'ĐRĂK",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  1204051: {
+  }, "01204051": {
     bank_id: 204,
     branch_name: "CN MÊ LINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  2204003: {
+  }, "02204003": {
     bank_id: 204,
     branch_name: "CN MÈO VẠC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  79204037: {
+  }, "79204037": {
     bank_id: 204,
     branch_name: "CN MIỀN ĐÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  51204013: {
+  }, "51204013": {
     bank_id: 204,
     branch_name: "CN MINH LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  83204012: {
+  }, "83204012": {
     bank_id: 204,
     branch_name: "CN MỎ CÀY BẮC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bến Tre",
-  },
-  83204005: {
+  }, "83204005": {
     bank_id: 204,
     branch_name: "CN MỎ CÀY NAM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bến Tre",
-  },
-  51204007: {
+  }, "51204007": {
     bank_id: 204,
     branch_name: "CN MỘ ĐỨC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  15204010: {
+  }, "15204010": {
     bank_id: 204,
     branch_name: "CN MÙ CANG CHẢI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  12204006: {
+  }, "12204006": {
     bank_id: 204,
     branch_name: "CN MƯỜNG TÈ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  1204024: {
+  }, "01204024": {
     bank_id: 204,
     branch_name: "CN MỸ DINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  52204002: {
+  }, "52204002": {
     bank_id: 204,
     branch_name: "CN TP QUY NHƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  87204012: {
+  }, "87204012": {
     bank_id: 204,
     branch_name: "CN TP SA ĐÉC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  19204005: {
+  }, "19204005": {
     bank_id: 204,
     branch_name: "CN TP SÔNG CÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  37204010: {
+  }, "37204010": {
     bank_id: 204,
     branch_name: "CN TP TAM ĐIỆP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  49204020: {
+  }, "49204020": {
     bank_id: 204,
     branch_name: "CN TP TAM KỲ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  34204002: {
+  }, "34204002": {
     bank_id: 204,
     branch_name: "CN TP THÁI BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  38204026: {
+  }, "38204026": {
     bank_id: 204,
     branch_name: "CN TP THANH HÓA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  84204010: {
+  }, "84204010": {
     bank_id: 204,
     branch_name: "CN TP TRÀ VINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Trà Vinh",
-  },
-  22204010: {
+  }, "22204010": {
     bank_id: 204,
     branch_name: "CN TP UÔNG BÍ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  93204004: {
+  }, "93204004": {
     bank_id: 204,
     branch_name: "CN TP VỊ THANH - HẬU GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hậu Giang",
-  },
-  86204009: {
+  }, "86204009": {
     bank_id: 204,
     branch_name: "CN TP VĨNH LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  77204002: {
+  }, "77204002": {
     bank_id: 204,
     branch_name: "CN TP VŨNG TÀU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  15204002: {
+  }, "15204002": {
     bank_id: 204,
     branch_name: "CN TP YÊN BÁI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  15204003: {
+  }, "15204003": {
     bank_id: 204,
     branch_name: "CN TP YÊN BÁI II",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  51204011: {
+  }, "51204011": {
     bank_id: 204,
     branch_name: "CN TRÀ BỒNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  84204005: {
+  }, "84204005": {
     bank_id: 204,
     branch_name: "CN TRÀ CÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Trà Vinh",
-  },
-  86204010: {
+  }, "86204010": {
     bank_id: 204,
     branch_name: "CN TRÀ ÔN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  84204001: {
+  }, "84204001": {
     bank_id: 204,
     branch_name: "CN TRÀ VINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Trà Vinh",
-  },
-  15204007: {
+  }, "15204007": {
     bank_id: 204,
     branch_name: "CN TRẠM TẤU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  94204013: {
+  }, "94204013": {
     bank_id: 204,
     branch_name: "CN TRẦN ĐỀ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  44204006: {
+  }, "44204006": {
     bank_id: 204,
     branch_name: "CN TRẦN HƯNG ĐẠO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  31204016: {
+  }, "31204016": {
     bank_id: 204,
     branch_name: "CN TRẦN PHÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  96204007: {
+  }, "96204007": {
     bank_id: 204,
     branch_name: "CN TRẦN VĂN THỜI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  40204002: {
+  }, "40204002": {
     bank_id: 204,
     branch_name: "CN VINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nghệ An",
-  },
-  31204012: {
+  }, "31204012": {
     bank_id: 204,
     branch_name: "CN VĨNH BẢO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  94204010: {
+  }, "94204010": {
     bank_id: 204,
     branch_name: "CN VĨNH CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  56204004: {
+  }, "56204004": {
     bank_id: 204,
     branch_name: "CN VĨNH HIỆP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Khánh Hòa",
-  },
-  91204008: {
+  }, "91204008": {
     bank_id: 204,
     branch_name: "CN VĨNH LẠC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  38204014: {
+  }, "38204014": {
     bank_id: 204,
     branch_name: "CN VĨNH LỘC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  95204007: {
+  }, "95204007": {
     bank_id: 204,
     branch_name: "CN VĨNH LỢI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bạc Liêu",
-  },
-  91204015: {
+  }, "91204015": {
     bank_id: 204,
     branch_name: "CN MỸ LÂM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  36204009: {
+  }, "36204009": {
     bank_id: 204,
     branch_name: "CN MỸ LỘC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  84334001: {
+  }, "84334001": {
     bank_id: 334,
     branch_name: "CN TRÀ VINH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Trà Vinh",
-  },
-  84334002: {
+  }, "84334002": {
     bank_id: 334,
     branch_name: "CN TRÀ VINH 1",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Trà Vinh",
-  },
-  86334001: {
+  }, "86334001": {
     bank_id: 334,
     branch_name: "CN VĨNH LONG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Vĩnh Long",
-  },
-  77334001: {
+  }, "77334001": {
     bank_id: 334,
     branch_name: "CN VŨNG TÀU",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  89317001: {
+  }, "89317001": {
     bank_id: 317,
     branch_name: "CN AN GIANG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "An Giang",
-  },
-  1317004: {
+  }, "01317004": {
     bank_id: 317,
     branch_name: "CN BA ĐÌNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  27317001: {
+  }, "27317001": {
     bank_id: 317,
     branch_name: "CN BẮC NINH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Bắc Ninh",
-  },
-  52317001: {
+  }, "52317001": {
     bank_id: 317,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Bình Định",
-  },
-  74317002: {
+  }, "74317002": {
     bank_id: 317,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Bình Dương",
-  },
-  96317001: {
+  }, "96317001": {
     bank_id: 317,
     branch_name: "CN CÀ MAU",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Cà Mau",
-  },
-  92317001: {
+  }, "92317001": {
     bank_id: 317,
     branch_name: "CN CẦN THƠ",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Cần Thơ",
-  },
-  89355001: {
+  }, "89355001": {
     bank_id: 355,
     branch_name: "CN AN GIANG",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "An Giang",
-  },
-  95355001: {
+  }, "95355001": {
     bank_id: 355,
     branch_name: "CN BẠC LIÊU",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Bạc Liêu",
-  },
-  27355001: {
+  }, "27355001": {
     bank_id: 355,
     branch_name: "CN BẮC NINH",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Bắc Ninh",
-  },
-  66355001: {
+  }, "66355001": {
     bank_id: 355,
     branch_name: "CN BUÔN MA THUỘT",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Đắk Lắk",
-  },
-  92355001: {
+  }, "92355001": {
     bank_id: 355,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Cần Thơ",
-  },
-  79355004: {
+  }, "79355004": {
     bank_id: 355,
     branch_name: "CN CHỢ LỚN",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hồ Chí Minh",
-  },
-  48355001: {
+  }, "48355001": {
     bank_id: 355,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Đà Nẵng",
-  },
-  75355001: {
+  }, "75355001": {
     bank_id: 355,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Đồng Nai",
-  },
-  1355001: {
+  }, "01355001": {
     bank_id: 355,
     branch_name: "CN HÀ NỘI",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hà Nội",
-  },
-  31355001: {
+  }, "31355001": {
     bank_id: 355,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hải Phòng",
-  },
-  49355001: {
+  }, "49355001": {
     bank_id: 355,
     branch_name: "CN HỘI AN",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Quảng Nam",
-  },
-  79355006: {
+  }, "79355006": {
     bank_id: 355,
     branch_name: "CN HUYỆN CỦ CHI",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hồ Chí Minh",
-  },
-  79202023: {
+  }, "79202023": {
     bank_id: 202,
     branch_name: "CN TRƯỜNG SƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1202028: {
+  }, "01202028": {
     bank_id: 202,
     branch_name: "CN TỪ LIÊM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  27202002: {
+  }, "27202002": {
     bank_id: 202,
     branch_name: "CN TỪ SƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  8202001: {
+  }, "08202001": {
     bank_id: 202,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Tuyên Quang",
-  },
-  93202003: {
+  }, "93202003": {
     bank_id: 202,
     branch_name: "CN VỊ THANH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hậu Giang",
-  },
-  86202001: {
+  }, "86202001": {
     bank_id: 202,
     branch_name: "CN VĨNH LONG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  86202800: {
+  }, "86202800": {
     bank_id: 202,
     branch_name: "CN VĨNH LONG PGD CÁI VỒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  26202001: {
+  }, "26202001": {
     bank_id: 202,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  15202001: {
+  }, "15202001": {
     bank_id: 202,
     branch_name: "CN YÊN BÁI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Yên Bái",
-  },
-  93202801: {
+  }, "93202801": {
     bank_id: 202,
     branch_name: "HẬU GIANG PGD 1/5",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hậu Giang",
-  },
-  79202801: {
+  }, "79202801": {
     bank_id: 202,
     branch_name: "CN TÂY SÀI GÒN PGD QUẬN 11",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  52202003: {
+  }, "52202003": {
     bank_id: 202,
     branch_name: "CN TÂY SƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Định",
-  },
-  1202027: {
+  }, "01202027": {
     bank_id: 202,
     branch_name: "CN THẠCH THẤT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  34202001: {
+  }, "34202001": {
     bank_id: 202,
     branch_name: "CN THÁI BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thái Bình",
-  },
-  19202001: {
+  }, "19202001": {
     bank_id: 202,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  1202006: {
+  }, "01202006": {
     bank_id: 202,
     branch_name: "CN THĂNG LONG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202012: {
+  }, "01202012": {
     bank_id: 202,
     branch_name: "CN THÀNH ĐÔ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  30202003: {
+  }, "30202003": {
     bank_id: 202,
     branch_name: "CN THÀNH ĐÔNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  38202001: {
+  }, "38202001": {
     bank_id: 202,
     branch_name: "CN THANH HÓA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  36202002: {
+  }, "36202002": {
     bank_id: 202,
     branch_name: "CN THANH NAM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nam Định",
-  },
-  56333001: {
+  }, "56333001": {
     bank_id: 333,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Khánh Hòa",
-  },
-  91333002: {
+  }, "91333002": {
     bank_id: 333,
     branch_name: "CN KIÊN GIANG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Kiên Giang",
-  },
-  80333001: {
+  }, "80333001": {
     bank_id: 333,
     branch_name: "CN LONG AN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Long An",
-  },
-  40333001: {
+  }, "40333001": {
     bank_id: 333,
     branch_name: "CN NGHỆ AN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Nghệ An",
-  },
-  79333005: {
+  }, "79333005": {
     bank_id: 333,
     branch_name: "CN PHÚ LÂM",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  79333002: {
+  }, "79333002": {
     bank_id: 333,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  79333010: {
+  }, "79333010": {
     bank_id: 333,
     branch_name: "CN QUẬN 4",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  49333001: {
+  }, "49333001": {
     bank_id: 333,
     branch_name: "CN QUẢNG NAM",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Quảng Nam",
-  },
-  51333001: {
+  }, "51333001": {
     bank_id: 333,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Quảng Ngãi",
-  },
-  22333001: {
+  }, "22333001": {
     bank_id: 333,
     branch_name: "CN QUẢNG NINH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Quảng Ninh",
-  },
-  79333009: {
+  }, "79333009": {
     bank_id: 333,
     branch_name: "CN SỞ GIAO DỊCH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  1202017: {
+  }, "01202017": {
     bank_id: 202,
     branch_name: "CN HÀ TÂY",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202005: {
+  }, "01202005": {
     bank_id: 202,
     branch_name: "CN HÀ THÀNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  42202001: {
+  }, "42202001": {
     bank_id: 202,
     branch_name: "CN HÀ TĨNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  42202800: {
+  }, "42202800": {
     bank_id: 202,
     branch_name: "CN HÀ TĨNH PGD HỒNG LĨNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  1202011: {
+  }, "01202011": {
     bank_id: 202,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  30202001: {
+  }, "30202001": {
     bank_id: 202,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  30202800: {
+  }, "30202800": {
     bank_id: 202,
     branch_name: "CN HẢI DƯƠNG PGD HOÀNG THẠCH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  30202801: {
+  }, "30202801": {
     bank_id: 202,
     branch_name: "CN HẢI DƯƠNG PGD THÀNH ĐÔNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  31202001: {
+  }, "31202001": {
     bank_id: 202,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Phòng",
-  },
-  48202002: {
+  }, "48202002": {
     bank_id: 202,
     branch_name: "CN HẢI VÂN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  20202800: {
+  }, "20202800": {
     bank_id: 202,
     branch_name: "LẠNG SƠN PGD ĐỒNG ĐĂNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  20202801: {
+  }, "20202801": {
     bank_id: 202,
     branch_name: "LẠNG SƠN PGD KỲ LỪA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  26202800: {
+  }, "26202800": {
     bank_id: 202,
     branch_name: "PHÚC YÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  1202015: {
+  }, "01202015": {
     bank_id: 202,
     branch_name: "SỞ GIAO DỊCH 3",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202001: {
+  }, "01202001": {
     bank_id: 202,
     branch_name: "HỘI SỞ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1657001: {
+  }, "01657001": {
     bank_id: 657,
     branch_name: "CN HÀ NỘI",
     bank_name: "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS",
     area: "Hà Nội",
-  },
-  79614001: {
+  }, "79614001": {
     bank_id: 614,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS",
     area: "Hồ Chí Minh",
-  },
-  1653001: {
+  }, "01653001": {
     bank_id: 653,
     branch_name: "CN HÀ NỘI (BTMU)",
     bank_name: "BTMU-BANK OF TOKYO MITSUBISHI UFJ LTD",
     area: "Hà Nội",
-  },
-  79622001: {
+  }, "79622001": {
     bank_id: 622,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "BTMU-BANK OF TOKYO MITSUBISHI UFJ LTD",
     area: "Hồ Chí Minh",
-  },
-  89339001: {
+  }, "89339001": {
     bank_id: 339,
     branch_name: "CN AN GIANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "An Giang",
-  },
-  83339001: {
+  }, "83339001": {
     bank_id: 339,
     branch_name: "CN BẾN TRE",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Bến Tre",
-  },
-  1202033: {
+  }, "01202033": {
     bank_id: 202,
     branch_name: "CN THANH TRÌ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  40202005: {
+  }, "40202005": {
     bank_id: 202,
     branch_name: "CN THÀNH VINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  1202019: {
+  }, "01202019": {
     bank_id: 202,
     branch_name: "CN THANH XUÂN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202026: {
+  }, "79202026": {
     bank_id: 202,
     branch_name: "CN THỐNG NHẤT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  74202004: {
+  }, "74202004": {
     bank_id: 202,
     branch_name: "CN THỦ DẦU MỘT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  79202029: {
+  }, "79202029": {
     bank_id: 202,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202028: {
+  }, "79202028": {
     bank_id: 202,
     branch_name: "CN THỦ THIÊM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  46202001: {
+  }, "46202001": {
     bank_id: 202,
     branch_name: "CN THỪA THIÊN HUẾ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  82202001: {
+  }, "82202001": {
     bank_id: 202,
     branch_name: "CN TIỀN GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Tiền Giang",
-  },
-  79202002: {
+  }, "79202002": {
     bank_id: 202,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  94333001: {
+  }, "94333001": {
     bank_id: 333,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Sóc Trăng",
-  },
-  79333011: {
+  }, "79333011": {
     bank_id: 333,
     branch_name: "CN TÂN BÌNH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  79333008: {
+  }, "79333008": {
     bank_id: 333,
     branch_name: "CN TÂN THUẬN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  80333012: {
+  }, "80333012": {
     bank_id: 333,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Long An",
-  },
-  38333001: {
+  }, "38333001": {
     bank_id: 333,
     branch_name: "CN THANH HÓA",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Thanh Hóa",
-  },
-  79333007: {
+  }, "79333007": {
     bank_id: 333,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  48333001: {
+  }, "48333001": {
     bank_id: 333,
     branch_name: "CN TRUNG VIỆT",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Đà Nẵng",
-  },
-  86333001: {
+  }, "86333001": {
     bank_id: 333,
     branch_name: "CN VĨNH LONG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Vĩnh Long",
-  },
-  91333001: {
+  }, "91333001": {
     bank_id: 333,
     branch_name: "PGD KIÊN GIANG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Kiên Giang",
-  },
-  24319001: {
+  }, "24319001": {
     bank_id: 319,
     branch_name: "CN BẮC GIANG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Bắc Giang",
-  },
-  74319001: {
+  }, "74319001": {
     bank_id: 319,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Bình Dương",
-  },
-  79202020: {
+  }, "79202020": {
     bank_id: 202,
     branch_name: "CN HÀM NGHI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  93202001: {
+  }, "93202001": {
     bank_id: 202,
     branch_name: "CN HẬU GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hậu Giang",
-  },
-  79202033: {
+  }, "79202033": {
     bank_id: 202,
     branch_name: "CN HIỆP PHÚ SG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  17202001: {
+  }, "17202001": {
     bank_id: 202,
     branch_name: "CN HÒA BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hoà Bình",
-  },
-  1202031: {
+  }, "01202031": {
     bank_id: 202,
     branch_name: "CN HOÀI ĐỨC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202021: {
+  }, "01202021": {
     bank_id: 202,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202019: {
+  }, "79202019": {
     bank_id: 202,
     branch_name: "CN HÓC MÔN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  49202002: {
+  }, "49202002": {
     bank_id: 202,
     branch_name: "CN HỘI AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Nam",
-  },
-  1202023: {
+  }, "01202023": {
     bank_id: 202,
     branch_name: "CN HỒNG HÀ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  25202002: {
+  }, "25202002": {
     bank_id: 202,
     branch_name: "CN HÙNG VƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  33202002: {
+  }, "33202002": {
     bank_id: 202,
     branch_name: "CN HƯNG YÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hưng Yên",
-  },
-  74339001: {
+  }, "74339001": {
     bank_id: 339,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  79203012: {
+  }, "79203012": {
     bank_id: 203,
     branch_name: "CN KỲ ĐỒNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  68203001: {
+  }, "68203001": {
     bank_id: 203,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  20203001: {
+  }, "20203001": {
     bank_id: 203,
     branch_name: "CN LẠNG SƠN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  10203001: {
+  }, "10203001": {
     bank_id: 203,
     branch_name: "CN LÀO CAI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Lào Cai",
-  },
-  80203001: {
+  }, "80203001": {
     bank_id: 203,
     branch_name: "CN LONG AN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Long An",
-  },
-  75203004: {
+  }, "75203004": {
     bank_id: 203,
     branch_name: "CN LONG KHÁNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  22203002: {
+  }, "22203002": {
     bank_id: 203,
     branch_name: "CN MÓNG CÁI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  74203003: {
+  }, "74203003": {
     bank_id: 203,
     branch_name: "CN NAM BÌNH DƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  48203002: {
+  }, "48203002": {
     bank_id: 203,
     branch_name: "CN NAM ĐÀ NẴNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  36203001: {
+  }, "36203001": {
     bank_id: 203,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Nam Định",
-  },
-  84202001: {
+  }, "84202001": {
     bank_id: 202,
     branch_name: "CN TRÀ VINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Trà Vinh",
-  },
-  84202800: {
+  }, "84202800": {
     bank_id: 202,
     branch_name: "CN TRÀ VINH PGD ĐIỆN BIÊN PHỦ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Trà Vinh",
-  },
-  1202024: {
+  }, "01202024": {
     bank_id: 202,
     branch_name: "CN TRÀNG AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  51360001: {
+  }, "51360001": {
     bank_id: 360,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Quảng Ngãi",
-  },
-  22360001: {
+  }, "22360001": {
     bank_id: 360,
     branch_name: "CN QUẢNG NINH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Quảng Ninh",
-  },
-  52360001: {
+  }, "52360001": {
     bank_id: 360,
     branch_name: "CN QUY NHƠN",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Bình Định",
-  },
-  79360002: {
+  }, "79360002": {
     bank_id: 360,
     branch_name: "CN SÀI GÒN",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  79360003: {
+  }, "79360003": {
     bank_id: 360,
     branch_name: "CN SÀI GÒN - GIA ĐỊNH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  48360001: {
+  }, "48360001": {
     bank_id: 360,
     branch_name: "CN SÔNG HÀN",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Đà Nẵng",
-  },
-  92360002: {
+  }, "92360002": {
     bank_id: 360,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Cần Thơ",
-  },
-  72360001: {
+  }, "72360001": {
     bank_id: 360,
     branch_name: "CN TÂY NINH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Tây Ninh",
-  },
-  96319001: {
+  }, "96319001": {
     bank_id: 319,
     branch_name: "CN CÀ MAU",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Cà Mau",
-  },
-  92319001: {
+  }, "92319001": {
     bank_id: 319,
     branch_name: "CN CẦN THƠ",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Cần Thơ",
-  },
-  75319001: {
+  }, "75319001": {
     bank_id: 319,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Đồng Nai",
-  },
-  1319001: {
+  }, "01319001": {
     bank_id: 319,
     branch_name: "CN HÀ NỘI",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hà Nội",
-  },
-  42319001: {
+  }, "42319001": {
     bank_id: 319,
     branch_name: "CN HÀ TĨNH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hà Tĩnh",
-  },
-  30319002: {
+  }, "30319002": {
     bank_id: 319,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hải Dương",
-  },
-  31319001: {
+  }, "31319001": {
     bank_id: 319,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hải Phòng",
-  },
-  79319002: {
+  }, "79319002": {
     bank_id: 319,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  30319001: {
+  }, "30319001": {
     bank_id: 319,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hải Dương",
-  },
-  56319001: {
+  }, "56319001": {
     bank_id: 319,
     branch_name: "CN NHA TRANG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Khánh Hòa",
-  },
-  51319001: {
+  }, "51319001": {
     bank_id: 319,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Quảng Ngãi",
-  },
-  56202001: {
+  }, "75306001": {
+    bank_id: 306,
+    branch_name: "CN ĐỒNG NAI",
+    bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
+    area: "Đồng Nai",
+  }, "56202001": {
     bank_id: 202,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  91202001: {
+  }, "91202001": {
     bank_id: 202,
     branch_name: "CN KIÊN GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  91202801: {
+  }, "91202801": {
     bank_id: 202,
     branch_name: "CN KIÊN GIANG PGD BA HÒN HÀ TIÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  91202803: {
+  }, "91202803": {
     bank_id: 202,
     branch_name: "CN KIÊN GIANG PGD MAI THỊ HỒNG HẠNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  27202003: {
+  }, "27202003": {
     bank_id: 202,
     branch_name: "CN KINH BẮC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  62202001: {
+  }, "62202001": {
     bank_id: 202,
     branch_name: "CN KON TUM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kon Tum",
-  },
-  42202002: {
+  }, "42202002": {
     bank_id: 202,
     branch_name: "CN KỲ ANH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  79202022: {
+  }, "79202022": {
     bank_id: 202,
     branch_name: "CN KỲ HÒA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  31202003: {
+  }, "31202003": {
     bank_id: 202,
     branch_name: "CN LẠCH TRAY",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Phòng",
-  },
-  12202001: {
+  }, "12202001": {
     bank_id: 202,
     branch_name: "CN LAI CHÂU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lai Châu",
-  },
-  31203002: {
+  }, "31203002": {
     bank_id: 203,
     branch_name: "CN NAM HẢI PHÒNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79203011: {
+  }, "79203011": {
     bank_id: 203,
     branch_name: "CN NAM SÀI GÒN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  40203001: {
+  }, "40203001": {
     bank_id: 203,
     branch_name: "CN NGHỆ AN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  79203017: {
+  }, "79203017": {
     bank_id: 203,
     branch_name: "CN NHÀ RỒNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  56203002: {
+  }, "56203002": {
     bank_id: 203,
     branch_name: "CN NHA TRANG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  75203003: {
+  }, "75203003": {
     bank_id: 203,
     branch_name: "CN NHƠN TRẠCH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  37203001: {
+  }, "37203001": {
     bank_id: 203,
     branch_name: "CN NINH BÌNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Ninh Bình",
-  },
-  52202002: {
+  }, "52202002": {
     bank_id: 202,
     branch_name: "CN PHÚ TÀI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Định",
-  },
-  52202800: {
+  }, "52202800": {
     bank_id: 202,
     branch_name: "CN PHÚ TÀI PGD HOÀI NHƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Định",
-  },
-  25202001: {
+  }, "25202001": {
     bank_id: 202,
     branch_name: "CN PHÚ THỌ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  25202801: {
+  }, "25202801": {
     bank_id: 202,
     branch_name: "CN PHÚ THỌ PGD  HÙNG VƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  34360001: {
+  }, "34360001": {
     bank_id: 360,
     branch_name: "CN THÁI BÌNH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Thái Bình",
-  },
-  1360003: {
+  }, "01360003": {
     bank_id: 360,
     branch_name: "CN THĂNG LONG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  38360001: {
+  }, "38360001": {
     bank_id: 360,
     branch_name: "CN THANH HÓA",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Thanh Hóa",
-  },
-  79360006: {
+  }, "79360006": {
     bank_id: 360,
     branch_name: "CN THỦ THIÊM",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  82360001: {
+  }, "82360001": {
     bank_id: 360,
     branch_name: "CN TIỀN GIANG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Tiền Giang",
-  },
-  79360001: {
+  }, "79360001": {
     bank_id: 360,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  86360001: {
+  }, "86360001": {
     bank_id: 360,
     branch_name: "CN VĨNH LONG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Vĩnh Long",
-  },
-  77360002: {
+  }, "77360002": {
     bank_id: 360,
     branch_name: "CN VŨNG TÀU",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  94303001: {
+  }, "94303001": {
     bank_id: 303,
     branch_name: "CN  SÓC TRĂNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Sóc Trăng",
-  },
-  79303006: {
+  }, "79303006": {
     bank_id: 303,
     branch_name: "CN 8 THANG 3",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  1303003: {
+  }, "01303003": {
     bank_id: 303,
     branch_name: "CN 8-3 HÀ NỘI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  22319001: {
+  }, "22319001": {
     bank_id: 319,
     branch_name: "CN QUẢNG NINH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Quảng Ninh",
-  },
-  52319001: {
+  }, "52319001": {
     bank_id: 319,
     branch_name: "CN QUY NHƠN",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Bình Định",
-  },
-  79319001: {
+  }, "79319001": {
     bank_id: 319,
     branch_name: "CN SÀI GÒN",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  34319001: {
+  }, "34319001": {
     bank_id: 319,
     branch_name: "CN THÁI BÌNH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Thái Bình",
-  },
-  1319002: {
+  }, "01319002": {
     bank_id: 319,
     branch_name: "CN THĂNG LONG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Hà Nội",
-  },
-  38319001: {
+  }, "38319001": {
     bank_id: 319,
     branch_name: "CN THANH HÓA",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Thanh Hóa",
-  },
-  66203001: {
+  }, "66203001": {
     bank_id: 203,
     branch_name: "CN DAKLAK",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  1203013: {
+  }, "01203013": {
     bank_id: 203,
     branch_name: "CN ĐÔNG ANH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  75203001: {
+  }, "75203001": {
     bank_id: 203,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  87203001: {
+  }, "87203001": {
     bank_id: 203,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  51203002: {
+  }, "51203002": {
     bank_id: 203,
     branch_name: "CN DUNG QUẤT",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  68202001: {
+  }, "68202001": {
     bank_id: 202,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  68202800: {
+  }, "68202800": {
     bank_id: 202,
     branch_name: "CN LÂM ĐỒNG PGD ĐỨC TRỌNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  38202003: {
+  }, "38202003": {
     bank_id: 202,
     branch_name: "CN LAM SON",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  20202001: {
+  }, "20202001": {
     bank_id: 202,
     branch_name: "CN LẠNG SƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  10202001: {
+  }, "10202001": {
     bank_id: 202,
     branch_name: "CN LÀO CAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lào Cai",
-  },
-  44901001: {
+  }, "44901001": {
     bank_id: 901,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Quảng Bình",
-  },
-  94901001: {
+  }, "94901001": {
     bank_id: 901,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Sóc Trăng",
-  },
-  34901001: {
+  }, "34901001": {
     bank_id: 901,
     branch_name: "CN THÁI BÌNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Thái Bình",
-  },
-  38901001: {
+  }, "38901001": {
     bank_id: 901,
     branch_name: "CN THANH HÓA",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Thanh Hóa",
-  },
-  68901001: {
+  }, "68901001": {
     bank_id: 901,
     branch_name: "CN TỈNH LÂM ĐỒNG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Lâm Đồng",
-  },
-  84901001: {
+  }, "84901001": {
     bank_id: 901,
     branch_name: "CN TRÀ VINH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Trà Vinh",
-  },
-  25202802: {
+  }, "25202802": {
     bank_id: 202,
     branch_name: "CN PHÚ THỌ PGD KVN THỤY VÂN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  25202800: {
+  }, "25202800": {
     bank_id: 202,
     branch_name: "CN PHÚ THỌ PGD PHONG CHÂU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  46202002: {
+  }, "46202002": {
     bank_id: 202,
     branch_name: "CN PHÚ XUÂN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  54202001: {
+  }, "54202001": {
     bank_id: 202,
     branch_name: "CN PHÚ YÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Phú Yên",
-  },
-  26202002: {
+  }, "26202002": {
     bank_id: 202,
     branch_name: "CN PHÚC YÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  44202001: {
+  }, "44202001": {
     bank_id: 202,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Bình",
-  },
-  44202800: {
+  }, "44202800": {
     bank_id: 202,
     branch_name: "CN QUẢNG BÌNH PGD ĐỒNG HỚI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Bình",
-  },
-  1202026: {
+  }, "01202026": {
     bank_id: 202,
     branch_name: "CN QUANG MINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  49202001: {
+  }, "49202001": {
     bank_id: 202,
     branch_name: "CN QUẢNG NAM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Nam",
-  },
-  49202800: {
+  }, "49202800": {
     bank_id: 202,
     branch_name: "CN QUẢNG NAM PGD CHU LAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Nam",
-  },
-  89303001: {
+  }, "89303001": {
     bank_id: 303,
     branch_name: "CN AN GIANG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "An Giang",
-  },
-  77303002: {
+  }, "77303002": {
     bank_id: 303,
     branch_name: "CN BÀ RỊA",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  77303001: {
+  }, "77303001": {
     bank_id: 303,
     branch_name: "CN BÀ RỊA VŨNG TÀU",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  95303001: {
+  }, "95303001": {
     bank_id: 303,
     branch_name: "CN BẠC LIÊU",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bạc Liêu",
-  },
-  27303001: {
+  }, "27303001": {
     bank_id: 303,
     branch_name: "CN BẮC NINH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bắc Ninh",
-  },
-  74303002: {
+  }, "74303002": {
     bank_id: 303,
     branch_name: "CN BẾN CÁT",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Dương",
-  },
-  79303019: {
+  }, "79303019": {
     bank_id: 303,
     branch_name: "CN BẾN THÀNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  83303001: {
+  }, "83303001": {
     bank_id: 303,
     branch_name: "CN BẾN TRE",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bến Tre",
-  },
-  52303001: {
+  }, "52303001": {
     bank_id: 303,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Định",
-  },
-  74303001: {
+  }, "74303001": {
     bank_id: 303,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Dương",
-  },
-  70303001: {
+  }, "70303001": {
     bank_id: 303,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Phước",
-  },
-  79203013: {
+  }, "79203013": {
     bank_id: 203,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  64203001: {
+  }, "64203001": {
     bank_id: 203,
     branch_name: "CN GIA LAI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Gia Lai",
-  },
-  79203014: {
+  }, "79203014": {
     bank_id: 203,
     branch_name: "CN GÒ VẤP",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  22203003: {
+  }, "22203003": {
     bank_id: 203,
     branch_name: "CN HẠ LONG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  35203001: {
+  }, "35203001": {
     bank_id: 203,
     branch_name: "CN HÀ NAM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nam",
-  },
-  1203003: {
+  }, "01203003": {
     bank_id: 203,
     branch_name: "CN HÀ NỘI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1203009: {
+  }, "01203009": {
     bank_id: 203,
     branch_name: "CN HÀ TÂY",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1203014: {
+  }, "01203014": {
     bank_id: 203,
     branch_name: "CN HÀ THÀNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  42203001: {
+  }, "42203001": {
     bank_id: 203,
     branch_name: "CN HÀ TĨNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  30203001: {
+  }, "30203001": {
     bank_id: 203,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hải Dương",
-  },
-  31203001: {
+  }, "31203001": {
     bank_id: 203,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  26901001: {
+  }, "26901001": {
     bank_id: 901,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Vĩnh Phúc",
-  },
-  1901001: {
+  }, "01901001": {
     bank_id: 901,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hà Nội",
-  },
-  45901001: {
+  }, "45901001": {
     bank_id: 901,
     branch_name: "QUẢNG BÌNH PGD QUẢNG TRỊ",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Quảng Trị",
-  },
-  1901003: {
+  }, "01901003": {
     bank_id: 901,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hà Nội",
-  },
-  79629001: {
+  }, "79629001": {
     bank_id: 629,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NGANHANGTNHHCTBC-NGÂN HÀNG TNHH CTBC",
     area: "Hồ Chí Minh",
-  },
-  1621001: {
+  }, "01621001": {
     bank_id: 621,
     branch_name: "CN HÀ NỘI",
     bank_name: "NH CREDIT AGRICOLE CIB",
     area: "Hà Nội",
-  },
-  79621001: {
+  }, "79621001": {
     bank_id: 621,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NH CREDIT AGRICOLE CIB",
     area: "Hồ Chí Minh",
-  },
-  79601001: {
+  }, "79601001": {
     bank_id: 601,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NHBPCEIOM-NGÂN HÀNG BPCEIOM",
     area: "Hồ Chí Minh",
-  },
-  1652001: {
+  }, "01652001": {
     bank_id: 652,
     branch_name: "CN HÀ NỘI",
     bank_name: "NHCONGNGHIEPHANQUOC-NGÂN HÀNG CÔNG NGHIỆP HÀN QUỐC",
     area: "Hà Nội",
-  },
-  10628017: {
+  }, "10628017": {
     bank_id: 628,
     branch_name: "CN HÀ NỘI",
     bank_name: "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT",
     area: "Hà Nội",
-  },
-  79633001: {
+  }, "79633001": {
     bank_id: 633,
     branch_name: "TPHCM",
     bank_name: "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT",
     area: "Hồ Chí Minh",
-  },
-  49202801: {
+  }, "49202801": {
     bank_id: 202,
     branch_name: "CN QUẢNG NAM PGD ĐIỆN NAM ĐIỆN NGỌC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Nam",
-  },
-  51202001: {
+  }, "51202001": {
     bank_id: 202,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  51202800: {
+  }, "51202800": {
     bank_id: 202,
     branch_name: "CN QUẢNG NGÃI PGD DUNG QUẤT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  22202001: {
+  }, "22202001": {
     bank_id: 202,
     branch_name: "CN QUẢNG NINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  22202802: {
+  }, "22202802": {
     bank_id: 202,
     branch_name: "CN QUẢNG NINH PGD BÃI CHÁY",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  22202800: {
+  }, "22202800": {
     bank_id: 202,
     branch_name: "CN QUẢNG NINH PGD ĐÔNG TRIỀU UÔNG BÍ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  45202001: {
+  }, "45202001": {
     bank_id: 202,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Trị",
-  },
-  1202009: {
+  }, "01202009": {
     bank_id: 202,
     branch_name: "CN QUANG TRUNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  91202003: {
+  }, "91202003": {
     bank_id: 202,
     branch_name: "CN RẠCH GIÁ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  79202003: {
+  }, "79202003": {
     bank_id: 202,
     branch_name: "CN SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79303016: {
+  }, "79303016": {
     bank_id: 303,
     branch_name: "CN BÌNH TÂY",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303017: {
+  }, "79303017": {
     bank_id: 303,
     branch_name: "CN BÌNH THẠNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  60303001: {
+  }, "60303001": {
     bank_id: 303,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Thuận",
-  },
-  96303001: {
+  }, "96303001": {
     bank_id: 303,
     branch_name: "CN CÀ MAU",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Cà Mau",
-  },
-  92303001: {
+  }, "92303001": {
     bank_id: 303,
     branch_name: "CN CẦN THƠ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Cần Thơ",
-  },
-  79303003: {
+  }, "79303003": {
     bank_id: 303,
     branch_name: "CN CHỢ LỚN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  70303002: {
+  }, "70303002": {
     bank_id: 303,
     branch_name: "CN CHƠN THÀNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Phước",
-  },
-  79303004: {
+  }, "79303004": {
     bank_id: 303,
     branch_name: "CN CỦ CHI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  86303002: {
+  }, "86303002": {
     bank_id: 303,
     branch_name: "CN CỬU LONG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Vĩnh Long",
-  },
-  48303001: {
+  }, "48303001": {
     bank_id: 303,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đà Nẵng",
-  },
-  67303001: {
+  }, "67303001": {
     bank_id: 303,
     branch_name: "CN ĐAK NÔNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đắk Nông",
-  },
-  1203008: {
+  }, "01203008": {
     bank_id: 203,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1203015: {
+  }, "01203015": {
     bank_id: 203,
     branch_name: "CN HOÀNG MAI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  46203001: {
+  }, "46203001": {
     bank_id: 203,
     branch_name: "CN HUẾ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  79203003: {
+  }, "79203003": {
     bank_id: 203,
     branch_name: "CN HÙNG VƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  33203001: {
+  }, "33203001": {
     bank_id: 203,
     branch_name: "CN HƯNG YÊN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hưng Yên",
-  },
-  56203001: {
+  }, "56203001": {
     bank_id: 203,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  91203001: {
+  }, "91203001": {
     bank_id: 203,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Kiên Giang",
-  },
-  62203001: {
+  }, "62203001": {
     bank_id: 203,
     branch_name: "CN KONTUM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Kon Tum",
-  },
-  87202800: {
+  }, "87202800": {
     bank_id: 202,
     branch_name: "CN ĐỒNG THÁP PGD SA ĐÉC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  87202801: {
+  }, "87202801": {
     bank_id: 202,
     branch_name: "CN ĐỒNG THÁP PGD THÁP MƯỜI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  51202002: {
+  }, "51202002": {
     bank_id: 202,
     branch_name: "CN DUNG QUẤT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  79600001: {
+  }, "79600001": {
     bank_id: 600,
     branch_name: "CN TP HỒ CHÍ MINH",
-    bank_name:
-      "NHTHESIAMCOMMERCIALBANKPUBLIC-NGÂN HÀNG SIAM COMMERCIAL BANK PUBLIC",
+    bank_name: "NHTHESIAMCOMMERCIALBANKPUBLIC-NGÂN HÀNG SIAM COMMERCIAL BANK PUBLIC",
     area: "Hồ Chí Minh",
-  },
-  79324001: {
+  }, "79324001": {
     bank_id: 324,
     branch_name: "HỘI SỞ",
     bank_name: "NHTMCPVIETHOA-NGÂN HÀNG TMCP VIỆT HOA",
     area: "Hồ Chí Minh",
-  },
-  75658001: {
+  }, "75658001": {
     bank_id: 658,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "NHTNHHE.SUN-NGÂN HÀN TNHH E.SUN",
     area: "Đồng Nai",
-  },
-  74501001: {
+  }, "74501001": {
     bank_id: 501,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Bình Dương",
-  },
-  79501002: {
+  }, "79501002": {
     bank_id: 501,
     branch_name: "CN CHỢ LỚN",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  48501001: {
+  }, "48501001": {
     bank_id: 501,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  75501001: {
+  }, "75501001": {
     bank_id: 501,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Đồng Nai",
-  },
-  1501002: {
+  }, "01501002": {
     bank_id: 501,
     branch_name: "CN HÀ NỘI",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hà Nội",
-  },
-  31501001: {
+  }, "31501001": {
     bank_id: 501,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79501003: {
+  }, "79501003": {
     bank_id: 501,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79501001: {
+  }, "79501001": {
     bank_id: 501,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  10202003: {
+  }, "10202003": {
     bank_id: 202,
     branch_name: "CN SAPA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lào Cai",
-  },
-  10202801: {
+  }, "10202801": {
     bank_id: 202,
     branch_name: "CN SAPA PGD PHAN ĐÌNH PHÙNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lào Cai",
-  },
-  1202002: {
+  }, "01202002": {
     bank_id: 202,
     branch_name: "CN SỞ GIAO DỊCH 1",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202001: {
+  }, "79202001": {
     bank_id: 202,
     branch_name: "CN SỞ GIAO DỊCH 2",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  94202001: {
+  }, "94202001": {
     bank_id: 202,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  94202800: {
+  }, "94202800": {
     bank_id: 202,
     branch_name: "CN SÓC TRĂNG PGD CHÂU THÀNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  14202001: {
+  }, "14202001": {
     bank_id: 202,
     branch_name: "CN SƠN LA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sơn La",
-  },
-  14202800: {
+  }, "14202800": {
     bank_id: 202,
     branch_name: "CN SƠN LA PGD MỘC CHÂU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sơn La",
-  },
-  14202801: {
+  }, "14202801": {
     bank_id: 202,
     branch_name: "CN SƠN LA PGD MƯỜNG LA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sơn La",
-  },
-  1202018: {
+  }, "01202018": {
     bank_id: 202,
     branch_name: "CN SƠN TÂY",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202022: {
+  }, "01202022": {
     bank_id: 202,
     branch_name: "CN CHƯƠNG DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  77202004: {
+  }, "77202004": {
     bank_id: 202,
     branch_name: "CN CÔN ĐẢO",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79202016: {
+  }, "79202016": {
     bank_id: 202,
     branch_name: "CN CỦ CHI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  86202002: {
+  }, "86202002": {
     bank_id: 202,
     branch_name: "CN CỬU LONG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  68202003: {
+  }, "68202003": {
     bank_id: 202,
     branch_name: "CN ĐÀ LẠT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  48202001: {
+  }, "48202001": {
     bank_id: 202,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  40302001: {
+  }, "40302001": {
     bank_id: 302,
     branch_name: "CN NGHỆ AN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Nghệ An",
-  },
-  37302001: {
+  }, "37302001": {
     bank_id: 302,
     branch_name: "CN NINH BÌNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Ninh Bình",
-  },
-  92302002: {
+  }, "92302002": {
     bank_id: 302,
     branch_name: "CN NINH KIỀU",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Cần Thơ",
-  },
-  25302001: {
+  }, "25302001": {
     bank_id: 302,
     branch_name: "CN PHÚ THỌ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Phú Thọ",
-  },
-  54302001: {
+  }, "54302001": {
     bank_id: 302,
     branch_name: "CN PHÚ YÊN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Phú Yên",
-  },
-  91202004: {
+  }, "91202004": {
     bank_id: 202,
     branch_name: "CN DƯƠNG ĐÔNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  84202002: {
+  }, "84202002": {
     bank_id: 202,
     branch_name: "CN DUYÊN HẢI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Trà Vinh",
-  },
-  79202007: {
+  }, "79202007": {
     bank_id: 202,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  64202001: {
+  }, "64202001": {
     bank_id: 202,
     branch_name: "CN GIA LAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  64202802: {
+  }, "64202802": {
     bank_id: 202,
     branch_name: "CN GIA LAI PGD BẮC GIA LAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  64202803: {
+  }, "64202803": {
     bank_id: 202,
     branch_name: "CN GIA LAI PGD CHƯ SÊ I",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  64202800: {
+  }, "64202800": {
     bank_id: 202,
     branch_name: "CN GIA LAI PGD KV DONG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  1202032: {
+  }, "01202032": {
     bank_id: 202,
     branch_name: "CN GIA LÂM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202029: {
+  }, "01202029": {
     bank_id: 202,
     branch_name: "CN HÀ ĐÔNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  2202001: {
+  }, "02202001": {
     bank_id: 202,
     branch_name: "CN HÀ GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Giang",
-  },
-  1501001: {
+  }, "01501001": {
     bank_id: 501,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM",
     area: "Hà Nội",
-  },
-  1616002: {
+  }, "01616002": {
     bank_id: 616,
     branch_name: "CN HÀ NỘI",
     bank_name: "NHTNHHMTVSHINHANVIETNAM-NGÂN HÀNG TNHH MIV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  27663001: {
+  }, "27663001": {
     bank_id: 663,
     branch_name: "CN BẮC NINH",
     bank_name: "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI",
     area: "Bắc Ninh",
-  },
-  1663001: {
+  }, "01663001": {
     bank_id: 663,
     branch_name: "HỘI SỞ",
     bank_name: "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI",
     area: "Hà Nội",
-  },
-  1662001: {
+  }, "01662001": {
     bank_id: 662,
     branch_name: "CN HÀ NỘI",
     bank_name: "NONGHYUP-NGÂN HÀNG NONG HYUP",
     area: "Hà Nội",
-  },
-  89333001: {
+  }, "89333001": {
     bank_id: 333,
     branch_name: "CN AN GIANG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "An Giang",
-  },
-  77333001: {
+  }, "77333001": {
     bank_id: 333,
     branch_name: "CN BÀ RỊA VŨNG TÀU",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  95333001: {
+  }, "95333001": {
     bank_id: 333,
     branch_name: "CN BẠC LIÊU",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Bạc Liêu",
-  },
-  79333006: {
+  }, "79333006": {
     bank_id: 333,
     branch_name: "CN BẾN THÀNH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  74333001: {
+  }, "74333001": {
     bank_id: 333,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Bình Dương",
-  },
-  96333001: {
+  }, "96333001": {
     bank_id: 333,
     branch_name: "CN CÀ MAU",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Cà Mau",
-  },
-  40319001: {
+  }, "40319001": {
     bank_id: 319,
     branch_name: "CN VINH",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Nghệ An",
-  },
-  77319001: {
+  }, "77319001": {
     bank_id: 319,
     branch_name: "CN VŨNG TÀU",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79625001: {
+  }, "79625001": {
     bank_id: 625,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "OVERSEA-CHINESE-OVERSEA - CHINESE BANK",
     area: "Hồ Chí Minh",
-  },
-  89341001: {
+  }, "89341001": {
     bank_id: 341,
     branch_name: "CN AN GIANG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "An Giang",
-  },
-  77341001: {
+  }, "77341001": {
     bank_id: 341,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  27341001: {
+  }, "27341001": {
     bank_id: 341,
     branch_name: "CN BẮC NINH",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Bắc Ninh",
-  },
-  74341001: {
+  }, "74341001": {
     bank_id: 341,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Bình Dương",
-  },
-  92341001: {
+  }, "92341001": {
     bank_id: 341,
     branch_name: "CN CẦN THƠ",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Cần Thơ",
-  },
-  48341001: {
+  }, "48341001": {
     bank_id: 341,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Đà Nẵng",
-  },
-  75341001: {
+  }, "75341001": {
     bank_id: 341,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Đồng Nai",
-  },
-  87341002: {
+  }, "87341002": {
     bank_id: 341,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Đồng Tháp",
-  },
-  44302001: {
+  }, "44302001": {
     bank_id: 302,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Quảng Bình",
-  },
-  49302001: {
+  }, "49302001": {
     bank_id: 302,
     branch_name: "CN QUẢNG NAM",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Quảng Nam",
-  },
-  22302002: {
+  }, "22302002": {
     bank_id: 302,
     branch_name: "CN QUẢNG NINH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Quảng Ninh",
-  },
-  91302002: {
+  }, "91302002": {
     bank_id: 302,
     branch_name: "CN RẠCH GÍA",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Kiên Giang",
-  },
-  87302001: {
+  }, "87302001": {
     bank_id: 302,
     branch_name: "CN SA ĐÉC",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Đồng Tháp",
-  },
-  79302004: {
+  }, "79302004": {
     bank_id: 302,
     branch_name: "CN SÀI GÒN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  79302002: {
+  }, "79302002": {
     bank_id: 302,
     branch_name: "CN TÂN BÌNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  79302007: {
+  }, "79302007": {
     bank_id: 302,
     branch_name: "CN TÂN SƠN NHẤT",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  72302001: {
+  }, "72302001": {
     bank_id: 302,
     branch_name: "CN TÂY NINH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Tây Ninh",
-  },
-  34302001: {
+  }, "34302001": {
     bank_id: 302,
     branch_name: "CN THÁI BÌNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Thái Bình",
-  },
-  19302001: {
+  }, "19302001": {
     bank_id: 302,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Thái Nguyên",
-  },
-  38302001: {
+  }, "38302001": {
     bank_id: 302,
     branch_name: "CN THANH HÓA",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Thanh Hóa",
-  },
-  22202004: {
+  }, "22202004": {
     bank_id: 202,
     branch_name: "CN HẠ LONG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  35202001: {
+  }, "35202001": {
     bank_id: 202,
     branch_name: "CN HÀ NAM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nam",
-  },
-  1202003: {
+  }, "01202003": {
     bank_id: 202,
     branch_name: "CN HÀ NỘI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79306011: {
+  }, "79306011": {
     bank_id: 306,
     branch_name: "CN VĂN THÁNH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  77306001: {
+  }, "77306001": {
     bank_id: 306,
     branch_name: "CN VŨNG TÀU",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  74306001: {
+  }, "74306001": {
     bank_id: 306,
     branch_name: "PGD BÌNH DƯƠNG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Bình Dương",
-  },
-  79306002: {
+  }, "79306002": {
     bank_id: 306,
     branch_name: "QUANG TRUNG PGD TRƯỜNG CHINH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  1401001: {
+  }, "01401001": {
     bank_id: 401,
     branch_name: "CN HÀ NỘI",
     bank_name: "NAPAS-NAPAS",
     area: "Hà Nội",
-  },
-  89352001: {
+  }, "89352001": {
     bank_id: 352,
     branch_name: "CN AN GIANG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "An Giang",
-  },
-  77352001: {
+  }, "77352001": {
     bank_id: 352,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  24352001: {
+  }, "24352001": {
     bank_id: 352,
     branch_name: "CN BẮC GIANG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Bắc Giang",
-  },
-  92333001: {
+  }, "92333001": {
     bank_id: 333,
     branch_name: "CN CẦN THƠ",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Cần Thơ",
-  },
-  1333002: {
+  }, "01333002": {
     bank_id: 333,
     branch_name: "CN CẦU GIẤY",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hà Nội",
-  },
-  79333004: {
+  }, "79333004": {
     bank_id: 333,
     branch_name: "CN CHỢ LỚN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  66333001: {
+  }, "66333001": {
     bank_id: 333,
     branch_name: "CN DAKLAK",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Đắk Lắk",
-  },
-  75333001: {
+  }, "75333001": {
     bank_id: 333,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Đồng Nai",
-  },
-  87333001: {
+  }, "87333001": {
     bank_id: 333,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Đồng Tháp",
-  },
-  79333003: {
+  }, "79333003": {
     bank_id: 333,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  1333001: {
+  }, "01333001": {
     bank_id: 333,
     branch_name: "CN HÀ NỘI",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hà Nội",
-  },
-  60355001: {
+  }, "60355001": {
     bank_id: 355,
     branch_name: "CN PHAN THIẾT",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Bình Thuận",
-  },
-  51355001: {
+  }, "51355001": {
     bank_id: 355,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Quảng Ngãi",
-  },
-  22355001: {
+  }, "22355001": {
     bank_id: 355,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Quảng Ninh",
-  },
-  1341001: {
+  }, "01341001": {
     bank_id: 341,
     branch_name: "CN HÀ NỘI",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hà Nội",
-  },
-  30341001: {
+  }, "30341001": {
     bank_id: 341,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hải Dương",
-  },
-  31341001: {
+  }, "31341001": {
     bank_id: 341,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hải Phòng",
-  },
-  56341001: {
+  }, "56341001": {
     bank_id: 341,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Khánh Hòa",
-  },
-  80341001: {
+  }, "80341001": {
     bank_id: 341,
     branch_name: "CN LONG AN",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Long An",
-  },
-  22341001: {
+  }, "22341001": {
     bank_id: 341,
     branch_name: "CN QUẢNG NINH",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Quảng Ninh",
-  },
-  79341001: {
+  }, "79341001": {
     bank_id: 341,
     branch_name: "CN SÀI GÒN",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hồ Chí Minh",
-  },
-  1341002: {
+  }, "01341002": {
     bank_id: 341,
     branch_name: "CN THĂNG LONG",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hà Nội",
-  },
-  1341003: {
+  }, "01341003": {
     bank_id: 341,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX",
     area: "Hà Nội",
-  },
-  89360001: {
+  }, "89360001": {
     bank_id: 360,
     branch_name: "CN AN GIANG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "An Giang",
-  },
-  77360001: {
+  }, "77360001": {
     bank_id: 360,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1302002: {
+  }, "01302002": {
     bank_id: 302,
     branch_name: "CN THANH XUÂN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  82302001: {
+  }, "82302001": {
     bank_id: 302,
     branch_name: "CN TIỀN GIANG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Tiền Giang",
-  },
-  31302001: {
+  }, "31302001": {
     bank_id: 302,
     branch_name: "CN TP HẢI PHÒNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hải Phòng",
-  },
-  1302001: {
+  }, "01302001": {
     bank_id: 302,
     branch_name: "CN TRỤ SỞ CHÍNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  26302001: {
+  }, "26302001": {
     bank_id: 302,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Vĩnh Phúc",
-  },
-  77302001: {
+  }, "77302001": {
     bank_id: 302,
     branch_name: "CN VŨNG TÀU",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1302008: {
+  }, "01302008": {
     bank_id: 302,
     branch_name: "CN XÃ ĐÀN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  22302001: {
+  }, "22302001": {
     bank_id: 302,
     branch_name: "PGD BÃI CHÁY",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Quảng Ninh",
-  },
-  22302003: {
+  }, "22302003": {
     bank_id: 302,
     branch_name: "PGD CẨM PHẢ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Quảng Ninh",
-  },
-  48302002: {
+  }, "48302002": {
     bank_id: 302,
     branch_name: "PGD HÒA KHÁNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Đà Nẵng",
-  },
-  31302003: {
+  }, "31302003": {
     bank_id: 302,
     branch_name: "PGD NGÔ QUYỀN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hải Phòng",
-  },
-  1302005: {
+  }, "01302005": {
     bank_id: 302,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  95352001: {
+  }, "95352001": {
     bank_id: 352,
     branch_name: "CN BẠC LIÊU",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Bạc Liêu",
-  },
-  27352001: {
+  }, "27352001": {
     bank_id: 352,
     branch_name: "CN BẮC NINH",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Bắc Ninh",
-  },
-  74352001: {
+  }, "74352001": {
     bank_id: 352,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Bình Dương",
-  },
-  96352001: {
+  }, "96352001": {
     bank_id: 352,
     branch_name: "CN CÀ MAU",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Cà Mau",
-  },
-  92352001: {
+  }, "92352001": {
     bank_id: 352,
     branch_name: "CN CẦN THƠ",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Cần Thơ",
-  },
-  48352001: {
+  }, "48352001": {
     bank_id: 352,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Đà Nẵng",
-  },
-  75352001: {
+  }, "75352001": {
     bank_id: 352,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Đồng Nai",
-  },
-  87352001: {
+  }, "87352001": {
     bank_id: 352,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Đồng Tháp",
-  },
-  1352001: {
+  }, "01352001": {
     bank_id: 352,
     branch_name: "CN HÀ NỘI",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hà Nội",
-  },
-  31352001: {
+  }, "31352001": {
     bank_id: 352,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hải Phòng",
-  },
-  93352001: {
+  }, "93352001": {
     bank_id: 352,
     branch_name: "CN HẬU GIANG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hậu Giang",
-  },
-  33352001: {
+  }, "33352001": {
     bank_id: 352,
     branch_name: "CN HƯNG YÊN",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hưng Yên",
-  },
-  52355001: {
+  }, "52355001": {
     bank_id: 355,
     branch_name: "CN QUY NHƠN",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Bình Định",
-  },
-  79355007: {
+  }, "79355007": {
     bank_id: 355,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hồ Chí Minh",
-  },
-  1355002: {
+  }, "01355002": {
     bank_id: 355,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Hà Nội",
-  },
-  74355001: {
+  }, "74355001": {
     bank_id: 355,
     branch_name: "PGD BÌNH DƯƠNG",
     bank_name: "VIETABANK-NGÂN HÀNG TMCP VIỆT Á",
     area: "Bình Dương",
-  },
-  77356001: {
+  }, "77356001": {
     bank_id: 356,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  92356001: {
+  }, "92356001": {
     bank_id: 356,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Cần Thơ",
-  },
-  79356002: {
+  }, "79356002": {
     bank_id: 356,
     branch_name: "CN CHỢ LỚN",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  48356001: {
+  }, "48356001": {
     bank_id: 356,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Đà Nẵng",
-  },
-  1356001: {
+  }, "01356001": {
     bank_id: 356,
     branch_name: "CN HÀ NỘI",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  31356001: {
+  }, "31356001": {
     bank_id: 356,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Hải Phòng",
-  },
-  56356001: {
+  }, "56356001": {
     bank_id: 356,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Khánh Hòa",
-  },
-  27360001: {
+  }, "27360001": {
     bank_id: 360,
     branch_name: "CN BẮC NINH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Bắc Ninh",
-  },
-  79360004: {
+  }, "79360004": {
     bank_id: 360,
     branch_name: "CN BẾN THÀNH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  74360001: {
+  }, "74360001": {
     bank_id: 360,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Bình Dương",
-  },
-  96360001: {
+  }, "96360001": {
     bank_id: 360,
     branch_name: "CN CÀ MAU",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Cà Mau",
-  },
-  92360001: {
+  }, "92360001": {
     bank_id: 360,
     branch_name: "CN CẦN THƠ",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Cần Thơ",
-  },
-  68360001: {
+  }, "68360001": {
     bank_id: 360,
     branch_name: "CN ĐÀ LẠT",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Lâm Đồng",
-  },
-  48360002: {
+  }, "48360002": {
     bank_id: 360,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Đà Nẵng",
-  },
-  1360006: {
+  }, "01360006": {
     bank_id: 360,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  1360005: {
+  }, "01360005": {
     bank_id: 360,
     branch_name: "CN ĐÔNG ĐÔ",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  79360005: {
+  }, "79360005": {
     bank_id: 360,
     branch_name: "CN ĐỒNG KHỞI",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hồ Chí Minh",
-  },
-  75360001: {
+  }, "75360001": {
     bank_id: 360,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Đồng Nai",
-  },
-  79306004: {
+  }, "79306004": {
     bank_id: 306,
     branch_name: "CN AN ĐÔNG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79306010: {
+  }, "79306010": {
     bank_id: 306,
     branch_name: "CN BẾN THÀNH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  83306001: {
+  }, "83306001": {
     bank_id: 306,
     branch_name: "CN BẾN TRE",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Bến Tre",
-  },
-  70306001: {
+  }, "70306001": {
     bank_id: 306,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Bình Phước",
-  },
-  79306008: {
+  }, "79306008": {
     bank_id: 306,
     branch_name: "CN BÌNH TÂY",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  92306001: {
+  }, "92306001": {
     bank_id: 306,
     branch_name: "CN CẦN THƠ",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Cần Thơ",
-  },
-  52306001: {
+  }, "52306001": {
     bank_id: 306,
     branch_name: "CN CẤP 1 QUY NHƠN",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Bình Định",
-  },
-  48306001: {
+  }, "48306001": {
     bank_id: 306,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Đà Nẵng",
-  },
-  66306001: {
+  }, "66306001": {
     bank_id: 306,
     branch_name: "CN DAK LAK",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Đắk Lắk",
-  },
-  75306001: {
-    bank_id: 306,
-    branch_name: "CN ĐỒNG NAI",
-    bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
-    area: "Đồng Nai",
-  },
-  1306001: {
+  }, "01306001": {
     bank_id: 306,
     branch_name: "CN HÀ NỘI",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hà Nội",
-  },
-  79306012: {
+  }, "79306012": {
     bank_id: 306,
     branch_name: "CN HÀM NGHI",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  91352001: {
+  }, "91352001": {
     bank_id: 352,
     branch_name: "CN KIÊN GIANG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Kiên Giang",
-  },
-  80352001: {
+  }, "80352001": {
     bank_id: 352,
     branch_name: "CN LONG AN",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Long An",
-  },
-  22352001: {
+  }, "22352001": {
     bank_id: 352,
     branch_name: "CN QUẢNG NINH",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Quảng Ninh",
-  },
-  79352001: {
+  }, "79352001": {
     bank_id: 352,
     branch_name: "CN SÀI GÒN",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hồ Chí Minh",
-  },
-  34352002: {
+  }, "34352002": {
     bank_id: 352,
     branch_name: "CN THÁI BÌNH",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Thái Bình",
-  },
-  19352001: {
+  }, "19352001": {
     bank_id: 352,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Thái Nguyên",
-  },
-  46352001: {
+  }, "46352001": {
     bank_id: 352,
     branch_name: "CN THỪA THIÊN HUẾ",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Thừa Thiên Huế",
-  },
-  82352001: {
+  }, "82352001": {
     bank_id: 352,
     branch_name: "CN TIỀN GIANG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Tiền Giang",
-  },
-  86352001: {
+  }, "86352001": {
     bank_id: 352,
     branch_name: "CN VĨNH LONG",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Vĩnh Long",
-  },
-  34352001: {
+  }, "34352001": {
     bank_id: 352,
     branch_name: "HẢI PHÒNG PGD SỐ 9",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Thái Bình",
-  },
-  1352002: {
+  }, "01352002": {
     bank_id: 352,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "NCB-NGÂN HÀNG TMCP QUỐC DÂN",
     area: "Hà Nội",
-  },
-  80356001: {
+  }, "80356001": {
     bank_id: 356,
     branch_name: "CN LONG AN",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Long An",
-  },
-  40356001: {
+  }, "40356001": {
     bank_id: 356,
     branch_name: "CN NGHỆ AN",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Nghệ An",
-  },
-  51356001: {
+  }, "51356001": {
     bank_id: 356,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Quảng Ngãi",
-  },
-  79356003: {
+  }, "79356003": {
     bank_id: 356,
     branch_name: "CN SÀI GÒN",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79356001: {
+  }, "79356001": {
     bank_id: 356,
     branch_name: "CN TP HCM",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  94356001: {
+  }, "94356001": {
     bank_id: 356,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Sóc Trăng",
-  },
-  94356002: {
+  }, "94356002": {
     bank_id: 356,
     branch_name: "PGD SÓC TRĂNG",
     bank_name: "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN",
     area: "Sóc Trăng",
-  },
-  89203001: {
+  }, "89203001": {
     bank_id: 203,
     branch_name: "CN AN GIANG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "An Giang",
-  },
-  1203005: {
+  }, "01203005": {
     bank_id: 203,
     branch_name: "CN BA ĐÌNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  77203001: {
+  }, "77203001": {
     bank_id: 203,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  74203004: {
+  }, "74203004": {
     bank_id: 203,
     branch_name: "CN BẮC BÌNH DƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  87360001: {
+  }, "87360001": {
     bank_id: 360,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Đồng Tháp",
-  },
-  1360001: {
+  }, "01360001": {
     bank_id: 360,
     branch_name: "CN HÀ NỘI",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  1360004: {
+  }, "01360004": {
     bank_id: 360,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  31360001: {
+  }, "31360001": {
     bank_id: 360,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hải Phòng",
-  },
-  93360001: {
+  }, "93360001": {
     bank_id: 360,
     branch_name: "CN HẬU GIANG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hậu Giang",
-  },
-  1360002: {
+  }, "01360002": {
     bank_id: 360,
     branch_name: "CN HSC",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Hà Nội",
-  },
-  46360001: {
+  }, "46360001": {
     bank_id: 360,
     branch_name: "CN HUẾ",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Thừa Thiên Huế",
-  },
-  56360001: {
+  }, "56360001": {
     bank_id: 360,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Khánh Hòa",
-  },
-  91360001: {
+  }, "91360001": {
     bank_id: 360,
     branch_name: "CN KIÊN GIANG",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Kiên Giang",
-  },
-  80360001: {
+  }, "80360001": {
     bank_id: 360,
     branch_name: "CN LONG AN",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Long An",
-  },
-  36360001: {
+  }, "36360001": {
     bank_id: 360,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Nam Định",
-  },
-  79306001: {
+  }, "79306001": {
     bank_id: 306,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  91306001: {
+  }, "91306001": {
     bank_id: 306,
     branch_name: "CN KIÊN GIANG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Kiên Giang",
-  },
-  68306001: {
+  }, "68306001": {
     bank_id: 306,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Lâm Đồng",
-  },
-  79306006: {
+  }, "79306006": {
     bank_id: 306,
     branch_name: "CN NGẢ BẢY",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  56306001: {
+  }, "56306001": {
     bank_id: 306,
     branch_name: "CN NHA TRANG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Khánh Hòa",
-  },
-  58306001: {
+  }, "58306001": {
     bank_id: 306,
     branch_name: "CN NINH THUẬN",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Ninh Thuận",
-  },
-  25306001: {
+  }, "25306001": {
     bank_id: 306,
     branch_name: "CN PHÚ THỌ",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Phú Thọ",
-  },
-  79306007: {
+  }, "79306007": {
     bank_id: 306,
     branch_name: "CN QUANG TRUNG",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79306009: {
+  }, "79306009": {
     bank_id: 306,
     branch_name: "CN TÂN ĐỊNH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  72306001: {
+  }, "72306001": {
     bank_id: 306,
     branch_name: "CN TÂY NINH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Tây Ninh",
-  },
-  79306005: {
+  }, "79306005": {
     bank_id: 306,
     branch_name: "CN THỊ NGHÈ",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79306003: {
+  }, "79306003": {
     bank_id: 306,
     branch_name: "CN TRƯỜNG CHINH",
     bank_name: "NAMABANK-NGÂN HÀNG TMCP NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79660001: {
+  }, "79660001": {
     bank_id: 660,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NGANHANGBUSAN-NGÂN HÀNG BUSAN",
     area: "Hồ Chí Minh",
-  },
-  79631001: {
+  }, "79631001": {
     bank_id: 631,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "NGANHANGHANGKOOKMIN-NGÂN HÀNG KOOKMIN",
     area: "Hồ Chí Minh",
-  },
-  89901001: {
+  }, "89901001": {
     bank_id: 901,
     branch_name: "CN AN GIANG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "An Giang",
-  },
-  27901001: {
+  }, "27901001": {
     bank_id: 901,
     branch_name: "CN BẮC NINH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Bắc Ninh",
-  },
-  52901001: {
+  }, "52901001": {
     bank_id: 901,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Bình Định",
-  },
-  60901001: {
+  }, "60901001": {
     bank_id: 901,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Bình Thuận",
-  },
-  66901001: {
+  }, "66901001": {
     bank_id: 901,
     branch_name: "CN DAKLAK",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Đắk Lắk",
-  },
-  75901001: {
+  }, "75901001": {
     bank_id: 901,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Đồng Nai",
-  },
-  35901001: {
+  }, "35901001": {
     bank_id: 901,
     branch_name: "CN HÀ NAM",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hà Nam",
-  },
-  1901002: {
+  }, "01901002": {
     bank_id: 901,
     branch_name: "CN HÀ TÂY",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hà Nội",
-  },
-  1901004: {
+  }, "01901004": {
     bank_id: 901,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hà Nội",
-  },
-  30901001: {
+  }, "30901001": {
     bank_id: 901,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hải Dương",
-  },
-  24203001: {
+  }, "24203001": {
     bank_id: 203,
     branch_name: "CN BẮC GIANG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bắc Giang",
-  },
-  42203002: {
+  }, "42203002": {
     bank_id: 203,
     branch_name: "CN BẮC HÀ TĨNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  27203001: {
+  }, "27203001": {
     bank_id: 203,
     branch_name: "CN BẮC NINH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  79203006: {
+  }, "52353001": {
+    bank_id: 353,
+    branch_name: "CN BÌNH ĐỊNH",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Bình Định",
+  }, "79203006": {
     bank_id: 203,
     branch_name: "CN BẮC SÀI GÒN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  83203001: {
+  }, "83203001": {
     bank_id: 203,
     branch_name: "CN BẾN TRE",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bến Tre",
-  },
-  75203002: {
+  }, "75203002": {
     bank_id: 203,
     branch_name: "CN BIÊN HÒA",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  52203001: {
+  }, "52203001": {
     bank_id: 203,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Định",
-  },
-  74203001: {
+  }, "74203001": {
     bank_id: 203,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  70203001: {
+  }, "70203001": {
     bank_id: 203,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Phước",
-  },
-  79203002: {
+  }, "79203002": {
     bank_id: 203,
     branch_name: "CN BÌNH TÂY",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79203004: {
+  }, "79203004": {
     bank_id: 203,
     branch_name: "CN BÌNH THẠNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  40360001: {
+  }, "40360001": {
     bank_id: 360,
     branch_name: "CN NGHỆ AN",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Nghệ An",
-  },
-  49360001: {
+  }, "49360001": {
     bank_id: 360,
     branch_name: "CN QUẢNG NAM",
     bank_name: "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG",
     area: "Quảng Nam",
-  },
-  58203001: {
+  }, "58203001": {
     bank_id: 203,
     branch_name: "CN NINH THUẬN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Ninh Thuận",
-  },
-  33203002: {
+  }, "33203002": {
     bank_id: 203,
     branch_name: "CN PHỐ HIẾN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hưng Yên",
-  },
-  91203002: {
+  }, "91203002": {
     bank_id: 203,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Kiên Giang",
-  },
-  25203001: {
+  }, "25203001": {
     bank_id: 203,
     branch_name: "CN PHÚ THỌ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Phú Thọ",
-  },
-  54203001: {
+  }, "54203001": {
     bank_id: 203,
     branch_name: "CN PHÚ YÊN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Phú Yên",
-  },
-  44203001: {
+  }, "44203001": {
     bank_id: 203,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Bình",
-  },
-  49203001: {
+  }, "49203001": {
     bank_id: 203,
     branch_name: "CN QUẢNG NAM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Nam",
-  },
-  51203001: {
+  }, "51203001": {
     bank_id: 203,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  22203001: {
+  }, "22203001": {
     bank_id: 203,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  30208001: {
+  }, "30208001": {
     bank_id: 208,
     branch_name: "KV HẢI DƯƠNG-HƯNG YÊN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  58208001: {
+  }, "58208001": {
     bank_id: 208,
     branch_name: "KV KHÁNH HÒA NINH THUẬN PGD NINH THUẬN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Thuận",
-  },
-  56208001: {
+  }, "56208001": {
     bank_id: 208,
     branch_name: "KV KHÁNH HÒA-NINH THUẬN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  35208001: {
+  }, "35208001": {
     bank_id: 208,
     branch_name: "KV NAM ĐỊNH-HÀ NAM PGD HÀ NAM",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nam",
-  },
-  49208001: {
+  }, "49208001": {
     bank_id: 208,
     branch_name: "KV QUẢNG NAM- ĐÀ NẴNG PGD QUẢNG NAM",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Nam",
-  },
-  83208001: {
+  }, "83208001": {
     bank_id: 208,
     branch_name: "KV SÔNG TIỀN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bến Tre",
-  },
-  82208001: {
+  }, "82208001": {
     bank_id: 208,
     branch_name: "KV SÔNG TIỀN PGD TIỀN GIANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Tiền Giang",
-  },
-  84208001: {
+  }, "84208001": {
     bank_id: 208,
     branch_name: "KV SÔNG TIỀN PGD TRÀ VINH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Trà Vinh",
-  },
-  45208001: {
+  }, "45208001": {
     bank_id: 208,
     branch_name: "KV THỪA THIÊN HUẾ QUẢNG TRỊ PGD QUẢNG TRỊ",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Trị",
-  },
-  1208002: {
+  }, "01208002": {
     bank_id: 208,
     branch_name: "SỞ GIAO DỊCH 1",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79208002: {
+  }, "79208002": {
     bank_id: 208,
     branch_name: "SỞ GIAO DỊCH 2",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  31901001: {
+  }, "31901001": {
     bank_id: 901,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hải Phòng",
-  },
-  79901001: {
+  }, "79901001": {
     bank_id: 901,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hồ Chí Minh",
-  },
-  33901001: {
+  }, "33901001": {
     bank_id: 901,
     branch_name: "CN HƯNG YÊN",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Hưng Yên",
-  },
-  91901001: {
+  }, "91901001": {
     bank_id: 901,
     branch_name: "CN KIÊN GIANG",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Kiên Giang",
-  },
-  80901001: {
+  }, "80901001": {
     bank_id: 901,
     branch_name: "CN LONG AN",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Long An",
-  },
-  36901001: {
+  }, "36901001": {
     bank_id: 901,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Nam Định",
-  },
-  40901001: {
+  }, "40901001": {
     bank_id: 901,
     branch_name: "CN NGHỆ AN",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Nghệ An",
-  },
-  37901001: {
+  }, "37901001": {
     bank_id: 901,
     branch_name: "CN NINH BÌNH",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Ninh Bình",
-  },
-  25901001: {
+  }, "25901001": {
     bank_id: 901,
     branch_name: "CN PHÚ THỌ",
     bank_name: "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC",
     area: "Phú Thọ",
-  },
-  51314001: {
+  }, "51314001": {
     bank_id: 314,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Quảng Ngãi",
-  },
-  22314001: {
+  }, "22314001": {
     bank_id: 314,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Quảng Ninh",
-  },
-  52314001: {
+  }, "52314001": {
     bank_id: 314,
     branch_name: "CN QUY NHƠN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Bình Định",
-  },
-  60203001: {
+  }, "60203001": {
     bank_id: 203,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Thuận",
-  },
-  96203001: {
+  }, "96203001": {
     bank_id: 203,
     branch_name: "CN CÀ MAU",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Cà Mau",
-  },
-  92203001: {
+  }, "92203001": {
     bank_id: 203,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Cần Thơ",
-  },
-  89203002: {
+  }, "89203002": {
     bank_id: 203,
     branch_name: "CN CHÂU ĐỐC",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "An Giang",
-  },
-  1203007: {
+  }, "01203007": {
     bank_id: 203,
     branch_name: "CN CHƯƠNG DƯƠNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  48203001: {
+  }, "48203001": {
     bank_id: 203,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  80202001: {
+  }, "80202001": {
     bank_id: 202,
     branch_name: "CN LONG AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Long An",
-  },
-  80202800: {
+  }, "80202800": {
     bank_id: 202,
     branch_name: "CN LONG AN PGD VỎ CÔNG TỒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Long An",
-  },
-  89202004: {
+  }, "89202004": {
     bank_id: 202,
     branch_name: "CN LONG XUYÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  95202002: {
+  }, "95202002": {
     bank_id: 202,
     branch_name: "CN MINH HẢI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  80202003: {
+  }, "80202003": {
     bank_id: 202,
     branch_name: "CN MỘC HÓA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Long An",
-  },
-  45203001: {
+  }, "45203001": {
     bank_id: 203,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Quảng Trị",
-  },
-  52203002: {
+  }, "52203002": {
     bank_id: 203,
     branch_name: "CN QUY NHƠN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Định",
-  },
-  79203008: {
+  }, "79203008": {
     bank_id: 203,
     branch_name: "CN SÀI GÒN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79203007: {
+  }, "79203007": {
     bank_id: 203,
     branch_name: "CN SÀI THÀNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1203012: {
+  }, "01203012": {
     bank_id: 203,
     branch_name: "CN SÓC SƠN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  94203001: {
+  }, "94203001": {
     bank_id: 203,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  74203002: {
+  }, "74203002": {
     bank_id: 203,
     branch_name: "CN SÓNG THẦN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  79203010: {
+  }, "79203010": {
     bank_id: 203,
     branch_name: "CN TÂN BÌNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79203009: {
+  }, "79203009": {
     bank_id: 203,
     branch_name: "CN TÂN ĐỊNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  92203002: {
+  }, "92203002": {
     bank_id: 203,
     branch_name: "CN TÂY CẦN THƠ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1203011: {
+  }, "01203011": {
     bank_id: 203,
     branch_name: "CN TÂY HỒ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  80208001: {
+  }, "80208001": {
     bank_id: 208,
     branch_name: "SỞ GIAO DICH II PGD LONG AN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Long An",
-  },
-  72208001: {
+  }, "72208001": {
     bank_id: 208,
     branch_name: "SỞ GIAO DỊCH II-PGD TÂY NINH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Tây Ninh",
-  },
-  89314001: {
+  }, "89314001": {
     bank_id: 314,
     branch_name: "CN AN GIANG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "An Giang",
-  },
-  1314005: {
+  }, "01314005": {
     bank_id: 314,
     branch_name: "CN BA ĐÌNH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  74314001: {
+  }, "74314001": {
     bank_id: 314,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Bình Dương",
-  },
-  79314006: {
+  }, "79314006": {
     bank_id: 314,
     branch_name: "CN BÌNH THẠNH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  96314001: {
+  }, "96314001": {
     bank_id: 314,
     branch_name: "CN CÀ MAU",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Cà Mau",
-  },
-  22314002: {
+  }, "22314002": {
     bank_id: 314,
     branch_name: "CN CẨM PHẢ",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Quảng Ninh",
-  },
-  92314001: {
+  }, "92314001": {
     bank_id: 314,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Cần Thơ",
-  },
-  1314003: {
+  }, "01314003": {
     bank_id: 314,
     branch_name: "CN CẦU GIẤY",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  48314001: {
+  }, "48314001": {
     bank_id: 314,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Đà Nẵng",
-  },
-  79314002: {
+  }, "79314002": {
     bank_id: 314,
     branch_name: "CN SÀI GÒN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  79314004: {
+  }, "79314004": {
     bank_id: 314,
     branch_name: "CN TÂN BÌNH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  72314001: {
+  }, "72314001": {
     bank_id: 314,
     branch_name: "CN TÂY NINH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Tây Ninh",
-  },
-  34314001: {
+  }, "34314001": {
     bank_id: 314,
     branch_name: "CN THÁI BÌNH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Thái Bình",
-  },
-  19314001: {
+  }, "19314001": {
     bank_id: 314,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Thái Nguyên",
-  },
-  79314011: {
+  }, "79314011": {
     bank_id: 314,
     branch_name: "CN THÀNH ĐÔ",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  38314001: {
+  }, "38314001": {
     bank_id: 314,
     branch_name: "CN THANH HÓA",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Thanh Hóa",
-  },
-  1314006: {
+  }, "01314006": {
     bank_id: 314,
     branch_name: "CN THANH XUÂN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  79314012: {
+  }, "79314012": {
     bank_id: 314,
     branch_name: "CN TÔN ĐỨC THẮNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  25314001: {
+  }, "25314001": {
     bank_id: 314,
     branch_name: "CN VIỆT TRÌ",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Phú Thọ",
-  },
-  40314001: {
+  }, "40314001": {
     bank_id: 314,
     branch_name: "CN VINH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Nghệ An",
-  },
-  26314001: {
+  }, "26314001": {
     bank_id: 314,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Vĩnh Phúc",
-  },
-  22202003: {
+  }, "22202003": {
     bank_id: 202,
     branch_name: "CN MÓNG CÁI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  22202803: {
+  }, "22202803": {
     bank_id: 202,
     branch_name: "CN MÓNG CÁI PGD TRÀ CỔ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  74202003: {
+  }, "74202003": {
     bank_id: 202,
     branch_name: "CN MỸ PHƯỚC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  82202002: {
+  }, "82202002": {
     bank_id: 202,
     branch_name: "CN MỸ THO",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Tiền Giang",
-  },
-  74202002: {
+  }, "74202002": {
     bank_id: 202,
     branch_name: "CN NAM BÌNH DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  36202001: {
+  }, "36202001": {
     bank_id: 202,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nam Định",
-  },
-  75202003: {
+  }, "75202003": {
     bank_id: 202,
     branch_name: "CN NAM ĐỒNG NAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  64202002: {
+  }, "64202002": {
     bank_id: 202,
     branch_name: "CN NAM GIA LAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  1202014: {
+  }, "01202014": {
     bank_id: 202,
     branch_name: "CN NAM HÀ NỘI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202008: {
+  }, "79202008": {
     bank_id: 202,
     branch_name: "CN NAM KỲ KHỞI NGHĨA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  72203001: {
+  }, "72203001": {
     bank_id: 203,
     branch_name: "CN TÂY NINH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Tây Ninh",
-  },
-  79203015: {
+  }, "79203015": {
     bank_id: 203,
     branch_name: "CN TÂY SÀI GÒN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  34203001: {
+  }, "34203001": {
     bank_id: 203,
     branch_name: "CN THÁI BÌNH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Thái Bình",
-  },
-  19203001: {
+  }, "19203001": {
     bank_id: 203,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  1203004: {
+  }, "01203004": {
     bank_id: 203,
     branch_name: "CN THĂNG LONG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1203006: {
+  }, "01203006": {
     bank_id: 203,
     branch_name: "CN THÀNH CÔNG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  38203001: {
+  }, "38203001": {
     bank_id: 203,
     branch_name: "CN THANH HÓA",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  1203016: {
+  }, "01203016": {
     bank_id: 203,
     branch_name: "CN THANH TRÌ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1203010: {
+  }, "01203010": {
     bank_id: 203,
     branch_name: "CN THANH XUÂN",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  79203005: {
+  }, "79203005": {
     bank_id: 203,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79203016: {
+  }, "79203016": {
     bank_id: 203,
     branch_name: "CN THỦ THIÊM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  66314001: {
+  }, "66314001": {
     bank_id: 314,
     branch_name: "CN DAK LAK",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Đắk Lắk",
-  },
-  1314004: {
+  }, "01314004": {
     bank_id: 314,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  75314001: {
+  }, "75314001": {
     bank_id: 314,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Đồng Nai",
-  },
-  87314001: {
+  }, "87314001": {
     bank_id: 314,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Đồng Tháp",
-  },
-  56202002: {
+  }, "56202002": {
     bank_id: 202,
     branch_name: "CN NHA TRANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  37202001: {
+  }, "37202001": {
     bank_id: 202,
     branch_name: "CN NINH BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Bình",
-  },
-  58202001: {
+  }, "58202001": {
     bank_id: 202,
     branch_name: "CN NINH THUẬN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Thuận",
-  },
-  58202800: {
+  }, "58202800": {
     bank_id: 202,
     branch_name: "CN NINH THUẬN PGD PHAN RANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Thuận",
-  },
-  64202003: {
+  }, "64202003": {
     bank_id: 202,
     branch_name: "CN PHỐ NÚI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  40202002: {
+  }, "40202002": {
     bank_id: 202,
     branch_name: "CN PHỦ DIỄN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  40202802: {
+  }, "40202802": {
     bank_id: 202,
     branch_name: "CN PHỦ DIỄN PGD ĐÔ LƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  77314001: {
+  }, "77314001": {
     bank_id: 314,
     branch_name: "CN VŨNG TÀU",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1327001: {
+  }, "01327001": {
     bank_id: 327,
     branch_name: "CN  HÀ NỘI",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hà Nội",
-  },
-  89327001: {
+  }, "89327001": {
     bank_id: 327,
     branch_name: "CN AN GIANG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "An Giang",
-  },
-  74327001: {
+  }, "74327001": {
     bank_id: 327,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Bình Dương",
-  },
-  66327001: {
+  }, "66327001": {
     bank_id: 327,
     branch_name: "CN BUÔN MA THUỘT",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Đắk Lắk",
-  },
-  96327001: {
+  }, "96327001": {
     bank_id: 327,
     branch_name: "CN CÀ MAU",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Cà Mau",
-  },
-  92327001: {
+  }, "92327001": {
     bank_id: 327,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Cần Thơ",
-  },
-  48327001: {
+  }, "48327001": {
     bank_id: 327,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Đà Nẵng",
-  },
-  75327001: {
+  }, "75327001": {
     bank_id: 327,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Đồng Nai",
-  },
-  79327003: {
+  }, "79327003": {
     bank_id: 327,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  31327001: {
+  }, "31327001": {
     bank_id: 327,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hải Phòng",
-  },
-  79202009: {
+  }, "79202009": {
     bank_id: 202,
     branch_name: "CN NAM SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  19202002: {
+  }, "19202002": {
     bank_id: 202,
     branch_name: "CN NAM THÁI NGUYÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  40202001: {
+  }, "40202001": {
     bank_id: 202,
     branch_name: "CN NGHỆ AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  1202034: {
+  }, "33313001": {
+    bank_id: 313,
+    branch_name: "CN HƯNG YÊN",
+    bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
+    area: "Hưng Yên",
+  }, "01202034": {
     bank_id: 202,
     branch_name: "CN NGỌC KHÁNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202024: {
+  }, "79202024": {
     bank_id: 202,
     branch_name: "CN NHÀ BÈ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201019: {
+  }, "79201019": {
     bank_id: 201,
     branch_name: "CN BẮC SÀI GÒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1201020: {
+  }, "01201020": {
     bank_id: 201,
     branch_name: "CN BẮC THĂNG LONG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  22201003: {
+  }, "22201003": {
     bank_id: 201,
     branch_name: "CN BÃI CHÁY",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  68201003: {
+  }, "68201003": {
     bank_id: 201,
     branch_name: "CN BAO LOC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  80201002: {
+  }, "80201002": {
     bank_id: 201,
     branch_name: "CN BẾN LỨC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Long An",
-  },
-  40201002: {
+  }, "40201002": {
     bank_id: 201,
     branch_name: "CN BẾN THUỶ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  82203001: {
+  }, "82203001": {
     bank_id: 203,
     branch_name: "CN TIỀN GIANG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Tiền Giang",
-  },
-  79203001: {
+  }, "79203001": {
     bank_id: 203,
     branch_name: "CN TP HCM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  84203001: {
+  }, "84203001": {
     bank_id: 203,
     branch_name: "CN TRÀ VINH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Trà Vinh",
-  },
-  40203002: {
+  }, "40203002": {
     bank_id: 203,
     branch_name: "CN VINH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  86203001: {
+  }, "86203001": {
     bank_id: 203,
     branch_name: "CN VĨNH LONG",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  26203001: {
+  }, "26203001": {
     bank_id: 203,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  95203001: {
+  }, "95203001": {
     bank_id: 203,
     branch_name: "PGD BẠC LIÊU",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  1203002: {
+  }, "01203002": {
     bank_id: 203,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  79203018: {
+  }, "79203018": {
     bank_id: 203,
     branch_name: "VPDD KHU VỰC PHÍA NAM",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  48202003: {
+  }, "48202003": {
     bank_id: 202,
     branch_name: "CN SÔNG HÀN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  94202002: {
+  }, "94202002": {
     bank_id: 202,
     branch_name: "CN SÔNG HẬU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  40202803: {
+  }, "40202803": {
     bank_id: 202,
     branch_name: "CN PHỦ DIỄN PGD HOÀNG MAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  77202003: {
+  }, "77202003": {
     bank_id: 202,
     branch_name: "CN PHÚ MỸ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79202018: {
+  }, "79202018": {
     bank_id: 202,
     branch_name: "CN PHÚ MỸ HƯNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202010: {
+  }, "79202010": {
     bank_id: 202,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  91202002: {
+  }, "91202002": {
     bank_id: 202,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  91202802: {
+  }, "91202802": {
     bank_id: 202,
     branch_name: "CN PHÚ QUỐC PGD NGUYỄN VĂN CỪ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  40202004: {
+  }, "40202004": {
     bank_id: 202,
     branch_name: "CN PHỦ QUỲ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  40202801: {
+  }, "40202801": {
     bank_id: 202,
     branch_name: "CN PHÚ QUÝ PGD QÚY HỢP",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  31333001: {
+  }, "31333001": {
     bank_id: 333,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hải Phòng",
-  },
-  79333001: {
+  }, "79333001": {
     bank_id: 333,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hồ Chí Minh",
-  },
-  93333001: {
+  }, "93333001": {
     bank_id: 333,
     branch_name: "CN HÒA AN",
     bank_name: "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG",
     area: "Hậu Giang",
-  },
-  79327001: {
+  }, "79327001": {
     bank_id: 327,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  91327001: {
+  }, "91327001": {
     bank_id: 327,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Kiên Giang",
-  },
-  80327001: {
+  }, "80327001": {
     bank_id: 327,
     branch_name: "CN LONG AN",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Long An",
-  },
-  56327001: {
+  }, "56327001": {
     bank_id: 327,
     branch_name: "CN NHA TRANG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Khánh Hòa",
-  },
-  60327001: {
+  }, "60327001": {
     bank_id: 327,
     branch_name: "CN PHAN THIẾT",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Bình Thuận",
-  },
-  22327001: {
+  }, "22327001": {
     bank_id: 327,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Quảng Ninh",
-  },
-  79327002: {
+  }, "79327002": {
     bank_id: 327,
     branch_name: "CN SÀI GÒN",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  72327001: {
+  }, "72327001": {
     bank_id: 327,
     branch_name: "CN TÂY NINH",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Tây Ninh",
-  },
-  82327001: {
+  }, "82327001": {
     bank_id: 327,
     branch_name: "CN TIỀN GIANG",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Tiền Giang",
-  },
-  79327004: {
+  }, "79327004": {
     bank_id: 327,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  77327001: {
+  }, "77327001": {
     bank_id: 327,
     branch_name: "CN VŨNG TÀU",
     bank_name: "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  83201001: {
+  }, "83201001": {
     bank_id: 201,
     branch_name: "CN BẾN TRE",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bến Tre",
-  },
-  38201002: {
+  }, "38201002": {
     bank_id: 201,
     branch_name: "CN BỈM SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  52201001: {
+  }, "52201001": {
     bank_id: 201,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Định",
-  },
-  74201001: {
+  }, "74201001": {
     bank_id: 201,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  70201001: {
+  }, "70201001": {
     bank_id: 201,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Phước",
-  },
-  60201001: {
+  }, "60201001": {
     bank_id: 201,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Thuận",
-  },
-  26201003: {
+  }, "26201003": {
     bank_id: 201,
     branch_name: "CN BÌNH XUYÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  96201001: {
+  }, "96201001": {
     bank_id: 201,
     branch_name: "CN CÀ MAU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Cà Mau",
-  },
-  22201002: {
+  }, "22201002": {
     bank_id: 201,
     branch_name: "CN CẨM PHẢ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  92201001: {
+  }, "92201001": {
     bank_id: 201,
     branch_name: "CN CẦN THƠ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Cần Thơ",
-  },
-  4201001: {
+  }, "04201001": {
     bank_id: 201,
     branch_name: "CN CAO BẰNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Cao Bằng",
-  },
-  37202002: {
+  }, "37202002": {
     bank_id: 202,
     branch_name: "CN TAM ĐIỆP",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Bình",
-  },
-  80202002: {
+  }, "80202002": {
     bank_id: 202,
     branch_name: "CN TÂN AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Long An",
-  },
-  79202015: {
+  }, "79202015": {
     bank_id: 202,
     branch_name: "CN TÂN BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  92202003: {
+  }, "92202003": {
     bank_id: 202,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1202020: {
+  }, "01202020": {
     bank_id: 202,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1202016: {
+  }, "01202016": {
     bank_id: 202,
     branch_name: "CN TÂY HỒ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  93202002: {
+  }, "93202002": {
     bank_id: 202,
     branch_name: "CN TÂY NAM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hậu Giang",
-  },
-  92202002: {
+  }, "92202002": {
     bank_id: 202,
     branch_name: "CN TÂY NAM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cần Thơ",
-  },
-  22202002: {
+  }, "22202002": {
     bank_id: 202,
     branch_name: "CN TÂY NAM QUẢNG NINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  72202001: {
+  }, "72202001": {
     bank_id: 202,
     branch_name: "CN TÂY NINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Tây Ninh",
-  },
-  79202004: {
+  }, "79202004": {
     bank_id: 202,
     branch_name: "CN TÂY SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1616005: {
+  }, "01616005": {
     bank_id: 616,
     branch_name: "CN LÊ THÁI TỔ - PHÒNG GIAO DỊCH TRUNG HÒA",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79616006: {
+  }, "79616006": {
     bank_id: 616,
     branch_name: "CN SÀI GÒN",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79616010: {
+  }, "79616010": {
     bank_id: 616,
     branch_name: "CN SÀI GÒN PHÒNG GIAO DỊCH PHẠM NGỌC THẠCH",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79616008: {
+  }, "79616008": {
     bank_id: 616,
     branch_name: "CN SÀI GÒN PHÒNG GIAO DỊCH TÂN BÌNH",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79616007: {
+  }, "79616007": {
     bank_id: 616,
     branch_name: "CN SÀI GÒN PHÒNG GIAO DỊCH TẢN ĐÀ",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  74616002: {
+  }, "74616002": {
     bank_id: 616,
     branch_name: "CN SONG THAN",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Bình Dương",
-  },
-  19616001: {
+  }, "19616001": {
     bank_id: 616,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  79616002: {
+  }, "79616002": {
     bank_id: 616,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1616001: {
+  }, "01616001": {
     bank_id: 616,
     branch_name: "CN TRẦN DUY HƯNG",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  26616001: {
+  }, "26616001": {
     bank_id: 616,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  79632001: {
+  }, "79632001": {
     bank_id: 632,
     branch_name: "CN TP HCM",
     bank_name: "SINOPAC-NGÂN HÀNG SINOPAC",
     area: "Hồ Chí Minh",
-  },
-  74313001: {
+  }, "74313001": {
     bank_id: 313,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Bình Dương",
-  },
-  92313001: {
+  }, "92313001": {
     bank_id: 313,
     branch_name: "CN CẦN THƠ",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Cần Thơ",
-  },
-  1313006: {
+  }, "01313006": {
     bank_id: 313,
     branch_name: "CN CẦU GIẤY",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  68313001: {
+  }, "68313001": {
     bank_id: 313,
     branch_name: "CN ĐÀ LẠT",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Lâm Đồng",
-  },
-  48313001: {
+  }, "48313001": {
     bank_id: 313,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Đà Nẵng",
-  },
-  1313009: {
+  }, "01313009": {
     bank_id: 313,
     branch_name: "CN ĐÔNG ANH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  1313008: {
+  }, "01313008": {
     bank_id: 313,
     branch_name: "CN GIA LÂM",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  35313001: {
+  }, "35313001": {
     bank_id: 313,
     branch_name: "CN HÀ NAM",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nam",
-  },
-  1313001: {
+  }, "01313001": {
     bank_id: 313,
     branch_name: "CN HÀ NỘI",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  1313004: {
+  }, "01313004": {
     bank_id: 313,
     branch_name: "CN HÀ THÀNH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  42313001: {
+  }, "42313001": {
     bank_id: 313,
     branch_name: "CN HÀ TĨNH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Tĩnh",
-  },
-  31313001: {
+  }, "31313001": {
     bank_id: 313,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hải Phòng",
-  },
-  68208001: {
+  }, "68208001": {
     bank_id: 208,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  20208001: {
+  }, "20208001": {
     bank_id: 208,
     branch_name: "CN LẠNG SƠN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  10208001: {
+  }, "10208001": {
     bank_id: 208,
     branch_name: "CN LÀO CAI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Lào Cai",
-  },
-  40208001: {
+  }, "40208001": {
     bank_id: 208,
     branch_name: "CN NGHỆ AN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  37208001: {
+  }, "37208001": {
     bank_id: 208,
     branch_name: "CN NINH BÌNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Ninh Bình",
-  },
-  25208001: {
+  }, "25208001": {
     bank_id: 208,
     branch_name: "CN PHÚ THỌ",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Phú Thọ",
-  },
-  54208001: {
+  }, "54208001": {
     bank_id: 208,
     branch_name: "CN PHÚ YÊN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Phú Yên",
-  },
-  44208001: {
+  }, "44208001": {
     bank_id: 208,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Bình",
-  },
-  51208001: {
+  }, "51208001": {
     bank_id: 208,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  22208001: {
+  }, "22208001": {
     bank_id: 208,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  27208001: {
+  }, "27208001": {
     bank_id: 208,
     branch_name: "CN SỞ GIAO DỊCH 1 PGD BẮC NINH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  52353001: {
-    bank_id: 353,
-    branch_name: "CN BÌNH ĐỊNH",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Bình Định",
-  },
-  74353001: {
+  }, "74353001": {
     bank_id: 353,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Bình Dương",
-  },
-  96353001: {
+  }, "96353001": {
     bank_id: 353,
     branch_name: "CN CÀ MAU",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Cà Mau",
-  },
-  92353001: {
+  }, "92353001": {
     bank_id: 353,
     branch_name: "CN CẦN THƠ",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Cần Thơ",
-  },
-  48353001: {
+  }, "48353001": {
     bank_id: 353,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Đà Nẵng",
-  },
-  66353001: {
+  }, "66353001": {
     bank_id: 353,
     branch_name: "CN DAKLAK",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Đắk Lắk",
-  },
-  75353001: {
+  }, "75353001": {
     bank_id: 353,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Đồng Nai",
-  },
-  87353001: {
+  }, "87353001": {
     bank_id: 353,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Đồng Tháp",
-  },
-  1353001: {
+  }, "01353001": {
     bank_id: 353,
     branch_name: "CN HÀ NỘI",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Hà Nội",
-  },
-  31353001: {
+  }, "31353001": {
     bank_id: 353,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Hải Phòng",
-  },
-  93353001: {
+  }, "93353001": {
     bank_id: 353,
     branch_name: "CN HẬU GIANG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Hậu Giang",
-  },
-  56353001: {
+  }, "56353001": {
     bank_id: 353,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Khánh Hòa",
-  },
-  1636001: {
+  }, "01636001": {
     bank_id: 636,
     branch_name: "CN HÀ NỘI",
     bank_name: "SMBCORPORATION-SMB CORPORATION",
     area: "Hà Nội",
-  },
-  1604001: {
+  }, "01604001": {
     bank_id: 604,
     branch_name: "CN HÀ NỘI",
-    bank_name:
-      "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
+    bank_name: "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
     area: "Hà Nội",
-  },
-  1604003: {
+  }, "01604003": {
     bank_id: 604,
     branch_name: "CN LÊ ĐẠI HÀNH",
-    bank_name:
-      "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
+    bank_name: "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
     area: "Hà Nội",
-  },
-  79604001: {
+  }, "79604001": {
     bank_id: 604,
     branch_name: "CN TP HCM",
-    bank_name:
-      "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
+    bank_name: "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1604002: {
+  }, "01604002": {
     bank_id: 604,
     branch_name: "HỘI SỞ CHÍNH",
-    bank_name:
-      "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
+    bank_name: "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM",
     area: "Hà Nội",
-  },
-  79636001: {
+  }, "79636001": {
     bank_id: 636,
     branch_name: "TP HỒ CHÍ MINH",
-    bank_name:
-      "SUMITOMOMITSUIBANKINGCORPORATE-SUMITOMO MITSUI BANKING CORPORATE",
+    bank_name: "SUMITOMOMITSUIBANKINGCORPORATE-SUMITOMO MITSUI BANKING CORPORATE",
     area: "Hồ Chí Minh",
-  },
-  74655001: {
+  }, "74655001": {
     bank_id: 655,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON",
     area: "Bình Dương",
-  },
-  79642001: {
+  }, "79642001": {
     bank_id: 642,
     branch_name: "CN BÌNH THẠNH",
     bank_name: "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON",
     area: "Hồ Chí Minh",
-  },
-  1642001: {
+  }, "01642001": {
     bank_id: 642,
     branch_name: "CN HÀ NỘI",
     bank_name: "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON",
     area: "Hà Nội",
-  },
-  79642002: {
+  }, "79642002": {
     bank_id: 642,
     branch_name: "CN PHỤ TP HỒ CHÍ MINH",
     bank_name: "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON",
     area: "Hồ Chí Minh",
-  },
-  79651001: {
+  }, "79651001": {
     bank_id: 651,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON",
     area: "Hồ Chí Minh",
-  },
-  1313003: {
+  }, "01313003": {
     bank_id: 313,
     branch_name: "CN HÀNG ĐẬU",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  33313001: {
-    bank_id: 313,
-    branch_name: "CN HƯNG YÊN",
-    bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
-    area: "Hưng Yên",
-  },
-  91313001: {
+  }, "91313001": {
     bank_id: 313,
     branch_name: "CN KIÊN GIANG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Kiên Giang",
-  },
-  1313007: {
+  }, "01313007": {
     bank_id: 313,
     branch_name: "CN KIM LIÊN",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  40313001: {
+  }, "40313001": {
     bank_id: 313,
     branch_name: "CN NGHỆ AN",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Nghệ An",
-  },
-  37313001: {
+  }, "37313001": {
     bank_id: 313,
     branch_name: "CN NINH BÌNH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Ninh Bình",
-  },
-  79313002: {
+  }, "79313002": {
     bank_id: 313,
     branch_name: "CN PHAN ĐĂNG LƯU",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hồ Chí Minh",
-  },
-  79314007: {
+  }, "79314007": {
     bank_id: 314,
     branch_name: "CN GÒ VẤP",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  1314010: {
+  }, "01314010": {
     bank_id: 314,
     branch_name: "CN HÀ ĐÔNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  1314002: {
+  }, "01314002": {
     bank_id: 314,
     branch_name: "CN HÀ NỘI",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  1314009: {
+  }, "01314009": {
     bank_id: 314,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  48314002: {
+  }, "48314002": {
     bank_id: 314,
     branch_name: "CN HẢI CHÂU",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Đà Nẵng",
-  },
-  17208001: {
+  }, "17208001": {
     bank_id: 208,
     branch_name: "CN SỞ GIAO DỊCH 1 PGD HÒA BÌNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hoà Bình",
-  },
-  26208001: {
+  }, "26208001": {
     bank_id: 208,
     branch_name: "CN SỞ GIAO DỊCH 1 PGD VĨNH PHÚC",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  94208001: {
+  }, "94208001": {
     bank_id: 208,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  14208001: {
+  }, "14208001": {
     bank_id: 208,
     branch_name: "CN SƠN LA",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Sơn La",
-  },
-  34208001: {
+  }, "34208001": {
     bank_id: 208,
     branch_name: "CN THÁI BÌNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Thái Bình",
-  },
-  19208001: {
+  }, "19208001": {
     bank_id: 208,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  48319001: {
+  }, "48319001": {
     bank_id: 319,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG",
     area: "Đà Nẵng",
-  },
-  38208001: {
+  }, "38208001": {
     bank_id: 208,
     branch_name: "CN THANH HÓA",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  79208001: {
+  }, "79208001": {
     bank_id: 208,
     branch_name: "CN TPHCM",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  8208001: {
+  }, "08208001": {
     bank_id: 208,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Tuyên Quang",
-  },
-  15208001: {
+  }, "15208001": {
     bank_id: 208,
     branch_name: "CN YÊN BÁI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Yên Bái",
-  },
-  80353001: {
+  }, "80353001": {
     bank_id: 353,
     branch_name: "CN LONG AN",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Long An",
-  },
-  79353002: {
+  }, "79353002": {
     bank_id: 353,
     branch_name: "CN NHÀ BÈ",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Hồ Chí Minh",
-  },
-  91353004: {
+  }, "91353004": {
     bank_id: 353,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Kiên Giang",
-  },
-  54353001: {
+  }, "54353001": {
     bank_id: 353,
     branch_name: "CN PHÚ YÊN",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Phú Yên",
-  },
-  91353003: {
+  }, "91353003": {
     bank_id: 353,
     branch_name: "CN RẠCH GÍA",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Kiên Giang",
-  },
-  79353001: {
+  }, "79353001": {
     bank_id: 353,
     branch_name: "CN SÀI GÒN",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Hồ Chí Minh",
-  },
-  94353001: {
+  }, "94353001": {
     bank_id: 353,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Sóc Trăng",
-  },
-  44313001: {
+  }, "44313001": {
     bank_id: 313,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Quảng Bình",
-  },
-  22313001: {
+  }, "22313001": {
     bank_id: 313,
     branch_name: "CN QUẢNG NINH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Quảng Ninh",
-  },
-  1313002: {
+  }, "01313002": {
     bank_id: 313,
     branch_name: "CN THÁI HÀ",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  19313001: {
+  }, "19313001": {
     bank_id: 313,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Thái Nguyên",
-  },
-  1313005: {
+  }, "01313005": {
     bank_id: 313,
     branch_name: "CN THĂNG LONG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hà Nội",
-  },
-  79310001: {
+  }, "79310001": {
     bank_id: 310,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79310009: {
+  }, "79310009": {
     bank_id: 310,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79310008: {
+  }, "79310008": {
     bank_id: 310,
     branch_name: "CN QUẬN 5",
     bank_name: "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79310010: {
+  }, "79310010": {
     bank_id: 310,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1310001: {
+  }, "01310001": {
     bank_id: 310,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  75606001: {
+  }, "75606001": {
     bank_id: 606,
     branch_name: "CN ĐỒNG NAI",
-    bank_name:
-      "THESHANGHAICOMMERCIALVASAVINGS-NGÂN HÀNG THE SHANGHAI COMMERCIAL VÀ SAVINGS",
+    bank_name: "THESHANGHAICOMMERCIALVASAVINGS-NGÂN HÀNG THE SHANGHAI COMMERCIAL VÀ SAVINGS",
     area: "Đồng Nai",
-  },
-  89358001: {
+  }, "89358001": {
     bank_id: 358,
     branch_name: "CN AN GIANG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "An Giang",
-  },
-  79358003: {
+  }, "79358003": {
     bank_id: 358,
     branch_name: "CN BẾN THÀNH",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  79358007: {
+  }, "79358007": {
     bank_id: 358,
     branch_name: "CN BÌNH CHÁNH",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  74358001: {
+  }, "74358001": {
     bank_id: 358,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Bình Dương",
-  },
-  92358001: {
+  }, "92358001": {
     bank_id: 358,
     branch_name: "CN CẦN THƠ",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Cần Thơ",
-  },
-  30314001: {
+  }, "30314001": {
     bank_id: 314,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hải Dương",
-  },
-  31314001: {
+  }, "31314001": {
     bank_id: 314,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hải Phòng",
-  },
-  79314001: {
+  }, "79314001": {
     bank_id: 314,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  1314007: {
+  }, "01314007": {
     bank_id: 314,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  31314002: {
+  }, "31314002": {
     bank_id: 314,
     branch_name: "CN HỒNG BÀNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hải Phòng",
-  },
-  1314001: {
+  }, "01314001": {
     bank_id: 314,
     branch_name: "CN HSC",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  46314001: {
+  }, "46314001": {
     bank_id: 314,
     branch_name: "CN HUẾ",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Thừa Thiên Huế",
-  },
-  91314001: {
+  }, "91314001": {
     bank_id: 314,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Kiên Giang",
-  },
-  68314001: {
+  }, "68314001": {
     bank_id: 314,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Lâm Đồng",
-  },
-  1314008: {
+  }, "01314008": {
     bank_id: 314,
     branch_name: "CN LONG BIÊN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hà Nội",
-  },
-  56314019: {
+  }, "56314019": {
     bank_id: 314,
     branch_name: "CN NHA TRANG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Khánh Hòa",
-  },
-  56314001: {
+  }, "56314001": {
     bank_id: 314,
     branch_name: "CN NHA TRANG",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Khánh Hòa",
-  },
-  1208001: {
+  }, "01208001": {
     bank_id: 208,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  6208001: {
+  }, "06208001": {
     bank_id: 208,
     branch_name: "KHU VỰC BẮC KẠN-THÁI NGUYÊN-PGD BẮC KẠN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Kạn",
-  },
-  92208001: {
+  }, "92208001": {
     bank_id: 208,
     branch_name: "KHU VỰC CẦN THƠ",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1208003: {
+  }, "01208003": {
     bank_id: 208,
     branch_name: "CN HÀ TÂY",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  87208001: {
+  }, "87208001": {
     bank_id: 208,
     branch_name: "KHU VỰC ĐỒNG THÁP -AN GIANG PGD ĐỒNG THÁP",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  89208001: {
+  }, "89208001": {
     bank_id: 208,
     branch_name: "KHU VỰC ĐỒNG THÁP-AN GIANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  95208001: {
+  }, "95208001": {
     bank_id: 208,
     branch_name: "KHU VỰC MINH HẢI PGD BẠC LIÊU",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  36208001: {
+  }, "36208001": {
     bank_id: 208,
     branch_name: "KHU VỰC NAM ĐỊNH-HÀ NAM",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Nam Định",
-  },
-  74208001: {
+  }, "74208001": {
     bank_id: 208,
     branch_name: "KV BÌNH DƯƠNG-BÌNH PHƯỚC",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  70208001: {
+  }, "70208001": {
     bank_id: 208,
     branch_name: "KV BÌNH DƯƠNG-BÌNH PHƯỚC PGD BÌNH PHƯỚC",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bình Phước",
-  },
-  86208001: {
+  }, "86208001": {
     bank_id: 208,
     branch_name: "KV CẦN THƠ PGD VĨNH LONG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  38313001: {
+  }, "38313001": {
     bank_id: 313,
     branch_name: "CN THANH HÓA",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Thanh Hóa",
-  },
-  46313001: {
+  }, "46313001": {
     bank_id: 313,
     branch_name: "CN THỪA THIÊN HUẾ",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Thừa Thiên Huế",
-  },
-  79313001: {
+  }, "79313001": {
     bank_id: 313,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Hồ Chí Minh",
-  },
-  26313001: {
+  }, "26313001": {
     bank_id: 313,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Vĩnh Phúc",
-  },
-  1612001: {
+  }, "01612001": {
     bank_id: 612,
     branch_name: "CN HÀ NỘI",
     bank_name: "BANGKOKBANK-BANGKOK BANK",
     area: "Hà Nội",
-  },
-  79612001: {
+  }, "79612001": {
     bank_id: 612,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BANGKOKBANK-BANGKOK BANK",
     area: "Hồ Chí Minh",
-  },
-  79620001: {
+  }, "79620001": {
     bank_id: 620,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "BANKOFCHINA-BANK OF CHINA",
     area: "Hồ Chí Minh",
-  },
-  79615001: {
+  }, "79615001": {
     bank_id: 615,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BANKOFCOMMUNICATIONS-BANK OF COMMUNICATIONS",
     area: "Hồ Chí Minh",
-  },
-  79659001: {
+  }, "79659001": {
     bank_id: 659,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BANKOFINDIA-BANK OF INDIA",
     area: "Hồ Chí Minh",
-  },
-  27359001: {
+  }, "27359001": {
     bank_id: 359,
     branch_name: "CN BẮC NINH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Bắc Ninh",
-  },
-  52359001: {
+  }, "52359001": {
     bank_id: 359,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Bình Định",
-  },
-  79358005: {
+  }, "79358005": {
     bank_id: 358,
     branch_name: "CN CỬU LONG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  48358001: {
+  }, "48358001": {
     bank_id: 358,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Đà Nẵng",
-  },
-  66358001: {
+  }, "66358001": {
     bank_id: 358,
     branch_name: "CN DAK LAK",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Đắk Lắk",
-  },
-  52204012: {
+  }, "52204012": {
     bank_id: 204,
     branch_name: "CN VĨNH THẠNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  56204003: {
+  }, "56204003": {
     bank_id: 204,
     branch_name: "CN VĨNH THỌ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Khánh Hòa",
-  },
-  91204012: {
+  }, "91204012": {
     bank_id: 204,
     branch_name: "CN VĨNH THUẬN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  26204010: {
+  }, "26204010": {
     bank_id: 204,
     branch_name: "CN VINH YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  42204006: {
+  }, "42204006": {
     bank_id: 204,
     branch_name: "CN VOI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  48204890: {
+  }, "48204890": {
     bank_id: 204,
     branch_name: "CN VP MIỀN TRUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  36204003: {
+  }, "36204003": {
     bank_id: 204,
     branch_name: "CN VỤ BẢN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  34204004: {
+  }, "34204004": {
     bank_id: 204,
     branch_name: "CN VŨ THƯ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  79314005: {
+  }, "79314005": {
     bank_id: 314,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  79314009: {
+  }, "79314009": {
     bank_id: 314,
     branch_name: "CN QUẬN 10",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  79314010: {
+  }, "79314010": {
     bank_id: 314,
     branch_name: "CN QUẬN 11",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  79314003: {
+  }, "79314003": {
     bank_id: 314,
     branch_name: "CN QUẬN 2",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  79314008: {
+  }, "79314008": {
     bank_id: 314,
     branch_name: "CN QUẬN 5",
     bank_name: "VIB-NGÂN HÀNG TMCP QUỐC TẾ",
     area: "Hồ Chí Minh",
-  },
-  1202030: {
+  }, "01202030": {
     bank_id: 202,
     branch_name: "CN ĐẠI LA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  67202001: {
+  }, "67202001": {
     bank_id: 202,
     branch_name: "CN ĐAK NÔNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Nông",
-  },
-  66202001: {
+  }, "66202001": {
     bank_id: 202,
     branch_name: "CN DAKLAK",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  66202800: {
+  }, "66202800": {
     bank_id: 202,
     branch_name: "CN DAKLAK PGD BUÔN MÊ THUỘT",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  96202002: {
+  }, "96202002": {
     bank_id: 202,
     branch_name: "CN ĐẤT MŨI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cà Mau",
-  },
-  74202005: {
+  }, "74202005": {
     bank_id: 202,
     branch_name: "CN DĨ AN BÌNH DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  33208001: {
+  }, "33208001": {
     bank_id: 208,
     branch_name: "KV HẢI DƯƠNG HƯNG YÊN PGD HƯNG YÊN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hưng Yên",
-  },
-  44202002: {
+  }, "44202002": {
     bank_id: 202,
     branch_name: "CN BẮC QUẢNG BÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Bình",
-  },
-  2202800: {
+  }, "02202800": {
     bank_id: 202,
     branch_name: "CN BẮC QUANG HÀ GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Giang",
-  },
-  79202005: {
+  }, "79202005": {
     bank_id: 202,
     branch_name: "CN BẮC SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  66202004: {
+  }, "66202004": {
     bank_id: 202,
     branch_name: "CN BAN MÊ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  68202002: {
+  }, "68202002": {
     bank_id: 202,
     branch_name: "CN BẢO LỘC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  79202013: {
+  }, "79202013": {
     bank_id: 202,
     branch_name: "CN BẾN NGHÉ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202012: {
+  }, "79202012": {
     bank_id: 202,
     branch_name: "CN BẾN THÀNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  83202001: {
+  }, "83202001": {
     bank_id: 202,
     branch_name: "CN BẾN TRE",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bến Tre",
-  },
-  75202004: {
+  }, "75202004": {
     bank_id: 202,
     branch_name: "CN BIÊN HÒA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  74359001: {
+  }, "74359001": {
     bank_id: 359,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Bình Dương",
-  },
-  92359001: {
+  }, "92359001": {
     bank_id: 359,
     branch_name: "CN CẦN THƠ",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Cần Thơ",
-  },
-  1359004: {
+  }, "01359004": {
     bank_id: 359,
     branch_name: "CN CẦU GIẤY",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hà Nội",
-  },
-  48359001: {
+  }, "48359001": {
     bank_id: 359,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Đà Nẵng",
-  },
-  79311004: {
+  }, "79311004": {
     bank_id: 311,
     branch_name: "CN ĐÔNG SÀI GÒN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  87311001: {
+  }, "87311001": {
     bank_id: 311,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đồng Tháp",
-  },
-  79311006: {
+  }, "79311006": {
     bank_id: 311,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  64311001: {
+  }, "64311001": {
     bank_id: 311,
     branch_name: "CN GIA LAI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Gia Lai",
-  },
-  35311001: {
+  }, "35311001": {
     bank_id: 311,
     branch_name: "CN HÀ NAM",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nam",
-  },
-  1311001: {
+  }, "01311001": {
     bank_id: 311,
     branch_name: "CN HÀ NỘI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  42311001: {
+  }, "42311001": {
     bank_id: 311,
     branch_name: "CN HÀ TĨNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Tĩnh",
-  },
-  1311007: {
+  }, "01311007": {
     bank_id: 311,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  86204005: {
+  }, "86204005": {
     bank_id: 204,
     branch_name: "CN VŨNG LIÊM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  2204010: {
+  }, "02204010": {
     bank_id: 204,
     branch_name: "CN XÍN MẦN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  1204048: {
+  }, "01204048": {
     bank_id: 204,
     branch_name: "CN XUÂN MAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  36204011: {
+  }, "36204011": {
     bank_id: 204,
     branch_name: "CN XUÂN TRƯỜNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  24204003: {
+  }, "24204003": {
     bank_id: 204,
     branch_name: "CN XƯƠNG GIANG BẮC GIANG II",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Giang",
-  },
-  79204044: {
+  }, "79204044": {
     bank_id: 204,
     branch_name: "CN XUYÊN Á",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  36204005: {
+  }, "36204005": {
     bank_id: 204,
     branch_name: "CN Ý YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  15204001: {
+  }, "15204001": {
     bank_id: 204,
     branch_name: "CN YÊN BÁI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  15204005: {
+  }, "15204005": {
     bank_id: 204,
     branch_name: "CN YÊN BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  14204010: {
+  }, "14204010": {
     bank_id: 204,
     branch_name: "CN YÊN CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sơn La",
-  },
-  11202001: {
+  }, "11202001": {
     bank_id: 202,
     branch_name: "CN ĐIỆN BIÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Điện Biên",
-  },
-  1202025: {
+  }, "01202025": {
     bank_id: 202,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  66202003: {
+  }, "66202003": {
     bank_id: 202,
     branch_name: "CN ĐÔNG DAKLAK",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  20202002: {
+  }, "20202002": {
     bank_id: 202,
     branch_name: "CN ĐỒNG ĐĂNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  1202007: {
+  }, "01202007": {
     bank_id: 202,
     branch_name: "CN ĐÔNG ĐÔ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  75202002: {
+  }, "75202002": {
     bank_id: 202,
     branch_name: "CN ĐÔNG ĐỒNG NAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  1202008: {
+  }, "01202008": {
     bank_id: 202,
     branch_name: "CN ĐÔNG HÀ NỘI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  31202002: {
+  }, "31202002": {
     bank_id: 202,
     branch_name: "CN ĐÔNG HẢI PHÒNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Phòng",
-  },
-  83202002: {
+  }, "83202002": {
     bank_id: 202,
     branch_name: "CN ĐỒNG KHỞI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bến Tre",
-  },
-  75202001: {
+  }, "75202001": {
     bank_id: 202,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  38202002: {
+  }, "38202002": {
     bank_id: 202,
     branch_name: "CN BỈM SƠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  79202017: {
+  }, "79202017": {
     bank_id: 202,
     branch_name: "CN BÌNH CHÁNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202030: {
+  }, "79202030": {
     bank_id: 202,
     branch_name: "CN BÌNH ĐIỀN SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  52202001: {
+  }, "52202001": {
     bank_id: 202,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Định",
-  },
-  74202001: {
+  }, "74202001": {
     bank_id: 202,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Dương",
-  },
-  79202027: {
+  }, "79202027": {
     bank_id: 202,
     branch_name: "CN BÌNH HƯNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  70202001: {
+  }, "70202001": {
     bank_id: 202,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Phước",
-  },
-  79202032: {
+  }, "79202032": {
     bank_id: 202,
     branch_name: "CN BÌNH TÂN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202034: {
+  }, "79202034": {
     bank_id: 202,
     branch_name: "CN BÌNH TÂY SG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202035: {
+  }, "79202035": {
     bank_id: 202,
     branch_name: "CN BÌNH THẠNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  30311001: {
+  }, "30311001": {
     bank_id: 311,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hải Dương",
-  },
-  31311001: {
+  }, "31311001": {
     bank_id: 311,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hải Phòng",
-  },
-  79311001: {
+  }, "79311001": {
     bank_id: 311,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  17311001: {
+  }, "17311001": {
     bank_id: 311,
     branch_name: "CN HÒA BÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hoà Bình",
-  },
-  1311013: {
+  }, "01311013": {
     bank_id: 311,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  1311009: {
+  }, "01311009": {
     bank_id: 311,
     branch_name: "CN HOÀNG QUỐC VIỆT",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  79311022: {
+  }, "79311022": {
     bank_id: 311,
     branch_name: "CN HÓC MÔN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  46311001: {
+  }, "46311001": {
     bank_id: 311,
     branch_name: "CN HUẾ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Thừa Thiên Huế",
-  },
-  33311001: {
+  }, "33311001": {
     bank_id: 311,
     branch_name: "CN HƯNG YÊN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hưng Yên",
-  },
-  56311001: {
+  }, "56311001": {
     bank_id: 311,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Khánh Hòa",
-  },
-  91311001: {
+  }, "91311001": {
     bank_id: 311,
     branch_name: "CN KIÊN GIANG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Kiên Giang",
-  },
-  38204005: {
+  }, "38204005": {
     bank_id: 204,
     branch_name: "CN YÊN ĐỊNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  64204019: {
+  }, "64204019": {
     bank_id: 204,
     branch_name: "CN YÊN ĐỖ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Gia Lai",
-  },
-  24204009: {
+  }, "24204009": {
     bank_id: 204,
     branch_name: "CN YÊN DŨNG BẮC GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Giang",
-  },
-  25204012: {
+  }, "25204012": {
     bank_id: 204,
     branch_name: "CN YÊN LẬP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  2204004: {
+  }, "02204004": {
     bank_id: 204,
     branch_name: "CN YÊN MINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  33204003: {
+  }, "33204003": {
     bank_id: 204,
     branch_name: "CN YÊN MỸ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  1204001: {
+  }, "01204001": {
     bank_id: 204,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  80204019: {
+  }, "80204019": {
     bank_id: 204,
     branch_name: "KHU VỰC 2",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  79204030: {
+  }, "79204030": {
     bank_id: 204,
     branch_name: "MẠC THỊ BƯỞI CN KCN TÂN BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  94204015: {
+  }, "94204015": {
     bank_id: 204,
     branch_name: "PGD ĐẠI NGÃI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  79202006: {
+  }, "79202006": {
     bank_id: 202,
     branch_name: "CN ĐÔNG SÀI GÒN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  87202001: {
+  }, "87202001": {
     bank_id: 202,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  87202002: {
+  }, "87202002": {
     bank_id: 202,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  87202802: {
+  }, "87202802": {
     bank_id: 202,
     branch_name: "CN ĐỒNG THÁP PGD MỸ AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  82207001: {
+  }, "82207001": {
     bank_id: 207,
     branch_name: "CN TỈNH TIỀN GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Tiền Giang",
-  },
-  84207001: {
+  }, "84207001": {
     bank_id: 207,
     branch_name: "CN TỈNH TRÀ VINH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Trà Vinh",
-  },
-  8207001: {
+  }, "08207001": {
     bank_id: 207,
     branch_name: "CN TỈNH TUYÊN QUANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Tuyên Quang",
-  },
-  86207001: {
+  }, "86207001": {
     bank_id: 207,
     branch_name: "CN TỈNH VĨNH LONG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Vĩnh Long",
-  },
-  26207001: {
+  }, "26207001": {
     bank_id: 207,
     branch_name: "CN TỈNH VĨNH PHÚC",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Vĩnh Phúc",
-  },
-  15207001: {
+  }, "15207001": {
     bank_id: 207,
     branch_name: "CN TỈNH YÊN BÁI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Yên Bái",
-  },
-  92207001: {
+  }, "92207001": {
     bank_id: 207,
     branch_name: "CN TP CẦN THƠ",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Cần Thơ",
-  },
-  60202001: {
+  }, "60202001": {
     bank_id: 202,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bình Thuận",
-  },
-  96202001: {
+  }, "96202001": {
     bank_id: 202,
     branch_name: "CN CÀ MAU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cà Mau",
-  },
-  22202005: {
+  }, "22202005": {
     bank_id: 202,
     branch_name: "CN CẨM PHẢ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  92202001: {
+  }, "92202001": {
     bank_id: 202,
     branch_name: "CN CẦN THƠ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cần Thơ",
-  },
-  4202001: {
+  }, "04202001": {
     bank_id: 202,
     branch_name: "CN CAO BẰNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cao Bằng",
-  },
-  87202003: {
+  }, "87202003": {
     bank_id: 202,
     branch_name: "CN CAO LÃNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  79202036: {
+  }, "79202036": {
     bank_id: 202,
     branch_name: "CN CÁT LÁI SG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1202010: {
+  }, "01202010": {
     bank_id: 202,
     branch_name: "CN CẦU GIẤY",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  89202003: {
+  }, "89202003": {
     bank_id: 202,
     branch_name: "CN CHÂU ĐỐC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  79202031: {
+  }, "79202031": {
     bank_id: 202,
     branch_name: "CN CHÂU THÀNH SG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79202011: {
+  }, "79202011": {
     bank_id: 202,
     branch_name: "CN CHỢ LỚN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  68311001: {
+  }, "68311001": {
     bank_id: 311,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Lâm Đồng",
-  },
-  20311001: {
+  }, "20311001": {
     bank_id: 311,
     branch_name: "CN LẠNG SƠN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Lạng Sơn",
-  },
-  10311001: {
+  }, "10311001": {
     bank_id: 311,
     branch_name: "CN LÀO CAI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Lào Cai",
-  },
-  80311001: {
+  }, "80311001": {
     bank_id: 311,
     branch_name: "CN LONG AN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Long An",
-  },
-  1311008: {
+  }, "01311008": {
     bank_id: 311,
     branch_name: "CN LONG BIÊN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  75311003: {
+  }, "75311003": {
     bank_id: 311,
     branch_name: "CN LONG KHÁNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đồng Nai",
-  },
-  22311004: {
+  }, "22311004": {
     bank_id: 311,
     branch_name: "CN MÓNG CÁI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Ninh",
-  },
-  1311014: {
+  }, "01311014": {
     bank_id: 311,
     branch_name: "CN MỸ ĐÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  74311003: {
+  }, "74311003": {
     bank_id: 311,
     branch_name: "CN NAM BÌNH DƯƠNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bình Dương",
-  },
-  48311002: {
+  }, "48311002": {
     bank_id: 311,
     branch_name: "CN NAM ĐÀ NẴNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đà Nẵng",
-  },
-  36311001: {
+  }, "36311001": {
     bank_id: 311,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Nam Định",
-  },
-  62204011: {
+  }, "62204011": {
     bank_id: 204,
     branch_name: "PGD LÊ LỢI TỈNH KON TUM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kon Tum",
-  },
-  38204033: {
+  }, "38204033": {
     bank_id: 204,
     branch_name: "PGD MƯỜNG LÁT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  38204034: {
+  }, "38204034": {
     bank_id: 204,
     branch_name: "PGD QUAN SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  20204014: {
+  }, "20204014": {
     bank_id: 204,
     branch_name: "PGD TÂN THANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  62204010: {
+  }, "19359001": {
+    bank_id: 359,
+    branch_name: "CN THÁI NGUYÊN",
+    bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
+    area: "Thái Nguyên",
+  }, "62204010": {
     bank_id: 204,
     branch_name: "PGD THẮNG LỢI TỈNH KON TUM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kon Tum",
-  },
-  1204002: {
+  }, "01204002": {
     bank_id: 204,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  48204004: {
+  }, "48204004": {
     bank_id: 204,
     branch_name: "SỞ GIAO DỊCH 3",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  94357001: {
+  }, "94357001": {
     bank_id: 357,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Sóc Trăng",
-  },
-  14357001: {
+  }, "14357001": {
     bank_id: 357,
     branch_name: "CN SƠN LA",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Sơn La",
-  },
-  79357002: {
+  }, "79357002": {
     bank_id: 357,
     branch_name: "CN TÂN BÌNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  79207001: {
+  }, "79207001": {
     bank_id: 207,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hồ Chí Minh",
-  },
-  1207004: {
+  }, "01207004": {
     bank_id: 207,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Nội",
-  },
-  1207001: {
+  }, "01207001": {
     bank_id: 207,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Nội",
-  },
-  77208001: {
+  }, "77208001": {
     bank_id: 208,
     branch_name: "CN BÀ RỊA VŨNG TÀU",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  24208001: {
+  }, "24208001": {
     bank_id: 208,
     branch_name: "CN BẮC GIANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Giang",
-  },
-  52208001: {
+  }, "52208001": {
     bank_id: 208,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bình Định",
-  },
-  60208001: {
+  }, "60208001": {
     bank_id: 208,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Bình Thuận",
-  },
-  4208001: {
+  }, "04208001": {
     bank_id: 208,
     branch_name: "CN CAO BẰNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Cao Bằng",
-  },
-  11208001: {
+  }, "11208001": {
     bank_id: 208,
     branch_name: "CN ĐIỆN BIÊN",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Điện Biên",
-  },
-  75208001: {
+  }, "75208001": {
     bank_id: 208,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  64208001: {
+  }, "64208001": {
     bank_id: 208,
     branch_name: "CN GIA LAI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Gia Lai",
-  },
-  79321008: {
+  }, "79321008": {
     bank_id: 321,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  75321005: {
+  }, "75321005": {
     bank_id: 321,
     branch_name: "CN TRẢNG BOM",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  79321005: {
+  }, "79321005": {
     bank_id: 321,
     branch_name: "CN VẠN HẠNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  86321001: {
+  }, "86321001": {
     bank_id: 321,
     branch_name: "CN VĨNH LONG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Vĩnh Long",
-  },
-  77321001: {
+  }, "77321001": {
     bank_id: 321,
     branch_name: "CN VŨNG TÀU",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  75321007: {
+  }, "75321007": {
     bank_id: 321,
     branch_name: "CN XUÂN HÒA",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  31321002: {
+  }, "31321002": {
     bank_id: 321,
     branch_name: "PGD HẢI ĐĂNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hải Phòng",
-  },
-  77321002: {
+  }, "77321002": {
     bank_id: 321,
     branch_name: "PGD LÊ HỒNG PHONG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  75321004: {
+  }, "75321004": {
     bank_id: 321,
     branch_name: "PGD QUANG VINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  74321002: {
+  }, "74321002": {
     bank_id: 321,
     branch_name: "PGD THỦ DẦU MỘT",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bình Dương",
-  },
-  40321002: {
+  }, "40321002": {
     bank_id: 321,
     branch_name: "PGD VINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Nghệ An",
-  },
-  31311002: {
+  }, "31311002": {
     bank_id: 311,
     branch_name: "CN NAM HẢI PHÒNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hải Phòng",
-  },
-  79311018: {
+  }, "79311018": {
     bank_id: 311,
     branch_name: "CN NAM SÀI GÒN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  40311001: {
+  }, "40311001": {
     bank_id: 311,
     branch_name: "CN NGHỆ AN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Nghệ An",
-  },
-  79311024: {
+  }, "79311024": {
     bank_id: 311,
     branch_name: "CN NHÀ BÈ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  37311001: {
+  }, "37311001": {
     bank_id: 311,
     branch_name: "CN NINH BÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Ninh Bình",
-  },
-  79311020: {
+  }, "79311020": {
     bank_id: 311,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  91311002: {
+  }, "91311002": {
     bank_id: 311,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Kiên Giang",
-  },
-  54311001: {
+  }, "54311001": {
     bank_id: 311,
     branch_name: "CN PHÚ YÊN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Phú Yên",
-  },
-  44311001: {
+  }, "44311001": {
     bank_id: 311,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Bình",
-  },
-  49311001: {
+  }, "49311001": {
     bank_id: 311,
     branch_name: "CN QUẢNG NAM",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Nam",
-  },
-  51311001: {
+  }, "51311001": {
     bank_id: 311,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Ngãi",
-  },
-  72357001: {
+  }, "72357001": {
     bank_id: 357,
     branch_name: "CN TÂY NINH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Tây Ninh",
-  },
-  34357001: {
+  }, "34357001": {
     bank_id: 357,
     branch_name: "CN THÁI BÌNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Thái Bình",
-  },
-  19357001: {
+  }, "19357001": {
     bank_id: 357,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Thái Nguyên",
-  },
-  1357003: {
+  }, "01357003": {
     bank_id: 357,
     branch_name: "CN THĂNG LONG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  38357001: {
+  }, "38357001": {
     bank_id: 357,
     branch_name: "CN THANH HÓA",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Thanh Hóa",
-  },
-  82357001: {
+  }, "82357001": {
     bank_id: 357,
     branch_name: "CN TIỀN GIANG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Tiền Giang",
-  },
-  1357004: {
+  }, "01357004": {
     bank_id: 357,
     branch_name: "CN TIẾT KIỆM BƯU ĐIỆN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  79357001: {
+  }, "79357001": {
     bank_id: 357,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  84357001: {
+  }, "84357001": {
     bank_id: 357,
     branch_name: "CN TRÀ VINH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Trà Vinh",
-  },
-  8357001: {
+  }, "08357001": {
     bank_id: 357,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Tuyên Quang",
-  },
-  86357001: {
+  }, "86357001": {
     bank_id: 357,
     branch_name: "CN VĨNH LONG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Vĩnh Long",
-  },
-  2208001: {
+  }, "02208001": {
     bank_id: 208,
     branch_name: "CN HÀ GIANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Giang",
-  },
-  66359001: {
+  }, "66359001": {
     bank_id: 359,
     branch_name: "CN DAK LAK",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Đắk Lắk",
-  },
-  1359003: {
+  }, "01359003": {
     bank_id: 359,
     branch_name: "CN HÀ NỘI",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hà Nội",
-  },
-  31359001: {
+  }, "31359001": {
     bank_id: 359,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hải Phòng",
-  },
-  56359001: {
+  }, "56359001": {
     bank_id: 359,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Khánh Hòa",
-  },
-  91359001: {
+  }, "91359001": {
     bank_id: 359,
     branch_name: "CN KIÊN GIANG",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Kiên Giang",
-  },
-  40359001: {
+  }, "40359001": {
     bank_id: 359,
     branch_name: "CN NGHỆ AN",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Nghệ An",
-  },
-  22359001: {
+  }, "22359001": {
     bank_id: 359,
     branch_name: "CN QUẢNG NINH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Quảng Ninh",
-  },
-  79359002: {
+  }, "79359002": {
     bank_id: 359,
     branch_name: "CN SÀI GÒN",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hồ Chí Minh",
-  },
-  19359001: {
-    bank_id: 359,
-    branch_name: "CN THÁI NGUYÊN",
-    bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
-    area: "Thái Nguyên",
-  },
-  79359001: {
+  }, "79359001": {
     bank_id: 359,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hồ Chí Minh",
-  },
-  74603001: {
+  }, "74603001": {
     bank_id: 603,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM",
     area: "Bình Dương",
-  },
-  1603001: {
+  }, "01603001": {
     bank_id: 603,
     branch_name: "CN HÀ NỘI",
     bank_name: "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM",
     area: "Hà Nội",
-  },
-  79603001: {
+  }, "79603001": {
     bank_id: 603,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79603002: {
+  }, "79603002": {
     bank_id: 603,
     branch_name: "CN SỞ GIAO DỊCH",
     bank_name: "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  74617001: {
+  }, "74617001": {
     bank_id: 617,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Bình Dương",
-  },
-  92617001: {
+  }, "92617001": {
     bank_id: 617,
     branch_name: "CN CẦN THƠ",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Cần Thơ",
-  },
-  48617001: {
+  }, "48617001": {
     bank_id: 617,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  75617001: {
+  }, "75617001": {
     bank_id: 617,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Đồng Nai",
-  },
-  1617001: {
+  }, "01617001": {
     bank_id: 617,
     branch_name: "CN HÀ NỘI",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Hà Nội",
-  },
-  79617002: {
+  }, "79617002": {
     bank_id: 617,
     branch_name: "CN LÊ ĐẠI HÀNH",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79617001: {
+  }, "79617001": {
     bank_id: 617,
     branch_name: "CN TPHCM",
     bank_name: "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  22311001: {
+  }, "22311001": {
     bank_id: 311,
     branch_name: "CN QUẢNG NINH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Ninh",
-  },
-  45311001: {
+  }, "45311001": {
     bank_id: 311,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Quảng Trị",
-  },
-  79311005: {
+  }, "79311005": {
     bank_id: 311,
     branch_name: "CN SÀI GÒN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  79311019: {
+  }, "79311019": {
     bank_id: 311,
     branch_name: "CN SỞ GIAO DỊCH 2",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  94311001: {
+  }, "94311001": {
     bank_id: 311,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Sóc Trăng",
-  },
-  14311001: {
+  }, "14311001": {
     bank_id: 311,
     branch_name: "CN SƠN LA",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Sơn La",
-  },
-  1311034: {
+  }, "01311034": {
     bank_id: 311,
     branch_name: "CN SƠN TÂY",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  79311023: {
+  }, "79311023": {
     bank_id: 311,
     branch_name: "CN TÂN TẠO",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  1311012: {
+  }, "01311012": {
     bank_id: 311,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  66207001: {
+  }, "66207001": {
     bank_id: 207,
     branch_name: "CN TỈNH DAKLAK",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Đắk Lắk",
-  },
-  11207001: {
+  }, "11207001": {
     bank_id: 207,
     branch_name: "CN TỈNH ĐIỆN BIÊN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Điện Biên",
-  },
-  26357001: {
+  }, "26357001": {
     bank_id: 357,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Vĩnh Phúc",
-  },
-  1357006: {
+  }, "01357006": {
     bank_id: 357,
     branch_name: "CN XUÂN MAI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  15357001: {
+  }, "15357001": {
     bank_id: 357,
     branch_name: "CN YÊN BÁI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Yên Bái",
-  },
-  1357005: {
+  }, "01357005": {
     bank_id: 357,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  93357001: {
+  }, "93357001": {
     bank_id: 357,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hậu Giang",
-  },
-  79357004: {
+  }, "79357004": {
     bank_id: 357,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  79635001: {
+  }, "79635001": {
     bank_id: 635,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "MALAYANBANKINGBERHAD-MALAYAN BANKING BERHAD",
     area: "Hồ Chí Minh",
-  },
-  1609001: {
+  }, "01609001": {
     bank_id: 609,
     branch_name: "CN HÀ NỘI",
     bank_name: "MAYBANK-MAY BANK",
     area: "Hà Nội",
-  },
-  89311001: {
+  }, "89311001": {
     bank_id: 311,
     branch_name: "CN AN GIANG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "An Giang",
-  },
-  79311003: {
+  }, "79311003": {
     bank_id: 311,
     branch_name: "CN AN PHÚ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  1311033: {
+  }, "01311033": {
     bank_id: 311,
     branch_name: "CN BA ĐÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  1359001: {
+  }, "01359001": {
     bank_id: 359,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hà Nội",
-  },
-  1359002: {
+  }, "01359002": {
     bank_id: 359,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hà Nội",
-  },
-  79359003: {
+  }, "79359003": {
     bank_id: 359,
     branch_name: "VPĐD TPHCM",
     bank_name: "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT",
     area: "Hồ Chí Minh",
-  },
-  1638001: {
+  }, "01638001": {
     bank_id: 638,
     branch_name: "CN HÀ NỘI",
     bank_name: "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA",
     area: "Hà Nội",
-  },
-  79648001: {
+  }, "79648001": {
     bank_id: 648,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA",
     area: "Hồ Chí Minh",
-  },
-  92202800: {
+  }, "92202800": {
     bank_id: 202,
     branch_name: "CẦN THƠ PGD KCN TRÀ NÓC",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Cần Thơ",
-  },
-  89202001: {
+  }, "89202001": {
     bank_id: 202,
     branch_name: "CN AN GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  79202021: {
+  }, "79202021": {
     bank_id: 202,
     branch_name: "CN BÀ CHIỂU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1202013: {
+  }, "01202013": {
     bank_id: 202,
     branch_name: "CN BA ĐÌNH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79202025: {
+  }, "79202025": {
     bank_id: 202,
     branch_name: "CN BA MƯƠI THÁNG TƯ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  77202002: {
+  }, "77202002": {
     bank_id: 202,
     branch_name: "CN BÀ RỊA",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79640001: {
+  }, "79640001": {
     bank_id: 640,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "HUANANCOMMERCIALBANK-HUA NAN COMMERCIAL BANK",
     area: "Hồ Chí Minh",
-  },
-  1649001: {
+  }, "01649001": {
     bank_id: 649,
     branch_name: "CN HÀ NỘI",
     bank_name: "ICBOFCHINA-ICB OF CHINA",
     area: "Hà Nội",
-  },
-  79502004: {
+  }, "79502004": {
     bank_id: 502,
     branch_name: "CN BẾN THÀNH",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hồ Chí Minh",
-  },
-  74502001: {
+  }, "74502001": {
     bank_id: 502,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Bình Dương",
-  },
-  92502001: {
+  }, "92502001": {
     bank_id: 502,
     branch_name: "CN CẦN THƠ",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Cần Thơ",
-  },
-  79502002: {
+  }, "79502002": {
     bank_id: 502,
     branch_name: "CN CHỢ LỚN",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hồ Chí Minh",
-  },
-  48502001: {
+  }, "48502001": {
     bank_id: 502,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Đà Nẵng",
-  },
-  1502002: {
+  }, "01502002": {
     bank_id: 502,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hà Nội",
-  },
-  75502001: {
+  }, "75502001": {
     bank_id: 502,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Đồng Nai",
-  },
-  1502001: {
+  }, "01502001": {
     bank_id: 502,
     branch_name: "CN HÀ NỘI",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hà Nội",
-  },
-  31502001: {
+  }, "31502001": {
     bank_id: 502,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hải Phòng",
-  },
-  1317002: {
+  }, "01317002": {
     bank_id: 317,
     branch_name: "CN HÀ NỘI",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  75207001: {
+  }, "75207001": {
     bank_id: 207,
     branch_name: "CN TỈNH ĐỒNG NAI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Đồng Nai",
-  },
-  87207001: {
+  }, "87207001": {
     bank_id: 207,
     branch_name: "CN TỈNH ĐỒNG THÁP",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Đồng Tháp",
-  },
-  64207001: {
+  }, "64207001": {
     bank_id: 207,
     branch_name: "CN TỈNH GIA LAI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Gia Lai",
-  },
-  2207001: {
+  }, "02207001": {
     bank_id: 207,
     branch_name: "CN TỈNH HÀ GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Giang",
-  },
-  35207001: {
+  }, "35207001": {
     bank_id: 207,
     branch_name: "CN TỈNH HÀ NAM",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Nam",
-  },
-  93207001: {
+  }, "93207001": {
     bank_id: 207,
     branch_name: "CN TỈNH HẬU GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hậu Giang",
-  },
-  17207001: {
+  }, "17207001": {
     bank_id: 207,
     branch_name: "CN TỈNH HÒA BÌNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hoà Bình",
-  },
-  33207001: {
+  }, "33207001": {
     bank_id: 207,
     branch_name: "CN TỈNH HƯNG YÊN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hưng Yên",
-  },
-  56207001: {
+  }, "56207001": {
     bank_id: 207,
     branch_name: "CN TINH KHÁNH HÒA",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Khánh Hòa",
-  },
-  62207001: {
+  }, "62207001": {
     bank_id: 207,
     branch_name: "CN TỈNH KON TUM",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Kon Tum",
-  },
-  68207001: {
+  }, "68207001": {
     bank_id: 207,
     branch_name: "CN TỈNH LÂM ĐỒNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Lâm Đồng",
-  },
-  24311001: {
+  }, "24311001": {
     bank_id: 311,
     branch_name: "CN BẮC GIANG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bắc Giang",
-  },
-  31311003: {
+  }, "31311003": {
     bank_id: 311,
     branch_name: "CN BẮC HẢI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hải Phòng",
-  },
-  27311001: {
+  }, "27311001": {
     bank_id: 311,
     branch_name: "CN BẮC NINH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bắc Ninh",
-  },
-  79311002: {
+  }, "79311002": {
     bank_id: 311,
     branch_name: "CN BẮC SÀI GÒN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  83311001: {
+  }, "83311001": {
     bank_id: 311,
     branch_name: "CN BẾN TRE",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bến Tre",
-  },
-  79311021: {
+  }, "79311021": {
     bank_id: 311,
     branch_name: "CN BÌNH CHÁNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  52311001: {
+  }, "52311001": {
     bank_id: 311,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bình Định",
-  },
-  74311001: {
+  }, "74311001": {
     bank_id: 311,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bình Dương",
-  },
-  70311001: {
+  }, "70311001": {
     bank_id: 311,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bình Phước",
-  },
-  60311001: {
+  }, "60311001": {
     bank_id: 311,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bình Thuận",
-  },
-  96311001: {
+  }, "96311001": {
     bank_id: 311,
     branch_name: "CN CÀ MAU",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Cà Mau",
-  },
-  77202800: {
+  }, "77202800": {
     bank_id: 202,
     branch_name: "CN BÀ RỊA PGD HỒ TRÀM",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  77202001: {
+  }, "77202001": {
     bank_id: 202,
     branch_name: "CN BÀ RỊA VŨNG TÀU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79202014: {
+  }, "79202014": {
     bank_id: 202,
     branch_name: "CN BA THÁNG HAI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  89202002: {
+  }, "89202002": {
     bank_id: 202,
     branch_name: "CN BẮC AN GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  89202800: {
+  }, "89202800": {
     bank_id: 202,
     branch_name: "CN BẮC AN GIANG PGD AN PHÚ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "An Giang",
-  },
-  66202002: {
+  }, "66202002": {
     bank_id: 202,
     branch_name: "CN BẮC DAKLAK",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  24202001: {
+  }, "24202001": {
     bank_id: 202,
     branch_name: "CN BẮC GIANG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Giang",
-  },
-  24202800: {
+  }, "24202800": {
     bank_id: 202,
     branch_name: "CN BẮC GIANG PGD LỤC NGẠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Giang",
-  },
-  10202002: {
+  }, "10202002": {
     bank_id: 202,
     branch_name: "CN BẮC HÀ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Lào Cai",
-  },
-  1202035: {
+  }, "01202035": {
     bank_id: 202,
     branch_name: "CN BẮC HÀ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  42317001: {
+  }, "42317001": {
     bank_id: 317,
     branch_name: "CN HÀ TĨNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Tĩnh",
-  },
-  31317002: {
+  }, "31317002": {
     bank_id: 317,
     branch_name: "CN HẢI AN",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hải Phòng",
-  },
-  1317007: {
+  }, "01317007": {
     bank_id: 317,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  30317001: {
+  }, "30317001": {
     bank_id: 317,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hải Dương",
-  },
-  31317001: {
+  }, "31317001": {
     bank_id: 317,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hải Phòng",
-  },
-  79317002: {
+  }, "79317002": {
     bank_id: 317,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  46317001: {
+  }, "46317001": {
     bank_id: 317,
     branch_name: "CN HUẾ",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Thừa Thiên Huế",
-  },
-  91317001: {
+  }, "91317001": {
     bank_id: 317,
     branch_name: "CN KIÊN GIANG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Kiên Giang",
-  },
-  1317003: {
+  }, "01317003": {
     bank_id: 317,
     branch_name: "CN LÁNG HẠ",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  1317010: {
+  }, "01317010": {
     bank_id: 317,
     branch_name: "CN LONG BIÊN",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  40317001: {
+  }, "40317001": {
     bank_id: 317,
     branch_name: "CN NGHỆ AN",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Nghệ An",
-  },
-  20207001: {
+  }, "20207001": {
     bank_id: 207,
     branch_name: "CN TỈNH LẠNG SƠN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Lạng Sơn",
-  },
-  10207001: {
+  }, "10207001": {
     bank_id: 207,
     branch_name: "CN TỈNH LÀO CAI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Lào Cai",
-  },
-  80207001: {
+  }, "80207001": {
     bank_id: 207,
     branch_name: "CN TỈNH LONG AN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Long An",
-  },
-  36207001: {
+  }, "36207001": {
     bank_id: 207,
     branch_name: "CN TỈNH NAM ĐỊNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Nam Định",
-  },
-  58207001: {
+  }, "58207001": {
     bank_id: 207,
     branch_name: "CN TỈNH NINH THUẬN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Ninh Thuận",
-  },
-  54207001: {
+  }, "54207001": {
     bank_id: 207,
     branch_name: "CN TỈNH PHÚ YÊN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Phú Yên",
-  },
-  44207001: {
+  }, "44207001": {
     bank_id: 207,
     branch_name: "CN TỈNH QUẢNG BÌNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Quảng Bình",
-  },
-  22207001: {
+  }, "22207001": {
     bank_id: 207,
     branch_name: "CN TỈNH QUẢNG NINH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Quảng Ninh",
-  },
-  45207001: {
+  }, "45207001": {
     bank_id: 207,
     branch_name: "CN TỈNH QUẢNG TRỊ",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Quảng Trị",
-  },
-  94207001: {
+  }, "94207001": {
     bank_id: 207,
     branch_name: "CN TỈNH SÓC TRĂNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Sóc Trăng",
-  },
-  72207001: {
+  }, "72207001": {
     bank_id: 207,
     branch_name: "CN TỈNH TÂY NINH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Tây Ninh",
-  },
-  56311002: {
+  }, "56311002": {
     bank_id: 311,
     branch_name: "CN CAM RANH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Khánh Hòa",
-  },
-  92311001: {
+  }, "92311001": {
     bank_id: 311,
     branch_name: "CN CẦN THƠ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Cần Thơ",
-  },
-  79311007: {
+  }, "79311007": {
     bank_id: 311,
     branch_name: "CN CHỢ LỚN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hồ Chí Minh",
-  },
-  48311001: {
+  }, "48311001": {
     bank_id: 311,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đà Nẵng",
-  },
-  66311001: {
+  }, "66311001": {
     bank_id: 311,
     branch_name: "CN DAK LAK",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đắk Lắk",
-  },
-  1311002: {
+  }, "01311002": {
     bank_id: 311,
     branch_name: "CN ĐIỆN BIÊN PHỦ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  1311035: {
+  }, "01311035": {
     bank_id: 311,
     branch_name: "CN ĐÔNG ANH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  1311004: {
+  }, "01311004": {
     bank_id: 311,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  75311001: {
+  }, "75311001": {
     bank_id: 311,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Đồng Nai",
-  },
-  75358001: {
+  }, "75358001": {
     bank_id: 358,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Đồng Nai",
-  },
-  1358002: {
+  }, "01358002": {
     bank_id: 358,
     branch_name: "CN HÀ NỘI",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  1202004: {
+  }, "01202004": {
     bank_id: 202,
     branch_name: "CN BẮC HÀ NỘI",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hà Nội",
-  },
-  30202002: {
+  }, "30202002": {
     bank_id: 202,
     branch_name: "CN BẮC HẢI DƯƠNG",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hải Dương",
-  },
-  33202001: {
+  }, "33202001": {
     bank_id: 202,
     branch_name: "CN BẮC HƯNG YÊN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Hưng Yên",
-  },
-  6202001: {
+  }, "06202001": {
     bank_id: 202,
     branch_name: "CN BẮC KẠN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Kạn",
-  },
-  95202001: {
+  }, "95202001": {
     bank_id: 202,
     branch_name: "CN BẠC LIÊU",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  95202800: {
+  }, "95202800": {
     bank_id: 202,
     branch_name: "CN BẠC LIÊU PGD TRẦN PHÚ",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  40202003: {
+  }, "40202003": {
     bank_id: 202,
     branch_name: "CN BẮC NGHỆ AN",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Nghệ An",
-  },
-  27202001: {
+  }, "27202001": {
     bank_id: 202,
     branch_name: "CN BẮC NINH",
     bank_name: "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  1311011: {
+  }, "01311011": {
     bank_id: 311,
     branch_name: "CN TÂY HỒ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  72311001: {
+  }, "72311001": {
     bank_id: 311,
     branch_name: "CN TÂY NINH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Tây Ninh",
-  },
-  34311001: {
+  }, "34311001": {
     bank_id: 311,
     branch_name: "CN THÁI BÌNH",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Thái Bình",
-  },
-  79317005: {
+  }, "79317005": {
     bank_id: 317,
     branch_name: "CN NHÀ BÈ",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  56317001: {
+  }, "56317001": {
     bank_id: 317,
     branch_name: "CN NHA TRANG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Khánh Hòa",
-  },
-  51317001: {
+  }, "51317001": {
     bank_id: 317,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Quảng Ngãi",
-  },
-  22317001: {
+  }, "22317001": {
     bank_id: 317,
     branch_name: "CN QUẢNG NINH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Quảng Ninh",
-  },
-  79317003: {
+  }, "79317003": {
     bank_id: 317,
     branch_name: "CN TÂN BÌNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79317004: {
+  }, "79317004": {
     bank_id: 317,
     branch_name: "CN TÂN PHÚ",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  79317006: {
+  }, "79317006": {
     bank_id: 317,
     branch_name: "CN TÂN THÀNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  19317001: {
+  }, "19317001": {
     bank_id: 317,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Thái Nguyên",
-  },
-  38317001: {
+  }, "38317001": {
     bank_id: 317,
     branch_name: "CN THANH HÓA",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Thanh Hóa",
-  },
-  82317001: {
+  }, "82317001": {
     bank_id: 317,
     branch_name: "CN TIỀN GIANG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Tiền Giang",
-  },
-  26317001: {
+  }, "26317001": {
     bank_id: 317,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Vĩnh Phúc",
-  },
-  34207001: {
+  }, "34207001": {
     bank_id: 207,
     branch_name: "CN TỈNH THÁI BÌNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Thái Bình",
-  },
-  38207001: {
+  }, "38207001": {
     bank_id: 207,
     branch_name: "CN TỈNH THANH HÓA",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Thanh Hóa",
-  },
-  19348001: {
+  }, "19348001": {
     bank_id: 348,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Thái Nguyên",
-  },
-  1348003: {
+  }, "01348003": {
     bank_id: 348,
     branch_name: "CN THĂNG LONG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  38348001: {
+  }, "38348001": {
     bank_id: 348,
     branch_name: "CN THANH HÓA",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Thanh Hóa",
-  },
-  82348001: {
+  }, "82348001": {
     bank_id: 348,
     branch_name: "CN TIỀN GIANG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Tiền Giang",
-  },
-  79348001: {
+  }, "79348001": {
     bank_id: 348,
     branch_name: "CN TP HCM",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hồ Chí Minh",
-  },
-  8348001: {
+  }, "08348001": {
     bank_id: 348,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Tuyên Quang",
-  },
-  1348005: {
+  }, "01348005": {
     bank_id: 348,
     branch_name: "CN VẠN PHÚC",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  26348001: {
+  }, "26348001": {
     bank_id: 348,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Vĩnh Phúc",
-  },
-  77348001: {
+  }, "77348001": {
     bank_id: 348,
     branch_name: "CN VŨNG TÀU",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  31358001: {
+  }, "31358001": {
     bank_id: 358,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hải Phòng",
-  },
-  1358003: {
+  }, "01358003": {
     bank_id: 358,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  79358006: {
+  }, "79358006": {
     bank_id: 358,
     branch_name: "CN HÓC MÔN",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  79358004: {
+  }, "79358004": {
     bank_id: 358,
     branch_name: "CN HÙNG VƯƠNG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  91358001: {
+  }, "91358001": {
     bank_id: 358,
     branch_name: "CN KIÊN GIANG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Kiên Giang",
-  },
-  40358001: {
+  }, "40358001": {
     bank_id: 358,
     branch_name: "CN NGHỆ AN",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Nghệ An",
-  },
-  56358001: {
+  }, "56358001": {
     bank_id: 358,
     branch_name: "CN NHA TRANG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Khánh Hòa",
-  },
-  79358002: {
+  }, "79358002": {
     bank_id: 358,
     branch_name: "CN SÀI GÒN",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  1358006: {
+  }, "01358006": {
     bank_id: 358,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  1358004: {
+  }, "01358004": {
     bank_id: 358,
     branch_name: "CN THĂNG LONG",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  1358005: {
+  }, "01358005": {
     bank_id: 358,
     branch_name: "CN THÀNH ĐÔ",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  38358001: {
+  }, "38358001": {
     bank_id: 358,
     branch_name: "CN THANH HÓA",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Thanh Hóa",
-  },
-  19311001: {
+  }, "19311001": {
     bank_id: 311,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Thái Nguyên",
-  },
-  1311006: {
+  }, "01311006": {
     bank_id: 311,
     branch_name: "CN THĂNG LONG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  38311001: {
+  }, "38311001": {
     bank_id: 311,
     branch_name: "CN THANH HÓA",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Thanh Hóa",
-  },
-  1311036: {
+  }, "01311036": {
     bank_id: 311,
     branch_name: "CN THANH TRÌ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  1311005: {
+  }, "01311005": {
     bank_id: 311,
     branch_name: "CN THANH XUÂN",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  82311001: {
+  }, "82311001": {
     bank_id: 311,
     branch_name: "CN TIỀN GIANG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Tiền Giang",
-  },
-  1311010: {
+  }, "01311010": {
     bank_id: 311,
     branch_name: "CN TRẦN DUY HƯNG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  8311001: {
+  }, "08311001": {
     bank_id: 311,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Tuyên Quang",
-  },
-  25311001: {
+  }, "25311001": {
     bank_id: 311,
     branch_name: "CN VIỆT TRÌ",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Phú Thọ",
-  },
-  26311001: {
+  }, "26311001": {
     bank_id: 311,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Vĩnh Phúc",
-  },
-  77311001: {
+  }, "77311001": {
     bank_id: 311,
     branch_name: "CN VŨNG TÀU",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  77317001: {
+  }, "77317001": {
     bank_id: 317,
     branch_name: "CN VŨNG TÀU",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1317001: {
+  }, "01317001": {
     bank_id: 317,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  1317009: {
+  }, "01317009": {
     bank_id: 317,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  1348006: {
+  }, "01348006": {
     bank_id: 348,
     branch_name: "CN  TRUNG HÒA NHÂN CHÍNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  89348001: {
+  }, "89348001": {
     bank_id: 348,
     branch_name: "CN AN GIANG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "An Giang",
-  },
-  1348009: {
+  }, "01348009": {
     bank_id: 348,
     branch_name: "CN BA ĐÌNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  27348001: {
+  }, "27348001": {
     bank_id: 348,
     branch_name: "CN BẮC NINH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bắc Ninh",
-  },
-  52348001: {
+  }, "52348001": {
     bank_id: 348,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bình Định",
-  },
-  74348001: {
+  }, "74348001": {
     bank_id: 348,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bình Dương",
-  },
-  70348001: {
+  }, "70348001": {
     bank_id: 348,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bình Phước",
-  },
-  96348001: {
+  }, "96348001": {
     bank_id: 348,
     branch_name: "CN CÀ MAU",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Cà Mau",
-  },
-  1348002: {
+  }, "01348002": {
     bank_id: 348,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  79616009: {
+  }, "79616009": {
     bank_id: 616,
     branch_name: "CN SÀI GÒN PHÒNG GIAO DỊCH NAM SÀI GÒN",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79616003: {
+  }, "79616003": {
     bank_id: 616,
     branch_name: "CN AN ĐÔNG",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  27616001: {
+  }, "27616001": {
     bank_id: 616,
     branch_name: "CN BẮC NINH",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  75616001: {
+  }, "75616001": {
     bank_id: 616,
     branch_name: "CN BIÊN HÒA",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  74503001: {
+  }, "74503001": {
     bank_id: 503,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Bình Dương",
-  },
-  75503001: {
+  }, "75503001": {
     bank_id: 503,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Đồng Nai",
-  },
-  79616005: {
+  }, "79616005": {
     bank_id: 616,
     branch_name: "CN ĐÔNG SÀI GÒN",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79616004: {
+  }, "79616004": {
     bank_id: 616,
     branch_name: "CN GÒ VẤP",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  96357001: {
+  }, "96357001": {
     bank_id: 357,
     branch_name: "CN CÀ MAU",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Cà Mau",
-  },
-  92357001: {
+  }, "92357001": {
     bank_id: 357,
     branch_name: "CN CẦN THƠ",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Cần Thơ",
-  },
-  1358008: {
+  }, "01358008": {
     bank_id: 358,
     branch_name: "CN THANH XUÂN",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  79358001: {
+  }, "79358001": {
     bank_id: 358,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hồ Chí Minh",
-  },
-  1358001: {
+  }, "01358001": {
     bank_id: 358,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG",
     area: "Hà Nội",
-  },
-  79618001: {
+  }, "79618001": {
     bank_id: 618,
     branch_name: "CN HỘI SỞ HCM",
     bank_name: "UOB-UNITED OVERSEA BANK",
     area: "Hồ Chí Minh",
-  },
-  77207001: {
+  }, "77207001": {
     bank_id: 207,
     branch_name: "CN BÀ RỊA-VŨNG TÀU",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  24207001: {
+  }, "24207001": {
     bank_id: 207,
     branch_name: "CN BẮC GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bắc Giang",
-  },
-  27207001: {
+  }, "27207001": {
     bank_id: 207,
     branch_name: "CN BẮC NINH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bắc Ninh",
-  },
-  4207001: {
+  }, "04207001": {
     bank_id: 207,
     branch_name: "CN CAO BẰNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Cao Bằng",
-  },
-  48207001: {
+  }, "48207001": {
     bank_id: 207,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Đà Nẵng",
-  },
-  67207001: {
+  }, "67207001": {
     bank_id: 207,
     branch_name: "CN ĐẮK NÔNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Đắk Nông",
-  },
-  1207002: {
+  }, "01207002": {
     bank_id: 207,
     branch_name: "CN HÀ NỘI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Nội",
-  },
-  15311001: {
+  }, "15311001": {
     bank_id: 311,
     branch_name: "CN YÊN BÁI",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Yên Bái",
-  },
-  1311003: {
+  }, "01311003": {
     bank_id: 311,
     branch_name: "SỞ GIAO DỊCH 1",
     bank_name: "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI",
     area: "Hà Nội",
-  },
-  79623001: {
+  }, "79623001": {
     bank_id: 623,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "MEGAICBC-MEGA ICBC",
     area: "Hồ Chí Minh",
-  },
-  1613001: {
+  }, "01613001": {
     bank_id: 613,
     branch_name: "CN HÀ NỘI",
     bank_name: "MIZUHOBANK-MIZUHO BANK",
     area: "Hà Nội",
-  },
-  79639001: {
+  }, "79639001": {
     bank_id: 639,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "MIZUHOBANK-MIZUHO BANK",
     area: "Hồ Chí Minh",
-  },
-  24302001: {
+  }, "24302001": {
     bank_id: 302,
     branch_name: "CN BẮC GIANG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bắc Giang",
-  },
-  27302001: {
+  }, "27302001": {
     bank_id: 302,
     branch_name: "CN BẮC NINH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bắc Ninh",
-  },
-  80302002: {
+  }, "80302002": {
     bank_id: 302,
     branch_name: "CN BẾN LỨC",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Long An",
-  },
-  52302001: {
+  }, "52302001": {
     bank_id: 302,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bình Định",
-  },
-  74302001: {
+  }, "74302001": {
     bank_id: 302,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bình Dương",
-  },
-  60302001: {
+  }, "60302001": {
     bank_id: 302,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bình Thuận",
-  },
-  96302001: {
+  }, "96302001": {
     bank_id: 302,
     branch_name: "CN CÀ MAU",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Cà Mau",
-  },
-  92348001: {
+  }, "92348001": {
     bank_id: 348,
     branch_name: "CN CẦN THƠ",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Cần Thơ",
-  },
-  48348001: {
+  }, "48348001": {
     bank_id: 348,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Đà Nẵng",
-  },
-  66348001: {
+  }, "66348001": {
     bank_id: 348,
     branch_name: "CN DAK LAK",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Đắk Lắk",
-  },
-  75348001: {
+  }, "75348001": {
     bank_id: 348,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Đồng Nai",
-  },
-  87348001: {
+  }, "87348001": {
     bank_id: 348,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Đồng Tháp",
-  },
-  64348001: {
+  }, "64348001": {
     bank_id: 348,
     branch_name: "CN GIA LAI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Gia Lai",
-  },
-  1348007: {
+  }, "01348007": {
     bank_id: 348,
     branch_name: "CN HÀ ĐÔNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  35348001: {
+  }, "35348001": {
     bank_id: 348,
     branch_name: "CN HÀ NAM",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nam",
-  },
-  1348001: {
+  }, "01348001": {
     bank_id: 348,
     branch_name: "CN HÀ NỘI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  42348001: {
+  }, "42348001": {
     bank_id: 348,
     branch_name: "CN HÀ TĨNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Tĩnh",
-  },
-  31348001: {
+  }, "31348001": {
     bank_id: 348,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hải Phòng",
-  },
-  4357001: {
+  }, "04357001": {
     bank_id: 357,
     branch_name: "CN CAO BẰNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Cao Bằng",
-  },
-  79357003: {
+  }, "79357003": {
     bank_id: 357,
     branch_name: "CN CHỢ LỚN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  79357005: {
+  }, "79357005": {
     bank_id: 357,
     branch_name: "CN CỦ CHI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hồ Chí Minh",
-  },
-  48357001: {
+  }, "48357001": {
     bank_id: 357,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Đà Nẵng",
-  },
-  66357001: {
+  }, "66357001": {
     bank_id: 357,
     branch_name: "CN DAK LAK",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Đắk Lắk",
-  },
-  67357001: {
+  }, "67357001": {
     bank_id: 357,
     branch_name: "CN ĐẮK NÔNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Đắk Nông",
-  },
-  11357001: {
+  }, "11357001": {
     bank_id: 357,
     branch_name: "CN ĐIỆN BIÊN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Điện Biên",
-  },
-  1357002: {
+  }, "01357002": {
     bank_id: 357,
     branch_name: "CN ĐÔNG ĐÔ",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  75357001: {
+  }, "75357001": {
     bank_id: 357,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Đồng Nai",
-  },
-  87357001: {
+  }, "87357001": {
     bank_id: 357,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Đồng Tháp",
-  },
-  51357001: {
+  }, "51357001": {
     bank_id: 357,
     branch_name: "CN DUNG QUẤT",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Quảng Ngãi",
-  },
-  1207003: {
+  }, "01207003": {
     bank_id: 207,
     branch_name: "CN HÀ TÂY",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Nội",
-  },
-  42207001: {
+  }, "42207001": {
     bank_id: 207,
     branch_name: "CN HÀ TĨNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hà Tĩnh",
-  },
-  30207001: {
+  }, "30207001": {
     bank_id: 207,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hải Dương",
-  },
-  31207001: {
+  }, "31207001": {
     bank_id: 207,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Hải Phòng",
-  },
-  91207001: {
+  }, "91207001": {
     bank_id: 207,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Kiên Giang",
-  },
-  12207001: {
+  }, "12207001": {
     bank_id: 207,
     branch_name: "CN LAI CHÂU",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Lai Châu",
-  },
-  40207001: {
+  }, "40207001": {
     bank_id: 207,
     branch_name: "CN NGHỆ AN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Nghệ An",
-  },
-  37207001: {
+  }, "37207001": {
     bank_id: 207,
     branch_name: "CN NINH BÌNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Ninh Bình",
-  },
-  25207001: {
+  }, "25207001": {
     bank_id: 207,
     branch_name: "CN PHÚ THỌ",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Phú Thọ",
-  },
-  49207001: {
+  }, "49207001": {
     bank_id: 207,
     branch_name: "CN QUẢNG NAM",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Quảng Nam",
-  },
-  51207001: {
+  }, "51207001": {
     bank_id: 207,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Quảng Ngãi",
-  },
-  92302001: {
+  }, "92302001": {
     bank_id: 302,
     branch_name: "CN CẦN THƠ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Cần Thơ",
-  },
-  1302006: {
+  }, "01302006": {
     bank_id: 302,
     branch_name: "CN CẦU GIẤY",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  89302002: {
+  }, "89302002": {
     bank_id: 302,
     branch_name: "CN CHÂU ĐỐC",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "An Giang",
-  },
-  79302005: {
+  }, "79302005": {
     bank_id: 302,
     branch_name: "CN CỘNG HÒA",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  48302001: {
+  }, "48302001": {
     bank_id: 302,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Đà Nẵng",
-  },
-  66302001: {
+  }, "66302001": {
     bank_id: 302,
     branch_name: "CN DAK LAK",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Đắk Lắk",
-  },
-  79302003: {
+  }, "79302003": {
     bank_id: 302,
     branch_name: "CN ĐÔ THÀNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  1302004: {
+  }, "01302004": {
     bank_id: 302,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  75302001: {
+  }, "75302001": {
     bank_id: 302,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Đồng Nai",
-  },
-  74302002: {
+  }, "74302002": {
     bank_id: 302,
     branch_name: "CN ĐÔNG NAM BỘ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Bình Dương",
-  },
-  79302006: {
+  }, "79302006": {
     bank_id: 302,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  35302001: {
+  }, "35302001": {
     bank_id: 302,
     branch_name: "CN HÀ NAM",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nam",
-  },
-  1348012: {
+  }, "01348012": {
     bank_id: 348,
     branch_name: "CN HÀM LONG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  1348013: {
+  }, "01348013": {
     bank_id: 348,
     branch_name: "CN HÀN THUYÊN",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  1348010: {
+  }, "01348010": {
     bank_id: 348,
     branch_name: "CN HÀNG TRỐNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  1309010: {
+  }, "01309010": {
     bank_id: 309,
     branch_name: "CN THĂNG LONG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  38309001: {
+  }, "38309001": {
     bank_id: 309,
     branch_name: "CN THANH HÓA",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Thanh Hóa",
-  },
-  82309001: {
+  }, "82309001": {
     bank_id: 309,
     branch_name: "CN TIỀN GIANG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Tiền Giang",
-  },
-  31309001: {
+  }, "31309001": {
     bank_id: 309,
     branch_name: "CN TP HẢI PHÒNG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hải Phòng",
-  },
-  1309013: {
+  }, "01309013": {
     bank_id: 309,
     branch_name: "CN TRẦN HƯNG ĐẠO",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  86309001: {
+  }, "86309001": {
     bank_id: 309,
     branch_name: "CN VĨNH LONG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Vĩnh Long",
-  },
-  26309001: {
+  }, "26309001": {
     bank_id: 309,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Vĩnh Phúc",
-  },
-  77309001: {
+  }, "77309001": {
     bank_id: 309,
     branch_name: "CN VŨNG TÀU",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  64357001: {
+  }, "64357001": {
     bank_id: 357,
     branch_name: "CN GIA LAI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Gia Lai",
-  },
-  2357001: {
+  }, "02357001": {
     bank_id: 357,
     branch_name: "CN HÀ GIANG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Giang",
-  },
-  35357001: {
+  }, "35357001": {
     bank_id: 357,
     branch_name: "CN HÀ NAM",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nam",
-  },
-  1357001: {
+  }, "01357001": {
     bank_id: 357,
     branch_name: "CN HÀ NỘI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Nội",
-  },
-  42357001: {
+  }, "42357001": {
     bank_id: 357,
     branch_name: "CN HÀ TĨNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hà Tĩnh",
-  },
-  30357001: {
+  }, "30357001": {
     bank_id: 357,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hải Dương",
-  },
-  31357001: {
+  }, "31357001": {
     bank_id: 357,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hải Phòng",
-  },
-  17357001: {
+  }, "17357001": {
     bank_id: 357,
     branch_name: "CN HÒA BÌNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hoà Bình",
-  },
-  46357001: {
+  }, "46357001": {
     bank_id: 357,
     branch_name: "CN HUẾ",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Thừa Thiên Huế",
-  },
-  33357001: {
+  }, "33357001": {
     bank_id: 357,
     branch_name: "CN HƯNG YÊN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Hưng Yên",
-  },
-  56357001: {
+  }, "56357001": {
     bank_id: 357,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Khánh Hòa",
-  },
-  14207001: {
+  }, "14207001": {
     bank_id: 207,
     branch_name: "CN SƠN LA",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Sơn La",
-  },
-  19207001: {
+  }, "19207001": {
     bank_id: 207,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Thái Nguyên",
-  },
-  46207001: {
+  }, "46207001": {
     bank_id: 207,
     branch_name: "CN THỪA THIÊN HUẾ",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Thừa Thiên Huế",
-  },
-  89207001: {
+  }, "89207001": {
     bank_id: 207,
     branch_name: "CN TỈNH AN GIANG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "An Giang",
-  },
-  6207001: {
+  }, "06207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BẮC KẠN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bắc Kạn",
-  },
-  95207001: {
+  }, "95207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BẠC LIÊU",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bạc Liêu",
-  },
-  83207001: {
+  }, "83207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BẾN TRE",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bến Tre",
-  },
-  52207001: {
+  }, "52207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BÌNH ĐỊNH",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bình Định",
-  },
-  74207001: {
+  }, "74207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BÌNH DƯƠNG",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bình Dương",
-  },
-  70207001: {
+  }, "70207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BÌNH PHƯỚC",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bình Phước",
-  },
-  60207001: {
+  }, "60207001": {
     bank_id: 207,
     branch_name: "CN TỈNH BÌNH THUẬN",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Bình Thuận",
-  },
-  1302003: {
+  }, "01302003": {
     bank_id: 302,
     branch_name: "CN HÀ NỘI",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  42302001: {
+  }, "42302001": {
     bank_id: 302,
     branch_name: "CN HÀ TĨNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Tĩnh",
-  },
-  30302001: {
+  }, "30302001": {
     bank_id: 302,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hải Dương",
-  },
-  79302001: {
+  }, "79302001": {
     bank_id: 302,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hồ Chí Minh",
-  },
-  31302002: {
+  }, "31302002": {
     bank_id: 302,
     branch_name: "CN HỒNG BÀNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hải Phòng",
-  },
-  46302001: {
+  }, "46302001": {
     bank_id: 302,
     branch_name: "CN HUẾ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Thừa Thiên Huế",
-  },
-  56302001: {
+  }, "56302001": {
     bank_id: 302,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Khánh Hòa",
-  },
-  91302001: {
+  }, "91302001": {
     bank_id: 302,
     branch_name: "CN KIÊN GIANG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Kiên Giang",
-  },
-  68302001: {
+  }, "68302001": {
     bank_id: 302,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Lâm Đồng",
-  },
-  31302004: {
+  }, "31302004": {
     bank_id: 302,
     branch_name: "CN LÊ CHÂN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hải Phòng",
-  },
-  56302002: {
+  }, "56302002": {
     bank_id: 302,
     branch_name: "CN LỘC THỌ",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Khánh Hòa",
-  },
-  1302007: {
+  }, "01302007": {
     bank_id: 302,
     branch_name: "CN LONG BIÊN HÀ NỘI",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Hà Nội",
-  },
-  1309001: {
+  }, "01309001": {
     bank_id: 309,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  1309012: {
+  }, "01309012": {
     bank_id: 309,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  48505001: {
+  }, "48505001": {
     bank_id: 505,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Đà Nẵng",
-  },
-  1505001: {
+  }, "01505001": {
     bank_id: 505,
     branch_name: "CN HÀ NỘI",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Hà Nội",
-  },
-  31505001: {
+  }, "31505001": {
     bank_id: 505,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Hải Phòng",
-  },
-  56505001: {
+  }, "56505001": {
     bank_id: 505,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Khánh Hòa",
-  },
-  79505001: {
+  }, "79505001": {
     bank_id: 505,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Hồ Chí Minh",
-  },
-  77505001: {
+  }, "77505001": {
     bank_id: 505,
     branch_name: "CN VŨNG TÀU",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1505002: {
+  }, "01505002": {
     bank_id: 505,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA",
     area: "Hà Nội",
-  },
-  1624001: {
+  }, "01624001": {
     bank_id: 624,
     branch_name: "CN HÀ NỘI",
     bank_name: "WOORIBANK-WOORI BANK",
     area: "Hà Nội",
-  },
-  79637001: {
+  }, "79637001": {
     bank_id: 637,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "WOORIBANK-WOORI BANK",
     area: "Hồ Chí Minh",
-  },
-  91357001: {
+  }, "91357001": {
     bank_id: 357,
     branch_name: "CN KIÊN GIANG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Kiên Giang",
-  },
-  62357001: {
+  }, "62357001": {
     bank_id: 357,
     branch_name: "CN KON TUM",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Kon Tum",
-  },
-  12357002: {
+  }, "12357002": {
     bank_id: 357,
     branch_name: "CN LAI CHÂU",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Lai Châu",
-  },
-  68357001: {
+  }, "68357001": {
     bank_id: 357,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Lâm Đồng",
-  },
-  20357001: {
+  }, "20357001": {
     bank_id: 357,
     branch_name: "CN LẠNG SƠN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Lạng Sơn",
-  },
-  10357001: {
+  }, "10357001": {
     bank_id: 357,
     branch_name: "CN LÀO CAI",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Lào Cai",
-  },
-  80357001: {
+  }, "80357001": {
     bank_id: 357,
     branch_name: "CN LONG AN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Long An",
-  },
-  36357001: {
+  }, "36357001": {
     bank_id: 357,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Nam Định",
-  },
-  40357001: {
+  }, "40357001": {
     bank_id: 357,
     branch_name: "CN NGHỆ AN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Nghệ An",
-  },
-  37357001: {
+  }, "37357001": {
     bank_id: 357,
     branch_name: "CN NINH BÌNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Ninh Bình",
-  },
-  58357001: {
+  }, "58357001": {
     bank_id: 357,
     branch_name: "CN NINH THUẬN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Ninh Thuận",
-  },
-  96207001: {
+  }, "96207001": {
     bank_id: 207,
     branch_name: "CN TINH CÀ MAU",
     bank_name: "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI",
     area: "Cà Mau",
-  },
-  80204020: {
+  }, "80204020": {
     bank_id: 204,
     branch_name: "THỊ XÃ KIẾN TƯỜNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  79204017: {
+  }, "79204017": {
     bank_id: 204,
     branch_name: "VPĐD KV MIỀN NAM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  48204018: {
+  }, "48204018": {
     bank_id: 204,
     branch_name: "VPĐD KV MIỀN TRUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  92204012: {
+  }, "92204012": {
     bank_id: 204,
     branch_name: "VPĐD KV TÂY NAM BỘ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cần Thơ",
-  },
-  79644001: {
+  }, "79644001": {
     bank_id: 644,
     branch_name: "CN PHỤ TP HCM",
     bank_name: "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79602001: {
+  }, "79602001": {
     bank_id: 602,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1602002: {
+  }, "01602002": {
     bank_id: 602,
     branch_name: "HỘI SỞ",
     bank_name: "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM",
     area: "Hà Nội",
-  },
-  1602001: {
+  }, "01602001": {
     bank_id: 602,
     branch_name: "SỞ GIAO DỊCH",
     bank_name: "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM",
     area: "Hà Nội",
-  },
-  79602003: {
+  }, "79602003": {
     bank_id: 602,
     branch_name: "TP HCM PGD NAM SÀI GÒN",
     bank_name: "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  24313001: {
+  }, "24313001": {
     bank_id: 313,
     branch_name: "CN BẮC GIANG",
     bank_name: "BACABANK-NGÂN HÀNG TMCP BẮC Á",
     area: "Bắc Giang",
-  },
-  89302001: {
+  }, "89302001": {
     bank_id: 302,
     branch_name: "CN LONG XUYÊN",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "An Giang",
-  },
-  36302001: {
+  }, "36302001": {
     bank_id: 302,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "MSB-NGÂN HÀNG TMCP HÀNG HẢI",
     area: "Nam Định",
-  },
-  42208001: {
+  }, "42208001": {
     bank_id: 208,
     branch_name: "CN HÀ TĨNH",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  31208001: {
+  }, "31208001": {
     bank_id: 208,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Hải Phòng",
-  },
-  96208001: {
+  }, "96208001": {
     bank_id: 208,
     branch_name: "CN KHU VỰC MINH HẢI",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Cà Mau",
-  },
-  91208001: {
+  }, "91208001": {
     bank_id: 208,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Kiên Giang",
-  },
-  62208001: {
+  }, "62208001": {
     bank_id: 208,
     branch_name: "CN KON TUM",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Kon Tum",
-  },
-  66208001: {
+  }, "66208001": {
     bank_id: 208,
     branch_name: "CN KV DAK LAK-DAK NÔNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  48208001: {
+  }, "48208001": {
     bank_id: 208,
     branch_name: "CN KV QUẢNG NAM- ĐÀ NẴNG",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  46208001: {
+  }, "46208001": {
     bank_id: 208,
     branch_name: "CN KV THỪA THIÊN HUẾ QUẢNG TRỊ",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  12208001: {
+  }, "12208001": {
     bank_id: 208,
     branch_name: "CN LAI CHÂU",
     bank_name: "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM",
     area: "Lai Châu",
-  },
-  49502001: {
+  }, "49502001": {
     bank_id: 502,
     branch_name: "CN HỘI AN",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Quảng Nam",
-  },
-  1502004: {
+  }, "01502004": {
     bank_id: 502,
     branch_name: "CN MỸ ĐÌNH",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hà Nội",
-  },
-  79502003: {
+  }, "79502003": {
     bank_id: 502,
     branch_name: "CN TÂN BÌNH",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hồ Chí Minh",
-  },
-  1502003: {
+  }, "01502003": {
     bank_id: 502,
     branch_name: "CN THIÊN LONG",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hà Nội",
-  },
-  79502001: {
+  }, "79502001": {
     bank_id: 502,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "INDOVINABANK-INDOVINA BANK",
     area: "Hồ Chí Minh",
-  },
-  79641001: {
+  }, "79641001": {
     bank_id: 641,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "INDUSTRIALBANKOFKOREA-INDUSTRIAL BANK OF KOREA",
     area: "Hồ Chí Minh",
-  },
-  79627001: {
+  }, "79627001": {
     bank_id: 627,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "JPMORGANCHASEN.A-JPMORGAN CHASE N.A",
     area: "Hồ Chí Minh",
-  },
-  1626001: {
+  }, "01626001": {
     bank_id: 626,
     branch_name: "CN HÀ NỘI",
     bank_name: "KEBHANA-NGÂN HÀNG KEB HANA",
     area: "Hà Nội",
-  },
-  79656001: {
+  }, "79656001": {
     bank_id: 656,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "KEBHANA-NGÂN HÀNG KEB HANA",
     area: "Hồ Chí Minh",
-  },
-  89353001: {
+  }, "89353001": {
     bank_id: 353,
     branch_name: "CN AN GIANG",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "An Giang",
-  },
-  95353001: {
+  }, "95353001": {
     bank_id: 353,
     branch_name: "CN BẠC LIÊU",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Bạc Liêu",
-  },
-  83353001: {
+  }, "83353001": {
     bank_id: 353,
     branch_name: "CN BẾN TRE",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Bến Tre",
-  },
-  25357001: {
+  }, "25357001": {
     bank_id: 357,
     branch_name: "CN PHÚ THỌ",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Phú Thọ",
-  },
-  54357001: {
+  }, "54357001": {
     bank_id: 357,
     branch_name: "CN PHÚ YÊN",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Phú Yên",
-  },
-  44357001: {
+  }, "44357001": {
     bank_id: 357,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Quảng Bình",
-  },
-  49357001: {
+  }, "49357001": {
     bank_id: 357,
     branch_name: "CN QUẢNG NAM",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Quảng Nam",
-  },
-  22357001: {
+  }, "22357001": {
     bank_id: 357,
     branch_name: "CN QUẢNG NINH",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Quảng Ninh",
-  },
-  45357001: {
+  }, "45357001": {
     bank_id: 357,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Quảng Trị",
-  },
-  31616001: {
+  }, "31616001": {
     bank_id: 616,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hải Phòng",
-  },
-  1616003: {
+  }, "01616003": {
     bank_id: 616,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79616001: {
+  }, "79616001": {
     bank_id: 616,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1616006: {
+  }, "01616006": {
     bank_id: 616,
     branch_name: "CN LÊ THÁI TỔ",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  1616004: {
+  }, "01616004": {
     bank_id: 616,
     branch_name: "CN LÊ THÁI TỔ - PHÒNG GIAO DỊCH CẦU GIẤY",
     bank_name: "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM",
     area: "Hà Nội",
-  },
-  79303009: {
+  }, "79303009": {
     bank_id: 303,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  82303001: {
+  }, "82303001": {
     bank_id: 303,
     branch_name: "CN TIỀN GIANG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Tiền Giang",
-  },
-  1303011: {
+  }, "01303011": {
     bank_id: 303,
     branch_name: "CN TÔN THẤT TÙNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  89303002: {
+  }, "89303002": {
     bank_id: 303,
     branch_name: "CN TP LONG XUYÊN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "An Giang",
-  },
-  56303002: {
+  }, "56303002": {
     bank_id: 303,
     branch_name: "CN TP NHA TRANG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Khánh Hòa",
-  },
-  60303002: {
+  }, "60303002": {
     bank_id: 303,
     branch_name: "CN TP PHAN THIẾT",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bình Thuận",
-  },
-  84303001: {
+  }, "84303001": {
     bank_id: 303,
     branch_name: "CN TRÀ VINH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Trà Vinh",
-  },
-  79303002: {
+  }, "79303002": {
     bank_id: 303,
     branch_name: "CN TRUNG TÂM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  1303012: {
+  }, "01303012": {
     bank_id: 303,
     branch_name: "CN TỪ LIÊM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  80303002: {
+  }, "80303002": {
     bank_id: 303,
     branch_name: "CN VÀM CỎ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Long An",
-  },
-  93303002: {
+  }, "93303002": {
     bank_id: 303,
     branch_name: "CN VỊ THANH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hậu Giang",
-  },
-  1201002: {
+  }, "01201002": {
     bank_id: 201,
     branch_name: "CN TP HÀ NỘI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  60339001: {
+  }, "60339001": {
     bank_id: 339,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Bình Thuận",
-  },
-  96339001: {
+  }, "96339001": {
     bank_id: 339,
     branch_name: "CN CÀ MAU",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Cà Mau",
-  },
-  92339001: {
+  }, "92339001": {
     bank_id: 339,
     branch_name: "CN CẦN THƠ",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Cần Thơ",
-  },
-  48339001: {
+  }, "48339001": {
     bank_id: 339,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  75339001: {
+  }, "75339001": {
     bank_id: 339,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  87339001: {
+  }, "87339001": {
     bank_id: 339,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  1339001: {
+  }, "01339001": {
     bank_id: 339,
     branch_name: "CN HÀ NỘI",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  93339001: {
+  }, "93339001": {
     bank_id: 339,
     branch_name: "CN HẬU GIANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Hậu Giang",
-  },
-  80339001: {
+  }, "80339001": {
     bank_id: 339,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Long An",
-  },
-  91339001: {
+  }, "91339001": {
     bank_id: 339,
     branch_name: "CN KIÊN GIANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Kiên Giang",
-  },
-  86303001: {
+  }, "86303001": {
     bank_id: 303,
     branch_name: "CN VĨNH LONG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Vĩnh Long",
-  },
-  79308011: {
+  }, "79308011": {
     bank_id: 308,
     branch_name: "CN 3 THÁNG 2",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  89308001: {
+  }, "89308001": {
     bank_id: 308,
     branch_name: "CN AN GIANG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "An Giang",
-  },
-  79308009: {
+  }, "79308009": {
     bank_id: 308,
     branch_name: "CN BÀ CHIỂU",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  91201001: {
+  }, "91201001": {
     bank_id: 201,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Kiên Giang",
-  },
-  62201001: {
+  }, "62201001": {
     bank_id: 201,
     branch_name: "CN KON TUM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Kon Tum",
-  },
-  12201001: {
+  }, "12201001": {
     bank_id: 201,
     branch_name: "CN LAI CHÂU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Lai Châu",
-  },
-  68201001: {
+  }, "68201001": {
     bank_id: 201,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  1201018: {
+  }, "01201018": {
     bank_id: 201,
     branch_name: "CN LÁNG HÒA LẠC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  20201001: {
+  }, "20201001": {
     bank_id: 201,
     branch_name: "CN LẠNG SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Lạng Sơn",
-  },
-  99856002: {
+  }, "99856002": {
     bank_id: 856,
     branch_name: "CN LAO",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
-    area: "",
-  },
-  79339002: {
+    area: "null",
+  }, "79339002": {
     bank_id: 339,
     branch_name: "CN LAM GIANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  80339002: {
+  }, "80339002": {
     bank_id: 339,
     branch_name: "CN LONG AN",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Long An",
-  },
-  80339004: {
+  }, "80339004": {
     bank_id: 339,
     branch_name: "CN LONG HIỆP",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Long An",
-  },
-  56339001: {
+  }, "56339001": {
     bank_id: 339,
     branch_name: "CN NHA TRANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  80339003: {
+  }, "80339003": {
     bank_id: 339,
     branch_name: "CN RẠCH KIẾN",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Long An",
-  },
-  1303008: {
+  }, "01303008": {
     bank_id: 303,
     branch_name: "CN ĐÔNG ĐÔ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  83303002: {
+  }, "83303002": {
     bank_id: 303,
     branch_name: "CN ĐỒNG KHỞI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Bến Tre",
-  },
-  75303001: {
+  }, "75303001": {
     bank_id: 303,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đồng Nai",
-  },
-  87303001: {
+  }, "87303001": {
     bank_id: 303,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đồng Tháp",
-  },
-  84303002: {
+  }, "84303002": {
     bank_id: 303,
     branch_name: "CN DUYÊN HẢI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Trà Vinh",
-  },
-  64303001: {
+  }, "64303001": {
     bank_id: 303,
     branch_name: "CN GIA LAI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Gia Lai",
-  },
-  10201001: {
+  }, "10201001": {
     bank_id: 201,
     branch_name: "CN LÀO CAI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Lào Cai",
-  },
-  31201004: {
+  }, "31201004": {
     bank_id: 201,
     branch_name: "CN LÊ CHÂN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  80201001: {
+  }, "80201001": {
     bank_id: 201,
     branch_name: "CN LONG AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Long An",
-  },
-  19201002: {
+  }, "19201002": {
     bank_id: 201,
     branch_name: "CN LƯU XÁ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  22201004: {
+  }, "22201004": {
     bank_id: 201,
     branch_name: "CN MÓNG CÁI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  33201002: {
+  }, "33201002": {
     bank_id: 201,
     branch_name: "CN MỸ HÀO",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hưng Yên",
-  },
-  36201001: {
+  }, "36201001": {
     bank_id: 201,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nam Định",
-  },
-  36201002: {
+  }, "36201002": {
     bank_id: 201,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nam Định",
-  },
-  79201020: {
+  }, "79201020": {
     bank_id: 201,
     branch_name: "CN NAM SÀI GÒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1201008: {
+  }, "01201008": {
     bank_id: 201,
     branch_name: "CN NAM THĂNG LONG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  46201002: {
+  }, "46201002": {
     bank_id: 201,
     branch_name: "CN NAM THỪA THIÊN HUẾ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  1303010: {
+  }, "01303010": {
     bank_id: 303,
     branch_name: "CN GIẢNG VÕ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  82303002: {
+  }, "82303002": {
     bank_id: 303,
     branch_name: "CN GÒ CÔNG ĐÔNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Tiền Giang",
-  },
-  79303011: {
+  }, "79303011": {
     bank_id: 303,
     branch_name: "CN GÒ VẤP",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  35303001: {
+  }, "35303001": {
     bank_id: 303,
     branch_name: "CN HÀ NAM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nam",
-  },
-  1303005: {
+  }, "01303005": {
     bank_id: 303,
     branch_name: "CN HÀ NỘI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  42303001: {
+  }, "42303001": {
     bank_id: 303,
     branch_name: "CN HÀ TĨNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Tĩnh",
-  },
-  30303001: {
+  }, "30303001": {
     bank_id: 303,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hải Dương",
-  },
-  31303001: {
+  }, "31303001": {
     bank_id: 303,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hải Phòng",
-  },
-  1303009: {
+  }, "01303009": {
     bank_id: 303,
     branch_name: "CN HÀNG BÀI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  93303001: {
+  }, "93303001": {
     bank_id: 303,
     branch_name: "CN HẬU GIANG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hậu Giang",
-  },
-  79303015: {
+  }, "79303015": {
     bank_id: 303,
     branch_name: "CN HOA VIỆT",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  40201001: {
+  }, "40201001": {
     bank_id: 201,
     branch_name: "CN NGHỆ AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  31201003: {
+  }, "31201003": {
     bank_id: 201,
     branch_name: "CN NGÔ QUYỀN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  48201002: {
+  }, "48201002": {
     bank_id: 201,
     branch_name: "CN NGŨ HÀNH SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  30201002: {
+  }, "30201002": {
     bank_id: 201,
     branch_name: "CN NHỊ CHIỂU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Dương",
-  },
-  75201004: {
+  }, "75201004": {
     bank_id: 201,
     branch_name: "CN NHƠN TRẠCH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  37201001: {
+  }, "37201001": {
     bank_id: 201,
     branch_name: "CN NINH BÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Ninh Bình",
-  },
-  58201001: {
+  }, "58201001": {
     bank_id: 201,
     branch_name: "CN NINH THUẬN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Ninh Thuận",
-  },
-  91201002: {
+  }, "91201002": {
     bank_id: 201,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Kiên Giang",
-  },
-  25201001: {
+  }, "25201001": {
     bank_id: 201,
     branch_name: "CN PHÚ THỌ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Phú Thọ",
-  },
-  54201001: {
+  }, "54201001": {
     bank_id: 201,
     branch_name: "CN PHÚ YÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Phú Yên",
-  },
-  26201002: {
+  }, "26201002": {
     bank_id: 201,
     branch_name: "CN PHÚC YÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  79303001: {
+  }, "79303001": {
     bank_id: 303,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  46303001: {
+  }, "46303001": {
     bank_id: 303,
     branch_name: "CN HUẾ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Thừa Thiên Huế",
-  },
-  79303007: {
+  }, "79303007": {
     bank_id: 303,
     branch_name: "CN HƯNG ĐẠO",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  33303001: {
+  }, "33303001": {
     bank_id: 303,
     branch_name: "CN HƯNG YÊN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hưng Yên",
-  },
-  56303001: {
+  }, "56303001": {
     bank_id: 303,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Khánh Hòa",
-  },
-  91303001: {
+  }, "91303001": {
     bank_id: 303,
     branch_name: "CN KIÊN GIANG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Kiên Giang",
-  },
-  62303001: {
+  }, "62303001": {
     bank_id: 303,
     branch_name: "CN KONTUM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Kon Tum",
-  },
-  68303001: {
+  }, "68303001": {
     bank_id: 303,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Lâm Đồng",
-  },
-  20303001: {
+  }, "20303001": {
     bank_id: 303,
     branch_name: "CN LẠNG SƠN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Lạng Sơn",
-  },
-  66303002: {
+  }, "66303002": {
     bank_id: 303,
     branch_name: "CN LÊ THÁNH TÔNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đắk Lắk",
-  },
-  80303001: {
+  }, "80303001": {
     bank_id: 303,
     branch_name: "CN LONG AN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Long An",
-  },
-  44201001: {
+  }, "44201001": {
     bank_id: 201,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Bình",
-  },
-  1201025: {
+  }, "01201025": {
     bank_id: 201,
     branch_name: "CN QUANG MINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  49201001: {
+  }, "49201001": {
     bank_id: 201,
     branch_name: "CN QUẢNG NAM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Nam",
-  },
-  51201001: {
+  }, "51201001": {
     bank_id: 201,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  22201001: {
+  }, "22201001": {
     bank_id: 201,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  45201001: {
+  }, "45201001": {
     bank_id: 201,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Trị",
-  },
-  31201007: {
+  }, "31201007": {
     bank_id: 201,
     branch_name: "CN KIẾN AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  1201016: {
+  }, "01201016": {
     bank_id: 201,
     branch_name: "CN QUANG TRUNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  87201002: {
+  }, "87201002": {
     bank_id: 201,
     branch_name: "CN SA ĐÉC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  79201018: {
+  }, "79201018": {
     bank_id: 201,
     branch_name: "CN SÀI GÒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  38201003: {
+  }, "38201003": {
     bank_id: 201,
     branch_name: "CN SẦM SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  1303002: {
+  }, "01303002": {
     bank_id: 303,
     branch_name: "CN LONG BIÊN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  94303002: {
+  }, "94303002": {
     bank_id: 303,
     branch_name: "CN LONG PHÚ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Sóc Trăng",
-  },
-  79303023: {
+  }, "79303023": {
     bank_id: 303,
     branch_name: "CN LƯƠNG NHỮ HỌC",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303031: {
+  }, "79303031": {
     bank_id: 303,
     branch_name: "CN LÝ THÁI TỔ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303025: {
+  }, "79303025": {
     bank_id: 303,
     branch_name: "CN MINH PHỤNG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  92303002: {
+  }, "92303002": {
     bank_id: 303,
     branch_name: "CN NAM CẦN THƠ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Cần Thơ",
-  },
-  40303001: {
+  }, "40303001": {
     bank_id: 303,
     branch_name: "CN NGHỆ AN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Nghệ An",
-  },
-  79303027: {
+  }, "79303027": {
     bank_id: 303,
     branch_name: "CN NGUYỄN CÔNG TRỨ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  91303003: {
+  }, "91303003": {
     bank_id: 303,
     branch_name: "CN NGUYỄN TRUNG TRỰC",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Kiên Giang",
-  },
-  79303028: {
+  }, "79303028": {
     bank_id: 303,
     branch_name: "CN NGUYỄN VĂN TRỖI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303024: {
+  }, "79303024": {
     bank_id: 303,
     branch_name: "CN NHÀ BÈ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  94201001: {
+  }, "94201001": {
     bank_id: 201,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Sóc Trăng",
-  },
-  14201001: {
+  }, "14201001": {
     bank_id: 201,
     branch_name: "CN SƠN LA",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Sơn La",
-  },
-  79304003: {
+  }, "79304003": {
     bank_id: 304,
     branch_name: "CN QUẬN 10",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304015: {
+  }, "79304015": {
     bank_id: 304,
     branch_name: "CN QUẬN 3",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304013: {
+  }, "79304013": {
     bank_id: 304,
     branch_name: "CN QUẬN 4",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304009: {
+  }, "79304009": {
     bank_id: 304,
     branch_name: "CN QUẬN 5",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304012: {
+  }, "79304012": {
     bank_id: 304,
     branch_name: "CN QUẬN 7",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304008: {
+  }, "79304008": {
     bank_id: 304,
     branch_name: "CN QUẬN 9",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  49304001: {
+  }, "49304001": {
     bank_id: 304,
     branch_name: "CN QUẢNG NAM",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Quảng Nam",
-  },
-  51304001: {
+  }, "51304001": {
     bank_id: 304,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Quảng Ngãi",
-  },
-  22304002: {
+  }, "22304002": {
     bank_id: 304,
     branch_name: "CN QUẢNG NINH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Quảng Ninh",
-  },
-  58303001: {
+  }, "58303001": {
     bank_id: 303,
     branch_name: "CN NINH THUẬN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Ninh Thuận",
-  },
-  75303002: {
+  }, "75303002": {
     bank_id: 303,
     branch_name: "CN PHẠM VĂN THUẬN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đồng Nai",
-  },
-  79303029: {
+  }, "79303029": {
     bank_id: 303,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79201024: {
+  }, "79201024": {
     bank_id: 201,
     branch_name: "CN CHỢ LỚN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  1201005: {
+  }, "01201005": {
     bank_id: 201,
     branch_name: "CN CHƯƠNG DƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  40201004: {
+  }, "40201004": {
     bank_id: 201,
     branch_name: "CN CỬA LÒ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  48201001: {
+  }, "48201001": {
     bank_id: 201,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  67201001: {
+  }, "67201001": {
     bank_id: 201,
     branch_name: "CN ĐAK NÔNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đắk Nông",
-  },
-  66201001: {
+  }, "66201001": {
     bank_id: 201,
     branch_name: "CN DAKLAK",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  25201003: {
+  }, "25201003": {
     bank_id: 201,
     branch_name: "CN ĐỀN HÙNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Phú Thọ",
-  },
-  11201001: {
+  }, "11201001": {
     bank_id: 201,
     branch_name: "CN ĐIỆN BIÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Điện Biên",
-  },
-  79304004: {
+  }, "79304004": {
     bank_id: 304,
     branch_name: "CN TÂN BÌNH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  72304001: {
+  }, "72304001": {
     bank_id: 304,
     branch_name: "CN TÂY NINH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Tây Ninh",
-  },
-  34304001: {
+  }, "34304001": {
     bank_id: 304,
     branch_name: "CN THÁI BÌNH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Thái Bình",
-  },
-  74304002: {
+  }, "74304002": {
     bank_id: 304,
     branch_name: "CN THUẬN AN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bình Dương",
-  },
-  82304001: {
+  }, "82304001": {
     bank_id: 304,
     branch_name: "CN TIỀN GIANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Tiền Giang",
-  },
-  89304001: {
+  }, "89304001": {
     bank_id: 304,
     branch_name: "CN TỈNH AN GIANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "An Giang",
-  },
-  46304001: {
+  }, "46304001": {
     bank_id: 304,
     branch_name: "CN TP HUẾ",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Thừa Thiên Huế",
-  },
-  84304001: {
+  }, "84304001": {
     bank_id: 304,
     branch_name: "CN TRÀ VINH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Trà Vinh",
-  },
-  86304001: {
+  }, "86304001": {
     bank_id: 304,
     branch_name: "CN VĨNH LONG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Vĩnh Long",
-  },
-  77304001: {
+  }, "77304001": {
     bank_id: 304,
     branch_name: "CN VŨNG TÀU",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79304001: {
+  }, "79304001": {
     bank_id: 304,
     branch_name: "HỒ CHÍ MINH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304010: {
+  }, "79304010": {
     bank_id: 304,
     branch_name: "PGD BÌNH TÂY",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  66303001: {
+  }, "66303001": {
     bank_id: 303,
     branch_name: "CN DAKLAK",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đắk Lắk",
-  },
-  79303018: {
+  }, "79303018": {
     bank_id: 303,
     branch_name: "CN ĐIỆN BIÊN PHỦ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  1303004: {
+  }, "01303004": {
     bank_id: 303,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  1203001: {
+  }, "01203001": {
     bank_id: 203,
     branch_name: "HỘI SỞ",
     bank_name: "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  31201002: {
+  }, "31201002": {
     bank_id: 201,
     branch_name: "CN  HỒNG BÀNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79201002: {
+  }, "79201002": {
     bank_id: 201,
     branch_name: "CN 1 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201011: {
+  }, "79201011": {
     bank_id: 201,
     branch_name: "CN 10 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201014: {
+  }, "79201014": {
     bank_id: 201,
     branch_name: "CN 11 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201016: {
+  }, "79201016": {
     bank_id: 201,
     branch_name: "CN 12 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201003: {
+  }, "79201003": {
     bank_id: 201,
     branch_name: "CN 2 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201004: {
+  }, "79201004": {
     bank_id: 201,
     branch_name: "CN 3 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  31201005: {
+  }, "31201005": {
     bank_id: 201,
     branch_name: "CN ĐỒ SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  1201006: {
+  }, "01201006": {
     bank_id: 201,
     branch_name: "CN ĐÔNG ANH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1201003: {
+  }, "01201003": {
     bank_id: 201,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1201010: {
+  }, "01201010": {
     bank_id: 201,
     branch_name: "CN ĐÔNG HÀ NỘI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  75201001: {
+  }, "75201001": {
     bank_id: 201,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  79201015: {
+  }, "79201015": {
     bank_id: 201,
     branch_name: "CN ĐÔNG SÀI GÒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  87201001: {
+  }, "87201001": {
     bank_id: 201,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đồng Tháp",
-  },
-  79201023: {
+  }, "79201023": {
     bank_id: 201,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  64201001: {
+  }, "64201001": {
     bank_id: 201,
     branch_name: "CN GIA LAI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Gia Lai",
-  },
-  2201001: {
+  }, "02201001": {
     bank_id: 201,
     branch_name: "CN HÀ GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Giang",
-  },
-  35201001: {
+  }, "35201001": {
     bank_id: 201,
     branch_name: "CN HÀ NAM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nam",
-  },
-  96304001: {
+  }, "96304001": {
     bank_id: 304,
     branch_name: "PGD CÀ MAU",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Cà Mau",
-  },
-  49304002: {
+  }, "49304002": {
     bank_id: 304,
     branch_name: "PGD HỘI AN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Quảng Nam",
-  },
-  79304005: {
+  }, "79304005": {
     bank_id: 304,
     branch_name: "PGD LÊ ĐẠI HÀNH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  56304001: {
+  }, "56304001": {
     bank_id: 304,
     branch_name: "PGD NHA TRANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Khánh Hòa",
-  },
-  58304001: {
+  }, "58304001": {
     bank_id: 304,
     branch_name: "PGD NINH THUẬN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Ninh Thuận",
-  },
-  54304001: {
+  }, "54304001": {
     bank_id: 304,
     branch_name: "PGD PHÚ YÊN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Phú Yên",
-  },
-  94304001: {
+  }, "94304001": {
     bank_id: 304,
     branch_name: "PGD SÓC TRĂNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Sóc Trăng",
-  },
-  26304001: {
+  }, "26304001": {
     bank_id: 304,
     branch_name: "PGD VĨNH YÊN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Vĩnh Phúc",
-  },
-  79201001: {
+  }, "79201001": {
     bank_id: 201,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  84201001: {
+  }, "84201001": {
     bank_id: 201,
     branch_name: "CN TRÀ VINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Trà Vinh",
-  },
-  1201023: {
+  }, "01201023": {
     bank_id: 201,
     branch_name: "CN TRÀNG AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  79201005: {
+  }, "79201005": {
     bank_id: 201,
     branch_name: "CN 4 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201006: {
+  }, "79201006": {
     bank_id: 201,
     branch_name: "CN 5 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201007: {
+  }, "79201007": {
     bank_id: 201,
     branch_name: "CN 6 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201008: {
+  }, "79201008": {
     bank_id: 201,
     branch_name: "CN 7 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201009: {
+  }, "79201009": {
     bank_id: 201,
     branch_name: "CN 8 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201010: {
+  }, "79201010": {
     bank_id: 201,
     branch_name: "CN 9 - TP HCM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  89201001: {
+  }, "89201001": {
     bank_id: 201,
     branch_name: "CN AN GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "An Giang",
-  },
-  1201004: {
+  }, "01201004": {
     bank_id: 201,
     branch_name: "CN BA ĐÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  77201001: {
+  }, "77201001": {
     bank_id: 201,
     branch_name: "CN BÀ RỊA VŨNG TÀU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  48201003: {
+  }, "48201003": {
     bank_id: 201,
     branch_name: "CN BẮC ĐÀ NẴNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  24201001: {
+  }, "24201001": {
     bank_id: 201,
     branch_name: "CN BẮC GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Giang",
-  },
-  1201022: {
+  }, "01201022": {
     bank_id: 201,
     branch_name: "CN HÀ THÀNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  42201001: {
+  }, "42201001": {
     bank_id: 201,
     branch_name: "CN HÀ TĨNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  1201012: {
+  }, "01201012": {
     bank_id: 201,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  30201001: {
+  }, "30201001": {
     bank_id: 201,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Dương",
-  },
-  31201001: {
+  }, "31201001": {
     bank_id: 201,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  93201001: {
+  }, "93201001": {
     bank_id: 201,
     branch_name: "CN HẬU GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hậu Giang",
-  },
-  17201001: {
+  }, "17201001": {
     bank_id: 201,
     branch_name: "CN HÒA BÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hoà Bình",
-  },
-  72201003: {
+  }, "72201003": {
     bank_id: 201,
     branch_name: "CN HÒA THÀNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tây Ninh",
-  },
-  1201011: {
+  }, "01201011": {
     bank_id: 201,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1201014: {
+  }, "01201014": {
     bank_id: 201,
     branch_name: "CN HOÀNG MAI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  49201002: {
+  }, "49201002": {
     bank_id: 201,
     branch_name: "CN HỘI AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Nam",
-  },
-  1201021: {
+  }, "01201021": {
     bank_id: 201,
     branch_name: "CN TTQLTM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  27201005: {
+  }, "27201005": {
     bank_id: 201,
     branch_name: "CN TTQLTM BẮC NINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  48201005: {
+  }, "48201005": {
     bank_id: 201,
     branch_name: "CN TTQLTM ĐÀ NẴNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  31201008: {
+  }, "31201008": {
     bank_id: 201,
     branch_name: "CN TTQLTM HẢI PHÒNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79201022: {
+  }, "79201022": {
     bank_id: 201,
     branch_name: "CN TTQLTM HỒ CHÍ MINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  8201001: {
+  }, "08201001": {
     bank_id: 201,
     branch_name: "CN TUYÊN QUANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tuyên Quang",
-  },
-  25201004: {
+  }, "25201004": {
     bank_id: 201,
     branch_name: "CN TX PHÚ THỌ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Phú Thọ",
-  },
-  22201005: {
+  }, "22201005": {
     bank_id: 201,
     branch_name: "CN UÔNG BÍ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  22201006: {
+  }, "22201006": {
     bank_id: 201,
     branch_name: "CN VÂN ĐỒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  86201001: {
+  }, "86201001": {
     bank_id: 201,
     branch_name: "CN VĨNH LONG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  26201001: {
+  }, "26201001": {
     bank_id: 201,
     branch_name: "CN VĨNH PHÚC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Vĩnh Phúc",
-  },
-  1201009: {
+  }, "01201009": {
     bank_id: 201,
     branch_name: "CN BẮC HÀ NỘI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  6201001: {
+  }, "06201001": {
     bank_id: 201,
     branch_name: "CN BẮC KẠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Kạn",
-  },
-  95201001: {
+  }, "95201001": {
     bank_id: 201,
     branch_name: "CN BẠC LIÊU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  40201003: {
+  }, "40201003": {
     bank_id: 201,
     branch_name: "CN BẮC NGHỆ AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Nghệ An",
-  },
-  27201001: {
+  }, "27201001": {
     bank_id: 201,
     branch_name: "CN BẮC NINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  89305001: {
+  }, "89305001": {
     bank_id: 305,
     branch_name: "CN AN GIANG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "An Giang",
-  },
-  1305002: {
+  }, "01305002": {
     bank_id: 305,
     branch_name: "CN BA ĐÌNH",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  77305001: {
+  }, "77305001": {
     bank_id: 305,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  95305001: {
+  }, "95305001": {
     bank_id: 305,
     branch_name: "CN BẠC LIÊU",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Bạc Liêu",
-  },
-  74305001: {
+  }, "74305001": {
     bank_id: 305,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Bình Dương",
-  },
-  79305013: {
+  }, "79305013": {
     bank_id: 305,
     branch_name: "CN BÌNH PHÚ",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  25201002: {
+  }, "25201002": {
     bank_id: 201,
     branch_name: "CN HÙNG VƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Phú Thọ",
-  },
-  33201001: {
+  }, "33201001": {
     bank_id: 201,
     branch_name: "CN HƯNG YÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hưng Yên",
-  },
-  75201002: {
+  }, "75201002": {
     bank_id: 201,
     branch_name: "CN KCN BIÊN HÒA",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đồng Nai",
-  },
-  74201002: {
+  }, "74201002": {
     bank_id: 201,
     branch_name: "CN KCN BÌNH DƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Dương",
-  },
-  30201003: {
+  }, "30201003": {
     bank_id: 201,
     branch_name: "CN KCN HẢI DƯƠNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Dương",
-  },
-  52201002: {
+  }, "52201002": {
     bank_id: 201,
     branch_name: "CN KCN PHÚ TÀI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bình Định",
-  },
-  89201002: {
+  }, "89201002": {
     bank_id: 201,
     branch_name: "CN CHÂU ĐỐC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "An Giang",
-  },
-  27201004: {
+  }, "27201004": {
     bank_id: 201,
     branch_name: "CN KCN QUẾ VÕ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  27201003: {
+  }, "27201003": {
     bank_id: 201,
     branch_name: "CN KCN TIÊN SƠN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  72201002: {
+  }, "72201002": {
     bank_id: 201,
     branch_name: "CN KCN TRẢNG BÀNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tây Ninh",
-  },
-  56201001: {
+  }, "56201001": {
     bank_id: 201,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  15201001: {
+  }, "15201001": {
     bank_id: 201,
     branch_name: "CN YÊN BÁI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Yên Bái",
-  },
-  1201001: {
+  }, "01201001": {
     bank_id: 201,
     branch_name: "TRỤ SỜ CHÍNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  89309001: {
+  }, "89309001": {
     bank_id: 309,
     branch_name: "CN AN GIANG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "An Giang",
-  },
-  24309001: {
+  }, "24309001": {
     bank_id: 309,
     branch_name: "CN BẮC GIANG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bắc Giang",
-  },
-  1305001: {
+  }, "01305001": {
     bank_id: 305,
     branch_name: "CN HÀ NỘI",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  31305001: {
+  }, "31305001": {
     bank_id: 305,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79305005: {
+  }, "79305005": {
     bank_id: 305,
     branch_name: "CN HÒA BÌNH HCM",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305001: {
+  }, "79305001": {
     bank_id: 305,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  46305001: {
+  }, "46305001": {
     bank_id: 305,
     branch_name: "CN HUẾ",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  48305002: {
+  }, "48305002": {
     bank_id: 305,
     branch_name: "CN HÙNG VƯƠNG ĐN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  91305001: {
+  }, "91305001": {
     bank_id: 305,
     branch_name: "CN KIÊN GIANG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Kiên Giang",
-  },
-  70305001: {
+  }, "70305001": {
     bank_id: 305,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Bình Phước",
-  },
-  79305015: {
+  }, "79305015": {
     bank_id: 305,
     branch_name: "CN BÌNH TÂN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  66305001: {
+  }, "66305001": {
     bank_id: 305,
     branch_name: "CN BUÔN MA THUỘT",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Đắk Lắk",
-  },
-  92305001: {
+  }, "92305001": {
     bank_id: 305,
     branch_name: "CN CẦN THƠ",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1305005: {
+  }, "01305005": {
     bank_id: 305,
     branch_name: "CN CẦU GIẤY",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  79305007: {
+  }, "79305007": {
     bank_id: 305,
     branch_name: "CN CHỢ LỚN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305012: {
+  }, "79305012": {
     bank_id: 305,
     branch_name: "CN CỘNG HÒA",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  68305001: {
+  }, "68305001": {
     bank_id: 305,
     branch_name: "CN ĐÀ LẠT",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Lâm Đồng",
-  },
-  48305001: {
+  }, "48305001": {
     bank_id: 305,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  1305006: {
+  }, "01305006": {
     bank_id: 305,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  75305001: {
+  }, "75305001": {
     bank_id: 305,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Đồng Nai",
-  },
-  79339001: {
+  }, "79339001": {
     bank_id: 339,
     branch_name: "CN SÀI GÒN",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  82339001: {
+  }, "82339001": {
     bank_id: 339,
     branch_name: "CN TIỀN GIANG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Tiền Giang",
-  },
-  84339001: {
+  }, "84339001": {
     bank_id: 339,
     branch_name: "CN TRÀ VINH",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Trà Vinh",
-  },
-  86339001: {
+  }, "86339001": {
     bank_id: 339,
     branch_name: "CN VĨNH LONG",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Vĩnh Long",
-  },
-  77339001: {
+  }, "77339001": {
     bank_id: 339,
     branch_name: "CN VŨNG TÀU",
     bank_name: "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79607001: {
+  }, "79607001": {
     bank_id: 607,
     branch_name: "TPHCM",
     bank_name: "CHIFON BANK",
     area: "Hồ Chí Minh",
-  },
-  1607001: {
+  }, "01607001": {
     bank_id: 607,
     branch_name: "HÀ NỘI",
     bank_name: "CHIFON BANK",
     area: "Hà Nội",
-  },
-  79611001: {
+  }, "79611001": {
     bank_id: 611,
     branch_name: "CN TP HCM",
-    bank_name:
-      "CHINACONSTRUCTIONBANKCORPORATION-CHINA CONSTRUCTION BANK CORPORATION",
+    bank_name: "CHINACONSTRUCTIONBANKCORPORATION-CHINA CONSTRUCTION BANK CORPORATION",
     area: "Hồ Chí Minh",
-  },
-  10503018: {
+  }, "10503018": {
     bank_id: 503,
     branch_name: "CN HÀ NỘI",
     bank_name: "CHOHUNGVINABANK-CHOHUNG VINA BANK",
     area: "Lào Cai",
-  },
-  1661001: {
+  }, "01661001": {
     bank_id: 661,
     branch_name: "HỘI SỞ",
     bank_name: "CIMB-NGÂN HÀNG TNHH MTV CIMB",
     area: "Hà Nội",
-  },
-  1605001: {
+  }, "01605001": {
     bank_id: 605,
     branch_name: "CN HÀ NỘI",
     bank_name: "CITIBANK-NGÂN HÀNG CITIBANK",
     area: "Hà Nội",
-  },
-  80305001: {
+  }, "80305001": {
     bank_id: 305,
     branch_name: "CN LONG AN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Long An",
-  },
-  1305003: {
+  }, "01305003": {
     bank_id: 305,
     branch_name: "CN LONG BIÊN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  82305001: {
+  }, "82305001": {
     bank_id: 305,
     branch_name: "CN MỸ THO",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Tiền Giang",
-  },
-  56305001: {
+  }, "56305001": {
     bank_id: 305,
     branch_name: "CN NHA TRANG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Khánh Hòa",
-  },
-  79305014: {
+  }, "79305014": {
     bank_id: 305,
     branch_name: "CN PHÚ MỸ HƯNG",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305004: {
+  }, "79305004": {
     bank_id: 305,
     branch_name: "CN QUẬN 10 HCM",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305003: {
+  }, "79305003": {
     bank_id: 305,
     branch_name: "CN QUẬN 11 HCM",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305017: {
+  }, "79305017": {
     bank_id: 305,
     branch_name: "CN QUẬN 3",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305009: {
+  }, "79305009": {
     bank_id: 305,
     branch_name: "CN QUẬN 4",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305010: {
+  }, "79305010": {
     bank_id: 305,
     branch_name: "CN QUẬN 7",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  49305001: {
+  }, "49305001": {
     bank_id: 305,
     branch_name: "CN QUẢNG NAM",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Quảng Nam",
-  },
-  1308006: {
+  }, "01308006": {
     bank_id: 308,
     branch_name: "CN BA ĐÌNH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  95308001: {
+  }, "95308001": {
     bank_id: 308,
     branch_name: "CN BẠC LIÊU",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Bạc Liêu",
-  },
-  79308004: {
+  }, "79308004": {
     bank_id: 308,
     branch_name: "CN BẾN NGHÉ",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  79308005: {
+  }, "79308005": {
     bank_id: 308,
     branch_name: "CN BÌNH CHÁNH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  74308001: {
+  }, "74308001": {
     bank_id: 308,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Bình Dương",
-  },
-  79308008: {
+  }, "79308008": {
     bank_id: 308,
     branch_name: "CN BÌNH HÒA",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  60308001: {
+  }, "60308001": {
     bank_id: 308,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Bình Thuận",
-  },
-  96308001: {
+  }, "96308001": {
     bank_id: 308,
     branch_name: "CN CÀ MAU",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Cà Mau",
-  },
-  92308001: {
+  }, "92308001": {
     bank_id: 308,
     branch_name: "CN CẦN THƠ",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Cần Thơ",
-  },
-  1308003: {
+  }, "01308003": {
     bank_id: 308,
     branch_name: "CN CẦU GIẤY",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  79308002: {
+  }, "79308002": {
     bank_id: 308,
     branch_name: "CN CHỢ LỚN",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  79654001: {
+  }, "79654001": {
     bank_id: 654,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "CITIBANK-NGÂN HÀNG CITIBANK",
     area: "Hồ Chí Minh",
-  },
-  24901001: {
+  }, "24901001": {
     bank_id: 901,
     branch_name: "CN BẮC GIANG",
     bank_name: "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM",
     area: "Bắc Giang",
-  },
-  64901001: {
+  }, "64901001": {
     bank_id: 901,
     branch_name: "CN GIA LAI",
     bank_name: "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM",
     area: "Gia Lai",
-  },
-  42901001: {
+  }, "42901001": {
     bank_id: 901,
     branch_name: "CN HÀ TĨNH",
     bank_name: "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM",
     area: "Hà Tĩnh",
-  },
-  72901001: {
+  }, "72901001": {
     bank_id: 901,
     branch_name: "CN TÂY NINH",
     bank_name: "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM",
     area: "Tây Ninh",
-  },
-  15901001: {
+  }, "15901001": {
     bank_id: 901,
     branch_name: "CN YÊN BÁI",
     bank_name: "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM",
     area: "Yên Bái",
-  },
-  79643001: {
+  }, "79643001": {
     bank_id: 643,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "COMMONWEALTHBANKOFAUSTRALIA-COMMONWEALTH BANK OF AUSTRALIA",
     area: "Hồ Chí Minh",
-  },
-  79650001: {
+  }, "79650001": {
     bank_id: 650,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "DBSBANKLTD-DBS BANK LTD",
     area: "Hồ Chí Minh",
-  },
-  79619001: {
+  }, "79619001": {
     bank_id: 619,
     branch_name: "TP HỒ CHÍ MINH",
     bank_name: "DEUTSCHEBANK-DEUTSCHE BANK",
     area: "Hồ Chí Minh",
-  },
-  24304001: {
+  }, "24304001": {
     bank_id: 304,
     branch_name: "CN BẮC GIANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bắc Giang",
-  },
-  95304001: {
+  }, "95304001": {
     bank_id: 304,
     branch_name: "CN BẠC LIÊU",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bạc Liêu",
-  },
-  51305001: {
+  }, "51305001": {
     bank_id: 305,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Quảng Ngãi",
-  },
-  22305001: {
+  }, "22305001": {
     bank_id: 305,
     branch_name: "CN QUẢNG NINH",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Quảng Ninh",
-  },
-  79305002: {
+  }, "79305002": {
     bank_id: 305,
     branch_name: "CN SÀI GÒN",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305006: {
+  }, "79305006": {
     bank_id: 305,
     branch_name: "CN TÂN ĐỊNH HCM",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305016: {
+  }, "79305016": {
     bank_id: 305,
     branch_name: "CN TÂN SƠN NHẤT",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  92305002: {
+  }, "92305002": {
     bank_id: 305,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1305004: {
+  }, "01305004": {
     bank_id: 305,
     branch_name: "CN THỦ ĐÔ",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hà Nội",
-  },
-  79305011: {
+  }, "79305011": {
     bank_id: 305,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79305008: {
+  }, "79305008": {
     bank_id: 305,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  40305001: {
+  }, "40305001": {
     bank_id: 305,
     branch_name: "CN VINH",
     bank_name: "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM",
     area: "Nghệ An",
-  },
-  74320001: {
+  }, "74320001": {
     bank_id: 320,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Bình Dương",
-  },
-  48308001: {
+  }, "48308001": {
     bank_id: 308,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Đà Nẵng",
-  },
-  66308001: {
+  }, "66308001": {
     bank_id: 308,
     branch_name: "CN DAKLAK",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Đắk Lắk",
-  },
-  1308004: {
+  }, "01308004": {
     bank_id: 308,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  75308001: {
+  }, "75308001": {
     bank_id: 308,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Đồng Nai",
-  },
-  1308001: {
+  }, "01308001": {
     bank_id: 308,
     branch_name: "CN HÀ NỘI",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  31308001: {
+  }, "31308001": {
     bank_id: 308,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hải Phòng",
-  },
-  79308001: {
+  }, "79308001": {
     bank_id: 308,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  1308005: {
+  }, "01308005": {
     bank_id: 308,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  46308001: {
+  }, "46308001": {
     bank_id: 308,
     branch_name: "CN HUẾ",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Thừa Thiên Huế",
-  },
-  79308012: {
+  }, "79308012": {
     bank_id: 308,
     branch_name: "CN KHÁNH HỘI",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  10308001: {
+  }, "10308001": {
     bank_id: 308,
     branch_name: "CN LÀO CAI",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Lào Cai",
-  },
-  27304001: {
+  }, "27304001": {
     bank_id: 304,
     branch_name: "CN BẮC NINH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bắc Ninh",
-  },
-  83304001: {
+  }, "83304001": {
     bank_id: 304,
     branch_name: "CN BẾN TRE",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bến Tre",
-  },
-  52304001: {
+  }, "52304001": {
     bank_id: 304,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bình Định",
-  },
-  74304001: {
+  }, "74304001": {
     bank_id: 304,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bình Dương",
-  },
-  70304001: {
+  }, "70304001": {
     bank_id: 304,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bình Phước",
-  },
-  60304001: {
+  }, "60304001": {
     bank_id: 304,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Bình Thuận",
-  },
-  92304001: {
+  }, "92304001": {
     bank_id: 304,
     branch_name: "CN CẦN THƠ",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Cần Thơ",
-  },
-  48304001: {
+  }, "48304001": {
     bank_id: 304,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Đà Nẵng",
-  },
-  66304001: {
+  }, "66304001": {
     bank_id: 304,
     branch_name: "CN DAK LAK",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Đắk Lắk",
-  },
-  67304001: {
+  }, "67304001": {
     bank_id: 304,
     branch_name: "CN ĐAK NÔNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Đắk Nông",
-  },
-  79304006: {
+  }, "79304006": {
     bank_id: 304,
     branch_name: "CN ĐINH TIÊN HOÀNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  48320001: {
+  }, "48320001": {
     bank_id: 320,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Đà Nẵng",
-  },
-  64320001: {
+  }, "64320001": {
     bank_id: 320,
     branch_name: "CN GIA LAI",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Gia Lai",
-  },
-  1320005: {
+  }, "01320005": {
     bank_id: 320,
     branch_name: "CN HÀ NỘI",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hà Nội",
-  },
-  31320001: {
+  }, "31320001": {
     bank_id: 320,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hải Phòng",
-  },
-  1320002: {
+  }, "01320002": {
     bank_id: 320,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hà Nội",
-  },
-  40320001: {
+  }, "40320001": {
     bank_id: 320,
     branch_name: "CN NGHỆ AN",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Nghệ An",
-  },
-  37320001: {
+  }, "37320001": {
     bank_id: 320,
     branch_name: "CN NINH BÌNH",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Ninh Bình",
-  },
-  22320001: {
+  }, "22320001": {
     bank_id: 320,
     branch_name: "CN QUẢNG NINH",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Quảng Ninh",
-  },
-  79320002: {
+  }, "79320002": {
     bank_id: 320,
     branch_name: "CN SÀI GÒN",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hồ Chí Minh",
-  },
-  1308002: {
+  }, "01308002": {
     bank_id: 308,
     branch_name: "CN LONG BIÊN",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hà Nội",
-  },
-  22308001: {
+  }, "22308001": {
     bank_id: 308,
     branch_name: "CN QUẢNG NINH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Quảng Ninh",
-  },
-  94308001: {
+  }, "94308001": {
     bank_id: 308,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Sóc Trăng",
-  },
-  79308010: {
+  }, "79308010": {
     bank_id: 308,
     branch_name: "CN TÂN BÌNH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  79308003: {
+  }, "79308003": {
     bank_id: 308,
     branch_name: "CN TÂN ĐỊNH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  79308007: {
+  }, "79308007": {
     bank_id: 308,
     branch_name: "CN TÂN PHÚ",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  79308006: {
+  }, "79308006": {
     bank_id: 308,
     branch_name: "CN THÁI BÌNH",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Hồ Chí Minh",
-  },
-  92308002: {
+  }, "92308002": {
     bank_id: 308,
     branch_name: "CN THỐT NỐT",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Cần Thơ",
-  },
-  82308001: {
+  }, "82308001": {
     bank_id: 308,
     branch_name: "CN TIỀN GIANG",
     bank_name: "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG",
     area: "Tiền Giang",
-  },
-  92334001: {
+  }, "92334001": {
     bank_id: 334,
     branch_name: "CN  CẦN THƠ",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Cần Thơ",
-  },
-  31334001: {
+  }, "31334001": {
     bank_id: 334,
     branch_name: "CN  HỒNG BÀNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hải Phòng",
-  },
-  75304001: {
+  }, "75304001": {
     bank_id: 304,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Đồng Nai",
-  },
-  87304001: {
+  }, "87304001": {
     bank_id: 304,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Đồng Tháp",
-  },
-  64304001: {
+  }, "64304001": {
     bank_id: 304,
     branch_name: "CN GIA LAI",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Gia Lai",
-  },
-  79304007: {
+  }, "79304007": {
     bank_id: 304,
     branch_name: "CN GÒ VẤP",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  35304001: {
+  }, "35304001": {
     bank_id: 304,
     branch_name: "CN HÀ NAM",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hà Nam",
-  },
-  1304001: {
+  }, "01304001": {
     bank_id: 304,
     branch_name: "CN HÀ NỘI",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hà Nội",
-  },
-  31304001: {
+  }, "31304001": {
     bank_id: 304,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hải Phòng",
-  },
-  93304001: {
+  }, "93304001": {
     bank_id: 304,
     branch_name: "CN HẬU GIANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hậu Giang",
-  },
-  33304001: {
+  }, "33304001": {
     bank_id: 304,
     branch_name: "CN HƯNG YÊN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hưng Yên",
-  },
-  91304001: {
+  }, "91304001": {
     bank_id: 304,
     branch_name: "CN KIÊN GIANG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Kiên Giang",
-  },
-  62304001: {
+  }, "62304001": {
     bank_id: 304,
     branch_name: "CN KON TUM",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Kon Tum",
-  },
-  68304001: {
+  }, "68304001": {
     bank_id: 304,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Lâm Đồng",
-  },
-  79334008: {
+  }, "79334008": {
     bank_id: 334,
     branch_name: "CN 20-10",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  89334001: {
+  }, "89334001": {
     bank_id: 334,
     branch_name: "CN AN GIANG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "An Giang",
-  },
-  77334002: {
+  }, "77334002": {
     bank_id: 334,
     branch_name: "CN BÀ RỊA - VŨNG TÀU",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  27334001: {
+  }, "27334001": {
     bank_id: 334,
     branch_name: "CN BẮC NINH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bắc Ninh",
-  },
-  79334018: {
+  }, "79334018": {
     bank_id: 334,
     branch_name: "CN BẾN THÀNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  83334001: {
+  }, "83334001": {
     bank_id: 334,
     branch_name: "CN BẾN TRE",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bến Tre",
-  },
-  52334001: {
+  }, "52334001": {
     bank_id: 334,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bình Định",
-  },
-  74334001: {
+  }, "74334001": {
     bank_id: 334,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bình Dương",
-  },
-  79334017: {
+  }, "79334017": {
     bank_id: 334,
     branch_name: "CN BÌNH TÂY",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  60334001: {
+  }, "60334001": {
     bank_id: 334,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Bình Thuận",
-  },
-  96334001: {
+  }, "96334001": {
     bank_id: 334,
     branch_name: "CN CÀ MAU",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Cà Mau",
-  },
-  80334002: {
+  }, "80334002": {
     bank_id: 334,
     branch_name: "CN CẦN GIUỘC",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Long An",
-  },
-  80304001: {
+  }, "80304001": {
     bank_id: 304,
     branch_name: "CN LONG AN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Long An",
-  },
-  36304001: {
+  }, "36304001": {
     bank_id: 304,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Nam Định",
-  },
-  19304001: {
+  }, "19304001": {
     bank_id: 304,
     branch_name: "CN PGD THÁI NGUYÊN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Thái Nguyên",
-  },
-  79304011: {
+  }, "79304011": {
     bank_id: 304,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  79304002: {
+  }, "79304002": {
     bank_id: 304,
     branch_name: "CN QUẬN 1",
     bank_name: "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á",
     area: "Hồ Chí Minh",
-  },
-  91303002: {
+  }, "91303002": {
     bank_id: 303,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Kiên Giang",
-  },
-  25303001: {
+  }, "25303001": {
     bank_id: 303,
     branch_name: "CN PHÚ THỌ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Phú Thọ",
-  },
-  54303001: {
+  }, "54303001": {
     bank_id: 303,
     branch_name: "CN PHÚ YÊN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Phú Yên",
-  },
-  79303030: {
+  }, "79303030": {
     bank_id: 303,
     branch_name: "CN PHƯƠNG NAM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303022: {
+  }, "79303022": {
     bank_id: 303,
     branch_name: "CN QUẬN 1",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303005: {
+  }, "79303005": {
     bank_id: 303,
     branch_name: "CN QUẬN 12",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  19201003: {
+  }, "19201003": {
     bank_id: 201,
     branch_name: "CN SÔNG CÔNG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  48201004: {
+  }, "48201004": {
     bank_id: 201,
     branch_name: "CN SÔNG HÀN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Đà Nẵng",
-  },
-  1201015: {
+  }, "01201015": {
     bank_id: 201,
     branch_name: "CN SÔNG NHUỆ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  37201002: {
+  }, "37201002": {
     bank_id: 201,
     branch_name: "CN TAM ĐIỆP",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Ninh Bình",
-  },
-  79201017: {
+  }, "79201017": {
     bank_id: 201,
     branch_name: "CN TÂN BÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  92201002: {
+  }, "92201002": {
     bank_id: 201,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Cần Thơ",
-  },
-  1201013: {
+  }, "01201013": {
     bank_id: 201,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  72201001: {
+  }, "72201001": {
     bank_id: 201,
     branch_name: "CN TÂY NINH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tây Ninh",
-  },
-  79201012: {
+  }, "79201012": {
     bank_id: 201,
     branch_name: "CN TÂY SÀI GÒN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  82201002: {
+  }, "82201002": {
     bank_id: 201,
     branch_name: "CN TÂY TIỀN GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tiền Giang",
-  },
-  34201001: {
+  }, "34201001": {
     bank_id: 201,
     branch_name: "CN THÁI BÌNH",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thái Bình",
-  },
-  79303012: {
+  }, "79303012": {
     bank_id: 303,
     branch_name: "CN QUẬN 4",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303020: {
+  }, "79303020": {
     bank_id: 303,
     branch_name: "CN QUẬN 5",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303013: {
+  }, "79303013": {
     bank_id: 303,
     branch_name: "CN QUẬN 8",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303021: {
+  }, "79303021": {
     bank_id: 303,
     branch_name: "CN QUẬN 9",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  44303001: {
+  }, "44303001": {
     bank_id: 303,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Quảng Bình",
-  },
-  49303001: {
+  }, "49303001": {
     bank_id: 303,
     branch_name: "CN QUẢNG NAM",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Quảng Nam",
-  },
-  51303001: {
+  }, "51303001": {
     bank_id: 303,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Quảng Ngãi",
-  },
-  22303001: {
+  }, "22303001": {
     bank_id: 303,
     branch_name: "CN QUẢNG NINH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Quảng Ninh",
-  },
-  45303001: {
+  }, "45303001": {
     bank_id: 303,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Quảng Trị",
-  },
-  79303010: {
+  }, "79303010": {
     bank_id: 303,
     branch_name: "CN SÀI GÒN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  48303002: {
+  }, "48303002": {
     bank_id: 303,
     branch_name: "CN SÔNG HÀN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đà Nẵng",
-  },
-  19201001: {
+  }, "19201001": {
     bank_id: 201,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thái Nguyên",
-  },
-  1201017: {
+  }, "01201017": {
     bank_id: 201,
     branch_name: "CN THĂNG LONG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  1201019: {
+  }, "01201019": {
     bank_id: 201,
     branch_name: "CN THANH AN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  38201001: {
+  }, "38201001": {
     bank_id: 201,
     branch_name: "CN THANH HÓA",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thanh Hóa",
-  },
-  1201007: {
+  }, "01201007": {
     bank_id: 201,
     branch_name: "CN THANH XUÂN",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hà Nội",
-  },
-  79201013: {
+  }, "79201013": {
     bank_id: 201,
     branch_name: "CN THỦ ĐỨC",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  79201021: {
+  }, "79201021": {
     bank_id: 201,
     branch_name: "CN THỦ THIÊM",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hồ Chí Minh",
-  },
-  46201001: {
+  }, "46201001": {
     bank_id: 201,
     branch_name: "CN THỪA THIÊN HUẾ",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Thừa Thiên Huế",
-  },
-  82201001: {
+  }, "82201001": {
     bank_id: 201,
     branch_name: "CN TIỀN GIANG",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Tiền Giang",
-  },
-  27201002: {
+  }, "27201002": {
     bank_id: 201,
     branch_name: "CN TIEN SON",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Bắc Ninh",
-  },
-  31201006: {
+  }, "31201006": {
     bank_id: 201,
     branch_name: "CN TÔ HIỆU",
     bank_name: "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM",
     area: "Hải Phòng",
-  },
-  79303008: {
+  }, "79303008": {
     bank_id: 303,
     branch_name: "CN TÂN BÌNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303026: {
+  }, "79303026": {
     bank_id: 303,
     branch_name: "CN TÂN ĐỊNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  79303014: {
+  }, "79303014": {
     bank_id: 303,
     branch_name: "CN TÂN PHÚ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hồ Chí Minh",
-  },
-  72303001: {
+  }, "72303001": {
     bank_id: 303,
     branch_name: "CN TÂY NINH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Tây Ninh",
-  },
-  19303001: {
+  }, "19303001": {
     bank_id: 303,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Thái Nguyên",
-  },
-  1303006: {
+  }, "01303006": {
     bank_id: 303,
     branch_name: "CN THĂNG LONG",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  87303002: {
+  }, "87303002": {
     bank_id: 303,
     branch_name: "CN THANH BÌNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Đồng Tháp",
-  },
-  38303001: {
+  }, "38303001": {
     bank_id: 303,
     branch_name: "CN THANH HÓA",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Thanh Hóa",
-  },
-  1303007: {
+  }, "01303007": {
     bank_id: 303,
     branch_name: "CN THANH TRÌ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  96303002: {
+  }, "96303002": {
     bank_id: 303,
     branch_name: "CN THỚI BÌNH",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Cà Mau",
-  },
-  1303001: {
+  }, "01303001": {
     bank_id: 303,
     branch_name: "CN THỦ ĐÔ",
     bank_name: "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN",
     area: "Hà Nội",
-  },
-  89204015: {
+  }, "89204015": {
     bank_id: 204,
     branch_name: "CN MỸ LƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  94204008: {
+  }, "94204008": {
     bank_id: 204,
     branch_name: "CN NGÃ NĂM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  38204029: {
+  }, "38204029": {
     bank_id: 204,
     branch_name: "CN NGA SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  6204004: {
+  }, "06204004": {
     bank_id: 204,
     branch_name: "CN NGÂN SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Kạn",
-  },
-  40204001: {
+  }, "40204001": {
     bank_id: 204,
     branch_name: "CN NGHỆ AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nghệ An",
-  },
-  38204019: {
+  }, "38204019": {
     bank_id: 204,
     branch_name: "CN NGHI SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  51204014: {
+  }, "51204014": {
     bank_id: 204,
     branch_name: "CN NGHĨA HÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  36204006: {
+  }, "36204006": {
     bank_id: 204,
     branch_name: "CN NGHĨA HƯNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  31204005: {
+  }, "31204005": {
     bank_id: 204,
     branch_name: "CN NGÔ QUYỀN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  96204006: {
+  }, "96204006": {
     bank_id: 204,
     branch_name: "CN NGỌC HIỂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  38204032: {
+  }, "38204032": {
     bank_id: 204,
     branch_name: "CN NGỌC LẶC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  48204006: {
+  }, "48204006": {
     bank_id: 204,
     branch_name: "CN NGŨ HÀNH SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  31204017: {
+  }, "31204017": {
     bank_id: 204,
     branch_name: "CN NGŨ LÃO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  45204001: {
+  }, "45204001": {
     bank_id: 204,
     branch_name: "CN TỈNH QUẢNG TRỊ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Trị",
-  },
-  94204001: {
+  }, "38307001": {
+    bank_id: 307,
+    branch_name: "CN THANH HÓA",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Thanh Hóa",
+  }, "94204001": {
     bank_id: 204,
     branch_name: "CN TỈNH SÓC TRĂNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  72204001: {
+  }, "72204001": {
     bank_id: 204,
     branch_name: "CN TỈNH TÂY NINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  34204001: {
+  }, "34204001": {
     bank_id: 204,
     branch_name: "CN TỈNH THÁI BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  19204001: {
+  }, "22307001": {
+    bank_id: 307,
+    branch_name: "CN QUẢNG NINH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Quảng Ninh",
+  }, "19204001": {
     bank_id: 204,
     branch_name: "CN TỈNH THÁI NGUYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  38204001: {
+  }, "38204001": {
     bank_id: 204,
     branch_name: "CN TỈNH THANH HÓA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  8204001: {
+  }, "08204001": {
     bank_id: 204,
     branch_name: "CN TỈNH TUYÊN QUANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tuyên Quang",
-  },
-  86204001: {
+  }, "86204001": {
     bank_id: 204,
     branch_name: "CN TỈNH VĨNH LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  79204049: {
+  }, "79204049": {
     bank_id: 204,
     branch_name: "CN MY THANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  94204007: {
+  }, "94204007": {
     bank_id: 204,
     branch_name: "CN MỸ TÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  94204006: {
+  }, "94204006": {
     bank_id: 204,
     branch_name: "CN MỸ XUYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  6204006: {
+  }, "06204006": {
     bank_id: 204,
     branch_name: "CN NA RÌ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Kạn",
-  },
-  31204018: {
+  }, "31204018": {
     bank_id: 204,
     branch_name: "CN NAM AM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  22204019: {
+  }, "22204019": {
     bank_id: 204,
     branch_name: "CN NAM CẨM PHẢ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  96204008: {
+  }, "96204008": {
     bank_id: 204,
     branch_name: "CN NĂM CĂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  67204007: {
+  }, "67204007": {
     bank_id: 204,
     branch_name: "CN NAM DONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Nông",
-  },
-  49204006: {
+  }, "49204006": {
     bank_id: 204,
     branch_name: "CN NAM GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  1204017: {
+  }, "01204017": {
     bank_id: 204,
     branch_name: "CN NAM HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  79204039: {
+  }, "79204039": {
     bank_id: 204,
     branch_name: "CN NAM HOA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  68204002: {
+  }, "68204002": {
     bank_id: 204,
     branch_name: "CN NAM LÂM ĐỒNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  56204011: {
+  }, "56204011": {
     bank_id: 204,
     branch_name: "CN NAM NHA TRANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Khánh Hòa",
-  },
-  60204002: {
+  }, "60204002": {
     bank_id: 204,
     branch_name: "CN NAM PHAN THIẾT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  49204003: {
+  }, "49204003": {
     bank_id: 204,
     branch_name: "CN NAM PHƯỚC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  30204002: {
+  }, "30204002": {
     bank_id: 204,
     branch_name: "CN NAM SÁCH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  79204026: {
+  }, "79204026": {
     bank_id: 204,
     branch_name: "CN NAM SÀI GÒN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  46204002: {
+  }, "46204002": {
     bank_id: 204,
     branch_name: "CN NAM SÔNG HƯƠNG HUẾ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thừa Thiên Huế",
-  },
-  54204011: {
+  }, "54204011": {
     bank_id: 204,
     branch_name: "CN NAM TP TUY HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  49204016: {
+  }, "49204016": {
     bank_id: 204,
     branch_name: "CN NAM TRÀ MY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  36204004: {
+  }, "36204004": {
     bank_id: 204,
     branch_name: "CN NAM TRỰC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  38204022: {
+  }, "38204022": {
     bank_id: 204,
     branch_name: "CN TX BỈM SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  86204002: {
+  }, "86204002": {
     bank_id: 204,
     branch_name: "CN TX BÌNH MINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  82204002: {
+  }, "82204002": {
     bank_id: 204,
     branch_name: "CN TX CAI LẬY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  82204011: {
+  }, "82204011": {
     bank_id: 204,
     branch_name: "CN TX GÒ CÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  75204008: {
+  }, "75204008": {
     bank_id: 204,
     branch_name: "CN TX LONG KHÁNH ĐỒNG NAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  15204011: {
+  }, "15204011": {
     bank_id: 204,
     branch_name: "CN TX NGHĨA LỘ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  25204004: {
+  }, "25204004": {
     bank_id: 204,
     branch_name: "CN TX PHÚ THỌ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  54204008: {
+  }, "54204008": {
     bank_id: 204,
     branch_name: "CN TX SÔNG CẦU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  89204008: {
+  }, "89204008": {
     bank_id: 204,
     branch_name: "CN TX TÂN CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  96204010: {
+  }, "96204010": {
     bank_id: 204,
     branch_name: "CN U MINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  31204021: {
+  }, "31204021": {
     bank_id: 204,
     branch_name: "CN VÀM LÁNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  52204013: {
+  }, "52204013": {
     bank_id: 204,
     branch_name: "CN VÂN CANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  15204004: {
+  }, "15204004": {
     bank_id: 204,
     branch_name: "CN VĂN CHẤN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  25204003: {
+  }, "25204003": {
     bank_id: 204,
     branch_name: "CN VÂN CƠ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  33204004: {
+  }, "33204004": {
     bank_id: 204,
     branch_name: "CN VĂN GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  33204006: {
+  }, "33204006": {
     bank_id: 204,
     branch_name: "CN VĂN LÂM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  20204002: {
+  }, "20204002": {
     bank_id: 204,
     branch_name: "CN VĂN LANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  20204011: {
+  }, "20204011": {
     bank_id: 204,
     branch_name: "CN VĂN QUAN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  15204009: {
+  }, "15204009": {
     bank_id: 204,
     branch_name: "CN VĂN YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  93204005: {
+  }, "93204005": {
     bank_id: 204,
     branch_name: "CN VỊ THUỶ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hậu Giang",
-  },
-  2204012: {
+  }, "02204012": {
     bank_id: 204,
     branch_name: "CN VỊ XUYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  38204017: {
+  }, "38204017": {
     bank_id: 204,
     branch_name: "CN NHƯ THANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  38204011: {
+  }, "38204011": {
     bank_id: 204,
     branch_name: "CN NHƯ XUÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  30204008: {
+  }, "30204008": {
     bank_id: 204,
     branch_name: "CN NINH GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  66204027: {
+  }, "66204027": {
     bank_id: 204,
     branch_name: "CN NƠ TRANG LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  38204012: {
+  }, "38204012": {
     bank_id: 204,
     branch_name: "CN NÔNG CỐNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  49204013: {
+  }, "49204013": {
     bank_id: 204,
     branch_name: "CN NÔNG SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  49204027: {
+  }, "49204027": {
     bank_id: 204,
     branch_name: "CN NÚI THÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  48204015: {
+  }, "48204015": {
     bank_id: 204,
     branch_name: "CN ÔNG ÍCH KHIÊM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  6204005: {
+  }, "06204005": {
     bank_id: 204,
     branch_name: "CN PÁC NẶM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Kạn",
-  },
-  30204015: {
+  }, "30204015": {
     bank_id: 204,
     branch_name: "CN PHẢ LẠI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  66204012: {
+  }, "66204012": {
     bank_id: 204,
     branch_name: "CN PHAN CHU TRINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  79204036: {
+  }, "79204036": {
     bank_id: 204,
     branch_name: "CN PHAN DINH PHUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  60204006: {
+  }, "60204006": {
     bank_id: 204,
     branch_name: "CN PHAN RÍ CỬA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  12204004: {
+  }, "12204004": {
     bank_id: 204,
     branch_name: "CN PHONG THỔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  52204006: {
+  }, "52204006": {
     bank_id: 204,
     branch_name: "CN PHÙ CÁT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  33204009: {
+  }, "33204009": {
     bank_id: 204,
     branch_name: "CN PHÙ CỪ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  54204005: {
+  }, "54204005": {
     bank_id: 204,
     branch_name: "CN PHÚ HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  52204007: {
+  }, "52204007": {
     bank_id: 204,
     branch_name: "CN PHÙ MỸ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  79204031: {
+  }, "79204031": {
     bank_id: 204,
     branch_name: "CN PHÚ MỸ HƯNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  79204006: {
+  }, "79204006": {
     bank_id: 204,
     branch_name: "CN PHÚ NHUẬN HCM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  26204001: {
+  }, "26204001": {
     bank_id: 204,
     branch_name: "CN TỈNH VĨNH PHÚC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  95204002: {
+  }, "95204002": {
     bank_id: 204,
     branch_name: "CN TP BẠC LIÊU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bạc Liêu",
-  },
-  83204002: {
+  }, "83204002": {
     bank_id: 204,
     branch_name: "CN TP BẾN TRE",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bến Tre",
-  },
-  66204020: {
+  }, "66204020": {
     bank_id: 204,
     branch_name: "CN TP BUÔN MA THUỘT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  96204005: {
+  }, "96204005": {
     bank_id: 204,
     branch_name: "CN TP CÀ MAU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  22204012: {
+  }, "22204012": {
     bank_id: 204,
     branch_name: "CN TP CẨM PHẢ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  87204005: {
+  }, "87204005": {
     bank_id: 204,
     branch_name: "CN TP CAO LÃNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  89204013: {
+  }, "89204013": {
     bank_id: 204,
     branch_name: "CN TP CHÂU ĐỐC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  68204003: {
+  }, "68204003": {
     bank_id: 204,
     branch_name: "CN TP ĐÀ LẠT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  48204001: {
+  }, "48204001": {
     bank_id: 204,
     branch_name: "CN TP ĐÀ NẴNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  45204002: {
+  }, "45204002": {
     bank_id: 204,
     branch_name: "CN TP ĐÔNG HÀ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Trị",
-  },
-  22204011: {
+  }, "22204011": {
     bank_id: 204,
     branch_name: "CN TP HẠ LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  79204001: {
+  }, "79204001": {
     bank_id: 204,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  49204011: {
+  }, "49204011": {
     bank_id: 204,
     branch_name: "CN TP HỘI AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  33204012: {
+  }, "33204012": {
     bank_id: 204,
     branch_name: "CN TP HƯNG YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  20204006: {
+  }, "20204006": {
     bank_id: 204,
     branch_name: "CN TP LẠNG SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  10204009: {
+  }, "10204009": {
     bank_id: 204,
     branch_name: "CN TP LÀO CAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lào Cai",
-  },
-  89204006: {
+  }, "89204006": {
     bank_id: 204,
     branch_name: "CN TP LONG XUYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  22204005: {
+  }, "22204005": {
     bank_id: 204,
     branch_name: "CN TP MÓNG CÁI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  82204005: {
+  }, "82204005": {
     bank_id: 204,
     branch_name: "CN TP MỸ THO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  36204015: {
+  }, "36204015": {
     bank_id: 204,
     branch_name: "CN TP NAM ĐỊNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  56204002: {
+  }, "56204002": {
     bank_id: 204,
     branch_name: "CN TP NHA TRANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Khánh Hòa",
-  },
-  37204009: {
+  }, "37204009": {
     bank_id: 204,
     branch_name: "CN TP NINH BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  58204002: {
+  }, "58204002": {
     bank_id: 204,
     branch_name: "CN TP PHAN RANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Thuận",
-  },
-  60204015: {
+  }, "60204015": {
     bank_id: 204,
     branch_name: "CN TP PHAN THIẾT",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  35204006: {
+  }, "35204006": {
     bank_id: 204,
     branch_name: "CN TP PHỦ LÝ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nam",
-  },
-  64204016: {
+  }, "64204016": {
     bank_id: 204,
     branch_name: "CN TP PLEIKU GIA LAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Gia Lai",
-  },
-  80204018: {
+  }, "80204018": {
     bank_id: 204,
     branch_name: "CN HUYỆN VĨNH HƯNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  45204010: {
+  }, "45204010": {
     bank_id: 204,
     branch_name: "CN HUYỆN VĨNH LINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Trị",
-  },
-  92204005: {
+  }, "92204005": {
     bank_id: 204,
     branch_name: "CN HUYỆN VĨNH THẠNH CẦN THƠ II",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cần Thơ",
-  },
-  26204003: {
+  }, "26204003": {
     bank_id: 204,
     branch_name: "CN HUYỆN VĨNH TƯỜNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  19204004: {
+  }, "19204004": {
     bank_id: 204,
     branch_name: "CN HUYỆN VÕ NHAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  42204010: {
+  }, "42204010": {
     bank_id: 204,
     branch_name: "CN HUYỆN VŨ QUANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  75204004: {
+  }, "75204004": {
     bank_id: 204,
     branch_name: "CN HUYỆN XUÂN LỘC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  77204003: {
+  }, "77204003": {
     bank_id: 204,
     branch_name: "CN HUYỆN XUYÊN MỘC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  37204004: {
+  }, "37204004": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN KHÁNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  26204004: {
+  }, "26204004": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN LẠC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  37204005: {
+  }, "37204005": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN MÔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  27204008: {
+  }, "27204008": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN PHONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Ninh",
-  },
-  8204002: {
+  }, "08204002": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tuyên Quang",
-  },
-  40204021: {
+  }, "40204021": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN THANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nghệ An",
-  },
-  24204010: {
+  }, "24204010": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN THẾ BẮC GIANG II",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Giang",
-  },
-  17204010: {
+  }, "17204010": {
     bank_id: 204,
     branch_name: "CN HUYỆN YÊN THỦY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hoà Bình",
-  },
-  48204014: {
+  }, "48204014": {
     bank_id: 204,
     branch_name: "CN KCN ĐÀ NẴNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  24204005: {
+  }, "24204005": {
     bank_id: 204,
     branch_name: "CN KCN ĐÌNH TRÁM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Giang",
-  },
-  48204013: {
+  }, "48204013": {
     bank_id: 204,
     branch_name: "CN KCN HÒA KHÁNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  86204008: {
+  }, "86204008": {
     bank_id: 204,
     branch_name: "CN KCN HÒA PHÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  33204002: {
+  }, "33204002": {
     bank_id: 204,
     branch_name: "CN KCN MINH ĐỨC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  82204012: {
+  }, "82204012": {
     bank_id: 204,
     branch_name: "CN KCN MỸ THO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  52204009: {
+  }, "52204009": {
     bank_id: 204,
     branch_name: "CN KCN PHÚ TÀI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  74204002: {
+  }, "74204002": {
     bank_id: 204,
     branch_name: "CN KCN SÓNG THẦN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  77204005: {
+  }, "77204005": {
     bank_id: 204,
     branch_name: "CN KCN TÂN THÀNH BÀ RỊA VŨNG TÀU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  27204007: {
+  }, "27204007": {
     bank_id: 204,
     branch_name: "CN KCN TIÊN SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Ninh",
-  },
-  72204004: {
+  }, "72204004": {
     bank_id: 204,
     branch_name: "CN KCN TRẢNG BÀNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  94204005: {
+  }, "94204005": {
     bank_id: 204,
     branch_name: "CN KẾ SÁCH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  33204007: {
+  }, "33204007": {
     bank_id: 204,
     branch_name: "CN KHOÁI CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  49204022: {
+  }, "49204022": {
     bank_id: 204,
     branch_name: "CN KHU CN ĐIỆN NAM - ĐIỆN NGỌC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  49204010: {
+  }, "49204010": {
     bank_id: 204,
     branch_name: "CN KHU KINH TẾ MỞ CHU LAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  80204004: {
+  }, "80204004": {
     bank_id: 204,
     branch_name: "CN KHU VỰC 3",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  22204009: {
+  }, "22204009": {
     bank_id: 204,
     branch_name: "CN KHU VỰC BÃI CHÁY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  2204005: {
+  }, "02204005": {
     bank_id: 204,
     branch_name: "CN QUẢN BẠ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  38204016: {
+  }, "38204016": {
     bank_id: 204,
     branch_name: "CN QUAN HÓA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  92204003: {
+  }, "92204003": {
     bank_id: 204,
     branch_name: "CN QUẬN Ô MÔN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cần Thơ",
-  },
-  2204011: {
+  }, "02204011": {
     bank_id: 204,
     branch_name: "CN QUANG BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Giang",
-  },
-  51204015: {
+  }, "51204015": {
     bank_id: 204,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  44204004: {
+  }, "44204004": {
     bank_id: 204,
     branch_name: "CN QUẢNG NINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  44204007: {
+  }, "44204007": {
     bank_id: 204,
     branch_name: "CN QUANG TRUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Bình",
-  },
-  62204006: {
+  }, "62204006": {
     bank_id: 204,
     branch_name: "CN QUANG TRUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kon Tum",
-  },
-  38204010: {
+  }, "38204010": {
     bank_id: 204,
     branch_name: "CN QUẢNG XƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  49204012: {
+  }, "49204012": {
     bank_id: 204,
     branch_name: "CN QUẾ SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  19204008: {
+  }, "19204008": {
     bank_id: 204,
     branch_name: "CN SÔNG CẦU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  17204013: {
+  }, "17204013": {
     bank_id: 204,
     branch_name: "CN SÔNG ĐÀ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hoà Bình",
-  },
-  54204004: {
+  }, "54204004": {
     bank_id: 204,
     branch_name: "CN SÔNG HINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  26204012: {
+  }, "26204012": {
     bank_id: 204,
     branch_name: "CN SÔNG LÔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  37204008: {
+  }, "37204008": {
     bank_id: 204,
     branch_name: "CN SÔNG VÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  86204003: {
+  }, "86204003": {
     bank_id: 204,
     branch_name: "CN TAM BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Long",
-  },
-  49204014: {
+  }, "49204014": {
     bank_id: 204,
     branch_name: "CN TAM DÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  12204003: {
+  }, "12204003": {
     bank_id: 204,
     branch_name: "CN TAM ĐƯỜNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  25204011: {
+  }, "25204011": {
     bank_id: 204,
     branch_name: "CN TAM NÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  87204004: {
+  }, "87204004": {
     bank_id: 204,
     branch_name: "CN TAM NÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  75204010: {
+  }, "75204010": {
     bank_id: 204,
     branch_name: "CN TAM PHƯỚC ĐỒNG NAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  1204033: {
+  }, "01204033": {
     bank_id: 204,
     branch_name: "CN TAM TRINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  72204009: {
+  }, "72204009": {
     bank_id: 204,
     branch_name: "CN TÂN BIÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  75204015: {
+  }, "75204015": {
     bank_id: 204,
     branch_name: "CN TÂN BIÊN ĐỒNG NAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  79204020: {
+  }, "79204020": {
     bank_id: 204,
     branch_name: "CN TÂN BÌNH HCM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  72204006: {
+  }, "72204006": {
     bank_id: 204,
     branch_name: "CN TÂN CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  48204017: {
+  }, "48204017": {
     bank_id: 204,
     branch_name: "CN TÂN CHÍNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  91204018: {
+  }, "91204018": {
     bank_id: 204,
     branch_name: "CN TÂN HIỆP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  75204005: {
+  }, "79307006": {
+    bank_id: 307,
+    branch_name: "CN SÀI GÒN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hồ Chí Minh",
+  }, "75204005": {
     bank_id: 204,
     branch_name: "CN TÂN HIỆP ĐỒNG NAI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Nai",
-  },
-  87204003: {
+  }, "87204003": {
     bank_id: 204,
     branch_name: "CN TÂN HỒNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  62204004: {
+  }, "62204004": {
     bank_id: 204,
     branch_name: "CN QUYẾT THẮNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kon Tum",
-  },
-  34204007: {
+  }, "34204007": {
     bank_id: 204,
     branch_name: "CN QUỲNH PHỤ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  91204007: {
+  }, "91204007": {
     bank_id: 204,
     branch_name: "CN RẠCH SỎI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  51204012: {
+  }, "51204012": {
     bank_id: 204,
     branch_name: "CN SA HUỲNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  79204023: {
+  }, "79204023": {
     bank_id: 204,
     branch_name: "CN SÀI GÒN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  38204002: {
+  }, "38204002": {
     bank_id: 204,
     branch_name: "CN SẦM SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  30204012: {
+  }, "30204012": {
     bank_id: 204,
     branch_name: "CN SAO ĐỎ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  12204005: {
+  }, "12204005": {
     bank_id: 204,
     branch_name: "CN SÌN HỒ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  84204008: {
+  }, "84204008": {
     bank_id: 204,
     branch_name: "CN SỐ 1",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Trà Vinh",
-  },
-  38204013: {
+  }, "38204013": {
     bank_id: 204,
     branch_name: "CN SỐ 2",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  84204009: {
+  }, "84204009": {
     bank_id: 204,
     branch_name: "CN SỐ 2",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Trà Vinh",
-  },
-  38204023: {
+  }, "38204023": {
     bank_id: 204,
     branch_name: "CN SỐ 3",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  38204024: {
+  }, "38204024": {
     bank_id: 204,
     branch_name: "CN SỐ 4",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  74204004: {
+  }, "74204004": {
     bank_id: 204,
     branch_name: "CN SỞ SAO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  1204012: {
+  }, "01204012": {
     bank_id: 204,
     branch_name: "CN SÓC SƠN HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  94204002: {
+  }, "94204002": {
     bank_id: 204,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  51204008: {
+  }, "51204008": {
     bank_id: 204,
     branch_name: "CN SƠN HÀ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  54204003: {
+  }, "54204003": {
     bank_id: 204,
     branch_name: "CN SƠN HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  14204001: {
+  }, "14204001": {
     bank_id: 204,
     branch_name: "CN SƠN LA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sơn La",
-  },
-  14204008: {
+  }, "14204008": {
     bank_id: 204,
     branch_name: "CN SƠN LA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sơn La",
-  },
-  51204009: {
+  }, "51204009": {
     bank_id: 204,
     branch_name: "CN SƠN TỊNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ngãi",
-  },
-  48204007: {
+  }, "48204007": {
     bank_id: 204,
     branch_name: "CN SƠN TRÀ DN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  49204026: {
+  }, "49204026": {
     bank_id: 204,
     branch_name: "CN PHÚ NINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  25204006: {
+  }, "25204006": {
     bank_id: 204,
     branch_name: "CN PHÙ NINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  91204002: {
+  }, "91204002": {
     bank_id: 204,
     branch_name: "CN PHÚ QUỐC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  60204009: {
+  }, "60204009": {
     bank_id: 204,
     branch_name: "CN PHÚ QÚY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  70204014: {
+  }, "70204014": {
     bank_id: 204,
     branch_name: "CN PHÚ RIỀNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Phước",
-  },
-  96204009: {
+  }, "96204009": {
     bank_id: 204,
     branch_name: "CN PHÚ TÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Cà Mau",
-  },
-  89204004: {
+  }, "89204004": {
     bank_id: 204,
     branch_name: "CN PHÚ TÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  64204025: {
+  }, "64204025": {
     bank_id: 204,
     branch_name: "CN PHÚ THIỆN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Gia Lai",
-  },
-  25204001: {
+  }, "25204001": {
     bank_id: 204,
     branch_name: "CN PHÚ THỌ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  26204002: {
+  }, "26204002": {
     bank_id: 204,
     branch_name: "CN PHÚC YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  93204008: {
+  }, "93204008": {
     bank_id: 204,
     branch_name: "CN PHỤNG HIỆP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hậu Giang",
-  },
-  70204015: {
+  }, "70204015": {
     bank_id: 204,
     branch_name: "CN PHƯỚC BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Phước",
-  },
-  79204038: {
+  }, "79204038": {
     bank_id: 204,
     branch_name: "CN PHƯỚC KIỂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  79204011: {
+  }, "79204011": {
     bank_id: 204,
     branch_name: "CN NHÀ BÈ HCM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  95204003: {
+  }, "95204003": {
     bank_id: 204,
     branch_name: "CN PHƯỚC LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bạc Liêu",
-  },
-  49204017: {
+  }, "49204017": {
     bank_id: 204,
     branch_name: "CN PHƯỚC SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  17204004: {
+  }, "17204004": {
     bank_id: 204,
     branch_name: "CN PHƯƠNG LÂM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hoà Bình",
-  },
-  66204008: {
+  }, "66204008": {
     bank_id: 204,
     branch_name: "CN PƠNG DRANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  79204035: {
+  }, "79204035": {
     bank_id: 204,
     branch_name: "CN QUẬN 1",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  79204032: {
+  }, "79204032": {
     bank_id: 204,
     branch_name: "CN QUẬN 5",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  91204006: {
+  }, "91204006": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ HÀ TIÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  42204008: {
+  }, "42204008": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ HỒNG LĨNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  87204002: {
+  }, "87204002": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ HỒNG NGỰ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  42204017: {
+  }, "42204017": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ KỲ ANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  60204013: {
+  }, "60204013": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ LAGI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  93204003: {
+  }, "93204003": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ NGÃ BẢY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hậu Giang",
-  },
-  19204002: {
+  }, "19204002": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ PHỔ YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  45204007: {
+  }, "45204007": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ QUẢNG TRỊ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Trị",
-  },
-  22204004: {
+  }, "22204004": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ QUẢNG YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Ninh",
-  },
-  1204049: {
+  }, "01204049": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ SƠN TÂY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  80204002: {
+  }, "80204002": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ TÂN AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  40204019: {
+  }, "40204019": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ THÁI HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nghệ An",
-  },
-  74204009: {
+  }, "74204009": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ THỦ DẦU MỘT BÌNH DƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  74204010: {
+  }, "74204010": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ THUẬN AN SÓNG THẦN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  27204003: {
+  }, "27204003": {
     bank_id: 204,
     branch_name: "CN THỊ XÃ TỪ SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bắc Ninh",
-  },
-  38204018: {
+  }, "38204018": {
     bank_id: 204,
     branch_name: "CN THIỆU HÓA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  36204007: {
+  }, "36204007": {
     bank_id: 204,
     branch_name: "CN THỊNH LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  26204009: {
+  }, "26204009": {
     bank_id: 204,
     branch_name: "CN THỔ TANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Vĩnh Phúc",
-  },
-  38204004: {
+  }, "38204004": {
     bank_id: 204,
     branch_name: "CN THỌ XUÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  89204002: {
+  }, "89204002": {
     bank_id: 204,
     branch_name: "CN THOẠI SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  66204019: {
+  }, "66204019": {
     bank_id: 204,
     branch_name: "CN TÂN LẬP",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  82204003: {
+  }, "82204003": {
     bank_id: 204,
     branch_name: "CN TÂN PHÚ ĐÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  79204004: {
+  }, "79204004": {
     bank_id: 204,
     branch_name: "CN TÂN PHÚ HCM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  82204004: {
+  }, "82204004": {
     bank_id: 204,
     branch_name: "CN TÂN PHƯỚC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tiền Giang",
-  },
-  74204005: {
+  }, "74204005": {
     bank_id: 204,
     branch_name: "CN TÂN PHƯỚC KHÁNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  25204008: {
+  }, "25204008": {
     bank_id: 204,
     branch_name: "CN TÂN SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  79204045: {
+  }, "79204045": {
     bank_id: 204,
     branch_name: "CN TÂN TẠO",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  70204002: {
+  }, "70204002": {
     bank_id: 204,
     branch_name: "CN TÂN THÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Phước",
-  },
-  12204008: {
+  }, "12204008": {
     bank_id: 204,
     branch_name: "CN TÂN UYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  74204008: {
+  }, "74204008": {
     bank_id: 204,
     branch_name: "CN TÂN UYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Dương",
-  },
-  60204005: {
+  }, "60204005": {
     bank_id: 204,
     branch_name: "CN TÁNH LINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Thuận",
-  },
-  1204031: {
+  }, "01204031": {
     bank_id: 204,
     branch_name: "CN TÂY ĐÔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  49204007: {
+  }, "49204007": {
     bank_id: 204,
     branch_name: "CN TÂY GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  1204007: {
+  }, "01204007": {
     bank_id: 204,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  1204025: {
+  }, "01204025": {
     bank_id: 204,
     branch_name: "CN TÂY HỒ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  54204007: {
+  }, "54204007": {
     bank_id: 204,
     branch_name: "CN TÂY HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  79204002: {
+  }, "79204002": {
     bank_id: 204,
     branch_name: "CN TÂY SÀI GÒN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  52204005: {
+  }, "52204005": {
     bank_id: 204,
     branch_name: "CN TÂY SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bình Định",
-  },
-  42204012: {
+  }, "42204012": {
     bank_id: 204,
     branch_name: "CN TÂY SƠN HÀ TĨNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  38204030: {
+  }, "38204030": {
     bank_id: 204,
     branch_name: "CN THẠCH THÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  19204011: {
+  }, "19204011": {
     bank_id: 204,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Nguyên",
-  },
-  34204003: {
+  }, "34204003": {
     bank_id: 204,
     branch_name: "CN THÁI THỤY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  12204007: {
+  }, "12204007": {
     bank_id: 204,
     branch_name: "CN THAN UYÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  49204018: {
+  }, "49204018": {
     bank_id: 204,
     branch_name: "CN THĂNG BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Quảng Nam",
-  },
-  1204011: {
+  }, "01204011": {
     bank_id: 204,
     branch_name: "CN THĂNG LONG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  25204007: {
+  }, "25204007": {
     bank_id: 204,
     branch_name: "CN THANH BA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  87204009: {
+  }, "87204009": {
     bank_id: 204,
     branch_name: "CN THANH BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  79204040: {
+  }, "79204040": {
     bank_id: 204,
     branch_name: "CN THÀNH ĐÔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
-  30204013: {
+  }, "30204013": {
     bank_id: 204,
     branch_name: "CN THÀNH ĐÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  30204014: {
+  }, "30204014": {
     bank_id: 204,
     branch_name: "CN THANH HÀ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  48204005: {
+  }, "48204005": {
     bank_id: 204,
     branch_name: "CN THANH KHÊ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đà Nẵng",
-  },
-  30204010: {
+  }, "30204010": {
     bank_id: 204,
     branch_name: "CN THANH MIỆN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  25204015: {
+  }, "25204015": {
     bank_id: 204,
     branch_name: "CN THANH MIẾU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  36204014: {
+  }, "36204014": {
     bank_id: 204,
     branch_name: "CN THANH NAM",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  54204002: {
+  }, "54204002": {
     bank_id: 204,
     branch_name: "CN THÀNH PHỐ TUY HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Yên",
-  },
-  83204008: {
+  }, "83204008": {
     bank_id: 204,
     branch_name: "CN THẠNH PHÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Bến Tre",
-  },
-  94204012: {
+  }, "94204012": {
     bank_id: 204,
     branch_name: "CN THẠNH PHÚ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Sóc Trăng",
-  },
-  42204016: {
+  }, "42204016": {
     bank_id: 204,
     branch_name: "CN THÀNH SEN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Tĩnh",
-  },
-  25204010: {
+  }, "25204010": {
     bank_id: 204,
     branch_name: "CN THANH SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Phú Thọ",
-  },
-  25204013: {
-    bank_id: 204,
-    branch_name: "CN THANH THUỶ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Thọ",
-  },
-  2204009: {
-    bank_id: 204,
-    branch_name: "CN THANH THUỶ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  94204004: {
-    bank_id: 204,
-    branch_name: "CN THẠNH TRỊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sóc Trăng",
-  },
-  1204004: {
-    bank_id: 204,
-    branch_name: "CN THANH TRÌ HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  1204035: {
-    bank_id: 204,
-    branch_name: "CN THANH XUÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  58204006: {
-    bank_id: 204,
-    branch_name: "CN THÁP CHÀM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  87204011: {
-    bank_id: 204,
-    branch_name: "CN THÁP MƯỜI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Tháp",
-  },
-  64204017: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ AN KHÊ GIA LAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  52204004: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ AN NHƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Định",
-  },
-  56204007: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ CAM RANH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  40204013: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ CỬA LÒ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  74204011: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ DĨ AN SÓNG THẦN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Dương",
-  },
-  38204007: {
-    bank_id: 204,
-    branch_name: "CN THƯỜNG XUÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  31204009: {
-    bank_id: 204,
-    branch_name: "CN THỦY NGUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  82204001: {
-    bank_id: 204,
-    branch_name: "CN TIỀN GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  34204005: {
-    bank_id: 204,
-    branch_name: "CN TIỀN HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Bình",
-  },
-  31204011: {
-    bank_id: 204,
-    branch_name: "CN TIÊN LÃNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  49204021: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ ĐIỆN BÀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  22204003: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ ĐÔNG TRIỀU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  70204012: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ ĐỒNG XOÀI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  67204004: {
-    bank_id: 204,
-    branch_name: "CN THỊ XÃ GIA NGHĨA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  2204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH HÀ GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  35204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH HÀ NAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  30204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH HẢI DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  17204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH HÒA BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  33204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH HƯNG YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hưng Yên",
-  },
-  56204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH KHÁNH HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  62204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH KONTUM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  68204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH LÂM ĐỒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  20204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH LẠNG SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  10204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH LÀO CAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  38204003: {
-    bank_id: 204,
-    branch_name: "CN HÀ TRUNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  31204015: {
-    bank_id: 204,
-    branch_name: "CN HẢI AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  48204003: {
-    bank_id: 204,
-    branch_name: "CN HẢI CHÂU ĐÀ NẴNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  30204009: {
-    bank_id: 204,
-    branch_name: "CN HẢI DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  36204012: {
-    bank_id: 204,
-    branch_name: "CN HẢI HẬU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  31204001: {
-    bank_id: 204,
-    branch_name: "CN HẢI PHÒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  60204011: {
-    bank_id: 204,
-    branch_name: "CN HÀM MỸ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  60204014: {
-    bank_id: 204,
-    branch_name: "CN HÀM TÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  60204004: {
-    bank_id: 204,
-    branch_name: "CN HÀM THUẬN BẮC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  60204012: {
-    bank_id: 204,
-    branch_name: "CN HÀM THUẬN NAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  93204001: {
-    bank_id: 204,
-    branch_name: "CN HẬU GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hậu Giang",
-  },
-  38204020: {
-    bank_id: 204,
-    branch_name: "CN HẬU LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  49204005: {
-    bank_id: 204,
-    branch_name: "CN HIỆP ĐỨC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  79204050: {
-    bank_id: 204,
-    branch_name: "CN HIỆP PHƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  95204005: {
-    bank_id: 204,
-    branch_name: "CN HÒA BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bạc Liêu",
-  },
-  66204025: {
-    bank_id: 204,
-    branch_name: "CN HÒA KHÁNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  1204038: {
-    bank_id: 204,
-    branch_name: "CN HÒA LẠC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  64204018: {
-    bank_id: 204,
-    branch_name: "CN HOA LƯ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  68204008: {
-    bank_id: 204,
-    branch_name: "CN HÒA NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  66204018: {
-    bank_id: 204,
-    branch_name: "CN HÒA THẮNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  80204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH LONG AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  36204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH NAM ĐỊNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  37204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH NINH BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Bình",
-  },
-  58204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH NINH THUẬN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  54204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH PHÚ YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Yên",
-  },
-  44204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH QUẢNG BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Bình",
-  },
-  49204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH QUẢNG NAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  51204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH QUẢNG NGÃI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ngãi",
-  },
-  22204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH QUẢNG NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  82204007: {
-    bank_id: 204,
-    branch_name: "CN GÒ CÔNG TÂY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  72204011: {
-    bank_id: 204,
-    branch_name: "CN GÒ DẦU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tây Ninh",
-  },
-  91204010: {
-    bank_id: 204,
-    branch_name: "CN GÒ QUAO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  25204009: {
-    bank_id: 204,
-    branch_name: "CN HẠ HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Thọ",
-  },
-  22204017: {
-    bank_id: 204,
-    branch_name: "CN HẠ LONG I",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  1204003: {
-    bank_id: 204,
-    branch_name: "CN HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  1204052: {
-    bank_id: 204,
-    branch_name: "CN HÀ NỘI-PGD QUẬN HAI BÀ TRƯNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  1204036: {
-    bank_id: 204,
-    branch_name: "CN HÀ TÂY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  1204032: {
-    bank_id: 204,
-    branch_name: "CN HÀ THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  42204001: {
-    bank_id: 204,
-    branch_name: "CN HÀ TĨNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  42204002: {
-    bank_id: 204,
-    branch_name: "CN HÀ TĨNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  96204003: {
-    bank_id: 204,
-    branch_name: "CN THỚI BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cà Mau",
-  },
-  92204004: {
-    bank_id: 204,
-    branch_name: "CN THỐT NỐT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  1204030: {
-    bank_id: 204,
-    branch_name: "CN THỦ ĐÔ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  79204024: {
-    bank_id: 204,
-    branch_name: "CN THỦ ĐỨC HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  46204001: {
-    bank_id: 204,
-    branch_name: "CN THỪA THIÊN HUẾ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  33204005: {
-    bank_id: 204,
-    branch_name: "CN TIÊN LỮ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hưng Yên",
-  },
-  49204024: {
-    bank_id: 204,
-    branch_name: "CN TIÊN PHƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  84204004: {
-    bank_id: 204,
-    branch_name: "CN TIỂU CẦN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  89204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH AN GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  6204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH BẮC KẠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Kạn",
-  },
-  95204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH BẠC LIÊU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bạc Liêu",
-  },
-  83204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH BẾN TRE",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  89204009: {
-    bank_id: 204,
-    branch_name: "CN TỊNH BIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  74204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH BÌNH DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Dương",
-  },
-  60204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH BÌNH THUẬN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  96204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH CÀ MAU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cà Mau",
-  },
-  4204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH CAO BẰNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  67204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH ĐAK NÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  66204001: {
-    bank_id: 204,
-    branch_name: "CN TỈNH DAKLAK",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  38204015: {
-    bank_id: 204,
-    branch_name: "CN TĨNH GIA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  89204007: {
-    bank_id: 204,
-    branch_name: "CN CHI LĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  48204010: {
-    bank_id: 204,
-    branch_name: "CN CHI LĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  48204009: {
-    bank_id: 204,
-    branch_name: "CN CHỢ CỒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  6204008: {
-    bank_id: 204,
-    branch_name: "CN CHỢ ĐỒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Kạn",
-  },
-  82204008: {
-    bank_id: 204,
-    branch_name: "CN CHỢ GẠO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  83204009: {
-    bank_id: 204,
-    branch_name: "CN CHỢ LÁCH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  79204016: {
-    bank_id: 204,
-    branch_name: "CN CHỢ LỚN HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  89204012: {
-    bank_id: 204,
-    branch_name: "CN CHỢ MỚI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  6204007: {
-    bank_id: 204,
-    branch_name: "CN CHỢ MỚI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Kạn",
-  },
-  48204012: {
-    bank_id: 204,
-    branch_name: "CN CHỢ MỚI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  89204014: {
-    bank_id: 204,
-    branch_name: "CN CHỢ VÀM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  56204009: {
-    bank_id: 204,
-    branch_name: "CN CHỢ XÓM MỚI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  64204002: {
-    bank_id: 204,
-    branch_name: "CN CHƯ PRÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  64204024: {
-    bank_id: 204,
-    branch_name: "CN CHƯ PƯH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  1204296: {
-    bank_id: 204,
-    branch_name: "CN CHƯƠNG DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  79204018: {
-    bank_id: 204,
-    branch_name: "CN CN 10",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  36204016: {
-    bank_id: 204,
-    branch_name: "CN CỒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  79204028: {
-    bank_id: 204,
-    branch_name: "CN CỦ CHI TP HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  67204009: {
-    bank_id: 204,
-    branch_name: "CN CƯ JÚT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  94204011: {
-    bank_id: 204,
-    branch_name: "CN CÙ LAO DUNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sóc Trăng",
-  },
-  72204005: {
-    bank_id: 204,
-    branch_name: "CN HÒA THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tây Ninh",
-  },
-  66204029: {
-    bank_id: 204,
-    branch_name: "CN HÒA THUẬN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  48204002: {
-    bank_id: 204,
-    branch_name: "CN HÒA VANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  52204010: {
-    bank_id: 204,
-    branch_name: "CN HOÀI AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Định",
-  },
-  52204008: {
-    bank_id: 204,
-    branch_name: "CN HOÀI NHƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Định",
-  },
-  91204004: {
-    bank_id: 204,
-    branch_name: "CN BẾN NHẤT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  79204051: {
-    bank_id: 204,
-    branch_name: "CN BẾN THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  64204013: {
-    bank_id: 204,
-    branch_name: "CN BIỂN HỒ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  75204002: {
-    bank_id: 204,
-    branch_name: "CN BIÊN HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  79204022: {
-    bank_id: 204,
-    branch_name: "CN BÌNH CHÁNH HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  83204006: {
-    bank_id: 204,
-    branch_name: "CN BÌNH ĐẠI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  52204001: {
-    bank_id: 204,
-    branch_name: "CN BÌNH ĐỊNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Định",
-  },
-  20204012: {
-    bank_id: 204,
-    branch_name: "CN BINH GỈA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  30204005: {
-    bank_id: 204,
-    branch_name: "CN BÌNH GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  79204052: {
-    bank_id: 204,
-    branch_name: "CN BÌNH PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  70204001: {
-    bank_id: 204,
-    branch_name: "CN BÌNH PHƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  51204003: {
-    bank_id: 204,
-    branch_name: "CN BÌNH SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ngãi",
-  },
-  86204007: {
-    bank_id: 204,
-    branch_name: "CN BÌNH TÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Vĩnh Long",
-  },
-  79204010: {
-    bank_id: 204,
-    branch_name: "CN BÌNH TÂN HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204019: {
-    bank_id: 204,
-    branch_name: "CN BÌNH THẠNH HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  92204008: {
-    bank_id: 204,
-    branch_name: "CN BÌNH THỦY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  79204033: {
-    bank_id: 204,
-    branch_name: "CN BÌNH TRIỆU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  24204008: {
-    bank_id: 204,
-    branch_name: "CN BỐ HẠ BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  66204017: {
-    bank_id: 204,
-    branch_name: "CN BUÔN ĐÔN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204007: {
-    bank_id: 204,
-    branch_name: "CN BUÔN HỒ BAC DAK LAK",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  82204010: {
-    bank_id: 204,
-    branch_name: "CN CÁI BÈ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  96204002: {
-    bank_id: 204,
-    branch_name: "CN CÁI NƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cà Mau",
-  },
-  92204002: {
-    bank_id: 204,
-    branch_name: "CN CAI RĂNG CẦN THƠ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  93204009: {
-    bank_id: 204,
-    branch_name: "CN CÁI TẮC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hậu Giang",
-  },
-  10204005: {
-    bank_id: 204,
-    branch_name: "CN CAM ĐƯỜNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  30204004: {
-    bank_id: 204,
-    branch_name: "CN CẨM GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  25204002: {
-    bank_id: 204,
-    branch_name: "CN CẨM KHÊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Thọ",
-  },
-  48204016: {
-    bank_id: 204,
-    branch_name: "CN CẨM LỆ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  38204028: {
-    bank_id: 204,
-    branch_name: "CN CẨM THỦY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  79204027: {
-    bank_id: 204,
-    branch_name: "CN CAN GIO TP HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  92204001: {
-    bank_id: 204,
-    branch_name: "CN CẦN THƠ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  92204009: {
-    bank_id: 204,
-    branch_name: "CN CẦN THƠ II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  84204002: {
-    bank_id: 204,
-    branch_name: "CN CÀNG LONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  4204013: {
-    bank_id: 204,
-    branch_name: "CN CAO BẰNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  87204008: {
-    bank_id: 204,
-    branch_name: "CN CAO LÃNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Tháp",
-  },
-  20204009: {
-    bank_id: 204,
-    branch_name: "CN CAO LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  22204018: {
-    bank_id: 204,
-    branch_name: "CN CAO THẮNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  31204003: {
-    bank_id: 204,
-    branch_name: "CN CÁT BÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  31204008: {
-    bank_id: 204,
-    branch_name: "CN CÁT HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  68204006: {
-    bank_id: 204,
-    branch_name: "CN CÁT TIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  1204016: {
-    bank_id: 204,
-    branch_name: "CN CẦU GIẤY HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  84204003: {
-    bank_id: 204,
-    branch_name: "CN CẦU KÈ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  84204006: {
-    bank_id: 204,
-    branch_name: "CN CẦU NGANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  89204010: {
-    bank_id: 204,
-    branch_name: "CN CHÂU PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  72204010: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tây Ninh",
-  },
-  84204011: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  82204009: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  83204007: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  87204006: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Tháp",
-  },
-  89204011: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  91204013: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  93204007: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hậu Giang",
-  },
-  94204014: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sóc Trăng",
-  },
-  93204006: {
-    bank_id: 204,
-    branch_name: "CN CHÂU THÀNH A",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hậu Giang",
-  },
-  20204010: {
-    bank_id: 204,
-    branch_name: "CN CHI LĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  1204015: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG ANH HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  36204013: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  48204011: {
-    bank_id: 204,
-    branch_name: "CN ĐỐNG ĐA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đà Nẵng",
-  },
-  1204034: {
-    bank_id: 204,
-    branch_name: "CN ĐỐNG ĐA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  20204005: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG ĐĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  64204020: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG GIA LAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  49204025: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  1204008: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  95204008: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bạc Liêu",
-  },
-  31204006: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG HẢI PHÒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  66204030: {
-    bank_id: 204,
-    branch_name: "CN EA HLEO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204002: {
-    bank_id: 204,
-    branch_name: "CN EA KAR",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204005: {
-    bank_id: 204,
-    branch_name: "CN EA KNỐP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204014: {
-    bank_id: 204,
-    branch_name: "CN EA PHÊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204016: {
-    bank_id: 204,
-    branch_name: "CN EA RAL",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204009: {
-    bank_id: 204,
-    branch_name: "CN EA SÚP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204026: {
-    bank_id: 204,
-    branch_name: "CN EA TAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204021: {
-    bank_id: 204,
-    branch_name: "CN EA TOH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  25204014: {
-    bank_id: 204,
-    branch_name: "CN GIA CẨM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Thọ",
-  },
-  79204021: {
-    bank_id: 204,
-    branch_name: "CN GIA ĐỊNH HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  64204001: {
-    bank_id: 204,
-    branch_name: "CN GIA LAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  1204014: {
-    bank_id: 204,
-    branch_name: "CN GIA LÂM HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  30204006: {
-    bank_id: 204,
-    branch_name: "CN GIA LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  95204006: {
-    bank_id: 204,
-    branch_name: "CN GÍA RAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bạc Liêu",
-  },
-  36204010: {
-    bank_id: 204,
-    branch_name: "CN GIAO THỦY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  91204005: {
-    bank_id: 204,
-    branch_name: "CN GIỒNG RIỀNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  83204010: {
-    bank_id: 204,
-    branch_name: "CN GIỒNG TRÔM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  82204006: {
-    bank_id: 204,
-    branch_name: "CN GÒ CÔNG ĐÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tiền Giang",
-  },
-  74204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ GIÁO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Dương",
-  },
-  46204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  19204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ LƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Nguyên",
-  },
-  54204006: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Yên",
-  },
-  34204006: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG HƯNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Bình",
-  },
-  83204003: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG KHỞI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  58204008: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG MỸ HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  75204001: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG NAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  79204014: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG SÀI GÒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  38204021: {
-    bank_id: 204,
-    branch_name: "CN ĐÔNG SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  87204001: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG THÁP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Tháp",
-  },
-  2204002: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG VĂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  35204008: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG VĂN HÀ NAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  54204010: {
-    bank_id: 204,
-    branch_name: "CN ĐỒNG XUÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Yên",
-  },
-  64204009: {
-    bank_id: 204,
-    branch_name: "CN ĐỨC CƠ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  51204010: {
-    bank_id: 204,
-    branch_name: "CN ĐỨC PHỔ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ngãi",
-  },
-  68204007: {
-    bank_id: 204,
-    branch_name: "CN ĐỨC TRỌNG - LÂM ĐỒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  51204005: {
-    bank_id: 204,
-    branch_name: "CN DUNG QUẤT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ngãi",
-  },
-  31204020: {
-    bank_id: 204,
-    branch_name: "CN DƯƠNG KINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  72204008: {
-    bank_id: 204,
-    branch_name: "CN DƯƠNG MINH CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tây Ninh",
-  },
-  49204023: {
-    bank_id: 204,
-    branch_name: "CN DUY XUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  84204007: {
-    bank_id: 204,
-    branch_name: "CN DUYÊN HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Trà Vinh",
-  },
-  66204031: {
-    bank_id: 204,
-    branch_name: "CN EA CPAM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  66204023: {
-    bank_id: 204,
-    branch_name: "CN CU MGAR",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  49204002: {
-    bank_id: 204,
-    branch_name: "CN CỬA ĐẠI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  68204011: {
-    bank_id: 204,
-    branch_name: "CN ĐẠ HUOAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  68204005: {
-    bank_id: 204,
-    branch_name: "CN ĐẠ TẺH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  79204029: {
-    bank_id: 204,
-    branch_name: "CN DAC LAC PGD HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  31204025: {
-    bank_id: 204,
-    branch_name: "CN ĐẠI HỢP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  49204008: {
-    bank_id: 204,
-    branch_name: "CN ĐẠI LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  30204016: {
-    bank_id: 204,
-    branch_name: "CN ĐẠI TÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Dương",
-  },
-  67204005: {
-    bank_id: 204,
-    branch_name: "CN DĂK GLONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  67204006: {
-    bank_id: 204,
-    branch_name: "CN DĂK MIL",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  67204002: {
-    bank_id: 204,
-    branch_name: "CN DAK RLAP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  67204003: {
-    bank_id: 204,
-    branch_name: "CN DAK SONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Nông",
-  },
-  96204004: {
-    bank_id: 204,
-    branch_name: "CN ĐẦM DƠI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cà Mau",
-  },
-  68204010: {
-    bank_id: 204,
-    branch_name: "CN DI LINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  11204001: {
-    bank_id: 204,
-    branch_name: "CN ĐIỆN BIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  11204004: {
-    bank_id: 204,
-    branch_name: "CN ĐIỆN BIÊN PHỦ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  64204010: {
-    bank_id: 204,
-    branch_name: "CN DIÊN HỒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  20204013: {
-    bank_id: 204,
-    branch_name: "CN DINH LAP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  31204019: {
-    bank_id: 204,
-    branch_name: "CN ĐỒ SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  25204016: {
-    bank_id: 204,
-    branch_name: "CN ĐOAN HÙNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Phú Thọ",
-  },
-  56204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN VĂN NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  24204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN VIỆT YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  75204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN VĨNH CỬU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  31307001: {
-    bank_id: 307,
-    branch_name: "CN HẢI PHÒNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hải Phòng",
-  },
-  93307001: {
-    bank_id: 307,
-    branch_name: "CN HẬU GIANG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hậu Giang",
-  },
-  79307001: {
-    bank_id: 307,
-    branch_name: "CN HỒ CHÍ MINH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hồ Chí Minh",
-  },
-  49307001: {
-    bank_id: 307,
-    branch_name: "CN HỘI AN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Quảng Nam",
-  },
-  46307001: {
-    bank_id: 307,
-    branch_name: "CN HUẾ",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Thừa Thiên Huế",
-  },
-  33307001: {
-    bank_id: 307,
-    branch_name: "CN HƯNG YÊN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hưng Yên",
-  },
-  79307028: {
-    bank_id: 307,
-    branch_name: "CN KHAI NGUYÊN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hồ Chí Minh",
-  },
-  56307001: {
-    bank_id: 307,
-    branch_name: "CN KHÁNH HÒA",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Khánh Hòa",
-  },
-  91307001: {
-    bank_id: 307,
-    branch_name: "CN KIÊN GIANG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Kiên Giang",
-  },
-  62307001: {
-    bank_id: 307,
-    branch_name: "CN KON TUM",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Kon Tum",
-  },
-  68307001: {
-    bank_id: 307,
-    branch_name: "CN LÂM ĐỒNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Lâm Đồng",
-  },
-  80307001: {
-    bank_id: 307,
-    branch_name: "CN LONG AN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Long An",
-  },
-  36307001: {
-    bank_id: 307,
-    branch_name: "CN NAM ĐỊNH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Nam Định",
-  },
-  40307001: {
-    bank_id: 307,
-    branch_name: "CN NGHỆ AN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Nghệ An",
-  },
-  58307001: {
-    bank_id: 307,
-    branch_name: "CN NINH THUẬN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Ninh Thuận",
-  },
-  54307001: {
-    bank_id: 307,
-    branch_name: "CN PHÚ YÊN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Phú Yên",
-  },
-  44307001: {
-    bank_id: 307,
-    branch_name: "CN QUẢNG BÌNH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Quảng Bình",
-  },
-  51307001: {
-    bank_id: 307,
-    branch_name: "CN QUẢNG NGÃI",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Quảng Ngãi",
-  },
-  22307001: {
-    bank_id: 307,
-    branch_name: "CN QUẢNG NINH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Quảng Ninh",
-  },
-  79307006: {
-    bank_id: 307,
-    branch_name: "CN SÀI GÒN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hồ Chí Minh",
-  },
-  46204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ VANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  1204046: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ XUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  14204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÙ YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  4204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHỤC HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  1204021: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚC THỌ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  70204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHƯỚC LONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  46204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUANG ĐIỀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  44204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUẢNG TRẠCH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Bình",
-  },
-  4204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUẢNG UYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  40204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUẾ PHONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  27204005: {
-    bank_id: 204,
-    branch_name: "CN HUYEN QUẾ VÕ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  1204043: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUỐC OAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  40204018: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QÙY CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  40204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUỲ HỢP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  40204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUỲNH LƯU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  14204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN QUỲNH NHAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  10204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN SA PA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  62204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN SA THẦY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  24204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN SƠN ĐỘNG BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  8204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN SƠN DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tuyên Quang",
-  },
-  14204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN SÔNG MÃ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  26204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TAM ĐẢO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Vĩnh Phúc",
-  },
-  26204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TAM DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Vĩnh Phúc",
-  },
-  80204017: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN HƯNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  40204015: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN KỲ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  17204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN LẠC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  75204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  77204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  80204015: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  80204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN TRỤ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  24204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TÂN YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  4204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THẠCH AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  42204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THẠCH HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  1204047: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THẠCH THẤT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  40204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THANH CHƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  80204016: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THANH HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  35204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THANH LIÊM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  1204039: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THANH OAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  92204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THỚI LAI CẦN THƠ II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  75204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THỐNG NHẤT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  4204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THÔNG NÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  80204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THỦ THỪA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  14204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THUẬN CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  27204006: {
-    bank_id: 204,
-    branch_name: "CN HUYEN THUẬN THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  1204042: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN THƯỜNG TÍN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  27204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TIÊN DU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  22204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TIÊN YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  4204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TRÀ LINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  75204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TRẢNG BOM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  45204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TRIỀU PHONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  4204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TRÙNG KHÁNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  11204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TỦA CHÙA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  11204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TUẦN GIÁO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  40204017: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TƯƠNG DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  60204003: {
-    bank_id: 204,
-    branch_name: "CN HUYEN TUY PHONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  44204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN TUYÊN HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Bình",
-  },
-  91204019: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN U MINH THƯỢNG KIÊN GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  1204041: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ỨNG HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  10204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN VĂN BÀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  22204015: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN VÂN ĐỒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  31204002: {
-    bank_id: 204,
-    branch_name: "CN AN DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  31204004: {
-    bank_id: 204,
-    branch_name: "CN AN HƯNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  52204011: {
-    bank_id: 204,
-    branch_name: "CN AN LÃO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Định",
-  },
-  31204010: {
-    bank_id: 204,
-    branch_name: "CN AN LÃO HP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  91204017: {
-    bank_id: 204,
-    branch_name: "CN AN MINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  89204003: {
-    bank_id: 204,
-    branch_name: "CN AN PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "An Giang",
-  },
-  79204042: {
-    bank_id: 204,
-    branch_name: "CN AN PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204041: {
-    bank_id: 204,
-    branch_name: "CN AN SƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  33204011: {
-    bank_id: 204,
-    branch_name: "CN ÂN THI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hưng Yên",
-  },
-  6204003: {
-    bank_id: 204,
-    branch_name: "CN BA BỂ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Kạn",
-  },
-  38204025: {
-    bank_id: 204,
-    branch_name: "CN BA ĐÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  44204002: {
-    bank_id: 204,
-    branch_name: "CN BẮC QUẢNG BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Bình",
-  },
-  79204046: {
-    bank_id: 204,
-    branch_name: "CN BẮC SÀI GÒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  20204008: {
-    bank_id: 204,
-    branch_name: "CN BẮC SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  46204011: {
-    bank_id: 204,
-    branch_name: "CN BẮC SÔNG HƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  49204015: {
-    bank_id: 204,
-    branch_name: "CN BẮC TRÀ MY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  1204026: {
-    bank_id: 204,
-    branch_name: "CN BÁCH KHOA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  6204002: {
-    bank_id: 204,
-    branch_name: "CN BẠCH THÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Kạn",
-  },
-  68204015: {
-    bank_id: 204,
-    branch_name: "CN BẢO LÂM NAM LÂM ĐỒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  72204007: {
-    bank_id: 204,
-    branch_name: "CN BẾN CẦU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tây Ninh",
-  },
-  1320004: {
-    bank_id: 320,
-    branch_name: "CN THĂNG LONG",
-    bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
-    area: "Hà Nội",
-  },
-  1204022: {
-    bank_id: 204,
-    branch_name: "CN HOÀN KIẾM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  38204009: {
-    bank_id: 204,
-    branch_name: "CN HOẰNG HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  40204005: {
-    bank_id: 204,
-    branch_name: "CN HOÀNG MAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  1204020: {
-    bank_id: 204,
-    branch_name: "CN HOÀNG MAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  1204023: {
-    bank_id: 204,
-    branch_name: "CN HOÀNG QUỐC VIỆT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  2204007: {
-    bank_id: 204,
-    branch_name: "CN HOÀNG SU PHÌ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  79204013: {
-    bank_id: 204,
-    branch_name: "CN HÓC MÔN HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  64204011: {
-    bank_id: 204,
-    branch_name: "CN HỘI THƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  91204011: {
-    bank_id: 204,
-    branch_name: "CN HÒN ĐẤT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  95204004: {
-    bank_id: 204,
-    branch_name: "CN HỒNG DÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bạc Liêu",
-  },
-  1204298: {
-    bank_id: 204,
-    branch_name: "CN BA ĐÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  91204014: {
-    bank_id: 204,
-    branch_name: "CN BA HÒN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  77204001: {
-    bank_id: 204,
-    branch_name: "CN BÀ RỊA - VŨNG TÀU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  38204027: {
-    bank_id: 204,
-    branch_name: "CN BÁ THƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thanh Hóa",
-  },
-  51204002: {
-    bank_id: 204,
-    branch_name: "CN BA TƠ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ngãi",
-  },
-  83204004: {
-    bank_id: 204,
-    branch_name: "CN BA TRI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bến Tre",
-  },
-  1204295: {
-    bank_id: 204,
-    branch_name: "CN BÀ TRIỆU ĐÔNG HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  94204003: {
-    bank_id: 204,
-    branch_name: "CN BA XUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sóc Trăng",
-  },
-  60204007: {
-    bank_id: 204,
-    branch_name: "CN BẮC BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  66204011: {
-    bank_id: 204,
-    branch_name: "CN BẮC DAK LAK",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  49204019: {
-    bank_id: 204,
-    branch_name: "CN BẮC ĐIỆN BÀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  24204001: {
-    bank_id: 204,
-    branch_name: "CN BẮC GIANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  24204006: {
-    bank_id: 204,
-    branch_name: "CN BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  1204006: {
-    bank_id: 204,
-    branch_name: "CN BẮC HÀ NỘI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  31204007: {
-    bank_id: 204,
-    branch_name: "CN BẮC HẢI PHÒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hải Phòng",
-  },
-  2204006: {
-    bank_id: 204,
-    branch_name: "CN BẮC MÊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  36204002: {
-    bank_id: 204,
-    branch_name: "CN BẮC NAM ĐỊNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nam Định",
-  },
-  27204001: {
-    bank_id: 204,
-    branch_name: "CN BẮC NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  27204002: {
-    bank_id: 204,
-    branch_name: "CN BẮC NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  2204008: {
-    bank_id: 204,
-    branch_name: "CN BẮC QUANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Giang",
-  },
-  94307001: {
-    bank_id: 307,
-    branch_name: "CN SÓC TRĂNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Sóc Trăng",
-  },
-  72307002: {
-    bank_id: 307,
-    branch_name: "CN TÂY NINH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Tây Ninh",
-  },
-  19307001: {
-    bank_id: 307,
-    branch_name: "CN THÁI NGUYÊN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Thái Nguyên",
-  },
-  1307004: {
-    bank_id: 307,
-    branch_name: "CN THĂNG LONG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hà Nội",
-  },
-  38307001: {
-    bank_id: 307,
-    branch_name: "CN THANH HÓA",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Thanh Hóa",
-  },
-  31307003: {
-    bank_id: 307,
-    branch_name: "CN THỦY NGUYÊN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hải Phòng",
-  },
-  82307001: {
-    bank_id: 307,
-    branch_name: "CN TIỀN GIANG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Tiền Giang",
-  },
-  84307001: {
-    bank_id: 307,
-    branch_name: "CN TRÀ VINH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Trà Vinh",
-  },
-  86307001: {
-    bank_id: 307,
-    branch_name: "CN VĨNH LONG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Vĩnh Long",
-  },
-  26307001: {
-    bank_id: 307,
-    branch_name: "CN VĨNH PHÚC",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Vĩnh Phúc",
-  },
-  77307001: {
-    bank_id: 307,
-    branch_name: "CN VŨNG TÀU",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  70307001: {
-    bank_id: 307,
-    branch_name: "PGD BÌNH PHƯỚC",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bình Phước",
-  },
-  64307001: {
-    bank_id: 307,
-    branch_name: "PGD GIA LAI",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Gia Lai",
-  },
-  72307001: {
-    bank_id: 307,
-    branch_name: "PGD LONG HOA",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Tây Ninh",
-  },
-  60307001: {
-    bank_id: 307,
-    branch_name: "PGD PHAN THIẾT",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bình Thuận",
-  },
-  79204003: {
-    bank_id: 204,
-    branch_name: "CN 11 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204009: {
-    bank_id: 204,
-    branch_name: "CN 3 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204005: {
-    bank_id: 204,
-    branch_name: "CN 4 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204008: {
-    bank_id: 204,
-    branch_name: "CN 6 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204043: {
-    bank_id: 204,
-    branch_name: "CN 7",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204007: {
-    bank_id: 204,
-    branch_name: "CN 8 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  79204012: {
-    bank_id: 204,
-    branch_name: "CN 9 HCM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  91204016: {
-    bank_id: 204,
-    branch_name: "CN AN BIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kiên Giang",
-  },
-  1204045: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐAN PHƯỢNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  77204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐẤT ĐỎ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  74204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN DẦU TIẾNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Dương",
-  },
-  11204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐIỆN BIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  11204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐIỆN BIÊN ĐÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  40204020: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN DIỄN CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  56204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN DIÊN KHÁNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  19204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỊNH HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Nguyên",
-  },
-  75204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỊNH QUÁN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  40204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐÔ LƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  68204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐƠN DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  19204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỒNG HỶ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Nguyên",
-  },
-  70204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỒNG PHÚ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  80204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỨC HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  80204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỨC HUỆ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  70204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỨC LIỄU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  60204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỨC LINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Thuận",
-  },
-  42204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐỨC THỌ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  35204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN DUY TIÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  27204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN GIA BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  1204018: {
-    bank_id: 204,
-    branch_name: "CN HỒNG HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  34204011: {
-    bank_id: 204,
-    branch_name: "CN HƯNG HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Bình",
-  },
-  79204034: {
-    bank_id: 204,
-    branch_name: "CN HÙNG VƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hồ Chí Minh",
-  },
-  1204028: {
-    bank_id: 204,
-    branch_name: "CN HÙNG VƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  49204004: {
-    bank_id: 204,
-    branch_name: "CN HƯƠNG AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Nam",
-  },
-  20204004: {
-    bank_id: 204,
-    branch_name: "CN HỮU LŨNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lạng Sơn",
-  },
-  46204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN A LƯỚI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  40204022: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ANH SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  64204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN AYUNPA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  22204016: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BA CHẼ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  1204044: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BA VÌ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  58204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÁC ÁI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  10204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẮC HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  14204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẮC YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  4204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẢO LẠC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  4204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẢO LÂM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  10204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẢO THẮNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  10204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẢO YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  10204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÁT XÁT",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  74204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BẾN CÁT BÌNH DƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Dương",
-  },
-  22204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÌNH LIÊU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  70204016: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÌNH LONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  35204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÌNH LỤC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  26204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÌNH XUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Vĩnh Phúc",
-  },
-  70204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÙ ĐĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  70204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÙ ĐỐP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  70204017: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÙ GIA MẬP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  70204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN BÙ NHO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  56204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CAM LÂM",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  45204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CAM LỘ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  75204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CẨM MỸ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  42204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CẨM XUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  80204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CẦN ĐƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  80204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CẦN GIUỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  42204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CAN LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  17204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CAO PHONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  77204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHÂU ĐỨC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  80204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHÂU THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Long An",
-  },
-  8204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHIÊM HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tuyên Quang",
-  },
-  70204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHƠN THÀNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  64204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHƯ PĂH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  64204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHƯ SÊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  1204050: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CHƯƠNG MỸ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  92204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CỜ ĐỎ CẦN THƠ II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  22204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CÔ TÔ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  10204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CỐC LẾU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  40204016: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CON CUÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  77204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CÔN ĐẢO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  66204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN CƯ KUIN DAK LAK",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đắk Lắk",
-  },
-  17204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐÀ BẮC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  70204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐA KIA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  45204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐA KRONG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  62204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐẮC TÔ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  19204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐẠI TỪ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Nguyên",
-  },
-  64204021: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐAK ĐOA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  62204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐẮK HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  64204015: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐAK PƠ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  62204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN DAKGLEI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  22204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐẦM HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  68204017: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN ĐAM RÔNG LÂM ĐỒNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  64204023: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN IAPA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  64204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KBANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  56204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KHÁNH SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  56204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KHÁNH VĨNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  35204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KIM BẰNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  17204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KIM BÔI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  37204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KIM SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Bình",
-  },
-  62204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KON RẪY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  64204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KÔNG CHRO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  64204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KRÔNG PA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  44204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MINH HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Bình",
-  },
-  14204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MỘC CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  11204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG ẢNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  11204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG CHÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  10204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG KHƯƠNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lào Cai",
-  },
-  14204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG LA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  11204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG LAY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  11204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MƯỜNG NHÉ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Điện Biên",
-  },
-  1204040: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MỸ ĐỨC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  33204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MỸ HÀO",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hưng Yên",
-  },
-  8204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NA HANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tuyên Quang",
-  },
-  40204010: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NAM ĐÀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  46204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NAM ĐÔNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  40204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NGHI LỘC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  42204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NGHI XUÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  40204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NGHĨA ĐÀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  62204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NGỌC HỒI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Kon Tum",
-  },
-  4204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NGUYÊN BINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  37204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NHO QUAN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Bình",
-  },
-  75204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NHƠN TRẠCH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Đồng Nai",
-  },
-  42204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KỲ ANH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  40204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KỲ SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  17204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN KỲ SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  17204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LẠC SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  8204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LÂM BÌNH TUYÊN QUANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tuyên Quang",
-  },
-  68204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LÂM HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Lâm Đồng",
-  },
-  24204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LẠNG GIANG BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  26204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LẬP THẠCH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Vĩnh Phúc",
-  },
-  42204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LỘC HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  70204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LỘC HIỆP",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  70204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LỘC NINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  77204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LONG ĐIỀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  24204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LỤC NAM BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  24204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LỤC NGẠN BẮC GIANG II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  17204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LƯƠNG SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  27204004: {
-    bank_id: 204,
-    branch_name: "CN HUYEN LƯƠNG TÀI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Ninh",
-  },
-  35204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN LÝ NHÂN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nam",
-  },
-  17204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MAI CHÂU",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hoà Bình",
-  },
-  14204011: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MAI SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Sơn La",
-  },
-  64204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN MANG YANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  37204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN GIA VIỄN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Bình",
-  },
-  45204008: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN GIO LINH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  4204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HẠ LANG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  4204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HÀ QUẢNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  22204013: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HẢI HÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  45204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HẢI LĂNG",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  8204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HÀM YÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Tuyên Quang",
-  },
-  24204012: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HIỆP HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bắc Giang",
-  },
-  4204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HÒA AN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cao Bằng",
-  },
-  37204002: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HOA LƯ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Bình",
-  },
-  1204037: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HOÀI ĐỨC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Nội",
-  },
-  22204014: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HOÀNH BỒ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Ninh",
-  },
-  70204018: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HỚN QUẢN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Bình Phước",
-  },
-  40204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯNG NGUYÊN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Nghệ An",
-  },
-  45204009: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯỚNG HÓA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Quảng Trị",
-  },
-  42204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯƠNG KHÊ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  42204015: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯƠNG SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Hà Tĩnh",
-  },
-  46204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯƠNG THỦY",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  46204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN HƯƠNG TRÀ",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  64204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN IA GRAI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Gia Lai",
-  },
-  89357001: {
-    bank_id: 357,
-    branch_name: "CN AN GIANG",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "An Giang",
-  },
-  24357001: {
-    bank_id: 357,
-    branch_name: "CN BẮC GIANG",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bắc Giang",
-  },
-  6357001: {
-    bank_id: 357,
-    branch_name: "CN BẮC KẠN",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bắc Kạn",
-  },
-  95357001: {
-    bank_id: 357,
-    branch_name: "CN BẠC LIÊU",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bạc Liêu",
-  },
-  27357001: {
-    bank_id: 357,
-    branch_name: "CN BẮC NINH",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bắc Ninh",
-  },
-  83357001: {
-    bank_id: 357,
-    branch_name: "CN BẾN TRE",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bến Tre",
-  },
-  52357001: {
-    bank_id: 357,
-    branch_name: "CN BÌNH ĐỊNH",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bình Định",
-  },
-  74357001: {
-    bank_id: 357,
-    branch_name: "CN BÌNH DƯƠNG",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bình Dương",
-  },
-  70357001: {
-    bank_id: 357,
-    branch_name: "CN BÌNH PHƯỚC",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bình Phước",
-  },
-  60357001: {
-    bank_id: 357,
-    branch_name: "CN BÌNH THUẬN",
-    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
-    area: "Bình Thuận",
-  },
-  1348008: {
-    bank_id: 348,
-    branch_name: "CN HOÀN KIẾM",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Hà Nội",
-  },
-  22348002: {
-    bank_id: 348,
-    branch_name: "CN HÒN GAI",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Quảng Ninh",
-  },
-  31348003: {
-    bank_id: 348,
-    branch_name: "CN HỒNG BÀNG",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Hải Phòng",
-  },
-  46348001: {
-    bank_id: 348,
-    branch_name: "CN HUẾ",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Thừa Thiên Huế",
-  },
-  33348001: {
-    bank_id: 348,
-    branch_name: "CN HƯNG YÊN",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Hưng Yên",
-  },
-  56348001: {
-    bank_id: 348,
-    branch_name: "CN KHÁNH HÒA",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Khánh Hòa",
-  },
-  91348001: {
-    bank_id: 348,
-    branch_name: "CN KIÊN GIANG",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Kiên Giang",
-  },
-  27348002: {
-    bank_id: 348,
-    branch_name: "CN KINH BẮC",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Bắc Ninh",
-  },
-  68348001: {
-    bank_id: 348,
-    branch_name: "CN LÂM ĐỒNG",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Lâm Đồng",
-  },
-  20348001: {
-    bank_id: 348,
-    branch_name: "CN LẠNG SƠN",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Lạng Sơn",
-  },
-  10348001: {
-    bank_id: 348,
-    branch_name: "CN LÀO CAI",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Lào Cai",
-  },
-  31348002: {
-    bank_id: 348,
-    branch_name: "CN LÊ CHÂN",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Hải Phòng",
-  },
-  58204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NINH HẢI",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  56204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NINH HÒA",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Khánh Hòa",
-  },
-  58204005: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NINH PHƯỚC",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  58204003: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN NINH SƠN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Ninh Thuận",
-  },
-  46204004: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHONG ĐIỀN",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thừa Thiên Huế",
-  },
-  92204006: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHONG ĐIỀN CẦN THƠ II",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Cần Thơ",
-  },
-  19204007: {
-    bank_id: 204,
-    branch_name: "CN HUYỆN PHÚ BÌNH",
-    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
-    area: "Thái Nguyên",
-  },
-  89323001: {
-    bank_id: 323,
-    branch_name: "CN AN GIANG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "An Giang",
-  },
-  77323001: {
-    bank_id: 323,
-    branch_name: "CN BÀ RỊA VŨNG TÀU",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  95323001: {
-    bank_id: 323,
-    branch_name: "CN BẠC LIÊU",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bạc Liêu",
-  },
-  74323001: {
-    bank_id: 323,
-    branch_name: "CN BÌNH DƯƠNG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bình Dương",
-  },
-  70323001: {
-    bank_id: 323,
-    branch_name: "CN BÌNH PHƯỚC",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bình Phước",
-  },
-  60323001: {
-    bank_id: 323,
-    branch_name: "CN BÌNH THUẬN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bình Thuận",
-  },
-  92323001: {
-    bank_id: 323,
-    branch_name: "CN CẦN THƠ",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Cần Thơ",
-  },
-  48323001: {
-    bank_id: 323,
-    branch_name: "CN ĐÀ NẴNG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Đà Nẵng",
-  },
-  11323002: {
-    bank_id: 323,
-    branch_name: "CN ĐIỆN BIÊN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Điện Biên",
-  },
-  87323001: {
-    bank_id: 323,
-    branch_name: "CN ĐỒNG THÁP",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Đồng Tháp",
-  },
-  64323001: {
-    bank_id: 323,
-    branch_name: "CN GIA LAI",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Gia Lai",
-  },
-  1323001: {
-    bank_id: 323,
-    branch_name: "CN HÀ NỘI",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hà Nội",
-  },
-  31323001: {
-    bank_id: 323,
-    branch_name: "CN HẢI PHÒNG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hải Phòng",
-  },
-  56323001: {
-    bank_id: 323,
-    branch_name: "CN KHÁNH HÒA",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Khánh Hòa",
-  },
-  91323001: {
-    bank_id: 323,
-    branch_name: "CN KIÊN GIANG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Kiên Giang",
-  },
-  20323002: {
-    bank_id: 323,
-    branch_name: "CN LẠNG SƠN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Lạng Sơn",
-  },
-  40323001: {
-    bank_id: 323,
-    branch_name: "CN NGHỆ AN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Nghệ An",
-  },
-  27323001: {
-    bank_id: 323,
-    branch_name: "CN PGD BẮC NINH",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Bắc Ninh",
-  },
-  49323001: {
-    bank_id: 323,
-    branch_name: "CN QUẢNG NAM",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Quảng Nam",
-  },
-  22323001: {
-    bank_id: 323,
-    branch_name: "CN QUẢNG NINH",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Quảng Ninh",
-  },
-  79323002: {
-    bank_id: 323,
-    branch_name: "CN SÀI GÒN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hồ Chí Minh",
-  },
-  79323003: {
-    bank_id: 323,
-    branch_name: "CN SỎ GIAO DICH",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hồ Chí Minh",
-  },
-  94323001: {
-    bank_id: 323,
-    branch_name: "CN SÓC TRĂNG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Sóc Trăng",
-  },
-  14323001: {
-    bank_id: 323,
-    branch_name: "CN SƠN LA",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Sơn La",
-  },
-  72323001: {
-    bank_id: 323,
-    branch_name: "CN TÂY NINH",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Tây Ninh",
-  },
-  34323002: {
-    bank_id: 323,
-    branch_name: "CN THÁI BÌNH",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Thái Bình",
-  },
-  38323002: {
-    bank_id: 323,
-    branch_name: "CN THANH HÓA",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Thanh Hóa",
-  },
-  82323001: {
-    bank_id: 323,
-    branch_name: "CN TIỀN GIANG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Tiền Giang",
-  },
-  79323001: {
-    bank_id: 323,
-    branch_name: "CN TPHCM",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hồ Chí Minh",
-  },
-  86323001: {
-    bank_id: 323,
-    branch_name: "CN VĨNH LONG",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Vĩnh Long",
-  },
-  46323001: {
-    bank_id: 323,
-    branch_name: "PGD HUẾ",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Thừa Thiên Huế",
-  },
-  80323001: {
-    bank_id: 323,
-    branch_name: "PGD LONG AN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Long An",
-  },
-  33323001: {
-    bank_id: 323,
-    branch_name: "PGD MỸ HÀO",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Hưng Yên",
-  },
-  26323001: {
-    bank_id: 323,
-    branch_name: "PGD PHÚC YÊN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Vĩnh Phúc",
-  },
-  75323001: {
-    bank_id: 323,
-    branch_name: "PGD TÂN TIẾN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Đồng Nai",
-  },
-  19323001: {
-    bank_id: 323,
-    branch_name: "PGD THÁI NGUYÊN",
-    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
-    area: "Thái Nguyên",
-  },
-  1610001: {
-    bank_id: 610,
-    branch_name: "HÀ NỘI",
-    bank_name: "ABN - AMRO BANK",
-    area: "Hà Nội",
-  },
-  89307001: {
-    bank_id: 307,
-    branch_name: "CN AN GIANG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "An Giang",
-  },
-  24307001: {
-    bank_id: 307,
-    branch_name: "CN BẮC GIANG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bắc Giang",
-  },
-  95307001: {
-    bank_id: 307,
-    branch_name: "CN BẠC LIÊU",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bạc Liêu",
-  },
-  27307001: {
-    bank_id: 307,
-    branch_name: "CN BẮC NINH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bắc Ninh",
-  },
-  83307001: {
-    bank_id: 307,
-    branch_name: "CN BẾN TRE",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bến Tre",
-  },
-  52307001: {
-    bank_id: 307,
-    branch_name: "CN BÌNH ĐỊNH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bình Định",
-  },
-  74307001: {
-    bank_id: 307,
-    branch_name: "CN BÌNH DƯƠNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Bình Dương",
-  },
-  96307001: {
-    bank_id: 307,
-    branch_name: "CN CÀ MAU",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Cà Mau",
-  },
-  92307001: {
-    bank_id: 307,
-    branch_name: "CN CẦN THƠ",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Cần Thơ",
-  },
-  79307005: {
-    bank_id: 307,
-    branch_name: "CN CHỢ LỚN",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hồ Chí Minh",
-  },
-  48307001: {
-    bank_id: 307,
-    branch_name: "CN ĐÀ NẴNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Đà Nẵng",
-  },
-  66307001: {
-    bank_id: 307,
-    branch_name: "CN DAC LAK",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Đắk Lắk",
-  },
-  75307001: {
-    bank_id: 307,
-    branch_name: "CN ĐỒNG NAI",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Đồng Nai",
-  },
-  87307001: {
-    bank_id: 307,
-    branch_name: "CN ĐỒNG THÁP",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Đồng Tháp",
-  },
-  31307002: {
-    bank_id: 307,
-    branch_name: "CN DUYÊN HẢI",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hải Phòng",
-  },
-  35307001: {
-    bank_id: 307,
-    branch_name: "CN HÀ NAM",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hà Nam",
-  },
-  1307001: {
-    bank_id: 307,
-    branch_name: "CN HÀ NỘI",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hà Nội",
-  },
-  42307001: {
-    bank_id: 307,
-    branch_name: "CN HÀ TĨNH",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hà Tĩnh",
-  },
-  30307001: {
-    bank_id: 307,
-    branch_name: "CN HẢI DƯƠNG",
-    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
-    area: "Hải Dương",
-  },
-  72353001: {
-    bank_id: 353,
-    branch_name: "CN TÂY NINH",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Tây Ninh",
-  },
-  82353001: {
-    bank_id: 353,
-    branch_name: "CN TIỀN GIANG",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Tiền Giang",
-  },
-  84353001: {
-    bank_id: 353,
-    branch_name: "CN TRÀ VINH",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Trà Vinh",
-  },
-  86353001: {
-    bank_id: 353,
-    branch_name: "CN VĨNH LONG",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Vĩnh Long",
-  },
-  77353001: {
-    bank_id: 353,
-    branch_name: "CN VŨNG TÀU",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Bà Rịa - Vũng Tàu",
-  },
-  91353001: {
-    bank_id: 353,
-    branch_name: "HỘI SỞ",
-    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
-    area: "Kiên Giang",
-  },
-  91353002: {
+  }, "91353002": {
     bank_id: 353,
     branch_name: "PGD BẾN NHỨT",
     bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
     area: "Kiên Giang",
-  },
-  77357001: {
+  }, "25204013": {
+    bank_id: 204,
+    branch_name: "CN THANH THUỶ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Thọ",
+  }, "02204009": {
+    bank_id: 204,
+    branch_name: "CN THANH THUỶ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "94204004": {
+    bank_id: 204,
+    branch_name: "CN THẠNH TRỊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sóc Trăng",
+  }, "01204004": {
+    bank_id: 204,
+    branch_name: "CN THANH TRÌ HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "31307003": {
+    bank_id: 307,
+    branch_name: "CN THỦY NGUYÊN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hải Phòng",
+  }, "01204035": {
+    bank_id: 204,
+    branch_name: "CN THANH XUÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "58204006": {
+    bank_id: 204,
+    branch_name: "CN THÁP CHÀM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "87204011": {
+    bank_id: 204,
+    branch_name: "CN THÁP MƯỜI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Tháp",
+  }, "64204017": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ AN KHÊ GIA LAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "52204004": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ AN NHƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Định",
+  }, "56204007": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ CAM RANH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "40204013": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ CỬA LÒ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "74204011": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ DĨ AN SÓNG THẦN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Dương",
+  }, "38204007": {
+    bank_id: 204,
+    branch_name: "CN THƯỜNG XUÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "31204009": {
+    bank_id: 204,
+    branch_name: "CN THỦY NGUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "82204001": {
+    bank_id: 204,
+    branch_name: "CN TIỀN GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "34204005": {
+    bank_id: 204,
+    branch_name: "CN TIỀN HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Bình",
+  }, "31204011": {
+    bank_id: 204,
+    branch_name: "CN TIÊN LÃNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "49204021": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ ĐIỆN BÀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "22204003": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ ĐÔNG TRIỀU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "70204012": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ ĐỒNG XOÀI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "67204004": {
+    bank_id: 204,
+    branch_name: "CN THỊ XÃ GIA NGHĨA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "02204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH HÀ GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "35204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH HÀ NAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "30204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH HẢI DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "17204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH HÒA BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "33204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH HƯNG YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hưng Yên",
+  }, "56204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH KHÁNH HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "62204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH KONTUM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "68204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH LÂM ĐỒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "20204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH LẠNG SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "10204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH LÀO CAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "38204003": {
+    bank_id: 204,
+    branch_name: "CN HÀ TRUNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "31204015": {
+    bank_id: 204,
+    branch_name: "CN HẢI AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "48204003": {
+    bank_id: 204,
+    branch_name: "CN HẢI CHÂU ĐÀ NẴNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "30204009": {
+    bank_id: 204,
+    branch_name: "CN HẢI DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "36204012": {
+    bank_id: 204,
+    branch_name: "CN HẢI HẬU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "31204001": {
+    bank_id: 204,
+    branch_name: "CN HẢI PHÒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "60204011": {
+    bank_id: 204,
+    branch_name: "CN HÀM MỸ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "60204014": {
+    bank_id: 204,
+    branch_name: "CN HÀM TÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "60204004": {
+    bank_id: 204,
+    branch_name: "CN HÀM THUẬN BẮC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "60204012": {
+    bank_id: 204,
+    branch_name: "CN HÀM THUẬN NAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "93204001": {
+    bank_id: 204,
+    branch_name: "CN HẬU GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hậu Giang",
+  }, "38204020": {
+    bank_id: 204,
+    branch_name: "CN HẬU LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "49204005": {
+    bank_id: 204,
+    branch_name: "CN HIỆP ĐỨC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "79204050": {
+    bank_id: 204,
+    branch_name: "CN HIỆP PHƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "95204005": {
+    bank_id: 204,
+    branch_name: "CN HÒA BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bạc Liêu",
+  }, "66204025": {
+    bank_id: 204,
+    branch_name: "CN HÒA KHÁNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "01204038": {
+    bank_id: 204,
+    branch_name: "CN HÒA LẠC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "64204018": {
+    bank_id: 204,
+    branch_name: "CN HOA LƯ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "68204008": {
+    bank_id: 204,
+    branch_name: "CN HÒA NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "66204018": {
+    bank_id: 204,
+    branch_name: "CN HÒA THẮNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "80204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH LONG AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "36204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH NAM ĐỊNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "37204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH NINH BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Bình",
+  }, "58204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH NINH THUẬN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "54204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH PHÚ YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Yên",
+  }, "82307001": {
+    bank_id: 307,
+    branch_name: "CN TIỀN GIANG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Tiền Giang",
+  }, "44204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH QUẢNG BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Bình",
+  }, "49204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH QUẢNG NAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "51204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH QUẢNG NGÃI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ngãi",
+  }, "22204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH QUẢNG NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "82204007": {
+    bank_id: 204,
+    branch_name: "CN GÒ CÔNG TÂY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "72204011": {
+    bank_id: 204,
+    branch_name: "CN GÒ DẦU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tây Ninh",
+  }, "91204010": {
+    bank_id: 204,
+    branch_name: "CN GÒ QUAO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "25204009": {
+    bank_id: 204,
+    branch_name: "CN HẠ HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Thọ",
+  }, "22204017": {
+    bank_id: 204,
+    branch_name: "CN HẠ LONG I",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "01204003": {
+    bank_id: 204,
+    branch_name: "CN HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "01204052": {
+    bank_id: 204,
+    branch_name: "CN HÀ NỘI-PGD QUẬN HAI BÀ TRƯNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "01204036": {
+    bank_id: 204,
+    branch_name: "CN HÀ TÂY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "01204032": {
+    bank_id: 204,
+    branch_name: "CN HÀ THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "42204001": {
+    bank_id: 204,
+    branch_name: "CN HÀ TĨNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "42204002": {
+    bank_id: 204,
+    branch_name: "CN HÀ TĨNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "96204003": {
+    bank_id: 204,
+    branch_name: "CN THỚI BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cà Mau",
+  }, "92204004": {
+    bank_id: 204,
+    branch_name: "CN THỐT NỐT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "01204030": {
+    bank_id: 204,
+    branch_name: "CN THỦ ĐÔ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "79204024": {
+    bank_id: 204,
+    branch_name: "CN THỦ ĐỨC HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "46204001": {
+    bank_id: 204,
+    branch_name: "CN THỪA THIÊN HUẾ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "33204005": {
+    bank_id: 204,
+    branch_name: "CN TIÊN LỮ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hưng Yên",
+  }, "49204024": {
+    bank_id: 204,
+    branch_name: "CN TIÊN PHƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "84204004": {
+    bank_id: 204,
+    branch_name: "CN TIỂU CẦN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "89204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH AN GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "06204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH BẮC KẠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Kạn",
+  }, "95204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH BẠC LIÊU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bạc Liêu",
+  }, "83204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH BẾN TRE",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "89204009": {
+    bank_id: 204,
+    branch_name: "CN TỊNH BIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "74204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH BÌNH DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Dương",
+  }, "60204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH BÌNH THUẬN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "96204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH CÀ MAU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cà Mau",
+  }, "04204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH CAO BẰNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "67204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH ĐAK NÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "66204001": {
+    bank_id: 204,
+    branch_name: "CN TỈNH DAKLAK",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "38204015": {
+    bank_id: 204,
+    branch_name: "CN TĨNH GIA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "89204007": {
+    bank_id: 204,
+    branch_name: "CN CHI LĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "48204010": {
+    bank_id: 204,
+    branch_name: "CN CHI LĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "48204009": {
+    bank_id: 204,
+    branch_name: "CN CHỢ CỒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "06204008": {
+    bank_id: 204,
+    branch_name: "CN CHỢ ĐỒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Kạn",
+  }, "82204008": {
+    bank_id: 204,
+    branch_name: "CN CHỢ GẠO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "83204009": {
+    bank_id: 204,
+    branch_name: "CN CHỢ LÁCH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "79204016": {
+    bank_id: 204,
+    branch_name: "CN CHỢ LỚN HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "89204012": {
+    bank_id: 204,
+    branch_name: "CN CHỢ MỚI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "06204007": {
+    bank_id: 204,
+    branch_name: "CN CHỢ MỚI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Kạn",
+  }, "48204012": {
+    bank_id: 204,
+    branch_name: "CN CHỢ MỚI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "89204014": {
+    bank_id: 204,
+    branch_name: "CN CHỢ VÀM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "56204009": {
+    bank_id: 204,
+    branch_name: "CN CHỢ XÓM MỚI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "64204002": {
+    bank_id: 204,
+    branch_name: "CN CHƯ PRÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "64204024": {
+    bank_id: 204,
+    branch_name: "CN CHƯ PƯH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "01204296": {
+    bank_id: 204,
+    branch_name: "CN CHƯƠNG DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "79204018": {
+    bank_id: 204,
+    branch_name: "CN CN 10",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "36204016": {
+    bank_id: 204,
+    branch_name: "CN CỒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "79204028": {
+    bank_id: 204,
+    branch_name: "CN CỦ CHI TP HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "67204009": {
+    bank_id: 204,
+    branch_name: "CN CƯ JÚT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "94204011": {
+    bank_id: 204,
+    branch_name: "CN CÙ LAO DUNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sóc Trăng",
+  }, "72204005": {
+    bank_id: 204,
+    branch_name: "CN HÒA THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tây Ninh",
+  }, "66204029": {
+    bank_id: 204,
+    branch_name: "CN HÒA THUẬN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "48204002": {
+    bank_id: 204,
+    branch_name: "CN HÒA VANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "52204010": {
+    bank_id: 204,
+    branch_name: "CN HOÀI AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Định",
+  }, "52204008": {
+    bank_id: 204,
+    branch_name: "CN HOÀI NHƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Định",
+  }, "91204004": {
+    bank_id: 204,
+    branch_name: "CN BẾN NHẤT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "79204051": {
+    bank_id: 204,
+    branch_name: "CN BẾN THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "64204013": {
+    bank_id: 204,
+    branch_name: "CN BIỂN HỒ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "75204002": {
+    bank_id: 204,
+    branch_name: "CN BIÊN HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "79204022": {
+    bank_id: 204,
+    branch_name: "CN BÌNH CHÁNH HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "83204006": {
+    bank_id: 204,
+    branch_name: "CN BÌNH ĐẠI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "52204001": {
+    bank_id: 204,
+    branch_name: "CN BÌNH ĐỊNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Định",
+  }, "20204012": {
+    bank_id: 204,
+    branch_name: "CN BINH GỈA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "30204005": {
+    bank_id: 204,
+    branch_name: "CN BÌNH GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "79204052": {
+    bank_id: 204,
+    branch_name: "CN BÌNH PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "70204001": {
+    bank_id: 204,
+    branch_name: "CN BÌNH PHƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "51204003": {
+    bank_id: 204,
+    branch_name: "CN BÌNH SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ngãi",
+  }, "86204007": {
+    bank_id: 204,
+    branch_name: "CN BÌNH TÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Vĩnh Long",
+  }, "79204010": {
+    bank_id: 204,
+    branch_name: "CN BÌNH TÂN HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204019": {
+    bank_id: 204,
+    branch_name: "CN BÌNH THẠNH HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "92204008": {
+    bank_id: 204,
+    branch_name: "CN BÌNH THỦY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "79204033": {
+    bank_id: 204,
+    branch_name: "CN BÌNH TRIỆU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "24204008": {
+    bank_id: 204,
+    branch_name: "CN BỐ HẠ BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "66204017": {
+    bank_id: 204,
+    branch_name: "CN BUÔN ĐÔN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204007": {
+    bank_id: 204,
+    branch_name: "CN BUÔN HỒ BAC DAK LAK",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "82204010": {
+    bank_id: 204,
+    branch_name: "CN CÁI BÈ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "96204002": {
+    bank_id: 204,
+    branch_name: "CN CÁI NƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cà Mau",
+  }, "92204002": {
+    bank_id: 204,
+    branch_name: "CN CAI RĂNG CẦN THƠ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "93204009": {
+    bank_id: 204,
+    branch_name: "CN CÁI TẮC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hậu Giang",
+  }, "10204005": {
+    bank_id: 204,
+    branch_name: "CN CAM ĐƯỜNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "30204004": {
+    bank_id: 204,
+    branch_name: "CN CẨM GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "25204002": {
+    bank_id: 204,
+    branch_name: "CN CẨM KHÊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Thọ",
+  }, "48204016": {
+    bank_id: 204,
+    branch_name: "CN CẨM LỆ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "38204028": {
+    bank_id: 204,
+    branch_name: "CN CẨM THỦY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "79204027": {
+    bank_id: 204,
+    branch_name: "CN CAN GIO TP HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "92204001": {
+    bank_id: 204,
+    branch_name: "CN CẦN THƠ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "92204009": {
+    bank_id: 204,
+    branch_name: "CN CẦN THƠ II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "84204002": {
+    bank_id: 204,
+    branch_name: "CN CÀNG LONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "04204013": {
+    bank_id: 204,
+    branch_name: "CN CAO BẰNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "87204008": {
+    bank_id: 204,
+    branch_name: "CN CAO LÃNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Tháp",
+  }, "20204009": {
+    bank_id: 204,
+    branch_name: "CN CAO LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "22204018": {
+    bank_id: 204,
+    branch_name: "CN CAO THẮNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "31204003": {
+    bank_id: 204,
+    branch_name: "CN CÁT BÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "31204008": {
+    bank_id: 204,
+    branch_name: "CN CÁT HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "68204006": {
+    bank_id: 204,
+    branch_name: "CN CÁT TIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "01204016": {
+    bank_id: 204,
+    branch_name: "CN CẦU GIẤY HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "84204003": {
+    bank_id: 204,
+    branch_name: "CN CẦU KÈ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "84204006": {
+    bank_id: 204,
+    branch_name: "CN CẦU NGANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "89204010": {
+    bank_id: 204,
+    branch_name: "CN CHÂU PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "72204010": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tây Ninh",
+  }, "84204011": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "82204009": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "83204007": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "87204006": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Tháp",
+  }, "89204011": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "91204013": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "93204007": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hậu Giang",
+  }, "94204014": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sóc Trăng",
+  }, "93204006": {
+    bank_id: 204,
+    branch_name: "CN CHÂU THÀNH A",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hậu Giang",
+  }, "20204010": {
+    bank_id: 204,
+    branch_name: "CN CHI LĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "01204015": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG ANH HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "36204013": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "48204011": {
+    bank_id: 204,
+    branch_name: "CN ĐỐNG ĐA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đà Nẵng",
+  }, "01204034": {
+    bank_id: 204,
+    branch_name: "CN ĐỐNG ĐA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "20204005": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG ĐĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "64204020": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG GIA LAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "49204025": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "01204008": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "95204008": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bạc Liêu",
+  }, "31204006": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG HẢI PHÒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "66204030": {
+    bank_id: 204,
+    branch_name: "CN EA HLEO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204002": {
+    bank_id: 204,
+    branch_name: "CN EA KAR",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204005": {
+    bank_id: 204,
+    branch_name: "CN EA KNỐP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204014": {
+    bank_id: 204,
+    branch_name: "CN EA PHÊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204016": {
+    bank_id: 204,
+    branch_name: "CN EA RAL",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204009": {
+    bank_id: 204,
+    branch_name: "CN EA SÚP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204026": {
+    bank_id: 204,
+    branch_name: "CN EA TAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204021": {
+    bank_id: 204,
+    branch_name: "CN EA TOH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "25204014": {
+    bank_id: 204,
+    branch_name: "CN GIA CẨM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Thọ",
+  }, "79204021": {
+    bank_id: 204,
+    branch_name: "CN GIA ĐỊNH HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "64204001": {
+    bank_id: 204,
+    branch_name: "CN GIA LAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "01204014": {
+    bank_id: 204,
+    branch_name: "CN GIA LÂM HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "30204006": {
+    bank_id: 204,
+    branch_name: "CN GIA LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "95204006": {
+    bank_id: 204,
+    branch_name: "CN GÍA RAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bạc Liêu",
+  }, "36204010": {
+    bank_id: 204,
+    branch_name: "CN GIAO THỦY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "91204005": {
+    bank_id: 204,
+    branch_name: "CN GIỒNG RIỀNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "83204010": {
+    bank_id: 204,
+    branch_name: "CN GIỒNG TRÔM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "82204006": {
+    bank_id: 204,
+    branch_name: "CN GÒ CÔNG ĐÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tiền Giang",
+  }, "74204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ GIÁO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Dương",
+  }, "46204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "19204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ LƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Nguyên",
+  }, "54204006": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Yên",
+  }, "34204006": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG HƯNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Bình",
+  }, "83204003": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG KHỞI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "58204008": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG MỸ HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "75204001": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG NAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "79204014": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG SÀI GÒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "38204021": {
+    bank_id: 204,
+    branch_name: "CN ĐÔNG SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "87204001": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG THÁP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Tháp",
+  }, "02204002": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG VĂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "35204008": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG VĂN HÀ NAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "54204010": {
+    bank_id: 204,
+    branch_name: "CN ĐỒNG XUÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Yên",
+  }, "64204009": {
+    bank_id: 204,
+    branch_name: "CN ĐỨC CƠ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "51204010": {
+    bank_id: 204,
+    branch_name: "CN ĐỨC PHỔ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ngãi",
+  }, "68204007": {
+    bank_id: 204,
+    branch_name: "CN ĐỨC TRỌNG - LÂM ĐỒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "84307001": {
+    bank_id: 307,
+    branch_name: "CN TRÀ VINH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Trà Vinh",
+  }, "51204005": {
+    bank_id: 204,
+    branch_name: "CN DUNG QUẤT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ngãi",
+  }, "31204020": {
+    bank_id: 204,
+    branch_name: "CN DƯƠNG KINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "72204008": {
+    bank_id: 204,
+    branch_name: "CN DƯƠNG MINH CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tây Ninh",
+  }, "49204023": {
+    bank_id: 204,
+    branch_name: "CN DUY XUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "84204007": {
+    bank_id: 204,
+    branch_name: "CN DUYÊN HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Trà Vinh",
+  }, "66204031": {
+    bank_id: 204,
+    branch_name: "CN EA CPAM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "66204023": {
+    bank_id: 204,
+    branch_name: "CN CU MGAR",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "49204002": {
+    bank_id: 204,
+    branch_name: "CN CỬA ĐẠI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "68204011": {
+    bank_id: 204,
+    branch_name: "CN ĐẠ HUOAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "68204005": {
+    bank_id: 204,
+    branch_name: "CN ĐẠ TẺH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "79204029": {
+    bank_id: 204,
+    branch_name: "CN DAC LAC PGD HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "31204025": {
+    bank_id: 204,
+    branch_name: "CN ĐẠI HỢP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "49204008": {
+    bank_id: 204,
+    branch_name: "CN ĐẠI LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "30204016": {
+    bank_id: 204,
+    branch_name: "CN ĐẠI TÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Dương",
+  }, "67204005": {
+    bank_id: 204,
+    branch_name: "CN DĂK GLONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "67204006": {
+    bank_id: 204,
+    branch_name: "CN DĂK MIL",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "67204002": {
+    bank_id: 204,
+    branch_name: "CN DAK RLAP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "67204003": {
+    bank_id: 204,
+    branch_name: "CN DAK SONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Nông",
+  }, "96204004": {
+    bank_id: 204,
+    branch_name: "CN ĐẦM DƠI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cà Mau",
+  }, "68204010": {
+    bank_id: 204,
+    branch_name: "CN DI LINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "11204001": {
+    bank_id: 204,
+    branch_name: "CN ĐIỆN BIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "11204004": {
+    bank_id: 204,
+    branch_name: "CN ĐIỆN BIÊN PHỦ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "64204010": {
+    bank_id: 204,
+    branch_name: "CN DIÊN HỒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "20204013": {
+    bank_id: 204,
+    branch_name: "CN DINH LAP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "31204019": {
+    bank_id: 204,
+    branch_name: "CN ĐỒ SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "25204016": {
+    bank_id: 204,
+    branch_name: "CN ĐOAN HÙNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Phú Thọ",
+  }, "56204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN VĂN NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "24204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN VIỆT YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "75204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN VĨNH CỬU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "31307001": {
+    bank_id: 307,
+    branch_name: "CN HẢI PHÒNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hải Phòng",
+  }, "93307001": {
+    bank_id: 307,
+    branch_name: "CN HẬU GIANG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hậu Giang",
+  }, "79307001": {
+    bank_id: 307,
+    branch_name: "CN HỒ CHÍ MINH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hồ Chí Minh",
+  }, "49307001": {
+    bank_id: 307,
+    branch_name: "CN HỘI AN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Quảng Nam",
+  }, "46307001": {
+    bank_id: 307,
+    branch_name: "CN HUẾ",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Thừa Thiên Huế",
+  }, "33307001": {
+    bank_id: 307,
+    branch_name: "CN HƯNG YÊN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hưng Yên",
+  }, "79307028": {
+    bank_id: 307,
+    branch_name: "CN KHAI NGUYÊN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hồ Chí Minh",
+  }, "56307001": {
+    bank_id: 307,
+    branch_name: "CN KHÁNH HÒA",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Khánh Hòa",
+  }, "91307001": {
+    bank_id: 307,
+    branch_name: "CN KIÊN GIANG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Kiên Giang",
+  }, "62307001": {
+    bank_id: 307,
+    branch_name: "CN KON TUM",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Kon Tum",
+  }, "68307001": {
+    bank_id: 307,
+    branch_name: "CN LÂM ĐỒNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Lâm Đồng",
+  }, "80307001": {
+    bank_id: 307,
+    branch_name: "CN LONG AN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Long An",
+  }, "36307001": {
+    bank_id: 307,
+    branch_name: "CN NAM ĐỊNH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Nam Định",
+  }, "40307001": {
+    bank_id: 307,
+    branch_name: "CN NGHỆ AN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Nghệ An",
+  }, "58307001": {
+    bank_id: 307,
+    branch_name: "CN NINH THUẬN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Ninh Thuận",
+  }, "54307001": {
+    bank_id: 307,
+    branch_name: "CN PHÚ YÊN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Phú Yên",
+  }, "44307001": {
+    bank_id: 307,
+    branch_name: "CN QUẢNG BÌNH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Quảng Bình",
+  }, "51307001": {
+    bank_id: 307,
+    branch_name: "CN QUẢNG NGÃI",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Quảng Ngãi",
+  }, "46204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ VANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "01204046": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ XUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "14204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÙ YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "04204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHỤC HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "01204021": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚC THỌ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "70204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHƯỚC LONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "46204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUANG ĐIỀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "44204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUẢNG TRẠCH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Bình",
+  }, "04204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUẢNG UYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "40204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUẾ PHONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "27204005": {
+    bank_id: 204,
+    branch_name: "CN HUYEN QUẾ VÕ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "01204043": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUỐC OAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "40204018": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QÙY CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "40204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUỲ HỢP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "40204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUỲNH LƯU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "14204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN QUỲNH NHAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "10204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN SA PA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "62204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN SA THẦY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "24204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN SƠN ĐỘNG BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "08204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN SƠN DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tuyên Quang",
+  }, "14204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN SÔNG MÃ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "26204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TAM ĐẢO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Vĩnh Phúc",
+  }, "26204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TAM DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Vĩnh Phúc",
+  }, "80204017": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN HƯNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "40204015": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN KỲ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "17204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN LẠC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "75204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "77204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "80204015": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "80204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN TRỤ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "24204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TÂN YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "04204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THẠCH AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "42204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THẠCH HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "01204047": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THẠCH THẤT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "40204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THANH CHƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "80204016": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THANH HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "35204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THANH LIÊM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "01204039": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THANH OAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "92204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THỚI LAI CẦN THƠ II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "75204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THỐNG NHẤT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "04204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THÔNG NÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "80204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THỦ THỪA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "14204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THUẬN CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "27204006": {
+    bank_id: 204,
+    branch_name: "CN HUYEN THUẬN THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "01204042": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN THƯỜNG TÍN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "27204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TIÊN DU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "22204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TIÊN YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "04204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TRÀ LINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "75204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TRẢNG BOM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "45204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TRIỀU PHONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "04204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TRÙNG KHÁNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "11204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TỦA CHÙA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "11204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TUẦN GIÁO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "40204017": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TƯƠNG DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "60204003": {
+    bank_id: 204,
+    branch_name: "CN HUYEN TUY PHONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "44204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN TUYÊN HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Bình",
+  }, "91204019": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN U MINH THƯỢNG KIÊN GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "01204041": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ỨNG HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "10204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN VĂN BÀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "22204015": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN VÂN ĐỒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "31204002": {
+    bank_id: 204,
+    branch_name: "CN AN DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "31204004": {
+    bank_id: 204,
+    branch_name: "CN AN HƯNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "52204011": {
+    bank_id: 204,
+    branch_name: "CN AN LÃO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Định",
+  }, "31204010": {
+    bank_id: 204,
+    branch_name: "CN AN LÃO HP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "91204017": {
+    bank_id: 204,
+    branch_name: "CN AN MINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "89204003": {
+    bank_id: 204,
+    branch_name: "CN AN PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "An Giang",
+  }, "79204042": {
+    bank_id: 204,
+    branch_name: "CN AN PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204041": {
+    bank_id: 204,
+    branch_name: "CN AN SƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "33204011": {
+    bank_id: 204,
+    branch_name: "CN ÂN THI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hưng Yên",
+  }, "06204003": {
+    bank_id: 204,
+    branch_name: "CN BA BỂ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Kạn",
+  }, "38204025": {
+    bank_id: 204,
+    branch_name: "CN BA ĐÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "44204002": {
+    bank_id: 204,
+    branch_name: "CN BẮC QUẢNG BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Bình",
+  }, "79204046": {
+    bank_id: 204,
+    branch_name: "CN BẮC SÀI GÒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "20204008": {
+    bank_id: 204,
+    branch_name: "CN BẮC SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "46204011": {
+    bank_id: 204,
+    branch_name: "CN BẮC SÔNG HƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "49204015": {
+    bank_id: 204,
+    branch_name: "CN BẮC TRÀ MY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "01204026": {
+    bank_id: 204,
+    branch_name: "CN BÁCH KHOA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "06204002": {
+    bank_id: 204,
+    branch_name: "CN BẠCH THÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Kạn",
+  }, "68204015": {
+    bank_id: 204,
+    branch_name: "CN BẢO LÂM NAM LÂM ĐỒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "72204007": {
+    bank_id: 204,
+    branch_name: "CN BẾN CẦU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tây Ninh",
+  }, "01320004": {
+    bank_id: 320,
+    branch_name: "CN THĂNG LONG",
+    bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
+    area: "Hà Nội",
+  }, "01204022": {
+    bank_id: 204,
+    branch_name: "CN HOÀN KIẾM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "38204009": {
+    bank_id: 204,
+    branch_name: "CN HOẰNG HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "40204005": {
+    bank_id: 204,
+    branch_name: "CN HOÀNG MAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "01204020": {
+    bank_id: 204,
+    branch_name: "CN HOÀNG MAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "01204023": {
+    bank_id: 204,
+    branch_name: "CN HOÀNG QUỐC VIỆT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "02204007": {
+    bank_id: 204,
+    branch_name: "CN HOÀNG SU PHÌ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "79204013": {
+    bank_id: 204,
+    branch_name: "CN HÓC MÔN HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "64204011": {
+    bank_id: 204,
+    branch_name: "CN HỘI THƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "91204011": {
+    bank_id: 204,
+    branch_name: "CN HÒN ĐẤT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "95204004": {
+    bank_id: 204,
+    branch_name: "CN HỒNG DÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bạc Liêu",
+  }, "01204298": {
+    bank_id: 204,
+    branch_name: "CN BA ĐÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "91204014": {
+    bank_id: 204,
+    branch_name: "CN BA HÒN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "77204001": {
+    bank_id: 204,
+    branch_name: "CN BÀ RỊA - VŨNG TÀU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "38204027": {
+    bank_id: 204,
+    branch_name: "CN BÁ THƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thanh Hóa",
+  }, "51204002": {
+    bank_id: 204,
+    branch_name: "CN BA TƠ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ngãi",
+  }, "83204004": {
+    bank_id: 204,
+    branch_name: "CN BA TRI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bến Tre",
+  }, "01204295": {
+    bank_id: 204,
+    branch_name: "CN BÀ TRIỆU ĐÔNG HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "94204003": {
+    bank_id: 204,
+    branch_name: "CN BA XUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sóc Trăng",
+  }, "60204007": {
+    bank_id: 204,
+    branch_name: "CN BẮC BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "66204011": {
+    bank_id: 204,
+    branch_name: "CN BẮC DAK LAK",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "37348001": {
+    bank_id: 348,
+    branch_name: "CN NINH BÌNH",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Ninh Bình",
+  }, "49204019": {
+    bank_id: 204,
+    branch_name: "CN BẮC ĐIỆN BÀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "24204001": {
+    bank_id: 204,
+    branch_name: "CN BẮC GIANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "24204006": {
+    bank_id: 204,
+    branch_name: "CN BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "01204006": {
+    bank_id: 204,
+    branch_name: "CN BẮC HÀ NỘI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "31204007": {
+    bank_id: 204,
+    branch_name: "CN BẮC HẢI PHÒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hải Phòng",
+  }, "02204006": {
+    bank_id: 204,
+    branch_name: "CN BẮC MÊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "36204002": {
+    bank_id: 204,
+    branch_name: "CN BẮC NAM ĐỊNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nam Định",
+  }, "27204001": {
+    bank_id: 204,
+    branch_name: "CN BẮC NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "27204002": {
+    bank_id: 204,
+    branch_name: "CN BẮC NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "02204008": {
+    bank_id: 204,
+    branch_name: "CN BẮC QUANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Giang",
+  }, "94307001": {
+    bank_id: 307,
+    branch_name: "CN SÓC TRĂNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Sóc Trăng",
+  }, "72307002": {
+    bank_id: 307,
+    branch_name: "CN TÂY NINH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Tây Ninh",
+  }, "19307001": {
+    bank_id: 307,
+    branch_name: "CN THÁI NGUYÊN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Thái Nguyên",
+  }, "01307004": {
+    bank_id: 307,
+    branch_name: "CN THĂNG LONG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hà Nội",
+  }, "86307001": {
+    bank_id: 307,
+    branch_name: "CN VĨNH LONG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Vĩnh Long",
+  }, "26307001": {
+    bank_id: 307,
+    branch_name: "CN VĨNH PHÚC",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Vĩnh Phúc",
+  }, "77307001": {
+    bank_id: 307,
+    branch_name: "CN VŨNG TÀU",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "70307001": {
+    bank_id: 307,
+    branch_name: "PGD BÌNH PHƯỚC",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bình Phước",
+  }, "64307001": {
+    bank_id: 307,
+    branch_name: "PGD GIA LAI",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Gia Lai",
+  }, "72307001": {
+    bank_id: 307,
+    branch_name: "PGD LONG HOA",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Tây Ninh",
+  }, "60307001": {
+    bank_id: 307,
+    branch_name: "PGD PHAN THIẾT",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bình Thuận",
+  }, "79204003": {
+    bank_id: 204,
+    branch_name: "CN 11 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204009": {
+    bank_id: 204,
+    branch_name: "CN 3 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204005": {
+    bank_id: 204,
+    branch_name: "CN 4 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204008": {
+    bank_id: 204,
+    branch_name: "CN 6 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204043": {
+    bank_id: 204,
+    branch_name: "CN 7",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204007": {
+    bank_id: 204,
+    branch_name: "CN 8 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "79204012": {
+    bank_id: 204,
+    branch_name: "CN 9 HCM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "91204016": {
+    bank_id: 204,
+    branch_name: "CN AN BIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kiên Giang",
+  }, "01204045": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐAN PHƯỢNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "77204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐẤT ĐỎ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "74204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN DẦU TIẾNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Dương",
+  }, "11204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐIỆN BIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "11204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐIỆN BIÊN ĐÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "40204020": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN DIỄN CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "56204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN DIÊN KHÁNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "19204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỊNH HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Nguyên",
+  }, "75204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỊNH QUÁN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "40204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐÔ LƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "68204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐƠN DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "19204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỒNG HỶ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Nguyên",
+  }, "70204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỒNG PHÚ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "80204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỨC HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "80204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỨC HUỆ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "70204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỨC LIỄU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "60204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỨC LINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Thuận",
+  }, "42204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐỨC THỌ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "35204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN DUY TIÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "27204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN GIA BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "01204018": {
+    bank_id: 204,
+    branch_name: "CN HỒNG HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "34204011": {
+    bank_id: 204,
+    branch_name: "CN HƯNG HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Bình",
+  }, "79204034": {
+    bank_id: 204,
+    branch_name: "CN HÙNG VƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hồ Chí Minh",
+  }, "01204028": {
+    bank_id: 204,
+    branch_name: "CN HÙNG VƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "49204004": {
+    bank_id: 204,
+    branch_name: "CN HƯƠNG AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Nam",
+  }, "20204004": {
+    bank_id: 204,
+    branch_name: "CN HỮU LŨNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lạng Sơn",
+  }, "46204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN A LƯỚI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "40204022": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ANH SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "64204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN AYUNPA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "22204016": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BA CHẼ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "01204044": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BA VÌ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "58204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÁC ÁI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "10204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẮC HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "14204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẮC YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "04204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẢO LẠC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "04204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẢO LÂM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "10204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẢO THẮNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "10204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẢO YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "10204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÁT XÁT",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "74204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BẾN CÁT BÌNH DƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Dương",
+  }, "22204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÌNH LIÊU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "70204016": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÌNH LONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "35204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÌNH LỤC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "26204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÌNH XUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Vĩnh Phúc",
+  }, "70204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÙ ĐĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "70204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÙ ĐỐP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "70204017": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÙ GIA MẬP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "70204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN BÙ NHO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "56204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CAM LÂM",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "45204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CAM LỘ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "75204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CẨM MỸ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "42204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CẨM XUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "80204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CẦN ĐƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "80204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CẦN GIUỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "42204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CAN LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "17204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CAO PHONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "77204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHÂU ĐỨC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "80204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHÂU THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Long An",
+  }, "08204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHIÊM HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tuyên Quang",
+  }, "70204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHƠN THÀNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "64204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHƯ PĂH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "64204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHƯ SÊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "01204050": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CHƯƠNG MỸ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "92204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CỜ ĐỎ CẦN THƠ II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "22204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CÔ TÔ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "10204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CỐC LẾU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "40204016": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CON CUÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "77204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CÔN ĐẢO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "66204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN CƯ KUIN DAK LAK",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đắk Lắk",
+  }, "17204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐÀ BẮC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "70204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐA KIA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "45204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐA KRONG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "62204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐẮC TÔ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "19204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐẠI TỪ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Nguyên",
+  }, "64204021": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐAK ĐOA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "62204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐẮK HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "64204015": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐAK PƠ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "62204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN DAKGLEI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "22204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐẦM HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "68204017": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN ĐAM RÔNG LÂM ĐỒNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "64204023": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN IAPA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "64204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KBANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "56204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KHÁNH SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "56204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KHÁNH VĨNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "35204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KIM BẰNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "17204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KIM BÔI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "37204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KIM SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Bình",
+  }, "62204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KON RẪY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "64204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KÔNG CHRO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "64204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KRÔNG PA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "44204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MINH HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Bình",
+  }, "14204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MỘC CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "11204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG ẢNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "11204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG CHÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "10204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG KHƯƠNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lào Cai",
+  }, "14204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG LA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "11204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG LAY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "11204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MƯỜNG NHÉ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Điện Biên",
+  }, "01204040": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MỸ ĐỨC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "33204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MỸ HÀO",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hưng Yên",
+  }, "08204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NA HANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tuyên Quang",
+  }, "40204010": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NAM ĐÀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "46204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NAM ĐÔNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "40204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NGHI LỘC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "42204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NGHI XUÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "40204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NGHĨA ĐÀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "62204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NGỌC HỒI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Kon Tum",
+  }, "04204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NGUYÊN BINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "37204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NHO QUAN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Bình",
+  }, "75204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NHƠN TRẠCH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Đồng Nai",
+  }, "42204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KỲ ANH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "40204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KỲ SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "17204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN KỲ SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "17204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LẠC SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "08204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LÂM BÌNH TUYÊN QUANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tuyên Quang",
+  }, "68204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LÂM HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Lâm Đồng",
+  }, "24204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LẠNG GIANG BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "26204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LẬP THẠCH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Vĩnh Phúc",
+  }, "42204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LỘC HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "70204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LỘC HIỆP",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "70204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LỘC NINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "77204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LONG ĐIỀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "79348002": {
+    bank_id: 348,
+    branch_name: "CN PHÚ NHUẬN",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Hồ Chí Minh",
+  }, "24204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LỤC NAM BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "24204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LỤC NGẠN BẮC GIANG II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "17204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LƯƠNG SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "27204004": {
+    bank_id: 204,
+    branch_name: "CN HUYEN LƯƠNG TÀI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Ninh",
+  }, "35204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN LÝ NHÂN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nam",
+  }, "17204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MAI CHÂU",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hoà Bình",
+  }, "14204011": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MAI SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Sơn La",
+  }, "64204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN MANG YANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "37204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN GIA VIỄN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Bình",
+  }, "45204008": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN GIO LINH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "04204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HẠ LANG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "04204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HÀ QUẢNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "22204013": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HẢI HÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "45204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HẢI LĂNG",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "08204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HÀM YÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Tuyên Quang",
+  }, "24204012": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HIỆP HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bắc Giang",
+  }, "04204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HÒA AN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cao Bằng",
+  }, "37204002": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HOA LƯ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Bình",
+  }, "01204037": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HOÀI ĐỨC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Nội",
+  }, "22204014": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HOÀNH BỒ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Ninh",
+  }, "70204018": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HỚN QUẢN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Bình Phước",
+  }, "40204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯNG NGUYÊN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Nghệ An",
+  }, "45204009": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯỚNG HÓA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Quảng Trị",
+  }, "42204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯƠNG KHÊ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "42204015": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯƠNG SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Hà Tĩnh",
+  }, "46204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯƠNG THỦY",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "46204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN HƯƠNG TRÀ",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "64204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN IA GRAI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Gia Lai",
+  }, "89357001": {
+    bank_id: 357,
+    branch_name: "CN AN GIANG",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "An Giang",
+  }, "24357001": {
+    bank_id: 357,
+    branch_name: "CN BẮC GIANG",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bắc Giang",
+  }, "06357001": {
+    bank_id: 357,
+    branch_name: "CN BẮC KẠN",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bắc Kạn",
+  }, "95357001": {
+    bank_id: 357,
+    branch_name: "CN BẠC LIÊU",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bạc Liêu",
+  }, "27357001": {
+    bank_id: 357,
+    branch_name: "CN BẮC NINH",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bắc Ninh",
+  }, "83357001": {
+    bank_id: 357,
+    branch_name: "CN BẾN TRE",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bến Tre",
+  }, "52357001": {
+    bank_id: 357,
+    branch_name: "CN BÌNH ĐỊNH",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bình Định",
+  }, "74357001": {
+    bank_id: 357,
+    branch_name: "CN BÌNH DƯƠNG",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bình Dương",
+  }, "70357001": {
+    bank_id: 357,
+    branch_name: "CN BÌNH PHƯỚC",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bình Phước",
+  }, "60357001": {
+    bank_id: 357,
+    branch_name: "CN BÌNH THUẬN",
+    bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
+    area: "Bình Thuận",
+  }, "01348008": {
+    bank_id: 348,
+    branch_name: "CN HOÀN KIẾM",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Hà Nội",
+  }, "22348002": {
+    bank_id: 348,
+    branch_name: "CN HÒN GAI",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Quảng Ninh",
+  }, "31348003": {
+    bank_id: 348,
+    branch_name: "CN HỒNG BÀNG",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Hải Phòng",
+  }, "46348001": {
+    bank_id: 348,
+    branch_name: "CN HUẾ",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Thừa Thiên Huế",
+  }, "33348001": {
+    bank_id: 348,
+    branch_name: "CN HƯNG YÊN",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Hưng Yên",
+  }, "56348001": {
+    bank_id: 348,
+    branch_name: "CN KHÁNH HÒA",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Khánh Hòa",
+  }, "91348001": {
+    bank_id: 348,
+    branch_name: "CN KIÊN GIANG",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Kiên Giang",
+  }, "27348002": {
+    bank_id: 348,
+    branch_name: "CN KINH BẮC",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Bắc Ninh",
+  }, "68348001": {
+    bank_id: 348,
+    branch_name: "CN LÂM ĐỒNG",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Lâm Đồng",
+  }, "20348001": {
+    bank_id: 348,
+    branch_name: "CN LẠNG SƠN",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Lạng Sơn",
+  }, "10348001": {
+    bank_id: 348,
+    branch_name: "CN LÀO CAI",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Lào Cai",
+  }, "31348002": {
+    bank_id: 348,
+    branch_name: "CN LÊ CHÂN",
+    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
+    area: "Hải Phòng",
+  }, "58204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NINH HẢI",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "56204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NINH HÒA",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Khánh Hòa",
+  }, "58204005": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NINH PHƯỚC",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "58204003": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN NINH SƠN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Ninh Thuận",
+  }, "46204004": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHONG ĐIỀN",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thừa Thiên Huế",
+  }, "92204006": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHONG ĐIỀN CẦN THƠ II",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Cần Thơ",
+  }, "19204007": {
+    bank_id: 204,
+    branch_name: "CN HUYỆN PHÚ BÌNH",
+    bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
+    area: "Thái Nguyên",
+  }, "89323001": {
+    bank_id: 323,
+    branch_name: "CN AN GIANG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "An Giang",
+  }, "77323001": {
+    bank_id: 323,
+    branch_name: "CN BÀ RỊA VŨNG TÀU",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "95323001": {
+    bank_id: 323,
+    branch_name: "CN BẠC LIÊU",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bạc Liêu",
+  }, "74323001": {
+    bank_id: 323,
+    branch_name: "CN BÌNH DƯƠNG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bình Dương",
+  }, "70323001": {
+    bank_id: 323,
+    branch_name: "CN BÌNH PHƯỚC",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bình Phước",
+  }, "60323001": {
+    bank_id: 323,
+    branch_name: "CN BÌNH THUẬN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bình Thuận",
+  }, "92323001": {
+    bank_id: 323,
+    branch_name: "CN CẦN THƠ",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Cần Thơ",
+  }, "48323001": {
+    bank_id: 323,
+    branch_name: "CN ĐÀ NẴNG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Đà Nẵng",
+  }, "11323002": {
+    bank_id: 323,
+    branch_name: "CN ĐIỆN BIÊN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Điện Biên",
+  }, "87323001": {
+    bank_id: 323,
+    branch_name: "CN ĐỒNG THÁP",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Đồng Tháp",
+  }, "64323001": {
+    bank_id: 323,
+    branch_name: "CN GIA LAI",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Gia Lai",
+  }, "01323001": {
+    bank_id: 323,
+    branch_name: "CN HÀ NỘI",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hà Nội",
+  }, "31323001": {
+    bank_id: 323,
+    branch_name: "CN HẢI PHÒNG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hải Phòng",
+  }, "56323001": {
+    bank_id: 323,
+    branch_name: "CN KHÁNH HÒA",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Khánh Hòa",
+  }, "91323001": {
+    bank_id: 323,
+    branch_name: "CN KIÊN GIANG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Kiên Giang",
+  }, "20323002": {
+    bank_id: 323,
+    branch_name: "CN LẠNG SƠN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Lạng Sơn",
+  }, "40323001": {
+    bank_id: 323,
+    branch_name: "CN NGHỆ AN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Nghệ An",
+  }, "27323001": {
+    bank_id: 323,
+    branch_name: "CN PGD BẮC NINH",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Bắc Ninh",
+  }, "49323001": {
+    bank_id: 323,
+    branch_name: "CN QUẢNG NAM",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Quảng Nam",
+  }, "22323001": {
+    bank_id: 323,
+    branch_name: "CN QUẢNG NINH",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Quảng Ninh",
+  }, "79323002": {
+    bank_id: 323,
+    branch_name: "CN SÀI GÒN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hồ Chí Minh",
+  }, "79323003": {
+    bank_id: 323,
+    branch_name: "CN SỎ GIAO DICH",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hồ Chí Minh",
+  }, "94323001": {
+    bank_id: 323,
+    branch_name: "CN SÓC TRĂNG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Sóc Trăng",
+  }, "14323001": {
+    bank_id: 323,
+    branch_name: "CN SƠN LA",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Sơn La",
+  }, "72323001": {
+    bank_id: 323,
+    branch_name: "CN TÂY NINH",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Tây Ninh",
+  }, "34323002": {
+    bank_id: 323,
+    branch_name: "CN THÁI BÌNH",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Thái Bình",
+  }, "38323002": {
+    bank_id: 323,
+    branch_name: "CN THANH HÓA",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Thanh Hóa",
+  }, "82323001": {
+    bank_id: 323,
+    branch_name: "CN TIỀN GIANG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Tiền Giang",
+  }, "79323001": {
+    bank_id: 323,
+    branch_name: "CN TPHCM",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hồ Chí Minh",
+  }, "86323001": {
+    bank_id: 323,
+    branch_name: "CN VĨNH LONG",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Vĩnh Long",
+  }, "46323001": {
+    bank_id: 323,
+    branch_name: "PGD HUẾ",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Thừa Thiên Huế",
+  }, "80323001": {
+    bank_id: 323,
+    branch_name: "PGD LONG AN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Long An",
+  }, "33323001": {
+    bank_id: 323,
+    branch_name: "PGD MỸ HÀO",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Hưng Yên",
+  }, "26323001": {
+    bank_id: 323,
+    branch_name: "PGD PHÚC YÊN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Vĩnh Phúc",
+  }, "75323001": {
+    bank_id: 323,
+    branch_name: "PGD TÂN TIẾN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Đồng Nai",
+  }, "19323001": {
+    bank_id: 323,
+    branch_name: "PGD THÁI NGUYÊN",
+    bank_name: "ABBANK-NGÂN HÀNG TMCP AN BÌNH",
+    area: "Thái Nguyên",
+  }, "01610001": {
+    bank_id: 610,
+    branch_name: "HÀ NỘI",
+    bank_name: "ABN - AMRO BANK",
+    area: "Hà Nội",
+  }, "89307001": {
+    bank_id: 307,
+    branch_name: "CN AN GIANG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "An Giang",
+  }, "24307001": {
+    bank_id: 307,
+    branch_name: "CN BẮC GIANG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bắc Giang",
+  }, "95307001": {
+    bank_id: 307,
+    branch_name: "CN BẠC LIÊU",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bạc Liêu",
+  }, "27307001": {
+    bank_id: 307,
+    branch_name: "CN BẮC NINH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bắc Ninh",
+  }, "83307001": {
+    bank_id: 307,
+    branch_name: "CN BẾN TRE",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bến Tre",
+  }, "52307001": {
+    bank_id: 307,
+    branch_name: "CN BÌNH ĐỊNH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bình Định",
+  }, "74307001": {
+    bank_id: 307,
+    branch_name: "CN BÌNH DƯƠNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Bình Dương",
+  }, "96307001": {
+    bank_id: 307,
+    branch_name: "CN CÀ MAU",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Cà Mau",
+  }, "92307001": {
+    bank_id: 307,
+    branch_name: "CN CẦN THƠ",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Cần Thơ",
+  }, "79307005": {
+    bank_id: 307,
+    branch_name: "CN CHỢ LỚN",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hồ Chí Minh",
+  }, "48307001": {
+    bank_id: 307,
+    branch_name: "CN ĐÀ NẴNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Đà Nẵng",
+  }, "66307001": {
+    bank_id: 307,
+    branch_name: "CN DAC LAK",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Đắk Lắk",
+  }, "75307001": {
+    bank_id: 307,
+    branch_name: "CN ĐỒNG NAI",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Đồng Nai",
+  }, "87307001": {
+    bank_id: 307,
+    branch_name: "CN ĐỒNG THÁP",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Đồng Tháp",
+  }, "31307002": {
+    bank_id: 307,
+    branch_name: "CN DUYÊN HẢI",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hải Phòng",
+  }, "35307001": {
+    bank_id: 307,
+    branch_name: "CN HÀ NAM",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hà Nam",
+  }, "01307001": {
+    bank_id: 307,
+    branch_name: "CN HÀ NỘI",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hà Nội",
+  }, "42307001": {
+    bank_id: 307,
+    branch_name: "CN HÀ TĨNH",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hà Tĩnh",
+  }, "30307001": {
+    bank_id: 307,
+    branch_name: "CN HẢI DƯƠNG",
+    bank_name: "ACB-NGÂN HÀNG TMCP Á CHÂU",
+    area: "Hải Dương",
+  }, "72353001": {
+    bank_id: 353,
+    branch_name: "CN TÂY NINH",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Tây Ninh",
+  }, "82353001": {
+    bank_id: 353,
+    branch_name: "CN TIỀN GIANG",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Tiền Giang",
+  }, "84353001": {
+    bank_id: 353,
+    branch_name: "CN TRÀ VINH",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Trà Vinh",
+  }, "86353001": {
+    bank_id: 353,
+    branch_name: "CN VĨNH LONG",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Vĩnh Long",
+  }, "77353001": {
+    bank_id: 353,
+    branch_name: "CN VŨNG TÀU",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Bà Rịa - Vũng Tàu",
+  }, "91353001": {
+    bank_id: 353,
+    branch_name: "HỘI SỞ",
+    bank_name: "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG",
+    area: "Kiên Giang",
+  }, "77357001": {
     bank_id: 357,
     branch_name: "CN  VŨNG TÀU",
     bank_name: "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  79309009: {
+  }, "79309009": {
     bank_id: 309,
     branch_name: "CN CỘNG HÒA",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  68309001: {
+  }, "68309001": {
     bank_id: 309,
     branch_name: "CN ĐÀ LẠT",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Lâm Đồng",
-  },
-  48309001: {
+  }, "48309001": {
     bank_id: 309,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Đà Nẵng",
-  },
-  66309001: {
+  }, "66309001": {
     bank_id: 309,
     branch_name: "CN DAK LAK",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Đắk Lắk",
-  },
-  1309003: {
+  }, "01309003": {
     bank_id: 309,
     branch_name: "CN ĐÔNG ĐÔ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  75309001: {
+  }, "75309001": {
     bank_id: 309,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Đồng Nai",
-  },
-  87309001: {
+  }, "87309001": {
     bank_id: 309,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Đồng Tháp",
-  },
-  79309010: {
+  }, "79309010": {
     bank_id: 309,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  64309001: {
+  }, "64309001": {
     bank_id: 309,
     branch_name: "CN GIA LAI",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Gia Lai",
-  },
-  79309007: {
+  }, "79309007": {
     bank_id: 309,
     branch_name: "CN GÒ VẤP",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  35309001: {
+  }, "35309001": {
     bank_id: 309,
     branch_name: "CN HÀ NAM",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nam",
-  },
-  34309001: {
+  }, "34309001": {
     bank_id: 309,
     branch_name: "CN THÁI BÌNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Thái Bình",
-  },
-  19309001: {
+  }, "19309001": {
     bank_id: 309,
     branch_name: "CN THÁI NGUYÊN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Thái Nguyên",
-  },
-  79320001: {
+  }, "79320001": {
     bank_id: 320,
     branch_name: "CN TP HCM",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hồ Chí Minh",
-  },
-  77320001: {
+  }, "77320001": {
     bank_id: 320,
     branch_name: "CN VŨNG TÀU",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Bà Rịa - Vũng Tàu",
-  },
-  1320001: {
+  }, "01320001": {
     bank_id: 320,
     branch_name: "HỘI SỞ CHÍNH",
     bank_name: "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU",
     area: "Hà Nội",
-  },
-  89321001: {
+  }, "89321001": {
     bank_id: 321,
     branch_name: "CN AN GIANG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "An Giang",
-  },
-  1321003: {
+  }, "01321003": {
     bank_id: 321,
     branch_name: "CN BA ĐÌNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Nội",
-  },
-  24321001: {
+  }, "24321001": {
     bank_id: 321,
     branch_name: "CN BẮC GIANG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bắc Giang",
-  },
-  27321001: {
+  }, "27321001": {
     bank_id: 321,
     branch_name: "CN BẮC NINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bắc Ninh",
-  },
-  83321001: {
+  }, "83321001": {
     bank_id: 321,
     branch_name: "CN BẾN TRE",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bến Tre",
-  },
-  52321001: {
+  }, "52321001": {
     bank_id: 321,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bình Định",
-  },
-  74321001: {
+  }, "74321001": {
     bank_id: 321,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bình Dương",
-  },
-  70321001: {
+  }, "70321001": {
     bank_id: 321,
     branch_name: "CN BÌNH PHƯỚC",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bình Phước",
-  },
-  60321001: {
+  }, "60321001": {
     bank_id: 321,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Bình Thuận",
-  },
-  96321001: {
+  }, "96321001": {
     bank_id: 321,
     branch_name: "CN CÀ MAU",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Cà Mau",
-  },
-  92321001: {
+  }, "92321001": {
     bank_id: 321,
     branch_name: "CN CẦN THƠ",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Cần Thơ",
-  },
-  79321006: {
+  }, "79321006": {
     bank_id: 321,
     branch_name: "CN CỘNG HÒA",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  48321001: {
+  }, "48321001": {
     bank_id: 321,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đà Nẵng",
-  },
-  66321001: {
+  }, "66321001": {
     bank_id: 321,
     branch_name: "CN DAK LAK",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đắk Lắk",
-  },
-  75321001: {
+  }, "75321001": {
     bank_id: 321,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  87321001: {
+  }, "87321001": {
     bank_id: 321,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Tháp",
-  },
-  79321011: {
+  }, "79321011": {
     bank_id: 321,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  1309009: {
+  }, "01309009": {
     bank_id: 309,
     branch_name: "CN HÀ NỘI",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  42309001: {
+  }, "42309001": {
     bank_id: 309,
     branch_name: "CN HÀ TĨNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Tĩnh",
-  },
-  30309001: {
+  }, "30309001": {
     bank_id: 309,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hải Dương",
-  },
-  79309001: {
+  }, "79309001": {
     bank_id: 309,
     branch_name: "CN HỒ CHÍ MINH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  17309001: {
+  }, "17309001": {
     bank_id: 309,
     branch_name: "CN HÒA BÌNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hoà Bình",
-  },
-  46309001: {
+  }, "46309001": {
     bank_id: 309,
     branch_name: "CN HUẾ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Thừa Thiên Huế",
-  },
-  91309001: {
+  }, "91309001": {
     bank_id: 309,
     branch_name: "CN KIÊN GIANG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Kiên Giang",
-  },
-  1309008: {
+  }, "01309008": {
     bank_id: 309,
     branch_name: "CN KINH ĐÔ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  80309001: {
+  }, "80309001": {
     bank_id: 309,
     branch_name: "CN LONG AN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Long An",
-  },
-  36309001: {
+  }, "36309001": {
     bank_id: 309,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Nam Định",
-  },
-  40309001: {
+  }, "40309001": {
     bank_id: 309,
     branch_name: "CN NGHỆ AN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Nghệ An",
-  },
-  1309004: {
+  }, "01309004": {
     bank_id: 309,
     branch_name: "CN NGÔ QUYỀN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hà Nội",
-  },
-  56309001: {
+  }, "56309001": {
     bank_id: 309,
     branch_name: "CN NHA TRANG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Khánh Hòa",
-  },
-  25309001: {
+  }, "25309001": {
     bank_id: 309,
     branch_name: "CN PHÚ THỌ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Phú Thọ",
-  },
-  79309013: {
+  }, "79309013": {
     bank_id: 309,
     branch_name: "CN QUẬN 11",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  79309008: {
+  }, "79309008": {
     bank_id: 309,
     branch_name: "CN QUẬN 2",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  79309012: {
+  }, "79309012": {
     bank_id: 309,
     branch_name: "CN QUẬN 7",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  44309001: {
+  }, "44309001": {
     bank_id: 309,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Quảng Bình",
-  },
-  49309001: {
+  }, "49309001": {
     bank_id: 309,
     branch_name: "CN QUẢNG NAM",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Quảng Nam",
-  },
-  22309001: {
+  }, "22309001": {
     bank_id: 309,
     branch_name: "CN QUẢNG NINH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Quảng Ninh",
-  },
-  45309001: {
+  }, "45309001": {
     bank_id: 309,
     branch_name: "CN QUẢNG TRỊ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Quảng Trị",
-  },
-  79309006: {
+  }, "79309006": {
     bank_id: 309,
     branch_name: "CN SÀI GÒN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  80348001: {
+  }, "80348001": {
     bank_id: 348,
     branch_name: "CN LONG AN",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Long An",
-  },
-  40348001: {
+  }, "40348001": {
     bank_id: 348,
     branch_name: "CN NGHỆ AN",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Nghệ An",
-  },
-  37348001: {
-    bank_id: 348,
-    branch_name: "CN NINH BÌNH",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Ninh Bình",
-  },
-  79348002: {
-    bank_id: 348,
-    branch_name: "CN PHÚ NHUẬN",
-    bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
-    area: "Hồ Chí Minh",
-  },
-  49348001: {
+  }, "49348001": {
     bank_id: 348,
     branch_name: "CN QUẢNG NAM",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Quảng Nam",
-  },
-  51348001: {
+  }, "51348001": {
     bank_id: 348,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Quảng Ngãi",
-  },
-  22348001: {
+  }, "22348001": {
     bank_id: 348,
     branch_name: "CN QUẢNG NINH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Quảng Ninh",
-  },
-  79348003: {
+  }, "79348003": {
     bank_id: 348,
     branch_name: "CN SÀI GÒN",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hồ Chí Minh",
-  },
-  94348001: {
+  }, "94348001": {
     bank_id: 348,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Sóc Trăng",
-  },
-  74348002: {
+  }, "74348002": {
     bank_id: 348,
     branch_name: "CN SÔNG BÉ",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Bình Dương",
-  },
-  48348002: {
+  }, "48348002": {
     bank_id: 348,
     branch_name: "CN TÂY ĐÀ NẴNG",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Đà Nẵng",
-  },
-  1348011: {
+  }, "01348011": {
     bank_id: 348,
     branch_name: "CN TÂY HÀ NỘI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  1348004: {
+  }, "01348004": {
     bank_id: 348,
     branch_name: "CN TÂY NAM HÀ NỘI",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Hà Nội",
-  },
-  72348001: {
+  }, "72348001": {
     bank_id: 348,
     branch_name: "CN TÂY NINH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Tây Ninh",
-  },
-  34348001: {
+  }, "34348001": {
     bank_id: 348,
     branch_name: "CN THÁI BÌNH",
     bank_name: "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI",
     area: "Thái Bình",
-  },
-  27309001: {
+  }, "27309001": {
     bank_id: 309,
     branch_name: "CN BẮC NINH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bắc Ninh",
-  },
-  79309011: {
+  }, "79309011": {
     bank_id: 309,
     branch_name: "CN BẾN THÀNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Hồ Chí Minh",
-  },
-  52309001: {
+  }, "52309001": {
     bank_id: 309,
     branch_name: "CN BÌNH ĐỊNH",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bình Định",
-  },
-  74309001: {
+  }, "74309001": {
     bank_id: 309,
     branch_name: "CN BÌNH DƯƠNG",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bình Dương",
-  },
-  60309001: {
+  }, "60309001": {
     bank_id: 309,
     branch_name: "CN BÌNH THUẬN",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Bình Thuận",
-  },
-  96309001: {
+  }, "96309001": {
     bank_id: 309,
     branch_name: "CN CÀ MAU",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Cà Mau",
-  },
-  92309001: {
+  }, "92309001": {
     bank_id: 309,
     branch_name: "CN CẦN THƠ",
     bank_name: "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG",
     area: "Cần Thơ",
-  },
-  1317005: {
+  }, "01317005": {
     bank_id: 317,
     branch_name: "CN CẦU GIẤY",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  79317001: {
+  }, "79317001": {
     bank_id: 317,
     branch_name: "CN CHỢ LỚN",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hồ Chí Minh",
-  },
-  48317001: {
+  }, "48317001": {
     bank_id: 317,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Đà Nẵng",
-  },
-  66317001: {
+  }, "66317001": {
     bank_id: 317,
     branch_name: "CN DAK LAK",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Đắk Lắk",
-  },
-  1317006: {
+  }, "01317006": {
     bank_id: 317,
     branch_name: "CN ĐỐNG ĐA",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  75317001: {
+  }, "75317001": {
     bank_id: 317,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Đồng Nai",
-  },
-  1317008: {
+  }, "01317008": {
     bank_id: 317,
     branch_name: "CN HÀ ĐÔNG",
     bank_name: "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á",
     area: "Hà Nội",
-  },
-  56321001: {
+  }, "56321001": {
     bank_id: 321,
     branch_name: "CN NHA TRANG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Khánh Hòa",
-  },
-  37321001: {
+  }, "37321001": {
     bank_id: 321,
     branch_name: "CN NINH BÌNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Ninh Bình",
-  },
-  79321002: {
+  }, "79321002": {
     bank_id: 321,
     branch_name: "CN PHÚ NHUẬN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  54321001: {
+  }, "54321001": {
     bank_id: 321,
     branch_name: "CN PHÚ YÊN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Phú Yên",
-  },
-  44321001: {
+  }, "44321001": {
     bank_id: 321,
     branch_name: "CN QUẢNG BÌNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Quảng Bình",
-  },
-  49321001: {
+  }, "49321001": {
     bank_id: 321,
     branch_name: "CN QUẢNG NAM",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Quảng Nam",
-  },
-  51321001: {
+  }, "51321001": {
     bank_id: 321,
     branch_name: "CN QUẢNG NGÃI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Quảng Ngãi",
-  },
-  22321001: {
+  }, "22321001": {
     bank_id: 321,
     branch_name: "CN QUẢNG NINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Quảng Ninh",
-  },
-  79321009: {
+  }, "79321009": {
     bank_id: 321,
     branch_name: "CN SÀI GÒN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  75321002: {
+  }, "75321002": {
     bank_id: 321,
     branch_name: "CN SGD ĐỒNG NAI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  94321001: {
+  }, "94321001": {
     bank_id: 321,
     branch_name: "CN SÓC TRĂNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Sóc Trăng",
-  },
-  75321003: {
+  }, "75321003": {
     bank_id: 321,
     branch_name: "CN TAM HIỆP",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  72321001: {
+  }, "72321001": {
     bank_id: 321,
     branch_name: "CN TÂY NINH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Tây Ninh",
-  },
-  38321001: {
+  }, "38321001": {
     bank_id: 321,
     branch_name: "CN THANH HÓA",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Thanh Hóa",
-  },
-  82321001: {
+  }, "82321001": {
     bank_id: 321,
     branch_name: "CN TIỀN GIANG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Tiền Giang",
-  },
-  64321001: {
+  }, "64321001": {
     bank_id: 321,
     branch_name: "CN GIA LAI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Gia Lai",
-  },
-  1321001: {
+  }, "01321001": {
     bank_id: 321,
     branch_name: "CN HÀ NỘI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Nội",
-  },
-  42321001: {
+  }, "42321001": {
     bank_id: 321,
     branch_name: "CN HÀ TĨNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Tĩnh",
-  },
-  30321001: {
+  }, "30321001": {
     bank_id: 321,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hải Dương",
-  },
-  31321001: {
+  }, "31321001": {
     bank_id: 321,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hải Phòng",
-  },
-  79321012: {
+  }, "79321012": {
     bank_id: 321,
     branch_name: "CN HÀNG XANH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  79321007: {
+  }, "79321007": {
     bank_id: 321,
     branch_name: "CN HIỆP PHÚ",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  1321005: {
+  }, "01321005": {
     bank_id: 321,
     branch_name: "CN HỒ GƯƠM",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Nội",
-  },
-  75321006: {
+  }, "75321006": {
     bank_id: 321,
     branch_name: "CN HỐ NAI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Đồng Nai",
-  },
-  1321002: {
+  }, "01321002": {
     bank_id: 321,
     branch_name: "CN HOÀN KIẾM",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Nội",
-  },
-  79321001: {
+  }, "79321001": {
     bank_id: 321,
     branch_name: "CN HỘI SỞ CHÍNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  46321001: {
+  }, "46321001": {
     bank_id: 321,
     branch_name: "CN HUẾ",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Thừa Thiên Huế",
-  },
-  1321004: {
+  }, "01321004": {
     bank_id: 321,
     branch_name: "CN HÙNG VƯƠNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hà Nội",
-  },
-  91321001: {
+  }, "91321001": {
     bank_id: 321,
     branch_name: "CN KIÊN GIANG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Kiên Giang",
-  },
-  62321001: {
+  }, "62321001": {
     bank_id: 321,
     branch_name: "CN KON TUM",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Kon Tum",
-  },
-  68321001: {
+  }, "68321001": {
     bank_id: 321,
     branch_name: "CN LÂM ĐỒNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Lâm Đồng",
-  },
-  20321001: {
+  }, "20321001": {
     bank_id: 321,
     branch_name: "CN LẠNG SƠN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Lạng Sơn",
-  },
-  79321003: {
+  }, "79321003": {
     bank_id: 321,
     branch_name: "CN LÃNH BINH THĂNG",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  10321001: {
+  }, "10321001": {
     bank_id: 321,
     branch_name: "CN LÀO CAI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Lào Cai",
-  },
-  80321001: {
+  }, "80321001": {
     bank_id: 321,
     branch_name: "CN LONG AN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Long An",
-  },
-  36321001: {
+  }, "36321001": {
     bank_id: 321,
     branch_name: "CN NAM ĐỊNH",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Nam Định",
-  },
-  40321001: {
+  }, "40321001": {
     bank_id: 321,
     branch_name: "CN NGHỆ AN",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Nghệ An",
-  },
-  79321010: {
+  }, "79321010": {
     bank_id: 321,
     branch_name: "CN NGUYỄN ĐÌNH CHIỂU",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  79321004: {
+  }, "79321004": {
     bank_id: 321,
     branch_name: "CN NGUYỄN TRÃI",
     bank_name: "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM",
     area: "Hồ Chí Minh",
-  },
-  1334002: {
+  }, "01334002": {
     bank_id: 334,
     branch_name: "CN CẦU GIẤY",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hà Nội",
-  },
-  48334002: {
+  }, "48334002": {
     bank_id: 334,
     branch_name: "CN CHỢ HÀN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Đà Nẵng",
-  },
-  79334003: {
+  }, "79334003": {
     bank_id: 334,
     branch_name: "CN CHỢ LỚN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334012: {
+  }, "79334012": {
     bank_id: 334,
     branch_name: "CN CN 11",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334013: {
+  }, "79334013": {
     bank_id: 334,
     branch_name: "CN CN 6",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334002: {
+  }, "79334002": {
     bank_id: 334,
     branch_name: "CN CỐNG QUỲNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334010: {
+  }, "79334010": {
     bank_id: 334,
     branch_name: "CN CỦ CHI",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  48334001: {
+  }, "48334001": {
     bank_id: 334,
     branch_name: "CN ĐÀ NẴNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Đà Nẵng",
-  },
-  66334001: {
+  }, "66334001": {
     bank_id: 334,
     branch_name: "CN DAKLAK",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Đắk Lắk",
-  },
-  75334001: {
+  }, "75334001": {
     bank_id: 334,
     branch_name: "CN ĐỒNG NAI",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Đồng Nai",
-  },
-  87334001: {
+  }, "87334001": {
     bank_id: 334,
     branch_name: "CN ĐỒNG THÁP",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Đồng Tháp",
-  },
-  79334005: {
+  }, "79334005": {
     bank_id: 334,
     branch_name: "CN GIA ĐỊNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  64334001: {
+  }, "64334001": {
     bank_id: 334,
     branch_name: "CN GIA LAI",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Gia Lai",
-  },
-  1334004: {
+  }, "01334004": {
     bank_id: 334,
     branch_name: "CN HÀ NỘI",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hà Nội",
-  },
-  1334001: {
+  }, "01334001": {
     bank_id: 334,
     branch_name: "CN HAI BÀ TRƯNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hà Nội",
-  },
-  30334001: {
+  }, "30334001": {
     bank_id: 334,
     branch_name: "CN HẢI DƯƠNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hải Dương",
-  },
-  31334002: {
+  }, "31334002": {
     bank_id: 334,
     branch_name: "CN HẢI PHÒNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hải Phòng",
-  },
-  79334004: {
+  }, "79334004": {
     bank_id: 334,
     branch_name: "CN HÓC MÔN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  56334001: {
+  }, "56334001": {
     bank_id: 334,
     branch_name: "CN KHÁNH HÒA",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Khánh Hòa",
-  },
-  91334001: {
+  }, "91334001": {
     bank_id: 334,
     branch_name: "CN KIÊN GIANG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Kiên Giang",
-  },
-  80334001: {
+  }, "80334001": {
     bank_id: 334,
     branch_name: "CN LONG AN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Long An",
-  },
-  40334001: {
+  }, "40334001": {
     bank_id: 334,
     branch_name: "CN NGHỆ AN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Nghệ An",
-  },
-  92334002: {
+  }, "92334002": {
     bank_id: 334,
     branch_name: "CN NINH KIỀU",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Cần Thơ",
-  },
-  79334016: {
+  }, "79334016": {
     bank_id: 334,
     branch_name: "CN PHẠM NGỌC THẠCH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334015: {
+  }, "79334015": {
     bank_id: 334,
     branch_name: "CN PHÙ ĐỔNG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334009: {
+  }, "79334009": {
     bank_id: 334,
     branch_name: "CN QUẬN 10",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  22334001: {
+  }, "22334001": {
     bank_id: 334,
     branch_name: "CN QUẢNG NINH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Quảng Ninh",
-  },
-  79334014: {
+  }, "79334014": {
     bank_id: 334,
     branch_name: "CN SÀI GÒN",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334006: {
+  }, "79334006": {
     bank_id: 334,
     branch_name: "CN TÂN BÌNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  79334007: {
+  }, "79334007": {
     bank_id: 334,
     branch_name: "CN TÂN ĐỊNH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  1334003: {
+  }, "01334003": {
     bank_id: 334,
     branch_name: "CN THĂNG LONG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hà Nội",
-  },
-  38334001: {
+  }, "38334001": {
     bank_id: 334,
     branch_name: "CN THANH HÓA",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Thanh Hóa",
-  },
-  79334011: {
+  }, "79334011": {
     bank_id: 334,
     branch_name: "CN THỐNG NHẤT",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  82334001: {
+  }, "82334001": {
     bank_id: 334,
     branch_name: "CN TIỀN GIANG",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Tiền Giang",
-  },
-  79334001: {
+  }, "79334001": {
     bank_id: 334,
     branch_name: "CN TP HỒ CHÍ MINH",
     bank_name: "SCB-NGÂN HÀNG TMCP SÀI GÒN",
     area: "Hồ Chí Minh",
-  },
-  10204013: {
+  }, "10204013": {
     bank_id: 204,
     branch_name: "CN KIM THANH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lào Cai",
-  },
-  30204011: {
+  }, "30204011": {
     bank_id: 204,
     branch_name: "CN KINH MÔN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  66204022: {
+  }, "66204022": {
     bank_id: 204,
     branch_name: "CN KRÔNG ANA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  66204004: {
+  }, "66204004": {
     bank_id: 204,
     branch_name: "CN KRÔNG BÔNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  66204015: {
+  }, "66204015": {
     bank_id: 204,
     branch_name: "CN KRÔNG NĂNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  67204008: {
+  }, "67204008": {
     bank_id: 204,
     branch_name: "CN KRÔNG NÔ",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Nông",
-  },
-  66204013: {
+  }, "66204013": {
     bank_id: 204,
     branch_name: "CN KRÔNG PAK",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  37204011: {
+  }, "37204011": {
     bank_id: 204,
     branch_name: "CN KV BÌNH MINH NINH BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  37204013: {
+  }, "37204013": {
     bank_id: 204,
     branch_name: "CN KV GIÁN KHẨU NINH BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  72204003: {
+  }, "72204003": {
     bank_id: 204,
     branch_name: "CN KV MÍA ĐƯỜNG TÂN HƯNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  37204012: {
+  }, "37204012": {
     bank_id: 204,
     branch_name: "CN KV RIA NINH BÌNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Ninh Bình",
-  },
-  31204024: {
+  }, "31204024": {
     bank_id: 204,
     branch_name: "CN KỲ SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  68204009: {
+  }, "68204009": {
     bank_id: 204,
     branch_name: "CN LẠC DƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  17204011: {
+  }, "17204011": {
     bank_id: 204,
     branch_name: "CN LẠC THỦY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hoà Bình",
-  },
-  12204001: {
+  }, "12204001": {
     bank_id: 204,
     branch_name: "CN LAI CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  12204002: {
+  }, "12204002": {
     bank_id: 204,
     branch_name: "CN LAI CHÂU",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lai Châu",
-  },
-  87204010: {
+  }, "87204010": {
     bank_id: 204,
     branch_name: "CN LAI VUNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đồng Tháp",
-  },
-  66204024: {
+  }, "66204024": {
     bank_id: 204,
     branch_name: "CN LAK",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Đắk Lắk",
-  },
-  68204004: {
+  }, "68204004": {
     bank_id: 204,
     branch_name: "CN LÂM ĐỒNG II",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lâm Đồng",
-  },
-  38204006: {
+  }, "38204006": {
     bank_id: 204,
     branch_name: "CN LAM SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  80204013: {
+  }, "80204013": {
     bank_id: 204,
     branch_name: "CN KHU VỰC BẾN LỨC",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  80204010: {
+  }, "80204010": {
     bank_id: 204,
     branch_name: "CN KHU VỰC CẦU VOI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  80204012: {
+  }, "80204012": {
     bank_id: 204,
     branch_name: "CN KHU VỰC ĐỨC HÒA",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  80204009: {
+  }, "80204009": {
     bank_id: 204,
     branch_name: "CN KHU VỰC GÒ ĐEN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Long An",
-  },
-  34204008: {
+  }, "34204008": {
     bank_id: 204,
     branch_name: "CN KHU VỰC I",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  31204014: {
+  }, "31204014": {
     bank_id: 204,
     branch_name: "CN KIẾN AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  91204001: {
+  }, "91204001": {
     bank_id: 204,
     branch_name: "CN KIÊN GIANG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  91204003: {
+  }, "91204003": {
     bank_id: 204,
     branch_name: "CN KIÊN HẢI",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  91204009: {
+  }, "91204009": {
     bank_id: 204,
     branch_name: "CN KIÊN LƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Kiên Giang",
-  },
-  31204013: {
+  }, "31204013": {
     bank_id: 204,
     branch_name: "CN KIẾN THỤY",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Phòng",
-  },
-  34204010: {
+  }, "34204010": {
     bank_id: 204,
     branch_name: "CN KIẾN XƯƠNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thái Bình",
-  },
-  33204008: {
+  }, "33204008": {
     bank_id: 204,
     branch_name: "CN KIM ĐỘNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hưng Yên",
-  },
-  10204003: {
+  }, "10204003": {
     bank_id: 204,
     branch_name: "CN KIM TÂN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lào Cai",
-  },
-  30204003: {
+  }, "30204003": {
     bank_id: 204,
     branch_name: "CN KIM THÀNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hải Dương",
-  },
-  15204008: {
+  }, "15204008": {
     bank_id: 204,
     branch_name: "CN TRẤN YÊN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Yên Bái",
-  },
-  1204029: {
+  }, "01204029": {
     bank_id: 204,
     branch_name: "CN TRÀNG AN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  72204002: {
+  }, "72204002": {
     bank_id: 204,
     branch_name: "CN TRẢNG BÀNG",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Tây Ninh",
-  },
-  20204003: {
+  }, "20204003": {
     bank_id: 204,
     branch_name: "CN TRÀNG ĐỊNH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Lạng Sơn",
-  },
-  1204288: {
+  }, "01204288": {
     bank_id: 204,
     branch_name: "CN TRÀNG TIỀN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hà Nội",
-  },
-  89204005: {
+  }, "89204005": {
     bank_id: 204,
     branch_name: "CN TRI TÔN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "An Giang",
-  },
-  38204008: {
+  }, "38204008": {
     bank_id: 204,
     branch_name: "CN TRIỆU SƠN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Thanh Hóa",
-  },
-  36204008: {
+  }, "36204008": {
     bank_id: 204,
     branch_name: "CN TRỰC NINH",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Nam Định",
-  },
-  79204015: {
+  }, "79204015": {
     bank_id: 204,
     branch_name: "CN TRUNG TÂM SÀI GÒN",
     bank_name: "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN",
     area: "Hồ Chí Minh",
-  },
+  }
 };
 
 const BANK_AREA = [
