@@ -5,7 +5,7 @@ const DSA_STATUS = {
     "REJ_FINCAP": "Khả năng tài chính không phù hợp",
     "REJ_POLICY": "Không thỏa chính sách cho vay tại EC",
     "NOT_ELIGIBLE": "Cập nhật lần đầu không thành công",
-    "FAIL_EKYC": "eKYC thất bại",
+    "FAIL_EKYC": "eKYC thất bại : Chứng từ không nhận diện được",
     "KYC_RJPOLICY": "Không thỏa chính sách cho vay tại EC",
     "CKYC-WRI01": "Sai tên",
     "CKYC-WRI02": "Sai ngày tháng năm sinh",

@@ -2097,11 +2097,11 @@ function SetOfferDetail(offerList) {
         },
         {
           title: "Thanh toán hàng tháng có bảo hiểm",
-          data: "insurance_amount",
+          data: "percentage_insurance",
           render: (data) => {
             result =
               data != null
-                ? (data+selected_monthly_installment).toLocaleString("vi-VN", {
+                ? (parseInt(selected_monthly_installment / 100*data)+selected_monthly_installment).toLocaleString("vi-VN", {
                   style: "currency",
                   currency: "VND",
                 })
