@@ -1303,7 +1303,7 @@ let ajaxGetOffer = (request_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.error("ajaxGetOffer",result);
+    // console.error("ajaxGetOffer",result);
   });
 };
 

@@ -4661,7 +4661,7 @@ function DialLog(taskMDstage, nodeletevdac) {
 // ################################################################################
 // Send MonitorConf/StopMonitorConf command for recording of conferences
 function ConfSendRecording(taskconfrectype, taskconfrec, taskconffile, taskfromapi) {
-    console.log('Start recording of this call');
+    //console.log('Start recording of this call');
     
     if (inOUT == 'OUT') {
         tmp_vicidial_id = $(".formMain input[name='uniqueid']").val();
@@ -6358,7 +6358,7 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
                 }
             })
             .done(function (result) {
-                console.log("Loaded statuses");
+                // console.log("Loaded statuses");
                 $(".DispoSelectA")[0].empty;
                 bodyString = ``;
                 if (result.data.length>0){
@@ -6438,7 +6438,7 @@ function DispoSelectSubmit() {
                 show: true
             });
         } else {
-            console.log('Disposing call...');
+            // console.log('Disposing call...');
             var postData = {
                 goServerIP: server_ip,
                 goSessionName: session_name,
@@ -6987,7 +6987,7 @@ function CustomerData_update() {
         }
     })
     .done(function (result) {
-        console.log('Customer data updated...');
+        // console.log('Customer data updated...');
         
         $('.input-disabled').prop('disabled', true);
         $('.input-phone-disabled').prop('disabled', true);
@@ -7581,8 +7581,6 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     $(".formMain input[name='lead_id']").val(lead_id);
                     try {
                         thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason);
-                        console.log(thisVdata.request_id)
-                        console.log(thisVdata.status)
                     }
                     catch (err) {
                         console.log(err);
