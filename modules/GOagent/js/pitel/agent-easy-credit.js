@@ -97,9 +97,6 @@ let changeLoanAmountRange = (e) => {
   e.form.range_loan_amount.value = e.value;
   simulator(e);
 };
-$("input[type='number]").on("blur", function () {
-  console.log("Sdasdasd");
-});
 $(document).on('blur', 'input[type="date"]', function () {
   var cur_date = new Date($(this)[0].value);
   var today = new Date()
@@ -127,7 +124,6 @@ function pmt(monthlyRate, monthlyPayments, presentValue, residualValue, advanced
   return (presentValue-(residualValue/t2))/(((1-(1/(t3)))/monthlyRate)+advancedPayments);
 }
 let simulator = (e) => {
-  console.log("simulator");
   let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
   let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
   let sm_insu = $("input[name='simu_insurance']:checked").val();
@@ -189,7 +185,7 @@ $(document).ready(() => {
     e.preventDefault();
     const multiple_files = $(".MultiFile-applied.MultiFile");
     if (multiple_files.length == 0) {
-      sweetAlert("No file to upload");
+      sweetAlert("Chưa có file được chọn");
       return;
     }
     var request_id = $("#request_id").val();
@@ -197,8 +193,12 @@ $(document).ready(() => {
     if (phone_number[0] == '0') {
       phone_number = phone_number.slice(1, phone_number.length)
     }
-    var attachments = multiple_files[0].MultiFile.files;
+    var attachments = multiple_files[multiple_files.length-1].MultiFile.files;
     list_doc_collecting = [];
+    if (attachments.length == 0) {
+      sweetAlert("Chưa có file được chọn. Nếu là lỗi, vui lòng liên hệ developer");
+      return;
+    }
     attachments.forEach(function (file) {
       var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
       var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
@@ -221,7 +221,7 @@ $(document).ready(() => {
       };
       $.ajax(settings)
         .fail((result, status, error) => {
-          console.log(result);
+          console.error("Submit_attachment failed: ",result);
           let msg = "Please contact developer!";
           isUploadedDocs[2] = false;
           // AllowSelectOffer();
@@ -272,7 +272,7 @@ $(document).ready(() => {
     // 
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PIC");
@@ -291,7 +291,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.error("Submit_attachment: ",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -317,7 +317,6 @@ $(document).ready(() => {
           isUploadedDocs[0] = true;
           // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
-          console.log(resp);
         }
       });
   });
@@ -336,7 +335,7 @@ $(document).ready(() => {
     
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PID");
@@ -355,7 +354,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.error("Submit_img_id_card: ",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -401,7 +400,7 @@ $(document).ready(() => {
     // 
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PIC");
@@ -420,7 +419,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.error("Submit_img_selfie2",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -446,7 +445,6 @@ $(document).ready(() => {
           isUploadedDocs[0] = true;
           // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
-          console.log(resp);
         }
       });
   });
@@ -465,7 +463,7 @@ $(document).ready(() => {
     
     var request_id = $("#request_id").val();
     var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PID");
@@ -484,7 +482,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.error("Submit_img_id_card2",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -618,7 +616,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
           productBox.append(productBoxBody);
 
           $("#accordion").append(productBox);
-          console.log(product.product_list);
+          console.log("Product list: ",product.product_list);
           let table = $("#productTable" + index).DataTable({
             destroy: true,
             responsive: true,
@@ -772,7 +770,6 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
                     }
                   });
                 }
-                console.log(`${property}: ${tmp_data[property]}`);
               }
               $("#product-detail-modal").modal("show");
               // TEL4VN TEST
@@ -814,7 +811,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
       product_line: "BUSINESS",
     }),
   }).fail((result, status, error) => {
-    console.log(result);
+    console.error("Get Product List Failed: ",result);
     let msg = "Please contact developer!";
     if (result.message !== undefined) {
       msg = result.message;
@@ -833,30 +830,10 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     swal("Get products data fail!", msg, "error");
   });
 };
-// let ajaxGetOldFullLoan = (lead_id) =>{
-//       var settings = {
-//         "url": CRM_API_URL+"/v1/fullloan/"+lead_id,
-//         "method": "GET",
-//         "timeout": 0,
-//         "headers": {
-//           "Content-Type": "text/plain"
-//         },
-//       };
-//       $.ajax(settings).done(function (response) {
-//         console.log(response);
-//       });
-// }
 $(document).on("click", "#submit-offer", function (e) {
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
   let partner_code = $(".formMain input[name='partner_code']").val();
-  if (
-    selected_offer_insurance_type == undefined ||
-    selected_offer_insurance_type == ""
-  ) {
-    swal("Choose offer fail!", "Please Choose Insurace Type", "error");
-    return;
-  }
   if (selected_offer_insurance_type=="NO"){
     selected_offer_insurance_type = "";
   }
@@ -881,7 +858,6 @@ $(document).on("click", "#submit-offer", function (e) {
     },
   })
     .fail((result, status, error) => {
-      console.log(result);
       let msg = "Please contact developer!";
       msg = result.responseJSON.message;
       if (result.message !== undefined) {
@@ -890,8 +866,9 @@ $(document).on("click", "#submit-offer", function (e) {
       if (result.responseText != undefined){
         try {
             let err = JSON.parse(result.responseText);
+            console.error("Select Offer Failed: ",result.responseJSON);
             if (err.error != undefined){
-              msg = err.error;
+              msg +="\n"+ JSON.stringify(err.error);
             }
         } catch (error) {
             msg = result.responseText;
@@ -900,7 +877,6 @@ $(document).on("click", "#submit-offer", function (e) {
       swal("Send offer data fail!", msg, "error");
     })
     .done((result) => {
-      console.log(result);
       if (result.code == "RECEIVED") {
         swal("Success", result.message, "success");
       } else {
@@ -927,14 +903,16 @@ $("#eligible_btn").on("click", (e) => {
     let first_name = $(".formMain input[name='first_name']").val();
     let middle_initial = $(".formMain input[name='middle_initial']").val();
     let last_name = $(".formMain input[name='last_name']").val();
-    let customer_name = first_name;
+    let customer_name = first_name.trim();
     if (middle_initial == ""){
-      customer_name =customer_name+ " " + last_name;
+      customer_name =customer_name.trim()+ " " + last_name.trim();
     }
     else{
       customer_name = customer_name
-      + " " + middle_initial + " " + last_name;
+      + " " + middle_initial.trim() + " " + last_name.trim();
     }
+    customer_name = customer_name.trim();
+    customer_name = customer_name.replace("  "," ")
     let phone_number =
       $(".formMain input[name='phone_code']").val() +
       $(".formMain input[name='phone_number']").val();
@@ -973,10 +951,7 @@ $("#eligible_btn").on("click", (e) => {
       tem_province: tem_province,
       job_type: job_type,
     };
-    console.log(eligible_data);
-    // BUG
-    // eligible_data.customer_name = "TUAN"
-    //
+    console.log("Eligible data: ",eligible_data);
     $.ajax({
       type: "POST",
       url: EC_PROD_API_URL+"/api/eligibleService/v1/eligible/check",
@@ -990,7 +965,7 @@ $("#eligible_btn").on("click", (e) => {
       },
     })
       .fail((result, status, error) => {
-        console.log(result);
+        console.error("Eligible failed: ",result);
         var erro = result.responseJSON;
         let msg = "Please contact developer!";
         request_id = partner_code + Date.now().toString();
@@ -1014,7 +989,6 @@ $("#eligible_btn").on("click", (e) => {
         }
       })
       .done((result) => {
-        console.log(result);
         if (result.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
           let request_id = result.data.request_id;
@@ -1099,12 +1073,9 @@ let getProductType = () => {
   $("input[name='product_required_document']").val(docs_string);
   $("#product_name_detail").empty();
   $("#product_name_detail")[0].innerHTML = product_names;
-// 
   // $("input[name='product_required_document_offer']").val(docs_string);
   $("#product_name_detail_offer").empty();
   $("#product_name_detail_offer")[0].innerHTML = offder_product_names;
-
-  console.log(docs_string);
 };
 let validateFullloan = () => {
   let check = true;
@@ -1239,7 +1210,6 @@ let SyncFullLoanFromAPI = (request_id) => {
         $(".formMain input[name='city']").val(document.tem_ward)
         $(".formMain input[name='address1']").val(document.tem_address)
         $(".formMain select[name='gender']").val(document.gender);
-        console.log(document);
         $("input[name='tem_address']").val(document.tem_address);
         // 
         if (document['check_same_address'] == 'on'){
@@ -1269,7 +1239,7 @@ let SyncFullLoanFromAPI = (request_id) => {
     );
   } catch (err) {
     SyncFullLoanFromContact();
-    console.log(err);
+    console.error("SyncFullLoanFromAPI error : ",err);
   }
 };
 
@@ -1300,7 +1270,7 @@ let SyncFullLoanFromAPIOld = (request_id) => {
       }
     });
   } catch (err) {
-    console.log(err);
+    console.error("SyncFullLoanFromAPIOld error : ",err);
   }
 };
 
@@ -1317,7 +1287,7 @@ let ajaxGetOldFullLoan = (request_id) => {
     },
   }).fail((result, status, error) => {
     SyncFullLoanFromContact();
-    console.log(result);
+    console.error("SyncFullLoanFromContact error : ",result);
   });
 };
 
@@ -1333,7 +1303,7 @@ let ajaxGetOffer = (request_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.error("ajaxGetOffer",result);
   });
 };
 
@@ -1347,7 +1317,7 @@ let ajaxGetStatus = (lead_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.warn("ajaxGetStatus: ",result);
   });
 };
 
@@ -1800,10 +1770,10 @@ function creat_full_loan(form_data, mode){
     },
   })
     .fail((result, status, error) => {
-      console.log(result);
+      console.warn("Fullloan data : ",result);
     })
     .done((result) => {
-      console.log(result);
+      console.log("Fullloan data : ",result);
     });
 }
 $("#full-loan-form").on("submit", (e) => {
@@ -1831,7 +1801,6 @@ $("#full-loan-form").on("submit", (e) => {
     "DD-MM-YYYY"
   );
   form_data.doc_collecting_list = form_data.list_doc_collecting;
-  console.log(form_data);
   // TEST
   // form_data = getFormData();
   form_data.request_id = request_id.value;
@@ -1846,7 +1815,7 @@ $("#full-loan-form").on("submit", (e) => {
   }
   // form_data.dsa_agent_code = "trainee.01";
   let post_data = JSON.stringify(form_data);
-
+  console.log("Fullloan data : ", form_data);
   $("#offer-waiting").attr("hidden", false);
   // post to EC
   $.ajax({
@@ -1862,7 +1831,10 @@ $("#full-loan-form").on("submit", (e) => {
     .fail((result, status, error) => {
       creat_full_loan(form_data, "update");
       var er_data = result.responseJSON.body;
-      console.log(er_data.body);
+      try{
+        console.error("Submit fullloan failed : ", er_data);
+      }catch(e){
+      }
       let msg = "Please contact developer!";
       if (result.message !== undefined) {
         msg = result.message;
@@ -1963,8 +1935,11 @@ function PollingOfferFromEC(request_id, lead_id) {
 }
 
 function SetOfferDetail(offerList) {
-  console.log(offerList);
-  // $("#offer-datatable").removeClass("hidden");
+  console.log("Offerlist data : ",offerList);
+  try {
+    offerinsurancetable.clear().draw();
+  } catch (error) {
+  }
   var offerTable = $("#offer-list-table").DataTable({
     destroy: true,
     responsive: true,
@@ -2058,6 +2033,10 @@ function SetOfferDetail(offerList) {
   });
 
   $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function (e) {
+    try {
+      offerinsurancetable.clear().draw();
+    } catch (error) {
+    }
     e.preventDefault();
     $("#create-offer-table").empty();
     $("#create-offer-table").attr("hidden", true);
@@ -2153,15 +2132,12 @@ $(function () {
   //
   $("#attachment_files").MultiFile({
     onFileRemove: function (element, value, master_element) {
-      console.log("Remove");
       $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
     },
     afterFileRemove: function (element, value, master_element) {
-      console.log("After remove");
       $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
     },
     onFileAppend: function (element, value, master_element) {
-      console.log("After Append");
     },
     afterFileAppend: function (element, value, master_element) {
       var last_mdf = element.files[0].lastModified + element.files[0].name;
@@ -2270,15 +2246,12 @@ $(function () {
   
   $("#attachment_files2").MultiFile({
     onFileRemove: function (element, value, master_element) {
-      console.log("Remove");
       $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
     },
     afterFileRemove: function (element, value, master_element) {
-      console.log("After remove");
       $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
     },
     onFileAppend: function (element, value, master_element) {
-      console.log("After Append");
     },
     afterFileAppend: function (element, value, master_element) {
       var last_mdf = element.files[0].lastModified + element.files[0].name;
@@ -2433,13 +2406,11 @@ var saveFullLoan = () => {
   };
   $.ajax(settings)
     .done(function (response) {
-      console.log("Done");
       swal("Save full loan success", "success", "success");
     })
     .fail(function (response) {
-      console.log("Fail");
       swal("Save full loan erro", response.responseJSON.erro, "success");
-      console.log();
+      console.error("Save full loan erro: ",response);
     });
 };
 $(document).ready(() => {
@@ -2468,12 +2439,6 @@ $(document).ready(() => {
         $("#full-loan-form").submit();
       }
     });
-
-  // var validate_each = ()=>{
-  //   console.log("Sdasdas");
-  //   $("#full-loan-form").submit();
-  // }
-
   let validateStep = (step) => {
     let msg = "";
     $(`#step-${step}`).find('input:required').each(function () {
@@ -2752,6 +2717,6 @@ let ajaxGetCallStatus = (status) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.warn("ajaxGetCallStatus: ",result);
   });
 };

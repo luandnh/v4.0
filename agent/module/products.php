@@ -133,7 +133,7 @@
                         <button class="btn btn-primary" id="submit-docs" > Gửi Chứng Từ </button>
                     </div> -->
                     <div class="col-xl-6 col-lg-6">
-                        <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
+                        <button class="btn btn-primary" id="submit-offer" > <?= $lh->translationFor('submit_offer') ?></button>
                     </div>
                 </div>
             </div>
