@@ -8980,10 +8980,8 @@ md-tabs .md-tab.md-focused md-icon {
   background: #afa3a32e;
 }
 .dropdown-menu {
-  max-height: 500px !important;
 }
 .dropdown-menu open{
-  max-height: 500px !important;
 }
 .dropdown.bootstrap-select.ng-pristine.ng-empty.ng-invalid.ng-invalid-required.ng-touched.bs3{
   margin-top: 5px !important;

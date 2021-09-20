@@ -45,7 +45,18 @@
         <meta charset="UTF-8">
         <title><?php $lh->translateText('portal_title'); ?> - <?php $lh->translateText('admin_logs'); ?></title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
+		<script src="js/jquery.min.js"></script>
+		<script src="js/datatables/1.10.19/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="js/datatables/1.10.19/dataTables.jqueryui.min.js" type="text/javascript"></script>
+<script src="js/datatables/1.10.19/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="js/datatables/1.10.19/dataTables.responsive.min.js" type="text/javascript"></script>
+<script src="js/datatables/1.10.19/responsive.jqueryui.min.js" type="text/javascript"></script>
+<script src="js/datatables/1.10.19/dataTables.rowGroup.min.js" type="text/javascript"></script>
+		<script src="js/plugins/datatables/buttons/buttons.html5.min.js" type="text/javascript"></script>
+		<script src="js/plugins/datatables/buttons/buttons.print.min.js" type="text/javascript"></script>
+		<script src="js/plugins/datatables/buttons/buttons.flash.min.js" type="text/javascript"></script>
+		<script src="js/plugins/datatables/buttons/dataTables.buttons.min.js" type="text/javascript"></script>
+		<script src="js/plugins/datatables/jszip.min.js" type="text/javascript"></script>
         <?php 
 			print $ui->standardizedThemeCSS(); 
 			print $ui->creamyThemeCSS();
@@ -126,6 +137,7 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
                 $('#adminlogs_table').dataTable({
+					
 					"aoColumnDefs": [{
 						"sClass": "log-details hidden-xs hidden-sm truncate_td",
 						"sWidth": "20%",

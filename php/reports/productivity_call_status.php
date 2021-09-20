@@ -84,6 +84,7 @@
 		echo '</div>';
 */
 
+// <th > Day </th>
                 $inbound_report .= '
 				<div>
 						<legend><small><em class="fa fa-arrow-right"></em><i> Report by call status</i></small></legend>

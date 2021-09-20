@@ -750,7 +750,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="tem_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="100"  type="text" name="tem_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="tem_address"><?= $lh->translationFor('address') ?></label>
                                         </div>
                                     </div>
@@ -1050,7 +1050,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="workplace_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="100" type="text" name="workplace_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="workplace_name"><?= $lh->translationFor('workplace_name') ?></label>
                                         </div>
                                     </div>
@@ -1086,7 +1086,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="workplace_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input  maxlength="100"  type="text" name="workplace_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="workplace_address"><?= $lh->translationFor('workplace_address') ?></label>
                                         </div>
                                     </div>
@@ -1224,7 +1224,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="bank_account" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                                <input  maxlength="50"  type="text" name="bank_account" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                                 <label class="form_label" for="bank_account"><?= $lh->translationFor('bank_account') ?></label>
                                             </div>
                                         </div>
@@ -1233,7 +1233,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input readonly type="text" name="beneficiary_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="80"  readonly type="text" name="beneficiary_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label for="beneficiary_name"><?= $lh->translationFor('beneficiary_name') ?></label>
                                         </div>
                                     </div>
@@ -1309,7 +1309,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="relation_1_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                                <input  maxlength="80"  type="text" name="relation_1_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                                 <label class="form_label" for="relation_1_name"><?= $lh->translationFor('relation_1_name') ?></label>
                                             </div>
                                         </div>
@@ -1339,7 +1339,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="relation_2_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                                <input   maxlength="80"  type="text" name="relation_2_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                                 <label class="form_label" for="relation_2_name"><?= $lh->translationFor('relation_2_name') ?></label>
                                             </div>
                                         </div>
@@ -1451,7 +1451,7 @@
                                         <input multiple type="file" id="attachment_files2" class="attachment-input" />
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="btn btn-warning" id="submit_attachment"><?= $lh->translationFor('submit_attachment') ?></button>
+                                        <button class="btn btn-warning" id="submit_attachment2"><?= $lh->translationFor('submit_attachment') ?></button>
                                     </div>
                                 </div>
                             </div>

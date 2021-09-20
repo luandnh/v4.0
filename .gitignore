@@ -4,3 +4,5 @@ php/goCRMAPISettings.php
 astguiclient.conf
 goautodial.conf
 goAPIv2
+*.log
+img/customCompanyLogo.png

@@ -820,7 +820,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
-                                    <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
+                                    <button class="btn btn-primary" id="submit-offer" > <?= $lh->translationFor('submit_offer') ?></button>
                                 </div>
                             </div>
                         </form>
