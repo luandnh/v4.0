@@ -105,6 +105,7 @@ foreach ($perm as $key => $value) {
 
 		<?php
 		$campaigns = $api->API_getAllCampaigns();
+		$user_groups = $api->API_getAllUserGroups();
 		$ingroups = $api->API_getAllInGroups();
 		$disposition = $api->API_getAllDispositions();
 		?>
@@ -150,13 +151,15 @@ foreach ($perm as $key => $value) {
 									if ($perm->reportsanalytics_display == 'Y' && $user->getUserRole() == CRM_DEFAULTS_USER_ROLE_ADMIN) {
 									?>
 										<option value="stats" selected><?php echo $lh->translationFor("stats"); ?></option>
+										<option value="appstatus">App Status Report</option>
+										<option value="sale_performance">Sale Performance Report</option>
 										<option value="agent_team"><?php echo $lh->translationFor("agent_team"); ?></option>
 										<option value="agent_personal"><?php echo $lh->translationFor("agent_personal"); ?></option>
 										<option value="productivity_call_status"><?php echo $lh->translationFor("productivity_call_status"); ?></option>
 										<option value="productivity_campain"><?php echo $lh->translationFor("productivity_campain"); ?></option>
 										<option value="agent_detail"><?php echo $lh->translationFor("agent_detail"); ?></option>
 										<option value="agent_pdetail"><?php echo $lh->translationFor("agent_pdetail"); ?></option>
-										<option value="dispo"><?php echo $lh->translationFor("dispo"); ?></option>
+										<!-- <option value="dispo"><?php echo $lh->translationFor("dispo"); ?></option> -->
 										<option value="sales_agent"><?php echo $lh->translationFor("sales_agent"); ?></option>
 										<option value="sales_tracker"><?php echo $lh->translationFor("sales_tracker"); ?></option>
 										<option value="inbound_report"><?php echo $lh->translationFor("inbound_call_report"); ?></option>
@@ -166,6 +169,8 @@ foreach ($perm as $key => $value) {
 										if ($perm->reportsanalytics_statistical_display == 'Y') {
 											echo '<option value="stats">' . $lh->translationFor("stats") . '</option>';
 										}
+										echo '<option value="appstatus">App Status Report</option>';
+										echo '<option value="sale_performance">Sale Performance Report</option>';
 										echo '<option value="agent_team">' . $lh->translationFor("agent_team") . '</option>';
 										echo '<option value="agent_personal">' . $lh->translationFor("agent_personal") . '</option>';
 										echo '<option value="productivity_call_status">' . $lh->translationFor("productivity_call_status") . '</option>';
@@ -212,6 +217,37 @@ foreach ($perm as $key => $value) {
 									<?php
 									}
 									?>
+								</select>
+							</div>
+							<div class="form-group usergroup_div">
+								<label for="campaign_id">Usergroup</label>
+								<select class="form-control select2" name="usergroup_id" id="usergroup_id" style="width:100%;">
+									<option selected disabled></option>
+									<option value="ALL">ALL</option>
+									<?php
+									for ($i = 0; $i < count($user_groups->user_group); $i++) {
+									?>
+										<option value="<?php echo $user_groups->user_group[$i]; ?>"><?php echo $user_groups->user_group[$i] . " - " . $user_groups->group_name[$i]; ?></option>
+									<?php
+									}
+									?>
+								</select>
+							</div>
+							
+							<div class="form-group vendor_code_div">
+								<label for="campaign_id">Lead code</label>
+								<select class="form-control select2" name="vendor_lead_code" id="vendor_lead_code" style="width:100%;">
+									<option selected disabled></option>
+									<option value="ALL">ALL</option>
+									<option value="VGA">VGA</option>
+									<option value="REN">REN</option>
+									<option value="CLT">CLT</option>
+									<option value="AMP">AMP</option>
+									<option value="VTA">VTA</option>
+									<option value="MVT">MVT</option>
+									<option value="TUP">TUP</option>
+									<option value="MOF">MOF</option>
+									<option value="ECL">ECL</option>
 								</select>
 							</div>
 							<div class="form-group ingroup_div" style="display:none;">
@@ -308,6 +344,10 @@ foreach ($perm as $key => $value) {
 									</div>
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<button id="btn_filter_reports" style="width:100%" type="button" class="btn btn-info btn-view-cf">Filter</button>
+							</div>
 							<!-- /.end date -->
 
 					</form>
@@ -337,6 +377,10 @@ foreach ($perm as $key => $value) {
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		
+		$(document).on('click', '#btn_filter_reports', function() {
+			filterchange();
+		});
 		$(document).on('click', '.edit-contact', function() {
 			var url = './editcontacts.php';
 			var id = $(this).attr('data-id');
@@ -431,7 +475,6 @@ foreach ($perm as $key => $value) {
 					statuses: $("#statuses").val()
 				},
 				success: function(data) {
-					console.log(data);
 					if (data !== "") {
 						$(".report-loader").fadeOut("slow");
 						$('#table').html(data);
@@ -497,7 +540,6 @@ foreach ($perm as $key => $value) {
 					statuses: $("#statuses").val()
 				},
 				success: function(data) {
-					console.log(data);
 					if (data !== "") {
 						$(".report-loader").fadeOut("slow");
 						$('#table').html(data);
@@ -618,16 +660,18 @@ foreach ($perm as $key => $value) {
 	});
 
 	function filterchange() {
+		$('.usergroup_div').hide();
+		$('.vendor_code_div').hide();
 		var filter_type = $('#filter_type').val();
 		var request = "";
 		var URL = 'reports.php';
 		var campaign_ID = $("#campaign_id").val();
-
+		var vendor_code = "";
 		$('.campaign_div').show();
 
 		$('#table').empty();
 		$(".report-loader").fadeIn("slow");
-
+		var usergroup = $("#userGroup").val();
 		if (filter_type == "stats") {
 			request = $("#request1").val();
 			URL = './php/reports/statisticalreports.php';
@@ -662,7 +706,21 @@ foreach ($perm as $key => $value) {
 		if (filter_type == "agent_team") {
 			URL = './php/reports/agent_team.php';
 		}
+		if (filter_type == "appstatus") {
+			$('.usergroup_div').show();
+			$('.vendor_code_div').show();
+			$('.campaign_div').hide();
+			usergroup = $("#usergroup_id").val();
+			vendor_code = $("#vendor_lead_code").val();
+			URL = './php/reports/appstatus_date.php';
+		}
 
+		if (filter_type == "sale_performance") {
+			$('.usergroup_div').show();
+			$('.campaign_div').hide();
+			usergroup = $("#usergroup_id").val();
+			URL = './php/reports/sale_performance.php';
+		}
 		if (filter_type == "sales_agent") {
 			URL = './php/reports/salesagent.php';
 			request = $("#request2").val();
@@ -690,16 +748,17 @@ foreach ($perm as $key => $value) {
 				campaignID: campaign_ID,
 				request: request,
 				userID: $("#userID").val(),
-				userGroup: $("#userGroup").val(),
+				userGroup: usergroup,
 				fromDate: $("#start_filterdate").val(),
-				toDate: $("#end_filterdate").val()
+				toDate: $("#end_filterdate").val(),
+				vendor_code : vendor_code
 			},
 			success: function(data) {
-				console.log(data);
 				if (data !== "") {
 					$(".report-loader").fadeOut("slow");
 					$('#table').html(data);
-
+					$('.usergroup_div').hide();
+					$('.vendor_code_div').hide();
 					if (filter_type == "stats") {
 						$('.request_div').show();
 						$('.stats_request').show();
@@ -775,7 +834,16 @@ foreach ($perm as $key => $value) {
 					}
 
 					if (filter_type == "productivity_call_status") {
-						var title = "<?php $lh->translateText("productivity_call_status"); ?>";
+						var title = "Team_Productivity_By_Status_";
+						let start_date = new Date($("#start_filterdate").val());
+						let end_date =  new Date($("#end_filterdate").val());
+						let startdate_string = moment(start_date).format("DD-MM-YYYY");
+						let enddate_string = moment(end_date).format("DD-MM-YYYY");
+						if (startdate_string==enddate_string){
+							title += enddate_string;
+						}else{
+							title += startdate_string + "_"+enddate_string
+						}
 						$('#productivity_call_status').DataTable({
 							destroy: true,
 							responsive: true,
@@ -839,6 +907,97 @@ foreach ($perm as $key => $value) {
 						$('.request_div').hide();
 						$('.campaign_div').show();
 						$('.ingroup_div').hide();
+					}
+					
+					if (filter_type == "appstatus") {
+						var title = "App_Status_Report_";
+						let start_date = new Date($("#start_filterdate").val());
+						let end_date =  new Date($("#end_filterdate").val());
+						let startdate_string = moment(start_date).format("DD-MM-YYYY");
+						let enddate_string = moment(end_date).format("DD-MM-YYYY");
+						if (startdate_string==enddate_string){
+							title += enddate_string;
+						}else{
+							title += startdate_string + "_"+enddate_string
+						}
+						$('#appstatus').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').hide();
+						$('.ingroup_div').hide();
+						$('.usergroup_div').show();
+						$('.vendor_code_div').show();
+						
+					}
+					
+					if (filter_type == "sale_performance") {
+						var title = "Sale_Performance_";
+						let start_date = new Date($("#start_filterdate").val());
+						let end_date =  new Date($("#end_filterdate").val());
+						let startdate_string = moment(start_date).format("DD-MM-YYYY");
+						let enddate_string = moment(end_date).format("DD-MM-YYYY");
+						if (startdate_string==enddate_string){
+							title += enddate_string;
+						}else{
+							title += startdate_string + "_"+enddate_string
+						}
+						$('#sale_performance').DataTable({
+							destroy: true,
+							responsive: true,
+							stateSave: true,
+							drawCallback: function(settings) {
+								var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+								pagination.toggle(this.api().page.info().pages > 1);
+							},
+							dom: 'Bfrtip',
+							buttons: [{
+									extend: 'copy',
+									title: title
+								},
+								{
+									extend: 'csv',
+									title: title
+								},
+								{
+									extend: 'excel',
+									title: title
+								},
+								{
+									extend: 'print',
+									title: title
+								}
+							]
+						});
+						$('.request_div').hide();
+						$('.campaign_div').hide();
+						$('.ingroup_div').hide();
+						$('.usergroup_div').show();
+						
 					}
 					if (filter_type == "agent_detail") {
 						var title = "<?php $lh->translateText("agent_detail"); ?>";

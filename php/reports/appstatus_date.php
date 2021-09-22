@@ -29,7 +29,7 @@
 	$request									= NULL;
 	$userID										= NULL;
 	$userGroup									= NULL;
-	$statuses									= NULL;
+	$vendor_code									= NULL;
 	
 	if (isset($_POST['pageTitle']) && $pageTitle != "call_export_report") {
 		$pageTitle = $_POST['pageTitle'];
@@ -48,26 +48,23 @@
 		$userID = $_POST["userID"];
 		$userID = stripslashes($userID);
 	}
-	if (isset($_POST["campaignID"])) {
-		$campaign_id = $_POST["campaignID"];
-		$campaign_id = stripslashes($campaign_id);
-	}
 	if (isset($_POST["userGroup"])) {
 		$userGroup = $_POST["userGroup"];
 		$userGroup = stripslashes($userGroup);
 	}
 		
-	if (isset($_POST["statuses"])) {
-		$statuses = $_POST["statuses"];
-		$statuses = stripslashes($statuses);
+	if (isset($_POST["vendor_code"])) {
+		$vendor_code = $_POST["vendor_code"];
+		$vendor_code = stripslashes($vendor_code);
 	}
 		
 	$postfields = array(
-		'goAction' => 'goProductivityCallStatus',		
+		'goAction' => 'goGetAppStatusByDate',		
 		'pageTitle' => $pageTitle,
 		'fromDate' => $fromDate,
 		'toDate' => $toDate,
-		'campaignID'=>$campaign_id,
+		'userGroup'=>$userGroup,
+		'vendorCode'=>$vendor_code,
 		'userId' => $userID,
 		'request' => $request
 	);
@@ -84,45 +81,44 @@
 		echo '</div>';
 */
 
-// <th > Day </th>
-                $inbound_report .= '
+                $appstatus_report .= '
 				<div>
-						<legend><small><em class="fa fa-arrow-right"></em><i> Report by call status</i></small></legend>
-								<table class="display responsive no-wrap table table-striped table-bordered table-hover"  id="productivity_call_status">
+						<legend><small><em class="fa fa-arrow-right"></em><i>App Status By Date</i></small></legend>
+								<table class="display responsive no-wrap table table-striped table-bordered table-hover" id="appstatus">
 										<thead>
-												<tr>
-														<th > Time</th>
-														<th > Team</th>
-														<th > User</th>
-														<th > Total call </th>
-														<th > Answer</th>
-														<th > Customer</th>
-														<th > No Answer </th>
-														<th > Congestion </th>
-														<th > Busy </th>
-														<th > Denied </th>
-														<th > Erro Sip</th>
-														<th > Cancel </th>
-														<th > Unknown </th>
-														<th > Answer not in queue </th>
-														<th > Answer in queue no agent</th>
-												</tr>
+											<tr>
+												<th>MODIFIED DATE</th>
+												<th>FAIL_MANUAL_KYC</th>
+												<th>FAIL_EKYC</th>
+												<th>NOT_ELIGIBLE</th>
+												<th>SYSTEM_ERROR</th>
+												<th>DUPLICATED</th>
+												<th>NOT_SUITABLE_OFFER</th>
+												<th>CANCELED</th>
+												<th>REJECTED</th>
+												<th>VALIDATED</th>
+												<th>APPROVED</th>
+												<th>SIGNED</th>
+												<th>ACTIVATED</th>
+												<th>TERMINATE</th>
+												<th>DISBURSED</th>
+											</tr>
 										</thead>
 										<tbody>
 				';
                 if ($output->TOPsorted_output != NULL) {
 			foreach($output->TOPsorted_output as $row){
-		                $inbound_report .= $row;
+		                $appstatus_report .= $row;
 			}
                 }else{
- 	               $inbound_report .= "";
+ 	               $appstatus_report .= "";
                 }
 
-     	        $inbound_report .= '</tbody>';
-                $inbound_report .= '</table></div>';
+     	        $appstatus_report .= '</tbody>';
+                $appstatus_report .= '</table></div>';
 		
 		echo '<div class="animated slideInLeft">';
-			echo '<div>'.$inbound_report.'</div>';
+			echo '<div>'.$appstatus_report.'</div>';
 		echo '</div>';
 	//	var_dump($output->TOPsorted_output);
         }

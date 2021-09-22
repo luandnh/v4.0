@@ -643,7 +643,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
   ShowStatusOnForm(status, call_status, app_status,reject_reason);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
-  SetCustomerOfferDetail();
+  SetProductListForm();
   // $("#offer-datatable").empty();
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
@@ -685,216 +685,13 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
     $("#agent_tablist").append(productTab);
     $("#accordion").empty();
     $("#hide_div_eligible").show();
-    ajaxGetECProducts(partner_code, request_id).done((result) => {
-      //
-      if (result.code == "SUCCESS") {
-        ECProducts = result.data;
-        let color_index = 0;
-        let index = 1;
-        ECProducts.forEach((product) => {
-          let productBox = $("<div></div>", {
-            class: "panel box " + box_color[color_index],
-          });
-          let productBoxHeader =
-            '<div class="box-header with-border">' +
-            '<h4 class="box-title">' +
-            '<a data-toggle="collapse" data-parent="#accordion" href="#collapse' +
-            index +
-            '">' +
-            product.employee_type +
-            " - " +
-            product.employee_description_en;
-          "</a>" + "</h4>" + "</div>";
-          productBox.append(productBoxHeader);
-          tmp_in = index === 1 ? "in" : "";
-          let productBoxBody =
-            '<div id="collapse' +
-            index +
-            `" class="panel-collapse collapse ${tmp_in}">` +
-            '<div class="box-body">' +
-            "<table id=productTable" +
-            index +
-            ' class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">' +
-            "</table>" +
-            "</div>" +
-            "</div>";
-          productBox.append(productBoxBody);
-
-          $("#accordion").append(productBox);
-          console.log("Product list: ",product.product_list);
-          let table = $("#productTable" + index).DataTable({
-            destroy: true,
-            responsive: true,
-            data: product.product_list,
-            columns: [
-              {
-                title: "Mã sản phẩm",
-                data: "product_code",
-              },
-              {
-                title: "Thời hạn vay tối thiểu",
-                data: "loan_min_tenor",
-              },
-              {
-                title: "Thời hạn vay tối đa",
-                data: "loan_max_tenor",
-              },
-              {
-                title: "Khoảng vay tối thiếu",
-                data: "loan_min_amount",
-                render: (data) => {
-                  result =
-                    data != null
-                      ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
-                      : 0;
-                  return result;
-                },
-              },
-              {
-                title: "Khoản vay tối đa",
-                data: "loan_max_amount",
-                render: (data) => {
-                  result =
-                    data != null
-                      ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
-                      : 0;
-                  return result;
-                },
-              },
-              {
-                title: "Tỉ lệ lãi",
-                data: "interest_rate",
-              },
-              {
-                title: "Thao tác",
-                render: () => {
-                  return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
-                },
-              },
-            ],
-          });
-          $("#productTable" + index + " tbody").on(
-            "click",
-            "tr .btn-product-view",
-            function () {
-              clearForm($("#product-detail-form"));
-              $("#product-detail-form-bundle").empty();
-              let tmp_data = table.row($(this).closest("tr")).data();
-              let table_index = 0;
-              for (const property in tmp_data) {
-                if (!Array.isArray(tmp_data[property])) {
-                  let value = tmp_data[property];
-                  if (property.includes("amount")) {
-                    value =
-                      value != null
-                        ? value.toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
-                        : 0;
-                  }
-                  $("#product-detail-form input[name='" + property + "']").val(
-                    value
-                  );
-                  $(
-                    "#product-detail-form textarea[name='" + property + "']"
-                  ).val(value);
-                } else {
-                  tmp_data[property].forEach((elem) => {
-                    table_index++;
-                    let bundle_div =
-                      `<div class="row" id="product-detail-form-bundle-${table_index}">` +
-                      '<div class="col-xs-6">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="bundle_name">Bundle Name</label>` +
-                      `<input name="bundle_name" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      '<div class="col-xs-3">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="bundle_code">Bundle Code</label>` +
-                      `<input name="bundle_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      '<div class="col-xs-3">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="min_request">Min Request</label>` +
-                      `<input name="min_request" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      "</div>";
-                    $("#product-detail-form-bundle").append(bundle_div);
-                    for (const prop in elem) {
-                      if (!Array.isArray(elem[prop])) {
-                        let value = elem[prop];
-                        $(
-                          "#product-detail-form-bundle-" +
-                          table_index +
-                          " input[name='" +
-                          prop +
-                          "']"
-                        ).val(value);
-                      } else {
-                        let tmp_table =
-                          `<table id="tableProductDetail${table_index}" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">` +
-                          "</table>";
-                        $("#product-detail-form-bundle-" + table_index).append(
-                          tmp_table
-                        );
-                        let table = $(
-                          "#tableProductDetail" + table_index
-                        ).DataTable({
-                          destroy: true,
-                          responsive: true,
-                          searching: false,
-                          lengthChange: false,
-                          data: elem[prop],
-                          columns: [
-                            {
-                              title: "Doc EN",
-                              data: "doc_description_en",
-                            },
-                            {
-                              title: "Doc VI",
-                              data: "doc_description_vi",
-                            },
-                            {
-                              title: "Format",
-                              data: "doc_format_request",
-                            },
-                            {
-                              title: "Type",
-                              data: "doc_type",
-                            },
-                          ],
-                        });
-                      }
-                    }
-                  });
-                }
-              }
-              $("#product-detail-modal").modal("show");
-              // TEL4VN TEST
-              sync_from_product();
-            }
-          );
-          color_index++;
-          index++;
-          if (color_index >= box_color.length) {
-            color_index = 0;
-          }
-        });
-        lead_id = $(".formMain input[name='lead_id']").val();
-        // TEST
-        // lead_id = "1234";
-        if (lead_id != "" && lead_id.length > 0) {
-          SyncFullLoanFromAPI(lead_id);
-        }
-      }
-    });
+    ajaxGetECProducts(partner_code, request_id);
+    lead_id = $(".formMain input[name='lead_id']").val();
+    // TEST
+    // lead_id = "1234";
+    if (lead_id != "" && lead_id.length > 0) {
+      SyncFullLoanFromAPI(lead_id);
+    }
   }
   return request_id;
 };
@@ -933,8 +730,213 @@ let ajaxGetECProducts = (partner_code, request_id) => {
       }
     }
     swal("Get products data fail!", msg, "error");
-  });
+  }).done((result) => {
+    //
+    SetProductListForm();
+    if (result.code == "SUCCESS") {
+      ECProducts = result.data;
+      format_log_productlist(ECProducts);
+      let color_index = 0;
+      let index = 1;
+      ECProducts.forEach((product) => {
+        let productBox = $("<div></div>", {
+          class: "panel box " + box_color[color_index],
+        });
+        let productBoxHeader =
+          '<div class="box-header with-border">' +
+          '<h4 class="box-title">' +
+          '<a data-toggle="collapse" data-parent="#accordion" href="#collapse' +
+          index +
+          '">' +
+          product.employee_type +
+          " - " +
+          product.employee_description_en;
+        "</a>" + "</h4>" + "</div>";
+        productBox.append(productBoxHeader);
+        tmp_in = index === 1 ? "in" : "";
+        let productBoxBody =
+          '<div id="collapse' +
+          index +
+          `" class="panel-collapse collapse ${tmp_in}">` +
+          '<div class="box-body">' +
+          "<table id=productTable" +
+          index +
+          ' class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">' +
+          "</table>" +
+          "</div>" +
+          "</div>";
+        productBox.append(productBoxBody);
+
+        $("#accordion").append(productBox);
+        let table = $("#productTable" + index).DataTable({
+          destroy: true,
+          responsive: true,
+          data: product.product_list,
+          columns: [
+            {
+              title: "Mã sản phẩm",
+              data: "product_code",
+            },
+            {
+              title: "Thời hạn vay tối thiểu",
+              data: "loan_min_tenor",
+            },
+            {
+              title: "Thời hạn vay tối đa",
+              data: "loan_max_tenor",
+            },
+            {
+              title: "Khoảng vay tối thiếu",
+              data: "loan_min_amount",
+              render: (data) => {
+                result =
+                  data != null
+                    ? data.toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })
+                    : 0;
+                return result;
+              },
+            },
+            {
+              title: "Khoản vay tối đa",
+              data: "loan_max_amount",
+              render: (data) => {
+                result =
+                  data != null
+                    ? data.toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })
+                    : 0;
+                return result;
+              },
+            },
+            {
+              title: "Tỉ lệ lãi",
+              data: "interest_rate",
+            },
+            {
+              title: "Thao tác",
+              render: () => {
+                return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
+              },
+            },
+          ],
+        });
+        $("#productTable" + index + " tbody").on(
+          "click",
+          "tr .btn-product-view",
+          function () {
+            clearForm($("#product-detail-form"));
+            $("#product-detail-form-bundle").empty();
+            let tmp_data = table.row($(this).closest("tr")).data();
+            let table_index = 0;
+            for (const property in tmp_data) {
+              if (!Array.isArray(tmp_data[property])) {
+                let value = tmp_data[property];
+                if (property.includes("amount")) {
+                  value =
+                    value != null
+                      ? value.toLocaleString("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      })
+                      : 0;
+                }
+                $("#product-detail-form input[name='" + property + "']").val(
+                  value
+                );
+                $(
+                  "#product-detail-form textarea[name='" + property + "']"
+                ).val(value);
+              } else {
+                tmp_data[property].forEach((elem) => {
+                  table_index++;
+                  let bundle_div =
+                    `<div class="row" id="product-detail-form-bundle-${table_index}">` +
+                    '<div class="col-xs-6">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="bundle_name">Bundle Name</label>` +
+                    `<input name="bundle_name" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    '<div class="col-xs-3">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="bundle_code">Bundle Code</label>` +
+                    `<input name="bundle_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    '<div class="col-xs-3">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="min_request">Min Request</label>` +
+                    `<input name="min_request" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    "</div>";
+                  $("#product-detail-form-bundle").append(bundle_div);
+                  for (const prop in elem) {
+                    if (!Array.isArray(elem[prop])) {
+                      let value = elem[prop];
+                      $(
+                        "#product-detail-form-bundle-" +
+                        table_index +
+                        " input[name='" +
+                        prop +
+                        "']"
+                      ).val(value);
+                    } else {
+                      let tmp_table =
+                        `<table id="tableProductDetail${table_index}" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">` +
+                        "</table>";
+                      $("#product-detail-form-bundle-" + table_index).append(
+                        tmp_table
+                      );
+                      let table = $(
+                        "#tableProductDetail" + table_index
+                      ).DataTable({
+                        destroy: true,
+                        responsive: true,
+                        searching: false,
+                        lengthChange: false,
+                        data: elem[prop],
+                        columns: [
+                          {
+                            title: "Doc EN",
+                            data: "doc_description_en",
+                          },
+                          {
+                            title: "Doc VI",
+                            data: "doc_description_vi",
+                          },
+                          {
+                            title: "Format",
+                            data: "doc_format_request",
+                          },
+                          {
+                            title: "Type",
+                            data: "doc_type",
+                          },
+                        ],
+                      });
+                    }
+                  }
+                });
+              }
+            }
+            $("#product-detail-modal").modal("show");
+            // TEL4VN TEST
+            sync_from_product();
+          }
+        );
+        color_index++;
+        index++;
+        if (color_index >= box_color.length) {
+          color_index = 0;
+        }
+      });
+    }
+  });;
 };
+
 $(document).on("click", "#submit-offer", function (e) {
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
@@ -988,6 +990,9 @@ $(document).on("click", "#submit-offer", function (e) {
         swal("Error!", result.message, "error");
       }
     });
+});
+$(document).on("click", "#scSubmit", function (e){
+    ajaxGetECProducts("TEL","TEL123456789");
 });
 $("#eligible_btn").on("click", (e) => {
   $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
@@ -1668,7 +1673,7 @@ function clearForm($form) {
   list_doc_collecting = [];
 }
 
-function SetCustomerOfferDetail() {
+function SetProductListForm() {
   $("#create-offer-table")[0].innerHTML = `
   <tr>
     <th colspan="2">Offer Detail</th>
@@ -1785,8 +1790,9 @@ $(document).on("change", 'select[name="employment_type"]', function () {
 });
 
 $(document).on("keyup", 'input[tag="currency"]', function () {
-  if (this.value == "" || this.value == undefined) { }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  let val = this.value;
+  if ( val== "" || val == undefined) { }
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
 });
 
@@ -1798,39 +1804,47 @@ $(document).on("blur", 'input[tag="currency"]', function () {
 });
 
 $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
 });
 
 $(document).on("keyup", 'input[name^="customer-offer"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 
 $(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 $(document).on("blur", 'input[name="customer-offer-total"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
+  this.value = val.replace(/[^0-9\.]/g, "");
   this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 
 $(document).on("click", 'input[name="select_insurance"]', function () {
@@ -1843,7 +1857,7 @@ $(document).on("click", 'input[name="select_insurance"]', function () {
   selected_offer_insurance_type = tmp_data2.insurance_type; // Exp : BASC
   percent_insurance = tmp_data2.percentage_insurance; // Exp : 6
   insurance_amount = tmp_data2.insurance_amount;  // Exp : 115000
-  // SetCustomerOfferDetail();
+  // SetProductListForm();
 });
 
 $("#submit-docs").on("click", (e) => {
@@ -2830,3 +2844,23 @@ let ajaxGetCallStatus = (status) => {
     console.warn("ajaxGetCallStatus: ",result);
   });
 };
+// DEV AREA
+let format_log_productlist = function(product_list){
+  let log_products = {};
+  log_products.list = [];
+  log_products.total = 0;
+  for (let index = 0; index < product_list.length; index++) {
+    let products = [];
+    let type_products = product_list[index].product_list;
+    for (let j = 0; j < type_products.length; j++) {
+      let product = {};
+      product.product_code = type_products[j].product_code;
+      product.product_descriptio = type_products[j].product_description;
+      products.push(product);
+    }
+    log_products.list.push(products);
+    log_products.total += products.length;
+  }
+  console.log("Products: ",log_products);
+}
+// END DEV AREA
