@@ -29,7 +29,8 @@
 	$request									= NULL;
 	$userID										= NULL;
 	$userGroup									= NULL;
-	$vendor_code									= NULL;
+	$listID									= NULL;
+	$leadCode = NULL;
 	
 	if (isset($_POST['pageTitle']) && $pageTitle != "call_export_report") {
 		$pageTitle = $_POST['pageTitle'];
@@ -48,18 +49,28 @@
 		$userID = $_POST["userID"];
 		$userID = stripslashes($userID);
 	}
+	if (isset($_POST["leadCode"])) {
+		$leadCode = $_POST["leadCode"];
+		$leadCode = stripslashes($leadCode);
+	}
+	if (isset($_POST["listID"])) {
+		$listID = $_POST["listID"];
+		$listID = stripslashes($listID);
+	}
 	if (isset($_POST["userGroup"])) {
 		$userGroup = $_POST["userGroup"];
 		$userGroup = stripslashes($userGroup);
 	}
 		
 	$postfields = array(
-		'goAction' => 'goSalePerformance',		
+		'goAction' => 'goSaleApplications',		
 		'pageTitle' => $pageTitle,
 		'fromDate' => $fromDate,
 		'toDate' => $toDate,
 		'userGroup'=>$userGroup,
+		'listID'=>$listID,
 		'userId' => $userID,
+		'leadCode' => $leadCode,
 		'request' => $request
 	);
 
@@ -77,24 +88,28 @@
 
                 $sale_performance_report .= '
 				<div>
-						<legend><small><em class="fa fa-arrow-right"></em><i>Sale Performance</i></small></legend>
-								<table class="display responsive no-wrap table table-striped table-bordered table-hover" id="sale_performance">
-										<thead>
-											<tr>
-												<th>USER</th>
-												<th>SENT</th>
-												<th>FAIL_EKYC</th>
-												<th>FAIL_MANUAL_EKYC</th>
-												<th>VALIDATED</th>
-												<th>REJECTED</th>
-												<th>APPROVED</th>
-												<th>ACTIVATED</th>
-												<th>SIGNED</th>
-												<th>TERMINATED</th>
-												<th>VOLUME_DISBURSED</th>
-											</tr>
-										</thead>
-										<tbody>
+					<table class="display responsive no-wrap table table-striped table-bordered table-hover" id="application_table">
+						<thead>
+							<tr>
+								<th>LeadID</th>
+								<th>RequestID</th>
+								<th>Sale</th>
+								<th>Team</th>
+								<th>Lead Code</th>
+								<th>Created At</th>
+								<th>Updated At</th>
+								<th>Phone</th>
+								<th>IdentityID</th>
+								<th>App Status</th>
+								<th>Reject Code</th>
+								<th>Reject Reason</th>
+								<th>Product Name</th>
+								<th>Loan Amount</th>
+								<th>ProposalID</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
 				';
                 if ($output->TOPsorted_output != NULL) {
 			foreach($output->TOPsorted_output as $row){

@@ -2,8 +2,7 @@ console.log("agent-easy-credit-v1");
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
 var is_upload_id_card = false;
-var selected_product = null;
-var selected_employment_type = null;
+
 const EC_API_USERNAME = "";
 const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
@@ -12,6 +11,8 @@ const formatter = new Intl.NumberFormat("vi-VN", {
 const num_formatter = new Intl.NumberFormat("vi-VN");
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
+var selected_product = null;
+var selected_employment_type = null;
 var selected_offer_id = "";
 var selected_offer_amount = 0;
 var selected_offer_insurance_type = "";
@@ -1099,24 +1100,11 @@ $("#eligible_btn").on("click", (e) => {
         }
       })
       .done((result) => {
+        // TESTING
         if (result.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
           let request_id = result.data.request_id;
           updateRequestId(request_id, lead_id);
-          // $(".formMain input[name='request_id']").val(result.data.request_id);
-          // $.ajax({
-          //   type: "POST",
-          //   url: CRM_API_URL+"/v1/lead/requestId",
-          //   processData: true,
-          //   data: JSON.stringify({
-          //     lead_id: "" + lead_id,
-          //     request_id: request_id,
-          //   }),
-          //   async: true,
-          //   dataType: "json",
-          // }).done((update_result) => {
-          //   swal("Success", "Update request_id success", "success");
-          // });
           SyncFullLoanFromAPI(lead_id);
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
@@ -1340,6 +1328,8 @@ let SyncFullLoanFromAPI = (request_id) => {
             .selectpicker("refresh");
         }
         $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
+        $("#img_id_card2").val("")
+        $("#img_selfie2").val("")
         getProductType();
         SyncFullLoanFromContact();
       } catch (error) {
@@ -2624,25 +2614,18 @@ $(document).ready(() => {
   for (const [key, value] of Object.entries(PROVINCE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(live_province);
   }
-  SetPermanentAddress();
-  SetTemAddress();
-  SetWorkAddress();
-
   let bankMainCode = $("select[name='bank_code']")[0];
   $(`<option value="" selected></option>`).appendTo(bankMainCode);
   for (const [key, value] of Object.entries(BANK_CODE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(bankMainCode);
   }
   $("select[name='bank_code']").selectpicker("refresh");
-
   let bankArea = $("select[name='bank_area']")[0];
   $(`<option value="" selected></option>`).appendTo(bankArea);
-
   for (const [key, value] of Object.entries(BANK_AREA)) {
     $(`<option value="${value}">${value}</option>`).appendTo(bankArea);
   }
   $("select[name='bank_area']").selectpicker("refresh");
-
   $("select[name='bank_code']").on("change", () => {
     let bankAreaValue = $("select[name='bank_area']").val();
     let bankMainCodeId = $("select[name='bank_code']").val();
@@ -2677,6 +2660,10 @@ $(document).ready(() => {
       $("select[name='bank_branch_code']").selectpicker("refresh");
     }
   });
+  SetPermanentAddress();
+  SetTemAddress();
+  SetWorkAddress();
+
 });
 
 let SetPermanentAddress = () => {

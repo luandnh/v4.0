@@ -2075,6 +2075,8 @@ error_reporting(E_ERROR | E_PARSE);
 			
 			if ($perms->recordings->recordings_display == 'Y') {
 				$callreports .= $this-> getSidebarItem("./callrecordings.php", "phone-square", $this->lh->translationFor("call_recordings"));
+				$callreports .= $this-> getSidebarItem("./sale_application.php", "file-pdf-o", $this->lh->translationFor("sale_application"));
+				
 			}
 			
 			$callreports .= '</ul></li>';
@@ -2093,6 +2095,7 @@ error_reporting(E_ERROR | E_PARSE);
 			// $eventsArea .= $this->getSidebarItem("events.php", "calendar-o", $this->lh->translationFor("events"));
 
 			$crm .= $this->getSidebarItem("crm.php", "group", $this->lh->translationFor("contacts"));
+			$crm .= $this->getSidebarItem("downloads.php", "cloud-download", $this->lh->translationFor("download_list"));
 		}
 
 		$agentmenu = NULL;
