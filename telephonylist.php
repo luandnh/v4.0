@@ -880,7 +880,7 @@ $next_listdesc = "Auto-generated - ListID - " . $datenow;
 							window.location.replace("/downloads.php")
 						}
 					})
-			});
+				});
 			// $(document).on('click', '.download-list', function() {
 			// 	var url = 'php/ExportList.php';
 			// 	var id = $(this).attr('data-id');

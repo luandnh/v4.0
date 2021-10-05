@@ -257,6 +257,8 @@ function LoadCallLogs() {
             render: (data) => {
               return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
                 '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
+                +
+                '<button id="btn-application" data-leadid="' + data.lead_id + '" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to application"><i class="fa fa-sticky-note"></i></button>'
             }
           }
         ],
@@ -441,6 +443,8 @@ function LoadPerformance() {
             render: (data) => {
               return '<button id="lead-info-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ViewCustInfo(' + data.lead_id + ');" class="btn btn-info btn-sm" style="margin: 2px;" title=""><i class="fa fa-file-text-o"></i></button>' +
                 '<button id="dial-lead-' + data.lead_id + '" data-leadid="' + data.lead_id + '" onclick="ManualDialNext(\'\',' + data.lead_id + ',' + data.phone_code + ',' + data.phone_number + ',\'\',\'0\');" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to dial"><i class="fa fa-phone"></i></button>'
+                +
+                '<button id="btn-application" data-leadid="' + data.lead_id + '" class="btn btn-primary btn-sm" style="margin: 2px;" title="Click to application"><i class="fa fa-sticky-note"></i></button>'
             }
           }
           // lead_id	entry_date	modify_date	user	list_id	phone_number	first_name	middle_initial	last_name	partner_code	sale_code	app_status	reject_reason	request_id	proposal_id	phone_code alt_phone	last_local_call_time

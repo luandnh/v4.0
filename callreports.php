@@ -427,12 +427,12 @@ foreach ($perm as $key => $value) {
 
 		$("#datetimepicker1").on("dp.change", function(e) {
 			$('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-			filterchange();
+			// filterchange();
 		});
 
 		$("#datetimepicker2").on("dp.change", function(e) {
 			$('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-			filterchange();
+			// filterchange();
 		});
 
 		/* changing reports */

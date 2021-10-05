@@ -691,7 +691,11 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
     // TEST
     // lead_id = "1234";
     if (lead_id != "" && lead_id.length > 0) {
-      SyncFullLoanFromAPI(lead_id);
+      try {
+        SyncFullLoanFromAPI(lead_id);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
   return request_id;
@@ -938,6 +942,163 @@ let ajaxGetECProducts = (partner_code, request_id) => {
   });;
 };
 
+let getLeadInfo = (lead_id) => {
+  clearForm($(".formMain"));
+  $("#app_status_block").removeClass("app_status")
+    $("#app_reason").addClass("hiden")
+  var postData = {
+    goAction: "goGetLead",
+    goLeadID: lead_id,
+    responsetype: "json",
+  };
+  $.ajax({
+    type: "POST",
+    url: "https://ec02.tel4vn.com/goAPIv2/goLoadLeads/goAPI.php",
+    processData: true,
+    data: postData,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+    .done(function (result) {
+      if (result.result != "success") {
+        swal("Get products data fail!", "Lead not found", "error");
+        return;
+      }
+      let lead_info = result.data;
+      SyncCustomerInfomation(lead_info);
+    })
+    .fail(function (result) {
+      console.log(result);
+    });
+};
+
+let SyncCustomerInfomation = (thisVdata) => {
+  $("#custormer_tab").click();
+  LeadPrevDispo = thisVdata.status;
+  console.log(thisVdata)
+  $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
+  $(".formMain input[name='lead_id']")
+  .val(thisVdata.lead_id)
+  .trigger("change");
+  cust_phone_code = thisVdata.phone_code;
+  $(".formMain input[name='phone_code']")
+    .val(cust_phone_code)
+    .trigger("change");
+  cust_phone_number = thisVdata.phone_number;
+  $(".formMain input[name='phone_number']")
+    .val(cust_phone_number)
+    .trigger("change");
+  if (cust_phone_number === "" && thisVdata.alt_phone !== "") {
+    cust_phone_number = thisVdata.alt_phone;
+    $(".formMain input[name='phone_number']")
+      .val(cust_phone_number)
+      .trigger("change");
+  }
+  if (cust_phone_number === "" && thisVdata.address3 !== "") {
+    cust_phone_number = thisVdata.address3;
+    $(".formMain input[name='phone_number']")
+      .val(cust_phone_number)
+      .trigger("change");
+  }
+  $(".formMain input[name='title']").val(thisVdata.title);
+  cust_first_name = thisVdata.first_name;
+  if (cust_first_name !== "") {
+    //$("#cust_full_name a[id='first_name']").editable('setValue', cust_first_name, true);
+    $(".formMain input[name='first_name']")
+      .val(cust_first_name)
+      .trigger("change");
+    $("#cust_full_name a[id='first_name']").html(cust_first_name);
+  } else {
+    //$("#cust_full_name a[id='first_name']").editable('setValue', null, true);
+    $("#cust_full_name a[id='first_name']").html("");
+  }
+  cust_middle_initial = thisVdata.middle_initial;
+  if (cust_middle_initial != "") {
+    //$("#cust_full_name a[id='middle_initial']").editable('setValue', cust_middle_initial, true);
+    $(".formMain input[name='middle_initial']")
+      .val(cust_middle_initial)
+      .trigger("change");
+    $("#cust_full_name a[id='middle_initial']").html(cust_middle_initial);
+  } else {
+    //$("#cust_full_name a[id='middle_initial']").editable('setValue', null, true);
+    $("#cust_full_name a[id='middle_initial']").html("");
+  }
+  cust_last_name = thisVdata.last_name;
+  if (cust_last_name !== "") {
+    //$("#cust_full_name a[id='last_name']").editable('setValue', cust_last_name, true);
+    $(".formMain input[name='last_name']")
+      .val(cust_last_name)
+      .trigger("change");
+    $("#cust_full_name a[id='last_name']").html(cust_last_name);
+  } else {
+    //$("#cust_full_name a[id='last_name']").editable('setValue', null, true);
+    $("#cust_full_name a[id='last_name']").html("");
+  }
+  //EASY CREDIT
+  //Identity
+  $(".formMain input[name='identity_number']")
+    .val(thisVdata.identity_number)
+    .trigger("change");
+  $(".formMain input[name='identity_issued_on']").val(
+    thisVdata.identity_issued_on
+  );
+  $(".formMain select[name='identity_issued_by']")
+    .val(thisVdata.identity_issued_by)
+    .trigger("change");
+  try {
+    $(".formMain input[name='alt_identity_number']")
+      .val(thisVdata.alt_identity_number)
+      .trigger("change");
+    $(".formMain input[name='alt_identity_issued_on']").val(
+      thisVdata.alt_identity_issued_on
+    );
+    $(".formMain select[name='alt_identity_issued_by']")
+      .val(thisVdata.alt_identity_issued_by)
+      .trigger("change");
+  } catch (error) {}
+  //Vendor
+  $(".formMain input[name='vendor_lead_code']")
+    .val(thisVdata.vendor_lead_code)
+    .trigger("change");
+  $(".formMain input[name='partner_code']")
+    .val(thisVdata.partner_code)
+    .trigger("change");
+  $(".formMain input[name='request_id']")
+    .val(thisVdata.request_id)
+    .trigger("change");
+    $(".formMain input[name='address1']").val(thisVdata.address1).trigger('change');
+    $(".formMain input[name='address2']").val(thisVdata.address2).trigger('change');
+    $(".formMain input[name='city']").val(thisVdata.city).trigger('change');
+    $(".formMain input[name='province']").val(thisVdata.province).trigger('change');
+    $(".formMain input[name='postal_code']").val(thisVdata.postal_code).trigger('change');
+    $(".formMain select[name='country_code']").val(thisVdata.country_code).trigger('change');
+    $(".formMain select[name='gender']").val(thisVdata.gender).trigger('change');
+    var dateOfBirth = thisVdata.date_of_birth;
+    $(".formMain input[name='date_of_birth']").val(dateOfBirth);
+    $(".formMain input[name='alt_phone']").val(thisVdata.alt_phone).trigger('change');
+    $(".formMain input[name='email']").val(thisVdata.email).trigger('change');
+    var REGcommentsNL = new RegExp("!N!","g");
+    if (typeof thisVdata.comments !== 'undefined') {
+        thisVdata.comments = thisVdata.comments.replace(REGcommentsNL, "\n");
+    }
+    $(".formMain textarea[name='comments']").val(thisVdata.comments).trigger('change');
+    ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason= "")
+    // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
+};
+$(document).on("click", "#btn-application", function (e) {
+  let leadId = $(this).attr("data-leadid");
+  let status = $("#btnResumePause").attr("title");
+  if (status=="Resume Dialing"){
+    $("#returnhome").click();
+    getLeadInfo(leadId);
+  }else{
+    swal("Không thành công", "Vui lòng Pause Dialer", "error");
+    return;
+  }
+  // getLeadInfo("5547595");
+});
 $(document).on("click", "#submit-offer", function (e) {
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
@@ -1215,7 +1376,7 @@ let SyncFullLoanFromAPI = (request_id) => {
       try {
         let data = result.data;
         let document = data.document;
-        
+        console.log(document)
         for (const property in document) {
           $("#full-loan-form input[name='" + property + "']")
             .val(document[property])
@@ -1333,6 +1494,7 @@ let SyncFullLoanFromAPI = (request_id) => {
         getProductType();
         SyncFullLoanFromContact();
       } catch (error) {
+        console.log(error)
         SyncFullLoanFromContact();
       }
     }

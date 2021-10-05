@@ -7513,6 +7513,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
             }
         })
         .done(function (result) {
+            console.log(result);
             //dialingINprogress = 0;
             //console.log(result);
 
