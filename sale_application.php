@@ -193,7 +193,7 @@ $goAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', gourl) : st
 				$user_groups = $api->API_getAllUserGroups();
 			?>
 				<div class="row">
-					<div class="col-lg-9">
+					<div class="col-lg-10">
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<legend id="legend_title">List Sale Application</legend>
@@ -1873,7 +1873,7 @@ $goAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', gourl) : st
 						</div><!-- /.panel -->
 					</div><!-- /.col-lg-9 -->
 					<!-- END -->
-					<div class="col-lg-3">
+					<div class="col-lg-2">
 						<h3 class="m0 pb-lg">Filters</h3>
 						<!-- HIDDEN POSTS -->
 						<div class="form-group">
