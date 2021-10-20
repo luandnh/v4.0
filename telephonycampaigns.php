@@ -1105,8 +1105,8 @@ $gopackage = $api->API_getGOPackage();
 									<label class="control-label col-lg-5"><?php $lh->translateText("answering_machine_detection"); ?>:</label>
 									<div class="col-lg-7 mb">
 										<select class="form-control" id="answering-machine-detection" name="answering_machine_detection">
-											<option value="8369" selected>ON</option>
-											<option value="8368">OFF</option>
+											<!-- <option value="8369" selected>ON</option> -->
+											<option value="8368" selected>OFF</option>
 										</select>
 									</div>
 								</div>

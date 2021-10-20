@@ -1084,7 +1084,8 @@ let SyncCustomerInfomation = (thisVdata) => {
         thisVdata.comments = thisVdata.comments.replace(REGcommentsNL, "\n");
     }
     $(".formMain textarea[name='comments']").val(thisVdata.comments).trigger('change');
-    ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason= "")
+    
+    ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason)
     // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
 };
 $(document).on("click", "#btn-application", function (e) {
@@ -1185,8 +1186,10 @@ $("#eligible_btn").on("click", (e) => {
     }
     customer_name = customer_name.trim();
     customer_name = customer_name.replace("  "," ")
+    let phone_code = $(".formMain input[name='phone_code']").val();
+    if (phone_code == "") {phone_code = "0"};
     let phone_number =
-      $(".formMain input[name='phone_code']").val() +
+       phone_code+
       $(".formMain input[name='phone_number']").val();
     let date_of_birth = $(".formMain input[name='date_of_birth']").val();
     // 
