@@ -78,6 +78,7 @@ if (!isset($_REQUEST['action']) && !isset($_REQUEST['module_name'])) {
     echo "// {$sess_vars}\n";
 ?>
 var isLoadStatus = false;
+var TMP_STATUS = "";
 // Settings
 var phone;
 var phoneRegistered = false;
@@ -6403,7 +6404,7 @@ function DispoSelectSubmit() {
     toggleButton('HangupBothLines', 'on');
 
     var DispoChoice = $("#DispoSelection").val().toString();
-
+    TMP_STATUS = DispoChoice;
     if (DispoChoice.length < 1) {
      	swal("<?=$lh->translationFor('must_select_disposition') ?>.");
         //console.log("Dispo Choice: Must select disposition.");

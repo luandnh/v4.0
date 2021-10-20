@@ -193,7 +193,8 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
         <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/moment.js"></script>
 		<link rel="stylesheet" href="js/dashboard/js/bootstrap/dist/css/bootstrap-select.min.css">
 		<script src="js/dashboard/js/bootstrap/dist/js/bootstrap-select.min.js"></script>
-        <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>		
+        <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>	
+	<script type="text/javascript" src="modules/GOagent/js/pitel/agent-ec-vta.js?v=1"></script>	
         <!-- X-Editable -->
         <!--<link rel="stylesheet" src="js/dashboard/x-editable/dist/css/bootstrap-editable.css">-->
         <!--<script type="text/javascript" src="js/dashboard/x-editable/dist/js/bootstrap-editable.min.js"></script>-->
@@ -3241,7 +3242,7 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/pitel/dsa_update_status.js?v=3" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=55" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=56" defer></script>
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js?v=2" defer></script>
