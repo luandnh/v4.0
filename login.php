@@ -177,11 +177,9 @@ $upass = htmlentities($upass);
 						?>
 					</div>
 					<div class="row">
-						<div class="col-xs-3"></div>
-						<div class="col-xs-6">
+						<div class="col-xs-12">
 							<button id="btn1" type="submit" style="" name="submit" class="btn btn-primary btn-block btn-flat"><?php $lh->translateText("access"); ?></button>
 						</div><!-- /.col -->
-						<div class="col-xs-3"></div>
 					</div>
 				</form>
 				<!--<p class="text-center"><?php $lh->translateText("forgotten_password"); ?> <a href="lostpassword.php"><?php $lh->translateText("click_here"); ?>.</a></p>-->

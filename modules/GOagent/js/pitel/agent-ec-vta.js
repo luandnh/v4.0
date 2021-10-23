@@ -1,4 +1,5 @@
-const API_HOST = "https://ec-api-dev.tel4vn.com"
+const API_HOST = "https://ec-api.tel4vn.com"
+
 const MAP_STATUS = {
   "NI":"CANCELLED",
   "D6":"CANCELLED",
@@ -61,6 +62,9 @@ function sync_vta_status(lead_id, status,vsub_status,received_date,customer_name
   };
   $.ajax(settings).done(function (response) {
     console.log("Update status success");
+    tata.info('Cập nhật trạng thái VTA', 'Đã gửi thành công', {
+      position: 'tl',animate: 'slide', duration: 2500
+    })
   }).fail(function (response) {
     console.log(response);
   });
@@ -69,9 +73,14 @@ function sync_vta_status(lead_id, status,vsub_status,received_date,customer_name
 
 $(document).ready(function () {
   console.log("VA");
+  var now = new Date();
+  var hrs = now.getHours();
+  var our_msg = "";
+  if (hrs >  6) our_msg = "Buổi sáng vui vẻ"; 
+  if (hrs > 12) our_msg = "Buổi trưa vui vẻ";
+  if (hrs > 17) our_msg = "Buổi chiều vui vẻ";
   $("#btn-dispo-submit").click(function() {
-    console.log(2);
-      let vendor_code = $(".formMain input[name='partner_code']").val();
+      let vendor_code = $(".formMain input[name='vendor_lead_code']").val();
       // vendor_code = "VTA"
       if (vendor_code == "VTA"){
           let timeNow = getDateNow();
@@ -87,6 +96,9 @@ $(document).ready(function () {
           if (vmiddle_initial == ""){
             vcustomer_name =vcustomer_name.trim()+ " " + vlast_name.trim();
           }
+          if (vdob == ""){
+            vdob = "01-01-1900";
+          }
           else{
             vcustomer_name = vcustomer_name
             + " " + vmiddle_initial.trim() + " " + vlast_name.trim();
@@ -96,6 +108,9 @@ $(document).ready(function () {
           let vstatus  = MAP_STATUS[vsub_status];
           if (vstatus  == "" || vstatus  == undefined){
             console.log("Not found  lead_status for sub_status : "+ vsub_status);
+              tata.info('Cập nhật trạng thái VTA', 'Không gửi trạng thái: '+"D1", {
+                position: 'tl',animate: 'slide', duration: 2500
+              })
             return;
           }
           sync_vta_status(vlead_id, vstatus,vsub_status,timeNow,vcustomer_name,vdob,videntity_card_id,vphone_number)

@@ -108,7 +108,6 @@ $(document).on('blur', 'input[type="date"]', function () {
   }
 });
 
-
 $(document).on('blur', 'input[tag="phone"]', function () {
   let phone_number = $(this)[0].value;
   var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
@@ -181,6 +180,14 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
+  try{
+    if (user == 'ngan.pham'){
+      $("#eligible_btn").css("background","#fdbfc0");
+      $("#eligible_btn").css("color","rgb(0 0 0)");
+    }
+  }catch(e){
+
+  }
   $("input[name='simu_insurance']")[0].checked = true;
   $(document).on("click", "#submit_attachment", function (e) {
     e.preventDefault();
@@ -620,7 +627,7 @@ $(document).ready(() => {
 
   // 
   let fullLoanTab =
-    '<li role="presentation" id="full_loan_tab_href">' +
+    '<li  style="font-family: Helvetica !important;font-size: large;" role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
     '<span class="fa fa-file-text-o hidden"></span>' +
     "Thông tin khoản vay</a>" +
@@ -2029,6 +2036,7 @@ function creat_full_loan(form_data, mode){
   if (selected_product != undefined){
       product_des = selected_product.split("(")[0].trim();
   }
+  form_data.user_name = user;
   form_data.type = mode;
   form_data.product_name = product_des;
   let post_data = JSON.stringify(form_data);

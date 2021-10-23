@@ -659,8 +659,7 @@ EOF;
 				<h4 class="modal-title">$selectACampaign</h4>
 			</div>
 			<div class="modal-body">
-				<div style='text-align: center; padding: 2px 5px;'><select id='select_camp' class='mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select'></select><label for="select_camp" class="control-label">$availableCampaigns</label></div>
-				<br />
+				<div style='text-align: center; padding: 10px 5px;'><select id='select_camp' class='mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select'></select><label for="select_camp" class="control-label">$availableCampaigns</label></div>
 				<div id="logSpinner" class="text-center hidden"><span style="font-size: 42px;" class="fa fa-spinner fa-pulse"></span></div>
 				<div id="inboundSelection" class="clearfix hidden">
 					<div class="text-center">
@@ -692,7 +691,7 @@ EOF;
 </div>
 <div id="select-disposition" class="modal fade" tabindex="-1">
 	<div class="modal-dialog">
-		<div class="modal-content">
+		<div class="modal-content" style="margin-top: 30px;">
 			<div class="modal-header">
 				<button type="button" class="max-modal hidden" onclick="maximizeModal('select-disposition')" aria-hidden="true" title="$maximize"><i class="fa fa-plus"></i></button>
 				<button type="button" class="min-modal" onclick="minimizeModal('select-disposition')" aria-hidden="true" title="$minimize"><i class="fa fa-minus"></i></button>
@@ -707,9 +706,9 @@ EOF;
 			<div class="modal-footer">
 				<input type="hidden" name="DispoSelection" id="DispoSelection" value="" />
 				<span class="pull-right">
-					<button class="btn btn-default btn-raised hidden-xs" id="btn-dispo-reset-lg">Clear Form</button> 
+					<button class="btn btn-default btn-raised hidden-xs" id="btn-dispo-reset-lg">Đặt lại</button> 
 					<button class="btn btn-default btn-raised visible-xs" id="btn-dispo-reset-xs">Clear</button> 
-					<button class="btn btn-warning btn-raised" id="btn-dispo-submit">Submit</button>
+					<button class="btn btn-warning btn-raised" id="btn-dispo-submit">Xác nhận</button>
 				</span>
 				<div class="pull-left">
 					<div class="material-switch pull-right">
