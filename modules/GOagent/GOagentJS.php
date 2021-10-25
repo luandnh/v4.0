@@ -10900,7 +10900,7 @@ function minimizeModal(modal_id) {
     $.AdminLTE.options.controlSidebarOptions.minimizedDispo = true;
     $("#"+modal_id).css('overflow', 'hidden');
     $("#"+modal_id+" div.modal-dialog").animate({ 'margin-top': '5px' }, 500);
-    $("#"+modal_id).animate({ 'top': '94%' }, 500, function() {
+    $("#"+modal_id).animate({ 'top': '92%' }, 500, function() {
         $("body").css('overflow-y', 'auto');
         $(".max-modal").removeClass('hidden');
         $(".min-modal").addClass('hidden');
