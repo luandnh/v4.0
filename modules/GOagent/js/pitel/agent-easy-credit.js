@@ -1,3 +1,29 @@
+
+function getCurrentDate(){
+  let date_ob = new Date();
+  let date = ("0" + date_ob.getDate()).slice(-2);
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  let year = date_ob.getFullYear();
+  let hours = date_ob.getHours();
+  let minutes = date_ob.getMinutes();
+  let seconds = date_ob.getSeconds();
+  if (hours < 10){
+    hours = "0"+hours
+  }
+  if (minutes < 10){
+    minutes = "0"+minutes
+  }
+  if (seconds < 10){
+    seconds = "0"+seconds
+  }
+  return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+}
+console.stdlog = console.log.bind(console);
+console.logs = {};
+console.log = function(){
+    console.logs[getCurrentDate()] = Array.from(arguments);
+    console.stdlog.apply(console, arguments);
+}
 console.log("agent-easy-credit-v1");
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
@@ -180,6 +206,21 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
+  $(document).on("click", "#report_error", function (e) {
+    tata.info('Tạo tập tin log', 'Vui lòng đợi', {
+      position: 'tl',animate: 'slide', duration: 1000
+    })
+    let tsp = getCurrentDate().replaceAll("-","_").replaceAll(":","_").replaceAll(" ","_")
+    var a = document.createElement('a');
+    var blob = new Blob([JSON.stringify(console.logs,null,4)], {'type':'application/octet-stream'});
+    a.href = window.URL.createObjectURL(blob);
+    let fname = 'ReportLog_'+tsp+".json";
+    a.download = fname;
+    a.click();
+    tata.info('Thành công : '+fname, 'Gửi tập tin log đến developer để kiểm tra', {
+      position: 'tl',animate: 'slide', duration: 5000
+    })
+  });
   try{
     if (user == 'ngan.pham'){
       $("#eligible_btn").css("background","#fdbfc0");
@@ -234,7 +275,7 @@ $(document).ready(() => {
       };
       $.ajax(settings)
         .fail((result, status, error) => {
-          console.error("Submit_attachment failed: ",result);
+          console.log("Submit_attachment failed: ",result);
           let msg = "Please contact developer!";
           isUploadedDocs[2] = false;
           // AllowSelectOffer();
@@ -316,7 +357,7 @@ $(document).ready(() => {
       };
       $.ajax(settings)
         .fail((result, status, error) => {
-          console.error("Submit_attachment failed: ",result);
+          console.log("Submit_attachment failed: ",result);
           let msg = "Please contact developer!";
           isUploadedDocs[2] = false;
           // AllowSelectOffer();
@@ -391,7 +432,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.error("Submit_attachment: ",result);
+        console.log("Submit_attachment: ",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -458,7 +499,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.error("Submit_img_id_card: ",result);
+        console.log("Submit_img_id_card: ",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -527,7 +568,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.error("Submit_img_selfie2",result);
+        console.log("Submit_img_selfie2",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -594,7 +635,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.error("Submit_img_id_card2",result);
+        console.log("Submit_img_id_card2",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -725,7 +766,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
       product_line: "BUSINESS",
     }),
   }).fail((result, status, error) => {
-    console.error("Get Product List Failed: ",result);
+    console.log("Get Product List Failed: ",result);
     let msg = "Please contact developer!";
     if (result.message !== undefined) {
       msg = result.message;
@@ -984,7 +1025,6 @@ let getLeadInfo = (lead_id) => {
 let SyncCustomerInfomation = (thisVdata) => {
   $("#custormer_tab").click();
   LeadPrevDispo = thisVdata.status;
-  console.log(thisVdata)
   $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
   $(".formMain input[name='lead_id']")
   .val(thisVdata.lead_id)
@@ -1143,7 +1183,7 @@ $(document).on("click", "#submit-offer", function (e) {
       if (result.responseText != undefined){
         try {
             let err = JSON.parse(result.responseText);
-            console.error("Select Offer Failed: ",result.responseJSON);
+            console.log("Select Offer Failed: ",result.responseJSON);
             if (err.error != undefined){
               msg +="\n"+ JSON.stringify(err.error);
             }
@@ -1233,7 +1273,7 @@ $("#eligible_btn").on("click", (e) => {
       tem_province: tem_province,
       job_type: job_type,
     };
-    console.log("Eligible data: ",eligible_data);
+    console.info("Eligible data: ",eligible_data);
     $.ajax({
       type: "POST",
       url: EC_PROD_API_URL+"/api/eligibleService/v1/eligible/check",
@@ -1247,7 +1287,7 @@ $("#eligible_btn").on("click", (e) => {
       },
     })
       .fail((result, status, error) => {
-        console.error("Eligible failed: ",result);
+        console.log("Eligible failed: ",result);
         var erro = result.responseJSON;
         let msg = "Please contact developer!";
         request_id = partner_code + Date.now().toString();
@@ -1386,7 +1426,7 @@ let SyncFullLoanFromAPI = (request_id) => {
       try {
         let data = result.data;
         let document = data.document;
-        console.log(document)
+        console.info(document)
         for (const property in document) {
           $("#full-loan-form input[name='" + property + "']")
             .val(document[property])
@@ -1504,14 +1544,14 @@ let SyncFullLoanFromAPI = (request_id) => {
         getProductType();
         SyncFullLoanFromContact();
       } catch (error) {
-        console.log(error)
+        console.log("SyncFullLoan",error)
         SyncFullLoanFromContact();
       }
     }
     );
   } catch (err) {
     SyncFullLoanFromContact();
-    console.error("SyncFullLoanFromAPI error : ",err);
+    console.log("SyncFullLoanFromAPI error : ",err);
   }
 };
 
@@ -1542,7 +1582,7 @@ let SyncFullLoanFromAPIOld = (request_id) => {
       }
     });
   } catch (err) {
-    console.error("SyncFullLoanFromAPIOld error : ",err);
+    console.log("SyncFullLoanFromAPIOld error : ",err);
   }
 };
 
@@ -1559,7 +1599,7 @@ let ajaxGetOldFullLoan = (request_id) => {
     },
   }).fail((result, status, error) => {
     SyncFullLoanFromContact();
-    console.error("SyncFullLoanFromContact error : ",result);
+    console.log("SyncFullLoanFromContact error : ",result);
   });
 };
 
@@ -1575,7 +1615,7 @@ let ajaxGetOffer = (request_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    // console.error("ajaxGetOffer",result);
+    console.log("ajaxGetOffer",result);
   });
 };
 
@@ -2119,7 +2159,7 @@ $("#full-loan-form").on("submit", (e) => {
       creat_full_loan(form_data, "update");
       var er_data = result.responseJSON.body;
       try{
-        console.error("Submit fullloan failed : ", er_data);
+        console.log("Submit fullloan failed : ", er_data);
       }catch(e){
       }
       let msg = "Please contact developer!";
@@ -2697,7 +2737,7 @@ var saveFullLoan = () => {
     })
     .fail(function (response) {
       swal("Save full loan erro", response.responseJSON.erro, "success");
-      console.error("Save full loan erro: ",response);
+      console.log("Save full loan erro: ",response);
     });
 };
 $(document).ready(() => {
@@ -3021,6 +3061,6 @@ let format_log_productlist = function(product_list){
     log_products.list.push(products);
     log_products.total += products.length;
   }
-  console.log("Products: ",log_products);
+  console.info("Products: ",log_products);
 }
 // END DEV AREA

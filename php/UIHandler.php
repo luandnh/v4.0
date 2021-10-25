@@ -1568,6 +1568,9 @@ error_reporting(E_ERROR | E_PARSE);
 	                </a>
 	                <div class="navbar-custom-menu">
 	                    <ul class="nav navbar-nav">
+					<li id="topbar-callbacks" class="dropdown notifications-menu">
+					<a href="#" id="report_error" data-toggle="tooltip" data-placement="top" title="Report Bug"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bug"></i></a>
+					</li>
 	                    		'.$moduleTopbarElements.'
 	                    		'.$this->getTopbarMessagesMenu($user).'
 		                    	<li>

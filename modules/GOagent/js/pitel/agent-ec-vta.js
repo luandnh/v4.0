@@ -61,18 +61,17 @@ function sync_vta_status(lead_id, status,vsub_status,received_date,customer_name
     "data": data,
   };
   $.ajax(settings).done(function (response) {
-    console.log("Update status success");
+    console.log("Update status success", response);
     tata.info('Cập nhật trạng thái VTA', 'Đã gửi thành công', {
       position: 'tl',animate: 'slide', duration: 2500
     })
   }).fail(function (response) {
-    console.log(response);
+    console.log("Update status failed", response);
   });
 }
 
 
 $(document).ready(function () {
-  console.log("VA");
   var now = new Date();
   var hrs = now.getHours();
   var our_msg = "";
