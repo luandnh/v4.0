@@ -633,6 +633,14 @@ class APIHandler
 		);
 		return $this->API_Request("goDashboard", $postfields);
 	}
+	
+	public function API_getVendorLeadsMonitoring()
+	{
+		$postfields = array(
+			'goAction' => 'goGetVendorLeadsMonitoring'
+		);
+		return $this->API_Request("goDashboard", $postfields);
+	}
 
 	public function API_getRealtimeCallsMonitoring()
 	{

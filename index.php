@@ -481,6 +481,7 @@
 									</a>
 							   </div>
 							</div>
+							
 							<!-- End Agent Monitoring Summary -->
 							<?php } ?>
 						</aside><!-- END OF COLUMN 3 -->
@@ -505,10 +506,25 @@
 							   </div>
 							</div>
 						</div>
+						<div class="col-lg-3">
+							<div class="panel panel-default">
+							   <div class="panel-heading">
+								  <div class="panel-title">Vendor Leads Monitoring</div>
+							   </div>
+							   <div data-height="230" data-scrollable="yes" class="list-group">
+									<span id="refresh_vendor_leads_summary"></span>
+							   </div>
+							   <div class="panel-footer clearfix">
+									<a href="#" data-toggle="modal" data-target="#partner_lead_monitoring" class="pull-right">
+										<medium><?=$lh->translateText("view_more")?></medium> <em class="fa fa-arrow-right"></em>
+									</a>
+							   </div>
+							</div>
+						</div>
 						<!-- End Agent Monitoring Summary -->
 
 						<!-- VECTOR MAP LOADER -->
-						<div class="col-lg-9">
+						<div class="col-lg-6">
 							<div class="panel panel-transparent">
 							   <!--<div data-vector-map="" data-height="450" data-scale='0' data-map-name="world_mill"></div>-->
 							   <div id="world-map" style="height: 390px"></div>
@@ -629,6 +645,36 @@
 		</div>
 		<!-- End of Campaigns Monitoring -->
 		
+		<!-- Campaigns Monitoring -->
+		<div class="modal fade" id="partner_lead_monitoring" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-lg modal-dialog" style="min-width: 75%">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4>Parter Leads Monitoring</h4>
+					</div>
+					<div class="modal-body">
+						<div class="responsive">
+						<!-- <div class="col-sm-12">-->
+							<table id="partner_lead_monitoring_table" class="table table-striped table-hover display compact" cellspacing="0" style="width: 100%">
+								<thead>
+										<th style="color: white;">ID</th>
+										<th style="font-size: small;">Vendor Code</th>    
+										<th style="font-size: small;">List</th>                                                 
+										<th style="font-size: small;">Received Leads</th>
+										<th style="font-size: small;">Called Leads</th>  <th style="font-size: small;">Not Call Yet</th>                                                    
+								</thead>
+								<tbody>
+								
+								</tbody>
+							</table>
+						<!--</div>-->
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- End of Campaigns Monitoring -->
 		<!-- Realtime Inbound Monitoring -->
 		<div class="modal fade" id="realtime_inbound_monitoring" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-lg modal-dialog" style="min-width: 75%">
@@ -1481,8 +1527,10 @@ function goGetInSession(type) {
 					load_campaigns_resources();
 					load_campaigns_monitoring();
 					load_agents_monitoring_summary();
+					load_vendor_leads_summary();
 				// ---- realtime monitoring
 					load_realtime_agents_monitoring();
+					load_realtime_vendor_leads_monitoring();
 					<?php if(REALTIME_CALLS_MONITORING === 'y'){ ?>
 					load_realtime_calls_monitoring();
 					<?php } ?>
@@ -1526,9 +1574,11 @@ function goGetInSession(type) {
 				var int_12 = setInterval(load_campaigns_resources,30000);
 				var int_13 = setInterval(load_campaigns_monitoring,20000);
 				var int_14 = setInterval(load_agents_monitoring_summary,15000);
+				var int_76 = setInterval(load_vendor_leads_summary,30000);
 			
 			// ... realtime monitoring ...
 				var int_15 = setInterval(load_realtime_agents_monitoring,3000);
+				var int_77 = setInterval(load_realtime_vendor_leads_monitoring,3000);
 				<?php if(REALTIME_CALLS_MONITORING === 'y'){ ?>
 				var int_16 = setInterval(load_realtime_calls_monitoring,3000);
 				<?php } ?>
@@ -1606,7 +1656,9 @@ function goGetInSession(type) {
 			int_12 = setInterval(load_campaigns_resources,30000);
 			int_13 = setInterval(load_campaigns_monitoring,20000);
 			int_14 = setInterval(load_agents_monitoring_summary,15000);
+			int_76 = setInterval(load_vendor_leads_summary,30000);
 			int_15 = setInterval(load_realtime_agents_monitoring,3000);
+			int_77 = setInterval(load_realtime_vendor_leads_monitoring,3000);
 			<?php if(REALTIME_CALLS_MONITORING === 'y'){ ?>
 			int_16 = setInterval(load_realtime_calls_monitoring,3000);
 			<?php } ?>
@@ -1767,7 +1819,9 @@ function goGetInSession(type) {
 					int_12 = setInterval(load_campaigns_resources,30000);
 					int_13 = setInterval(load_campaigns_monitoring,20000);
 					int_14 = setInterval(load_agents_monitoring_summary,15000);
+					int_76 = setInterval(load_vendor_leads_summary,30000);
 					int_15 = setInterval(load_realtime_agents_monitoring,3000);
+			int_77 = setInterval(load_realtime_vendor_leads_monitoring,3000);
 					<?php if(REALTIME_CALLS_MONITORING === 'y'){ ?>
 					int_16 = setInterval(load_realtime_calls_monitoring,3000);
 					<?php } ?>
@@ -1875,7 +1929,9 @@ function goGetInSession(type) {
 							int_12 = setInterval(load_campaigns_resources,30000);
 							int_13 = setInterval(load_campaigns_monitoring,20000);
 							int_14 = setInterval(load_agents_monitoring_summary,15000);
+							int_76 = setInterval(load_vendor_leads_summary,30000);
 							int_15 = setInterval(load_realtime_agents_monitoring,3000);
+			int_77 = setInterval(load_realtime_vendor_leads_monitoring,3000);
 							<?php if(REALTIME_CALLS_MONITORING === 'y'){ ?>
 							int_16 = setInterval(load_realtime_calls_monitoring,3000);
 							<?php } ?>

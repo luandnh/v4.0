@@ -47,7 +47,19 @@
 			} 
 		});
     }
-
+    
+    function load_vendor_leads_summary(){
+	$.ajax({
+		url: "./php/dashboard/API_getVendorLeadsSummary.php",
+		cache: false,
+		success: function(data){
+			//console.log(data);
+			$("#refresh_vendor_leads_summary").html(data);
+			goAvatar._init(goOptions);
+			console.log(goOptions)
+		} 
+	});
+}
     function load_agent_sales(){
 		 $.ajax({
                         url: "./php/dashboard/API_getSalesAgent.php",
@@ -163,7 +175,29 @@
 				goAvatar._init(goOptions);
 			} 
 		});
-    }
+}
+    function load_realtime_vendor_leads_monitoring(){
+	$.ajax({
+		url: "./php/dashboard/API_getVendorLeadsRealtime.php",
+		cache: false,
+		dataType: 'json',
+		success: function(values){
+			var JSONStringrealtime = values;
+			var JSONObjectrealtime = JSON.parse(JSONStringrealtime);
+			$('#partner_lead_monitoring_table').DataTable({
+				destroy:true,
+				responsive:true,
+				data:JSONObjectrealtime,
+				stateSave: true,
+				drawCallback: function() {
+					var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+					pagination.toggle(this.api().page.info().pages > 1);
+				}
+			});
+			goAvatar._init(goOptions);
+		} 
+	});
+}
 
     function load_realtime_calls_monitoring(){
 		$.ajax({
