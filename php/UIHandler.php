@@ -2083,6 +2083,7 @@ error_reporting(E_ERROR | E_PARSE);
 			if ($perms->recordings->recordings_display == 'Y') {
 				$callreports .= $this-> getSidebarItem("./callrecordings.php", "phone-square", $this->lh->translationFor("call_recordings"));
 				$callreports .= $this-> getSidebarItem("./sale_application.php", "file-pdf-o", $this->lh->translationFor("sale_application"));
+				$callreports .= $this-> getSidebarItem("./collabrator.php", "suitcase", $this->lh->translationFor("collabrator"));
 				
 			}
 			

@@ -68,6 +68,7 @@ if ($list_id_ct != NULL) {
 	$last_local_call_time 	= $output->data->last_local_call_time;
 	$is_customer 	= $output->is_customer;
 	$vendor_lead_code 	= $output->data->vendor_lead_code;
+	$agent 	= $output->data->user;
 	$identity_number 	= $output->data->identity_number;
 	$identity_issued_by 	= $output->data->identity_issued_by;
 	$identity_issued_on 	= $output->data->identity_issued_on;
@@ -579,21 +580,32 @@ $custDefaultAvatar = "https://www.gravatar.com/avatar/{$avatarHash}?rating=PG&si
 													<label for="date_of_birth"><?php $lh->translateText("date_of_birth"); ?></label>
 												</div>
 											</div>
+
+											<div class="col-sm-6">
+												<div class="mda-form-group label-floating">
+													<select name="dispo" id="dispo" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select">
+														<option value=""><?php $lh->translateText("-none-"); ?></option>
+														<?php
+														for ($a = 0; $a < count($disposition->status); $a++) {
+														?>
+															<option value="<?php echo $disposition->status[$a]; ?>" <?php if ($disposition->status[$a] === $output->data->status) echo "selected"; ?>><?php echo $disposition->status[$a] . ' - ' . $disposition->status_name[$a]; ?></option>
+														<?php
+														}
+														?>
+													</select>
+													<label for="gender"><?php $lh->translateText("disposition"); ?></label>
+												</div><!-- /.dispo -->
+											</div>
+
+											<div class="col-sm-6">
+												<div class="mda-form-group label-floating">
+													<input disabled readonly type="text" id="agent" value="<?php echo $agent; ?>" name="agent" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+													<label for="agent">Sale</label>
+												</div>
+											</div>
+
 										</div><!-- /.gender & title -->
 
-										<div class="mda-form-group label-floating">
-											<select name="dispo" id="dispo" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select">
-												<option value=""><?php $lh->translateText("-none-"); ?></option>
-												<?php
-												for ($a = 0; $a < count($disposition->status); $a++) {
-												?>
-													<option value="<?php echo $disposition->status[$a]; ?>" <?php if ($disposition->status[$a] === $output->data->status) echo "selected"; ?>><?php echo $disposition->status[$a] . ' - ' . $disposition->status_name[$a]; ?></option>
-												<?php
-												}
-												?>
-											</select>
-											<label for="gender"><?php $lh->translateText("disposition"); ?></label>
-										</div><!-- /.dispo -->
 									</form>
 									<br />
 								</fieldset>

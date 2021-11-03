@@ -1005,7 +1005,7 @@
 	
 <!--========== REFRESH DIVS ==============-->
 	<!-- <script src="js/load_statusboxes.js"></script> -->
-        <script src="js/dashboardv4.js"></script>
+        <script src="js/dashboardv4.js?v=1"></script>
 	<!-- <script src="js/load_clusterstatus.js"></script> -->
 
 	<script>
