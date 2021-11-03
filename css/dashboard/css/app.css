@@ -9072,3 +9072,70 @@ label{
 #scSubmit{
   width: 100%;
 }
+/* DEBT STRUCT */
+.padding {
+  padding: 10px !important;
+}
+
+#debt .card {
+  margin-bottom: 1.5rem
+}
+
+#debt .card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #c8ced3;
+  border-radius: .25rem
+}
+
+#debt .card-header:first-child {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0
+}
+
+#debt .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f0f3f5;
+  border-bottom: 1px solid #c8ced3
+}
+
+#debt .card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem
+}
+
+#debt .form-control:focus {
+  color: #5c6873;
+  background-color: #fff;
+  border-color: #c8ced3 !important;
+  outline: 0;
+  box-shadow: 0 0 0 #F44336
+}
+#debt .mda-form-control{
+  margin-top: unset !important;
+  margin-bottom:5px !important;
+  height: unset !important;
+}
+#debt .row{
+  margin:  0px -10px;
+}
+
+#debt input[readonly]{
+  background-color: #222d3214;
+}
+
+#debt .select2-container{
+  width: 100% !important;
+}
+#debt .select2-container--bootstrap .select2-selection--single .select2-selection__rendered{
+  margin-top: -2px !important;
+  font-size: larger !important;
+  font-family: Helvetica !important;
+}

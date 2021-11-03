@@ -1,4 +1,3 @@
-
 function getCurrentDate(){
   let date_ob = new Date();
   let date = ("0" + date_ob.getDate()).slice(-2);
@@ -210,7 +209,7 @@ $(document).ready(() => {
     tata.info('Tạo tập tin log', 'Vui lòng đợi', {
       position: 'tl',animate: 'slide', duration: 1000
     })
-    let tsp = getCurrentDate().replaceAll("-","_").replaceAll(":","_").replaceAll(" ","_")
+    let tsp = getCurrentDate().split("-").join("_").split(":").join("_").split(" ").join("_");
     var a = document.createElement('a');
     var blob = new Blob([JSON.stringify(console.logs,null,4)], {'type':'application/octet-stream'});
     a.href = window.URL.createObjectURL(blob);
@@ -529,7 +528,6 @@ $(document).ready(() => {
         }
       });
   });
-
   // 
   // SUBMIT FULLLOAN
   // Upload img_selfie
@@ -668,7 +666,7 @@ $(document).ready(() => {
 
   // 
   let fullLoanTab =
-    '<li  style="font-family: Helvetica !important;font-size: large;" role="presentation" id="full_loan_tab_href">' +
+    '<li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
     '<span class="fa fa-file-text-o hidden"></span>' +
     "Thông tin khoản vay</a>" +
@@ -1372,7 +1370,7 @@ let getProductType = () => {
     tmp_product_names += `</div><hr style="margin : 10px">`;
     product_names+= tmp_product_names;
     if (!is_uploaded_docs){
-      offder_product_names+= tmp_product_names.replaceAll("1/ ","- ").replaceAll("2/ ","- ").replaceAll("3/ ","- ")
+      offder_product_names+= tmp_product_names.replace("1/ ","- ").replace("2/ ","- ").replace("3/ ","- ")
     }
     // offder_product_names += `</div><hr style="margin : 10px">`;
     if (i != selected_product.document_collecting.length - 1) {
@@ -1702,14 +1700,16 @@ let SyncFullLoanFromContact = () => {
   let first_name = $(".formMain input[name='first_name']").val();
   let middle_initial = $(".formMain input[name='middle_initial']").val();
   let last_name = $(".formMain input[name='last_name']").val();
-  let customer_name = first_name;
+  let customer_name = first_name.trim();
     if (middle_initial == ""){
-      customer_name =customer_name+ " " + last_name;
+      customer_name =customer_name.trim()+ " " + last_name.trim();
     }
     else{
       customer_name = customer_name
-      + " " + middle_initial + " " + last_name;
+      + " " + middle_initial.trim() + " " + last_name.trim();
     }
+    customer_name = customer_name.trim();
+    customer_name = customer_name.replace("  "," ")
   let phone_number =
     $(".formMain input[name='phone_code']").val() +
     $(".formMain input[name='phone_number']").val();
@@ -1995,13 +1995,13 @@ $(document).on("keyup", 'input[tag="currency"]', function () {
   let val = this.value;
   if ( val== "" || val == undefined) { }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
 });
 
 $(document).on("blur", 'input[tag="currency"]', function () {
   if (this.value == "" || this.value == undefined) { }
   this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
   this.value = formatter.format(this.value);
 });
 
@@ -2010,7 +2010,7 @@ $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
   if (val == "" || val == undefined) {
   }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
 });
 
 $(document).on("keyup", 'input[name^="customer-offer"]', function () {
@@ -2018,14 +2018,14 @@ $(document).on("keyup", 'input[name^="customer-offer"]', function () {
   if (val == "" || val == undefined) {
   }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
   let val = this.value;
   if (val == "" || val == undefined) {
   }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
   let fmv = formatter.format(this.value);
   this.value = fmv;
 });
@@ -2035,7 +2035,7 @@ $(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
   if (val == "" || val == undefined) {
   }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
   let fmv = formatter.format(this.value);
   this.value = fmv;
 });
@@ -2044,7 +2044,7 @@ $(document).on("blur", 'input[name="customer-offer-total"]', function () {
   if (val == "" || val == undefined) {
   }
   this.value = val.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
   let fmv = formatter.format(this.value);
   this.value = fmv;
 });
@@ -2104,9 +2104,9 @@ $("#full-loan-form").on("submit", (e) => {
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").split(".").join(""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
@@ -2689,9 +2689,9 @@ var saveFullLoan = () => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").split(".").join(""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
@@ -2878,7 +2878,6 @@ $(document).ready(() => {
   SetWorkAddress();
 
 });
-
 let SetPermanentAddress = () => {
   let permanentProvince = $("select[name='permanent_province']")[0];
   $("select[name='permanent_province']").empty();

@@ -197,7 +197,7 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
         <script type="text/javascript" src="js/dashboard/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>	
 	  
 	<script type="text/javascript" src="js/tata/tata.js"></script>
-	<script type="text/javascript" src="modules/GOagent/js/pitel/agent-ec-vta.js?v=2"></script>	
+	<script type="text/javascript" src="modules/GOagent/js/pitel/agent-ec-vta.js?v=3"></script>	
         <!-- X-Editable -->
         <!--<link rel="stylesheet" src="js/dashboard/x-editable/dist/css/bootstrap-editable.css">-->
         <!--<script type="text/javascript" src="js/dashboard/x-editable/dist/js/bootstrap-editable.min.js"></script>-->
@@ -801,23 +801,24 @@ input:checked + .slider:before {
 				                	<div role="tabpanel" class="panel panel-transparent">
 									  <ul id="agent_tablist" role="tablist" class="nav nav-tabs nav-justified">
 									  <!-- Nav task panel tabs-->
-										 <li  style="font-family: Helvetica !important;font-size: large;"  role="presentation" class="active">
+										 <li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;"  role="presentation" class="active">
 											<a href="#contact_info" aria-controls="home" role="tab" data-toggle="tab" class="bb0">
 												<span class="fa fa-user hidden"></span>
 												<?=$lh->translationFor('contact_information')?></a>
 										 </li>
-										 <li  style="font-family: Helvetica !important;font-size: large;" role="presentation">
+										 <li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation">
 											<a href="#comments_tab" aria-controls="home" role="tab" data-toggle="tab" class="bb0">
 												<span class="fa fa-comments-o hidden"></span>
 											    <?=$lh->translationFor('comments')?></a>
 										 </li>
-										 <li  style="font-family: Helvetica !important;font-size: large;" role="presentation">
+										 
+										 <li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation">
 											<a href="#scripts" aria-controls="home" role="tab" data-toggle="tab" class="bb0">
 												<span class="fa fa-file-text-o hidden"></span>
 												<?=$lh->translationFor('script')?></a>
 										 </li>
 										<?php if(ROCKETCHAT_ENABLE === 'y'){?>
-										 <li  style="font-family: Helvetica !important;font-size: large;" role="presentation">
+										 <li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation">
                                                                                         <a href="#rc" aria-controls="home" role="tab" data-toggle="tab" class="bb0">
                                                                                                 <span class="fa fa-rocket"></span>
                                                                                                 <?=$lh->translationFor('Chat')?></a>
@@ -3250,6 +3251,7 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=58" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-debt-restructing.js?v=3" defer></script>	
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js?v=2" defer></script>

@@ -1045,3 +1045,6 @@ input[type='file'] {
   font-size: large !important;
   padding: 0.375rem 3.75rem !important;
 }
+input[type='file'][class='deb_file']{
+  color: #000000 !important;
+}
