@@ -1,3030 +1,12117 @@
-var bank_code = JSON.parse(`{"data":[
-    { "value": "A60049TX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRUNG YÊN - 1204027"},
-    { "value": "A60049TY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN TRƯỜNG AN - 46204003" },
-    { "value": "A60049TZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TRƯỜNG SƠN - 79204048" },
-    { "value": "A60049U0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TRƯỜNG XUÂN - 49204009" },
-    { "value": "A60049U1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TT THANH TOÁN - 1204009" },
-    { "value": "A60049U2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN TỨ KỲ - 30204007" },
-    { "value": "A60049U3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TỪ LIÊM HÀ NỘI - 1204005" },
-    { "value": "A60049U4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TƯ NGHĨA - 51204006" },
-    { "value": "A60049U5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TUY AN - 54204009" },
-    { "value": "A60049U6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TUY PHƯỚC - 52204003" },
-    { "value": "A60049U7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN TUYÊN QUANG - 8204006" },
-    { "value": "A60049S0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN LÂM THAO - 25204005" },
-    { "value": "A60049S1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN LANG CHÁNH - 38204031" },
-    { "value": "A60049S2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LÁNG HẠ HÀ NỘI - 1204010" },
-    { "value": "A60049S3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN LAO BẢO - 45204003" },
-    { "value": "A60049S4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN LẤP VÒ - 87204007" },
-    { "value": "A60049S5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LÊ HỒNG PHONG - 66204028" },
-    { "value": "A60049S6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LÊ THÁNH TÔNG - 66204010" },
-    { "value": "A60049S7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LỆ THỦY - 44204003" },
-    { "value": "A60049S8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN LIÊN CHIỂU DN - 48204008" },
-    { "value": "A60049S9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LỘC AN NAM LÂM ĐỒNG - 68204014" },
-    { "value": "A60049SA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN LỘC BÌNH - 20204007" },
-    { "value": "A60049SB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LỘC PHÁT LÂM ĐỒNG - 68204016" },
-    { "value": "A60049SC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LONG BIÊN - 1204019" },
-    { "value": "A60049SD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN LONG HỒ - 86204004" },
-    { "value": "A60049SE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN LONG MỸ - 93204002" },
-    { "value": "A60049SF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN LONG PHÚ - 94204009" },
-    { "value": "A60049SG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN LONG THÀNH - 75204003" },
-    { "value": "A60049SH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN LỤC YÊN - 15204006" },
-    { "value": "A60049SI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN LƯƠNG SƠN - 60204010" },
-    { "value": "A60049SJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN LÝ SƠN - 51204004" },
-    { "value": "A60049SK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LÝ THÁI TỔ - 44204011" },
-    { "value": "A60049SL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LÝ THƯỜNG KIỆT - 44204008" },
-    { "value": "A60049SM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN LÝ THƯỜNG KIỆT - 79204047" },
-    { "value": "A60049SN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LÝ THƯỜNG KIỆT ĐÔNG HÀ NỘI - 1204294" },
-    { "value": "A60049SO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN MĂNG THÍT - 86204006" },
-    { "value": "A60049SP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN MẠO KHÊ - 22204020" },
-    { "value": "A60049SQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN M'ĐRĂK - 66204006" },
-    { "value": "A60049SR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN MÊ LINH - 1204051" },
-    { "value": "A60049SS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN MÈO VẠC - 2204003" },
-    { "value": "A60049ST", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN MIỀN ĐÔNG - 79204037" },
-    { "value": "A60049SU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN MINH LONG - 51204013" },
-    { "value": "A60049SV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN MỎ CÀY BẮC - 83204012" },
-    { "value": "A60049SW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN MỎ CÀY NAM - 83204005" },
-    { "value": "A60049SX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN MỘ ĐỨC - 51204007" },
-    { "value": "A60049SY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN MÙ CANG CHẢI - 15204010" },
-    { "value": "A60049SZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN MƯỜNG TÈ - 12204006" },
-    { "value": "A60049T0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN MỸ DINH - 1204024" },
-    { "value": "A60049T1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TP QUY NHƠN - 52204002" },
-    { "value": "A60049T2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TP SA ĐÉC - 87204012" },
-    { "value": "A60049T3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN TP SÔNG CÔNG - 19204005" },
-    { "value": "A60049T4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TP TAM ĐIỆP - 37204010" },
-    { "value": "A60049T5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TP TAM KỲ - 49204020" },
-    { "value": "A60049T6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TP THÁI BÌNH - 34204002" },
-    { "value": "A60049T7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TP THANH HÓA - 38204026" },
-    { "value": "A60049T8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TP TRÀ VINH - 84204010" },
-    { "value": "A60049T9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP UÔNG BÍ - 22204010" },
-    { "value": "A60049TA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN TP VỊ THANH  -  HẬU GIANG - 93204004" },
-    { "value": "A60049TB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TP VĨNH LONG - 86204009" },
-    { "value": "A60049TC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN TP VŨNG TÀU - 77204002" },
-    { "value": "A60049TD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TP YÊN BÁI - 15204002" },
-    { "value": "A60049TE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TP YÊN BÁI II - 15204003" },
-    { "value": "A60049TF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TRÀ BỒNG - 51204011" },
-    { "value": "A60049TG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TRÀ CÚ - 84204005" },
-    { "value": "A60049TH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TRÀ ÔN - 86204010" },
-    { "value": "A60049TI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TRÀ VINH - 84204001" },
-    { "value": "A60049TJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TRẠM TẤU - 15204007" },
-    { "value": "A60049TK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN TRẦN ĐỀ - 94204013" },
-    { "value": "A60049TL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN TRẦN HƯNG ĐẠO - 44204006" },
-    { "value": "A60049TM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN TRẦN PHÚ - 31204016" },
-    { "value": "A60049TN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TRẦN VĂN THỜI - 96204007" },
-    { "value": "A60049UT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN VINH - 40204002" },
-    { "value": "A60049UU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN VĨNH BẢO - 31204012" },
-    { "value": "A60049UV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN VĨNH CHÂU - 94204010" },
-    { "value": "A60049UW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN VĨNH HIỆP - 56204004" },
-    { "value": "A60049UX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN VĨNH LẠC - 91204008" },
-    { "value": "A60049UY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN VĨNH LỘC - 38204014" },
-    { "value": "A60049UZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN VĨNH LỢI - 95204007" },
-    { "value": "A60049V0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN MỸ LÂM - 91204015" },
-    { "value": "A60049V1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN MỸ LỘC - 36204009" },
-    { "value": "A6004ANP", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Trà Vinh - CN TRÀ VINH - 84334001" },
-    { "value": "A6004ANQ", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Trà Vinh - CN TRÀ VINH 1 - 84334002" },
-    { "value": "A6004ANR", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Vĩnh Long - CN VĨNH LONG - 86334001" },
-    { "value": "A6004ANS", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77334001" },
-    { "value": "A6004ANT", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - An Giang - CN AN GIANG - 89317001" },
-    { "value": "A6004ANU", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN BA ĐÌNH - 1317004" },
-    { "value": "A6004ANV", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bắc Ninh - CN BẮC NINH - 27317001" },
-    { "value": "A6004ANW", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bình Định - CN BÌNH ĐỊNH - 52317001" },
-    { "value": "A6004ANX", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bình Dương - CN BÌNH DƯƠNG - 74317002" },
-    { "value": "A6004ANY", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Cà Mau - CN CÀ MAU - 96317001" },
-    { "value": "A6004ANZ", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Cần Thơ - CN CẦN THƠ - 92317001" },
-    { "value": "A6004BFU", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - An Giang - CN AN GIANG - 89355001" },
-    { "value": "A6004BFV", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bạc Liêu - CN BẠC LIÊU - 95355001" },
-    { "value": "A6004BFW", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bắc Ninh - CN BẮC NINH - 27355001" },
-    { "value": "A6004BFX", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đắk Lắk - CN BUÔN MA THUỘT - 66355001" },
-    { "value": "A6004BFY", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Cần Thơ - CN CẦN THƠ - 92355001" },
-    { "value": "A6004BFZ", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN CHỢ LỚN - 79355004" },
-    { "value": "A6004BG0", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đà Nẵng - CN ĐÀ NẴNG - 48355001" },
-    { "value": "A6004BG1", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đồng Nai - CN ĐỒNG NAI - 75355001" },
-    { "value": "A6004BG2", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hà Nội - CN HÀ NỘI - 1355001" },
-    { "value": "A6004BG3", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hải Phòng - CN HẢI PHÒNG - 31355001" },
-    { "value": "A6004BG4", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Nam - CN HỘI AN - 49355001" },
-    { "value": "A6004BG5", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN HUYỆN CỦ CHI - 79355006" },
-    { "value": "A6004BKO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TRƯỜNG SƠN - 79202023" },
-    { "value": "A6004BKP", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TỪ LIÊM - 1202028" },
-    { "value": "A6004BKQ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN TỪ SƠN - 27202002" },
-    { "value": "A6004BKR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 8202001" },
-    { "value": "A6004BKS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN VỊ THANH - 93202003" },
-    { "value": "A6004BKT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86202001" },
-    { "value": "A6004BKU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN VĨNH LONG PGD CÁI VỒN - 86202800" },
-    { "value": "A6004BKV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26202001" },
-    { "value": "A6004BKW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Yên Bái - CN YÊN BÁI - 15202001" },
-    { "value": "A6004BKX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - HẬU GIANG PGD 1/5 - 93202801" },
-    { "value": "A6004BPG", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN PGD QUẬN 11 - 79202801" },
-    { "value": "A6004BPH", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN TÂY SƠN - 52202003" },
-    { "value": "A6004BPI", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THẠCH THẤT - 1202027" },
-    { "value": "A6004BPJ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34202001" },
-    { "value": "A6004BPK", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19202001" },
-    { "value": "A6004BPL", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THĂNG LONG - 1202006" },
-    { "value": "A6004BPM", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THÀNH ĐÔ - 1202012" },
-    { "value": "A6004BPN", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN THÀNH ĐÔNG - 30202003" },
-    { "value": "A6004BPO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38202001" },
-    { "value": "A6004BPP", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nam Định - CN THANH NAM - 36202002" },
-    { "value": "A6004BB6", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Khánh Hòa - CN KHÁNH HÒA - 56333001" },
-    { "value": "A6004BB7", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Kiên Giang - CN KIÊN GIANG - 91333002" },
-    { "value": "A6004BB8", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Long An - CN LONG AN - 80333001" },
-    { "value": "A6004BB9", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Nghệ An - CN NGHỆ AN - 40333001" },
-    { "value": "A6004BBA", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN PHÚ LÂM - 79333005" },
-    { "value": "A6004BBB", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN PHÚ NHUẬN - 79333002" },
-    { "value": "A6004BBC", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN QUẬN 4 - 79333010" },
-    { "value": "A6004BBD", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Nam - CN QUẢNG NAM - 49333001" },
-    { "value": "A6004BBE", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Ngãi - CN QUẢNG NGÃI - 51333001" },
-    { "value": "A6004BBF", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Ninh - CN QUẢNG NINH - 22333001" },
-    { "value": "A6004BBG", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN SỞ GIAO DỊCH - 79333009" },
-    { "value": "A6004BG6", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ TÂY - 1202017" },
-    { "value": "A6004BG7", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ THÀNH - 1202005" },
-    { "value": "A6004BG8", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42202001" },
-    { "value": "A6004BG9", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH PGD HỒNG LĨNH - 42202800" },
-    { "value": "A6004BGA", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HAI BÀ TRƯNG - 1202011" },
-    { "value": "A6004BGB", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30202001" },
-    { "value": "A6004BGC", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG PGD HOÀNG THẠCH - 30202800" },
-    { "value": "A6004BGD", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG PGD THÀNH ĐÔNG - 30202801" },
-    { "value": "A6004BGE", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31202001" },
-    { "value": "A6004BGF", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN HẢI VÂN - 48202002" },
-    { "value": "A6004BKY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - LẠNG SƠN PGD ĐỒNG ĐĂNG - 20202800" },
-    { "value": "A6004BKZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - LẠNG SƠN PGD KỲ LỪA - 20202801" },
-    { "value": "A6004BL0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - PHÚC YÊN - 26202800" },
-    { "value": "A6004BL1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - SỞ GIAO DỊCH 3 - 1202015" },
-    { "value": "A6004BL2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - HỘI SỞ - 1202001" },
-    { "value": "A6004BL3", "NOM": "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS - Hà Nội - CN HÀ NỘI - 1657001" },
-    { "value": "A6004BL4", "NOM": "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79614001" },
-    { "value": "A6004BL5", "NOM": "BTMU - BANK OF TOKYO MITSUBISHI UFJ LTD - Hà Nội - CN HÀ NỘI (BTMU) - 1653001" },
-    { "value": "A6004BL6", "NOM": "BTMU - BANK OF TOKYO MITSUBISHI UFJ LTD - Hồ Chí Minh - TP HỒ CHÍ MINH - 79622001" },
-    { "value": "A6004BL7", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - An Giang - CN AN GIANG - 89339001" },
-    { "value": "A6004BL8", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83339001" },
-    { "value": "A6004BPQ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THANH TRÌ - 1202033" },
-    { "value": "A6004BPR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN THÀNH VINH - 40202005" },
-    { "value": "A6004BPS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THANH XUÂN - 1202019" },
-    { "value": "A6004BPT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỐNG NHẤT - 79202026" },
-    { "value": "A6004BPU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN THỦ DẦU MỘT - 74202004" },
-    { "value": "A6004BPV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79202029" },
-    { "value": "A6004BPW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79202028" },
-    { "value": "A6004BPX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46202001" },
-    { "value": "A6004BPY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82202001" },
-    { "value": "A6004BPZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79202002" },
-    { "value": "A6004BBH", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Sóc Trăng - CN SÓC TRĂNG - 94333001" },
-    { "value": "A6004BBI", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN TÂN BÌNH - 79333011" },
-    { "value": "A6004BBJ", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN TÂN THUẬN - 79333008" },
-    { "value": "A6004BBK", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Long An - CN TÂY ĐÔ - 80333012" },
-    { "value": "A6004BBL", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Thanh Hóa - CN THANH HÓA - 38333001" },
-    { "value": "A6004BBM", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN THỦ ĐỨC - 79333007" },
-    { "value": "A6004BBN", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đà Nẵng - CN TRUNG VIỆT - 48333001" },
-    { "value": "A6004BBO", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Vĩnh Long - CN VĨNH LONG - 86333001" },
-    { "value": "A6004BBP", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Kiên Giang - PGD KIÊN GIANG - 91333001" },
-    { "value": "A6004BBQ", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bắc Giang - CN BẮC GIANG - 24319001" },
-    { "value": "A6004BBR", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bình Dương - CN BÌNH DƯƠNG - 74319001" },
-    { "value": "A6004BGG", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HÀM NGHI - 79202020" },
-    { "value": "A6004BGH", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93202001" },
-    { "value": "A6004BGI", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HIỆP PHÚ SG - 79202033" },
-    { "value": "A6004BGJ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hoà Bình - CN HÒA BÌNH - 17202001" },
-    { "value": "A6004BGK", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HOÀI ĐỨC - 1202031" },
-    { "value": "A6004BGL", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 1202021" },
-    { "value": "A6004BGM", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HÓC MÔN - 79202019" },
-    { "value": "A6004BGN", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN HỘI AN - 49202002" },
-    { "value": "A6004BGO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HỒNG HÀ - 1202023" },
-    { "value": "A6004BGP", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN HÙNG VƯƠNG - 25202002" },
-    { "value": "A6004BGQ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33202002" },
-    { "value": "A6004BL9", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74339001" },
-    { "value": "A6004BLA", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN KỲ ĐỒNG - 79203012" },
-    { "value": "A6004BLB", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68203001" },
-    { "value": "A6004BLC", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20203001" },
-    { "value": "A6004BLD", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lào Cai - CN LÀO CAI - 10203001" },
-    { "value": "A6004BLE", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Long An - CN LONG AN - 80203001" },
-    { "value": "A6004BLF", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN LONG KHÁNH - 75203004" },
-    { "value": "A6004BLG", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22203002" },
-    { "value": "A6004BLH", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN NAM BÌNH DƯƠNG - 74203003" },
-    { "value": "A6004BLI", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đà Nẵng - CN NAM ĐÀ NẴNG - 48203002" },
-    { "value": "A6004BLJ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36203001" },
-    { "value": "A6004BQ0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84202001" },
-    { "value": "A6004BQ1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN TRÀ VINH PGD ĐIỆN BIÊN PHỦ - 84202800" },
-    { "value": "A6004BQ2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TRÀNG AN - 1202024" },
-    { "value": "A6004BQ3", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Ngãi - CN QUẢNG NGÃI - 51360001" },
-    { "value": "A6004BQ4", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Ninh - CN QUẢNG NINH - 22360001" },
-    { "value": "A6004BQ5", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bình Định - CN QUY NHƠN - 52360001" },
-    { "value": "A6004BQ6", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN SÀI GÒN - 79360002" },
-    { "value": "A6004BQ7", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN SÀI GÒN  -  GIA ĐỊNH - 79360003" },
-    { "value": "A6004BQ8", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đà Nẵng - CN SÔNG HÀN - 48360001" },
-    { "value": "A6004BQ9", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cần Thơ - CN TÂY ĐÔ - 92360002" },
-    { "value": "A6004BQA", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Tây Ninh - CN TÂY NINH - 72360001" },
-    { "value": "A6004BBS", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Cà Mau - CN CÀ MAU - 96319001" },
-    { "value": "A6004BBT", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Cần Thơ - CN CẦN THƠ - 92319001" },
-    { "value": "A6004BBU", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Đồng Nai - CN ĐỒNG NAI - 75319001" },
-    { "value": "A6004BBV", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Nội - CN HÀ NỘI - 1319001" },
-    { "value": "A6004BBW", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Tĩnh - CN HÀ TĨNH - 42319001" },
-    { "value": "A6004BBX", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Dương - CN HẢI DƯƠNG - 30319002" },
-    { "value": "A6004BBY", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Phòng - CN HẢI PHÒNG - 31319001" },
-    { "value": "A6004BBZ", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79319002" },
-    { "value": "A6004BC0", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Dương - CN HỘI SỞ CHÍNH - 30319001" },
-    { "value": "A6004BC1", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Khánh Hòa - CN NHA TRANG - 56319001" },
-    { "value": "A6004BC2", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Quảng Ngãi - CN QUẢNG NGÃI - 51319001" },
-    { "value": "A6004BGR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56202001" },
-    { "value": "A6004BGS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91202001" },
-    { "value": "A6004BGT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG PGD BA HÒN HÀ TIÊN - 91202801" },
-    { "value": "A6004BGU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG PGD MAI THỊ HỒNG HẠNH - 91202803" },
-    { "value": "A6004BGV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN KINH BẮC - 27202003" },
-    { "value": "A6004BGW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kon Tum - CN KON TUM - 62202001" },
-    { "value": "A6004BGX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN KỲ ANH - 42202002" },
-    { "value": "A6004BGY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN KỲ HÒA - 79202022" },
-    { "value": "A6004BGZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN LẠCH TRAY - 31202003" },
-    { "value": "A6004BH0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lai Châu - CN LAI CHÂU - 12202001" },
-    { "value": "A6004BLK", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Phòng - CN NAM HẢI PHÒNG - 31203002" },
-    { "value": "A6004BLL", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79203011" },
-    { "value": "A6004BLM", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nghệ An - CN NGHỆ AN - 40203001" },
-    { "value": "A6004BLN", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NHÀ RỒNG - 79203017" },
-    { "value": "A6004BLO", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56203002" },
-    { "value": "A6004BLP", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN NHƠN TRẠCH - 75203003" },
-    { "value": "A6004BLQ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37203001" },
-    { "value": "A6004BLR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN PHÚ TÀI - 52202002" },
-    { "value": "A6004BLS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN PHÚ TÀI PGD HOÀI NHƠN - 52202800" },
-    { "value": "A6004BLT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25202001" },
-    { "value": "A6004BLU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD  HÙNG VƯƠNG - 25202801" },
-    { "value": "A6004BQB", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thái Bình - CN THÁI BÌNH - 34360001" },
-    { "value": "A6004BQC", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN THĂNG LONG - 1360003" },
-    { "value": "A6004BQD", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thanh Hóa - CN THANH HÓA - 38360001" },
-    { "value": "A6004BQE", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN THỦ THIÊM - 79360006" },
-    { "value": "A6004BQF", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Tiền Giang - CN TIỀN GIANG - 82360001" },
-    { "value": "A6004BQG", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79360001" },
-    { "value": "A6004BQH", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Vĩnh Long - CN VĨNH LONG - 86360001" },
-    { "value": "A6004BQI", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77360002" },
-    { "value": "A6004BQJ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Sóc Trăng - CN  SÓC TRĂNG - 94303001" },
-    { "value": "A6004BQK", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN 8 THANG 3 - 79303006" },
-    { "value": "A6004BQL", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN 8 - 3 HÀ NỘI - 1303003" },
-    { "value": "A6004BC3", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Quảng Ninh - CN QUẢNG NINH - 22319001" },
-    { "value": "A6004BC4", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bình Định - CN QUY NHƠN - 52319001" },
-    { "value": "A6004BC5", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hồ Chí Minh - CN SÀI GÒN - 79319001" },
-    { "value": "A6004BC6", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Thái Bình - CN THÁI BÌNH - 34319001" },
-    { "value": "A6004BC7", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Nội - CN THĂNG LONG - 1319002" },
-    { "value": "A6004BC8", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Thanh Hóa - CN THANH HÓA - 38319001" },
-    { "value": "A6004BC9", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đắk Lắk - CN DAKLAK - 66203001" },
-    { "value": "A6004BCA", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG ANH - 1203013" },
-    { "value": "A6004BCB", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75203001" },
-    { "value": "A6004BCC", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87203001" },
-    { "value": "A6004BCD", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ngãi - CN DUNG QUẤT - 51203002" },
-    { "value": "A6004BH1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68202001" },
-    { "value": "A6004BH2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG PGD ĐỨC TRỌNG - 68202800" },
-    { "value": "A6004BH3", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN LAM SON - 38202003" },
-    { "value": "A6004BH4", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20202001" },
-    { "value": "A6004BH5", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN LÀO CAI - 10202001" },
-    { "value": "A6004BH6", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Quảng Bình - CN QUẢNG BÌNH - 44901001" },
-    { "value": "A6004BH7", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Sóc Trăng - CN SÓC TRĂNG - 94901001" },
-    { "value": "A6004BH8", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Thái Bình - CN THÁI BÌNH - 34901001" },
-    { "value": "A6004BH9", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Thanh Hóa - CN THANH HÓA - 38901001" },
-    { "value": "A6004BHA", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68901001" },
-    { "value": "A6004BHB", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Trà Vinh - CN TRÀ VINH - 84901001" },
-    { "value": "A6004BLV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD KVN THỤY VÂN - 25202802" },
-    { "value": "A6004BLW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD PHONG CHÂU - 25202800" },
-    { "value": "A6004BLX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN PHÚ XUÂN - 46202002" },
-    { "value": "A6004BLY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54202001" },
-    { "value": "A6004BLZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN PHÚC YÊN - 26202002" },
-    { "value": "A6004BM0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44202001" },
-    { "value": "A6004BM1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH PGD ĐỒNG HỚI - 44202800" },
-    { "value": "A6004BM2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN QUANG MINH - 1202026" },
-    { "value": "A6004BM3", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49202001" },
-    { "value": "A6004BM4", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM PGD CHU LAI - 49202800" },
-    { "value": "A6004BQM", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - An Giang - CN AN GIANG - 89303001" },
-    { "value": "A6004BQN", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA - 77303002" },
-    { "value": "A6004BQO", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77303001" },
-    { "value": "A6004BQP", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bạc Liêu - CN BẠC LIÊU - 95303001" },
-    { "value": "A6004BQQ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bắc Ninh - CN BẮC NINH - 27303001" },
-    { "value": "A6004BQR", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Dương - CN BẾN CÁT - 74303002" },
-    { "value": "A6004BQS", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BẾN THÀNH - 79303019" },
-    { "value": "A6004BQT", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bến Tre - CN BẾN TRE - 83303001" },
-    { "value": "A6004BQU", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Định - CN BÌNH ĐỊNH - 52303001" },
-    { "value": "A6004BQV", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Dương - CN BÌNH DƯƠNG - 74303001" },
-    { "value": "A6004BQW", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Phước - CN BÌNH PHƯỚC - 70303001" },
-    { "value": "A6004BCE", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79203013" },
-    { "value": "A6004BCF", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Gia Lai - CN GIA LAI - 64203001" },
-    { "value": "A6004BCG", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GÒ VẤP - 79203014" },
-    { "value": "A6004BCH", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN HẠ LONG - 22203003" },
-    { "value": "A6004BCI", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nam - CN HÀ NAM - 35203001" },
-    { "value": "A6004BCJ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ NỘI - 1203003" },
-    { "value": "A6004BCK", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ TÂY - 1203009" },
-    { "value": "A6004BCL", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ THÀNH - 1203014" },
-    { "value": "A6004BCM", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42203001" },
-    { "value": "A6004BCN", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30203001" },
-    { "value": "A6004BCO", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31203001" },
-    { "value": "A6004BHC", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Vĩnh Phúc - CN VĨNH PHÚC - 26901001" },
-    { "value": "A6004BHD", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - HỘI SỞ CHÍNH - 1901001" },
-    { "value": "A6004BHE", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Quảng Trị - QUẢNG BÌNH PGD QUẢNG TRỊ - 45901001" },
-    { "value": "A6004BHF", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - SỞ GIAO DỊCH - 1901003" },
-    { "value": "A6004BHG", "NOM": "NGANHANGTNHHCTBC-NGÂN HÀNG TNHH CTBC - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79629001" },
-    { "value": "A6004BHH", "NOM": "NH CREDIT AGRICOLE CIB - Hà Nội - CN HÀ NỘI - 1621001" },
-    { "value": "A6004BHI", "NOM": "NH CREDIT AGRICOLE CIB - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79621001" },
-    { "value": "A6004BHJ", "NOM": "NHBPCEIOM-NGÂN HÀNG BPCEIOM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79601001" },
-    { "value": "A6004BHK", "NOM": "NHCONGNGHIEPHANQUOC-NGÂN HÀNG CÔNG NGHIỆP HÀN QUỐC - Hà Nội - CN HÀ NỘI - 1652001" },
-    { "value": "A6004BHL", "NOM": "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT - Hà Nội - CN HÀ NỘI - 10628017" },
-    { "value": "A6004BHM", "NOM": "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT - Hồ Chí Minh - TPHCM - 79633001" },
-    { "value": "A6004BM5", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM PGD ĐIỆN NAM ĐIỆN NGỌC - 49202801" },
-    { "value": "A6004BM6", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51202001" },
-    { "value": "A6004BM7", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI PGD DUNG QUẤT - 51202800" },
-    { "value": "A6004BM8", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22202001" },
-    { "value": "A6004BM9", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH PGD BÃI CHÁY - 22202802" },
-    { "value": "A6004BMA", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH PGD ĐÔNG TRIỀU UÔNG BÍ - 22202800" },
-    { "value": "A6004BMB", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45202001" },
-    { "value": "A6004BMC", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN QUANG TRUNG - 1202009" },
-    { "value": "A6004BMD", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN RẠCH GIÁ - 91202003" },
-    { "value": "A6004BME", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79202003" },
-    { "value": "A6004BQX", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BÌNH TÂY - 79303016" },
-    { "value": "A6004BQY", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BÌNH THẠNH - 79303017" },
-    { "value": "A6004BQZ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Thuận - CN BÌNH THUẬN - 60303001" },
-    { "value": "A6004BR0", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cà Mau - CN CÀ MAU - 96303001" },
-    { "value": "A6004BR1", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cần Thơ - CN CẦN THƠ - 92303001" },
-    { "value": "A6004BR2", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN CHỢ LỚN - 79303003" },
-    { "value": "A6004BR3", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Phước - CN CHƠN THÀNH - 70303002" },
-    { "value": "A6004BR4", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN CỦ CHI - 79303004" },
-    { "value": "A6004BR5", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Vĩnh Long - CN CỬU LONG - 86303002" },
-    { "value": "A6004BR6", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đà Nẵng - CN ĐÀ NẴNG - 48303001" },
-    { "value": "A6004BR7", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Nông - CN ĐAK NÔNG - 67303001" },
-    { "value": "A6004BCP", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 1203008" },
-    { "value": "A6004BCQ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HOÀNG MAI - 1203015" },
-    { "value": "A6004BCR", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN HUẾ - 46203001" },
-    { "value": "A6004BCS", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN HÙNG VƯƠNG - 79203003" },
-    { "value": "A6004BCT", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33203001" },
-    { "value": "A6004BCU", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56203001" },
-    { "value": "A6004BCV", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91203001" },
-    { "value": "A6004BCW", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kon Tum - CN KONTUM - 62203001" },
-    { "value": "A6004BCX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD SA ĐÉC - 87202800" },
-    { "value": "A6004BCY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD THÁP MƯỜI - 87202801" },
-    { "value": "A6004BCZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN DUNG QUẤT - 51202002" },
-    { "value": "A6004BHN", "NOM": "NHTHESIAMCOMMERCIALBANKPUBLIC-NGÂN HÀNG SIAM COMMERCIAL BANK PUBLIC - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79600001" },
-    { "value": "A6004BHO", "NOM": "NHTMCPVIETHOA-NGÂN HÀNG TMCP VIỆT HOA - Hồ Chí Minh - HỘI SỞ - 79324001" },
-    { "value": "A6004BHP", "NOM": "NHTNHHE.SUN-NGÂN HÀN TNHH E.SUN - Đồng Nai - CN ĐỒNG NAI - 75658001" },
-    { "value": "A6004BHQ", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74501001" },
-    { "value": "A6004BHR", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79501002" },
-    { "value": "A6004BHS", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48501001" },
-    { "value": "A6004BHT", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75501001" },
-    { "value": "A6004BHU", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hà Nội - CN HÀ NỘI - 1501002" },
-    { "value": "A6004BHV", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31501001" },
-    { "value": "A6004BHW", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79501003" },
-    { "value": "A6004BHX", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79501001" },
-    { "value": "A6004BMF", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN SAPA - 10202003" },
-    { "value": "A6004BMG", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN SAPA PGD PHAN ĐÌNH PHÙNG - 10202801" },
-    { "value": "A6004BMH", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN SỞ GIAO DỊCH 1 - 1202002" },
-    { "value": "A6004BMI", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN SỞ GIAO DỊCH 2 - 79202001" },
-    { "value": "A6004BMJ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94202001" },
-    { "value": "A6004BMK", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG PGD CHÂU THÀNH - 94202800" },
-    { "value": "A6004BML", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA - 14202001" },
-    { "value": "A6004BMM", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA PGD MỘC CHÂU - 14202800" },
-    { "value": "A6004BMN", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA PGD MƯỜNG LA - 14202801" },
-    { "value": "A6004BMO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN SƠN TÂY - 1202018" },
-    { "value": "A6004B8B", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 1202022" },
-    { "value": "A6004B8C", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN CÔN ĐẢO - 77202004" },
-    { "value": "A6004B8D", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CỦ CHI - 79202016" },
-    { "value": "A6004B8E", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN CỬU LONG - 86202002" },
-    { "value": "A6004B8F", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN ĐÀ LẠT - 68202003" },
-    { "value": "A6004B8G", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48202001" },
-    { "value": "A6004B8H", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Nghệ An - CN NGHỆ AN - 40302001" },
-    { "value": "A6004B8I", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Ninh Bình - CN NINH BÌNH - 37302001" },
-    { "value": "A6004B8J", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cần Thơ - CN NINH KIỀU - 92302002" },
-    { "value": "A6004B8K", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Phú Thọ - CN PHÚ THỌ - 25302001" },
-    { "value": "A6004B8L", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Phú Yên - CN PHÚ YÊN - 54302001" },
-    { "value": "A6004BD0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN DƯƠNG ĐÔNG - 91202004" },
-    { "value": "A6004BD1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN DUYÊN HẢI - 84202002" },
-    { "value": "A6004BD2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79202007" },
-    { "value": "A6004BD3", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI - 64202001" },
-    { "value": "A6004BD4", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD BẮC GIA LAI - 64202802" },
-    { "value": "A6004BD5", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD CHƯ SÊ I - 64202803" },
-    { "value": "A6004BD6", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD KV DONG - 64202800" },
-    { "value": "A6004BD7", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN GIA LÂM - 1202032" },
-    { "value": "A6004BD8", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ ĐÔNG - 1202029" },
-    { "value": "A6004BD9", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Giang - CN HÀ GIANG - 2202001" },
-    { "value": "A6004BHY", "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 1501001" },
-    { "value": "A6004BHZ", "NOM": "NHTNHHMTVSHINHANVIETNAM-NGÂN HÀNG TNHH MIV SHINHAN VIỆT NAM - Hà Nội - CN HÀ NỘI - 1616002" },
-    { "value": "A6004BI0", "NOM": "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI - Bắc Ninh - CN BẮC NINH - 27663001" },
-    { "value": "A6004BI1", "NOM": "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI - Hà Nội - HỘI SỞ - 1663001" },
-    { "value": "A6004BI2", "NOM": "NONGHYUP-NGÂN HÀNG NONG HYUP - Hà Nội - CN HÀ NỘI - 1662001" },
-    { "value": "A6004BI3", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - An Giang - CN AN GIANG - 89333001" },
-    { "value": "A6004BI4", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77333001" },
-    { "value": "A6004BI5", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bạc Liêu - CN BẠC LIÊU - 95333001" },
-    { "value": "A6004BI6", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN BẾN THÀNH - 79333006" },
-    { "value": "A6004BI7", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bình Dương - CN BÌNH DƯƠNG - 74333001" },
-    { "value": "A6004BI8", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Cà Mau - CN CÀ MAU - 96333001" },
-    { "value": "A6004BMP", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Nghệ An - CN VINH - 40319001" },
-    { "value": "A6004BMQ", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77319001" },
-    { "value": "A6004BMR", "NOM": "OVERSEA - CHINESE - OVERSEA  -  CHINESE BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79625001" },
-    { "value": "A6004BMS", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - An Giang - CN AN GIANG - 89341001" },
-    { "value": "A6004BMT", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77341001" },
-    { "value": "A6004BMU", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bắc Ninh - CN BẮC NINH - 27341001" },
-    { "value": "A6004BMV", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bình Dương - CN BÌNH DƯƠNG - 74341001" },
-    { "value": "A6004BMW", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Cần Thơ - CN CẦN THƠ - 92341001" },
-    { "value": "A6004BMX", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đà Nẵng - CN ĐÀ NẴNG - 48341001" },
-    { "value": "A6004BMY", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đồng Nai - CN ĐỒNG NAI - 75341001" },
-    { "value": "A6004BMZ", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đồng Tháp - CN ĐỒNG THÁP - 87341002" },
-    { "value": "A6004B8M", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Bình - CN QUẢNG BÌNH - 44302001" },
-    { "value": "A6004B8N", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Nam - CN QUẢNG NAM - 49302001" },
-    { "value": "A6004B8O", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - CN QUẢNG NINH - 22302002" },
-    { "value": "A6004B8P", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Kiên Giang - CN RẠCH GÍA - 91302002" },
-    { "value": "A6004B8Q", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đồng Tháp - CN SA ĐÉC - 87302001" },
-    { "value": "A6004B8R", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN SÀI GÒN - 79302004" },
-    { "value": "A6004B8S", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN TÂN BÌNH - 79302002" },
-    { "value": "A6004B8T", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN TÂN SƠN NHẤT - 79302007" },
-    { "value": "A6004B8U", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Tây Ninh - CN TÂY NINH - 72302001" },
-    { "value": "A6004B8V", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thái Bình - CN THÁI BÌNH - 34302001" },
-    { "value": "A6004B8W", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thái Nguyên - CN THÁI NGUYÊN - 19302001" },
-    { "value": "A6004B8X", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thanh Hóa - CN THANH HÓA - 38302001" },
-    { "value": "A6004BDA", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN HẠ LONG - 22202004" },
-    { "value": "A6004BDB", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nam - CN HÀ NAM - 35202001" },
-    { "value": "A6004BDC", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ NỘI - 1202003" },
-    { "value": "A6004BDD", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN VĂN THÁNH - 79306011" },
-    { "value": "A6004BDE", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77306001" },
-    { "value": "A6004BDF", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Dương - PGD BÌNH DƯƠNG - 74306001" },
-    { "value": "A6004BDG", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - QUANG TRUNG PGD TRƯỜNG CHINH - 79306002" },
-    { "value": "A6004BDH", "NOM": "NAPAS - NAPAS - Hà Nội - CN HÀ NỘI - 1401001" },
-    { "value": "A6004BDI", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - An Giang - CN AN GIANG - 89352001" },
-    { "value": "A6004BDJ", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77352001" },
-    { "value": "A6004BDK", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bắc Giang - CN BẮC GIANG - 24352001" },
-    { "value": "A6004BI9", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Cần Thơ - CN CẦN THƠ - 92333001" },
-    { "value": "A6004BIA", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hà Nội - CN CẦU GIẤY - 1333002" },
-    { "value": "A6004BIB", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN CHỢ LỚN - 79333004" },
-    { "value": "A6004BIC", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đắk Lắk - CN DAKLAK - 66333001" },
-    { "value": "A6004BID", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đồng Nai - CN ĐỒNG NAI - 75333001" },
-    { "value": "A6004BIE", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đồng Tháp - CN ĐỒNG THÁP - 87333001" },
-    { "value": "A6004BIF", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN GIA ĐỊNH - 79333003" },
-    { "value": "A6004BIG", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hà Nội - CN HÀ NỘI - 1333001" },
-    { "value": "A6004BIH", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Thuận - CN PHAN THIẾT - 60355001" },
-    { "value": "A6004BII", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Ngãi - CN QUẢNG NGÃI - 51355001" },
-    { "value": "A6004BIJ", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Ninh - CN QUẢNG NINH - 22355001" },
-    { "value": "A6004BN0", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - CN HÀ NỘI - 1341001" },
-    { "value": "A6004BN1", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hải Dương - CN HẢI DƯƠNG - 30341001" },
-    { "value": "A6004BN2", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hải Phòng - CN HẢI PHÒNG - 31341001" },
-    { "value": "A6004BN3", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Khánh Hòa - CN KHÁNH HÒA - 56341001" },
-    { "value": "A6004BN4", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Long An - CN LONG AN - 80341001" },
-    { "value": "A6004BN5", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Quảng Ninh - CN QUẢNG NINH - 22341001" },
-    { "value": "A6004BN6", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hồ Chí Minh - CN SÀI GÒN - 79341001" },
-    { "value": "A6004BN7", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - CN THĂNG LONG - 1341002" },
-    { "value": "A6004BN8", "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - HỘI SỞ CHÍNH - 1341003" },
-    { "value": "A6004BN9", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - An Giang - CN AN GIANG - 89360001" },
-    { "value": "A6004BNA", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77360001" },
-    { "value": "A6004B8Y", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN THANH XUÂN - 1302002" },
-    { "value": "A6004B8Z", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Tiền Giang - CN TIỀN GIANG - 82302001" },
-    { "value": "A6004B90", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN TP HẢI PHÒNG - 31302001" },
-    { "value": "A6004B91", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN TRỤ SỞ CHÍNH - 1302001" },
-    { "value": "A6004B92", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Vĩnh Phúc - CN VĨNH PHÚC - 26302001" },
-    { "value": "A6004B93", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77302001" },
-    { "value": "A6004B94", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN XÃ ĐÀN - 1302008" },
-    { "value": "A6004B95", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - PGD BÃI CHÁY - 22302001" },
-    { "value": "A6004B96", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - PGD CẨM PHẢ - 22302003" },
-    { "value": "A6004B97", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đà Nẵng - PGD HÒA KHÁNH - 48302002" },
-    { "value": "A6004B98", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - PGD NGÔ QUYỀN - 31302003" },
-    { "value": "A6004B99", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - SỞ GIAO DỊCH - 1302005" },
-    { "value": "A6004BDL", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bạc Liêu - CN BẠC LIÊU - 95352001" },
-    { "value": "A6004BDM", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bắc Ninh - CN BẮC NINH - 27352001" },
-    { "value": "A6004BDN", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bình Dương - CN BÌNH DƯƠNG - 74352001" },
-    { "value": "A6004BDO", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Cà Mau - CN CÀ MAU - 96352001" },
-    { "value": "A6004BDP", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Cần Thơ - CN CẦN THƠ - 92352001" },
-    { "value": "A6004BDQ", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đà Nẵng - CN ĐÀ NẴNG - 48352001" },
-    { "value": "A6004BDR", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đồng Nai - CN ĐỒNG NAI - 75352001" },
-    { "value": "A6004BDS", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đồng Tháp - CN ĐỒNG THÁP - 87352001" },
-    { "value": "A6004BDT", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hà Nội - CN HÀ NỘI - 1352001" },
-    { "value": "A6004BDU", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hải Phòng - CN HẢI PHÒNG - 31352001" },
-    { "value": "A6004BDV", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hậu Giang - CN HẬU GIANG - 93352001" },
-    { "value": "A6004BDW", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hưng Yên - CN HƯNG YÊN - 33352001" },
-    { "value": "A6004BIK", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Định - CN QUY NHƠN - 52355001" },
-    { "value": "A6004BIL", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79355007" },
-    { "value": "A6004BIM", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hà Nội - HỘI SỞ CHÍNH - 1355002" },
-    { "value": "A6004BIN", "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Dương - PGD BÌNH DƯƠNG - 74355001" },
-    { "value": "A6004BIO", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77356001" },
-    { "value": "A6004BIP", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Cần Thơ - CN CẦN THƠ - 92356001" },
-    { "value": "A6004BIQ", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN CHỢ LỚN - 79356002" },
-    { "value": "A6004BIR", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Đà Nẵng - CN ĐÀ NẴNG - 48356001" },
-    { "value": "A6004BIS", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hà Nội - CN HÀ NỘI - 1356001" },
-    { "value": "A6004BIT", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hải Phòng - CN HẢI PHÒNG - 31356001" },
-    { "value": "A6004BIU", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Khánh Hòa - CN KHÁNH HÒA - 56356001" },
-    { "value": "A6004BNB", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bắc Ninh - CN BẮC NINH - 27360001" },
-    { "value": "A6004BNC", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN BẾN THÀNH - 79360004" },
-    { "value": "A6004BND", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bình Dương - CN BÌNH DƯƠNG - 74360001" },
-    { "value": "A6004BNE", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cà Mau - CN CÀ MAU - 96360001" },
-    { "value": "A6004BNF", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cần Thơ - CN CẦN THƠ - 92360001" },
-    { "value": "A6004BNG", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Lâm Đồng - CN ĐÀ LẠT - 68360001" },
-    { "value": "A6004BNH", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đà Nẵng - CN ĐÀ NẴNG - 48360002" },
-    { "value": "A6004BNI", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN ĐỐNG ĐA - 1360006" },
-    { "value": "A6004BNJ", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN ĐÔNG ĐÔ - 1360005" },
-    { "value": "A6004BNK", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN ĐỒNG KHỞI - 79360005" },
-    { "value": "A6004BNL", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đồng Nai - CN ĐỒNG NAI - 75360001" },
-    { "value": "A6004B9A", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN AN ĐÔNG - 79306004" },
-    { "value": "A6004B9B", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN BẾN THÀNH - 79306010" },
-    { "value": "A6004B9C", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bến Tre - CN BẾN TRE - 83306001" },
-    { "value": "A6004B9D", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Phước - CN BÌNH PHƯỚC - 70306001" },
-    { "value": "A6004B9E", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN BÌNH TÂY - 79306008" },
-    { "value": "A6004B9F", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Cần Thơ - CN CẦN THƠ - 92306001" },
-    { "value": "A6004B9G", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Định - CN CẤP 1 QUY NHƠN - 52306001" },
-    { "value": "A6004B9H", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đà Nẵng - CN ĐÀ NẴNG - 48306001" },
-    { "value": "A6004B9I", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đắk Lắk - CN DAK LAK - 66306001" },
-    { "value": "A6004B9J", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đồng Nai - CN ĐỒNG NAI - 75306001" },
-    { "value": "A6004B9K", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hà Nội - CN HÀ NỘI - 1306001" },
-    { "value": "A6004B9L", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN HÀM NGHI - 79306012" },
-    { "value": "A6004BDX", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Kiên Giang - CN KIÊN GIANG - 91352001" },
-    { "value": "A6004BDY", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Long An - CN LONG AN - 80352001" },
-    { "value": "A6004BDZ", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Quảng Ninh - CN QUẢNG NINH - 22352001" },
-    { "value": "A6004BE0", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hồ Chí Minh - CN SÀI GÒN - 79352001" },
-    { "value": "A6004BE1", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Bình - CN THÁI BÌNH - 34352002" },
-    { "value": "A6004BE2", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Nguyên - CN THÁI NGUYÊN - 19352001" },
-    { "value": "A6004BE3", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46352001" },
-    { "value": "A6004BE4", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Tiền Giang - CN TIỀN GIANG - 82352001" },
-    { "value": "A6004BE5", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Vĩnh Long - CN VĨNH LONG - 86352001" },
-    { "value": "A6004BE6", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Bình - HẢI PHÒNG PGD SỐ 9 - 34352001" },
-    { "value": "A6004BE7", "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hà Nội - HỘI SỞ CHÍNH - 1352002" },
-    { "value": "A6004BIV", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Long An - CN LONG AN - 80356001" },
-    { "value": "A6004BIW", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Nghệ An - CN NGHỆ AN - 40356001" },
-    { "value": "A6004BIX", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Quảng Ngãi - CN QUẢNG NGÃI - 51356001" },
-    { "value": "A6004BIY", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN SÀI GÒN - 79356003" },
-    { "value": "A6004BIZ", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN TP HCM - 79356001" },
-    { "value": "A6004BJ0", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Sóc Trăng - HỘI SỞ CHÍNH - 94356001" },
-    { "value": "A6004BJ1", "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Sóc Trăng - PGD SÓC TRĂNG - 94356002" },
-    { "value": "A6004BJ2", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - An Giang - CN AN GIANG - 89203001" },
-    { "value": "A6004BJ3", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN BA ĐÌNH - 1203005" },
-    { "value": "A6004BJ4", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77203001" },
-    { "value": "A6004BJ5", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN BẮC BÌNH DƯƠNG - 74203004" },
-    { "value": "A6004BNM", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đồng Tháp - CN ĐỒNG THÁP - 87360001" },
-    { "value": "A6004BNN", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HÀ NỘI - 1360001" },
-    { "value": "A6004BNO", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HAI BÀ TRƯNG - 1360004" },
-    { "value": "A6004BNP", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hải Phòng - CN HẢI PHÒNG - 31360001" },
-    { "value": "A6004BNQ", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hậu Giang - CN HẬU GIANG - 93360001" },
-    { "value": "A6004BNR", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HSC - 1360002" },
-    { "value": "A6004BNS", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thừa Thiên Huế - CN HUẾ - 46360001" },
-    { "value": "A6004BNT", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Khánh Hòa - CN KHÁNH HÒA - 56360001" },
-    { "value": "A6004BNU", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Kiên Giang - CN KIÊN GIANG - 91360001" },
-    { "value": "A6004BNV", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Long An - CN LONG AN - 80360001" },
-    { "value": "A6004BNW", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Nam Định - CN NAM ĐỊNH - 36360001" },
-    { "value": "A6004B9M", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN HỒ CHÍ MINH - 79306001" },
-    { "value": "A6004B9N", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Kiên Giang - CN KIÊN GIANG - 91306001" },
-    { "value": "A6004B9O", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Lâm Đồng - CN LÂM ĐỒNG - 68306001" },
-    { "value": "A6004B9P", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN NGẢ BẢY - 79306006" },
-    { "value": "A6004B9Q", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Khánh Hòa - CN NHA TRANG - 56306001" },
-    { "value": "A6004B9R", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Ninh Thuận - CN NINH THUẬN - 58306001" },
-    { "value": "A6004B9S", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Phú Thọ - CN PHÚ THỌ - 25306001" },
-    { "value": "A6004B9T", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN QUANG TRUNG - 79306007" },
-    { "value": "A6004B9U", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN TÂN ĐỊNH - 79306009" },
-    { "value": "A6004B9V", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Tây Ninh - CN TÂY NINH - 72306001" },
-    { "value": "A6004B9W", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN THỊ NGHÈ - 79306005" },
-    { "value": "A6004B9X", "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN TRƯỜNG CHINH - 79306003" },
-    { "value": "A6004BE8", "NOM": "NGANHANGBUSAN-NGÂN HÀNG BUSAN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79660001" },
-    { "value": "A6004BE9", "NOM": "NGANHANGHANGKOOKMIN-NGÂN HÀNG KOOKMIN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79631001" },
-    { "value": "A6004BEA", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - An Giang - CN AN GIANG - 89901001" },
-    { "value": "A6004BEB", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bắc Ninh - CN BẮC NINH - 27901001" },
-    { "value": "A6004BEC", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bình Định - CN BÌNH ĐỊNH - 52901001" },
-    { "value": "A6004BED", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bình Thuận - CN BÌNH THUẬN - 60901001" },
-    { "value": "A6004BEE", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Đắk Lắk - CN DAKLAK - 66901001" },
-    { "value": "A6004BEF", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Đồng Nai - CN ĐỒNG NAI - 75901001" },
-    { "value": "A6004BEG", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nam - CN HÀ NAM - 35901001" },
-    { "value": "A6004BEH", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - CN HÀ TÂY - 1901002" },
-    { "value": "A6004BEI", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - CN HAI BÀ TRƯNG - 1901004" },
-    { "value": "A6004BEJ", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hải Dương - CN HẢI DƯƠNG - 30901001" },
-    { "value": "A6004BJ6", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24203001" },
-    { "value": "A6004BJ7", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Tĩnh - CN BẮC HÀ TĨNH - 42203002" },
-    { "value": "A6004BJ8", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27203001" },
-    { "value": "A6004BJ9", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79203006" },
-    { "value": "A6004BJA", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83203001" },
-    { "value": "A6004BJB", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75203002" },
-    { "value": "A6004BJC", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52203001" },
-    { "value": "A6004BJD", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74203001" },
-    { "value": "A6004BJE", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70203001" },
-    { "value": "A6004BJF", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂY - 79203002" },
-    { "value": "A6004BJG", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BÌNH THẠNH - 79203004" },
-    { "value": "A6004BNX", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Nghệ An - CN NGHỆ AN - 40360001" },
-    { "value": "A6004BNY", "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Nam - CN QUẢNG NAM - 49360001" },
-    { "value": "A6004BNZ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58203001" },
-    { "value": "A6004BO0", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hưng Yên - CN PHỐ HIẾN - 33203002" },
-    { "value": "A6004BO1", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91203002" },
-    { "value": "A6004BO2", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25203001" },
-    { "value": "A6004BO3", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54203001" },
-    { "value": "A6004BO4", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44203001" },
-    { "value": "A6004BO5", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49203001" },
-    { "value": "A6004BO6", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51203001" },
-    { "value": "A6004BO7", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22203001" },
-    { "value": "A6004B9Y", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hải Dương - KV HẢI DƯƠNG - HƯNG YÊN - 30208001" },
-    { "value": "A6004B9Z", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Ninh Thuận - KV KHÁNH HÒA NINH THUẬN PGD NINH THUẬN - 58208001" },
-    { "value": "A6004BA0", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Khánh Hòa - KV KHÁNH HÒA - NINH THUẬN - 56208001" },
-    { "value": "A6004BA1", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nam - KV NAM ĐỊNH - HÀ NAM PGD HÀ NAM - 35208001" },
-    { "value": "A6004BA2", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Nam - KV QUẢNG NAM -  ĐÀ NẴNG PGD QUẢNG NAM - 49208001" },
-    { "value": "A6004BA3", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bến Tre - KV SÔNG TIỀN - 83208001" },
-    { "value": "A6004BA4", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tiền Giang - KV SÔNG TIỀN PGD TIỀN GIANG - 82208001" },
-    { "value": "A6004BA5", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Trà Vinh - KV SÔNG TIỀN PGD TRÀ VINH - 84208001" },
-    { "value": "A6004BA6", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Trị - KV THỪA THIÊN HUẾ QUẢNG TRỊ PGD QUẢNG TRỊ - 45208001" },
-    { "value": "A6004BA7", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - SỞ GIAO DỊCH 1 - 1208002" },
-    { "value": "A6004BA8", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - SỞ GIAO DỊCH 2 - 79208002" },
-    { "value": "A6004BEK", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hải Phòng - CN HẢI PHÒNG - 31901001" },
-    { "value": "A6004BEL", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hồ Chí Minh - CN HỒ CHÍ MINH - 79901001" },
-    { "value": "A6004BEM", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hưng Yên - CN HƯNG YÊN - 33901001" },
-    { "value": "A6004BEN", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Kiên Giang - CN KIÊN GIANG - 91901001" },
-    { "value": "A6004BEO", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Long An - CN LONG AN - 80901001" },
-    { "value": "A6004BEP", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Nam Định - CN NAM ĐỊNH - 36901001" },
-    { "value": "A6004BEQ", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Nghệ An - CN NGHỆ AN - 40901001" },
-    { "value": "A6004BER", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Ninh Bình - CN NINH BÌNH - 37901001" },
-    { "value": "A6004BES", "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Phú Thọ - CN PHÚ THỌ - 25901001" },
-    { "value": "A6004BET", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ngãi - CN QUẢNG NGÃI - 51314001" },
-    { "value": "A6004BEU", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ninh - CN QUẢNG NINH - 22314001" },
-    { "value": "A6004BEV", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bình Định - CN QUY NHƠN - 52314001" },
-    { "value": "A6004BJH", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60203001" },
-    { "value": "A6004BJI", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96203001" },
-    { "value": "A6004BJJ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92203001" },
-    { "value": "A6004BJK", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89203002" },
-    { "value": "A6004BJL", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 1203007" },
-    { "value": "A6004BJM", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48203001" },
-    { "value": "A6004BJN", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN LONG AN - 80202001" },
-    { "value": "A6004BJO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN LONG AN PGD VỎ CÔNG TỒN - 80202800" },
-    { "value": "A6004BJP", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN LONG XUYÊN - 89202004" },
-    { "value": "A6004BJQ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN MINH HẢI - 95202002" },
-    { "value": "A6004BJR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN MỘC HÓA - 80202003" },
-    { "value": "A6004BO8", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45203001" },
-    { "value": "A6004BO9", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Định - CN QUY NHƠN - 52203002" },
-    { "value": "A6004BOA", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79203008" },
-    { "value": "A6004BOB", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI THÀNH - 79203007" },
-    { "value": "A6004BOC", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN SÓC SƠN - 1203012" },
-    { "value": "A6004BOD", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94203001" },
-    { "value": "A6004BOE", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN SÓNG THẦN - 74203002" },
-    { "value": "A6004BOF", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79203010" },
-    { "value": "A6004BOG", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN ĐỊNH - 79203009" },
-    { "value": "A6004BOH", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cần Thơ - CN TÂY CẦN THƠ - 92203002" },
-    { "value": "A6004BOI", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN TÂY HỒ - 1203011" },
-    { "value": "A6004BA9", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Long An - SỞ GIAO DICH II PGD LONG AN - 80208001" },
-    { "value": "A6004BAA", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tây Ninh - SỞ GIAO DỊCH II - PGD TÂY NINH - 72208001" },
-    { "value": "A6004BAB", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - An Giang - CN AN GIANG - 89314001" },
-    { "value": "A6004BAC", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN BA ĐÌNH - 1314005" },
-    { "value": "A6004BAD", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bình Dương - CN BÌNH DƯƠNG - 74314001" },
-    { "value": "A6004BAE", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN BÌNH THẠNH - 79314006" },
-    { "value": "A6004BAF", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Cà Mau - CN CÀ MAU - 96314001" },
-    { "value": "A6004BAG", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ninh - CN CẨM PHẢ - 22314002" },
-    { "value": "A6004BAH", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Cần Thơ - CN CẦN THƠ - 92314001" },
-    { "value": "A6004BAI", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN CẦU GIẤY - 1314003" },
-    { "value": "A6004BAJ", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đà Nẵng - CN ĐÀ NẴNG - 48314001" },
-    { "value": "A6004BEW", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN SÀI GÒN - 79314002" },
-    { "value": "A6004BEX", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN TÂN BÌNH - 79314004" },
-    { "value": "A6004BEY", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Tây Ninh - CN TÂY NINH - 72314001" },
-    { "value": "A6004BEZ", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thái Bình - CN THÁI BÌNH - 34314001" },
-    { "value": "A6004BF0", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thái Nguyên - CN THÁI NGUYÊN - 19314001" },
-    { "value": "A6004BF1", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN THÀNH ĐÔ - 79314011" },
-    { "value": "A6004BF2", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thanh Hóa - CN THANH HÓA - 38314001" },
-    { "value": "A6004BF3", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN THANH XUÂN - 1314006" },
-    { "value": "A6004BF4", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN TÔN ĐỨC THẮNG - 79314012" },
-    { "value": "A6004BF5", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Phú Thọ - CN VIỆT TRÌ - 25314001" },
-    { "value": "A6004BF6", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Nghệ An - CN VINH - 40314001" },
-    { "value": "A6004BF7", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Vĩnh Phúc - CN VĨNH PHÚC - 26314001" },
-    { "value": "A6004BJS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22202003" },
-    { "value": "A6004BJT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN MÓNG CÁI PGD TRÀ CỔ - 22202803" },
-    { "value": "A6004BJU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN MỸ PHƯỚC - 74202003" },
-    { "value": "A6004BJV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tiền Giang - CN MỸ THO - 82202002" },
-    { "value": "A6004BJW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN NAM BÌNH DƯƠNG - 74202002" },
-    { "value": "A6004BJX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36202001" },
-    { "value": "A6004BJY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN NAM ĐỒNG NAI - 75202003" },
-    { "value": "A6004BJZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN NAM GIA LAI - 64202002" },
-    { "value": "A6004BK0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN NAM HÀ NỘI - 1202014" },
-    { "value": "A6004BK1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NAM KỲ KHỞI NGHĨA - 79202008" },
-    { "value": "A6004BOJ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Tây Ninh - CN TÂY NINH - 72203001" },
-    { "value": "A6004BOK", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79203015" },
-    { "value": "A6004BOL", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34203001" },
-    { "value": "A6004BOM", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19203001" },
-    { "value": "A6004BON", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THĂNG LONG - 1203004" },
-    { "value": "A6004BOO", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THÀNH CÔNG - 1203006" },
-    { "value": "A6004BOP", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38203001" },
-    { "value": "A6004BOQ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THANH TRÌ - 1203016" },
-    { "value": "A6004BOR", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THANH XUÂN - 1203010" },
-    { "value": "A6004BOS", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79203005" },
-    { "value": "A6004BOT", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79203016" },
-    { "value": "A6004BAK", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đắk Lắk - CN DAK LAK - 66314001" },
-    { "value": "A6004BAL", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN ĐỐNG ĐA - 1314004" },
-    { "value": "A6004BAM", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đồng Nai - CN ĐỒNG NAI - 75314001" },
-    { "value": "A6004BAN", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đồng Tháp - CN ĐỒNG THÁP - 87314001" },
-    { "value": "A6004BAO", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56202002" },
-    { "value": "A6004BAP", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37202001" },
-    { "value": "A6004BAQ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58202001" },
-    { "value": "A6004BAR", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Thuận - CN NINH THUẬN PGD PHAN RANG - 58202800" },
-    { "value": "A6004BAS", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN PHỐ NÚI - 64202003" },
-    { "value": "A6004BAT", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN - 40202002" },
-    { "value": "A6004BAU", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN PGD ĐÔ LƯƠNG - 40202802" },
-    { "value": "A6004BF8", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77314001" },
-    { "value": "A6004BF9", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hà Nội - CN  HÀ NỘI - 1327001" },
-    { "value": "A6004BFA", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - An Giang - CN AN GIANG - 89327001" },
-    { "value": "A6004BFB", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74327001" },
-    { "value": "A6004BFC", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đắk Lắk - CN BUÔN MA THUỘT - 66327001" },
-    { "value": "A6004BFD", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Cà Mau - CN CÀ MAU - 96327001" },
-    { "value": "A6004BFE", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Cần Thơ - CN CẦN THƠ - 92327001" },
-    { "value": "A6004BFF", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48327001" },
-    { "value": "A6004BFG", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đồng Nai - CN ĐỒNG NAI - 75327001" },
-    { "value": "A6004BFH", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN GIA ĐỊNH - 79327003" },
-    { "value": "A6004BFI", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hải Phòng - CN HẢI PHÒNG - 31327001" },
-    { "value": "A6004BK2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79202009" },
-    { "value": "A6004BK3", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN NAM THÁI NGUYÊN - 19202002" },
-    { "value": "A6004BK4", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN NGHỆ AN - 40202001" },
-    { "value": "A6004BK5", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN NGỌC KHÁNH - 1202034" },
-    { "value": "A6004BK6", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NHÀ BÈ - 79202024" },
-    { "value": "A6004BK7", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79201019" },
-    { "value": "A6004BK8", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BẮC THĂNG LONG - 1201020" },
-    { "value": "A6004BK9", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN BÃI CHÁY - 22201003" },
-    { "value": "A6004BKA", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lâm Đồng - CN BAO LOC - 68201003" },
-    { "value": "A6004BKB", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Long An - CN BẾN LỨC - 80201002" },
-    { "value": "A6004BKC", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN BẾN THUỶ - 40201002" },
-    { "value": "A6004BOU", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82203001" },
-    { "value": "A6004BOV", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TP HCM - 79203001" },
-    { "value": "A6004BOW", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84203001" },
-    { "value": "A6004BOX", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nghệ An - CN VINH - 40203002" },
-    { "value": "A6004BOY", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86203001" },
-    { "value": "A6004BOZ", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26203001" },
-    { "value": "A6004BP0", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bạc Liêu - PGD BẠC LIÊU - 95203001" },
-    { "value": "A6004BP1", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - SỞ GIAO DỊCH - 1203002" },
-    { "value": "A6004BP2", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - VPDD KHU VỰC PHÍA NAM - 79203018" },
-    { "value": "A6004BP3", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN SÔNG HÀN - 48202003" },
-    { "value": "A6004BP4", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÔNG HẬU - 94202002" },
-    { "value": "A6004BAV", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN PGD HOÀNG MAI - 40202803" },
-    { "value": "A6004BAW", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN PHÚ MỸ - 77202003" },
-    { "value": "A6004BAX", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79202018" },
-    { "value": "A6004BAY", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79202010" },
-    { "value": "A6004BAZ", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91202002" },
-    { "value": "A6004BB0", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN PHÚ QUỐC PGD NGUYỄN VĂN CỪ - 91202802" },
-    { "value": "A6004BB1", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ QUỲ - 40202004" },
-    { "value": "A6004BB2", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHÚ QUÝ PGD QÚY HỢP - 40202801" },
-    { "value": "A6004BB3", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hải Phòng - CN HẢI PHÒNG - 31333001" },
-    { "value": "A6004BB4", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79333001" },
-    { "value": "A6004BB5", "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hậu Giang - CN HÒA AN - 93333001" },
-    { "value": "A6004BFJ", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79327001" },
-    { "value": "A6004BFK", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Kiên Giang - CN KIÊN GIANG - 91327001" },
-    { "value": "A6004BFL", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Long An - CN LONG AN - 80327001" },
-    { "value": "A6004BFM", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Khánh Hòa - CN NHA TRANG - 56327001" },
-    { "value": "A6004BFN", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bình Thuận - CN PHAN THIẾT - 60327001" },
-    { "value": "A6004BFO", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Quảng Ninh - CN QUẢNG NINH - 22327001" },
-    { "value": "A6004BFP", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN SÀI GÒN - 79327002" },
-    { "value": "A6004BFQ", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Tây Ninh - CN TÂY NINH - 72327001" },
-    { "value": "A6004BFR", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Tiền Giang - CN TIỀN GIANG - 82327001" },
-    { "value": "A6004BFS", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79327004" },
-    { "value": "A6004BFT", "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77327001" },
-    { "value": "A6004BKD", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83201001" },
-    { "value": "A6004BKE", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN BỈM SƠN - 38201002" },
-    { "value": "A6004BKF", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52201001" },
-    { "value": "A6004BKG", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74201001" },
-    { "value": "A6004BKH", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70201001" },
-    { "value": "A6004BKI", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60201001" },
-    { "value": "A6004BKJ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN BÌNH XUYÊN - 26201003" },
-    { "value": "A6004BKK", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96201001" },
-    { "value": "A6004BKL", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN CẨM PHẢ - 22201002" },
-    { "value": "A6004BKM", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92201001" },
-    { "value": "A6004BKN", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cao Bằng - CN CAO BẰNG - 4201001" },
-    { "value": "A6004BP5", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN TAM ĐIỆP - 37202002" },
-    { "value": "A6004BP6", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN TÂN AN - 80202002" },
-    { "value": "A6004BP7", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79202015" },
-    { "value": "A6004BP8", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92202003" },
-    { "value": "A6004BP9", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TÂY HÀ NỘI - 1202020" },
-    { "value": "A6004BPA", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TÂY HỒ - 1202016" },
-    { "value": "A6004BPB", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN TÂY NAM - 93202002" },
-    { "value": "A6004BPC", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN TÂY NAM - 92202002" },
-    { "value": "A6004BPD", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN TÂY NAM QUẢNG NINH - 22202002" },
-    { "value": "A6004BPE", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tây Ninh - CN TÂY NINH - 72202001" },
-    { "value": "A6004BPF", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79202004" },
-    { "value": "A6004AWP", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ  -  PHÒNG GIAO DỊCH TRUNG HÒA - 1616005" },
-    { "value": "A6004AWQ", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79616006" },
-    { "value": "A6004AWR", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH PHẠM NGỌC THẠCH - 79616010" },
-    { "value": "A6004AWS", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH TÂN BÌNH - 79616008" },
-    { "value": "A6004AWT", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH TẢN ĐÀ - 79616007" },
-    { "value": "A6004AWU", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bình Dương - CN SONG THAN - 74616002" },
-    { "value": "A6004AWV", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19616001" },
-    { "value": "A6004AWW", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79616002" },
-    { "value": "A6004AWX", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN TRẦN DUY HƯNG - 1616001" },
-    { "value": "A6004AWY", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26616001" },
-    { "value": "A6004AWZ", "NOM": "SINOPAC-NGÂN HÀNG SINOPAC - Hồ Chí Minh - CN TP HCM - 79632001" },
-    { "value": "A6004B1J", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Bình Dương - CN BÌNH DƯƠNG - 74313001" },
-    { "value": "A6004B1K", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Cần Thơ - CN CẦN THƠ - 92313001" },
-    { "value": "A6004B1L", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN CẦU GIẤY - 1313006" },
-    { "value": "A6004B1M", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Lâm Đồng - CN ĐÀ LẠT - 68313001" },
-    { "value": "A6004B1N", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Đà Nẵng - CN ĐÀ NẴNG - 48313001" },
-    { "value": "A6004B1O", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN ĐÔNG ANH - 1313009" },
-    { "value": "A6004B1P", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN GIA LÂM - 1313008" },
-    { "value": "A6004B1Q", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nam - CN HÀ NAM - 35313001" },
-    { "value": "A6004B1R", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀ NỘI - 1313001" },
-    { "value": "A6004B1S", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀ THÀNH - 1313004" },
-    { "value": "A6004B1T", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Tĩnh - CN HÀ TĨNH - 42313001" },
-    { "value": "A6004B1U", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hải Phòng - CN HẢI PHÒNG - 31313001" },
-    { "value": "A6004B6J", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68208001" },
-    { "value": "A6004B6K", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20208001" },
-    { "value": "A6004B6L", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lào Cai - CN LÀO CAI - 10208001" },
-    { "value": "A6004B6M", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Nghệ An - CN NGHỆ AN - 40208001" },
-    { "value": "A6004B6N", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37208001" },
-    { "value": "A6004B6O", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25208001" },
-    { "value": "A6004B6P", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54208001" },
-    { "value": "A6004B6Q", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44208001" },
-    { "value": "A6004B6R", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51208001" },
-    { "value": "A6004B6S", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22208001" },
-    { "value": "A6004B6T", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN SỞ GIAO DỊCH 1 PGD BẮC NINH - 27208001" },
-    { "value": "A6004ARQ", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bình Định - CN BÌNH ĐỊNH - 52353001" },
-    { "value": "A6004ARR", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bình Dương - CN BÌNH DƯƠNG - 74353001" },
-    { "value": "A6004ARS", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Cà Mau - CN CÀ MAU - 96353001" },
-    { "value": "A6004ART", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Cần Thơ - CN CẦN THƠ - 92353001" },
-    { "value": "A6004ARU", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đà Nẵng - CN ĐÀ NẴNG - 48353001" },
-    { "value": "A6004ARV", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đắk Lắk - CN DAKLAK - 66353001" },
-    { "value": "A6004ARW", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đồng Nai - CN ĐỒNG NAI - 75353001" },
-    { "value": "A6004ARX", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đồng Tháp - CN ĐỒNG THÁP - 87353001" },
-    { "value": "A6004ARY", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hà Nội - CN HÀ NỘI - 1353001" },
-    { "value": "A6004ARZ", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hải Phòng - CN HẢI PHÒNG - 31353001" },
-    { "value": "A6004AS0", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hậu Giang - CN HẬU GIANG - 93353001" },
-    { "value": "A6004AS1", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Khánh Hòa - CN KHÁNH HÒA - 56353001" },
-    { "value": "A6004AX0", "NOM": "SMBCORPORATION - SMB CORPORATION - Hà Nội - CN HÀ NỘI - 1636001" },
-    { "value": "A6004AX1", "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - CN HÀ NỘI - 1604001" },
-    { "value": "A6004AX2", "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - CN LÊ ĐẠI HÀNH - 1604003" },
-    { "value": "A6004AX3", "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hồ Chí Minh - CN TP HCM - 79604001" },
-    { "value": "A6004AX4", "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 1604002" },
-    { "value": "A6004AX5", "NOM": "SUMITOMOMITSUIBANKINGCORPORATE - SUMITOMO MITSUI BANKING CORPORATE - Hồ Chí Minh - TP HỒ CHÍ MINH - 79636001" },
-    { "value": "A6004AX6", "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Bình Dương - CN BÌNH DƯƠNG - 74655001" },
-    { "value": "A6004AX7", "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN BÌNH THẠNH - 79642001" },
-    { "value": "A6004AX8", "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hà Nội - CN HÀ NỘI - 1642001" },
-    { "value": "A6004AX9", "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN PHỤ TP HỒ CHÍ MINH - 79642002" },
-    { "value": "A6004AXA", "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79651001" },
-    { "value": "A6004B1V", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀNG ĐẬU - 1313003" },
-    { "value": "A6004B1W", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hưng Yên - CN HƯNG YÊN - 33313001" },
-    { "value": "A6004B1X", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Kiên Giang - CN KIÊN GIANG - 91313001" },
-    { "value": "A6004B1Y", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN KIM LIÊN - 1313007" },
-    { "value": "A6004B1Z", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Nghệ An - CN NGHỆ AN - 40313001" },
-    { "value": "A6004B20", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Ninh Bình - CN NINH BÌNH - 37313001" },
-    { "value": "A6004B21", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hồ Chí Minh - CN PHAN ĐĂNG LƯU - 79313002" },
-    { "value": "A6004B22", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN GÒ VẤP - 79314007" },
-    { "value": "A6004B23", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HÀ ĐÔNG - 1314010" },
-    { "value": "A6004B24", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HÀ NỘI - 1314002" },
-    { "value": "A6004B25", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HAI BÀ TRƯNG - 1314009" },
-    { "value": "A6004B26", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đà Nẵng - CN HẢI CHÂU - 48314002" },
-    { "value": "A6004B6U", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hoà Bình - CN SỞ GIAO DỊCH 1 PGD HÒA BÌNH - 17208001" },
-    { "value": "A6004B6V", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN SỞ GIAO DỊCH 1 PGD VĨNH PHÚC - 26208001" },
-    { "value": "A6004B6W", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94208001" },
-    { "value": "A6004B6X", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA - 14208001" },
-    { "value": "A6004B6Y", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34208001" },
-    { "value": "A6004B6Z", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19208001" },
-    { "value": "A6004B70", "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Đà Nẵng - CN ĐÀ NẴNG - 48319001" },
-    { "value": "A6004B71", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38208001" },
-    { "value": "A6004B72", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TPHCM - 79208001" },
-    { "value": "A6004B73", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 8208001" },
-    { "value": "A6004B74", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Yên Bái - CN YÊN BÁI - 15208001" },
-    { "value": "A6004AS2", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Long An - CN LONG AN - 80353001" },
-    { "value": "A6004AS3", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hồ Chí Minh - CN NHÀ BÈ - 79353002" },
-    { "value": "A6004AS4", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - CN PHÚ QUỐC - 91353004" },
-    { "value": "A6004AS5", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Phú Yên - CN PHÚ YÊN - 54353001" },
-    { "value": "A6004AS6", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - CN RẠCH GÍA - 91353003" },
-    { "value": "A6004AS7", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hồ Chí Minh - CN SÀI GÒN - 79353001" },
-    { "value": "A6004AS8", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Sóc Trăng - CN SÓC TRĂNG - 94353001" },
-    { "value": "A6004AS9", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Quảng Bình - CN QUẢNG BÌNH - 44313001" },
-    { "value": "A6004ASA", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Quảng Ninh - CN QUẢNG NINH - 22313001" },
-    { "value": "A6004ASB", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN THÁI HÀ - 1313002" },
-    { "value": "A6004ASC", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thái Nguyên - CN THÁI NGUYÊN - 19313001" },
-    { "value": "A6004ASD", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN THĂNG LONG - 1313005" },
-    { "value": "A6004AXB", "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN HỒ CHÍ MINH - 79310001" },
-    { "value": "A6004AXC", "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79310009" },
-    { "value": "A6004AXD", "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN QUẬN 5 - 79310008" },
-    { "value": "A6004AXE", "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79310010" },
-    { "value": "A6004AXF", "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 1310001" },
-    { "value": "A6004AXG", "NOM": "THESHANGHAICOMMERCIALVASAVINGS-NGÂN HÀNG THE SHANGHAI COMMERCIAL VÀ SAVINGS - Đồng Nai - CN ĐỒNG NAI - 75606001" },
-    { "value": "A6004AXH", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - An Giang - CN AN GIANG - 89358001" },
-    { "value": "A6004AXI", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN BẾN THÀNH - 79358003" },
-    { "value": "A6004AXJ", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN BÌNH CHÁNH - 79358007" },
-    { "value": "A6004AXK", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Bình Dương - CN BÌNH DƯƠNG - 74358001" },
-    { "value": "A6004AXL", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Cần Thơ - CN CẦN THƠ - 92358001" },
-    { "value": "A6004B27", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Dương - CN HẢI DƯƠNG - 30314001" },
-    { "value": "A6004B28", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Phòng - CN HẢI PHÒNG - 31314001" },
-    { "value": "A6004B29", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN HỒ CHÍ MINH - 79314001" },
-    { "value": "A6004B2A", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HOÀN KIẾM - 1314007" },
-    { "value": "A6004B2B", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Phòng - CN HỒNG BÀNG - 31314002" },
-    { "value": "A6004B2C", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HSC - 1314001" },
-    { "value": "A6004B2D", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thừa Thiên Huế - CN HUẾ - 46314001" },
-    { "value": "A6004B2E", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Kiên Giang - CN KIÊN GIANG - 91314001" },
-    { "value": "A6004B2F", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Lâm Đồng - CN LÂM ĐỒNG - 68314001" },
-    { "value": "A6004B2G", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN LONG BIÊN - 1314008" },
-    { "value": "A6004B2H", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Khánh Hòa - CN NHA TRANG - 56314019" },
-    { "value": "A6004B2I", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Khánh Hòa - CN NHA TRANG - 56314001" },
-    { "value": "A6004B75", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 1208001" },
-    { "value": "A6004B76", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Kạn - KHU VỰC BẮC KẠN - THÁI NGUYÊN - PGD BẮC KẠN - 6208001" },
-    { "value": "A6004B77", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cần Thơ - KHU VỰC CẦN THƠ - 92208001" },
-    { "value": "A6004B78", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ TÂY - 1208003" },
-    { "value": "A6004B79", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đồng Tháp - KHU VỰC ĐỒNG THÁP  - AN GIANG PGD ĐỒNG THÁP - 87208001" },
-    { "value": "A6004B7A", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - An Giang - KHU VỰC ĐỒNG THÁP - AN GIANG - 89208001" },
-    { "value": "A6004B7B", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bạc Liêu - KHU VỰC MINH HẢI PGD BẠC LIÊU - 95208001" },
-    { "value": "A6004B7C", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Nam Định - KHU VỰC NAM ĐỊNH - HÀ NAM - 36208001" },
-    { "value": "A6004B7D", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Dương - KV BÌNH DƯƠNG - BÌNH PHƯỚC - 74208001" },
-    { "value": "A6004B7E", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Phước - KV BÌNH DƯƠNG - BÌNH PHƯỚC PGD BÌNH PHƯỚC - 70208001" },
-    { "value": "A6004B7F", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Vĩnh Long - KV CẦN THƠ PGD VĨNH LONG - 86208001" },
-    { "value": "A6004ASE", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thanh Hóa - CN THANH HÓA - 38313001" },
-    { "value": "A6004ASF", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46313001" },
-    { "value": "A6004ASG", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79313001" },
-    { "value": "A6004ASH", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Vĩnh Phúc - CN VĨNH PHÚC - 26313001" },
-    { "value": "A6004ASI", "NOM": "BANGKOKBANK - BANGKOK BANK - Hà Nội - CN HÀ NỘI - 1612001" },
-    { "value": "A6004ASJ", "NOM": "BANGKOKBANK - BANGKOK BANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79612001" },
-    { "value": "A6004ASK", "NOM": "BANKOFCHINA - BANK OF CHINA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79620001" },
-    { "value": "A6004ASL", "NOM": "BANKOFCOMMUNICATIONS - BANK OF COMMUNICATIONS - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79615001" },
-    { "value": "A6004ASM", "NOM": "BANKOFINDIA - BANK OF INDIA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79659001" },
-    { "value": "A6004ASN", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bắc Ninh - CN BẮC NINH - 27359001" },
-    { "value": "A6004ASO", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bình Định - CN BÌNH ĐỊNH - 52359001" },
-    { "value": "A6004AXM", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN CỬU LONG - 79358005" },
-    { "value": "A6004AXN", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đà Nẵng - CN ĐÀ NẴNG - 48358001" },
-    { "value": "A6004AXO", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đắk Lắk - CN DAK LAK - 66358001" },
-    { "value": "A6004AXP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN VĨNH THẠNH - 52204012" },
-    { "value": "A6004AXQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN VĨNH THỌ - 56204003" },
-    { "value": "A6004AXR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN VĨNH THUẬN - 91204012" },
-    { "value": "A6004AXS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN VINH YÊN - 26204010" },
-    { "value": "A6004AXT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN VOI - 42204006" },
-    { "value": "A6004AXU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN VP MIỀN TRUNG - 48204890" },
-    { "value": "A6004AXV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN VỤ BẢN - 36204003" },
-    { "value": "A6004AXW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN VŨ THƯ - 34204004" },
-    { "value": "A6004B2J", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN PHÚ NHUẬN - 79314005" },
-    { "value": "A6004B2K", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 10 - 79314009" },
-    { "value": "A6004B2L", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 11 - 79314010" },
-    { "value": "A6004B2M", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 2 - 79314003" },
-    { "value": "A6004B2N", "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 5 - 79314008" },
-    { "value": "A6004B2O", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐẠI LA - 1202030" },
-    { "value": "A6004B2P", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Nông - CN ĐAK NÔNG - 67202001" },
-    { "value": "A6004B2Q", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN DAKLAK - 66202001" },
-    { "value": "A6004B2R", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN DAKLAK PGD BUÔN MÊ THUỘT - 66202800" },
-    { "value": "A6004B2S", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cà Mau - CN ĐẤT MŨI - 96202002" },
-    { "value": "A6004B2T", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN DĨ AN BÌNH DƯƠNG - 74202005" },
-    { "value": "A6004B7G", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hưng Yên - KV HẢI DƯƠNG HƯNG YÊN PGD HƯNG YÊN - 33208001" },
-    { "value": "A6004B7H", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN BẮC QUẢNG BÌNH - 44202002" },
-    { "value": "A6004B7I", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Giang - CN BẮC QUANG HÀ GIANG - 2202800" },
-    { "value": "A6004B7J", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79202005" },
-    { "value": "A6004B7K", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN BAN MÊ - 66202004" },
-    { "value": "A6004B7L", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN BẢO LỘC - 68202002" },
-    { "value": "A6004B7M", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẾN NGHÉ - 79202013" },
-    { "value": "A6004B7N", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẾN THÀNH - 79202012" },
-    { "value": "A6004B7O", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bến Tre - CN BẾN TRE - 83202001" },
-    { "value": "A6004B7P", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75202004" },
-    { "value": "A6004ASP", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74359001" },
-    { "value": "A6004ASQ", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Cần Thơ - CN CẦN THƠ - 92359001" },
-    { "value": "A6004ASR", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - CN CẦU GIẤY - 1359004" },
-    { "value": "A6004ASS", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48359001" },
-    { "value": "A6004AST", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79311004" },
-    { "value": "A6004ASU", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Tháp - CN ĐỒNG THÁP - 87311001" },
-    { "value": "A6004ASV", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN GIA ĐỊNH - 79311006" },
-    { "value": "A6004ASW", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Gia Lai - CN GIA LAI - 64311001" },
-    { "value": "A6004ASX", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nam - CN HÀ NAM - 35311001" },
-    { "value": "A6004ASY", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HÀ NỘI - 1311001" },
-    { "value": "A6004ASZ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Tĩnh - CN HÀ TĨNH - 42311001" },
-    { "value": "A6004AT0", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HAI BÀ TRƯNG - 1311007" },
-    { "value": "A6004AXX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN VŨNG LIÊM - 86204005" },
-    { "value": "A6004AXY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN XÍN MẦN - 2204010" },
-    { "value": "A6004AXZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN XUÂN MAI - 1204048" },
-    { "value": "A6004AY0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN XUÂN TRƯỜNG - 36204011" },
-    { "value": "A6004AY1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN XƯƠNG GIANG BẮC GIANG II - 24204003" },
-    { "value": "A6004AY2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN XUYÊN Á - 79204044" },
-    { "value": "A6004AY3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN Ý YÊN - 36204005" },
-    { "value": "A6004AY4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN YÊN BÁI - 15204001" },
-    { "value": "A6004AY5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN YÊN BÌNH - 15204005" },
-    { "value": "A6004AY6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN YÊN CHÂU - 14204010" },
-    { "value": "A6004B2U", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11202001" },
-    { "value": "A6004B2V", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 1202025" },
-    { "value": "A6004B2W", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN ĐÔNG DAKLAK - 66202003" },
-    { "value": "A6004B2X", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN ĐỒNG ĐĂNG - 20202002" },
-    { "value": "A6004B2Y", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐÔNG ĐÔ - 1202007" },
-    { "value": "A6004B2Z", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐÔNG ĐỒNG NAI - 75202002" },
-    { "value": "A6004B30", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐÔNG HÀ NỘI - 1202008" },
-    { "value": "A6004B31", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN ĐÔNG HẢI PHÒNG - 31202002" },
-    { "value": "A6004B32", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bến Tre - CN ĐỒNG KHỞI - 83202002" },
-    { "value": "A6004B33", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75202001" },
-    { "value": "A6004B7Q", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN BỈM SƠN - 38202002" },
-    { "value": "A6004B7R", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH CHÁNH - 79202017" },
-    { "value": "A6004B7S", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH ĐIỀN SÀI GÒN - 79202030" },
-    { "value": "A6004B7T", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52202001" },
-    { "value": "A6004B7U", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74202001" },
-    { "value": "A6004B7V", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH HƯNG - 79202027" },
-    { "value": "A6004B7W", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70202001" },
-    { "value": "A6004B7X", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂN - 79202032" },
-    { "value": "A6004B7Y", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂY SG - 79202034" },
-    { "value": "A6004B7Z", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH THẠNH - 79202035" },
-    { "value": "A6004AT1", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Dương - CN HẢI DƯƠNG - 30311001" },
-    { "value": "A6004AT2", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN HẢI PHÒNG - 31311001" },
-    { "value": "A6004AT3", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN HỒ CHÍ MINH - 79311001" },
-    { "value": "A6004AT4", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hoà Bình - CN HÒA BÌNH - 17311001" },
-    { "value": "A6004AT5", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HOÀN KIẾM - 1311013" },
-    { "value": "A6004AT6", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HOÀNG QUỐC VIỆT - 1311009" },
-    { "value": "A6004AT7", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN HÓC MÔN - 79311022" },
-    { "value": "A6004AT8", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thừa Thiên Huế - CN HUẾ - 46311001" },
-    { "value": "A6004AT9", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hưng Yên - CN HƯNG YÊN - 33311001" },
-    { "value": "A6004ATA", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Khánh Hòa - CN KHÁNH HÒA - 56311001" },
-    { "value": "A6004ATB", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Kiên Giang - CN KIÊN GIANG - 91311001" },
-    { "value": "A6004AY7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN YÊN ĐỊNH - 38204005" },
-    { "value": "A6004AY8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN YÊN ĐỖ - 64204019" },
-    { "value": "A6004AY9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN YÊN DŨNG BẮC GIANG - 24204009" },
-    { "value": "A6004AYA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN YÊN LẬP - 25204012" },
-    { "value": "A6004AYB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN YÊN MINH - 2204004" },
-    { "value": "A6004AYC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN YÊN MỸ - 33204003" },
-    { "value": "A6004AYD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - HỘI SỞ CHÍNH - 1204001" },
-    { "value": "A6004AYE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - KHU VỰC 2 - 80204019" },
-    { "value": "A6004AYF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - MẠC THỊ BƯỞI CN KCN TÂN BÌNH - 79204030" },
-    { "value": "A6004AYG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - PGD ĐẠI NGÃI - 94204015" },
-    { "value": "A6004B34", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79202006" },
-    { "value": "A6004B35", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87202001" },
-    { "value": "A6004B36", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87202002" },
-    { "value": "A6004B37", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD MỸ AN - 87202802" },
-    { "value": "A6004B38", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tiền Giang - CN TỈNH TIỀN GIANG - 82207001" },
-    { "value": "A6004B39", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Trà Vinh - CN TỈNH TRÀ VINH - 84207001" },
-    { "value": "A6004B3A", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tuyên Quang - CN TỈNH TUYÊN QUANG - 8207001" },
-    { "value": "A6004B3B", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Vĩnh Long - CN TỈNH VĨNH LONG - 86207001" },
-    { "value": "A6004B3C", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Vĩnh Phúc - CN TỈNH VĨNH PHÚC - 26207001" },
-    { "value": "A6004B3D", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Yên Bái - CN TỈNH YÊN BÁI - 15207001" },
-    { "value": "A6004B3E", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cần Thơ - CN TP CẦN THƠ - 92207001" },
-    { "value": "A6004B80", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60202001" },
-    { "value": "A6004B81", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cà Mau - CN CÀ MAU - 96202001" },
-    { "value": "A6004B82", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN CẨM PHẢ - 22202005" },
-    { "value": "A6004B83", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92202001" },
-    { "value": "A6004B84", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cao Bằng - CN CAO BẰNG - 4202001" },
-    { "value": "A6004B85", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN CAO LÃNH - 87202003" },
-    { "value": "A6004B86", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CÁT LÁI SG - 79202036" },
-    { "value": "A6004B87", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN CẦU GIẤY - 1202010" },
-    { "value": "A6004B88", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89202003" },
-    { "value": "A6004B89", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CHÂU THÀNH SG - 79202031" },
-    { "value": "A6004B8A", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79202011" },
-    { "value": "A6004ATC", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lâm Đồng - CN LÂM ĐỒNG - 68311001" },
-    { "value": "A6004ATD", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lạng Sơn - CN LẠNG SƠN - 20311001" },
-    { "value": "A6004ATE", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lào Cai - CN LÀO CAI - 10311001" },
-    { "value": "A6004ATF", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Long An - CN LONG AN - 80311001" },
-    { "value": "A6004ATG", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN LONG BIÊN - 1311008" },
-    { "value": "A6004ATH", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Nai - CN LONG KHÁNH - 75311003" },
-    { "value": "A6004ATI", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ninh - CN MÓNG CÁI - 22311004" },
-    { "value": "A6004ATJ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN MỸ ĐÌNH - 1311014" },
-    { "value": "A6004ATK", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Dương - CN NAM BÌNH DƯƠNG - 74311003" },
-    { "value": "A6004ATL", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đà Nẵng - CN NAM ĐÀ NẴNG - 48311002" },
-    { "value": "A6004ATM", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Nam Định - CN NAM ĐỊNH - 36311001" },
-    { "value": "A6004AYH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - PGD LÊ LỢI TỈNH KON TUM - 62204011" },
-    { "value": "A6004AYI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - PGD MƯỜNG LÁT - 38204033" },
-    { "value": "A6004AYJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - PGD QUAN SƠN - 38204034" },
-    { "value": "A6004AYK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - PGD TÂN THANH - 20204014" },
-    { "value": "A6004AYL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - PGD THẮNG LỢI TỈNH KON TUM - 62204010" },
-    { "value": "A6004AYM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - SỞ GIAO DỊCH - 1204002" },
-    { "value": "A6004AYN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - SỞ GIAO DỊCH 3 - 48204004" },
-    { "value": "A6004AYO", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Sóc Trăng - CN SÓC TRĂNG - 94357001" },
-    { "value": "A6004AYP", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Sơn La - CN SƠN LA - 14357001" },
-    { "value": "A6004AYQ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN TÂN BÌNH - 79357002" },
-    { "value": "A6004B3F", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79207001" },
-    { "value": "A6004B3G", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - HỘI SỞ CHÍNH - 1207004" },
-    { "value": "A6004B3H", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - SỞ GIAO DỊCH - 1207001" },
-    { "value": "A6004B3I", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77208001" },
-    { "value": "A6004B3J", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24208001" },
-    { "value": "A6004B3K", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52208001" },
-    { "value": "A6004B3L", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60208001" },
-    { "value": "A6004B3M", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cao Bằng - CN CAO BẰNG - 4208001" },
-    { "value": "A6004B3N", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11208001" },
-    { "value": "A6004B3O", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75208001" },
-    { "value": "A6004B3P", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI - 64208001" },
-    { "value": "A6004AOM", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79321008" },
-    { "value": "A6004AON", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN TRẢNG BOM - 75321005" },
-    { "value": "A6004AOO", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN VẠN HẠNH - 79321005" },
-    { "value": "A6004AOP", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Vĩnh Long - CN VĨNH LONG - 86321001" },
-    { "value": "A6004AOQ", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77321001" },
-    { "value": "A6004AOR", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN XUÂN HÒA - 75321007" },
-    { "value": "A6004AOS", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Phòng - PGD HẢI ĐĂNG - 31321002" },
-    { "value": "A6004AOT", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bà Rịa  -  Vũng Tàu - PGD LÊ HỒNG PHONG - 77321002" },
-    { "value": "A6004AOU", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - PGD QUANG VINH - 75321004" },
-    { "value": "A6004AOV", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Dương - PGD THỦ DẦU MỘT - 74321002" },
-    { "value": "A6004AOW", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nghệ An - PGD VINH - 40321002" },
-    { "value": "A6004ATN", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN NAM HẢI PHÒNG - 31311002" },
-    { "value": "A6004ATO", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN NAM SÀI GÒN - 79311018" },
-    { "value": "A6004ATP", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Nghệ An - CN NGHỆ AN - 40311001" },
-    { "value": "A6004ATQ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN NHÀ BÈ - 79311024" },
-    { "value": "A6004ATR", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Ninh Bình - CN NINH BÌNH - 37311001" },
-    { "value": "A6004ATS", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN PHÚ NHUẬN - 79311020" },
-    { "value": "A6004ATT", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Kiên Giang - CN PHÚ QUỐC - 91311002" },
-    { "value": "A6004ATU", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Phú Yên - CN PHÚ YÊN - 54311001" },
-    { "value": "A6004ATV", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Bình - CN QUẢNG BÌNH - 44311001" },
-    { "value": "A6004ATW", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Nam - CN QUẢNG NAM - 49311001" },
-    { "value": "A6004ATX", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51311001" },
-    { "value": "A6004AYR", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tây Ninh - CN TÂY NINH - 72357001" },
-    { "value": "A6004AYS", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thái Bình - CN THÁI BÌNH - 34357001" },
-    { "value": "A6004AYT", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thái Nguyên - CN THÁI NGUYÊN - 19357001" },
-    { "value": "A6004AYU", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN THĂNG LONG - 1357003" },
-    { "value": "A6004AYV", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thanh Hóa - CN THANH HÓA - 38357001" },
-    { "value": "A6004AYW", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tiền Giang - CN TIỀN GIANG - 82357001" },
-    { "value": "A6004AYX", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN TIẾT KIỆM BƯU ĐIỆN - 1357004" },
-    { "value": "A6004AYY", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79357001" },
-    { "value": "A6004AYZ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Trà Vinh - CN TRÀ VINH - 84357001" },
-    { "value": "A6004AZ0", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tuyên Quang - CN TUYÊN QUANG - 8357001" },
-    { "value": "A6004AZ1", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Vĩnh Long - CN VĨNH LONG - 86357001" },
-    { "value": "A6004B3Q", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Giang - CN HÀ GIANG - 2208001" },
-    { "value": "A6004B3R", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Đắk Lắk - CN DAK LAK - 66359001" },
-    { "value": "A6004B3S", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - CN HÀ NỘI - 1359003" },
-    { "value": "A6004B3T", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hải Phòng - CN HẢI PHÒNG - 31359001" },
-    { "value": "A6004B3U", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Khánh Hòa - CN KHÁNH HÒA - 56359001" },
-    { "value": "A6004B3V", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Kiên Giang - CN KIÊN GIANG - 91359001" },
-    { "value": "A6004B3W", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Nghệ An - CN NGHỆ AN - 40359001" },
-    { "value": "A6004B3X", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Quảng Ninh - CN QUẢNG NINH - 22359001" },
-    { "value": "A6004B3Y", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - CN SÀI GÒN - 79359002" },
-    { "value": "A6004B3Z", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Thái Nguyên - CN THÁI NGUYÊN - 19359001" },
-    { "value": "A6004B40", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79359001" },
-    { "value": "A6004AOX", "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74603001" },
-    { "value": "A6004AOY", "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hà Nội - CN HÀ NỘI - 1603001" },
-    { "value": "A6004AOZ", "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79603001" },
-    { "value": "A6004AP0", "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hồ Chí Minh - CN SỞ GIAO DỊCH - 79603002" },
-    { "value": "A6004AP1", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74617001" },
-    { "value": "A6004AP2", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92617001" },
-    { "value": "A6004AP3", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48617001" },
-    { "value": "A6004AP4", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75617001" },
-    { "value": "A6004AP5", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hà Nội - CN HÀ NỘI - 1617001" },
-    { "value": "A6004AP6", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hồ Chí Minh - CN LÊ ĐẠI HÀNH - 79617002" },
-    { "value": "A6004AP7", "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hồ Chí Minh - CN TPHCM - 79617001" },
-    { "value": "A6004ATY", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ninh - CN QUẢNG NINH - 22311001" },
-    { "value": "A6004ATZ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Trị - CN QUẢNG TRỊ - 45311001" },
-    { "value": "A6004AU0", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN SÀI GÒN - 79311005" },
-    { "value": "A6004AU1", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN SỞ GIAO DỊCH 2 - 79311019" },
-    { "value": "A6004AU2", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Sóc Trăng - CN SÓC TRĂNG - 94311001" },
-    { "value": "A6004AU3", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Sơn La - CN SƠN LA - 14311001" },
-    { "value": "A6004AU4", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN SƠN TÂY - 1311034" },
-    { "value": "A6004AU5", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN TÂN TẠO - 79311023" },
-    { "value": "A6004AU6", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TÂY HÀ NỘI - 1311012" },
-    { "value": "A6004AU7", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đắk Lắk - CN TỈNH DAKLAK - 66207001" },
-    { "value": "A6004AU8", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Điện Biên - CN TỈNH ĐIỆN BIÊN - 11207001" },
-    { "value": "A6004AZ2", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Vĩnh Phúc - CN VĨNH PHÚC - 26357001" },
-    { "value": "A6004AZ3", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN XUÂN MAI - 1357006" },
-    { "value": "A6004AZ4", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Yên Bái - CN YÊN BÁI - 15357001" },
-    { "value": "A6004AZ5", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - HỘI SỞ CHÍNH - 1357005" },
-    { "value": "A6004AZ6", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hậu Giang - HỘI SỞ CHÍNH - 93357001" },
-    { "value": "A6004AZ7", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - HỘI SỞ CHÍNH - 79357004" },
-    { "value": "A6004AZ8", "NOM": "MALAYANBANKINGBERHAD - MALAYAN BANKING BERHAD - Hồ Chí Minh - TP HỒ CHÍ MINH - 79635001" },
-    { "value": "A6004AZ9", "NOM": "MAYBANK - MAY BANK - Hà Nội - CN HÀ NỘI - 1609001" },
-    { "value": "A6004AZA", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - An Giang - CN AN GIANG - 89311001" },
-    { "value": "A6004AZB", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN AN PHÚ - 79311003" },
-    { "value": "A6004AZC", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN BA ĐÌNH - 1311033" },
-    { "value": "A6004B41", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - HỘI SỞ CHÍNH - 1359001" },
-    { "value": "A6004B42", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - SỞ GIAO DỊCH - 1359002" },
-    { "value": "A6004B43", "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - VPĐD TPHCM - 79359003" },
-    { "value": "A6004B44", "NOM": "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA - Hà Nội - CN HÀ NỘI - 1638001" },
-    { "value": "A6004B45", "NOM": "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79648001" },
-    { "value": "A6004B46", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CẦN THƠ PGD KCN TRÀ NÓC - 92202800" },
-    { "value": "A6004B47", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN AN GIANG - 89202001" },
-    { "value": "A6004B48", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÀ CHIỂU - 79202021" },
-    { "value": "A6004B49", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BA ĐÌNH - 1202013" },
-    { "value": "A6004B4A", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BA MƯƠI THÁNG TƯ - 79202025" },
-    { "value": "A6004B4B", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA - 77202002" },
-    { "value": "A6004AP8", "NOM": "HUANANCOMMERCIALBANK - HUA NAN COMMERCIAL BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79640001" },
-    { "value": "A6004AP9", "NOM": "ICBOFCHINA - ICB OF CHINA - Hà Nội - CN HÀ NỘI - 1649001" },
-    { "value": "A6004APA", "NOM": "INDOVINABANK - INDOVINA BANK - Hồ Chí Minh - CN BẾN THÀNH - 79502004" },
-    { "value": "A6004APB", "NOM": "INDOVINABANK - INDOVINA BANK - Bình Dương - CN BÌNH DƯƠNG - 74502001" },
-    { "value": "A6004APC", "NOM": "INDOVINABANK - INDOVINA BANK - Cần Thơ - CN CẦN THƠ - 92502001" },
-    { "value": "A6004APD", "NOM": "INDOVINABANK - INDOVINA BANK - Hồ Chí Minh - CN CHỢ LỚN - 79502002" },
-    { "value": "A6004APE", "NOM": "INDOVINABANK - INDOVINA BANK - Đà Nẵng - CN ĐÀ NẴNG - 48502001" },
-    { "value": "A6004APF", "NOM": "INDOVINABANK - INDOVINA BANK - Hà Nội - CN ĐỐNG ĐA - 1502002" },
-    { "value": "A6004APG", "NOM": "INDOVINABANK - INDOVINA BANK - Đồng Nai - CN ĐỒNG NAI - 75502001" },
-    { "value": "A6004APH", "NOM": "INDOVINABANK - INDOVINA BANK - Hà Nội - CN HÀ NỘI - 1502001" },
-    { "value": "A6004API", "NOM": "INDOVINABANK - INDOVINA BANK - Hải Phòng - CN HẢI PHÒNG - 31502001" },
-    { "value": "A6004APJ", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HÀ NỘI - 1317002" },
-    { "value": "A6004AU9", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đồng Nai - CN TỈNH ĐỒNG NAI - 75207001" },
-    { "value": "A6004AUA", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đồng Tháp - CN TỈNH ĐỒNG THÁP - 87207001" },
-    { "value": "A6004AUB", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Gia Lai - CN TỈNH GIA LAI - 64207001" },
-    { "value": "A6004AUC", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Giang - CN TỈNH HÀ GIANG - 2207001" },
-    { "value": "A6004AUD", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nam - CN TỈNH HÀ NAM - 35207001" },
-    { "value": "A6004AUE", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hậu Giang - CN TỈNH HẬU GIANG - 93207001" },
-    { "value": "A6004AUF", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hoà Bình - CN TỈNH HÒA BÌNH - 17207001" },
-    { "value": "A6004AUG", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hưng Yên - CN TỈNH HƯNG YÊN - 33207001" },
-    { "value": "A6004AUH", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Khánh Hòa - CN TINH KHÁNH HÒA - 56207001" },
-    { "value": "A6004AUI", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Kon Tum - CN TỈNH KON TUM - 62207001" },
-    { "value": "A6004AUJ", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68207001" },
-    { "value": "A6004AZD", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bắc Giang - CN BẮC GIANG - 24311001" },
-    { "value": "A6004AZE", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN BẮC HẢI - 31311003" },
-    { "value": "A6004AZF", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bắc Ninh - CN BẮC NINH - 27311001" },
-    { "value": "A6004AZG", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN BẮC SÀI GÒN - 79311002" },
-    { "value": "A6004AZH", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bến Tre - CN BẾN TRE - 83311001" },
-    { "value": "A6004AZI", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN BÌNH CHÁNH - 79311021" },
-    { "value": "A6004AZJ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Định - CN BÌNH ĐỊNH - 52311001" },
-    { "value": "A6004AZK", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Dương - CN BÌNH DƯƠNG - 74311001" },
-    { "value": "A6004AZL", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Phước - CN BÌNH PHƯỚC - 70311001" },
-    { "value": "A6004AZM", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Thuận - CN BÌNH THUẬN - 60311001" },
-    { "value": "A6004AZN", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Cà Mau - CN CÀ MAU - 96311001" },
-    { "value": "A6004B4C", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA PGD HỒ TRÀM - 77202800" },
-    { "value": "A6004B4D", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77202001" },
-    { "value": "A6004B4E", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BA THÁNG HAI - 79202014" },
-    { "value": "A6004B4F", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN BẮC AN GIANG - 89202002" },
-    { "value": "A6004B4G", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN BẮC AN GIANG PGD AN PHÚ - 89202800" },
-    { "value": "A6004B4H", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN BẮC DAKLAK - 66202002" },
-    { "value": "A6004B4I", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24202001" },
-    { "value": "A6004B4J", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG PGD LỤC NGẠN - 24202800" },
-    { "value": "A6004B4K", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN BẮC HÀ - 10202002" },
-    { "value": "A6004B4L", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BẮC HÀ - 1202035" },
-    { "value": "A6004APK", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Tĩnh - CN HÀ TĨNH - 42317001" },
-    { "value": "A6004APL", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Phòng - CN HẢI AN - 31317002" },
-    { "value": "A6004APM", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HAI BÀ TRƯNG - 1317007" },
-    { "value": "A6004APN", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Dương - CN HẢI DƯƠNG - 30317001" },
-    { "value": "A6004APO", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Phòng - CN HẢI PHÒNG - 31317001" },
-    { "value": "A6004APP", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN HỒ CHÍ MINH - 79317002" },
-    { "value": "A6004APQ", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thừa Thiên Huế - CN HUẾ - 46317001" },
-    { "value": "A6004APR", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Kiên Giang - CN KIÊN GIANG - 91317001" },
-    { "value": "A6004APS", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN LÁNG HẠ - 1317003" },
-    { "value": "A6004APT", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN LONG BIÊN - 1317010" },
-    { "value": "A6004APU", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Nghệ An - CN NGHỆ AN - 40317001" },
-    { "value": "A6004AUK", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lạng Sơn - CN TỈNH LẠNG SƠN - 20207001" },
-    { "value": "A6004AUL", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lào Cai - CN TỈNH LÀO CAI - 10207001" },
-    { "value": "A6004AUM", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Long An - CN TỈNH LONG AN - 80207001" },
-    { "value": "A6004AUN", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Nam Định - CN TỈNH NAM ĐỊNH - 36207001" },
-    { "value": "A6004AUO", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Ninh Thuận - CN TỈNH NINH THUẬN - 58207001" },
-    { "value": "A6004AUP", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Phú Yên - CN TỈNH PHÚ YÊN - 54207001" },
-    { "value": "A6004AUQ", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Bình - CN TỈNH QUẢNG BÌNH - 44207001" },
-    { "value": "A6004AUR", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Ninh - CN TỈNH QUẢNG NINH - 22207001" },
-    { "value": "A6004AUS", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Trị - CN TỈNH QUẢNG TRỊ - 45207001" },
-    { "value": "A6004AUT", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Sóc Trăng - CN TỈNH SÓC TRĂNG - 94207001" },
-    { "value": "A6004AUU", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tây Ninh - CN TỈNH TÂY NINH - 72207001" },
-    { "value": "A6004AZO", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Khánh Hòa - CN CAM RANH - 56311002" },
-    { "value": "A6004AZP", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Cần Thơ - CN CẦN THƠ - 92311001" },
-    { "value": "A6004AZQ", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN CHỢ LỚN - 79311007" },
-    { "value": "A6004AZR", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đà Nẵng - CN ĐÀ NẴNG - 48311001" },
-    { "value": "A6004AZS", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đắk Lắk - CN DAK LAK - 66311001" },
-    { "value": "A6004AZT", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐIỆN BIÊN PHỦ - 1311002" },
-    { "value": "A6004AZU", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐÔNG ANH - 1311035" },
-    { "value": "A6004AZV", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐỐNG ĐA - 1311004" },
-    { "value": "A6004AZW", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Nai - CN ĐỒNG NAI - 75311001" },
-    { "value": "A6004AZX", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đồng Nai - CN ĐỒNG NAI - 75358001" },
-    { "value": "A6004AZY", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN HÀ NỘI - 1358002" },
-    { "value": "A6004B4M", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BẮC HÀ NỘI - 1202004" },
-    { "value": "A6004B4N", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN BẮC HẢI DƯƠNG - 30202002" },
-    { "value": "A6004B4O", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hưng Yên - CN BẮC HƯNG YÊN - 33202001" },
-    { "value": "A6004B4P", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Kạn - CN BẮC KẠN - 6202001" },
-    { "value": "A6004B4Q", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95202001" },
-    { "value": "A6004B4R", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN BẠC LIÊU PGD TRẦN PHÚ - 95202800" },
-    { "value": "A6004B4S", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN BẮC NGHỆ AN - 40202003" },
-    { "value": "A6004B4T", "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27202001" },
-    { "value": "A6004B4U", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TÂY HỒ - 1311011" },
-    { "value": "A6004B4V", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tây Ninh - CN TÂY NINH - 72311001" },
-    { "value": "A6004B4W", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thái Bình - CN THÁI BÌNH - 34311001" },
-    { "value": "A6004APV", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN NHÀ BÈ - 79317005" },
-    { "value": "A6004APW", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Khánh Hòa - CN NHA TRANG - 56317001" },
-    { "value": "A6004APX", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Quảng Ngãi - CN QUẢNG NGÃI - 51317001" },
-    { "value": "A6004APY", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Quảng Ninh - CN QUẢNG NINH - 22317001" },
-    { "value": "A6004APZ", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN BÌNH - 79317003" },
-    { "value": "A6004AQ0", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN PHÚ - 79317004" },
-    { "value": "A6004AQ1", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN THÀNH - 79317006" },
-    { "value": "A6004AQ2", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thái Nguyên - CN THÁI NGUYÊN - 19317001" },
-    { "value": "A6004AQ3", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thanh Hóa - CN THANH HÓA - 38317001" },
-    { "value": "A6004AQ4", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Tiền Giang - CN TIỀN GIANG - 82317001" },
-    { "value": "A6004AQ5", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Vĩnh Phúc - CN VĨNH PHÚC - 26317001" },
-    { "value": "A6004AUV", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thái Bình - CN TỈNH THÁI BÌNH - 34207001" },
-    { "value": "A6004AUW", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thanh Hóa - CN TỈNH THANH HÓA - 38207001" },
-    { "value": "A6004AUX", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thái Nguyên - CN THÁI NGUYÊN - 19348001" },
-    { "value": "A6004AUY", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN THĂNG LONG - 1348003" },
-    { "value": "A6004AUZ", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thanh Hóa - CN THANH HÓA - 38348001" },
-    { "value": "A6004AV0", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tiền Giang - CN TIỀN GIANG - 82348001" },
-    { "value": "A6004AV1", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN TP HCM - 79348001" },
-    { "value": "A6004AV2", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tuyên Quang - CN TUYÊN QUANG - 8348001" },
-    { "value": "A6004AV3", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN VẠN PHÚC - 1348005" },
-    { "value": "A6004AV4", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Vĩnh Phúc - CN VĨNH PHÚC - 26348001" },
-    { "value": "A6004AV5", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77348001" },
-    { "value": "A6004AZZ", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hải Phòng - CN HẢI PHÒNG - 31358001" },
-    { "value": "A6004B00", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN HOÀN KIẾM - 1358003" },
-    { "value": "A6004B01", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN HÓC MÔN - 79358006" },
-    { "value": "A6004B02", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN HÙNG VƯƠNG - 79358004" },
-    { "value": "A6004B03", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Kiên Giang - CN KIÊN GIANG - 91358001" },
-    { "value": "A6004B04", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Nghệ An - CN NGHỆ AN - 40358001" },
-    { "value": "A6004B05", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Khánh Hòa - CN NHA TRANG - 56358001" },
-    { "value": "A6004B06", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN SÀI GÒN - 79358002" },
-    { "value": "A6004B07", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN TÂY HÀ NỘI - 1358006" },
-    { "value": "A6004B08", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THĂNG LONG - 1358004" },
-    { "value": "A6004B09", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THÀNH ĐÔ - 1358005" },
-    { "value": "A6004B0A", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Thanh Hóa - CN THANH HÓA - 38358001" },
-    { "value": "A6004B4X", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thái Nguyên - CN THÁI NGUYÊN - 19311001" },
-    { "value": "A6004B4Y", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THĂNG LONG - 1311006" },
-    { "value": "A6004B4Z", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thanh Hóa - CN THANH HÓA - 38311001" },
-    { "value": "A6004B50", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THANH TRÌ - 1311036" },
-    { "value": "A6004B51", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THANH XUÂN - 1311005" },
-    { "value": "A6004B52", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tiền Giang - CN TIỀN GIANG - 82311001" },
-    { "value": "A6004B53", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TRẦN DUY HƯNG - 1311010" },
-    { "value": "A6004B54", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tuyên Quang - CN TUYÊN QUANG - 8311001" },
-    { "value": "A6004B55", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Phú Thọ - CN VIỆT TRÌ - 25311001" },
-    { "value": "A6004B56", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Vĩnh Phúc - CN VĨNH PHÚC - 26311001" },
-    { "value": "A6004B57", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77311001" },
-    { "value": "A6004AQ6", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77317001" },
-    { "value": "A6004AQ7", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - HỘI SỞ CHÍNH - 1317001" },
-    { "value": "A6004AQ8", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - SỞ GIAO DỊCH - 1317009" },
-    { "value": "A6004AQ9", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN  TRUNG HÒA NHÂN CHÍNH - 1348006" },
-    { "value": "A6004AQA", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - An Giang - CN AN GIANG - 89348001" },
-    { "value": "A6004AQB", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN BA ĐÌNH - 1348009" },
-    { "value": "A6004AQC", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bắc Ninh - CN BẮC NINH - 27348001" },
-    { "value": "A6004AQD", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Định - CN BÌNH ĐỊNH - 52348001" },
-    { "value": "A6004AQE", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Dương - CN BÌNH DƯƠNG - 74348001" },
-    { "value": "A6004AQF", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Phước - CN BÌNH PHƯỚC - 70348001" },
-    { "value": "A6004AQG", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Cà Mau - CN CÀ MAU - 96348001" },
-    { "value": "A6004AV6", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - HỘI SỞ CHÍNH - 1348002" },
-    { "value": "A6004AV7", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH NAM SÀI GÒN - 79616009" },
-    { "value": "A6004AV8", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN AN ĐÔNG - 79616003" },
-    { "value": "A6004AV9", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27616001" },
-    { "value": "A6004AVA", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75616001" },
-    { "value": "A6004AVB", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74503001" },
-    { "value": "A6004AVC", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75503001" },
-    { "value": "A6004AVD", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79616005" },
-    { "value": "A6004AVE", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN GÒ VẤP - 79616004" },
-    { "value": "A6004AVF", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cà Mau - CN CÀ MAU - 96357001" },
-    { "value": "A6004AVG", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cần Thơ - CN CẦN THƠ - 92357001" },
-    { "value": "A6004B0B", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THANH XUÂN - 1358008" },
-    { "value": "A6004B0C", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79358001" },
-    { "value": "A6004B0D", "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - HỘI SỞ CHÍNH - 1358001" },
-    { "value": "A6004B0E", "NOM": "UOB - UNITED OVERSEA BANK - Hồ Chí Minh - CN HỘI SỞ HCM - 79618001" },
-    { "value": "A6004B0F", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77207001" },
-    { "value": "A6004B0G", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Giang - CN BẮC GIANG - 24207001" },
-    { "value": "A6004B0H", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Ninh - CN BẮC NINH - 27207001" },
-    { "value": "A6004B0I", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cao Bằng - CN CAO BẰNG - 4207001" },
-    { "value": "A6004B0J", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đà Nẵng - CN ĐÀ NẴNG - 48207001" },
-    { "value": "A6004B0K", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đắk Nông - CN ĐẮK NÔNG - 67207001" },
-    { "value": "A6004B0L", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - CN HÀ NỘI - 1207002" },
-    { "value": "A6004B58", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Yên Bái - CN YÊN BÁI - 15311001" },
-    { "value": "A6004B59", "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - SỞ GIAO DỊCH 1 - 1311003" },
-    { "value": "A6004B5A", "NOM": "MEGAICBC - MEGA ICBC - Hồ Chí Minh - TP HỒ CHÍ MINH - 79623001" },
-    { "value": "A6004B5B", "NOM": "MIZUHOBANK - MIZUHO BANK - Hà Nội - CN HÀ NỘI - 1613001" },
-    { "value": "A6004B5C", "NOM": "MIZUHOBANK - MIZUHO BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79639001" },
-    { "value": "A6004B5D", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bắc Giang - CN BẮC GIANG - 24302001" },
-    { "value": "A6004B5E", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bắc Ninh - CN BẮC NINH - 27302001" },
-    { "value": "A6004B5F", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Long An - CN BẾN LỨC - 80302002" },
-    { "value": "A6004B5G", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Định - CN BÌNH ĐỊNH - 52302001" },
-    { "value": "A6004B5H", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Dương - CN BÌNH DƯƠNG - 74302001" },
-    { "value": "A6004B5I", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Thuận - CN BÌNH THUẬN - 60302001" },
-    { "value": "A6004B5J", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cà Mau - CN CÀ MAU - 96302001" },
-    { "value": "A6004AQH", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Cần Thơ - CN CẦN THƠ - 92348001" },
-    { "value": "A6004AQI", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đà Nẵng - CN ĐÀ NẴNG - 48348001" },
-    { "value": "A6004AQJ", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đắk Lắk - CN DAK LAK - 66348001" },
-    { "value": "A6004AQK", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đồng Nai - CN ĐỒNG NAI - 75348001" },
-    { "value": "A6004AQL", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đồng Tháp - CN ĐỒNG THÁP - 87348001" },
-    { "value": "A6004AQM", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Gia Lai - CN GIA LAI - 64348001" },
-    { "value": "A6004AQN", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀ ĐÔNG - 1348007" },
-    { "value": "A6004AQO", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nam - CN HÀ NAM - 35348001" },
-    { "value": "A6004AQP", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀ NỘI - 1348001" },
-    { "value": "A6004AQQ", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Tĩnh - CN HÀ TĨNH - 42348001" },
-    { "value": "A6004AQR", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN HẢI PHÒNG - 31348001" },
-    { "value": "A6004AVH", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cao Bằng - CN CAO BẰNG - 4357001" },
-    { "value": "A6004AVI", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN CHỢ LỚN - 79357003" },
-    { "value": "A6004AVJ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN CỦ CHI - 79357005" },
-    { "value": "A6004AVK", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48357001" },
-    { "value": "A6004AVL", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đắk Lắk - CN DAK LAK - 66357001" },
-    { "value": "A6004AVM", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đắk Nông - CN ĐẮK NÔNG - 67357001" },
-    { "value": "A6004AVN", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Điện Biên - CN ĐIỆN BIÊN - 11357001" },
-    { "value": "A6004AVO", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN ĐÔNG ĐÔ - 1357002" },
-    { "value": "A6004AVP", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đồng Nai - CN ĐỒNG NAI - 75357001" },
-    { "value": "A6004AVQ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đồng Tháp - CN ĐỒNG THÁP - 87357001" },
-    { "value": "A6004AVR", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Ngãi - CN DUNG QUẤT - 51357001" },
-    { "value": "A6004B0M", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - CN HÀ TÂY - 1207003" },
-    { "value": "A6004B0N", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Tĩnh - CN HÀ TĨNH - 42207001" },
-    { "value": "A6004B0O", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hải Dương - CN HẢI DƯƠNG - 30207001" },
-    { "value": "A6004B0P", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hải Phòng - CN HẢI PHÒNG - 31207001" },
-    { "value": "A6004B0Q", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Kiên Giang - CN KIÊN GIANG - 91207001" },
-    { "value": "A6004B0R", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lai Châu - CN LAI CHÂU - 12207001" },
-    { "value": "A6004B0S", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Nghệ An - CN NGHỆ AN - 40207001" },
-    { "value": "A6004B0T", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Ninh Bình - CN NINH BÌNH - 37207001" },
-    { "value": "A6004B0U", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Phú Thọ - CN PHÚ THỌ - 25207001" },
-    { "value": "A6004B0V", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Nam - CN QUẢNG NAM - 49207001" },
-    { "value": "A6004B0W", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51207001" },
-    { "value": "A6004B5K", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cần Thơ - CN CẦN THƠ - 92302001" },
-    { "value": "A6004B5L", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN CẦU GIẤY - 1302006" },
-    { "value": "A6004B5M", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - An Giang - CN CHÂU ĐỐC - 89302002" },
-    { "value": "A6004B5N", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN CỘNG HÒA - 79302005" },
-    { "value": "A6004B5O", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đà Nẵng - CN ĐÀ NẴNG - 48302001" },
-    { "value": "A6004B5P", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đắk Lắk - CN DAK LAK - 66302001" },
-    { "value": "A6004B5Q", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN ĐÔ THÀNH - 79302003" },
-    { "value": "A6004B5R", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN ĐỐNG ĐA - 1302004" },
-    { "value": "A6004B5S", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đồng Nai - CN ĐỒNG NAI - 75302001" },
-    { "value": "A6004B5T", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Dương - CN ĐÔNG NAM BỘ - 74302002" },
-    { "value": "A6004B5U", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN GIA ĐỊNH - 79302006" },
-    { "value": "A6004B5V", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nam - CN HÀ NAM - 35302001" },
-    { "value": "A6004AQS", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀM LONG - 1348012" },
-    { "value": "A6004AQT", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀN THUYÊN - 1348013" },
-    { "value": "A6004AQU", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀNG TRỐNG - 1348010" },
-    { "value": "A6004AQV", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN THĂNG LONG - 1309010" },
-    { "value": "A6004AQW", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thanh Hóa - CN THANH HÓA - 38309001" },
-    { "value": "A6004AQX", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Tiền Giang - CN TIỀN GIANG - 82309001" },
-    { "value": "A6004AQY", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hải Phòng - CN TP HẢI PHÒNG - 31309001" },
-    { "value": "A6004AQZ", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN TRẦN HƯNG ĐẠO - 1309013" },
-    { "value": "A6004AR0", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Vĩnh Long - CN VĨNH LONG - 86309001" },
-    { "value": "A6004AR1", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Vĩnh Phúc - CN VĨNH PHÚC - 26309001" },
-    { "value": "A6004AR2", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77309001" },
-    { "value": "A6004AVS", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Gia Lai - CN GIA LAI - 64357001" },
-    { "value": "A6004AVT", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Giang - CN HÀ GIANG - 2357001" },
-    { "value": "A6004AVU", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nam - CN HÀ NAM - 35357001" },
-    { "value": "A6004AVV", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN HÀ NỘI - 1357001" },
-    { "value": "A6004AVW", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Tĩnh - CN HÀ TĨNH - 42357001" },
-    { "value": "A6004AVX", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hải Dương - CN HẢI DƯƠNG - 30357001" },
-    { "value": "A6004AVY", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hải Phòng - CN HẢI PHÒNG - 31357001" },
-    { "value": "A6004AVZ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hoà Bình - CN HÒA BÌNH - 17357001" },
-    { "value": "A6004AW0", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thừa Thiên Huế - CN HUẾ - 46357001" },
-    { "value": "A6004AW1", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hưng Yên - CN HƯNG YÊN - 33357001" },
-    { "value": "A6004AW2", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Khánh Hòa - CN KHÁNH HÒA - 56357001" },
-    { "value": "A6004B0X", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Sơn La - CN SƠN LA - 14207001" },
-    { "value": "A6004B0Y", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thái Nguyên - CN THÁI NGUYÊN - 19207001" },
-    { "value": "A6004B0Z", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46207001" },
-    { "value": "A6004B10", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - An Giang - CN TỈNH AN GIANG - 89207001" },
-    { "value": "A6004B11", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Kạn - CN TỈNH BẮC KẠN - 6207001" },
-    { "value": "A6004B12", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bạc Liêu - CN TỈNH BẠC LIÊU - 95207001" },
-    { "value": "A6004B13", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bến Tre - CN TỈNH BẾN TRE - 83207001" },
-    { "value": "A6004B14", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Định - CN TỈNH BÌNH ĐỊNH - 52207001" },
-    { "value": "A6004B15", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Dương - CN TỈNH BÌNH DƯƠNG - 74207001" },
-    { "value": "A6004B16", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Phước - CN TỈNH BÌNH PHƯỚC - 70207001" },
-    { "value": "A6004B17", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Thuận - CN TỈNH BÌNH THUẬN - 60207001" },
-    { "value": "A6004B5W", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN HÀ NỘI - 1302003" },
-    { "value": "A6004B5X", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Tĩnh - CN HÀ TĨNH - 42302001" },
-    { "value": "A6004B5Y", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Dương - CN HẢI DƯƠNG - 30302001" },
-    { "value": "A6004B5Z", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN HỒ CHÍ MINH - 79302001" },
-    { "value": "A6004B60", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN HỒNG BÀNG - 31302002" },
-    { "value": "A6004B61", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thừa Thiên Huế - CN HUẾ - 46302001" },
-    { "value": "A6004B62", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Khánh Hòa - CN KHÁNH HÒA - 56302001" },
-    { "value": "A6004B63", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Kiên Giang - CN KIÊN GIANG - 91302001" },
-    { "value": "A6004B64", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Lâm Đồng - CN LÂM ĐỒNG - 68302001" },
-    { "value": "A6004B65", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN LÊ CHÂN - 31302004" },
-    { "value": "A6004B66", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Khánh Hòa - CN LỘC THỌ - 56302002" },
-    { "value": "A6004B67", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN LONG BIÊN HÀ NỘI - 1302007" },
-    { "value": "A6004AR3", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - HỘI SỞ CHÍNH - 1309001" },
-    { "value": "A6004AR4", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - SỞ GIAO DỊCH - 1309012" },
-    { "value": "A6004AR5", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Đà Nẵng - CN ĐÀ NẴNG - 48505001" },
-    { "value": "A6004AR6", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hà Nội - CN HÀ NỘI - 1505001" },
-    { "value": "A6004AR7", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hải Phòng - CN HẢI PHÒNG - 31505001" },
-    { "value": "A6004AR8", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Khánh Hòa - CN KHÁNH HÒA - 56505001" },
-    { "value": "A6004AR9", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79505001" },
-    { "value": "A6004ARA", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77505001" },
-    { "value": "A6004ARB", "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hà Nội - SỞ GIAO DỊCH - 1505002" },
-    { "value": "A6004ARC", "NOM": "WOORIBANK - WOORI BANK - Hà Nội - CN HÀ NỘI - 1624001" },
-    { "value": "A6004ARD", "NOM": "WOORIBANK - WOORI BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79637001" },
-    { "value": "A6004AW3", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Kiên Giang - CN KIÊN GIANG - 91357001" },
-    { "value": "A6004AW4", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Kon Tum - CN KON TUM - 62357001" },
-    { "value": "A6004AW5", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lai Châu - CN LAI CHÂU - 12357002" },
-    { "value": "A6004AW6", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lâm Đồng - CN LÂM ĐỒNG - 68357001" },
-    { "value": "A6004AW7", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lạng Sơn - CN LẠNG SƠN - 20357001" },
-    { "value": "A6004AW8", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lào Cai - CN LÀO CAI - 10357001" },
-    { "value": "A6004AW9", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Long An - CN LONG AN - 80357001" },
-    { "value": "A6004AWA", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Nam Định - CN NAM ĐỊNH - 36357001" },
-    { "value": "A6004AWB", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Nghệ An - CN NGHỆ AN - 40357001" },
-    { "value": "A6004AWC", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Ninh Bình - CN NINH BÌNH - 37357001" },
-    { "value": "A6004AWD", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Ninh Thuận - CN NINH THUẬN - 58357001" },
-    { "value": "A6004B18", "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cà Mau - CN TINH CÀ MAU - 96207001" },
-    { "value": "A6004B19", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - THỊ XÃ KIẾN TƯỜNG - 80204020" },
-    { "value": "A6004B1A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - VPĐD KV MIỀN NAM - 79204017" },
-    { "value": "A6004B1B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - VPĐD KV MIỀN TRUNG - 48204018" },
-    { "value": "A6004B1C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - VPĐD KV TÂY NAM BỘ - 92204012" },
-    { "value": "A6004B1D", "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - CN PHỤ TP HCM - 79644001" },
-    { "value": "A6004B1E", "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79602001" },
-    { "value": "A6004B1F", "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hà Nội - HỘI SỞ - 1602002" },
-    { "value": "A6004B1G", "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hà Nội - SỞ GIAO DỊCH - 1602001" },
-    { "value": "A6004B1H", "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - TP HCM PGD NAM SÀI GÒN - 79602003" },
-    { "value": "A6004B1I", "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Bắc Giang - CN BẮC GIANG - 24313001" },
-    { "value": "A6004B68", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - An Giang - CN LONG XUYÊN - 89302001" },
-    { "value": "A6004B69", "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Nam Định - CN NAM ĐỊNH - 36302001" },
-    { "value": "A6004B6A", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42208001" },
-    { "value": "A6004B6B", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31208001" },
-    { "value": "A6004B6C", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cà Mau - CN KHU VỰC MINH HẢI - 96208001" },
-    { "value": "A6004B6D", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91208001" },
-    { "value": "A6004B6E", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Kon Tum - CN KON TUM - 62208001" },
-    { "value": "A6004B6F", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN KV DAK LAK - DAK NÔNG - 66208001" },
-    { "value": "A6004B6G", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN KV QUẢNG NAM -  ĐÀ NẴNG - 48208001" },
-    { "value": "A6004B6H", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN KV THỪA THIÊN HUẾ QUẢNG TRỊ - 46208001" },
-    { "value": "A6004B6I", "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lai Châu - CN LAI CHÂU - 12208001" },
-    { "value": "A6004ARE", "NOM": "INDOVINABANK - INDOVINA BANK - Quảng Nam - CN HỘI AN - 49502001" },
-    { "value": "A6004ARF", "NOM": "INDOVINABANK - INDOVINA BANK - Hà Nội - CN MỸ ĐÌNH - 1502004" },
-    { "value": "A6004ARG", "NOM": "INDOVINABANK - INDOVINA BANK - Hồ Chí Minh - CN TÂN BÌNH - 79502003" },
-    { "value": "A6004ARH", "NOM": "INDOVINABANK - INDOVINA BANK - Hà Nội - CN THIÊN LONG - 1502003" },
-    { "value": "A6004ARI", "NOM": "INDOVINABANK - INDOVINA BANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79502001" },
-    { "value": "A6004ARJ", "NOM": "INDUSTRIALBANKOFKOREA - INDUSTRIAL BANK OF KOREA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79641001" },
-    { "value": "A6004ARK", "NOM": "JPMORGANCHASEN.A - JPMORGAN CHASE N.A - Hồ Chí Minh - TP HỒ CHÍ MINH - 79627001" },
-    { "value": "A6004ARL", "NOM": "KEBHANA-NGÂN HÀNG KEB HANA - Hà Nội - CN HÀ NỘI - 1626001" },
-    { "value": "A6004ARM", "NOM": "KEBHANA-NGÂN HÀNG KEB HANA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79656001" },
-    { "value": "A6004ARN", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - An Giang - CN AN GIANG - 89353001" },
-    { "value": "A6004ARO", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bạc Liêu - CN BẠC LIÊU - 95353001" },
-    { "value": "A6004ARP", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bến Tre - CN BẾN TRE - 83353001" },
-    { "value": "A6004AWE", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Phú Thọ - CN PHÚ THỌ - 25357001" },
-    { "value": "A6004AWF", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Phú Yên - CN PHÚ YÊN - 54357001" },
-    { "value": "A6004AWG", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Bình - CN QUẢNG BÌNH - 44357001" },
-    { "value": "A6004AWH", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Nam - CN QUẢNG NAM - 49357001" },
-    { "value": "A6004AWI", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Ninh - CN QUẢNG NINH - 22357001" },
-    { "value": "A6004AWJ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Trị - CN QUẢNG TRỊ - 45357001" },
-    { "value": "A6004AWK", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31616001" },
-    { "value": "A6004AWL", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 1616003" },
-    { "value": "A6004AWM", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79616001" },
-    { "value": "A6004AWN", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ - 1616006" },
-    { "value": "A6004AWO", "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ  -  PHÒNG GIAO DỊCH CẦU GIẤY - 1616004" },
-    { "value": "A6004BZ8", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN THỦ ĐỨC - 79303009" },
-    { "value": "A6004BZ9", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tiền Giang - CN TIỀN GIANG - 82303001" },
-    { "value": "A6004BZA", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN TÔN THẤT TÙNG - 1303011" },
-    { "value": "A6004BZB", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - An Giang - CN TP LONG XUYÊN - 89303002" },
-    { "value": "A6004BZC", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Khánh Hòa - CN TP NHA TRANG - 56303002" },
-    { "value": "A6004BZD", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Thuận - CN TP PHAN THIẾT - 60303002" },
-    { "value": "A6004BZE", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Trà Vinh - CN TRÀ VINH - 84303001" },
-    { "value": "A6004BZF", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TRUNG TÂM - 79303002" },
-    { "value": "A6004BZG", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN TỪ LIÊM - 1303012" },
-    { "value": "A6004BZH", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Long An - CN VÀM CỎ - 80303002" },
-    { "value": "A6004BZI", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hậu Giang - CN VỊ THANH - 93303002" },
-    { "value": "A6004BUB", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TP HÀ NỘI - 1201002" },
-    { "value": "A6004BUC", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60339001" },
-    { "value": "A6004BUD", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96339001" },
-    { "value": "A6004BUE", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92339001" },
-    { "value": "A6004BUF", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48339001" },
-    { "value": "A6004BUG", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75339001" },
-    { "value": "A6004BUH", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87339001" },
-    { "value": "A6004BUI", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hà Nội - CN HÀ NỘI - 1339001" },
-    { "value": "A6004BUJ", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93339001" },
-    { "value": "A6004BUK", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN HỘI SỞ CHÍNH - 80339001" },
-    { "value": "A6004BUL", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91339001" },
-    { "value": "A6004BZJ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Vĩnh Long - CN VĨNH LONG - 86303001" },
-    { "value": "A6004BZK", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN 3 THÁNG 2 - 79308011" },
-    { "value": "A6004BZL", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - An Giang - CN AN GIANG - 89308001" },
-    { "value": "A6004BZM", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÀ CHIỂU - 79308009" },
-    { "value": "A6004BZN", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91201001" },
-    { "value": "A6004BZO", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kon Tum - CN KON TUM - 62201001" },
-    { "value": "A6004BZP", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lai Châu - CN LAI CHÂU - 12201001" },
-    { "value": "A6004BZQ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68201001" },
-    { "value": "A6004BZR", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN LÁNG HÒA LẠC - 1201018" },
-    { "value": "A6004BZS", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20201001" },
-    { "value": "A6004BZT", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM -  - CN LAO - 99856002" },
-    { "value": "A6004BUM", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hồ Chí Minh - CN LAM GIANG - 79339002" },
-    { "value": "A6004BUN", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN LONG AN - 80339002" },
-    { "value": "A6004BUO", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN LONG HIỆP - 80339004" },
-    { "value": "A6004BUP", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56339001" },
-    { "value": "A6004BUQ", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN RẠCH KIẾN - 80339003" },
-    { "value": "A6004BUR", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN ĐÔNG ĐÔ - 1303008" },
-    { "value": "A6004BUS", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bến Tre - CN ĐỒNG KHỞI - 83303002" },
-    { "value": "A6004BUT", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Nai - CN ĐỒNG NAI - 75303001" },
-    { "value": "A6004BUU", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Tháp - CN ĐỒNG THÁP - 87303001" },
-    { "value": "A6004BUV", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Trà Vinh - CN DUYÊN HẢI - 84303002" },
-    { "value": "A6004BUW", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Gia Lai - CN GIA LAI - 64303001" },
-    { "value": "A6004BZU", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lào Cai - CN LÀO CAI - 10201001" },
-    { "value": "A6004BZV", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN LÊ CHÂN - 31201004" },
-    { "value": "A6004BZW", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Long An - CN LONG AN - 80201001" },
-    { "value": "A6004BZX", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN LƯU XÁ - 19201002" },
-    { "value": "A6004BZY", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22201004" },
-    { "value": "A6004BZZ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hưng Yên - CN MỸ HÀO - 33201002" },
-    { "value": "A6004C00", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36201001" },
-    { "value": "A6004C01", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36201002" },
-    { "value": "A6004C02", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79201020" },
-    { "value": "A6004C03", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN NAM THĂNG LONG - 1201008" },
-    { "value": "A6004C04", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN NAM THỪA THIÊN HUẾ - 46201002" },
-    { "value": "A6004BUX", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN GIẢNG VÕ - 1303010" },
-    { "value": "A6004BUY", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tiền Giang - CN GÒ CÔNG ĐÔNG - 82303002" },
-    { "value": "A6004BUZ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN GÒ VẤP - 79303011" },
-    { "value": "A6004BV0", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nam - CN HÀ NAM - 35303001" },
-    { "value": "A6004BV1", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN HÀ NỘI - 1303005" },
-    { "value": "A6004BV2", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Tĩnh - CN HÀ TĨNH - 42303001" },
-    { "value": "A6004BV3", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hải Dương - CN HẢI DƯƠNG - 30303001" },
-    { "value": "A6004BV4", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hải Phòng - CN HẢI PHÒNG - 31303001" },
-    { "value": "A6004BV5", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN HÀNG BÀI - 1303009" },
-    { "value": "A6004BV6", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hậu Giang - CN HẬU GIANG - 93303001" },
-    { "value": "A6004BV7", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HOA VIỆT - 79303015" },
-    { "value": "A6004C05", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN NGHỆ AN - 40201001" },
-    { "value": "A6004C06", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN NGÔ QUYỀN - 31201003" },
-    { "value": "A6004C07", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN NGŨ HÀNH SƠN - 48201002" },
-    { "value": "A6004C08", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN NHỊ CHIỂU - 30201002" },
-    { "value": "A6004C09", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN NHƠN TRẠCH - 75201004" },
-    { "value": "A6004C0A", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37201001" },
-    { "value": "A6004C0B", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58201001" },
-    { "value": "A6004C0C", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91201002" },
-    { "value": "A6004C0D", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25201001" },
-    { "value": "A6004C0E", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54201001" },
-    { "value": "A6004C0F", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN PHÚC YÊN - 26201002" },
-    { "value": "A6004BV8", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79303001" },
-    { "value": "A6004BV9", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thừa Thiên Huế - CN HUẾ - 46303001" },
-    { "value": "A6004BVA", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HƯNG ĐẠO - 79303007" },
-    { "value": "A6004BVB", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hưng Yên - CN HƯNG YÊN - 33303001" },
-    { "value": "A6004BVC", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Khánh Hòa - CN KHÁNH HÒA - 56303001" },
-    { "value": "A6004BVD", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN KIÊN GIANG - 91303001" },
-    { "value": "A6004BVE", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kon Tum - CN KONTUM - 62303001" },
-    { "value": "A6004BVF", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Lâm Đồng - CN LÂM ĐỒNG - 68303001" },
-    { "value": "A6004BVG", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Lạng Sơn - CN LẠNG SƠN - 20303001" },
-    { "value": "A6004BVH", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Lắk - CN LÊ THÁNH TÔNG - 66303002" },
-    { "value": "A6004BVI", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Long An - CN LONG AN - 80303001" },
-    { "value": "A6004C0G", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44201001" },
-    { "value": "A6004C0H", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN QUANG MINH - 1201025" },
-    { "value": "A6004C0I", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49201001" },
-    { "value": "A6004C0J", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51201001" },
-    { "value": "A6004C0K", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22201001" },
-    { "value": "A6004C0L", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45201001" },
-    { "value": "A6004C0M", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN KIẾN AN - 31201007" },
-    { "value": "A6004C0N", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN QUANG TRUNG - 1201016" },
-    { "value": "A6004C0O", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Tháp - CN SA ĐÉC - 87201002" },
-    { "value": "A6004C0P", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79201018" },
-    { "value": "A6004C0Q", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN SẦM SƠN - 38201003" },
-    { "value": "A6004BVJ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN LONG BIÊN - 1303002" },
-    { "value": "A6004BVK", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Sóc Trăng - CN LONG PHÚ - 94303002" },
-    { "value": "A6004BVL", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN LƯƠNG NHỮ HỌC - 79303023" },
-    { "value": "A6004BVM", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN LÝ THÁI TỔ - 79303031" },
-    { "value": "A6004BVN", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN MINH PHỤNG - 79303025" },
-    { "value": "A6004BVO", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cần Thơ - CN NAM CẦN THƠ - 92303002" },
-    { "value": "A6004BVP", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Nghệ An - CN NGHỆ AN - 40303001" },
-    { "value": "A6004BVQ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NGUYỄN CÔNG TRỨ - 79303027" },
-    { "value": "A6004BVR", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN NGUYỄN TRUNG TRỰC - 91303003" },
-    { "value": "A6004BVS", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NGUYỄN VĂN TRỖI - 79303028" },
-    { "value": "A6004BVT", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NHÀ BÈ - 79303024" },
-    { "value": "A6004C0R", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94201001" },
-    { "value": "A6004C0S", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Sơn La - CN SƠN LA - 14201001" },
-    { "value": "A6004C0T", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 10 - 79304003" },
-    { "value": "A6004C0U", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 3 - 79304015" },
-    { "value": "A6004C0V", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 4 - 79304013" },
-    { "value": "A6004C0W", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 5 - 79304009" },
-    { "value": "A6004C0X", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 7 - 79304012" },
-    { "value": "A6004C0Y", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 9 - 79304008" },
-    { "value": "A6004C0Z", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Nam - CN QUẢNG NAM - 49304001" },
-    { "value": "A6004C10", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Ngãi - CN QUẢNG NGÃI - 51304001" },
-    { "value": "A6004C11", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Ninh - CN QUẢNG NINH - 22304002" },
-    { "value": "A6004BVU", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Ninh Thuận - CN NINH THUẬN - 58303001" },
-    { "value": "A6004BVV", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Nai - CN PHẠM VĂN THUẬN - 75303002" },
-    { "value": "A6004BVW", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN PHÚ NHUẬN - 79303029" },
-    { "value": "A6004BVX", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79201024" },
-    { "value": "A6004BVY", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 1201005" },
-    { "value": "A6004BVZ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN CỬA LÒ - 40201004" },
-    { "value": "A6004BW0", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48201001" },
-    { "value": "A6004BW1", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đắk Nông - CN ĐAK NÔNG - 67201001" },
-    { "value": "A6004BW2", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đắk Lắk - CN DAKLAK - 66201001" },
-    { "value": "A6004BW3", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN ĐỀN HÙNG - 25201003" },
-    { "value": "A6004BW4", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11201001" },
-    { "value": "A6004C12", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN TÂN BÌNH - 79304004" },
-    { "value": "A6004C13", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Tây Ninh - CN TÂY NINH - 72304001" },
-    { "value": "A6004C14", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thái Bình - CN THÁI BÌNH - 34304001" },
-    { "value": "A6004C15", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Dương - CN THUẬN AN - 74304002" },
-    { "value": "A6004C16", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Tiền Giang - CN TIỀN GIANG - 82304001" },
-    { "value": "A6004C17", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - An Giang - CN TỈNH AN GIANG - 89304001" },
-    { "value": "A6004C18", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thừa Thiên Huế - CN TP HUẾ - 46304001" },
-    { "value": "A6004C19", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Trà Vinh - CN TRÀ VINH - 84304001" },
-    { "value": "A6004C1A", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Vĩnh Long - CN VĨNH LONG - 86304001" },
-    { "value": "A6004C1B", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77304001" },
-    { "value": "A6004C1C", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - HỒ CHÍ MINH - 79304001" },
-    { "value": "A6004C1D", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - PGD BÌNH TÂY - 79304010" },
-    { "value": "A6004BR8", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Lắk - CN DAKLAK - 66303001" },
-    { "value": "A6004BR9", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN ĐIỆN BIÊN PHỦ - 79303018" },
-    { "value": "A6004BRA", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN ĐỐNG ĐA - 1303004" },
-    { "value": "A6004BRB", "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - HỘI SỞ - 1203001" },
-    { "value": "A6004BRC", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN  HỒNG BÀNG - 31201002" },
-    { "value": "A6004BRD", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 1  -  TP HCM - 79201002" },
-    { "value": "A6004BRE", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 10  -  TP HCM - 79201011" },
-    { "value": "A6004BRF", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 11  -  TP HCM - 79201014" },
-    { "value": "A6004BRG", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 12  -  TP HCM - 79201016" },
-    { "value": "A6004BRH", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 2  -  TP HCM - 79201003" },
-    { "value": "A6004BRI", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 3  -  TP HCM - 79201004" },
-    { "value": "A6004BW5", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN ĐỒ SƠN - 31201005" },
-    { "value": "A6004BW6", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG ANH - 1201006" },
-    { "value": "A6004BW7", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 1201003" },
-    { "value": "A6004BW8", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG HÀ NỘI - 1201010" },
-    { "value": "A6004BW9", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75201001" },
-    { "value": "A6004BWA", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79201015" },
-    { "value": "A6004BWB", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87201001" },
-    { "value": "A6004BWC", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79201023" },
-    { "value": "A6004BWD", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Gia Lai - CN GIA LAI - 64201001" },
-    { "value": "A6004BWE", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Giang - CN HÀ GIANG - 2201001" },
-    { "value": "A6004BWF", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nam - CN HÀ NAM - 35201001" },
-    { "value": "A6004C1E", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Cà Mau - PGD CÀ MAU - 96304001" },
-    { "value": "A6004C1F", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Nam - PGD HỘI AN - 49304002" },
-    { "value": "A6004C1G", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - PGD LÊ ĐẠI HÀNH - 79304005" },
-    { "value": "A6004C1H", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Khánh Hòa - PGD NHA TRANG - 56304001" },
-    { "value": "A6004C1I", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Ninh Thuận - PGD NINH THUẬN - 58304001" },
-    { "value": "A6004C1J", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Phú Yên - PGD PHÚ YÊN - 54304001" },
-    { "value": "A6004C1K", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Sóc Trăng - PGD SÓC TRĂNG - 94304001" },
-    { "value": "A6004C1L", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Vĩnh Phúc - PGD VĨNH YÊN - 26304001" },
-    { "value": "A6004C1M", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79201001" },
-    { "value": "A6004C1N", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84201001" },
-    { "value": "A6004C1O", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TRÀNG AN - 1201023" },
-    { "value": "A6004BRJ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 4  -  TP HCM - 79201005" },
-    { "value": "A6004BRK", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 5  -  TP HCM - 79201006" },
-    { "value": "A6004BRL", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 6  -  TP HCM - 79201007" },
-    { "value": "A6004BRM", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 7  -  TP HCM - 79201008" },
-    { "value": "A6004BRN", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 8  -  TP HCM - 79201009" },
-    { "value": "A6004BRO", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 9  -  TP HCM - 79201010" },
-    { "value": "A6004BRP", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - An Giang - CN AN GIANG - 89201001" },
-    { "value": "A6004BRQ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BA ĐÌNH - 1201004" },
-    { "value": "A6004BRR", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77201001" },
-    { "value": "A6004BRS", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN BẮC ĐÀ NẴNG - 48201003" },
-    { "value": "A6004BRT", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24201001" },
-    { "value": "A6004BWG", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HÀ THÀNH - 1201022" },
-    { "value": "A6004BWH", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42201001" },
-    { "value": "A6004BWI", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HAI BÀ TRƯNG - 1201012" },
-    { "value": "A6004BWJ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30201001" },
-    { "value": "A6004BWK", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31201001" },
-    { "value": "A6004BWL", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93201001" },
-    { "value": "A6004BWM", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hoà Bình - CN HÒA BÌNH - 17201001" },
-    { "value": "A6004BWN", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN HÒA THÀNH - 72201003" },
-    { "value": "A6004BWO", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 1201011" },
-    { "value": "A6004BWP", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HOÀNG MAI - 1201014" },
-    { "value": "A6004BWQ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Nam - CN HỘI AN - 49201002" },
-    { "value": "A6004C1P", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TTQLTM - 1201021" },
-    { "value": "A6004C1Q", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN TTQLTM BẮC NINH - 27201005" },
-    { "value": "A6004C1R", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN TTQLTM ĐÀ NẴNG - 48201005" },
-    { "value": "A6004C1S", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN TTQLTM HẢI PHÒNG - 31201008" },
-    { "value": "A6004C1T", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TTQLTM HỒ CHÍ MINH - 79201022" },
-    { "value": "A6004C1U", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 8201001" },
-    { "value": "A6004C1V", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN TX PHÚ THỌ - 25201004" },
-    { "value": "A6004C1W", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN UÔNG BÍ - 22201005" },
-    { "value": "A6004C1X", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN VÂN ĐỒN - 22201006" },
-    { "value": "A6004C1Y", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86201001" },
-    { "value": "A6004C1Z", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26201001" },
-    { "value": "A6004BRU", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BẮC HÀ NỘI - 1201009" },
-    { "value": "A6004BRV", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Kạn - CN BẮC KẠN - 6201001" },
-    { "value": "A6004BRW", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95201001" },
-    { "value": "A6004BRX", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN BẮC NGHỆ AN - 40201003" },
-    { "value": "A6004BRY", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27201001" },
-    { "value": "A6004BRZ", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - An Giang - CN AN GIANG - 89305001" },
-    { "value": "A6004BS0", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN BA ĐÌNH - 1305002" },
-    { "value": "A6004BS1", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77305001" },
-    { "value": "A6004BS2", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95305001" },
-    { "value": "A6004BS3", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74305001" },
-    { "value": "A6004BS4", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN BÌNH PHÚ - 79305013" },
-    { "value": "A6004BWR", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN HÙNG VƯƠNG - 25201002" },
-    { "value": "A6004BWS", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33201001" },
-    { "value": "A6004BWT", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN KCN BIÊN HÒA - 75201002" },
-    { "value": "A6004BWU", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Dương - CN KCN BÌNH DƯƠNG - 74201002" },
-    { "value": "A6004BWV", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN KCN HẢI DƯƠNG - 30201003" },
-    { "value": "A6004BWW", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Định - CN KCN PHÚ TÀI - 52201002" },
-    { "value": "A6004BWX", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89201002" },
-    { "value": "A6004BWY", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN KCN QUẾ VÕ - 27201004" },
-    { "value": "A6004BWZ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN KCN TIÊN SƠN - 27201003" },
-    { "value": "A6004BX0", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN KCN TRẢNG BÀNG - 72201002" },
-    { "value": "A6004BX1", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56201001" },
-    { "value": "A6004C20", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Yên Bái - CN YÊN BÁI - 15201001" },
-    { "value": "A6004C21", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - TRỤ SỜ CHÍNH - 1201001" },
-    { "value": "A6004C22", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - An Giang - CN AN GIANG - 89309001" },
-    { "value": "A6004C23", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bắc Giang - CN BẮC GIANG - 24309001" },
-    { "value": "A6004C24", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN HÀ NỘI - 1305001" },
-    { "value": "A6004C25", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31305001" },
-    { "value": "A6004C26", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN HÒA BÌNH HCM - 79305005" },
-    { "value": "A6004C27", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79305001" },
-    { "value": "A6004C28", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Thừa Thiên Huế - CN HUẾ - 46305001" },
-    { "value": "A6004C29", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đà Nẵng - CN HÙNG VƯƠNG ĐN - 48305002" },
-    { "value": "A6004C2A", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91305001" },
-    { "value": "A6004BS5", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70305001" },
-    { "value": "A6004BS6", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂN - 79305015" },
-    { "value": "A6004BS7", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đắk Lắk - CN BUÔN MA THUỘT - 66305001" },
-    { "value": "A6004BS8", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92305001" },
-    { "value": "A6004BS9", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN CẦU GIẤY - 1305005" },
-    { "value": "A6004BSA", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79305007" },
-    { "value": "A6004BSB", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN CỘNG HÒA - 79305012" },
-    { "value": "A6004BSC", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Lâm Đồng - CN ĐÀ LẠT - 68305001" },
-    { "value": "A6004BSD", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48305001" },
-    { "value": "A6004BSE", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 1305006" },
-    { "value": "A6004BSF", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75305001" },
-    { "value": "A6004BX2", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79339001" },
-    { "value": "A6004BX3", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82339001" },
-    { "value": "A6004BX4", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84339001" },
-    { "value": "A6004BX5", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86339001" },
-    { "value": "A6004BX6", "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77339001" },
-    { "value": "A6004BX7", "NOM": "CHIFON BANK - Hồ Chí Minh - TPHCM - 79607001" },
-    { "value": "A6004BX8", "NOM": "CHIFON BANK - Hà Nội - HÀ NỘI - 1607001" },
-    { "value": "A6004BX9", "NOM": "CHINACONSTRUCTIONBANKCORPORATION - CHINA CONSTRUCTION BANK CORPORATION - Hồ Chí Minh - CN TP HCM - 79611001" },
-    { "value": "A6004BXA", "NOM": "CHOHUNGVINABANK - CHOHUNG VINA BANK - Lào Cai - CN HÀ NỘI - 10503018" },
-    { "value": "A6004BXB", "NOM": "CIMB-NGÂN HÀNG TNHH MTV CIMB - Hà Nội - HỘI SỞ - 1661001" },
-    { "value": "A6004BXC", "NOM": "CITIBANK-NGÂN HÀNG CITIBANK - Hà Nội - CN HÀ NỘI - 1605001" },
-    { "value": "A6004C2B", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Long An - CN LONG AN - 80305001" },
-    { "value": "A6004C2C", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN LONG BIÊN - 1305003" },
-    { "value": "A6004C2D", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Tiền Giang - CN MỸ THO - 82305001" },
-    { "value": "A6004C2E", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56305001" },
-    { "value": "A6004C2F", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79305014" },
-    { "value": "A6004C2G", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 10 HCM - 79305004" },
-    { "value": "A6004C2H", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 11 HCM - 79305003" },
-    { "value": "A6004C2I", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 3 - 79305017" },
-    { "value": "A6004C2J", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 4 - 79305009" },
-    { "value": "A6004C2K", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 7 - 79305010" },
-    { "value": "A6004C2L", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49305001" },
-    { "value": "A6004BSG", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN BA ĐÌNH - 1308006" },
-    { "value": "A6004BSH", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bạc Liêu - CN BẠC LIÊU - 95308001" },
-    { "value": "A6004BSI", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BẾN NGHÉ - 79308004" },
-    { "value": "A6004BSJ", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÌNH CHÁNH - 79308005" },
-    { "value": "A6004BSK", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bình Dương - CN BÌNH DƯƠNG - 74308001" },
-    { "value": "A6004BSL", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÌNH HÒA - 79308008" },
-    { "value": "A6004BSM", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bình Thuận - CN BÌNH THUẬN - 60308001" },
-    { "value": "A6004BSN", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cà Mau - CN CÀ MAU - 96308001" },
-    { "value": "A6004BSO", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cần Thơ - CN CẦN THƠ - 92308001" },
-    { "value": "A6004BSP", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN CẦU GIẤY - 1308003" },
-    { "value": "A6004BSQ", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN CHỢ LỚN - 79308002" },
-    { "value": "A6004BXD", "NOM": "CITIBANK-NGÂN HÀNG CITIBANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79654001" },
-    { "value": "A6004BXE", "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24901001" },
-    { "value": "A6004BXF", "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Gia Lai - CN GIA LAI - 64901001" },
-    { "value": "A6004BXG", "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42901001" },
-    { "value": "A6004BXH", "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Tây Ninh - CN TÂY NINH - 72901001" },
-    { "value": "A6004BXI", "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Yên Bái - CN YÊN BÁI - 15901001" },
-    { "value": "A6004BXJ", "NOM": "COMMONWEALTHBANKOFAUSTRALIA - COMMONWEALTH BANK OF AUSTRALIA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79643001" },
-    { "value": "A6004BXK", "NOM": "DBSBANKLTD - DBS BANK LTD - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79650001" },
-    { "value": "A6004BXL", "NOM": "DEUTSCHEBANK - DEUTSCHE BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79619001" },
-    { "value": "A6004BXM", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bắc Giang - CN BẮC GIANG - 24304001" },
-    { "value": "A6004BXN", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bạc Liêu - CN BẠC LIÊU - 95304001" },
-    { "value": "A6004C2M", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51305001" },
-    { "value": "A6004C2N", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22305001" },
-    { "value": "A6004C2O", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79305002" },
-    { "value": "A6004C2P", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TÂN ĐỊNH HCM - 79305006" },
-    { "value": "A6004C2Q", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TÂN SƠN NHẤT - 79305016" },
-    { "value": "A6004C2R", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92305002" },
-    { "value": "A6004C2S", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN THỦ ĐÔ - 1305004" },
-    { "value": "A6004C2T", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79305011" },
-    { "value": "A6004C2U", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79305008" },
-    { "value": "A6004C2V", "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Nghệ An - CN VINH - 40305001" },
-    { "value": "A6004C2W", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Bình Dương - CN BÌNH DƯƠNG - 74320001" },
-    { "value": "A6004BSR", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đà Nẵng - CN ĐÀ NẴNG - 48308001" },
-    { "value": "A6004BSS", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đắk Lắk - CN DAKLAK - 66308001" },
-    { "value": "A6004BST", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN ĐỐNG ĐA - 1308004" },
-    { "value": "A6004BSU", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đồng Nai - CN ĐỒNG NAI - 75308001" },
-    { "value": "A6004BSV", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN HÀ NỘI - 1308001" },
-    { "value": "A6004BSW", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hải Phòng - CN HẢI PHÒNG - 31308001" },
-    { "value": "A6004BSX", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79308001" },
-    { "value": "A6004BSY", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN HOÀN KIẾM - 1308005" },
-    { "value": "A6004BSZ", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Thừa Thiên Huế - CN HUẾ - 46308001" },
-    { "value": "A6004BT0", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN KHÁNH HỘI - 79308012" },
-    { "value": "A6004BT1", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Lào Cai - CN LÀO CAI - 10308001" },
-    { "value": "A6004BXO", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bắc Ninh - CN BẮC NINH - 27304001" },
-    { "value": "A6004BXP", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bến Tre - CN BẾN TRE - 83304001" },
-    { "value": "A6004BXQ", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Định - CN BÌNH ĐỊNH - 52304001" },
-    { "value": "A6004BXR", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Dương - CN BÌNH DƯƠNG - 74304001" },
-    { "value": "A6004BXS", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Phước - CN BÌNH PHƯỚC - 70304001" },
-    { "value": "A6004BXT", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Thuận - CN BÌNH THUẬN - 60304001" },
-    { "value": "A6004BXU", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Cần Thơ - CN CẦN THƠ - 92304001" },
-    { "value": "A6004BXV", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đà Nẵng - CN ĐÀ NẴNG - 48304001" },
-    { "value": "A6004BXW", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đắk Lắk - CN DAK LAK - 66304001" },
-    { "value": "A6004BXX", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đắk Nông - CN ĐAK NÔNG - 67304001" },
-    { "value": "A6004BXY", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN ĐINH TIÊN HOÀNG - 79304006" },
-    { "value": "A6004C2X", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Đà Nẵng - CN ĐÀ NẴNG - 48320001" },
-    { "value": "A6004C2Y", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Gia Lai - CN GIA LAI - 64320001" },
-    { "value": "A6004C2Z", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN HÀ NỘI - 1320005" },
-    { "value": "A6004C30", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hải Phòng - CN HẢI PHÒNG - 31320001" },
-    { "value": "A6004C31", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN HOÀN KIẾM - 1320002" },
-    { "value": "A6004C32", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Nghệ An - CN NGHỆ AN - 40320001" },
-    { "value": "A6004C33", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Ninh Bình - CN NINH BÌNH - 37320001" },
-    { "value": "A6004C34", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Quảng Ninh - CN QUẢNG NINH - 22320001" },
-    { "value": "A6004C35", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hồ Chí Minh - CN SÀI GÒN - 79320002" },
-    { "value": "A6004BT2", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN LONG BIÊN - 1308002" },
-    { "value": "A6004BT3", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Quảng Ninh - CN QUẢNG NINH - 22308001" },
-    { "value": "A6004BT4", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Sóc Trăng - CN SÓC TRĂNG - 94308001" },
-    { "value": "A6004BT5", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN BÌNH - 79308010" },
-    { "value": "A6004BT6", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN ĐỊNH - 79308003" },
-    { "value": "A6004BT7", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN PHÚ - 79308007" },
-    { "value": "A6004BT8", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN THÁI BÌNH - 79308006" },
-    { "value": "A6004BT9", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cần Thơ - CN THỐT NỐT - 92308002" },
-    { "value": "A6004BTA", "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Tiền Giang - CN TIỀN GIANG - 82308001" },
-    { "value": "A6004BTB", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cần Thơ - CN  CẦN THƠ - 92334001" },
-    { "value": "A6004BTC", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Phòng - CN  HỒNG BÀNG - 31334001" },
-    { "value": "A6004BXZ", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đồng Nai - CN ĐỒNG NAI - 75304001" },
-    { "value": "A6004BY0", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đồng Tháp - CN ĐỒNG THÁP - 87304001" },
-    { "value": "A6004BY1", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Gia Lai - CN GIA LAI - 64304001" },
-    { "value": "A6004BY2", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN GÒ VẤP - 79304007" },
-    { "value": "A6004BY3", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hà Nam - CN HÀ NAM - 35304001" },
-    { "value": "A6004BY4", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hà Nội - CN HÀ NỘI - 1304001" },
-    { "value": "A6004BY5", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hải Phòng - CN HẢI PHÒNG - 31304001" },
-    { "value": "A6004BY6", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hậu Giang - CN HẬU GIANG - 93304001" },
-    { "value": "A6004BY7", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hưng Yên - CN HƯNG YÊN - 33304001" },
-    { "value": "A6004BY8", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Kiên Giang - CN KIÊN GIANG - 91304001" },
-    { "value": "A6004BY9", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Kon Tum - CN KON TUM - 62304001" },
-    { "value": "A6004BYA", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Lâm Đồng - CN LÂM ĐỒNG - 68304001" },
-    { "value": "A6004BTD", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN 20 - 10 - 79334008" },
-    { "value": "A6004BTE", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - An Giang - CN AN GIANG - 89334001" },
-    { "value": "A6004BTF", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77334002" },
-    { "value": "A6004BTG", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bắc Ninh - CN BẮC NINH - 27334001" },
-    { "value": "A6004BTH", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN BẾN THÀNH - 79334018" },
-    { "value": "A6004BTI", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bến Tre - CN BẾN TRE - 83334001" },
-    { "value": "A6004BTJ", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Định - CN BÌNH ĐỊNH - 52334001" },
-    { "value": "A6004BTK", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Dương - CN BÌNH DƯƠNG - 74334001" },
-    { "value": "A6004BTL", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN BÌNH TÂY - 79334017" },
-    { "value": "A6004BTM", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Thuận - CN BÌNH THUẬN - 60334001" },
-    { "value": "A6004BTN", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cà Mau - CN CÀ MAU - 96334001" },
-    { "value": "A6004BTO", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Long An - CN CẦN GIUỘC - 80334002" },
-    { "value": "A6004BYB", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Long An - CN LONG AN - 80304001" },
-    { "value": "A6004BYC", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Nam Định - CN NAM ĐỊNH - 36304001" },
-    { "value": "A6004BYD", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thái Nguyên - CN PGD THÁI NGUYÊN - 19304001" },
-    { "value": "A6004BYE", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN PHÚ NHUẬN - 79304011" },
-    { "value": "A6004BYF", "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 1 - 79304002" },
-    { "value": "A6004BYG", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN PHÚ QUỐC - 91303002" },
-    { "value": "A6004BYH", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Phú Thọ - CN PHÚ THỌ - 25303001" },
-    { "value": "A6004BYI", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Phú Yên - CN PHÚ YÊN - 54303001" },
-    { "value": "A6004BYJ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN PHƯƠNG NAM - 79303030" },
-    { "value": "A6004BYK", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 1 - 79303022" },
-    { "value": "A6004BYL", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 12 - 79303005" },
-    { "value": "A6004BTP", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN SÔNG CÔNG - 19201003" },
-    { "value": "A6004BTQ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN SÔNG HÀN - 48201004" },
-    { "value": "A6004BTR", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN SÔNG NHUỆ - 1201015" },
-    { "value": "A6004BTS", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Bình - CN TAM ĐIỆP - 37201002" },
-    { "value": "A6004BTT", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79201017" },
-    { "value": "A6004BTU", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92201002" },
-    { "value": "A6004BTV", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TÂY HÀ NỘI - 1201013" },
-    { "value": "A6004BTW", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN TÂY NINH - 72201001" },
-    { "value": "A6004BTX", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79201012" },
-    { "value": "A6004BTY", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tiền Giang - CN TÂY TIỀN GIANG - 82201002" },
-    { "value": "A6004BTZ", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34201001" },
-    { "value": "A6004BYM", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 4 - 79303012" },
-    { "value": "A6004BYN", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 5 - 79303020" },
-    { "value": "A6004BYO", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 8 - 79303013" },
-    { "value": "A6004BYP", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 9 - 79303021" },
-    { "value": "A6004BYQ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Bình - CN QUẢNG BÌNH - 44303001" },
-    { "value": "A6004BYR", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Nam - CN QUẢNG NAM - 49303001" },
-    { "value": "A6004BYS", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Ngãi - CN QUẢNG NGÃI - 51303001" },
-    { "value": "A6004BYT", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Ninh - CN QUẢNG NINH - 22303001" },
-    { "value": "A6004BYU", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Trị - CN QUẢNG TRỊ - 45303001" },
-    { "value": "A6004BYV", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN SÀI GÒN - 79303010" },
-    { "value": "A6004BYW", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đà Nẵng - CN SÔNG HÀN - 48303002" },
-    { "value": "A6004BU0", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19201001" },
-    { "value": "A6004BU1", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THĂNG LONG - 1201017" },
-    { "value": "A6004BU2", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THANH AN - 1201019" },
-    { "value": "A6004BU3", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38201001" },
-    { "value": "A6004BU4", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THANH XUÂN - 1201007" },
-    { "value": "A6004BU5", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79201013" },
-    { "value": "A6004BU6", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79201021" },
-    { "value": "A6004BU7", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46201001" },
-    { "value": "A6004BU8", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82201001" },
-    { "value": "A6004BU9", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN TIEN SON - 27201002" },
-    { "value": "A6004BUA", "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN TÔ HIỆU - 31201006" },
-    { "value": "A6004BYX", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN BÌNH - 79303008" },
-    { "value": "A6004BYY", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN ĐỊNH - 79303026" },
-    { "value": "A6004BYZ", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN PHÚ - 79303014" },
-    { "value": "A6004BZ0", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tây Ninh - CN TÂY NINH - 72303001" },
-    { "value": "A6004BZ1", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thái Nguyên - CN THÁI NGUYÊN - 19303001" },
-    { "value": "A6004BZ2", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THĂNG LONG - 1303006" },
-    { "value": "A6004BZ3", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Tháp - CN THANH BÌNH - 87303002" },
-    { "value": "A6004BZ4", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thanh Hóa - CN THANH HÓA - 38303001" },
-    { "value": "A6004BZ5", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THANH TRÌ - 1303007" },
-    { "value": "A6004BZ6", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cà Mau - CN THỚI BÌNH - 96303002" },
-    { "value": "A6004BZ7", "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THỦ ĐÔ - 1303001" },
-    { "value": "A60049V2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN MỸ LƯƠNG - 89204015" },
-    { "value": "A60049VO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN NGÃ NĂM - 94204008" },
-    { "value": "A60049VP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGA SƠN - 38204029" },
-    { "value": "A60049VQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN NGÂN SƠN - 6204004" },
-    { "value": "A60049VR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN NGHỆ AN - 40204001" },
-    { "value": "A60049VS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGHI SƠN - 38204019" },
-    { "value": "A60049VT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN NGHĨA HÀNH - 51204014" },
-    { "value": "A60049VU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN NGHĨA HƯNG - 36204006" },
-    { "value": "A60049VV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NGÔ QUYỀN - 31204005" },
-    { "value": "A60049VW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN NGỌC HIỂN - 96204006" },
-    { "value": "A60049VX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGỌC LẶC - 38204032" },
-    { "value": "A60049VY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN NGŨ HÀNH SƠN - 48204006" },
-    { "value": "A60049VZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NGŨ LÃO - 31204017" },
-    { "value": "A60049W0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN TỈNH QUẢNG TRỊ - 45204001" },
-    { "value": "A60049W1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN TỈNH SÓC TRĂNG - 94204001" },
-    { "value": "A60049W2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TỈNH TÂY NINH - 72204001" },
-    { "value": "A60049W3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TỈNH THÁI BÌNH - 34204001" },
-    { "value": "A60049W4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN TỈNH THÁI NGUYÊN - 19204001" },
-    { "value": "A60049W5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TỈNH THANH HÓA - 38204001" },
-    { "value": "A60049W6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN TỈNH TUYÊN QUANG - 8204001" },
-    { "value": "A60049W7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TỈNH VĨNH LONG - 86204001" },
-    { "value": "A60049V3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN MY THANH - 79204049" },
-    { "value": "A60049V4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN MỸ TÚ - 94204007" },
-    { "value": "A60049V5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN MỸ XUYÊN - 94204006" },
-    { "value": "A60049V6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN NA RÌ - 6204006" },
-    { "value": "A60049V7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NAM AM - 31204018" },
-    { "value": "A60049V8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN NAM CẨM PHẢ - 22204019" },
-    { "value": "A60049V9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN NĂM CĂN - 96204008" },
-    { "value": "A60049VA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN NAM DONG - 67204007" },
-    { "value": "A60049VB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM GIANG - 49204006" },
-    { "value": "A60049VC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN NAM HÀ NỘI - 1204017" },
-    { "value": "A60049VD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NAM HOA - 79204039" },
-    { "value": "A60049VE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN NAM LÂM ĐỒNG - 68204002" },
-    { "value": "A60049VF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN NAM NHA TRANG - 56204011" },
-    { "value": "A60049VG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN NAM PHAN THIẾT - 60204002" },
-    { "value": "A60049VH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM PHƯỚC - 49204003" },
-    { "value": "A60049VI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN NAM SÁCH - 30204002" },
-    { "value": "A60049VJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NAM SÀI GÒN - 79204026" },
-    { "value": "A60049VK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN NAM SÔNG HƯƠNG HUẾ - 46204002" },
-    { "value": "A60049VL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN NAM TP TUY HÒA - 54204011" },
-    { "value": "A60049VM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM TRÀ MY - 49204016" },
-    { "value": "A60049VN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN NAM TRỰC - 36204004" },
-    { "value": "A60049U8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TX BỈM SƠN - 38204022" },
-    { "value": "A60049U9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TX BÌNH MINH - 86204002" },
-    { "value": "A60049UA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TX CAI LẬY - 82204002" },
-    { "value": "A60049UB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TX GÒ CÔNG - 82204011" },
-    { "value": "A60049UC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TX LONG KHÁNH ĐỒNG NAI - 75204008" },
-    { "value": "A60049UD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TX NGHĨA LỘ - 15204011" },
-    { "value": "A60049UE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TX PHÚ THỌ - 25204004" },
-    { "value": "A60049UF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TX SÔNG CẦU - 54204008" },
-    { "value": "A60049UG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TX TÂN CHÂU - 89204008" },
-    { "value": "A60049UH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN U MINH - 96204010" },
-    { "value": "A60049UI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN VÀM LÁNG - 31204021" },
-    { "value": "A60049UJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN VÂN CANH - 52204013" },
-    { "value": "A60049UK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN VĂN CHẤN - 15204004" },
-    { "value": "A60049UL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN VÂN CƠ - 25204003" },
-    { "value": "A60049UM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN VĂN GIANG - 33204004" },
-    { "value": "A60049UN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN VĂN LÂM - 33204006" },
-    { "value": "A60049UO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN VĂN LANG - 20204002" },
-    { "value": "A60049UP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN VĂN QUAN - 20204011" },
-    { "value": "A60049UQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN VĂN YÊN - 15204009" },
-    { "value": "A60049UR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN VỊ THUỶ - 93204005" },
-    { "value": "A60049US", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN VỊ XUYÊN - 2204012" },
-    { "value": "A60049XW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NHƯ THANH - 38204017" },
-    { "value": "A60049XX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NHƯ XUÂN - 38204011" },
-    { "value": "A60049XY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN NINH GIANG - 30204008" },
-    { "value": "A60049XZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN NƠ TRANG LONG - 66204027" },
-    { "value": "A60049Y0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NÔNG CỐNG - 38204012" },
-    { "value": "A60049Y1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NÔNG SƠN - 49204013" },
-    { "value": "A60049Y2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NÚI THÀNH - 49204027" },
-    { "value": "A60049Y3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN ÔNG ÍCH KHIÊM - 48204015" },
-    { "value": "A60049Y4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN PÁC NẶM - 6204005" },
-    { "value": "A60049Y5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN PHẢ LẠI - 30204015" },
-    { "value": "A60049Y6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN PHAN CHU TRINH - 66204012" },
-    { "value": "A60049Y7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHAN DINH PHUNG - 79204036" },
-    { "value": "A60049Y8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN PHAN RÍ CỬA - 60204006" },
-    { "value": "A60049Y9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN PHONG THỔ - 12204004" },
-    { "value": "A60049YA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN PHÙ CÁT - 52204006" },
-    { "value": "A60049YB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN PHÙ CỪ - 33204009" },
-    { "value": "A60049YC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN PHÚ HÒA - 54204005" },
-    { "value": "A60049YD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN PHÙ MỸ - 52204007" },
-    { "value": "A60049YE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79204031" },
-    { "value": "A60049YF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHÚ NHUẬN HCM - 79204006" },
-    { "value": "A60049W8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN TỈNH VĨNH PHÚC - 26204001" },
-    { "value": "A60049W9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN TP BẠC LIÊU - 95204002" },
-    { "value": "A60049WA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN TP BẾN TRE - 83204002" },
-    { "value": "A60049WB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TP BUÔN MA THUỘT - 66204020" },
-    { "value": "A60049WC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TP CÀ MAU - 96204005" },
-    { "value": "A60049WD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP CẨM PHẢ - 22204012" },
-    { "value": "A60049WE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TP CAO LÃNH - 87204005" },
-    { "value": "A60049WF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TP CHÂU ĐỐC - 89204013" },
-    { "value": "A60049WG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN TP ĐÀ LẠT - 68204003" },
-    { "value": "A60049WH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN TP ĐÀ NẴNG - 48204001" },
-    { "value": "A60049WI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN TP ĐÔNG HÀ - 45204002" },
-    { "value": "A60049WJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP HẠ LONG - 22204011" },
-    { "value": "A60049WK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79204001" },
-    { "value": "A60049WL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TP HỘI AN - 49204011" },
-    { "value": "A60049WM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TP HƯNG YÊN - 33204012" },
-    { "value": "A60049WN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TP LẠNG SƠN - 20204006" },
-    { "value": "A60049WO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN TP LÀO CAI - 10204009" },
-    { "value": "A60049WP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TP LONG XUYÊN - 89204006" },
-    { "value": "A60049WQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP MÓNG CÁI - 22204005" },
-    { "value": "A60049WR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TP MỸ THO - 82204005" },
-    { "value": "A60049WS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TP NAM ĐỊNH - 36204015" },
-    { "value": "A60049WT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN TP NHA TRANG - 56204002" },
-    { "value": "A60049WU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TP NINH BÌNH - 37204009" },
-    { "value": "A60049WV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN TP PHAN RANG - 58204002" },
-    { "value": "A60049WW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TP PHAN THIẾT - 60204015" },
-    { "value": "A60049WX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN TP PHỦ LÝ - 35204006" },
-    { "value": "A60049WY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN TP PLEIKU GIA LAI - 64204016" },
-    { "value": "A60049WZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN VĨNH HƯNG - 80204018" },
-    { "value": "A60049X0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN VĨNH LINH - 45204010" },
-    { "value": "A60049X1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN VĨNH THẠNH CẦN THƠ II - 92204005" },
-    { "value": "A60049X2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN VĨNH TƯỜNG - 26204003" },
-    { "value": "A60049X3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN VÕ NHAI - 19204004" },
-    { "value": "A60049X4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN VŨ QUANG - 42204010" },
-    { "value": "A60049X5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN XUÂN LỘC - 75204004" },
-    { "value": "A60049X6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN XUYÊN MỘC - 77204003" },
-    { "value": "A60049X7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN YÊN KHÁNH - 37204004" },
-    { "value": "A60049X8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN YÊN LẠC - 26204004" },
-    { "value": "A60049X9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN YÊN MÔ - 37204005" },
-    { "value": "A60049XA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN YÊN PHONG - 27204008" },
-    { "value": "A60049XB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN YÊN SƠN - 8204002" },
-    { "value": "A60049XC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN YÊN THANH - 40204021" },
-    { "value": "A60049XD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN YÊN THẾ BẮC GIANG II - 24204010" },
-    { "value": "A60049XE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN YÊN THỦY - 17204010" },
-    { "value": "A60049XF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN KCN ĐÀ NẴNG - 48204014" },
-    { "value": "A60049XG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN KCN ĐÌNH TRÁM - 24204005" },
-    { "value": "A60049XH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN KCN HÒA KHÁNH - 48204013" },
-    { "value": "A60049XI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN KCN HÒA PHÚ - 86204008" },
-    { "value": "A60049XJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KCN MINH ĐỨC - 33204002" },
-    { "value": "A60049XK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN KCN MỸ THO - 82204012" },
-    { "value": "A60049XL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN KCN PHÚ TÀI - 52204009" },
-    { "value": "A60049XM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN KCN SÓNG THẦN - 74204002" },
-    { "value": "A60049XN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN KCN TÂN THÀNH BÀ RỊA VŨNG TÀU - 77204005" },
-    { "value": "A60049XO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN KCN TIÊN SƠN - 27204007" },
-    { "value": "A60049XP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN KCN TRẢNG BÀNG - 72204004" },
-    { "value": "A60049XQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN KẾ SÁCH - 94204005" },
-    { "value": "A60049XR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KHOÁI CHÂU - 33204007" },
-    { "value": "A60049XS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN KHU CN ĐIỆN NAM  -  ĐIỆN NGỌC - 49204022" },
-    { "value": "A60049XT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN KHU KINH TẾ MỞ CHU LAI - 49204010" },
-    { "value": "A60049XU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC 3 - 80204004" },
-    { "value": "A60049XV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN KHU VỰC BÃI CHÁY - 22204009" },
-    { "value": "A60049Z0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN QUẢN BẠ - 2204005" },
-    { "value": "A60049Z1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN QUAN HÓA - 38204016" },
-    { "value": "A60049Z2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN QUẬN Ô MÔN - 92204003" },
-    { "value": "A60049Z3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN QUANG BÌNH - 2204011" },
-    { "value": "A60049Z4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN QUẢNG NGÃI - 51204015" },
-    { "value": "A60049Z5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN QUẢNG NINH - 44204004" },
-    { "value": "A60049Z6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN QUANG TRUNG - 44204007" },
-    { "value": "A60049Z7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN QUANG TRUNG - 62204006" },
-    { "value": "A60049Z8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN QUẢNG XƯƠNG - 38204010" },
-    { "value": "A60049Z9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN QUẾ SƠN - 49204012" },
-    { "value": "A60049ZW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN SÔNG CẦU - 19204008" },
-    { "value": "A60049ZX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN SÔNG ĐÀ - 17204013" },
-    { "value": "A60049ZY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN SÔNG HINH - 54204004" },
-    { "value": "A60049ZZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN SÔNG LÔ - 26204012" },
-    { "value": "A6004A00", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN SÔNG VÂN - 37204008" },
-    { "value": "A6004A01", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TAM BÌNH - 86204003" },
-    { "value": "A6004A02", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TAM DÂN - 49204014" },
-    { "value": "A6004A03", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN TAM ĐƯỜNG - 12204003" },
-    { "value": "A6004A04", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TAM NÔNG - 25204011" },
-    { "value": "A6004A05", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TAM NÔNG - 87204004" },
-    { "value": "A6004A06", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TAM PHƯỚC ĐỒNG NAI - 75204010" },
-    { "value": "A6004A07", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TAM TRINH - 1204033" },
-    { "value": "A6004A08", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TÂN BIÊN - 72204009" },
-    { "value": "A6004A09", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TÂN BIÊN ĐỒNG NAI - 75204015" },
-    { "value": "A6004A0A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN BÌNH HCM - 79204020" },
-    { "value": "A6004A0B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TÂN CHÂU - 72204006" },
-    { "value": "A6004A0C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN TÂN CHÍNH - 48204017" },
-    { "value": "A6004A0D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN TÂN HIỆP - 91204018" },
-    { "value": "A6004A0E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TÂN HIỆP ĐỒNG NAI - 75204005" },
-    { "value": "A6004A0F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TÂN HỒNG - 87204003" },
-    { "value": "A60049ZA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN QUYẾT THẮNG - 62204004" },
-    { "value": "A60049ZB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN QUỲNH PHỤ - 34204007" },
-    { "value": "A60049ZC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN RẠCH SỎI - 91204007" },
-    { "value": "A60049ZD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SA HUỲNH - 51204012" },
-    { "value": "A60049ZE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN SÀI GÒN - 79204023" },
-    { "value": "A60049ZF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SẦM SƠN - 38204002" },
-    { "value": "A60049ZG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN SAO ĐỎ - 30204012" },
-    { "value": "A60049ZH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN SÌN HỒ - 12204005" },
-    { "value": "A60049ZI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN SỐ 1 - 84204008" },
-    { "value": "A60049ZJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 2 - 38204013" },
-    { "value": "A60049ZK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN SỐ 2 - 84204009" },
-    { "value": "A60049ZL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 3 - 38204023" },
-    { "value": "A60049ZM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 4 - 38204024" },
-    { "value": "A60049ZN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN SỞ SAO - 74204004" },
-    { "value": "A60049ZO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN SÓC SƠN HÀ NỘI - 1204012" },
-    { "value": "A60049ZP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN SÓC TRĂNG - 94204002" },
-    { "value": "A60049ZQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SƠN HÀ - 51204008" },
-    { "value": "A60049ZR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN SƠN HÒA - 54204003" },
-    { "value": "A60049ZS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN SƠN LA - 14204001" },
-    { "value": "A60049ZT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN SƠN LA - 14204008" },
-    { "value": "A60049ZU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SƠN TỊNH - 51204009" },
-    { "value": "A60049ZV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN SƠN TRÀ DN - 48204007" },
-    { "value": "A60049YG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN PHÚ NINH - 49204026" },
-    { "value": "A60049YH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN PHÙ NINH - 25204006" },
-    { "value": "A60049YI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN PHÚ QUỐC - 91204002" },
-    { "value": "A60049YJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN PHÚ QÚY - 60204009" },
-    { "value": "A60049YK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN PHÚ RIỀNG - 70204014" },
-    { "value": "A60049YL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN PHÚ TÂN - 96204009" },
-    { "value": "A60049YM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN PHÚ TÂN - 89204004" },
-    { "value": "A60049YN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN PHÚ THIỆN - 64204025" },
-    { "value": "A60049YO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN PHÚ THỌ - 25204001" },
-    { "value": "A60049YP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN PHÚC YÊN - 26204002" },
-    { "value": "A60049YQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN PHỤNG HIỆP - 93204008" },
-    { "value": "A60049YR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN PHƯỚC BÌNH - 70204015" },
-    { "value": "A60049YS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHƯỚC KIỂN - 79204038" },
-    { "value": "A60049YT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NHÀ BÈ HCM - 79204011" },
-    { "value": "A60049YU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN PHƯỚC LONG - 95204003" },
-    { "value": "A60049YV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN PHƯỚC SƠN - 49204017" },
-    { "value": "A60049YW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN PHƯƠNG LÂM - 17204004" },
-    { "value": "A60049YX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN PƠNG DRANG - 66204008" },
-    { "value": "A60049YY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN QUẬN 1 - 79204035" },
-    { "value": "A60049YZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN QUẬN 5 - 79204032" },
-    { "value": "A6004A24", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN THỊ XÃ HÀ TIÊN - 91204006" },
-    { "value": "A6004A25", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THỊ XÃ HỒNG LĨNH - 42204008" },
-    { "value": "A6004A26", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THỊ XÃ HỒNG NGỰ - 87204002" },
-    { "value": "A6004A27", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THỊ XÃ KỲ ANH - 42204017" },
-    { "value": "A6004A28", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN THỊ XÃ LAGI - 60204013" },
-    { "value": "A6004A29", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN THỊ XÃ NGÃ BẢY - 93204003" },
-    { "value": "A6004A2A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN THỊ XÃ PHỔ YÊN - 19204002" },
-    { "value": "A6004A2B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN THỊ XÃ QUẢNG TRỊ - 45204007" },
-    { "value": "A6004A2C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN THỊ XÃ QUẢNG YÊN - 22204004" },
-    { "value": "A6004A2D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THỊ XÃ SƠN TÂY - 1204049" },
-    { "value": "A6004A2E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN THỊ XÃ TÂN AN - 80204002" },
-    { "value": "A6004A2F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN THỊ XÃ THÁI HÒA - 40204019" },
-    { "value": "A6004A2G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ THỦ DẦU MỘT BÌNH DƯƠNG - 74204009" },
-    { "value": "A6004A2H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ THUẬN AN SÓNG THẦN - 74204010" },
-    { "value": "A6004A2I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN THỊ XÃ TỪ SƠN - 27204003" },
-    { "value": "A6004A2J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THIỆU HÓA - 38204018" },
-    { "value": "A6004A2K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN THỊNH LONG - 36204007" },
-    { "value": "A6004A2L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN THỔ TANG - 26204009" },
-    { "value": "A6004A2M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THỌ XUÂN - 38204004" },
-    { "value": "A6004A2N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN THOẠI SƠN - 89204002" },
-    { "value": "A6004A0G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TÂN LẬP - 66204019" },
-    { "value": "A6004A0H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TÂN PHÚ ĐÔNG - 82204003" },
-    { "value": "A6004A0I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN PHÚ HCM - 79204004" },
-    { "value": "A6004A0J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TÂN PHƯỚC - 82204004" },
-    { "value": "A6004A0K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TÂN PHƯỚC KHÁNH - 74204005" },
-    { "value": "A6004A0L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TÂN SƠN - 25204008" },
-    { "value": "A6004A0M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN TẠO - 79204045" },
-    { "value": "A6004A0N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN TÂN THÀNH - 70204002" },
-    { "value": "A6004A0O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN TÂN UYÊN - 12204008" },
-    { "value": "A6004A0P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TÂN UYÊN - 74204008" },
-    { "value": "A6004A0Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TÁNH LINH - 60204005" },
-    { "value": "A6004A0R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY ĐÔ - 1204031" },
-    { "value": "A6004A0S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TÂY GIANG - 49204007" },
-    { "value": "A6004A0T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY HÀ NỘI - 1204007" },
-    { "value": "A6004A0U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY HỒ - 1204025" },
-    { "value": "A6004A0V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TÂY HÒA - 54204007" },
-    { "value": "A6004A0W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂY SÀI GÒN - 79204002" },
-    { "value": "A6004A0X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TÂY SƠN - 52204005" },
-    { "value": "A6004A0Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN TÂY SƠN HÀ TĨNH - 42204012" },
-    { "value": "A6004A0Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THẠCH THÀNH - 38204030" },
-    { "value": "A6004A10", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN THÁI NGUYÊN - 19204011" },
-    { "value": "A6004A11", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN THÁI THỤY - 34204003" },
-    { "value": "A6004A12", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN THAN UYÊN - 12204007" },
-    { "value": "A6004A13", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN THĂNG BÌNH - 49204018" },
-    { "value": "A6004A14", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THĂNG LONG - 1204011" },
-    { "value": "A6004A15", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH BA - 25204007" },
-    { "value": "A6004A16", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THANH BÌNH - 87204009" },
-    { "value": "A6004A17", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN THÀNH ĐÔ - 79204040" },
-    { "value": "A6004A18", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THÀNH ĐÔNG - 30204013" },
-    { "value": "A6004A19", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THANH HÀ - 30204014" },
-    { "value": "A6004A1A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN THANH KHÊ - 48204005" },
-    { "value": "A6004A1B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THANH MIỆN - 30204010" },
-    { "value": "A6004A1C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH MIẾU - 25204015" },
-    { "value": "A6004A1D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN THANH NAM - 36204014" },
-    { "value": "A6004A1E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN THÀNH PHỐ TUY HÒA - 54204002" },
-    { "value": "A6004A1F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN THẠNH PHÚ - 83204008" },
-    { "value": "A6004A1G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN THẠNH PHÚ - 94204012" },
-    { "value": "A6004A1H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THÀNH SEN - 42204016" },
-    { "value": "A6004A1I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH SƠN - 25204010" },
-    { "value": "A6004A1J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH THUỶ - 25204013" },
-    { "value": "A6004A1K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN THANH THUỶ - 2204009" },
-    { "value": "A6004A1L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN THẠNH TRỊ - 94204004" },
-    { "value": "A6004A1M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THANH TRÌ HÀ NỘI - 1204004" },
-    { "value": "A6004A1N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THANH XUÂN - 1204035" },
-    { "value": "A6004A1O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN THÁP CHÀM - 58204006" },
-    { "value": "A6004A1P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THÁP MƯỜI - 87204011" },
-    { "value": "A6004A1Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN THỊ XÃ AN KHÊ GIA LAI - 64204017" },
-    { "value": "A6004A1R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN THỊ XÃ AN NHƠN - 52204004" },
-    { "value": "A6004A1S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN THỊ XÃ CAM RANH - 56204007" },
-    { "value": "A6004A1T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN THỊ XÃ CỬA LÒ - 40204013" },
-    { "value": "A6004A1U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ DĨ AN SÓNG THẦN - 74204011" },
-    { "value": "A6004A1V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THƯỜNG XUÂN - 38204007" },
-    { "value": "A6004A1W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN THỦY NGUYÊN - 31204009" },
-    { "value": "A6004A1X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TIỀN GIANG - 82204001" },
-    { "value": "A6004A1Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TIỀN HẢI - 34204005" },
-    { "value": "A6004A1Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN TIÊN LÃNG - 31204011" },
-    { "value": "A6004A20", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN THỊ XÃ ĐIỆN BÀN - 49204021" },
-    { "value": "A6004A21", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN THỊ XÃ ĐÔNG TRIỀU - 22204003" },
-    { "value": "A6004A22", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN THỊ XÃ ĐỒNG XOÀI - 70204012" },
-    { "value": "A6004A23", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN THỊ XÃ GIA NGHĨA - 67204004" },
-    { "value": "A6004A38", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN TỈNH HÀ GIANG - 2204001" },
-    { "value": "A6004A39", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN TỈNH HÀ NAM - 35204001" },
-    { "value": "A6004A3A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN TỈNH HẢI DƯƠNG - 30204001" },
-    { "value": "A6004A3B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN TỈNH HÒA BÌNH - 17204001" },
-    { "value": "A6004A3C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TỈNH HƯNG YÊN - 33204001" },
-    { "value": "A6004A3D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN TỈNH KHÁNH HÒA - 56204001" },
-    { "value": "A6004A3E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN TỈNH KONTUM - 62204001" },
-    { "value": "A6004A3F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68204001" },
-    { "value": "A6004A3G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TỈNH LẠNG SƠN - 20204001" },
-    { "value": "A6004A3H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN TỈNH LÀO CAI - 10204001" },
-    { "value": "A6004A42", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HÀ TRUNG - 38204003" },
-    { "value": "A6004A43", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN HẢI AN - 31204015" },
-    { "value": "A6004A44", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN HẢI CHÂU ĐÀ NẴNG - 48204003" },
-    { "value": "A6004A45", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN HẢI DƯƠNG - 30204009" },
-    { "value": "A6004A46", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN HẢI HẬU - 36204012" },
-    { "value": "A6004A47", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN HẢI PHÒNG - 31204001" },
-    { "value": "A6004A48", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM MỸ - 60204011" },
-    { "value": "A6004A49", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM TÂN - 60204014" },
-    { "value": "A6004A4A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM THUẬN BẮC - 60204004" },
-    { "value": "A6004A4B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM THUẬN NAM - 60204012" },
-    { "value": "A6004A4C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN HẬU GIANG - 93204001" },
-    { "value": "A6004A4D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HẬU LỘC - 38204020" },
-    { "value": "A6004A4E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN HIỆP ĐỨC - 49204005" },
-    { "value": "A6004A4F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HIỆP PHƯỚC - 79204050" },
-    { "value": "A6004A4G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN HÒA BÌNH - 95204005" },
-    { "value": "A6004A4H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA KHÁNH - 66204025" },
-    { "value": "A6004A4I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÒA LẠC - 1204038" },
-    { "value": "A6004A4J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HOA LƯ - 64204018" },
-    { "value": "A6004A4K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HÒA NINH - 68204008" },
-    { "value": "A6004A4L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA THẮNG - 66204018" },
-    { "value": "A6004A3I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN TỈNH LONG AN - 80204001" },
-    { "value": "A6004A3J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TỈNH NAM ĐỊNH - 36204001" },
-    { "value": "A6004A3K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TỈNH NINH BÌNH - 37204001" },
-    { "value": "A6004A3L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN TỈNH NINH THUẬN - 58204001" },
-    { "value": "A6004A3M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TỈNH PHÚ YÊN - 54204001" },
-    { "value": "A6004A3N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN TỈNH QUẢNG BÌNH - 44204001" },
-    { "value": "A6004A3O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TỈNH QUẢNG NAM - 49204001" },
-    { "value": "A6004A3P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TỈNH QUẢNG NGÃI - 51204001" },
-    { "value": "A6004A3Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TỈNH QUẢNG NINH - 22204001" },
-    { "value": "A6004A3R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN GÒ CÔNG TÂY - 82204007" },
-    { "value": "A6004A3S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN GÒ DẦU - 72204011" },
-    { "value": "A6004A3T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN GÒ QUAO - 91204010" },
-    { "value": "A6004A3U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN HẠ HÒA - 25204009" },
-    { "value": "A6004A3V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HẠ LONG I - 22204017" },
-    { "value": "A6004A3W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ NỘI - 1204003" },
-    { "value": "A6004A3X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ NỘI - PGD QUẬN HAI BÀ TRƯNG - 1204052" },
-    { "value": "A6004A3Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ TÂY - 1204036" },
-    { "value": "A6004A3Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ THÀNH - 1204032" },
-    { "value": "A6004A40", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HÀ TĨNH - 42204001" },
-    { "value": "A6004A41", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HÀ TĨNH - 42204002" },
-    { "value": "A6004A2O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN THỚI BÌNH - 96204003" },
-    { "value": "A6004A2P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN THỐT NỐT - 92204004" },
-    { "value": "A6004A2Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THỦ ĐÔ - 1204030" },
-    { "value": "A6004A2R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN THỦ ĐỨC HCM - 79204024" },
-    { "value": "A6004A2S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46204001" },
-    { "value": "A6004A2T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TIÊN LỮ - 33204005" },
-    { "value": "A6004A2U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TIÊN PHƯỚC - 49204024" },
-    { "value": "A6004A2V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TIỂU CẦN - 84204004" },
-    { "value": "A6004A2W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TỈNH AN GIANG - 89204001" },
-    { "value": "A6004A2X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN TỈNH BẮC KẠN - 6204001" },
-    { "value": "A6004A2Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN TỈNH BẠC LIÊU - 95204001" },
-    { "value": "A6004A2Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN TỈNH BẾN TRE - 83204001" },
-    { "value": "A6004A30", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TỊNH BIÊN - 89204009" },
-    { "value": "A6004A31", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TỈNH BÌNH DƯƠNG - 74204001" },
-    { "value": "A6004A32", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TỈNH BÌNH THUẬN - 60204001" },
-    { "value": "A6004A33", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TỈNH CÀ MAU - 96204001" },
-    { "value": "A6004A34", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN TỈNH CAO BẰNG - 4204001" },
-    { "value": "A6004A35", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN TỈNH ĐAK NÔNG - 67204001" },
-    { "value": "A6004A36", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TỈNH DAKLAK - 66204001" },
-    { "value": "A6004A37", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TĨNH GIA - 38204015" },
-    { "value": "A6004A6A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHI LĂNG - 89204007" },
-    { "value": "A6004A6B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHI LĂNG - 48204010" },
-    { "value": "A6004A6C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHỢ CỒN - 48204009" },
-    { "value": "A6004A6D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN CHỢ ĐỒN - 6204008" },
-    { "value": "A6004A6E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CHỢ GẠO - 82204008" },
-    { "value": "A6004A6F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN CHỢ LÁCH - 83204009" },
-    { "value": "A6004A6G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CHỢ LỚN HCM - 79204016" },
-    { "value": "A6004A6H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHỢ MỚI - 89204012" },
-    { "value": "A6004A6I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN CHỢ MỚI - 6204007" },
-    { "value": "A6004A6J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHỢ MỚI - 48204012" },
-    { "value": "A6004A6K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHỢ VÀM - 89204014" },
-    { "value": "A6004A6L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN CHỢ XÓM MỚI - 56204009" },
-    { "value": "A6004A6M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN CHƯ PRÔNG - 64204002" },
-    { "value": "A6004A6N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN CHƯ PƯH - 64204024" },
-    { "value": "A6004A6O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN CHƯƠNG DƯƠNG - 1204296" },
-    { "value": "A6004A6P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CN 10 - 79204018" },
-    { "value": "A6004A6Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN CỒN - 36204016" },
-    { "value": "A6004A6R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CỦ CHI TP HCM - 79204028" },
-    { "value": "A6004A6S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN CƯ JÚT - 67204009" },
-    { "value": "A6004A6T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN CÙ LAO DUNG - 94204011" },
-    { "value": "A6004A4M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN HÒA THÀNH - 72204005" },
-    { "value": "A6004A4N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA THUẬN - 66204029" },
-    { "value": "A6004A4O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN HÒA VANG - 48204002" },
-    { "value": "A6004A4P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN HOÀI AN - 52204010" },
-    { "value": "A6004A4Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN HOÀI NHƠN - 52204008" },
-    { "value": "A6004A4R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN BẾN NHẤT - 91204004" },
-    { "value": "A6004A4S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BẾN THÀNH - 79204051" },
-    { "value": "A6004A4T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN BIỂN HỒ - 64204013" },
-    { "value": "A6004A4U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN BIÊN HÒA - 75204002" },
-    { "value": "A6004A4V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH CHÁNH HCM - 79204022" },
-    { "value": "A6004A4W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN BÌNH ĐẠI - 83204006" },
-    { "value": "A6004A4X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN BÌNH ĐỊNH - 52204001" },
-    { "value": "A6004A4Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN BINH GỈA - 20204012" },
-    { "value": "A6004A4Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN BÌNH GIANG - 30204005" },
-    { "value": "A6004A50", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH PHÚ - 79204052" },
-    { "value": "A6004A51", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN BÌNH PHƯỚC - 70204001" },
-    { "value": "A6004A52", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN BÌNH SƠN - 51204003" },
-    { "value": "A6004A53", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN BÌNH TÂN - 86204007" },
-    { "value": "A6004A54", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH TÂN HCM - 79204010" },
-    { "value": "A6004A55", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH THẠNH HCM - 79204019" },
-    { "value": "A6004A56", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN BÌNH THỦY - 92204008" },
-    { "value": "A6004A57", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH TRIỆU - 79204033" },
-    { "value": "A6004A58", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BỐ HẠ BẮC GIANG II - 24204008" },
-    { "value": "A6004A59", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BUÔN ĐÔN - 66204017" },
-    { "value": "A6004A5A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BUÔN HỒ BAC DAK LAK - 66204007" },
-    { "value": "A6004A5B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CÁI BÈ - 82204010" },
-    { "value": "A6004A5C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN CÁI NƯỚC - 96204002" },
-    { "value": "A6004A5D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CAI RĂNG CẦN THƠ - 92204002" },
-    { "value": "A6004A5E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CÁI TẮC - 93204009" },
-    { "value": "A6004A5F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN CAM ĐƯỜNG - 10204005" },
-    { "value": "A6004A5G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN CẨM GIANG - 30204004" },
-    { "value": "A6004A5H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN CẨM KHÊ - 25204002" },
-    { "value": "A6004A5I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CẨM LỆ - 48204016" },
-    { "value": "A6004A5J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN CẨM THỦY - 38204028" },
-    { "value": "A6004A5K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CAN GIO TP HCM - 79204027" },
-    { "value": "A6004A5L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CẦN THƠ - 92204001" },
-    { "value": "A6004A5M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CẦN THƠ II - 92204009" },
-    { "value": "A6004A5N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CÀNG LONG - 84204002" },
-    { "value": "A6004A5O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN CAO BẰNG - 4204013" },
-    { "value": "A6004A5P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN CAO LÃNH - 87204008" },
-    { "value": "A6004A5Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN CAO LỘC - 20204009" },
-    { "value": "A6004A5R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN CAO THẮNG - 22204018" },
-    { "value": "A6004A5S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN CÁT BÀ - 31204003" },
-    { "value": "A6004A5T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN CÁT HẢI - 31204008" },
-    { "value": "A6004A5U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN CÁT TIÊN - 68204006" },
-    { "value": "A6004A5V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN CẦU GIẤY HÀ NỘI - 1204016" },
-    { "value": "A6004A5W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CẦU KÈ - 84204003" },
-    { "value": "A6004A5X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CẦU NGANG - 84204006" },
-    { "value": "A6004A5Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHÂU PHÚ - 89204010" },
-    { "value": "A6004A5Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN CHÂU THÀNH - 72204010" },
-    { "value": "A6004A60", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CHÂU THÀNH - 84204011" },
-    { "value": "A6004A61", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CHÂU THÀNH - 82204009" },
-    { "value": "A6004A62", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN CHÂU THÀNH - 83204007" },
-    { "value": "A6004A63", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN CHÂU THÀNH - 87204006" },
-    { "value": "A6004A64", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHÂU THÀNH - 89204011" },
-    { "value": "A6004A65", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN CHÂU THÀNH - 91204013" },
-    { "value": "A6004A66", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CHÂU THÀNH - 93204007" },
-    { "value": "A6004A67", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN CHÂU THÀNH - 94204014" },
-    { "value": "A6004A68", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CHÂU THÀNH A - 93204006" },
-    { "value": "A6004A69", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN CHI LĂNG - 20204010" },
-    { "value": "A6004A7E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐÔNG ANH HÀ NỘI - 1204015" },
-    { "value": "A6004A7F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN ĐÔNG BÌNH - 36204013" },
-    { "value": "A6004A7G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN ĐỐNG ĐA - 48204011" },
-    { "value": "A6004A7H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐỐNG ĐA - 1204034" },
-    { "value": "A6004A7I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN ĐỒNG ĐĂNG - 20204005" },
-    { "value": "A6004A7J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN ĐÔNG GIA LAI - 64204020" },
-    { "value": "A6004A7K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN ĐÔNG GIANG - 49204025" },
-    { "value": "A6004A7L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐÔNG HÀ NỘI - 1204008" },
-    { "value": "A6004A7M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN ĐÔNG HẢI - 95204008" },
-    { "value": "A6004A7N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐÔNG HẢI PHÒNG - 31204006" },
-    { "value": "A6004A88", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA HLEO - 66204030" },
-    { "value": "A6004A89", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA KAR - 66204002" },
-    { "value": "A6004A8A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA KNỐP - 66204005" },
-    { "value": "A6004A8B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA PHÊ - 66204014" },
-    { "value": "A6004A8C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA RAL - 66204016" },
-    { "value": "A6004A8D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA SÚP - 66204009" },
-    { "value": "A6004A8E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA TAM - 66204026" },
-    { "value": "A6004A8F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA TOH - 66204021" },
-    { "value": "A6004A8G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN GIA CẨM - 25204014" },
-    { "value": "A6004A8H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN GIA ĐỊNH HCM - 79204021" },
-    { "value": "A6004A8I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN GIA LAI - 64204001" },
-    { "value": "A6004A8J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN GIA LÂM HÀ NỘI - 1204014" },
-    { "value": "A6004A8K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN GIA LỘC - 30204006" },
-    { "value": "A6004A8L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN GÍA RAI - 95204006" },
-    { "value": "A6004A8M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN GIAO THỦY - 36204010" },
-    { "value": "A6004A8N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN GIỒNG RIỀNG - 91204005" },
-    { "value": "A6004A8O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN GIỒNG TRÔM - 83204010" },
-    { "value": "A6004A8P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN GÒ CÔNG ĐÔNG - 82204006" },
-    { "value": "A6004A8Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN PHÚ GIÁO - 74204007" },
-    { "value": "A6004A8R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHÚ LỘC - 46204008" },
-    { "value": "A6004A8S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN PHÚ LƯƠNG - 19204009" },
-    { "value": "A6004A7O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN ĐÔNG HÒA - 54204006" },
-    { "value": "A6004A7P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN ĐÔNG HƯNG - 34204006" },
-    { "value": "A6004A7Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN ĐỒNG KHỞI - 83204003" },
-    { "value": "A6004A7R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN ĐÔNG MỸ HẢI - 58204008" },
-    { "value": "A6004A7S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN ĐỒNG NAI - 75204001" },
-    { "value": "A6004A7T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79204014" },
-    { "value": "A6004A7U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN ĐÔNG SƠN - 38204021" },
-    { "value": "A6004A7V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN ĐỒNG THÁP - 87204001" },
-    { "value": "A6004A7W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN ĐỒNG VĂN - 2204002" },
-    { "value": "A6004A7X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN ĐỒNG VĂN HÀ NAM - 35204008" },
-    { "value": "A6004A7Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN ĐỒNG XUÂN - 54204010" },
-    { "value": "A6004A7Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN ĐỨC CƠ - 64204009" },
-    { "value": "A6004A80", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN ĐỨC PHỔ - 51204010" },
-    { "value": "A6004A81", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐỨC TRỌNG  -  LÂM ĐỒNG - 68204007" },
-    { "value": "A6004A82", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN DUNG QUẤT - 51204005" },
-    { "value": "A6004A83", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN DƯƠNG KINH - 31204020" },
-    { "value": "A6004A84", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN DƯƠNG MINH CHÂU - 72204008" },
-    { "value": "A6004A85", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN DUY XUYÊN - 49204023" },
-    { "value": "A6004A86", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN DUYÊN HẢI - 84204007" },
-    { "value": "A6004A87", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA CPAM - 66204031" },
-    { "value": "A6004A6U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN CU MGAR - 66204023" },
-    { "value": "A6004A6V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN CỬA ĐẠI - 49204002" },
-    { "value": "A6004A6W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐẠ HUOAI - 68204011" },
-    { "value": "A6004A6X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐẠ TẺH - 68204005" },
-    { "value": "A6004A6Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN DAC LAC PGD HCM - 79204029" },
-    { "value": "A6004A6Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐẠI HỢP - 31204025" },
-    { "value": "A6004A70", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN ĐẠI LỘC - 49204008" },
-    { "value": "A6004A71", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN ĐẠI TÂN - 30204016" },
-    { "value": "A6004A72", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DĂK GLONG - 67204005" },
-    { "value": "A6004A73", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DĂK MIL - 67204006" },
-    { "value": "A6004A74", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DAK RLAP - 67204002" },
-    { "value": "A6004A75", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DAK SONG - 67204003" },
-    { "value": "A6004A76", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN ĐẦM DƠI - 96204004" },
-    { "value": "A6004A77", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN DI LINH - 68204010" },
-    { "value": "A6004A78", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN ĐIỆN BIÊN - 11204001" },
-    { "value": "A6004A79", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN ĐIỆN BIÊN PHỦ - 11204004" },
-    { "value": "A6004A7A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN DIÊN HỒNG - 64204010" },
-    { "value": "A6004A7B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN DINH LAP - 20204013" },
-    { "value": "A6004A7C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐỒ SƠN - 31204019" },
-    { "value": "A6004A7D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN ĐOAN HÙNG - 25204016" },
-    { "value": "A6004AAH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN VĂN NINH - 56204006" },
-    { "value": "A6004AAI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN VIỆT YÊN - 24204002" },
-    { "value": "A6004AAJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN VĨNH CỬU - 75204012" },
-    { "value": "A6004AAK", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN HẢI PHÒNG - 31307001" },
-    { "value": "A6004AAL", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hậu Giang - CN HẬU GIANG - 93307001" },
-    { "value": "A6004AAM", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN HỒ CHÍ MINH - 79307001" },
-    { "value": "A6004AAN", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Nam - CN HỘI AN - 49307001" },
-    { "value": "A6004AAO", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thừa Thiên Huế - CN HUẾ - 46307001" },
-    { "value": "A6004AAP", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hưng Yên - CN HƯNG YÊN - 33307001" },
-    { "value": "A6004AAQ", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN KHAI NGUYÊN - 79307028" },
-    { "value": "A6004AAR", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Khánh Hòa - CN KHÁNH HÒA - 56307001" },
-    { "value": "A6004AAS", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Kiên Giang - CN KIÊN GIANG - 91307001" },
-    { "value": "A6004AAT", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Kon Tum - CN KON TUM - 62307001" },
-    { "value": "A6004AAU", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Lâm Đồng - CN LÂM ĐỒNG - 68307001" },
-    { "value": "A6004AAV", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Long An - CN LONG AN - 80307001" },
-    { "value": "A6004AAW", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Nam Định - CN NAM ĐỊNH - 36307001" },
-    { "value": "A6004AAX", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Nghệ An - CN NGHỆ AN - 40307001" },
-    { "value": "A6004AAY", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Ninh Thuận - CN NINH THUẬN - 58307001" },
-    { "value": "A6004AAZ", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Phú Yên - CN PHÚ YÊN - 54307001" },
-    { "value": "A6004AB0", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Bình - CN QUẢNG BÌNH - 44307001" },
-    { "value": "A6004AB1", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Ngãi - CN QUẢNG NGÃI - 51307001" },
-    { "value": "A6004AB2", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Ninh - CN QUẢNG NINH - 22307001" },
-    { "value": "A6004AB3", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN SÀI GÒN - 79307006" },
-    { "value": "A6004A8T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHÚ VANG - 46204009" },
-    { "value": "A6004A8U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN PHÚ XUYÊN - 1204046" },
-    { "value": "A6004A8V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN PHÙ YÊN - 14204006" },
-    { "value": "A6004A8W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN PHỤC HÒA - 4204011" },
-    { "value": "A6004A8X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN PHÚC THỌ - 1204021" },
-    { "value": "A6004A8Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN PHƯỚC LONG - 70204007" },
-    { "value": "A6004A8Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN QUANG ĐIỀN - 46204006" },
-    { "value": "A6004A90", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN QUẢNG TRẠCH - 44204005" },
-    { "value": "A6004A91", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN QUẢNG UYÊN - 4204009" },
-    { "value": "A6004A92", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUẾ PHONG - 40204007" },
-    { "value": "A6004A93", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN QUẾ VÕ - 27204005" },
-    { "value": "A6004A94", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN QUỐC OAI - 1204043" },
-    { "value": "A6004A95", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QÙY CHÂU - 40204018" },
-    { "value": "A6004A96", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUỲ HỢP - 40204006" },
-    { "value": "A6004A97", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUỲNH LƯU - 40204004" },
-    { "value": "A6004A98", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN QUỲNH NHAI - 14204004" },
-    { "value": "A6004A99", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN SA PA - 10204011" },
-    { "value": "A6004A9A", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN SA THẦY - 62204009" },
-    { "value": "A6004A9B", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN SƠN ĐỘNG BẮC GIANG II - 24204014" },
-    { "value": "A6004A9C", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN SƠN DƯƠNG - 8204003" },
-    { "value": "A6004A9D", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN SÔNG MÃ - 14204005" },
-    { "value": "A6004A9E", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN TAM ĐẢO - 26204007" },
-    { "value": "A6004A9F", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN TAM DƯƠNG - 26204006" },
-    { "value": "A6004A9G", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN HƯNG - 80204017" },
-    { "value": "A6004A9H", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN TÂN KỲ - 40204015" },
-    { "value": "A6004A9I", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN TÂN LẠC - 17204008" },
-    { "value": "A6004A9J", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN TÂN PHÚ - 75204011" },
-    { "value": "A6004A9K", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN TÂN THÀNH - 77204004" },
-    { "value": "A6004A9L", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN THÀNH - 80204015" },
-    { "value": "A6004A9M", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN TRỤ - 80204011" },
-    { "value": "A6004A9N", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN TÂN YÊN - 24204004" },
-    { "value": "A6004A9O", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN THẠCH AN - 4204008" },
-    { "value": "A6004A9P", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN THẠCH HÀ - 42204014" },
-    { "value": "A6004A9Q", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THẠCH THẤT - 1204047" },
-    { "value": "A6004A9R", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN THANH CHƯƠNG - 40204011" },
-    { "value": "A6004A9S", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN THANH HÓA - 80204016" },
-    { "value": "A6004A9T", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN THANH LIÊM - 35204003" },
-    { "value": "A6004A9U", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THANH OAI - 1204039" },
-    { "value": "A6004A9V", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN THỚI LAI CẦN THƠ II - 92204007" },
-    { "value": "A6004A9W", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN THỐNG NHẤT - 75204013" },
-    { "value": "A6004A9X", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN THÔNG NÔNG - 4204007" },
-    { "value": "A6004A9Y", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN THỦ THỪA - 80204005" },
-    { "value": "A6004A9Z", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN THUẬN CHÂU - 14204003" },
-    { "value": "A6004AA0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN THUẬN THÀNH - 27204006" },
-    { "value": "A6004AA1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THƯỜNG TÍN - 1204042" },
-    { "value": "A6004AA2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN TIÊN DU - 27204010" },
-    { "value": "A6004AA3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN TIÊN YÊN - 22204006" },
-    { "value": "A6004AA4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN TRÀ LINH - 4204010" },
-    { "value": "A6004AA5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN TRẢNG BOM - 75204009" },
-    { "value": "A6004AA6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN TRIỀU PHONG - 45204011" },
-    { "value": "A6004AA7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN TRÙNG KHÁNH - 4204006" },
-    { "value": "A6004AA8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN TỦA CHÙA - 11204003" },
-    { "value": "A6004AA9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN TUẦN GIÁO - 11204005" },
-    { "value": "A6004AAA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN TƯƠNG DƯƠNG - 40204017" },
-    { "value": "A6004AAB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HUYEN TUY PHONG - 60204003" },
-    { "value": "A6004AAC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN TUYÊN HÓA - 44204009" },
-    { "value": "A6004AAD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN HUYỆN U MINH THƯỢNG KIÊN GIANG - 91204019" },
-    { "value": "A6004AAE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN ỨNG HÒA - 1204041" },
-    { "value": "A6004AAF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN VĂN BÀN - 10204006" },
-    { "value": "A6004AAG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN VÂN ĐỒN - 22204015" },
-    { "value": "A6004ABR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN DƯƠNG - 31204002" },
-    { "value": "A6004ABS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN HƯNG - 31204004" },
-    { "value": "A6004ABT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN AN LÃO - 52204011" },
-    { "value": "A6004ABU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN LÃO HP - 31204010" },
-    { "value": "A6004ABV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN AN MINH - 91204017" },
-    { "value": "A6004ABW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN AN PHÚ - 89204003" },
-    { "value": "A6004ABX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN AN PHÚ - 79204042" },
-    { "value": "A6004ABY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN AN SƯƠNG - 79204041" },
-    { "value": "A6004ABZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN ÂN THI - 33204011" },
-    { "value": "A6004AC0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN BA BỂ - 6204003" },
-    { "value": "A6004AC1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN BA ĐÌNH - 38204025" },
-    { "value": "A6004ACM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN BẮC QUẢNG BÌNH - 44204002" },
-    { "value": "A6004ACN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BẮC SÀI GÒN - 79204046" },
-    { "value": "A6004ACO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN BẮC SƠN - 20204008" },
-    { "value": "A6004ACP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN BẮC SÔNG HƯƠNG - 46204011" },
-    { "value": "A6004ACQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN BẮC TRÀ MY - 49204015" },
-    { "value": "A6004ACR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BÁCH KHOA - 1204026" },
-    { "value": "A6004ACS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN BẠCH THÔNG - 6204002" },
-    { "value": "A6004ACT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN BẢO LÂM NAM LÂM ĐỒNG - 68204015" },
-    { "value": "A6004ACU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN BẾN CẦU - 72204007" },
-    { "value": "A6004ACV", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN THĂNG LONG - 1320004" },
-    { "value": "A6004ACW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀN KIẾM - 1204022" },
-    { "value": "A6004ACX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HOẰNG HÓA - 38204009" },
-    { "value": "A6004ACY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HOÀNG MAI - 40204005" },
-    { "value": "A6004ACZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀNG MAI - 1204020" },
-    { "value": "A6004AD0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀNG QUỐC VIỆT - 1204023" },
-    { "value": "A6004AD1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN HOÀNG SU PHÌ - 2204007" },
-    { "value": "A6004AD2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HÓC MÔN HCM - 79204013" },
-    { "value": "A6004AD3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HỘI THƯƠNG - 64204011" },
-    { "value": "A6004AD4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN HÒN ĐẤT - 91204011" },
-    { "value": "A6004AD5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN HỒNG DÂN - 95204004" },
-    { "value": "A6004AC2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BA ĐÌNH - 1204298" },
-    { "value": "A6004AC3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN BA HÒN - 91204014" },
-    { "value": "A6004AC4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA  -  VŨNG TÀU - 77204001" },
-    { "value": "A6004AC5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN BÁ THƯỚC - 38204027" },
-    { "value": "A6004AC6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN BA TƠ - 51204002" },
-    { "value": "A6004AC7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN BA TRI - 83204004" },
-    { "value": "A6004AC8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BÀ TRIỆU ĐÔNG HÀ NỘI - 1204295" },
-    { "value": "A6004AC9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN BA XUYÊN - 94204003" },
-    { "value": "A6004ACA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN BẮC BÌNH - 60204007" },
-    { "value": "A6004ACB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BẮC DAK LAK - 66204011" },
-    { "value": "A6004ACC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN BẮC ĐIỆN BÀN - 49204019" },
-    { "value": "A6004ACD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BẮC GIANG - 24204001" },
-    { "value": "A6004ACE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BẮC GIANG II - 24204006" },
-    { "value": "A6004ACF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BẮC HÀ NỘI - 1204006" },
-    { "value": "A6004ACG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN BẮC HẢI PHÒNG - 31204007" },
-    { "value": "A6004ACH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN BẮC MÊ - 2204006" },
-    { "value": "A6004ACI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN BẮC NAM ĐỊNH - 36204002" },
-    { "value": "A6004ACJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN BẮC NINH - 27204001" },
-    { "value": "A6004ACK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN BẮC NINH - 27204002" },
-    { "value": "A6004ACL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN BẮC QUANG - 2204008" },
-    { "value": "A6004AB4", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Sóc Trăng - CN SÓC TRĂNG - 94307001" },
-    { "value": "A6004AB5", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tây Ninh - CN TÂY NINH - 72307002" },
-    { "value": "A6004AB6", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thái Nguyên - CN THÁI NGUYÊN - 19307001" },
-    { "value": "A6004AB7", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nội - CN THĂNG LONG - 1307004" },
-    { "value": "A6004AB8", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thanh Hóa - CN THANH HÓA - 38307001" },
-    { "value": "A6004AB9", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN THỦY NGUYÊN - 31307003" },
-    { "value": "A6004ABA", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tiền Giang - CN TIỀN GIANG - 82307001" },
-    { "value": "A6004ABB", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Trà Vinh - CN TRÀ VINH - 84307001" },
-    { "value": "A6004ABC", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Vĩnh Long - CN VĨNH LONG - 86307001" },
-    { "value": "A6004ABD", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Vĩnh Phúc - CN VĨNH PHÚC - 26307001" },
-    { "value": "A6004ABE", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77307001" },
-    { "value": "A6004ABF", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Phước - PGD BÌNH PHƯỚC - 70307001" },
-    { "value": "A6004ABG", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Gia Lai - PGD GIA LAI - 64307001" },
-    { "value": "A6004ABH", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tây Ninh - PGD LONG HOA - 72307001" },
-    { "value": "A6004ABI", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Thuận - PGD PHAN THIẾT - 60307001" },
-    { "value": "A6004ABJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 11 HCM - 79204003" },
-    { "value": "A6004ABK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 3 HCM - 79204009" },
-    { "value": "A6004ABL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 4 HCM - 79204005" },
-    { "value": "A6004ABM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 6 HCM - 79204008" },
-    { "value": "A6004ABN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 7 - 79204043" },
-    { "value": "A6004ABO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 8 HCM - 79204007" },
-    { "value": "A6004ABP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 9 HCM - 79204012" },
-    { "value": "A6004ABQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN AN BIÊN - 91204016" },
-    { "value": "A6004AEU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN ĐAN PHƯỢNG - 1204045" },
-    { "value": "A6004AEV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN ĐẤT ĐỎ - 77204008" },
-    { "value": "A6004AEW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN DẦU TIẾNG - 74204006" },
-    { "value": "A6004AEX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN ĐIỆN BIÊN - 11204002" },
-    { "value": "A6004AEY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN ĐIỆN BIÊN ĐÔNG - 11204007" },
-    { "value": "A6004AEZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN DIỄN CHÂU - 40204020" },
-    { "value": "A6004AF0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN DIÊN KHÁNH - 56204008" },
-    { "value": "A6004AF1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐỊNH HÓA - 19204003" },
-    { "value": "A6004AF2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN ĐỊNH QUÁN - 75204014" },
-    { "value": "A6004AF3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN ĐÔ LƯƠNG - 40204014" },
-    { "value": "A6004AF4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN ĐƠN DƯƠNG - 68204013" },
-    { "value": "A6004AF5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐỒNG HỶ - 19204006" },
-    { "value": "A6004AF6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐỒNG PHÚ - 70204003" },
-    { "value": "A6004AF7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN ĐỨC HÒA - 80204008" },
-    { "value": "A6004AF8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN ĐỨC HUỆ - 80204003" },
-    { "value": "A6004AF9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐỨC LIỄU - 70204004" },
-    { "value": "A6004AFA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HUYỆN ĐỨC LINH - 60204008" },
-    { "value": "A6004AFB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN ĐỨC THỌ - 42204007" },
-    { "value": "A6004AFC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN DUY TIÊN - 35204004" },
-    { "value": "A6004AFD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN GIA BÌNH - 27204009" },
-    { "value": "A6004AD6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HỒNG HÀ - 1204018" },
-    { "value": "A6004AD7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN HƯNG HÀ - 34204011" },
-    { "value": "A6004AD8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HÙNG VƯƠNG - 79204034" },
-    { "value": "A6004AD9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÙNG VƯƠNG - 1204028" },
-    { "value": "A6004ADA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN HƯƠNG AN - 49204004" },
-    { "value": "A6004ADB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN HỮU LŨNG - 20204004" },
-    { "value": "A6004ADC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN A LƯỚI - 46204010" },
-    { "value": "A6004ADD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN ANH SƠN - 40204022" },
-    { "value": "A6004ADE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN AYUNPA - 64204005" },
-    { "value": "A6004ADF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN BA CHẼ - 22204016" },
-    { "value": "A6004ADG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN BA VÌ - 1204044" },
-    { "value": "A6004ADH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN BÁC ÁI - 58204007" },
-    { "value": "A6004ADI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẮC HÀ - 10204002" },
-    { "value": "A6004ADJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN BẮC YÊN - 14204007" },
-    { "value": "A6004ADK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN BẢO LẠC - 4204014" },
-    { "value": "A6004ADL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN BẢO LÂM - 4204012" },
-    { "value": "A6004ADM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẢO THẮNG - 10204008" },
-    { "value": "A6004ADN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẢO YÊN - 10204007" },
-    { "value": "A6004ADO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BÁT XÁT - 10204010" },
-    { "value": "A6004ADP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN BẾN CÁT BÌNH DƯƠNG - 74204003" },
-    { "value": "A6004ADQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN BÌNH LIÊU - 22204008" },
-    { "value": "A6004ADR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÌNH LONG - 70204016" },
-    { "value": "A6004ADS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN BÌNH LỤC - 35204002" },
-    { "value": "A6004ADT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN BÌNH XUYÊN - 26204008" },
-    { "value": "A6004ADU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ ĐĂNG - 70204008" },
-    { "value": "A6004ADV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ ĐỐP - 70204009" },
-    { "value": "A6004ADW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ GIA MẬP - 70204017" },
-    { "value": "A6004ADX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ NHO - 70204010" },
-    { "value": "A6004ADY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN CAM LÂM - 56204010" },
-    { "value": "A6004ADZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN CAM LỘ - 45204005" },
-    { "value": "A6004AE0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN CẨM MỸ - 75204006" },
-    { "value": "A6004AE1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN CẨM XUYÊN - 42204003" },
-    { "value": "A6004AE2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CẦN ĐƯỚC - 80204007" },
-    { "value": "A6004AE3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CẦN GIUỘC - 80204014" },
-    { "value": "A6004AE4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN CAN LỘC - 42204013" },
-    { "value": "A6004AE5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN CAO PHONG - 17204005" },
-    { "value": "A6004AE6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN CHÂU ĐỨC - 77204007" },
-    { "value": "A6004AE7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CHÂU THÀNH - 80204006" },
-    { "value": "A6004AE8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN CHIÊM HÓA - 8204005" },
-    { "value": "A6004AE9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN CHƠN THÀNH - 70204013" },
-    { "value": "A6004AEA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN CHƯ PĂH - 64204012" },
-    { "value": "A6004AEB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN CHƯ SÊ - 64204003" },
-    { "value": "A6004AEC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN CHƯƠNG MỸ - 1204050" },
-    { "value": "A6004AED", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN CỜ ĐỎ CẦN THƠ II - 92204011" },
-    { "value": "A6004AEE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN CÔ TÔ - 22204002" },
-    { "value": "A6004AEF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN CỐC LẾU - 10204012" },
-    { "value": "A6004AEG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN CON CUÔNG - 40204016" },
-    { "value": "A6004AEH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN CÔN ĐẢO - 77204009" },
-    { "value": "A6004AEI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HUYỆN CƯ KUIN DAK LAK - 66204003" },
-    { "value": "A6004AEJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN ĐÀ BẮC - 17204002" },
-    { "value": "A6004AEK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐA KIA - 70204005" },
-    { "value": "A6004AEL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN ĐA KRONG - 45204006" },
-    { "value": "A6004AEM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN ĐẮC TÔ - 62204002" },
-    { "value": "A6004AEN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐẠI TỪ - 19204010" },
-    { "value": "A6004AEO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN ĐAK ĐOA - 64204021" },
-    { "value": "A6004AEP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN ĐẮK HÀ - 62204003" },
-    { "value": "A6004AEQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN ĐAK PƠ - 64204015" },
-    { "value": "A6004AER", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN DAKGLEI - 62204007" },
-    { "value": "A6004AES", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN ĐẦM HÀ - 22204007" },
-    { "value": "A6004AET", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN ĐAM RÔNG LÂM ĐỒNG - 68204017" },
-    { "value": "A6004AFY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN IAPA - 64204023" },
-    { "value": "A6004AFZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KBANG - 64204007" },
-    { "value": "A6004AG0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN KHÁNH SƠN - 56204013" },
-    { "value": "A6004AG1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN KHÁNH VĨNH - 56204012" },
-    { "value": "A6004AG2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN KIM BẰNG - 35204005" },
-    { "value": "A6004AG3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN KIM BÔI - 17204012" },
-    { "value": "A6004AG4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN KIM SƠN - 37204006" },
-    { "value": "A6004AG5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN KON RẪY - 62204008" },
-    { "value": "A6004AG6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KÔNG CHRO - 64204014" },
-    { "value": "A6004AG7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KRÔNG PA - 64204006" },
-    { "value": "A6004AGS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN MINH HÓA - 44204010" },
-    { "value": "A6004AGT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MỘC CHÂU - 14204009" },
-    { "value": "A6004AGU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG ẢNG - 11204008" },
-    { "value": "A6004AGV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG CHÀ - 11204006" },
-    { "value": "A6004AGW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN MƯỜNG KHƯƠNG - 10204004" },
-    { "value": "A6004AGX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MƯỜNG LA - 14204002" },
-    { "value": "A6004AGY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG LAY - 11204009" },
-    { "value": "A6004AGZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG NHÉ - 11204010" },
-    { "value": "A6004AH0", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN MỸ ĐỨC - 1204040" },
-    { "value": "A6004AH1", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN HUYỆN MỸ HÀO - 33204010" },
-    { "value": "A6004AH2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN NA HANG - 8204007" },
-    { "value": "A6004AH3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NAM ĐÀN - 40204010" },
-    { "value": "A6004AH4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN NAM ĐÔNG - 46204012" },
-    { "value": "A6004AH5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NGHI LỘC - 40204008" },
-    { "value": "A6004AH6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN NGHI XUÂN - 42204009" },
-    { "value": "A6004AH7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NGHĨA ĐÀN - 40204003" },
-    { "value": "A6004AH8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN NGỌC HỒI - 62204005" },
-    { "value": "A6004AH9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN NGUYÊN BINH - 4204003" },
-    { "value": "A6004AHA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN NHO QUAN - 37204003" },
-    { "value": "A6004AHB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN NHƠN TRẠCH - 75204007" },
-    { "value": "A6004AG8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN KỲ ANH - 42204011" },
-    { "value": "A6004AG9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN KỲ SƠN - 40204012" },
-    { "value": "A6004AGA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN KỲ SƠN - 17204006" },
-    { "value": "A6004AGB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN LẠC SƠN - 17204009" },
-    { "value": "A6004AGC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN LÂM BÌNH TUYÊN QUANG - 8204008" },
-    { "value": "A6004AGD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN LÂM HÀ - 68204012" },
-    { "value": "A6004AGE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LẠNG GIANG BẮC GIANG II - 24204013" },
-    { "value": "A6004AGF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN LẬP THẠCH - 26204005" },
-    { "value": "A6004AGG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN LỘC HÀ - 42204004" },
-    { "value": "A6004AGH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN LỘC HIỆP - 70204011" },
-    { "value": "A6004AGI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN LỘC NINH - 70204006" },
-    { "value": "A6004AGJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa  -  Vũng Tàu - CN HUYỆN LONG ĐIỀN - 77204006" },
-    { "value": "A6004AGK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LỤC NAM BẮC GIANG II - 24204007" },
-    { "value": "A6004AGL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LỤC NGẠN BẮC GIANG II - 24204011" },
-    { "value": "A6004AGM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN LƯƠNG SƠN - 17204007" },
-    { "value": "A6004AGN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN LƯƠNG TÀI - 27204004" },
-    { "value": "A6004AGO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN LÝ NHÂN - 35204007" },
-    { "value": "A6004AGP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN MAI CHÂU - 17204003" },
-    { "value": "A6004AGQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MAI SƠN - 14204011" },
-    { "value": "A6004AGR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN MANG YANG - 64204008" },
-    { "value": "A6004AFE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN GIA VIỄN - 37204007" },
-    { "value": "A6004AFF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN GIO LINH - 45204008" },
-    { "value": "A6004AFG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HẠ LANG - 4204002" },
-    { "value": "A6004AFH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HÀ QUẢNG - 4204005" },
-    { "value": "A6004AFI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN HẢI HÀ - 22204013" },
-    { "value": "A6004AFJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN HẢI LĂNG - 45204004" },
-    { "value": "A6004AFK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN HÀM YÊN - 8204004" },
-    { "value": "A6004AFL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN HIỆP HÒA - 24204012" },
-    { "value": "A6004AFM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HÒA AN - 4204004" },
-    { "value": "A6004AFN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN HOA LƯ - 37204002" },
-    { "value": "A6004AFO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN HOÀI ĐỨC - 1204037" },
-    { "value": "A6004AFP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN HOÀNH BỒ - 22204014" },
-    { "value": "A6004AFQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN HỚN QUẢN - 70204018" },
-    { "value": "A6004AFR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN HƯNG NGUYÊN - 40204009" },
-    { "value": "A6004AFS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN HƯỚNG HÓA - 45204009" },
-    { "value": "A6004AFT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN HƯƠNG KHÊ - 42204005" },
-    { "value": "A6004AFU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN HƯƠNG SƠN - 42204015" },
-    { "value": "A6004AFV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN HƯƠNG THỦY - 46204007" },
-    { "value": "A6004AFW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN HƯƠNG TRÀ - 46204005" },
-    { "value": "A6004AFX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN IA GRAI - 64204004" },
-    { "value": "A6004AJB", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - An Giang - CN AN GIANG - 89357001" },
-    { "value": "A6004AJC", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Giang - CN BẮC GIANG - 24357001" },
-    { "value": "A6004AJD", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Kạn - CN BẮC KẠN - 6357001" },
-    { "value": "A6004AJE", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bạc Liêu - CN BẠC LIÊU - 95357001" },
-    { "value": "A6004AJF", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Ninh - CN BẮC NINH - 27357001" },
-    { "value": "A6004AJG", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bến Tre - CN BẾN TRE - 83357001" },
-    { "value": "A6004AJH", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Định - CN BÌNH ĐỊNH - 52357001" },
-    { "value": "A6004AJI", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74357001" },
-    { "value": "A6004AJJ", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Phước - CN BÌNH PHƯỚC - 70357001" },
-    { "value": "A6004AJK", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Thuận - CN BÌNH THUẬN - 60357001" },
-    { "value": "A6004AJL", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HOÀN KIẾM - 1348008" },
-    { "value": "A6004AJM", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ninh - CN HÒN GAI - 22348002" },
-    { "value": "A6004AJN", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN HỒNG BÀNG - 31348003" },
-    { "value": "A6004AJO", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thừa Thiên Huế - CN HUẾ - 46348001" },
-    { "value": "A6004AJP", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hưng Yên - CN HƯNG YÊN - 33348001" },
-    { "value": "A6004AJQ", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Khánh Hòa - CN KHÁNH HÒA - 56348001" },
-    { "value": "A6004AJR", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Kiên Giang - CN KIÊN GIANG - 91348001" },
-    { "value": "A6004AJS", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bắc Ninh - CN KINH BẮC - 27348002" },
-    { "value": "A6004AJT", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lâm Đồng - CN LÂM ĐỒNG - 68348001" },
-    { "value": "A6004AJU", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lạng Sơn - CN LẠNG SƠN - 20348001" },
-    { "value": "A6004AJV", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lào Cai - CN LÀO CAI - 10348001" },
-    { "value": "A6004AJW", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN LÊ CHÂN - 31348002" },
-    { "value": "A6004AHC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH HẢI - 58204004" },
-    { "value": "A6004AHD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN NINH HÒA - 56204005" },
-    { "value": "A6004AHE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH PHƯỚC - 58204005" },
-    { "value": "A6004AHF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH SƠN - 58204003" },
-    { "value": "A6004AHG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHONG ĐIỀN - 46204004" },
-    { "value": "A6004AHH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN PHONG ĐIỀN CẦN THƠ II - 92204006" },
-    { "value": "A6004AHI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN PHÚ BÌNH - 19204007" },
-    { "value": "A6004AHJ", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - An Giang - CN AN GIANG - 89323001" },
-    { "value": "A6004AHK", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bà Rịa  -  Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77323001" },
-    { "value": "A6004AHL", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bạc Liêu - CN BẠC LIÊU - 95323001" },
-    { "value": "A6004AHM", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Dương - CN BÌNH DƯƠNG - 74323001" },
-    { "value": "A6004AHN", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Phước - CN BÌNH PHƯỚC - 70323001" },
-    { "value": "A6004AHO", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Thuận - CN BÌNH THUẬN - 60323001" },
-    { "value": "A6004AHP", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Cần Thơ - CN CẦN THƠ - 92323001" },
-    { "value": "A6004AHQ", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đà Nẵng - CN ĐÀ NẴNG - 48323001" },
-    { "value": "A6004AHR", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Điện Biên - CN ĐIỆN BIÊN - 11323002" },
-    { "value": "A6004AHS", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đồng Tháp - CN ĐỒNG THÁP - 87323001" },
-    { "value": "A6004AHT", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Gia Lai - CN GIA LAI - 64323001" },
-    { "value": "A6004AHU", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hà Nội - CN HÀ NỘI - 1323001" },
-    { "value": "A6004AHV", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hải Phòng - CN HẢI PHÒNG - 31323001" },
-    { "value": "A6004AHW", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Khánh Hòa - CN KHÁNH HÒA - 56323001" },
-    { "value": "A6004AHX", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Kiên Giang - CN KIÊN GIANG - 91323001" },
-    { "value": "A6004AHY", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Lạng Sơn - CN LẠNG SƠN - 20323002" },
-    { "value": "A6004AHZ", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Nghệ An - CN NGHỆ AN - 40323001" },
-    { "value": "A6004AI0", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bắc Ninh - CN PGD BẮC NINH - 27323001" },
-    { "value": "A6004AI1", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Quảng Nam - CN QUẢNG NAM - 49323001" },
-    { "value": "A6004AI2", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Quảng Ninh - CN QUẢNG NINH - 22323001" },
-    { "value": "A6004AI3", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN SÀI GÒN - 79323002" },
-    { "value": "A6004AI4", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN SỎ GIAO DICH - 79323003" },
-    { "value": "A6004AI5", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Sóc Trăng - CN SÓC TRĂNG - 94323001" },
-    { "value": "A6004AI6", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Sơn La - CN SƠN LA - 14323001" },
-    { "value": "A6004AI7", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Tây Ninh - CN TÂY NINH - 72323001" },
-    { "value": "A6004AI8", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thái Bình - CN THÁI BÌNH - 34323002" },
-    { "value": "A6004AI9", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thanh Hóa - CN THANH HÓA - 38323002" },
-    { "value": "A6004AIA", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Tiền Giang - CN TIỀN GIANG - 82323001" },
-    { "value": "A6004AIB", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN TPHCM - 79323001" },
-    { "value": "A6004AIC", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Vĩnh Long - CN VĨNH LONG - 86323001" },
-    { "value": "A6004AID", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thừa Thiên Huế - PGD HUẾ - 46323001" },
-    { "value": "A6004AIE", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Long An - PGD LONG AN - 80323001" },
-    { "value": "A6004AIF", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hưng Yên - PGD MỸ HÀO - 33323001" },
-    { "value": "A6004AIG", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Vĩnh Phúc - PGD PHÚC YÊN - 26323001" },
-    { "value": "A6004AIH", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đồng Nai - PGD TÂN TIẾN - 75323001" },
-    { "value": "A6004AII", "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thái Nguyên - PGD THÁI NGUYÊN - 19323001" },
-    { "value": "A6004AIJ", "NOM": "ABN  -  AMRO BANK - Hà Nội - HÀ NỘI - 1610001" },
-    { "value": "A6004AIK", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - An Giang - CN AN GIANG - 89307001" },
-    { "value": "A6004AIL", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bắc Giang - CN BẮC GIANG - 24307001" },
-    { "value": "A6004AIM", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bạc Liêu - CN BẠC LIÊU - 95307001" },
-    { "value": "A6004AIN", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bắc Ninh - CN BẮC NINH - 27307001" },
-    { "value": "A6004AIO", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bến Tre - CN BẾN TRE - 83307001" },
-    { "value": "A6004AIP", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Định - CN BÌNH ĐỊNH - 52307001" },
-    { "value": "A6004AIQ", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Dương - CN BÌNH DƯƠNG - 74307001" },
-    { "value": "A6004AIR", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Cà Mau - CN CÀ MAU - 96307001" },
-    { "value": "A6004AIS", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Cần Thơ - CN CẦN THƠ - 92307001" },
-    { "value": "A6004AIT", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN CHỢ LỚN - 79307005" },
-    { "value": "A6004AIU", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đà Nẵng - CN ĐÀ NẴNG - 48307001" },
-    { "value": "A6004AIV", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đắk Lắk - CN DAC LAK - 66307001" },
-    { "value": "A6004AIW", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đồng Nai - CN ĐỒNG NAI - 75307001" },
-    { "value": "A6004AIX", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đồng Tháp - CN ĐỒNG THÁP - 87307001" },
-    { "value": "A6004AIY", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN DUYÊN HẢI - 31307002" },
-    { "value": "A6004AIZ", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nam - CN HÀ NAM - 35307001" },
-    { "value": "A6004AJ0", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nội - CN HÀ NỘI - 1307001" },
-    { "value": "A6004AJ1", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Tĩnh - CN HÀ TĨNH - 42307001" },
-    { "value": "A6004AJ2", "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Dương - CN HẢI DƯƠNG - 30307001" },
-    { "value": "A6004AJ3", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Tây Ninh - CN TÂY NINH - 72353001" },
-    { "value": "A6004AJ4", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Tiền Giang - CN TIỀN GIANG - 82353001" },
-    { "value": "A6004AJ5", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Trà Vinh - CN TRÀ VINH - 84353001" },
-    { "value": "A6004AJ6", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Vĩnh Long - CN VĨNH LONG - 86353001" },
-    { "value": "A6004AJ7", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77353001" },
-    { "value": "A6004AJ8", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - HỘI SỞ - 91353001" },
-    { "value": "A6004AJ9", "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - PGD BẾN NHỨT - 91353002" },
-    { "value": "A6004AJA", "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bà Rịa  -  Vũng Tàu - CN  VŨNG TÀU - 77357001" },
-    { "value": "A6004AKJ", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN CỘNG HÒA - 79309009" },
-    { "value": "A6004AKK", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Lâm Đồng - CN ĐÀ LẠT - 68309001" },
-    { "value": "A6004AKL", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đà Nẵng - CN ĐÀ NẴNG - 48309001" },
-    { "value": "A6004AKM", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đắk Lắk - CN DAK LAK - 66309001" },
-    { "value": "A6004AKN", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN ĐÔNG ĐÔ - 1309003" },
-    { "value": "A6004AKO", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đồng Nai - CN ĐỒNG NAI - 75309001" },
-    { "value": "A6004AKP", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đồng Tháp - CN ĐỒNG THÁP - 87309001" },
-    { "value": "A6004AKQ", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN GIA ĐỊNH - 79309010" },
-    { "value": "A6004AKR", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Gia Lai - CN GIA LAI - 64309001" },
-    { "value": "A6004AKS", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN GÒ VẤP - 79309007" },
-    { "value": "A6004AKT", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nam - CN HÀ NAM - 35309001" },
-    { "value": "A6004ALG", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thái Bình - CN THÁI BÌNH - 34309001" },
-    { "value": "A6004ALH", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thái Nguyên - CN THÁI NGUYÊN - 19309001" },
-    { "value": "A6004ALI", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hồ Chí Minh - CN TP HCM - 79320001" },
-    { "value": "A6004ALJ", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Bà Rịa  -  Vũng Tàu - CN VŨNG TÀU - 77320001" },
-    { "value": "A6004ALK", "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - HỘI SỞ CHÍNH - 1320001" },
-    { "value": "A6004ALL", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - An Giang - CN AN GIANG - 89321001" },
-    { "value": "A6004ALM", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN BA ĐÌNH - 1321003" },
-    { "value": "A6004ALN", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bắc Giang - CN BẮC GIANG - 24321001" },
-    { "value": "A6004ALO", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bắc Ninh - CN BẮC NINH - 27321001" },
-    { "value": "A6004ALP", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bến Tre - CN BẾN TRE - 83321001" },
-    { "value": "A6004ALQ", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Định - CN BÌNH ĐỊNH - 52321001" },
-    { "value": "A6004ALR", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Dương - CN BÌNH DƯƠNG - 74321001" },
-    { "value": "A6004ALS", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Phước - CN BÌNH PHƯỚC - 70321001" },
-    { "value": "A6004ALT", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Thuận - CN BÌNH THUẬN - 60321001" },
-    { "value": "A6004ALU", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Cà Mau - CN CÀ MAU - 96321001" },
-    { "value": "A6004ALV", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Cần Thơ - CN CẦN THƠ - 92321001" },
-    { "value": "A6004ALW", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN CỘNG HÒA - 79321006" },
-    { "value": "A6004ALX", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đà Nẵng - CN ĐÀ NẴNG - 48321001" },
-    { "value": "A6004ALY", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đắk Lắk - CN DAK LAK - 66321001" },
-    { "value": "A6004ALZ", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN ĐỒNG NAI - 75321001" },
-    { "value": "A6004AM0", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Tháp - CN ĐỒNG THÁP - 87321001" },
-    { "value": "A6004AM1", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN GIA ĐỊNH - 79321011" },
-    { "value": "A6004AKU", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN HÀ NỘI - 1309009" },
-    { "value": "A6004AKV", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Tĩnh - CN HÀ TĨNH - 42309001" },
-    { "value": "A6004AKW", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hải Dương - CN HẢI DƯƠNG - 30309001" },
-    { "value": "A6004AKX", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79309001" },
-    { "value": "A6004AKY", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hoà Bình - CN HÒA BÌNH - 17309001" },
-    { "value": "A6004AKZ", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thừa Thiên Huế - CN HUẾ - 46309001" },
-    { "value": "A6004AL0", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Kiên Giang - CN KIÊN GIANG - 91309001" },
-    { "value": "A6004AL1", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN KINH ĐÔ - 1309008" },
-    { "value": "A6004AL2", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Long An - CN LONG AN - 80309001" },
-    { "value": "A6004AL3", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Nam Định - CN NAM ĐỊNH - 36309001" },
-    { "value": "A6004AL4", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Nghệ An - CN NGHỆ AN - 40309001" },
-    { "value": "A6004AL5", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN NGÔ QUYỀN - 1309004" },
-    { "value": "A6004AL6", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Khánh Hòa - CN NHA TRANG - 56309001" },
-    { "value": "A6004AL7", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Phú Thọ - CN PHÚ THỌ - 25309001" },
-    { "value": "A6004AL8", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 11 - 79309013" },
-    { "value": "A6004AL9", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 2 - 79309008" },
-    { "value": "A6004ALA", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 7 - 79309012" },
-    { "value": "A6004ALB", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Bình - CN QUẢNG BÌNH - 44309001" },
-    { "value": "A6004ALC", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Nam - CN QUẢNG NAM - 49309001" },
-    { "value": "A6004ALD", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Ninh - CN QUẢNG NINH - 22309001" },
-    { "value": "A6004ALE", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Trị - CN QUẢNG TRỊ - 45309001" },
-    { "value": "A6004ALF", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN SÀI GÒN - 79309006" },
-    { "value": "A6004AJX", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Long An - CN LONG AN - 80348001" },
-    { "value": "A6004AJY", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Nghệ An - CN NGHỆ AN - 40348001" },
-    { "value": "A6004AJZ", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Ninh Bình - CN NINH BÌNH - 37348001" },
-    { "value": "A6004AK0", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN PHÚ NHUẬN - 79348002" },
-    { "value": "A6004AK1", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Nam - CN QUẢNG NAM - 49348001" },
-    { "value": "A6004AK2", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51348001" },
-    { "value": "A6004AK3", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ninh - CN QUẢNG NINH - 22348001" },
-    { "value": "A6004AK4", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN SÀI GÒN - 79348003" },
-    { "value": "A6004AK5", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Sóc Trăng - CN SÓC TRĂNG - 94348001" },
-    { "value": "A6004AK6", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Dương - CN SÔNG BÉ - 74348002" },
-    { "value": "A6004AK7", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đà Nẵng - CN TÂY ĐÀ NẴNG - 48348002" },
-    { "value": "A6004AK8", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN TÂY HÀ NỘI - 1348011" },
-    { "value": "A6004AK9", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN TÂY NAM HÀ NỘI - 1348004" },
-    { "value": "A6004AKA", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tây Ninh - CN TÂY NINH - 72348001" },
-    { "value": "A6004AKB", "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thái Bình - CN THÁI BÌNH - 34348001" },
-    { "value": "A6004AKC", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bắc Ninh - CN BẮC NINH - 27309001" },
-    { "value": "A6004AKD", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN BẾN THÀNH - 79309011" },
-    { "value": "A6004AKE", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Định - CN BÌNH ĐỊNH - 52309001" },
-    { "value": "A6004AKF", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Dương - CN BÌNH DƯƠNG - 74309001" },
-    { "value": "A6004AKG", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Thuận - CN BÌNH THUẬN - 60309001" },
-    { "value": "A6004AKH", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Cà Mau - CN CÀ MAU - 96309001" },
-    { "value": "A6004AKI", "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Cần Thơ - CN CẦN THƠ - 92309001" },
-    { "value": "A6004AO0", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN CẦU GIẤY - 1317005" },
-    { "value": "A6004AO1", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN CHỢ LỚN - 79317001" },
-    { "value": "A6004AO2", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đà Nẵng - CN ĐÀ NẴNG - 48317001" },
-    { "value": "A6004AO3", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đắk Lắk - CN DAK LAK - 66317001" },
-    { "value": "A6004AO4", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN ĐỐNG ĐA - 1317006" },
-    { "value": "A6004AO5", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đồng Nai - CN ĐỒNG NAI - 75317001" },
-    { "value": "A6004AO6", "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HÀ ĐÔNG - 1317008" },
-    { "value": "A6004AO7", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Khánh Hòa - CN NHA TRANG - 56321001" },
-    { "value": "A6004AO8", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Ninh Bình - CN NINH BÌNH - 37321001" },
-    { "value": "A6004AO9", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN PHÚ NHUẬN - 79321002" },
-    { "value": "A6004AOA", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Phú Yên - CN PHÚ YÊN - 54321001" },
-    { "value": "A6004AOB", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Bình - CN QUẢNG BÌNH - 44321001" },
-    { "value": "A6004AOC", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Nam - CN QUẢNG NAM - 49321001" },
-    { "value": "A6004AOD", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Ngãi - CN QUẢNG NGÃI - 51321001" },
-    { "value": "A6004AOE", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Ninh - CN QUẢNG NINH - 22321001" },
-    { "value": "A6004AOF", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN SÀI GÒN - 79321009" },
-    { "value": "A6004AOG", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN SGD ĐỒNG NAI - 75321002" },
-    { "value": "A6004AOH", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Sóc Trăng - CN SÓC TRĂNG - 94321001" },
-    { "value": "A6004AOI", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN TAM HIỆP - 75321003" },
-    { "value": "A6004AOJ", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Tây Ninh - CN TÂY NINH - 72321001" },
-    { "value": "A6004AOK", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Thanh Hóa - CN THANH HÓA - 38321001" },
-    { "value": "A6004AOL", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Tiền Giang - CN TIỀN GIANG - 82321001" },
-    { "value": "A6004AM2", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Gia Lai - CN GIA LAI - 64321001" },
-    { "value": "A6004AM3", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HÀ NỘI - 1321001" },
-    { "value": "A6004AM4", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Tĩnh - CN HÀ TĨNH - 42321001" },
-    { "value": "A6004AM5", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Dương - CN HẢI DƯƠNG - 30321001" },
-    { "value": "A6004AM6", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Phòng - CN HẢI PHÒNG - 31321001" },
-    { "value": "A6004AM7", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HÀNG XANH - 79321012" },
-    { "value": "A6004AM8", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HIỆP PHÚ - 79321007" },
-    { "value": "A6004AM9", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HỒ GƯƠM - 1321005" },
-    { "value": "A6004AMA", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN HỐ NAI - 75321006" },
-    { "value": "A6004AMB", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HOÀN KIẾM - 1321002" },
-    { "value": "A6004AMC", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79321001" },
-    { "value": "A6004AMD", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Thừa Thiên Huế - CN HUẾ - 46321001" },
-    { "value": "A6004AME", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HÙNG VƯƠNG - 1321004" },
-    { "value": "A6004AMF", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Kiên Giang - CN KIÊN GIANG - 91321001" },
-    { "value": "A6004AMG", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Kon Tum - CN KON TUM - 62321001" },
-    { "value": "A6004AMH", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lâm Đồng - CN LÂM ĐỒNG - 68321001" },
-    { "value": "A6004AMI", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lạng Sơn - CN LẠNG SƠN - 20321001" },
-    { "value": "A6004AMJ", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN LÃNH BINH THĂNG - 79321003" },
-    { "value": "A6004AMK", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lào Cai - CN LÀO CAI - 10321001" },
-    { "value": "A6004AML", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Long An - CN LONG AN - 80321001" },
-    { "value": "A6004AMM", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nam Định - CN NAM ĐỊNH - 36321001" },
-    { "value": "A6004AMN", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nghệ An - CN NGHỆ AN - 40321001" },
-    { "value": "A6004AMO", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN NGUYỄN ĐÌNH CHIỂU - 79321010" },
-    { "value": "A6004AMP", "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN NGUYỄN TRÃI - 79321004" },
-    { "value": "A6004AMQ", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN CẦU GIẤY - 1334002" },
-    { "value": "A6004AMR", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đà Nẵng - CN CHỢ HÀN - 48334002" },
-    { "value": "A6004AMS", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CHỢ LỚN - 79334003" },
-    { "value": "A6004AMT", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CN 11 - 79334012" },
-    { "value": "A6004AMU", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CN 6 - 79334013" },
-    { "value": "A6004AMV", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CỐNG QUỲNH - 79334002" },
-    { "value": "A6004AMW", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CỦ CHI - 79334010" },
-    { "value": "A6004AMX", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đà Nẵng - CN ĐÀ NẴNG - 48334001" },
-    { "value": "A6004AMY", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đắk Lắk - CN DAKLAK - 66334001" },
-    { "value": "A6004AMZ", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đồng Nai - CN ĐỒNG NAI - 75334001" },
-    { "value": "A6004AN0", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đồng Tháp - CN ĐỒNG THÁP - 87334001" },
-    { "value": "A6004AN1", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN GIA ĐỊNH - 79334005" },
-    { "value": "A6004AN2", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Gia Lai - CN GIA LAI - 64334001" },
-    { "value": "A6004AN3", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN HÀ NỘI - 1334004" },
-    { "value": "A6004AN4", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN HAI BÀ TRƯNG - 1334001" },
-    { "value": "A6004AN5", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Dương - CN HẢI DƯƠNG - 30334001" },
-    { "value": "A6004AN6", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Phòng - CN HẢI PHÒNG - 31334002" },
-    { "value": "A6004AN7", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN HÓC MÔN - 79334004" },
-    { "value": "A6004AN8", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Khánh Hòa - CN KHÁNH HÒA - 56334001" },
-    { "value": "A6004AN9", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Kiên Giang - CN KIÊN GIANG - 91334001" },
-    { "value": "A6004ANA", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Long An - CN LONG AN - 80334001" },
-    { "value": "A6004ANB", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Nghệ An - CN NGHỆ AN - 40334001" },
-    { "value": "A6004ANC", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cần Thơ - CN NINH KIỀU - 92334002" },
-    { "value": "A6004AND", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN PHẠM NGỌC THẠCH - 79334016" },
-    { "value": "A6004ANE", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN PHÙ ĐỔNG - 79334015" },
-    { "value": "A6004ANF", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN QUẬN 10 - 79334009" },
-    { "value": "A6004ANG", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Quảng Ninh - CN QUẢNG NINH - 22334001" },
-    { "value": "A6004ANH", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN SÀI GÒN - 79334014" },
-    { "value": "A6004ANI", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TÂN BÌNH - 79334006" },
-    { "value": "A6004ANJ", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TÂN ĐỊNH - 79334007" },
-    { "value": "A6004ANK", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN THĂNG LONG - 1334003" },
-    { "value": "A6004ANL", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Thanh Hóa - CN THANH HÓA - 38334001" },
-    { "value": "A6004ANM", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN THỐNG NHẤT - 79334011" },
-    { "value": "A6004ANN", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Tiền Giang - CN TIỀN GIANG - 82334001" },
-    { "value": "A6004ANO", "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79334001" },
-    { "value": "A60049RG", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN KIM THANH - 10204013" },
-    { "value": "A60049RH", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN KINH MÔN - 30204011" },
-    { "value": "A60049RI", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG ANA - 66204022" },
-    { "value": "A60049RJ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG BÔNG - 66204004" },
-    { "value": "A60049RK", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG NĂNG - 66204015" },
-    { "value": "A60049RL", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN KRÔNG NÔ - 67204008" },
-    { "value": "A60049RM", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG PAK - 66204013" },
-    { "value": "A60049RN", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV BÌNH MINH NINH BÌNH - 37204011" },
-    { "value": "A60049RO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV GIÁN KHẨU NINH BÌNH - 37204013" },
-    { "value": "A60049RP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN KV MÍA ĐƯỜNG TÂN HƯNG - 72204003" },
-    { "value": "A60049RQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV RIA NINH BÌNH - 37204012" },
-    { "value": "A60049RR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KỲ SƠN - 31204024" },
-    { "value": "A60049RS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LẠC DƯƠNG - 68204009" },
-    { "value": "A60049RT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN LẠC THỦY - 17204011" },
-    { "value": "A60049RU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN LAI CHÂU - 12204001" },
-    { "value": "A60049RV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN LAI CHÂU - 12204002" },
-    { "value": "A60049RW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN LAI VUNG - 87204010" },
-    { "value": "A60049RX", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LAK - 66204024" },
-    { "value": "A60049RY", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LÂM ĐỒNG II - 68204004" },
-    { "value": "A60049RZ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN LAM SƠN - 38204006" },
-    { "value": "A60049R2", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC BẾN LỨC - 80204013" },
-    { "value": "A60049R3", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC CẦU VOI - 80204010" },
-    { "value": "A60049R4", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC ĐỨC HÒA - 80204012" },
-    { "value": "A60049R5", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC GÒ ĐEN - 80204009" },
-    { "value": "A60049R6", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN KHU VỰC I - 34204008" },
-    { "value": "A60049R7", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KIẾN AN - 31204014" },
-    { "value": "A60049R8", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN GIANG - 91204001" },
-    { "value": "A60049R9", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN HẢI - 91204003" },
-    { "value": "A60049RA", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN LƯƠNG - 91204009" },
-    { "value": "A60049RB", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KIẾN THỤY - 31204013" },
-    { "value": "A60049RC", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN KIẾN XƯƠNG - 34204010" },
-    { "value": "A60049RD", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KIM ĐỘNG - 33204008" },
-    { "value": "A60049RE", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN KIM TÂN - 10204003" },
-    { "value": "A60049RF", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN KIM THÀNH - 30204003" },
-    { "value": "A60049TO", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TRẤN YÊN - 15204008" },
-    { "value": "A60049TP", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRÀNG AN - 1204029" },
-    { "value": "A60049TQ", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TRẢNG BÀNG - 72204002" },
-    { "value": "A60049TR", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TRÀNG ĐỊNH - 20204003" },
-    { "value": "A60049TS", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRÀNG TIỀN - 1204288" },
-    { "value": "A60049TT", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TRI TÔN - 89204005" },
-    { "value": "A60049TU", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TRIỆU SƠN - 38204008" },
-    { "value": "A60049TV", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TRỰC NINH - 36204008" },
-    { "value": "A60049TW", "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TRUNG TÂM SÀI GÒN - 79204015" }
-]}`);
+var bank_code = JSON.parse(`
+{
+    "data": [
+      {
+        "value": "A60049TX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRUNG YÊN - 01204027"
+      },
+      {
+        "value": "A60049TY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN TRƯỜNG AN - 46204003"
+      },
+      {
+        "value": "A60049TZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TRƯỜNG SƠN - 79204048"
+      },
+      {
+        "value": "A60049U0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TRƯỜNG XUÂN - 49204009"
+      },
+      {
+        "value": "A60049U1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TT THANH TOÁN - 01204009"
+      },
+      {
+        "value": "A60049U2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN TỨ KỲ - 30204007"
+      },
+      {
+        "value": "A60049U3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TỪ LIÊM HÀ NỘI - 01204005"
+      },
+      {
+        "value": "A60049U4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TƯ NGHĨA - 51204006"
+      },
+      {
+        "value": "A60049U5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TUY AN - 54204009"
+      },
+      {
+        "value": "A60049U6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TUY PHƯỚC - 52204003"
+      },
+      {
+        "value": "A60049U7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN TUYÊN QUANG - 08204006"
+      },
+      {
+        "value": "A60049S0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN LÂM THAO - 25204005"
+      },
+      {
+        "value": "A60049S1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN LANG CHÁNH - 38204031"
+      },
+      {
+        "value": "A60049S2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LÁNG HẠ HÀ NỘI - 01204010"
+      },
+      {
+        "value": "A60049S3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN LAO BẢO - 45204003"
+      },
+      {
+        "value": "A60049S4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN LẤP VÒ - 87204007"
+      },
+      {
+        "value": "A60049S5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LÊ HỒNG PHONG - 66204028"
+      },
+      {
+        "value": "A60049S6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LÊ THÁNH TÔNG - 66204010"
+      },
+      {
+        "value": "A60049S7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LỆ THỦY - 44204003"
+      },
+      {
+        "value": "A60049S8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN LIÊN CHIỂU DN - 48204008"
+      },
+      {
+        "value": "A60049S9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LỘC AN NAM LÂM ĐỒNG - 68204014"
+      },
+      {
+        "value": "A60049SA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN LỘC BÌNH - 20204007"
+      },
+      {
+        "value": "A60049SB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LỘC PHÁT LÂM ĐỒNG - 68204016"
+      },
+      {
+        "value": "A60049SC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LONG BIÊN - 01204019"
+      },
+      {
+        "value": "A60049SD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN LONG HỒ - 86204004"
+      },
+      {
+        "value": "A60049SE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN LONG MỸ - 93204002"
+      },
+      {
+        "value": "A60049SF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN LONG PHÚ - 94204009"
+      },
+      {
+        "value": "A60049SG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN LONG THÀNH - 75204003"
+      },
+      {
+        "value": "A60049SH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN LỤC YÊN - 15204006"
+      },
+      {
+        "value": "A60049SI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN LƯƠNG SƠN - 60204010"
+      },
+      {
+        "value": "A60049SJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN LÝ SƠN - 51204004"
+      },
+      {
+        "value": "A60049SK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LÝ THÁI TỔ - 44204011"
+      },
+      {
+        "value": "A60049SL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN LÝ THƯỜNG KIỆT - 44204008"
+      },
+      {
+        "value": "A60049SM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN LÝ THƯỜNG KIỆT - 79204047"
+      },
+      {
+        "value": "A60049SN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN LÝ THƯỜNG KIỆT ĐÔNG HÀ NỘI - 01204294"
+      },
+      {
+        "value": "A60049SO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN MĂNG THÍT - 86204006"
+      },
+      {
+        "value": "A60049SP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN MẠO KHÊ - 22204020"
+      },
+      {
+        "value": "A60049SQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN M'ĐRĂK - 66204006"
+      },
+      {
+        "value": "A60049SR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN MÊ LINH - 01204051"
+      },
+      {
+        "value": "A60049SS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN MÈO VẠC - 02204003"
+      },
+      {
+        "value": "A60049ST",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN MIỀN ĐÔNG - 79204037"
+      },
+      {
+        "value": "A60049SU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN MINH LONG - 51204013"
+      },
+      {
+        "value": "A60049SV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN MỎ CÀY BẮC - 83204012"
+      },
+      {
+        "value": "A60049SW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN MỎ CÀY NAM - 83204005"
+      },
+      {
+        "value": "A60049SX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN MỘ ĐỨC - 51204007"
+      },
+      {
+        "value": "A60049SY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN MÙ CANG CHẢI - 15204010"
+      },
+      {
+        "value": "A60049SZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN MƯỜNG TÈ - 12204006"
+      },
+      {
+        "value": "A60049T0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN MỸ DINH - 01204024"
+      },
+      {
+        "value": "A60049T1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TP QUY NHƠN - 52204002"
+      },
+      {
+        "value": "A60049T2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TP SA ĐÉC - 87204012"
+      },
+      {
+        "value": "A60049T3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN TP SÔNG CÔNG - 19204005"
+      },
+      {
+        "value": "A60049T4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TP TAM ĐIỆP - 37204010"
+      },
+      {
+        "value": "A60049T5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TP TAM KỲ - 49204020"
+      },
+      {
+        "value": "A60049T6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TP THÁI BÌNH - 34204002"
+      },
+      {
+        "value": "A60049T7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TP THANH HÓA - 38204026"
+      },
+      {
+        "value": "A60049T8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TP TRÀ VINH - 84204010"
+      },
+      {
+        "value": "A60049T9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP UÔNG BÍ - 22204010"
+      },
+      {
+        "value": "A60049TA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN TP VỊ THANH - HẬU GIANG - 93204004"
+      },
+      {
+        "value": "A60049TB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TP VĨNH LONG - 86204009"
+      },
+      {
+        "value": "A60049TC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN TP VŨNG TÀU - 77204002"
+      },
+      {
+        "value": "A60049TD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TP YÊN BÁI - 15204002"
+      },
+      {
+        "value": "A60049TE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TP YÊN BÁI II - 15204003"
+      },
+      {
+        "value": "A60049TF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TRÀ BỒNG - 51204011"
+      },
+      {
+        "value": "A60049TG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TRÀ CÚ - 84204005"
+      },
+      {
+        "value": "A60049TH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TRÀ ÔN - 86204010"
+      },
+      {
+        "value": "A60049TI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TRÀ VINH - 84204001"
+      },
+      {
+        "value": "A60049TJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TRẠM TẤU - 15204007"
+      },
+      {
+        "value": "A60049TK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN TRẦN ĐỀ - 94204013"
+      },
+      {
+        "value": "A60049TL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN TRẦN HƯNG ĐẠO - 44204006"
+      },
+      {
+        "value": "A60049TM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN TRẦN PHÚ - 31204016"
+      },
+      {
+        "value": "A60049TN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TRẦN VĂN THỜI - 96204007"
+      },
+      {
+        "value": "A60049UT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN VINH - 40204002"
+      },
+      {
+        "value": "A60049UU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN VĨNH BẢO - 31204012"
+      },
+      {
+        "value": "A60049UV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN VĨNH CHÂU - 94204010"
+      },
+      {
+        "value": "A60049UW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN VĨNH HIỆP - 56204004"
+      },
+      {
+        "value": "A60049UX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN VĨNH LẠC - 91204008"
+      },
+      {
+        "value": "A60049UY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN VĨNH LỘC - 38204014"
+      },
+      {
+        "value": "A60049UZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN VĨNH LỢI - 95204007"
+      },
+      {
+        "value": "A60049V0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN MỸ LÂM - 91204015"
+      },
+      {
+        "value": "A60049V1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN MỸ LỘC - 36204009"
+      },
+      {
+        "value": "A6004ANP",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Trà Vinh - CN TRÀ VINH - 84334001"
+      },
+      {
+        "value": "A6004ANQ",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Trà Vinh - CN TRÀ VINH 1 - 84334002"
+      },
+      {
+        "value": "A6004ANR",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Vĩnh Long - CN VĨNH LONG - 86334001"
+      },
+      {
+        "value": "A6004ANS",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77334001"
+      },
+      {
+        "value": "A6004ANT",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - An Giang - CN AN GIANG - 89317001"
+      },
+      {
+        "value": "A6004ANU",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN BA ĐÌNH - 01317004"
+      },
+      {
+        "value": "A6004ANV",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bắc Ninh - CN BẮC NINH - 27317001"
+      },
+      {
+        "value": "A6004ANW",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bình Định - CN BÌNH ĐỊNH - 52317001"
+      },
+      {
+        "value": "A6004ANX",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bình Dương - CN BÌNH DƯƠNG - 74317002"
+      },
+      {
+        "value": "A6004ANY",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Cà Mau - CN CÀ MAU - 96317001"
+      },
+      {
+        "value": "A6004ANZ",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Cần Thơ - CN CẦN THƠ - 92317001"
+      },
+      {
+        "value": "A6004BFU",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - An Giang - CN AN GIANG - 89355001"
+      },
+      {
+        "value": "A6004BFV",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bạc Liêu - CN BẠC LIÊU - 95355001"
+      },
+      {
+        "value": "A6004BFW",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bắc Ninh - CN BẮC NINH - 27355001"
+      },
+      {
+        "value": "A6004BFX",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đắk Lắk - CN BUÔN MA THUỘT - 66355001"
+      },
+      {
+        "value": "A6004BFY",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Cần Thơ - CN CẦN THƠ - 92355001"
+      },
+      {
+        "value": "A6004BFZ",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN CHỢ LỚN - 79355004"
+      },
+      {
+        "value": "A6004BG0",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đà Nẵng - CN ĐÀ NẴNG - 48355001"
+      },
+      {
+        "value": "A6004BG1",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Đồng Nai - CN ĐỒNG NAI - 75355001"
+      },
+      {
+        "value": "A6004BG2",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hà Nội - CN HÀ NỘI - 01355001"
+      },
+      {
+        "value": "A6004BG3",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hải Phòng - CN HẢI PHÒNG - 31355001"
+      },
+      {
+        "value": "A6004BG4",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Nam - CN HỘI AN - 49355001"
+      },
+      {
+        "value": "A6004BG5",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN HUYỆN CỦ CHI - 79355006"
+      },
+      {
+        "value": "A6004BKO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TRƯỜNG SƠN - 79202023"
+      },
+      {
+        "value": "A6004BKP",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TỪ LIÊM - 01202028"
+      },
+      {
+        "value": "A6004BKQ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN TỪ SƠN - 27202002"
+      },
+      {
+        "value": "A6004BKR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 08202001"
+      },
+      {
+        "value": "A6004BKS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN VỊ THANH - 93202003"
+      },
+      {
+        "value": "A6004BKT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86202001"
+      },
+      {
+        "value": "A6004BKU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN VĨNH LONG PGD CÁI VỒN - 86202800"
+      },
+      {
+        "value": "A6004BKV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26202001"
+      },
+      {
+        "value": "A6004BKW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Yên Bái - CN YÊN BÁI - 15202001"
+      },
+      {
+        "value": "A6004BKX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - HẬU GIANG PGD 1/5 - 93202801"
+      },
+      {
+        "value": "A6004BPG",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN PGD QUẬN 11 - 79202801"
+      },
+      {
+        "value": "A6004BPH",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN TÂY SƠN - 52202003"
+      },
+      {
+        "value": "A6004BPI",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THẠCH THẤT - 01202027"
+      },
+      {
+        "value": "A6004BPJ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34202001"
+      },
+      {
+        "value": "A6004BPK",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19202001"
+      },
+      {
+        "value": "A6004BPL",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THĂNG LONG - 01202006"
+      },
+      {
+        "value": "A6004BPM",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THÀNH ĐÔ - 01202012"
+      },
+      {
+        "value": "A6004BPN",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN THÀNH ĐÔNG - 30202003"
+      },
+      {
+        "value": "A6004BPO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38202001"
+      },
+      {
+        "value": "A6004BPP",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nam Định - CN THANH NAM - 36202002"
+      },
+      {
+        "value": "A6004BB6",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Khánh Hòa - CN KHÁNH HÒA - 56333001"
+      },
+      {
+        "value": "A6004BB7",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Kiên Giang - CN KIÊN GIANG - 91333002"
+      },
+      {
+        "value": "A6004BB8",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Long An - CN LONG AN - 80333001"
+      },
+      {
+        "value": "A6004BB9",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Nghệ An - CN NGHỆ AN - 40333001"
+      },
+      {
+        "value": "A6004BBA",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN PHÚ LÂM - 79333005"
+      },
+      {
+        "value": "A6004BBB",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN PHÚ NHUẬN - 79333002"
+      },
+      {
+        "value": "A6004BBC",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN QUẬN 4 - 79333010"
+      },
+      {
+        "value": "A6004BBD",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Nam - CN QUẢNG NAM - 49333001"
+      },
+      {
+        "value": "A6004BBE",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Ngãi - CN QUẢNG NGÃI - 51333001"
+      },
+      {
+        "value": "A6004BBF",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Quảng Ninh - CN QUẢNG NINH - 22333001"
+      },
+      {
+        "value": "A6004BBG",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN SỞ GIAO DỊCH - 79333009"
+      },
+      {
+        "value": "A6004BG6",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ TÂY - 01202017"
+      },
+      {
+        "value": "A6004BG7",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ THÀNH - 01202005"
+      },
+      {
+        "value": "A6004BG8",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42202001"
+      },
+      {
+        "value": "A6004BG9",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH PGD HỒNG LĨNH - 42202800"
+      },
+      {
+        "value": "A6004BGA",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HAI BÀ TRƯNG - 01202011"
+      },
+      {
+        "value": "A6004BGB",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30202001"
+      },
+      {
+        "value": "A6004BGC",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG PGD HOÀNG THẠCH - 30202800"
+      },
+      {
+        "value": "A6004BGD",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN HẢI DƯƠNG PGD THÀNH ĐÔNG - 30202801"
+      },
+      {
+        "value": "A6004BGE",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31202001"
+      },
+      {
+        "value": "A6004BGF",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN HẢI VÂN - 48202002"
+      },
+      {
+        "value": "A6004BKY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - LẠNG SƠN PGD ĐỒNG ĐĂNG - 20202800"
+      },
+      {
+        "value": "A6004BKZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - LẠNG SƠN PGD KỲ LỪA - 20202801"
+      },
+      {
+        "value": "A6004BL0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - PHÚC YÊN - 26202800"
+      },
+      {
+        "value": "A6004BL1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - SỞ GIAO DỊCH 3 - 01202015"
+      },
+      {
+        "value": "A6004BL2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - HỘI SỞ - 01202001"
+      },
+      {
+        "value": "A6004BL3",
+        "NOM": "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS - Hà Nội - CN HÀ NỘI - 01657001"
+      },
+      {
+        "value": "A6004BL4",
+        "NOM": "BNPPARIBAS-NGÂN HÀNG BNP PARIBAS - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79614001"
+      },
+      {
+        "value": "A6004BL5",
+        "NOM": "BTMU-BANK OF TOKYO MITSUBISHI UFJ LTD - Hà Nội - CN HÀ NỘI (BTMU) - 01653001"
+      },
+      {
+        "value": "A6004BL6",
+        "NOM": "BTMU-BANK OF TOKYO MITSUBISHI UFJ LTD - Hồ Chí Minh - TP HỒ CHÍ MINH - 79622001"
+      },
+      {
+        "value": "A6004BL7",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - An Giang - CN AN GIANG - 89339001"
+      },
+      {
+        "value": "A6004BL8",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83339001"
+      },
+      {
+        "value": "A6004BPQ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THANH TRÌ - 01202033"
+      },
+      {
+        "value": "A6004BPR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN THÀNH VINH - 40202005"
+      },
+      {
+        "value": "A6004BPS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN THANH XUÂN - 01202019"
+      },
+      {
+        "value": "A6004BPT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỐNG NHẤT - 79202026"
+      },
+      {
+        "value": "A6004BPU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN THỦ DẦU MỘT - 74202004"
+      },
+      {
+        "value": "A6004BPV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79202029"
+      },
+      {
+        "value": "A6004BPW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79202028"
+      },
+      {
+        "value": "A6004BPX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46202001"
+      },
+      {
+        "value": "A6004BPY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82202001"
+      },
+      {
+        "value": "A6004BPZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79202002"
+      },
+      {
+        "value": "A6004BBH",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Sóc Trăng - CN SÓC TRĂNG - 94333001"
+      },
+      {
+        "value": "A6004BBI",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN TÂN BÌNH - 79333011"
+      },
+      {
+        "value": "A6004BBJ",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN TÂN THUẬN - 79333008"
+      },
+      {
+        "value": "A6004BBK",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Long An - CN TÂY ĐÔ - 80333012"
+      },
+      {
+        "value": "A6004BBL",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Thanh Hóa - CN THANH HÓA - 38333001"
+      },
+      {
+        "value": "A6004BBM",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN THỦ ĐỨC - 79333007"
+      },
+      {
+        "value": "A6004BBN",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đà Nẵng - CN TRUNG VIỆT - 48333001"
+      },
+      {
+        "value": "A6004BBO",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Vĩnh Long - CN VĨNH LONG - 86333001"
+      },
+      {
+        "value": "A6004BBP",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Kiên Giang - PGD KIÊN GIANG - 91333001"
+      },
+      {
+        "value": "A6004BBQ",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bắc Giang - CN BẮC GIANG - 24319001"
+      },
+      {
+        "value": "A6004BBR",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bình Dương - CN BÌNH DƯƠNG - 74319001"
+      },
+      {
+        "value": "A6004BGG",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HÀM NGHI - 79202020"
+      },
+      {
+        "value": "A6004BGH",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93202001"
+      },
+      {
+        "value": "A6004BGI",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HIỆP PHÚ SG - 79202033"
+      },
+      {
+        "value": "A6004BGJ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hoà Bình - CN HÒA BÌNH - 17202001"
+      },
+      {
+        "value": "A6004BGK",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HOÀI ĐỨC - 01202031"
+      },
+      {
+        "value": "A6004BGL",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 01202021"
+      },
+      {
+        "value": "A6004BGM",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN HÓC MÔN - 79202019"
+      },
+      {
+        "value": "A6004BGN",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN HỘI AN - 49202002"
+      },
+      {
+        "value": "A6004BGO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HỒNG HÀ - 01202023"
+      },
+      {
+        "value": "A6004BGP",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN HÙNG VƯƠNG - 25202002"
+      },
+      {
+        "value": "A6004BGQ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33202002"
+      },
+      {
+        "value": "A6004BL9",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74339001"
+      },
+      {
+        "value": "A6004BLA",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN KỲ ĐỒNG - 79203012"
+      },
+      {
+        "value": "A6004BLB",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68203001"
+      },
+      {
+        "value": "A6004BLC",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20203001"
+      },
+      {
+        "value": "A6004BLD",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Lào Cai - CN LÀO CAI - 10203001"
+      },
+      {
+        "value": "A6004BLE",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Long An - CN LONG AN - 80203001"
+      },
+      {
+        "value": "A6004BLF",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN LONG KHÁNH - 75203004"
+      },
+      {
+        "value": "A6004BLG",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22203002"
+      },
+      {
+        "value": "A6004BLH",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN NAM BÌNH DƯƠNG - 74203003"
+      },
+      {
+        "value": "A6004BLI",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đà Nẵng - CN NAM ĐÀ NẴNG - 48203002"
+      },
+      {
+        "value": "A6004BLJ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36203001"
+      },
+      {
+        "value": "A6004BQ0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84202001"
+      },
+      {
+        "value": "A6004BQ1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN TRÀ VINH PGD ĐIỆN BIÊN PHỦ - 84202800"
+      },
+      {
+        "value": "A6004BQ2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TRÀNG AN - 01202024"
+      },
+      {
+        "value": "A6004BQ3",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Ngãi - CN QUẢNG NGÃI - 51360001"
+      },
+      {
+        "value": "A6004BQ4",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Ninh - CN QUẢNG NINH - 22360001"
+      },
+      {
+        "value": "A6004BQ5",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bình Định - CN QUY NHƠN - 52360001"
+      },
+      {
+        "value": "A6004BQ6",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN SÀI GÒN - 79360002"
+      },
+      {
+        "value": "A6004BQ7",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN SÀI GÒN - GIA ĐỊNH - 79360003"
+      },
+      {
+        "value": "A6004BQ8",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đà Nẵng - CN SÔNG HÀN - 48360001"
+      },
+      {
+        "value": "A6004BQ9",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cần Thơ - CN TÂY ĐÔ - 92360002"
+      },
+      {
+        "value": "A6004BQA",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Tây Ninh - CN TÂY NINH - 72360001"
+      },
+      {
+        "value": "A6004BBS",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Cà Mau - CN CÀ MAU - 96319001"
+      },
+      {
+        "value": "A6004BBT",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Cần Thơ - CN CẦN THƠ - 92319001"
+      },
+      {
+        "value": "A6004BBU",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Đồng Nai - CN ĐỒNG NAI - 75319001"
+      },
+      {
+        "value": "A6004BBV",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Nội - CN HÀ NỘI - 01319001"
+      },
+      {
+        "value": "A6004BBW",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Tĩnh - CN HÀ TĨNH - 42319001"
+      },
+      {
+        "value": "A6004BBX",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Dương - CN HẢI DƯƠNG - 30319002"
+      },
+      {
+        "value": "A6004BBY",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Phòng - CN HẢI PHÒNG - 31319001"
+      },
+      {
+        "value": "A6004BBZ",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79319002"
+      },
+      {
+        "value": "A6004BC0",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hải Dương - CN HỘI SỞ CHÍNH - 30319001"
+      },
+      {
+        "value": "A6004BC1",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Khánh Hòa - CN NHA TRANG - 56319001"
+      },
+      {
+        "value": "A6004BC2",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Quảng Ngãi - CN QUẢNG NGÃI - 51319001"
+      },
+      {
+        "value": "A6004B9J",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đồng Nai - CN ĐỒNG NAI - 75306001"
+      },
+      {
+        "value": "A6004BGR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56202001"
+      },
+      {
+        "value": "A6004BGS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91202001"
+      },
+      {
+        "value": "A6004BGT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG PGD BA HÒN HÀ TIÊN - 91202801"
+      },
+      {
+        "value": "A6004BGU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG PGD MAI THỊ HỒNG HẠNH - 91202803"
+      },
+      {
+        "value": "A6004BGV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN KINH BẮC - 27202003"
+      },
+      {
+        "value": "A6004BGW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kon Tum - CN KON TUM - 62202001"
+      },
+      {
+        "value": "A6004BGX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN KỲ ANH - 42202002"
+      },
+      {
+        "value": "A6004BGY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN KỲ HÒA - 79202022"
+      },
+      {
+        "value": "A6004BGZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN LẠCH TRAY - 31202003"
+      },
+      {
+        "value": "A6004BH0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lai Châu - CN LAI CHÂU - 12202001"
+      },
+      {
+        "value": "A6004BLK",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Phòng - CN NAM HẢI PHÒNG - 31203002"
+      },
+      {
+        "value": "A6004BLL",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79203011"
+      },
+      {
+        "value": "A6004BLM",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nghệ An - CN NGHỆ AN - 40203001"
+      },
+      {
+        "value": "A6004BLN",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NHÀ RỒNG - 79203017"
+      },
+      {
+        "value": "A6004BLO",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56203002"
+      },
+      {
+        "value": "A6004BLP",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN NHƠN TRẠCH - 75203003"
+      },
+      {
+        "value": "A6004BLQ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37203001"
+      },
+      {
+        "value": "A6004BLR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN PHÚ TÀI - 52202002"
+      },
+      {
+        "value": "A6004BLS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN PHÚ TÀI PGD HOÀI NHƠN - 52202800"
+      },
+      {
+        "value": "A6004BLT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25202001"
+      },
+      {
+        "value": "A6004BLU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD  HÙNG VƯƠNG - 25202801"
+      },
+      {
+        "value": "A6004BQB",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thái Bình - CN THÁI BÌNH - 34360001"
+      },
+      {
+        "value": "A6004BQC",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN THĂNG LONG - 01360003"
+      },
+      {
+        "value": "A6004BQD",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thanh Hóa - CN THANH HÓA - 38360001"
+      },
+      {
+        "value": "A6004BQE",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN THỦ THIÊM - 79360006"
+      },
+      {
+        "value": "A6004BQF",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Tiền Giang - CN TIỀN GIANG - 82360001"
+      },
+      {
+        "value": "A6004BQG",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79360001"
+      },
+      {
+        "value": "A6004BQH",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Vĩnh Long - CN VĨNH LONG - 86360001"
+      },
+      {
+        "value": "A6004BQI",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77360002"
+      },
+      {
+        "value": "A6004BQJ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Sóc Trăng - CN  SÓC TRĂNG - 94303001"
+      },
+      {
+        "value": "A6004BQK",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN 8 THANG 3 - 79303006"
+      },
+      {
+        "value": "A6004BQL",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN 8-3 HÀ NỘI - 01303003"
+      },
+      {
+        "value": "A6004BC3",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Quảng Ninh - CN QUẢNG NINH - 22319001"
+      },
+      {
+        "value": "A6004BC4",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bình Định - CN QUY NHƠN - 52319001"
+      },
+      {
+        "value": "A6004BC5",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hồ Chí Minh - CN SÀI GÒN - 79319001"
+      },
+      {
+        "value": "A6004BC6",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Thái Bình - CN THÁI BÌNH - 34319001"
+      },
+      {
+        "value": "A6004BC7",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Hà Nội - CN THĂNG LONG - 01319002"
+      },
+      {
+        "value": "A6004BC8",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Thanh Hóa - CN THANH HÓA - 38319001"
+      },
+      {
+        "value": "A6004BC9",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đắk Lắk - CN DAKLAK - 66203001"
+      },
+      {
+        "value": "A6004BCA",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG ANH - 01203013"
+      },
+      {
+        "value": "A6004BCB",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75203001"
+      },
+      {
+        "value": "A6004BCC",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87203001"
+      },
+      {
+        "value": "A6004BCD",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ngãi - CN DUNG QUẤT - 51203002"
+      },
+      {
+        "value": "A6004BH1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68202001"
+      },
+      {
+        "value": "A6004BH2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG PGD ĐỨC TRỌNG - 68202800"
+      },
+      {
+        "value": "A6004BH3",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN LAM SON - 38202003"
+      },
+      {
+        "value": "A6004BH4",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20202001"
+      },
+      {
+        "value": "A6004BH5",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN LÀO CAI - 10202001"
+      },
+      {
+        "value": "A6004BH6",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Quảng Bình - CN QUẢNG BÌNH - 44901001"
+      },
+      {
+        "value": "A6004BH7",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Sóc Trăng - CN SÓC TRĂNG - 94901001"
+      },
+      {
+        "value": "A6004BH8",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Thái Bình - CN THÁI BÌNH - 34901001"
+      },
+      {
+        "value": "A6004BH9",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Thanh Hóa - CN THANH HÓA - 38901001"
+      },
+      {
+        "value": "A6004BHA",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68901001"
+      },
+      {
+        "value": "A6004BHB",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Trà Vinh - CN TRÀ VINH - 84901001"
+      },
+      {
+        "value": "A6004BLV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD KVN THỤY VÂN - 25202802"
+      },
+      {
+        "value": "A6004BLW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ PGD PHONG CHÂU - 25202800"
+      },
+      {
+        "value": "A6004BLX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN PHÚ XUÂN - 46202002"
+      },
+      {
+        "value": "A6004BLY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54202001"
+      },
+      {
+        "value": "A6004BLZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN PHÚC YÊN - 26202002"
+      },
+      {
+        "value": "A6004BM0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44202001"
+      },
+      {
+        "value": "A6004BM1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH PGD ĐỒNG HỚI - 44202800"
+      },
+      {
+        "value": "A6004BM2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN QUANG MINH - 01202026"
+      },
+      {
+        "value": "A6004BM3",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49202001"
+      },
+      {
+        "value": "A6004BM4",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM PGD CHU LAI - 49202800"
+      },
+      {
+        "value": "A6004BQM",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - An Giang - CN AN GIANG - 89303001"
+      },
+      {
+        "value": "A6004BQN",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bà Rịa - Vũng Tàu - CN BÀ RỊA - 77303002"
+      },
+      {
+        "value": "A6004BQO",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77303001"
+      },
+      {
+        "value": "A6004BQP",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bạc Liêu - CN BẠC LIÊU - 95303001"
+      },
+      {
+        "value": "A6004BQQ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bắc Ninh - CN BẮC NINH - 27303001"
+      },
+      {
+        "value": "A6004BQR",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Dương - CN BẾN CÁT - 74303002"
+      },
+      {
+        "value": "A6004BQS",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BẾN THÀNH - 79303019"
+      },
+      {
+        "value": "A6004BQT",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bến Tre - CN BẾN TRE - 83303001"
+      },
+      {
+        "value": "A6004BQU",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Định - CN BÌNH ĐỊNH - 52303001"
+      },
+      {
+        "value": "A6004BQV",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Dương - CN BÌNH DƯƠNG - 74303001"
+      },
+      {
+        "value": "A6004BQW",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Phước - CN BÌNH PHƯỚC - 70303001"
+      },
+      {
+        "value": "A6004BCE",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79203013"
+      },
+      {
+        "value": "A6004BCF",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Gia Lai - CN GIA LAI - 64203001"
+      },
+      {
+        "value": "A6004BCG",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GÒ VẤP - 79203014"
+      },
+      {
+        "value": "A6004BCH",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN HẠ LONG - 22203003"
+      },
+      {
+        "value": "A6004BCI",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nam - CN HÀ NAM - 35203001"
+      },
+      {
+        "value": "A6004BCJ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ NỘI - 01203003"
+      },
+      {
+        "value": "A6004BCK",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ TÂY - 01203009"
+      },
+      {
+        "value": "A6004BCL",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HÀ THÀNH - 01203014"
+      },
+      {
+        "value": "A6004BCM",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42203001"
+      },
+      {
+        "value": "A6004BCN",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30203001"
+      },
+      {
+        "value": "A6004BCO",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31203001"
+      },
+      {
+        "value": "A6004BHC",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Vĩnh Phúc - CN VĨNH PHÚC - 26901001"
+      },
+      {
+        "value": "A6004BHD",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - HỘI SỞ CHÍNH - 01901001"
+      },
+      {
+        "value": "A6004BHE",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Quảng Trị - QUẢNG BÌNH PGD QUẢNG TRỊ - 45901001"
+      },
+      {
+        "value": "A6004BHF",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - SỞ GIAO DỊCH - 01901003"
+      },
+      {
+        "value": "A6004BHG",
+        "NOM": "NGANHANGTNHHCTBC-NGÂN HÀNG TNHH CTBC - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79629001"
+      },
+      {
+        "value": "A6004BHH",
+        "NOM": "NH CREDIT AGRICOLE CIB - Hà Nội - CN HÀ NỘI - 01621001"
+      },
+      {
+        "value": "A6004BHI",
+        "NOM": "NH CREDIT AGRICOLE CIB - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79621001"
+      },
+      {
+        "value": "A6004BHJ",
+        "NOM": "NHBPCEIOM-NGÂN HÀNG BPCEIOM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79601001"
+      },
+      {
+        "value": "A6004BHK",
+        "NOM": "NHCONGNGHIEPHANQUOC-NGÂN HÀNG CÔNG NGHIỆP HÀN QUỐC - Hà Nội - CN HÀ NỘI - 01652001"
+      },
+      {
+        "value": "A6004BHL",
+        "NOM": "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT - Hà Nội - CN HÀ NỘI - 10628017"
+      },
+      {
+        "value": "A6004BHM",
+        "NOM": "NHLDLAOVIET-NGÂN HÀNG LIÊN DOANH LÀO VIỆT - Hồ Chí Minh - TPHCM - 79633001"
+      },
+      {
+        "value": "A6004BM5",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Nam - CN QUẢNG NAM PGD ĐIỆN NAM ĐIỆN NGỌC - 49202801"
+      },
+      {
+        "value": "A6004BM6",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51202001"
+      },
+      {
+        "value": "A6004BM7",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI PGD DUNG QUẤT - 51202800"
+      },
+      {
+        "value": "A6004BM8",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22202001"
+      },
+      {
+        "value": "A6004BM9",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH PGD BÃI CHÁY - 22202802"
+      },
+      {
+        "value": "A6004BMA",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH PGD ĐÔNG TRIỀU UÔNG BÍ - 22202800"
+      },
+      {
+        "value": "A6004BMB",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45202001"
+      },
+      {
+        "value": "A6004BMC",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN QUANG TRUNG - 01202009"
+      },
+      {
+        "value": "A6004BMD",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN RẠCH GIÁ - 91202003"
+      },
+      {
+        "value": "A6004BME",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79202003"
+      },
+      {
+        "value": "A6004BQX",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BÌNH TÂY - 79303016"
+      },
+      {
+        "value": "A6004BQY",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN BÌNH THẠNH - 79303017"
+      },
+      {
+        "value": "A6004BQZ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Thuận - CN BÌNH THUẬN - 60303001"
+      },
+      {
+        "value": "A6004BR0",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cà Mau - CN CÀ MAU - 96303001"
+      },
+      {
+        "value": "A6004BR1",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cần Thơ - CN CẦN THƠ - 92303001"
+      },
+      {
+        "value": "A6004BR2",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN CHỢ LỚN - 79303003"
+      },
+      {
+        "value": "A6004BR3",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Phước - CN CHƠN THÀNH - 70303002"
+      },
+      {
+        "value": "A6004BR4",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN CỦ CHI - 79303004"
+      },
+      {
+        "value": "A6004BR5",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Vĩnh Long - CN CỬU LONG - 86303002"
+      },
+      {
+        "value": "A6004BR6",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đà Nẵng - CN ĐÀ NẴNG - 48303001"
+      },
+      {
+        "value": "A6004BR7",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Nông - CN ĐAK NÔNG - 67303001"
+      },
+      {
+        "value": "A6004BCP",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 01203008"
+      },
+      {
+        "value": "A6004BCQ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN HOÀNG MAI - 01203015"
+      },
+      {
+        "value": "A6004BCR",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN HUẾ - 46203001"
+      },
+      {
+        "value": "A6004BCS",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN HÙNG VƯƠNG - 79203003"
+      },
+      {
+        "value": "A6004BCT",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33203001"
+      },
+      {
+        "value": "A6004BCU",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56203001"
+      },
+      {
+        "value": "A6004BCV",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91203001"
+      },
+      {
+        "value": "A6004BCW",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kon Tum - CN KONTUM - 62203001"
+      },
+      {
+        "value": "A6004BCX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD SA ĐÉC - 87202800"
+      },
+      {
+        "value": "A6004BCY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD THÁP MƯỜI - 87202801"
+      },
+      {
+        "value": "A6004BCZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN DUNG QUẤT - 51202002"
+      },
+      {
+        "value": "A6004BHN",
+        "NOM": "NHTHESIAMCOMMERCIALBANKPUBLIC-NGÂN HÀNG SIAM COMMERCIAL BANK PUBLIC - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79600001"
+      },
+      {
+        "value": "A6004BHO",
+        "NOM": "NHTMCPVIETHOA-NGÂN HÀNG TMCP VIỆT HOA - Hồ Chí Minh - HỘI SỞ - 79324001"
+      },
+      {
+        "value": "A6004BHP",
+        "NOM": "NHTNHHE.SUN-NGÂN HÀN TNHH E.SUN - Đồng Nai - CN ĐỒNG NAI - 75658001"
+      },
+      {
+        "value": "A6004BHQ",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74501001"
+      },
+      {
+        "value": "A6004BHR",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79501002"
+      },
+      {
+        "value": "A6004BHS",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48501001"
+      },
+      {
+        "value": "A6004BHT",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75501001"
+      },
+      {
+        "value": "A6004BHU",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hà Nội - CN HÀ NỘI - 01501002"
+      },
+      {
+        "value": "A6004BHV",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31501001"
+      },
+      {
+        "value": "A6004BHW",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79501003"
+      },
+      {
+        "value": "A6004BHX",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79501001"
+      },
+      {
+        "value": "A6004BMF",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN SAPA - 10202003"
+      },
+      {
+        "value": "A6004BMG",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN SAPA PGD PHAN ĐÌNH PHÙNG - 10202801"
+      },
+      {
+        "value": "A6004BMH",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN SỞ GIAO DỊCH 1 - 01202002"
+      },
+      {
+        "value": "A6004BMI",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN SỞ GIAO DỊCH 2 - 79202001"
+      },
+      {
+        "value": "A6004BMJ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94202001"
+      },
+      {
+        "value": "A6004BMK",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG PGD CHÂU THÀNH - 94202800"
+      },
+      {
+        "value": "A6004BML",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA - 14202001"
+      },
+      {
+        "value": "A6004BMM",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA PGD MỘC CHÂU - 14202800"
+      },
+      {
+        "value": "A6004BMN",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA PGD MƯỜNG LA - 14202801"
+      },
+      {
+        "value": "A6004BMO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN SƠN TÂY - 01202018"
+      },
+      {
+        "value": "A6004B8B",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 01202022"
+      },
+      {
+        "value": "A6004B8C",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN CÔN ĐẢO - 77202004"
+      },
+      {
+        "value": "A6004B8D",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CỦ CHI - 79202016"
+      },
+      {
+        "value": "A6004B8E",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Vĩnh Long - CN CỬU LONG - 86202002"
+      },
+      {
+        "value": "A6004B8F",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN ĐÀ LẠT - 68202003"
+      },
+      {
+        "value": "A6004B8G",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48202001"
+      },
+      {
+        "value": "A6004B8H",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Nghệ An - CN NGHỆ AN - 40302001"
+      },
+      {
+        "value": "A6004B8I",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Ninh Bình - CN NINH BÌNH - 37302001"
+      },
+      {
+        "value": "A6004B8J",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cần Thơ - CN NINH KIỀU - 92302002"
+      },
+      {
+        "value": "A6004B8K",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Phú Thọ - CN PHÚ THỌ - 25302001"
+      },
+      {
+        "value": "A6004B8L",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Phú Yên - CN PHÚ YÊN - 54302001"
+      },
+      {
+        "value": "A6004BD0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN DƯƠNG ĐÔNG - 91202004"
+      },
+      {
+        "value": "A6004BD1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Trà Vinh - CN DUYÊN HẢI - 84202002"
+      },
+      {
+        "value": "A6004BD2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79202007"
+      },
+      {
+        "value": "A6004BD3",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI - 64202001"
+      },
+      {
+        "value": "A6004BD4",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD BẮC GIA LAI - 64202802"
+      },
+      {
+        "value": "A6004BD5",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD CHƯ SÊ I - 64202803"
+      },
+      {
+        "value": "A6004BD6",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI PGD KV DONG - 64202800"
+      },
+      {
+        "value": "A6004BD7",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN GIA LÂM - 01202032"
+      },
+      {
+        "value": "A6004BD8",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ ĐÔNG - 01202029"
+      },
+      {
+        "value": "A6004BD9",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Giang - CN HÀ GIANG - 02202001"
+      },
+      {
+        "value": "A6004BHY",
+        "NOM": "NHTNHHMTVPUBLICVIETNAM-NGÂN HÀNG TNHH MTV PUBLIC VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 01501001"
+      },
+      {
+        "value": "A6004BHZ",
+        "NOM": "NHTNHHMTVSHINHANVIETNAM-NGÂN HÀNG TNHH MIV SHINHAN VIỆT NAM - Hà Nội - CN HÀ NỘI - 01616002"
+      },
+      {
+        "value": "A6004BI0",
+        "NOM": "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI - Bắc Ninh - CN BẮC NINH - 27663001"
+      },
+      {
+        "value": "A6004BI1",
+        "NOM": "NHTNHHMTVW00RI-NGÂN HÀNG TNHH MTV WOORI - Hà Nội - HỘI SỞ - 01663001"
+      },
+      {
+        "value": "A6004BI2",
+        "NOM": "NONGHYUP-NGÂN HÀNG NONG HYUP - Hà Nội - CN HÀ NỘI - 01662001"
+      },
+      {
+        "value": "A6004BI3",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - An Giang - CN AN GIANG - 89333001"
+      },
+      {
+        "value": "A6004BI4",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77333001"
+      },
+      {
+        "value": "A6004BI5",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bạc Liêu - CN BẠC LIÊU - 95333001"
+      },
+      {
+        "value": "A6004BI6",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN BẾN THÀNH - 79333006"
+      },
+      {
+        "value": "A6004BI7",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Bình Dương - CN BÌNH DƯƠNG - 74333001"
+      },
+      {
+        "value": "A6004BI8",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Cà Mau - CN CÀ MAU - 96333001"
+      },
+      {
+        "value": "A6004BMP",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Nghệ An - CN VINH - 40319001"
+      },
+      {
+        "value": "A6004BMQ",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77319001"
+      },
+      {
+        "value": "A6004BMR",
+        "NOM": "OVERSEA-CHINESE-OVERSEA - CHINESE BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79625001"
+      },
+      {
+        "value": "A6004BMS",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - An Giang - CN AN GIANG - 89341001"
+      },
+      {
+        "value": "A6004BMT",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77341001"
+      },
+      {
+        "value": "A6004BMU",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bắc Ninh - CN BẮC NINH - 27341001"
+      },
+      {
+        "value": "A6004BMV",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Bình Dương - CN BÌNH DƯƠNG - 74341001"
+      },
+      {
+        "value": "A6004BMW",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Cần Thơ - CN CẦN THƠ - 92341001"
+      },
+      {
+        "value": "A6004BMX",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đà Nẵng - CN ĐÀ NẴNG - 48341001"
+      },
+      {
+        "value": "A6004BMY",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đồng Nai - CN ĐỒNG NAI - 75341001"
+      },
+      {
+        "value": "A6004BMZ",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Đồng Tháp - CN ĐỒNG THÁP - 87341002"
+      },
+      {
+        "value": "A6004B8M",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Bình - CN QUẢNG BÌNH - 44302001"
+      },
+      {
+        "value": "A6004B8N",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Nam - CN QUẢNG NAM - 49302001"
+      },
+      {
+        "value": "A6004B8O",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - CN QUẢNG NINH - 22302002"
+      },
+      {
+        "value": "A6004B8P",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Kiên Giang - CN RẠCH GÍA - 91302002"
+      },
+      {
+        "value": "A6004B8Q",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đồng Tháp - CN SA ĐÉC - 87302001"
+      },
+      {
+        "value": "A6004B8R",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN SÀI GÒN - 79302004"
+      },
+      {
+        "value": "A6004B8S",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN TÂN BÌNH - 79302002"
+      },
+      {
+        "value": "A6004B8T",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN TÂN SƠN NHẤT - 79302007"
+      },
+      {
+        "value": "A6004B8U",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Tây Ninh - CN TÂY NINH - 72302001"
+      },
+      {
+        "value": "A6004B8V",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thái Bình - CN THÁI BÌNH - 34302001"
+      },
+      {
+        "value": "A6004B8W",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thái Nguyên - CN THÁI NGUYÊN - 19302001"
+      },
+      {
+        "value": "A6004B8X",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thanh Hóa - CN THANH HÓA - 38302001"
+      },
+      {
+        "value": "A6004BDA",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN HẠ LONG - 22202004"
+      },
+      {
+        "value": "A6004BDB",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nam - CN HÀ NAM - 35202001"
+      },
+      {
+        "value": "A6004BDC",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ NỘI - 01202003"
+      },
+      {
+        "value": "A6004BDD",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN VĂN THÁNH - 79306011"
+      },
+      {
+        "value": "A6004BDE",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77306001"
+      },
+      {
+        "value": "A6004BDF",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Dương - PGD BÌNH DƯƠNG - 74306001"
+      },
+      {
+        "value": "A6004BDG",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - QUANG TRUNG PGD TRƯỜNG CHINH - 79306002"
+      },
+      {
+        "value": "A6004BDH",
+        "NOM": "NAPAS-NAPAS - Hà Nội - CN HÀ NỘI - 01401001"
+      },
+      {
+        "value": "A6004BDI",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - An Giang - CN AN GIANG - 89352001"
+      },
+      {
+        "value": "A6004BDJ",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77352001"
+      },
+      {
+        "value": "A6004BDK",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bắc Giang - CN BẮC GIANG - 24352001"
+      },
+      {
+        "value": "A6004BI9",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Cần Thơ - CN CẦN THƠ - 92333001"
+      },
+      {
+        "value": "A6004BIA",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hà Nội - CN CẦU GIẤY - 01333002"
+      },
+      {
+        "value": "A6004BIB",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN CHỢ LỚN - 79333004"
+      },
+      {
+        "value": "A6004BIC",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đắk Lắk - CN DAKLAK - 66333001"
+      },
+      {
+        "value": "A6004BID",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đồng Nai - CN ĐỒNG NAI - 75333001"
+      },
+      {
+        "value": "A6004BIE",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Đồng Tháp - CN ĐỒNG THÁP - 87333001"
+      },
+      {
+        "value": "A6004BIF",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN GIA ĐỊNH - 79333003"
+      },
+      {
+        "value": "A6004BIG",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hà Nội - CN HÀ NỘI - 01333001"
+      },
+      {
+        "value": "A6004BIH",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Thuận - CN PHAN THIẾT - 60355001"
+      },
+      {
+        "value": "A6004BII",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Ngãi - CN QUẢNG NGÃI - 51355001"
+      },
+      {
+        "value": "A6004BIJ",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Quảng Ninh - CN QUẢNG NINH - 22355001"
+      },
+      {
+        "value": "A6004BN0",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - CN HÀ NỘI - 01341001"
+      },
+      {
+        "value": "A6004BN1",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hải Dương - CN HẢI DƯƠNG - 30341001"
+      },
+      {
+        "value": "A6004BN2",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hải Phòng - CN HẢI PHÒNG - 31341001"
+      },
+      {
+        "value": "A6004BN3",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Khánh Hòa - CN KHÁNH HÒA - 56341001"
+      },
+      {
+        "value": "A6004BN4",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Long An - CN LONG AN - 80341001"
+      },
+      {
+        "value": "A6004BN5",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Quảng Ninh - CN QUẢNG NINH - 22341001"
+      },
+      {
+        "value": "A6004BN6",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hồ Chí Minh - CN SÀI GÒN - 79341001"
+      },
+      {
+        "value": "A6004BN7",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - CN THĂNG LONG - 01341002"
+      },
+      {
+        "value": "A6004BN8",
+        "NOM": "PGBANK-NGÂN HÀNG TMCP XĂNG DẦU PETROLIMEX - Hà Nội - HỘI SỞ CHÍNH - 01341003"
+      },
+      {
+        "value": "A6004BN9",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - An Giang - CN AN GIANG - 89360001"
+      },
+      {
+        "value": "A6004BNA",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77360001"
+      },
+      {
+        "value": "A6004B8Y",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN THANH XUÂN - 01302002"
+      },
+      {
+        "value": "A6004B8Z",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Tiền Giang - CN TIỀN GIANG - 82302001"
+      },
+      {
+        "value": "A6004B90",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN TP HẢI PHÒNG - 31302001"
+      },
+      {
+        "value": "A6004B91",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN TRỤ SỞ CHÍNH - 01302001"
+      },
+      {
+        "value": "A6004B92",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Vĩnh Phúc - CN VĨNH PHÚC - 26302001"
+      },
+      {
+        "value": "A6004B93",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77302001"
+      },
+      {
+        "value": "A6004B94",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN XÃ ĐÀN - 01302008"
+      },
+      {
+        "value": "A6004B95",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - PGD BÃI CHÁY - 22302001"
+      },
+      {
+        "value": "A6004B96",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Quảng Ninh - PGD CẨM PHẢ - 22302003"
+      },
+      {
+        "value": "A6004B97",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đà Nẵng - PGD HÒA KHÁNH - 48302002"
+      },
+      {
+        "value": "A6004B98",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - PGD NGÔ QUYỀN - 31302003"
+      },
+      {
+        "value": "A6004B99",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - SỞ GIAO DỊCH - 01302005"
+      },
+      {
+        "value": "A6004BDL",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bạc Liêu - CN BẠC LIÊU - 95352001"
+      },
+      {
+        "value": "A6004BDM",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bắc Ninh - CN BẮC NINH - 27352001"
+      },
+      {
+        "value": "A6004BDN",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Bình Dương - CN BÌNH DƯƠNG - 74352001"
+      },
+      {
+        "value": "A6004BDO",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Cà Mau - CN CÀ MAU - 96352001"
+      },
+      {
+        "value": "A6004BDP",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Cần Thơ - CN CẦN THƠ - 92352001"
+      },
+      {
+        "value": "A6004BDQ",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đà Nẵng - CN ĐÀ NẴNG - 48352001"
+      },
+      {
+        "value": "A6004BDR",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đồng Nai - CN ĐỒNG NAI - 75352001"
+      },
+      {
+        "value": "A6004BDS",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Đồng Tháp - CN ĐỒNG THÁP - 87352001"
+      },
+      {
+        "value": "A6004BDT",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hà Nội - CN HÀ NỘI - 01352001"
+      },
+      {
+        "value": "A6004BDU",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hải Phòng - CN HẢI PHÒNG - 31352001"
+      },
+      {
+        "value": "A6004BDV",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hậu Giang - CN HẬU GIANG - 93352001"
+      },
+      {
+        "value": "A6004BDW",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hưng Yên - CN HƯNG YÊN - 33352001"
+      },
+      {
+        "value": "A6004BIK",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Định - CN QUY NHƠN - 52355001"
+      },
+      {
+        "value": "A6004BIL",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79355007"
+      },
+      {
+        "value": "A6004BIM",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Hà Nội - HỘI SỞ CHÍNH - 01355002"
+      },
+      {
+        "value": "A6004BIN",
+        "NOM": "VIETABANK-NGÂN HÀNG TMCP VIỆT Á - Bình Dương - PGD BÌNH DƯƠNG - 74355001"
+      },
+      {
+        "value": "A6004BIO",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77356001"
+      },
+      {
+        "value": "A6004BIP",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Cần Thơ - CN CẦN THƠ - 92356001"
+      },
+      {
+        "value": "A6004BIQ",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN CHỢ LỚN - 79356002"
+      },
+      {
+        "value": "A6004BIR",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Đà Nẵng - CN ĐÀ NẴNG - 48356001"
+      },
+      {
+        "value": "A6004BIS",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hà Nội - CN HÀ NỘI - 01356001"
+      },
+      {
+        "value": "A6004BIT",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hải Phòng - CN HẢI PHÒNG - 31356001"
+      },
+      {
+        "value": "A6004BIU",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Khánh Hòa - CN KHÁNH HÒA - 56356001"
+      },
+      {
+        "value": "A6004BNB",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bắc Ninh - CN BẮC NINH - 27360001"
+      },
+      {
+        "value": "A6004BNC",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN BẾN THÀNH - 79360004"
+      },
+      {
+        "value": "A6004BND",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Bình Dương - CN BÌNH DƯƠNG - 74360001"
+      },
+      {
+        "value": "A6004BNE",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cà Mau - CN CÀ MAU - 96360001"
+      },
+      {
+        "value": "A6004BNF",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Cần Thơ - CN CẦN THƠ - 92360001"
+      },
+      {
+        "value": "A6004BNG",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Lâm Đồng - CN ĐÀ LẠT - 68360001"
+      },
+      {
+        "value": "A6004BNH",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đà Nẵng - CN ĐÀ NẴNG - 48360002"
+      },
+      {
+        "value": "A6004BNI",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN ĐỐNG ĐA - 01360006"
+      },
+      {
+        "value": "A6004BNJ",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN ĐÔNG ĐÔ - 01360005"
+      },
+      {
+        "value": "A6004BNK",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hồ Chí Minh - CN ĐỒNG KHỞI - 79360005"
+      },
+      {
+        "value": "A6004BNL",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đồng Nai - CN ĐỒNG NAI - 75360001"
+      },
+      {
+        "value": "A6004B9A",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN AN ĐÔNG - 79306004"
+      },
+      {
+        "value": "A6004B9B",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN BẾN THÀNH - 79306010"
+      },
+      {
+        "value": "A6004B9C",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bến Tre - CN BẾN TRE - 83306001"
+      },
+      {
+        "value": "A6004B9D",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Phước - CN BÌNH PHƯỚC - 70306001"
+      },
+      {
+        "value": "A6004B9E",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN BÌNH TÂY - 79306008"
+      },
+      {
+        "value": "A6004B9F",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Cần Thơ - CN CẦN THƠ - 92306001"
+      },
+      {
+        "value": "A6004B9G",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Bình Định - CN CẤP 1 QUY NHƠN - 52306001"
+      },
+      {
+        "value": "A6004B9H",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đà Nẵng - CN ĐÀ NẴNG - 48306001"
+      },
+      {
+        "value": "A6004B9I",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Đắk Lắk - CN DAK LAK - 66306001"
+      },
+      {
+        "value": "A6004B9K",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hà Nội - CN HÀ NỘI - 01306001"
+      },
+      {
+        "value": "A6004B9L",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN HÀM NGHI - 79306012"
+      },
+      {
+        "value": "A6004BDX",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Kiên Giang - CN KIÊN GIANG - 91352001"
+      },
+      {
+        "value": "A6004BDY",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Long An - CN LONG AN - 80352001"
+      },
+      {
+        "value": "A6004BDZ",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Quảng Ninh - CN QUẢNG NINH - 22352001"
+      },
+      {
+        "value": "A6004BE0",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hồ Chí Minh - CN SÀI GÒN - 79352001"
+      },
+      {
+        "value": "A6004BE1",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Bình - CN THÁI BÌNH - 34352002"
+      },
+      {
+        "value": "A6004BE2",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Nguyên - CN THÁI NGUYÊN - 19352001"
+      },
+      {
+        "value": "A6004BE3",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46352001"
+      },
+      {
+        "value": "A6004BE4",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Tiền Giang - CN TIỀN GIANG - 82352001"
+      },
+      {
+        "value": "A6004BE5",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Vĩnh Long - CN VĨNH LONG - 86352001"
+      },
+      {
+        "value": "A6004BE6",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Thái Bình - HẢI PHÒNG PGD SỐ 9 - 34352001"
+      },
+      {
+        "value": "A6004BE7",
+        "NOM": "NCB-NGÂN HÀNG TMCP QUỐC DÂN - Hà Nội - HỘI SỞ CHÍNH - 01352002"
+      },
+      {
+        "value": "A6004BIV",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Long An - CN LONG AN - 80356001"
+      },
+      {
+        "value": "A6004BIW",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Nghệ An - CN NGHỆ AN - 40356001"
+      },
+      {
+        "value": "A6004BIX",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Quảng Ngãi - CN QUẢNG NGÃI - 51356001"
+      },
+      {
+        "value": "A6004BIY",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN SÀI GÒN - 79356003"
+      },
+      {
+        "value": "A6004BIZ",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Hồ Chí Minh - CN TP HCM - 79356001"
+      },
+      {
+        "value": "A6004BJ0",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Sóc Trăng - HỘI SỞ CHÍNH - 94356001"
+      },
+      {
+        "value": "A6004BJ1",
+        "NOM": "VIETBANK-NGÂN HÀNG TMCP VIỆT NAM THƯƠNG TÍN - Sóc Trăng - PGD SÓC TRĂNG - 94356002"
+      },
+      {
+        "value": "A6004BJ2",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - An Giang - CN AN GIANG - 89203001"
+      },
+      {
+        "value": "A6004BJ3",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN BA ĐÌNH - 01203005"
+      },
+      {
+        "value": "A6004BJ4",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77203001"
+      },
+      {
+        "value": "A6004BJ5",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN BẮC BÌNH DƯƠNG - 74203004"
+      },
+      {
+        "value": "A6004BNM",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Đồng Tháp - CN ĐỒNG THÁP - 87360001"
+      },
+      {
+        "value": "A6004BNN",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HÀ NỘI - 01360001"
+      },
+      {
+        "value": "A6004BNO",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HAI BÀ TRƯNG - 01360004"
+      },
+      {
+        "value": "A6004BNP",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hải Phòng - CN HẢI PHÒNG - 31360001"
+      },
+      {
+        "value": "A6004BNQ",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hậu Giang - CN HẬU GIANG - 93360001"
+      },
+      {
+        "value": "A6004BNR",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Hà Nội - CN HSC - 01360002"
+      },
+      {
+        "value": "A6004BNS",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Thừa Thiên Huế - CN HUẾ - 46360001"
+      },
+      {
+        "value": "A6004BNT",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Khánh Hòa - CN KHÁNH HÒA - 56360001"
+      },
+      {
+        "value": "A6004BNU",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Kiên Giang - CN KIÊN GIANG - 91360001"
+      },
+      {
+        "value": "A6004BNV",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Long An - CN LONG AN - 80360001"
+      },
+      {
+        "value": "A6004BNW",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Nam Định - CN NAM ĐỊNH - 36360001"
+      },
+      {
+        "value": "A6004B9M",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN HỒ CHÍ MINH - 79306001"
+      },
+      {
+        "value": "A6004B9N",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Kiên Giang - CN KIÊN GIANG - 91306001"
+      },
+      {
+        "value": "A6004B9O",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Lâm Đồng - CN LÂM ĐỒNG - 68306001"
+      },
+      {
+        "value": "A6004B9P",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN NGẢ BẢY - 79306006"
+      },
+      {
+        "value": "A6004B9Q",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Khánh Hòa - CN NHA TRANG - 56306001"
+      },
+      {
+        "value": "A6004B9R",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Ninh Thuận - CN NINH THUẬN - 58306001"
+      },
+      {
+        "value": "A6004B9S",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Phú Thọ - CN PHÚ THỌ - 25306001"
+      },
+      {
+        "value": "A6004B9T",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN QUANG TRUNG - 79306007"
+      },
+      {
+        "value": "A6004B9U",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN TÂN ĐỊNH - 79306009"
+      },
+      {
+        "value": "A6004B9V",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Tây Ninh - CN TÂY NINH - 72306001"
+      },
+      {
+        "value": "A6004B9W",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN THỊ NGHÈ - 79306005"
+      },
+      {
+        "value": "A6004B9X",
+        "NOM": "NAMABANK-NGÂN HÀNG TMCP NAM Á - Hồ Chí Minh - CN TRƯỜNG CHINH - 79306003"
+      },
+      {
+        "value": "A6004BE8",
+        "NOM": "NGANHANGBUSAN-NGÂN HÀNG BUSAN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79660001"
+      },
+      {
+        "value": "A6004BE9",
+        "NOM": "NGANHANGHANGKOOKMIN-NGÂN HÀNG KOOKMIN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79631001"
+      },
+      {
+        "value": "A6004BEA",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - An Giang - CN AN GIANG - 89901001"
+      },
+      {
+        "value": "A6004BEB",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bắc Ninh - CN BẮC NINH - 27901001"
+      },
+      {
+        "value": "A6004BEC",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bình Định - CN BÌNH ĐỊNH - 52901001"
+      },
+      {
+        "value": "A6004BED",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Bình Thuận - CN BÌNH THUẬN - 60901001"
+      },
+      {
+        "value": "A6004BEE",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Đắk Lắk - CN DAKLAK - 66901001"
+      },
+      {
+        "value": "A6004BEF",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Đồng Nai - CN ĐỒNG NAI - 75901001"
+      },
+      {
+        "value": "A6004BEG",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nam - CN HÀ NAM - 35901001"
+      },
+      {
+        "value": "A6004BEH",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - CN HÀ TÂY - 01901002"
+      },
+      {
+        "value": "A6004BEI",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hà Nội - CN HAI BÀ TRƯNG - 01901004"
+      },
+      {
+        "value": "A6004BEJ",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hải Dương - CN HẢI DƯƠNG - 30901001"
+      },
+      {
+        "value": "A6004BJ6",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24203001"
+      },
+      {
+        "value": "A6004BJ7",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Tĩnh - CN BẮC HÀ TĨNH - 42203002"
+      },
+      {
+        "value": "A6004BJ8",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27203001"
+      },
+      {
+        "value": "A6004ARQ",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bình Định - CN BÌNH ĐỊNH - 52353001"
+      },
+      {
+        "value": "A6004BJ9",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79203006"
+      },
+      {
+        "value": "A6004BJA",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83203001"
+      },
+      {
+        "value": "A6004BJB",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75203002"
+      },
+      {
+        "value": "A6004BJC",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52203001"
+      },
+      {
+        "value": "A6004BJD",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74203001"
+      },
+      {
+        "value": "A6004BJE",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70203001"
+      },
+      {
+        "value": "A6004BJF",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂY - 79203002"
+      },
+      {
+        "value": "A6004BJG",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BÌNH THẠNH - 79203004"
+      },
+      {
+        "value": "A6004BNX",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Nghệ An - CN NGHỆ AN - 40360001"
+      },
+      {
+        "value": "A6004BNY",
+        "NOM": "PVCOMBANK-NGÂN HÀNG TMCP ĐẠI CHÚNG - Quảng Nam - CN QUẢNG NAM - 49360001"
+      },
+      {
+        "value": "A6004BNZ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58203001"
+      },
+      {
+        "value": "A6004BO0",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hưng Yên - CN PHỐ HIẾN - 33203002"
+      },
+      {
+        "value": "A6004BO1",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91203002"
+      },
+      {
+        "value": "A6004BO2",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25203001"
+      },
+      {
+        "value": "A6004BO3",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54203001"
+      },
+      {
+        "value": "A6004BO4",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44203001"
+      },
+      {
+        "value": "A6004BO5",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49203001"
+      },
+      {
+        "value": "A6004BO6",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51203001"
+      },
+      {
+        "value": "A6004BO7",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22203001"
+      },
+      {
+        "value": "A6004B9Y",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hải Dương - KV HẢI DƯƠNG-HƯNG YÊN - 30208001"
+      },
+      {
+        "value": "A6004B9Z",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Ninh Thuận - KV KHÁNH HÒA NINH THUẬN PGD NINH THUẬN - 58208001"
+      },
+      {
+        "value": "A6004BA0",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Khánh Hòa - KV KHÁNH HÒA-NINH THUẬN - 56208001"
+      },
+      {
+        "value": "A6004BA1",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nam - KV NAM ĐỊNH-HÀ NAM PGD HÀ NAM - 35208001"
+      },
+      {
+        "value": "A6004BA2",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Nam - KV QUẢNG NAM- ĐÀ NẴNG PGD QUẢNG NAM - 49208001"
+      },
+      {
+        "value": "A6004BA3",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bến Tre - KV SÔNG TIỀN - 83208001"
+      },
+      {
+        "value": "A6004BA4",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tiền Giang - KV SÔNG TIỀN PGD TIỀN GIANG - 82208001"
+      },
+      {
+        "value": "A6004BA5",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Trà Vinh - KV SÔNG TIỀN PGD TRÀ VINH - 84208001"
+      },
+      {
+        "value": "A6004BA6",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Trị - KV THỪA THIÊN HUẾ QUẢNG TRỊ PGD QUẢNG TRỊ - 45208001"
+      },
+      {
+        "value": "A6004BA7",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - SỞ GIAO DỊCH 1 - 01208002"
+      },
+      {
+        "value": "A6004BA8",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - SỞ GIAO DỊCH 2 - 79208002"
+      },
+      {
+        "value": "A6004BEK",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hải Phòng - CN HẢI PHÒNG - 31901001"
+      },
+      {
+        "value": "A6004BEL",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hồ Chí Minh - CN HỒ CHÍ MINH - 79901001"
+      },
+      {
+        "value": "A6004BEM",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Hưng Yên - CN HƯNG YÊN - 33901001"
+      },
+      {
+        "value": "A6004BEN",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Kiên Giang - CN KIÊN GIANG - 91901001"
+      },
+      {
+        "value": "A6004BEO",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Long An - CN LONG AN - 80901001"
+      },
+      {
+        "value": "A6004BEP",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Nam Định - CN NAM ĐỊNH - 36901001"
+      },
+      {
+        "value": "A6004BEQ",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Nghệ An - CN NGHỆ AN - 40901001"
+      },
+      {
+        "value": "A6004BER",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Ninh Bình - CN NINH BÌNH - 37901001"
+      },
+      {
+        "value": "A6004BES",
+        "NOM": "NGANHANGHOPTAC-NGÂN HÀNG HỢP TÁC - Phú Thọ - CN PHÚ THỌ - 25901001"
+      },
+      {
+        "value": "A6004BET",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ngãi - CN QUẢNG NGÃI - 51314001"
+      },
+      {
+        "value": "A6004BEU",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ninh - CN QUẢNG NINH - 22314001"
+      },
+      {
+        "value": "A6004BEV",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bình Định - CN QUY NHƠN - 52314001"
+      },
+      {
+        "value": "A6004BJH",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60203001"
+      },
+      {
+        "value": "A6004BJI",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96203001"
+      },
+      {
+        "value": "A6004BJJ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92203001"
+      },
+      {
+        "value": "A6004BJK",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89203002"
+      },
+      {
+        "value": "A6004BJL",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 01203007"
+      },
+      {
+        "value": "A6004BJM",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48203001"
+      },
+      {
+        "value": "A6004BJN",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN LONG AN - 80202001"
+      },
+      {
+        "value": "A6004BJO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN LONG AN PGD VỎ CÔNG TỒN - 80202800"
+      },
+      {
+        "value": "A6004BJP",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN LONG XUYÊN - 89202004"
+      },
+      {
+        "value": "A6004BJQ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN MINH HẢI - 95202002"
+      },
+      {
+        "value": "A6004BJR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN MỘC HÓA - 80202003"
+      },
+      {
+        "value": "A6004BO8",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45203001"
+      },
+      {
+        "value": "A6004BO9",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Định - CN QUY NHƠN - 52203002"
+      },
+      {
+        "value": "A6004BOA",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79203008"
+      },
+      {
+        "value": "A6004BOB",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI THÀNH - 79203007"
+      },
+      {
+        "value": "A6004BOC",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN SÓC SƠN - 01203012"
+      },
+      {
+        "value": "A6004BOD",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94203001"
+      },
+      {
+        "value": "A6004BOE",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bình Dương - CN SÓNG THẦN - 74203002"
+      },
+      {
+        "value": "A6004BOF",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79203010"
+      },
+      {
+        "value": "A6004BOG",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN ĐỊNH - 79203009"
+      },
+      {
+        "value": "A6004BOH",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Cần Thơ - CN TÂY CẦN THƠ - 92203002"
+      },
+      {
+        "value": "A6004BOI",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN TÂY HỒ - 01203011"
+      },
+      {
+        "value": "A6004BA9",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Long An - SỞ GIAO DICH II PGD LONG AN - 80208001"
+      },
+      {
+        "value": "A6004BAA",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tây Ninh - SỞ GIAO DỊCH II-PGD TÂY NINH - 72208001"
+      },
+      {
+        "value": "A6004BAB",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - An Giang - CN AN GIANG - 89314001"
+      },
+      {
+        "value": "A6004BAC",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN BA ĐÌNH - 01314005"
+      },
+      {
+        "value": "A6004BAD",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bình Dương - CN BÌNH DƯƠNG - 74314001"
+      },
+      {
+        "value": "A6004BAE",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN BÌNH THẠNH - 79314006"
+      },
+      {
+        "value": "A6004BAF",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Cà Mau - CN CÀ MAU - 96314001"
+      },
+      {
+        "value": "A6004BAG",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Quảng Ninh - CN CẨM PHẢ - 22314002"
+      },
+      {
+        "value": "A6004BAH",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Cần Thơ - CN CẦN THƠ - 92314001"
+      },
+      {
+        "value": "A6004BAI",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN CẦU GIẤY - 01314003"
+      },
+      {
+        "value": "A6004BAJ",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đà Nẵng - CN ĐÀ NẴNG - 48314001"
+      },
+      {
+        "value": "A6004BEW",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN SÀI GÒN - 79314002"
+      },
+      {
+        "value": "A6004BEX",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN TÂN BÌNH - 79314004"
+      },
+      {
+        "value": "A6004BEY",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Tây Ninh - CN TÂY NINH - 72314001"
+      },
+      {
+        "value": "A6004BEZ",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thái Bình - CN THÁI BÌNH - 34314001"
+      },
+      {
+        "value": "A6004BF0",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thái Nguyên - CN THÁI NGUYÊN - 19314001"
+      },
+      {
+        "value": "A6004BF1",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN THÀNH ĐÔ - 79314011"
+      },
+      {
+        "value": "A6004BF2",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thanh Hóa - CN THANH HÓA - 38314001"
+      },
+      {
+        "value": "A6004BF3",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN THANH XUÂN - 01314006"
+      },
+      {
+        "value": "A6004BF4",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN TÔN ĐỨC THẮNG - 79314012"
+      },
+      {
+        "value": "A6004BF5",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Phú Thọ - CN VIỆT TRÌ - 25314001"
+      },
+      {
+        "value": "A6004BF6",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Nghệ An - CN VINH - 40314001"
+      },
+      {
+        "value": "A6004BF7",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Vĩnh Phúc - CN VĨNH PHÚC - 26314001"
+      },
+      {
+        "value": "A6004BJS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22202003"
+      },
+      {
+        "value": "A6004BJT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN MÓNG CÁI PGD TRÀ CỔ - 22202803"
+      },
+      {
+        "value": "A6004BJU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN MỸ PHƯỚC - 74202003"
+      },
+      {
+        "value": "A6004BJV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tiền Giang - CN MỸ THO - 82202002"
+      },
+      {
+        "value": "A6004BJW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN NAM BÌNH DƯƠNG - 74202002"
+      },
+      {
+        "value": "A6004BJX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36202001"
+      },
+      {
+        "value": "A6004BJY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN NAM ĐỒNG NAI - 75202003"
+      },
+      {
+        "value": "A6004BJZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN NAM GIA LAI - 64202002"
+      },
+      {
+        "value": "A6004BK0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN NAM HÀ NỘI - 01202014"
+      },
+      {
+        "value": "A6004BK1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NAM KỲ KHỞI NGHĨA - 79202008"
+      },
+      {
+        "value": "A6004BOJ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Tây Ninh - CN TÂY NINH - 72203001"
+      },
+      {
+        "value": "A6004BOK",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79203015"
+      },
+      {
+        "value": "A6004BOL",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34203001"
+      },
+      {
+        "value": "A6004BOM",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19203001"
+      },
+      {
+        "value": "A6004BON",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THĂNG LONG - 01203004"
+      },
+      {
+        "value": "A6004BOO",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THÀNH CÔNG - 01203006"
+      },
+      {
+        "value": "A6004BOP",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38203001"
+      },
+      {
+        "value": "A6004BOQ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THANH TRÌ - 01203016"
+      },
+      {
+        "value": "A6004BOR",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - CN THANH XUÂN - 01203010"
+      },
+      {
+        "value": "A6004BOS",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79203005"
+      },
+      {
+        "value": "A6004BOT",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79203016"
+      },
+      {
+        "value": "A6004BAK",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đắk Lắk - CN DAK LAK - 66314001"
+      },
+      {
+        "value": "A6004BAL",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN ĐỐNG ĐA - 01314004"
+      },
+      {
+        "value": "A6004BAM",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đồng Nai - CN ĐỒNG NAI - 75314001"
+      },
+      {
+        "value": "A6004BAN",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đồng Tháp - CN ĐỒNG THÁP - 87314001"
+      },
+      {
+        "value": "A6004BAO",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56202002"
+      },
+      {
+        "value": "A6004BAP",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37202001"
+      },
+      {
+        "value": "A6004BAQ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58202001"
+      },
+      {
+        "value": "A6004BAR",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Thuận - CN NINH THUẬN PGD PHAN RANG - 58202800"
+      },
+      {
+        "value": "A6004BAS",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Gia Lai - CN PHỐ NÚI - 64202003"
+      },
+      {
+        "value": "A6004BAT",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN - 40202002"
+      },
+      {
+        "value": "A6004BAU",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN PGD ĐÔ LƯƠNG - 40202802"
+      },
+      {
+        "value": "A6004BF8",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77314001"
+      },
+      {
+        "value": "A6004BF9",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hà Nội - CN  HÀ NỘI - 01327001"
+      },
+      {
+        "value": "A6004BFA",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - An Giang - CN AN GIANG - 89327001"
+      },
+      {
+        "value": "A6004BFB",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74327001"
+      },
+      {
+        "value": "A6004BFC",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đắk Lắk - CN BUÔN MA THUỘT - 66327001"
+      },
+      {
+        "value": "A6004BFD",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Cà Mau - CN CÀ MAU - 96327001"
+      },
+      {
+        "value": "A6004BFE",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Cần Thơ - CN CẦN THƠ - 92327001"
+      },
+      {
+        "value": "A6004BFF",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48327001"
+      },
+      {
+        "value": "A6004BFG",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Đồng Nai - CN ĐỒNG NAI - 75327001"
+      },
+      {
+        "value": "A6004BFH",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN GIA ĐỊNH - 79327003"
+      },
+      {
+        "value": "A6004BFI",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hải Phòng - CN HẢI PHÒNG - 31327001"
+      },
+      {
+        "value": "A6004BK2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79202009"
+      },
+      {
+        "value": "A6004BK3",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN NAM THÁI NGUYÊN - 19202002"
+      },
+      {
+        "value": "A6004BK4",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN NGHỆ AN - 40202001"
+      },
+      {
+        "value": "A6004B1W",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hưng Yên - CN HƯNG YÊN - 33313001"
+      },
+      {
+        "value": "A6004BK5",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN NGỌC KHÁNH - 01202034"
+      },
+      {
+        "value": "A6004BK6",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN NHÀ BÈ - 79202024"
+      },
+      {
+        "value": "A6004BK7",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79201019"
+      },
+      {
+        "value": "A6004BK8",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BẮC THĂNG LONG - 01201020"
+      },
+      {
+        "value": "A6004BK9",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN BÃI CHÁY - 22201003"
+      },
+      {
+        "value": "A6004BKA",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lâm Đồng - CN BAO LOC - 68201003"
+      },
+      {
+        "value": "A6004BKB",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Long An - CN BẾN LỨC - 80201002"
+      },
+      {
+        "value": "A6004BKC",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN BẾN THUỶ - 40201002"
+      },
+      {
+        "value": "A6004BOU",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82203001"
+      },
+      {
+        "value": "A6004BOV",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TP HCM - 79203001"
+      },
+      {
+        "value": "A6004BOW",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84203001"
+      },
+      {
+        "value": "A6004BOX",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Nghệ An - CN VINH - 40203002"
+      },
+      {
+        "value": "A6004BOY",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86203001"
+      },
+      {
+        "value": "A6004BOZ",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26203001"
+      },
+      {
+        "value": "A6004BP0",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Bạc Liêu - PGD BẠC LIÊU - 95203001"
+      },
+      {
+        "value": "A6004BP1",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - SỞ GIAO DỊCH - 01203002"
+      },
+      {
+        "value": "A6004BP2",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hồ Chí Minh - VPDD KHU VỰC PHÍA NAM - 79203018"
+      },
+      {
+        "value": "A6004BP3",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN SÔNG HÀN - 48202003"
+      },
+      {
+        "value": "A6004BP4",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÔNG HẬU - 94202002"
+      },
+      {
+        "value": "A6004BAV",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ DIỄN PGD HOÀNG MAI - 40202803"
+      },
+      {
+        "value": "A6004BAW",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN PHÚ MỸ - 77202003"
+      },
+      {
+        "value": "A6004BAX",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79202018"
+      },
+      {
+        "value": "A6004BAY",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79202010"
+      },
+      {
+        "value": "A6004BAZ",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91202002"
+      },
+      {
+        "value": "A6004BB0",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN PHÚ QUỐC PGD NGUYỄN VĂN CỪ - 91202802"
+      },
+      {
+        "value": "A6004BB1",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHỦ QUỲ - 40202004"
+      },
+      {
+        "value": "A6004BB2",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN PHÚ QUÝ PGD QÚY HỢP - 40202801"
+      },
+      {
+        "value": "A6004BB3",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hải Phòng - CN HẢI PHÒNG - 31333001"
+      },
+      {
+        "value": "A6004BB4",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79333001"
+      },
+      {
+        "value": "A6004BB5",
+        "NOM": "OCB-NGÂN HÀNG TMCP PHƯƠNG ĐÔNG - Hậu Giang - CN HÒA AN - 93333001"
+      },
+      {
+        "value": "A6004BFJ",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79327001"
+      },
+      {
+        "value": "A6004BFK",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Kiên Giang - CN KIÊN GIANG - 91327001"
+      },
+      {
+        "value": "A6004BFL",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Long An - CN LONG AN - 80327001"
+      },
+      {
+        "value": "A6004BFM",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Khánh Hòa - CN NHA TRANG - 56327001"
+      },
+      {
+        "value": "A6004BFN",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bình Thuận - CN PHAN THIẾT - 60327001"
+      },
+      {
+        "value": "A6004BFO",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Quảng Ninh - CN QUẢNG NINH - 22327001"
+      },
+      {
+        "value": "A6004BFP",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN SÀI GÒN - 79327002"
+      },
+      {
+        "value": "A6004BFQ",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Tây Ninh - CN TÂY NINH - 72327001"
+      },
+      {
+        "value": "A6004BFR",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Tiền Giang - CN TIỀN GIANG - 82327001"
+      },
+      {
+        "value": "A6004BFS",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79327004"
+      },
+      {
+        "value": "A6004BFT",
+        "NOM": "VIET CAPITAL BANK-NGÂN HÀNG TMCP BẢN VIỆT - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77327001"
+      },
+      {
+        "value": "A6004BKD",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bến Tre - CN BẾN TRE - 83201001"
+      },
+      {
+        "value": "A6004BKE",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN BỈM SƠN - 38201002"
+      },
+      {
+        "value": "A6004BKF",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52201001"
+      },
+      {
+        "value": "A6004BKG",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74201001"
+      },
+      {
+        "value": "A6004BKH",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70201001"
+      },
+      {
+        "value": "A6004BKI",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60201001"
+      },
+      {
+        "value": "A6004BKJ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN BÌNH XUYÊN - 26201003"
+      },
+      {
+        "value": "A6004BKK",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96201001"
+      },
+      {
+        "value": "A6004BKL",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN CẨM PHẢ - 22201002"
+      },
+      {
+        "value": "A6004BKM",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92201001"
+      },
+      {
+        "value": "A6004BKN",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cao Bằng - CN CAO BẰNG - 04201001"
+      },
+      {
+        "value": "A6004BP5",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN TAM ĐIỆP - 37202002"
+      },
+      {
+        "value": "A6004BP6",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Long An - CN TÂN AN - 80202002"
+      },
+      {
+        "value": "A6004BP7",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79202015"
+      },
+      {
+        "value": "A6004BP8",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92202003"
+      },
+      {
+        "value": "A6004BP9",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TÂY HÀ NỘI - 01202020"
+      },
+      {
+        "value": "A6004BPA",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN TÂY HỒ - 01202016"
+      },
+      {
+        "value": "A6004BPB",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hậu Giang - CN TÂY NAM - 93202002"
+      },
+      {
+        "value": "A6004BPC",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN TÂY NAM - 92202002"
+      },
+      {
+        "value": "A6004BPD",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN TÂY NAM QUẢNG NINH - 22202002"
+      },
+      {
+        "value": "A6004BPE",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Tây Ninh - CN TÂY NINH - 72202001"
+      },
+      {
+        "value": "A6004BPF",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79202004"
+      },
+      {
+        "value": "A6004AWP",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ - PHÒNG GIAO DỊCH TRUNG HÒA - 01616005"
+      },
+      {
+        "value": "A6004AWQ",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79616006"
+      },
+      {
+        "value": "A6004AWR",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH PHẠM NGỌC THẠCH - 79616010"
+      },
+      {
+        "value": "A6004AWS",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH TÂN BÌNH - 79616008"
+      },
+      {
+        "value": "A6004AWT",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH TẢN ĐÀ - 79616007"
+      },
+      {
+        "value": "A6004AWU",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bình Dương - CN SONG THAN - 74616002"
+      },
+      {
+        "value": "A6004AWV",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19616001"
+      },
+      {
+        "value": "A6004AWW",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79616002"
+      },
+      {
+        "value": "A6004AWX",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN TRẦN DUY HƯNG - 01616001"
+      },
+      {
+        "value": "A6004AWY",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26616001"
+      },
+      {
+        "value": "A6004AWZ",
+        "NOM": "SINOPAC-NGÂN HÀNG SINOPAC - Hồ Chí Minh - CN TP HCM - 79632001"
+      },
+      {
+        "value": "A6004B1J",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Bình Dương - CN BÌNH DƯƠNG - 74313001"
+      },
+      {
+        "value": "A6004B1K",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Cần Thơ - CN CẦN THƠ - 92313001"
+      },
+      {
+        "value": "A6004B1L",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN CẦU GIẤY - 01313006"
+      },
+      {
+        "value": "A6004B1M",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Lâm Đồng - CN ĐÀ LẠT - 68313001"
+      },
+      {
+        "value": "A6004B1N",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Đà Nẵng - CN ĐÀ NẴNG - 48313001"
+      },
+      {
+        "value": "A6004B1O",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN ĐÔNG ANH - 01313009"
+      },
+      {
+        "value": "A6004B1P",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN GIA LÂM - 01313008"
+      },
+      {
+        "value": "A6004B1Q",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nam - CN HÀ NAM - 35313001"
+      },
+      {
+        "value": "A6004B1R",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀ NỘI - 01313001"
+      },
+      {
+        "value": "A6004B1S",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀ THÀNH - 01313004"
+      },
+      {
+        "value": "A6004B1T",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Tĩnh - CN HÀ TĨNH - 42313001"
+      },
+      {
+        "value": "A6004B1U",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hải Phòng - CN HẢI PHÒNG - 31313001"
+      },
+      {
+        "value": "A6004B6J",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68208001"
+      },
+      {
+        "value": "A6004B6K",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20208001"
+      },
+      {
+        "value": "A6004B6L",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lào Cai - CN LÀO CAI - 10208001"
+      },
+      {
+        "value": "A6004B6M",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Nghệ An - CN NGHỆ AN - 40208001"
+      },
+      {
+        "value": "A6004B6N",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37208001"
+      },
+      {
+        "value": "A6004B6O",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25208001"
+      },
+      {
+        "value": "A6004B6P",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54208001"
+      },
+      {
+        "value": "A6004B6Q",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44208001"
+      },
+      {
+        "value": "A6004B6R",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51208001"
+      },
+      {
+        "value": "A6004B6S",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22208001"
+      },
+      {
+        "value": "A6004B6T",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN SỞ GIAO DỊCH 1 PGD BẮC NINH - 27208001"
+      },
+      {
+        "value": "A6004ARR",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bình Dương - CN BÌNH DƯƠNG - 74353001"
+      },
+      {
+        "value": "A6004ARS",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Cà Mau - CN CÀ MAU - 96353001"
+      },
+      {
+        "value": "A6004ART",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Cần Thơ - CN CẦN THƠ - 92353001"
+      },
+      {
+        "value": "A6004ARU",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đà Nẵng - CN ĐÀ NẴNG - 48353001"
+      },
+      {
+        "value": "A6004ARV",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đắk Lắk - CN DAKLAK - 66353001"
+      },
+      {
+        "value": "A6004ARW",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đồng Nai - CN ĐỒNG NAI - 75353001"
+      },
+      {
+        "value": "A6004ARX",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Đồng Tháp - CN ĐỒNG THÁP - 87353001"
+      },
+      {
+        "value": "A6004ARY",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hà Nội - CN HÀ NỘI - 01353001"
+      },
+      {
+        "value": "A6004ARZ",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hải Phòng - CN HẢI PHÒNG - 31353001"
+      },
+      {
+        "value": "A6004AS0",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hậu Giang - CN HẬU GIANG - 93353001"
+      },
+      {
+        "value": "A6004AS1",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Khánh Hòa - CN KHÁNH HÒA - 56353001"
+      },
+      {
+        "value": "A6004AX0",
+        "NOM": "SMBCORPORATION-SMB CORPORATION - Hà Nội - CN HÀ NỘI - 01636001"
+      },
+      {
+        "value": "A6004AX1",
+        "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - CN HÀ NỘI - 01604001"
+      },
+      {
+        "value": "A6004AX2",
+        "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - CN LÊ ĐẠI HÀNH - 01604003"
+      },
+      {
+        "value": "A6004AX3",
+        "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hồ Chí Minh - CN TP HCM - 79604001"
+      },
+      {
+        "value": "A6004AX4",
+        "NOM": "STANDARDCHARTEREDVIETNAM-NGÂN HÀNG TNHH STANDARD CHATERED VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 01604002"
+      },
+      {
+        "value": "A6004AX5",
+        "NOM": "SUMITOMOMITSUIBANKINGCORPORATE-SUMITOMO MITSUI BANKING CORPORATE - Hồ Chí Minh - TP HỒ CHÍ MINH - 79636001"
+      },
+      {
+        "value": "A6004AX6",
+        "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Bình Dương - CN BÌNH DƯƠNG - 74655001"
+      },
+      {
+        "value": "A6004AX7",
+        "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN BÌNH THẠNH - 79642001"
+      },
+      {
+        "value": "A6004AX8",
+        "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hà Nội - CN HÀ NỘI - 01642001"
+      },
+      {
+        "value": "A6004AX9",
+        "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN PHỤ TP HỒ CHÍ MINH - 79642002"
+      },
+      {
+        "value": "A6004AXA",
+        "NOM": "TAIPEIFUBON-NGÂN HÀNG TM TAIPEI FUBON - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79651001"
+      },
+      {
+        "value": "A6004B1V",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN HÀNG ĐẬU - 01313003"
+      },
+      {
+        "value": "A6004B1X",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Kiên Giang - CN KIÊN GIANG - 91313001"
+      },
+      {
+        "value": "A6004B1Y",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN KIM LIÊN - 01313007"
+      },
+      {
+        "value": "A6004B1Z",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Nghệ An - CN NGHỆ AN - 40313001"
+      },
+      {
+        "value": "A6004B20",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Ninh Bình - CN NINH BÌNH - 37313001"
+      },
+      {
+        "value": "A6004B21",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hồ Chí Minh - CN PHAN ĐĂNG LƯU - 79313002"
+      },
+      {
+        "value": "A6004B22",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN GÒ VẤP - 79314007"
+      },
+      {
+        "value": "A6004B23",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HÀ ĐÔNG - 01314010"
+      },
+      {
+        "value": "A6004B24",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HÀ NỘI - 01314002"
+      },
+      {
+        "value": "A6004B25",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HAI BÀ TRƯNG - 01314009"
+      },
+      {
+        "value": "A6004B26",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Đà Nẵng - CN HẢI CHÂU - 48314002"
+      },
+      {
+        "value": "A6004B6U",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hoà Bình - CN SỞ GIAO DỊCH 1 PGD HÒA BÌNH - 17208001"
+      },
+      {
+        "value": "A6004B6V",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Vĩnh Phúc - CN SỞ GIAO DỊCH 1 PGD VĨNH PHÚC - 26208001"
+      },
+      {
+        "value": "A6004B6W",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94208001"
+      },
+      {
+        "value": "A6004B6X",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Sơn La - CN SƠN LA - 14208001"
+      },
+      {
+        "value": "A6004B6Y",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34208001"
+      },
+      {
+        "value": "A6004B6Z",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19208001"
+      },
+      {
+        "value": "A6004B70",
+        "NOM": "OCEANBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV ĐẠI DƯƠNG - Đà Nẵng - CN ĐÀ NẴNG - 48319001"
+      },
+      {
+        "value": "A6004B71",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38208001"
+      },
+      {
+        "value": "A6004B72",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN TPHCM - 79208001"
+      },
+      {
+        "value": "A6004B73",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 08208001"
+      },
+      {
+        "value": "A6004B74",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Yên Bái - CN YÊN BÁI - 15208001"
+      },
+      {
+        "value": "A6004AS2",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Long An - CN LONG AN - 80353001"
+      },
+      {
+        "value": "A6004AS3",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hồ Chí Minh - CN NHÀ BÈ - 79353002"
+      },
+      {
+        "value": "A6004AS4",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - CN PHÚ QUỐC - 91353004"
+      },
+      {
+        "value": "A6004AS5",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Phú Yên - CN PHÚ YÊN - 54353001"
+      },
+      {
+        "value": "A6004AS6",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - CN RẠCH GÍA - 91353003"
+      },
+      {
+        "value": "A6004AS7",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Hồ Chí Minh - CN SÀI GÒN - 79353001"
+      },
+      {
+        "value": "A6004AS8",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Sóc Trăng - CN SÓC TRĂNG - 94353001"
+      },
+      {
+        "value": "A6004AS9",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Quảng Bình - CN QUẢNG BÌNH - 44313001"
+      },
+      {
+        "value": "A6004ASA",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Quảng Ninh - CN QUẢNG NINH - 22313001"
+      },
+      {
+        "value": "A6004ASB",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN THÁI HÀ - 01313002"
+      },
+      {
+        "value": "A6004ASC",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thái Nguyên - CN THÁI NGUYÊN - 19313001"
+      },
+      {
+        "value": "A6004ASD",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hà Nội - CN THĂNG LONG - 01313005"
+      },
+      {
+        "value": "A6004AXB",
+        "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN HỒ CHÍ MINH - 79310001"
+      },
+      {
+        "value": "A6004AXC",
+        "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN PHÚ NHUẬN - 79310009"
+      },
+      {
+        "value": "A6004AXD",
+        "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN QUẬN 5 - 79310008"
+      },
+      {
+        "value": "A6004AXE",
+        "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79310010"
+      },
+      {
+        "value": "A6004AXF",
+        "NOM": "TECHCOMBANK-NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 01310001"
+      },
+      {
+        "value": "A6004AXG",
+        "NOM": "THESHANGHAICOMMERCIALVASAVINGS-NGÂN HÀNG THE SHANGHAI COMMERCIAL VÀ SAVINGS - Đồng Nai - CN ĐỒNG NAI - 75606001"
+      },
+      {
+        "value": "A6004AXH",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - An Giang - CN AN GIANG - 89358001"
+      },
+      {
+        "value": "A6004AXI",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN BẾN THÀNH - 79358003"
+      },
+      {
+        "value": "A6004AXJ",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN BÌNH CHÁNH - 79358007"
+      },
+      {
+        "value": "A6004AXK",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Bình Dương - CN BÌNH DƯƠNG - 74358001"
+      },
+      {
+        "value": "A6004AXL",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Cần Thơ - CN CẦN THƠ - 92358001"
+      },
+      {
+        "value": "A6004B27",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Dương - CN HẢI DƯƠNG - 30314001"
+      },
+      {
+        "value": "A6004B28",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Phòng - CN HẢI PHÒNG - 31314001"
+      },
+      {
+        "value": "A6004B29",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN HỒ CHÍ MINH - 79314001"
+      },
+      {
+        "value": "A6004B2A",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HOÀN KIẾM - 01314007"
+      },
+      {
+        "value": "A6004B2B",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hải Phòng - CN HỒNG BÀNG - 31314002"
+      },
+      {
+        "value": "A6004B2C",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN HSC - 01314001"
+      },
+      {
+        "value": "A6004B2D",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Thừa Thiên Huế - CN HUẾ - 46314001"
+      },
+      {
+        "value": "A6004B2E",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Kiên Giang - CN KIÊN GIANG - 91314001"
+      },
+      {
+        "value": "A6004B2F",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Lâm Đồng - CN LÂM ĐỒNG - 68314001"
+      },
+      {
+        "value": "A6004B2G",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hà Nội - CN LONG BIÊN - 01314008"
+      },
+      {
+        "value": "A6004B2H",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Khánh Hòa - CN NHA TRANG - 56314019"
+      },
+      {
+        "value": "A6004B2I",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Khánh Hòa - CN NHA TRANG - 56314001"
+      },
+      {
+        "value": "A6004B75",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - HỘI SỞ CHÍNH - 01208001"
+      },
+      {
+        "value": "A6004B76",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Kạn - KHU VỰC BẮC KẠN-THÁI NGUYÊN-PGD BẮC KẠN - 06208001"
+      },
+      {
+        "value": "A6004B77",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cần Thơ - KHU VỰC CẦN THƠ - 92208001"
+      },
+      {
+        "value": "A6004B78",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Nội - CN HÀ TÂY - 01208003"
+      },
+      {
+        "value": "A6004B79",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đồng Tháp - KHU VỰC ĐỒNG THÁP -AN GIANG PGD ĐỒNG THÁP - 87208001"
+      },
+      {
+        "value": "A6004B7A",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - An Giang - KHU VỰC ĐỒNG THÁP-AN GIANG - 89208001"
+      },
+      {
+        "value": "A6004B7B",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bạc Liêu - KHU VỰC MINH HẢI PGD BẠC LIÊU - 95208001"
+      },
+      {
+        "value": "A6004B7C",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Nam Định - KHU VỰC NAM ĐỊNH-HÀ NAM - 36208001"
+      },
+      {
+        "value": "A6004B7D",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Dương - KV BÌNH DƯƠNG-BÌNH PHƯỚC - 74208001"
+      },
+      {
+        "value": "A6004B7E",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Phước - KV BÌNH DƯƠNG-BÌNH PHƯỚC PGD BÌNH PHƯỚC - 70208001"
+      },
+      {
+        "value": "A6004B7F",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Vĩnh Long - KV CẦN THƠ PGD VĨNH LONG - 86208001"
+      },
+      {
+        "value": "A6004ASE",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thanh Hóa - CN THANH HÓA - 38313001"
+      },
+      {
+        "value": "A6004ASF",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46313001"
+      },
+      {
+        "value": "A6004ASG",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79313001"
+      },
+      {
+        "value": "A6004ASH",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Vĩnh Phúc - CN VĨNH PHÚC - 26313001"
+      },
+      {
+        "value": "A6004ASI",
+        "NOM": "BANGKOKBANK-BANGKOK BANK - Hà Nội - CN HÀ NỘI - 01612001"
+      },
+      {
+        "value": "A6004ASJ",
+        "NOM": "BANGKOKBANK-BANGKOK BANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79612001"
+      },
+      {
+        "value": "A6004ASK",
+        "NOM": "BANKOFCHINA-BANK OF CHINA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79620001"
+      },
+      {
+        "value": "A6004ASL",
+        "NOM": "BANKOFCOMMUNICATIONS-BANK OF COMMUNICATIONS - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79615001"
+      },
+      {
+        "value": "A6004ASM",
+        "NOM": "BANKOFINDIA-BANK OF INDIA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79659001"
+      },
+      {
+        "value": "A6004ASN",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bắc Ninh - CN BẮC NINH - 27359001"
+      },
+      {
+        "value": "A6004ASO",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bình Định - CN BÌNH ĐỊNH - 52359001"
+      },
+      {
+        "value": "A6004AXM",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN CỬU LONG - 79358005"
+      },
+      {
+        "value": "A6004AXN",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đà Nẵng - CN ĐÀ NẴNG - 48358001"
+      },
+      {
+        "value": "A6004AXO",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đắk Lắk - CN DAK LAK - 66358001"
+      },
+      {
+        "value": "A6004AXP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN VĨNH THẠNH - 52204012"
+      },
+      {
+        "value": "A6004AXQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN VĨNH THỌ - 56204003"
+      },
+      {
+        "value": "A6004AXR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN VĨNH THUẬN - 91204012"
+      },
+      {
+        "value": "A6004AXS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN VINH YÊN - 26204010"
+      },
+      {
+        "value": "A6004AXT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN VOI - 42204006"
+      },
+      {
+        "value": "A6004AXU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN VP MIỀN TRUNG - 48204890"
+      },
+      {
+        "value": "A6004AXV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN VỤ BẢN - 36204003"
+      },
+      {
+        "value": "A6004AXW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN VŨ THƯ - 34204004"
+      },
+      {
+        "value": "A6004B2J",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN PHÚ NHUẬN - 79314005"
+      },
+      {
+        "value": "A6004B2K",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 10 - 79314009"
+      },
+      {
+        "value": "A6004B2L",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 11 - 79314010"
+      },
+      {
+        "value": "A6004B2M",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 2 - 79314003"
+      },
+      {
+        "value": "A6004B2N",
+        "NOM": "VIB-NGÂN HÀNG TMCP QUỐC TẾ - Hồ Chí Minh - CN QUẬN 5 - 79314008"
+      },
+      {
+        "value": "A6004B2O",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐẠI LA - 01202030"
+      },
+      {
+        "value": "A6004B2P",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Nông - CN ĐAK NÔNG - 67202001"
+      },
+      {
+        "value": "A6004B2Q",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN DAKLAK - 66202001"
+      },
+      {
+        "value": "A6004B2R",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN DAKLAK PGD BUÔN MÊ THUỘT - 66202800"
+      },
+      {
+        "value": "A6004B2S",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cà Mau - CN ĐẤT MŨI - 96202002"
+      },
+      {
+        "value": "A6004B2T",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN DĨ AN BÌNH DƯƠNG - 74202005"
+      },
+      {
+        "value": "A6004B7G",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hưng Yên - KV HẢI DƯƠNG HƯNG YÊN PGD HƯNG YÊN - 33208001"
+      },
+      {
+        "value": "A6004B7H",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Bình - CN BẮC QUẢNG BÌNH - 44202002"
+      },
+      {
+        "value": "A6004B7I",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Giang - CN BẮC QUANG HÀ GIANG - 02202800"
+      },
+      {
+        "value": "A6004B7J",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẮC SÀI GÒN - 79202005"
+      },
+      {
+        "value": "A6004B7K",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN BAN MÊ - 66202004"
+      },
+      {
+        "value": "A6004B7L",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lâm Đồng - CN BẢO LỘC - 68202002"
+      },
+      {
+        "value": "A6004B7M",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẾN NGHÉ - 79202013"
+      },
+      {
+        "value": "A6004B7N",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BẾN THÀNH - 79202012"
+      },
+      {
+        "value": "A6004B7O",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bến Tre - CN BẾN TRE - 83202001"
+      },
+      {
+        "value": "A6004B7P",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75202004"
+      },
+      {
+        "value": "A6004ASP",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74359001"
+      },
+      {
+        "value": "A6004ASQ",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Cần Thơ - CN CẦN THƠ - 92359001"
+      },
+      {
+        "value": "A6004ASR",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - CN CẦU GIẤY - 01359004"
+      },
+      {
+        "value": "A6004ASS",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48359001"
+      },
+      {
+        "value": "A6004AST",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79311004"
+      },
+      {
+        "value": "A6004ASU",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Tháp - CN ĐỒNG THÁP - 87311001"
+      },
+      {
+        "value": "A6004ASV",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN GIA ĐỊNH - 79311006"
+      },
+      {
+        "value": "A6004ASW",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Gia Lai - CN GIA LAI - 64311001"
+      },
+      {
+        "value": "A6004ASX",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nam - CN HÀ NAM - 35311001"
+      },
+      {
+        "value": "A6004ASY",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HÀ NỘI - 01311001"
+      },
+      {
+        "value": "A6004ASZ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Tĩnh - CN HÀ TĨNH - 42311001"
+      },
+      {
+        "value": "A6004AT0",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HAI BÀ TRƯNG - 01311007"
+      },
+      {
+        "value": "A6004AXX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN VŨNG LIÊM - 86204005"
+      },
+      {
+        "value": "A6004AXY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN XÍN MẦN - 02204010"
+      },
+      {
+        "value": "A6004AXZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN XUÂN MAI - 01204048"
+      },
+      {
+        "value": "A6004AY0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN XUÂN TRƯỜNG - 36204011"
+      },
+      {
+        "value": "A6004AY1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN XƯƠNG GIANG BẮC GIANG II - 24204003"
+      },
+      {
+        "value": "A6004AY2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN XUYÊN Á - 79204044"
+      },
+      {
+        "value": "A6004AY3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN Ý YÊN - 36204005"
+      },
+      {
+        "value": "A6004AY4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN YÊN BÁI - 15204001"
+      },
+      {
+        "value": "A6004AY5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN YÊN BÌNH - 15204005"
+      },
+      {
+        "value": "A6004AY6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN YÊN CHÂU - 14204010"
+      },
+      {
+        "value": "A6004B2U",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11202001"
+      },
+      {
+        "value": "A6004B2V",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 01202025"
+      },
+      {
+        "value": "A6004B2W",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN ĐÔNG DAKLAK - 66202003"
+      },
+      {
+        "value": "A6004B2X",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lạng Sơn - CN ĐỒNG ĐĂNG - 20202002"
+      },
+      {
+        "value": "A6004B2Y",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐÔNG ĐÔ - 01202007"
+      },
+      {
+        "value": "A6004B2Z",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐÔNG ĐỒNG NAI - 75202002"
+      },
+      {
+        "value": "A6004B30",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN ĐÔNG HÀ NỘI - 01202008"
+      },
+      {
+        "value": "A6004B31",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN ĐÔNG HẢI PHÒNG - 31202002"
+      },
+      {
+        "value": "A6004B32",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bến Tre - CN ĐỒNG KHỞI - 83202002"
+      },
+      {
+        "value": "A6004B33",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75202001"
+      },
+      {
+        "value": "A6004B7Q",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Thanh Hóa - CN BỈM SƠN - 38202002"
+      },
+      {
+        "value": "A6004B7R",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH CHÁNH - 79202017"
+      },
+      {
+        "value": "A6004B7S",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH ĐIỀN SÀI GÒN - 79202030"
+      },
+      {
+        "value": "A6004B7T",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52202001"
+      },
+      {
+        "value": "A6004B7U",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74202001"
+      },
+      {
+        "value": "A6004B7V",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH HƯNG - 79202027"
+      },
+      {
+        "value": "A6004B7W",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70202001"
+      },
+      {
+        "value": "A6004B7X",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂN - 79202032"
+      },
+      {
+        "value": "A6004B7Y",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂY SG - 79202034"
+      },
+      {
+        "value": "A6004B7Z",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÌNH THẠNH - 79202035"
+      },
+      {
+        "value": "A6004AT1",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Dương - CN HẢI DƯƠNG - 30311001"
+      },
+      {
+        "value": "A6004AT2",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN HẢI PHÒNG - 31311001"
+      },
+      {
+        "value": "A6004AT3",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN HỒ CHÍ MINH - 79311001"
+      },
+      {
+        "value": "A6004AT4",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hoà Bình - CN HÒA BÌNH - 17311001"
+      },
+      {
+        "value": "A6004AT5",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HOÀN KIẾM - 01311013"
+      },
+      {
+        "value": "A6004AT6",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN HOÀNG QUỐC VIỆT - 01311009"
+      },
+      {
+        "value": "A6004AT7",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN HÓC MÔN - 79311022"
+      },
+      {
+        "value": "A6004AT8",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thừa Thiên Huế - CN HUẾ - 46311001"
+      },
+      {
+        "value": "A6004AT9",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hưng Yên - CN HƯNG YÊN - 33311001"
+      },
+      {
+        "value": "A6004ATA",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Khánh Hòa - CN KHÁNH HÒA - 56311001"
+      },
+      {
+        "value": "A6004ATB",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Kiên Giang - CN KIÊN GIANG - 91311001"
+      },
+      {
+        "value": "A6004AY7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN YÊN ĐỊNH - 38204005"
+      },
+      {
+        "value": "A6004AY8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN YÊN ĐỖ - 64204019"
+      },
+      {
+        "value": "A6004AY9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN YÊN DŨNG BẮC GIANG - 24204009"
+      },
+      {
+        "value": "A6004AYA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN YÊN LẬP - 25204012"
+      },
+      {
+        "value": "A6004AYB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN YÊN MINH - 02204004"
+      },
+      {
+        "value": "A6004AYC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN YÊN MỸ - 33204003"
+      },
+      {
+        "value": "A6004AYD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - HỘI SỞ CHÍNH - 01204001"
+      },
+      {
+        "value": "A6004AYE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - KHU VỰC 2 - 80204019"
+      },
+      {
+        "value": "A6004AYF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - MẠC THỊ BƯỞI CN KCN TÂN BÌNH - 79204030"
+      },
+      {
+        "value": "A6004AYG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - PGD ĐẠI NGÃI - 94204015"
+      },
+      {
+        "value": "A6004B34",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79202006"
+      },
+      {
+        "value": "A6004B35",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87202001"
+      },
+      {
+        "value": "A6004B36",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87202002"
+      },
+      {
+        "value": "A6004B37",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP PGD MỸ AN - 87202802"
+      },
+      {
+        "value": "A6004B38",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tiền Giang - CN TỈNH TIỀN GIANG - 82207001"
+      },
+      {
+        "value": "A6004B39",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Trà Vinh - CN TỈNH TRÀ VINH - 84207001"
+      },
+      {
+        "value": "A6004B3A",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tuyên Quang - CN TỈNH TUYÊN QUANG - 08207001"
+      },
+      {
+        "value": "A6004B3B",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Vĩnh Long - CN TỈNH VĨNH LONG - 86207001"
+      },
+      {
+        "value": "A6004B3C",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Vĩnh Phúc - CN TỈNH VĨNH PHÚC - 26207001"
+      },
+      {
+        "value": "A6004B3D",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Yên Bái - CN TỈNH YÊN BÁI - 15207001"
+      },
+      {
+        "value": "A6004B3E",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cần Thơ - CN TP CẦN THƠ - 92207001"
+      },
+      {
+        "value": "A6004B80",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60202001"
+      },
+      {
+        "value": "A6004B81",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cà Mau - CN CÀ MAU - 96202001"
+      },
+      {
+        "value": "A6004B82",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Quảng Ninh - CN CẨM PHẢ - 22202005"
+      },
+      {
+        "value": "A6004B83",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92202001"
+      },
+      {
+        "value": "A6004B84",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cao Bằng - CN CAO BẰNG - 04202001"
+      },
+      {
+        "value": "A6004B85",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đồng Tháp - CN CAO LÃNH - 87202003"
+      },
+      {
+        "value": "A6004B86",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CÁT LÁI SG - 79202036"
+      },
+      {
+        "value": "A6004B87",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN CẦU GIẤY - 01202010"
+      },
+      {
+        "value": "A6004B88",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89202003"
+      },
+      {
+        "value": "A6004B89",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CHÂU THÀNH SG - 79202031"
+      },
+      {
+        "value": "A6004B8A",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79202011"
+      },
+      {
+        "value": "A6004ATC",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lâm Đồng - CN LÂM ĐỒNG - 68311001"
+      },
+      {
+        "value": "A6004ATD",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lạng Sơn - CN LẠNG SƠN - 20311001"
+      },
+      {
+        "value": "A6004ATE",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Lào Cai - CN LÀO CAI - 10311001"
+      },
+      {
+        "value": "A6004ATF",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Long An - CN LONG AN - 80311001"
+      },
+      {
+        "value": "A6004ATG",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN LONG BIÊN - 01311008"
+      },
+      {
+        "value": "A6004ATH",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Nai - CN LONG KHÁNH - 75311003"
+      },
+      {
+        "value": "A6004ATI",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ninh - CN MÓNG CÁI - 22311004"
+      },
+      {
+        "value": "A6004ATJ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN MỸ ĐÌNH - 01311014"
+      },
+      {
+        "value": "A6004ATK",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Dương - CN NAM BÌNH DƯƠNG - 74311003"
+      },
+      {
+        "value": "A6004ATL",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đà Nẵng - CN NAM ĐÀ NẴNG - 48311002"
+      },
+      {
+        "value": "A6004ATM",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Nam Định - CN NAM ĐỊNH - 36311001"
+      },
+      {
+        "value": "A6004AYH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - PGD LÊ LỢI TỈNH KON TUM - 62204011"
+      },
+      {
+        "value": "A6004AYI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - PGD MƯỜNG LÁT - 38204033"
+      },
+      {
+        "value": "A6004AYJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - PGD QUAN SƠN - 38204034"
+      },
+      {
+        "value": "A6004AYK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - PGD TÂN THANH - 20204014"
+      },
+      {
+        "value": "A6004B3Z",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Thái Nguyên - CN THÁI NGUYÊN - 19359001"
+      },
+      {
+        "value": "A6004AYL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - PGD THẮNG LỢI TỈNH KON TUM - 62204010"
+      },
+      {
+        "value": "A6004AYM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - SỞ GIAO DỊCH - 01204002"
+      },
+      {
+        "value": "A6004AYN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - SỞ GIAO DỊCH 3 - 48204004"
+      },
+      {
+        "value": "A6004AYO",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Sóc Trăng - CN SÓC TRĂNG - 94357001"
+      },
+      {
+        "value": "A6004AYP",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Sơn La - CN SƠN LA - 14357001"
+      },
+      {
+        "value": "A6004AYQ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN TÂN BÌNH - 79357002"
+      },
+      {
+        "value": "A6004B3F",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79207001"
+      },
+      {
+        "value": "A6004B3G",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - HỘI SỞ CHÍNH - 01207004"
+      },
+      {
+        "value": "A6004B3H",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - SỞ GIAO DỊCH - 01207001"
+      },
+      {
+        "value": "A6004B3I",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77208001"
+      },
+      {
+        "value": "A6004B3J",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24208001"
+      },
+      {
+        "value": "A6004B3K",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Định - CN BÌNH ĐỊNH - 52208001"
+      },
+      {
+        "value": "A6004B3L",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60208001"
+      },
+      {
+        "value": "A6004B3M",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cao Bằng - CN CAO BẰNG - 04208001"
+      },
+      {
+        "value": "A6004B3N",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11208001"
+      },
+      {
+        "value": "A6004B3O",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75208001"
+      },
+      {
+        "value": "A6004B3P",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Gia Lai - CN GIA LAI - 64208001"
+      },
+      {
+        "value": "A6004AOM",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79321008"
+      },
+      {
+        "value": "A6004AON",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN TRẢNG BOM - 75321005"
+      },
+      {
+        "value": "A6004AOO",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN VẠN HẠNH - 79321005"
+      },
+      {
+        "value": "A6004AOP",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Vĩnh Long - CN VĨNH LONG - 86321001"
+      },
+      {
+        "value": "A6004AOQ",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77321001"
+      },
+      {
+        "value": "A6004AOR",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN XUÂN HÒA - 75321007"
+      },
+      {
+        "value": "A6004AOS",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Phòng - PGD HẢI ĐĂNG - 31321002"
+      },
+      {
+        "value": "A6004AOT",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bà Rịa - Vũng Tàu - PGD LÊ HỒNG PHONG - 77321002"
+      },
+      {
+        "value": "A6004AOU",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - PGD QUANG VINH - 75321004"
+      },
+      {
+        "value": "A6004AOV",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Dương - PGD THỦ DẦU MỘT - 74321002"
+      },
+      {
+        "value": "A6004AOW",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nghệ An - PGD VINH - 40321002"
+      },
+      {
+        "value": "A6004ATN",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN NAM HẢI PHÒNG - 31311002"
+      },
+      {
+        "value": "A6004ATO",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN NAM SÀI GÒN - 79311018"
+      },
+      {
+        "value": "A6004ATP",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Nghệ An - CN NGHỆ AN - 40311001"
+      },
+      {
+        "value": "A6004ATQ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN NHÀ BÈ - 79311024"
+      },
+      {
+        "value": "A6004ATR",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Ninh Bình - CN NINH BÌNH - 37311001"
+      },
+      {
+        "value": "A6004ATS",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN PHÚ NHUẬN - 79311020"
+      },
+      {
+        "value": "A6004ATT",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Kiên Giang - CN PHÚ QUỐC - 91311002"
+      },
+      {
+        "value": "A6004ATU",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Phú Yên - CN PHÚ YÊN - 54311001"
+      },
+      {
+        "value": "A6004ATV",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Bình - CN QUẢNG BÌNH - 44311001"
+      },
+      {
+        "value": "A6004ATW",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Nam - CN QUẢNG NAM - 49311001"
+      },
+      {
+        "value": "A6004ATX",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51311001"
+      },
+      {
+        "value": "A6004AYR",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tây Ninh - CN TÂY NINH - 72357001"
+      },
+      {
+        "value": "A6004AYS",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thái Bình - CN THÁI BÌNH - 34357001"
+      },
+      {
+        "value": "A6004AYT",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thái Nguyên - CN THÁI NGUYÊN - 19357001"
+      },
+      {
+        "value": "A6004AYU",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN THĂNG LONG - 01357003"
+      },
+      {
+        "value": "A6004AYV",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thanh Hóa - CN THANH HÓA - 38357001"
+      },
+      {
+        "value": "A6004AYW",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tiền Giang - CN TIỀN GIANG - 82357001"
+      },
+      {
+        "value": "A6004AYX",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN TIẾT KIỆM BƯU ĐIỆN - 01357004"
+      },
+      {
+        "value": "A6004AYY",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79357001"
+      },
+      {
+        "value": "A6004AYZ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Trà Vinh - CN TRÀ VINH - 84357001"
+      },
+      {
+        "value": "A6004AZ0",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Tuyên Quang - CN TUYÊN QUANG - 08357001"
+      },
+      {
+        "value": "A6004AZ1",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Vĩnh Long - CN VĨNH LONG - 86357001"
+      },
+      {
+        "value": "A6004B3Q",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Giang - CN HÀ GIANG - 02208001"
+      },
+      {
+        "value": "A6004B3R",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Đắk Lắk - CN DAK LAK - 66359001"
+      },
+      {
+        "value": "A6004B3S",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - CN HÀ NỘI - 01359003"
+      },
+      {
+        "value": "A6004B3T",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hải Phòng - CN HẢI PHÒNG - 31359001"
+      },
+      {
+        "value": "A6004B3U",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Khánh Hòa - CN KHÁNH HÒA - 56359001"
+      },
+      {
+        "value": "A6004B3V",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Kiên Giang - CN KIÊN GIANG - 91359001"
+      },
+      {
+        "value": "A6004B3W",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Nghệ An - CN NGHỆ AN - 40359001"
+      },
+      {
+        "value": "A6004B3X",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Quảng Ninh - CN QUẢNG NINH - 22359001"
+      },
+      {
+        "value": "A6004B3Y",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - CN SÀI GÒN - 79359002"
+      },
+      {
+        "value": "A6004B40",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79359001"
+      },
+      {
+        "value": "A6004AOX",
+        "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74603001"
+      },
+      {
+        "value": "A6004AOY",
+        "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hà Nội - CN HÀ NỘI - 01603001"
+      },
+      {
+        "value": "A6004AOZ",
+        "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79603001"
+      },
+      {
+        "value": "A6004AP0",
+        "NOM": "HONGLEONGVIETNAM-NGÂN HÀNG TNHH MTV HONG LEONG VIỆT NAM - Hồ Chí Minh - CN SỞ GIAO DỊCH - 79603002"
+      },
+      {
+        "value": "A6004AP1",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74617001"
+      },
+      {
+        "value": "A6004AP2",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92617001"
+      },
+      {
+        "value": "A6004AP3",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48617001"
+      },
+      {
+        "value": "A6004AP4",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75617001"
+      },
+      {
+        "value": "A6004AP5",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hà Nội - CN HÀ NỘI - 01617001"
+      },
+      {
+        "value": "A6004AP6",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hồ Chí Minh - CN LÊ ĐẠI HÀNH - 79617002"
+      },
+      {
+        "value": "A6004AP7",
+        "NOM": "HSBC-NGÂN HÀNG TNHH HSBC VIỆT NAM - Hồ Chí Minh - CN TPHCM - 79617001"
+      },
+      {
+        "value": "A6004ATY",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Ninh - CN QUẢNG NINH - 22311001"
+      },
+      {
+        "value": "A6004ATZ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Quảng Trị - CN QUẢNG TRỊ - 45311001"
+      },
+      {
+        "value": "A6004AU0",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN SÀI GÒN - 79311005"
+      },
+      {
+        "value": "A6004AU1",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN SỞ GIAO DỊCH 2 - 79311019"
+      },
+      {
+        "value": "A6004AU2",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Sóc Trăng - CN SÓC TRĂNG - 94311001"
+      },
+      {
+        "value": "A6004AU3",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Sơn La - CN SƠN LA - 14311001"
+      },
+      {
+        "value": "A6004AU4",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN SƠN TÂY - 01311034"
+      },
+      {
+        "value": "A6004AU5",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN TÂN TẠO - 79311023"
+      },
+      {
+        "value": "A6004AU6",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TÂY HÀ NỘI - 01311012"
+      },
+      {
+        "value": "A6004AU7",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đắk Lắk - CN TỈNH DAKLAK - 66207001"
+      },
+      {
+        "value": "A6004AU8",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Điện Biên - CN TỈNH ĐIỆN BIÊN - 11207001"
+      },
+      {
+        "value": "A6004AZ2",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Vĩnh Phúc - CN VĨNH PHÚC - 26357001"
+      },
+      {
+        "value": "A6004AZ3",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN XUÂN MAI - 01357006"
+      },
+      {
+        "value": "A6004AZ4",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Yên Bái - CN YÊN BÁI - 15357001"
+      },
+      {
+        "value": "A6004AZ5",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - HỘI SỞ CHÍNH - 01357005"
+      },
+      {
+        "value": "A6004AZ6",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hậu Giang - HỘI SỞ CHÍNH - 93357001"
+      },
+      {
+        "value": "A6004AZ7",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - HỘI SỞ CHÍNH - 79357004"
+      },
+      {
+        "value": "A6004AZ8",
+        "NOM": "MALAYANBANKINGBERHAD-MALAYAN BANKING BERHAD - Hồ Chí Minh - TP HỒ CHÍ MINH - 79635001"
+      },
+      {
+        "value": "A6004AZ9",
+        "NOM": "MAYBANK-MAY BANK - Hà Nội - CN HÀ NỘI - 01609001"
+      },
+      {
+        "value": "A6004AZA",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - An Giang - CN AN GIANG - 89311001"
+      },
+      {
+        "value": "A6004AZB",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN AN PHÚ - 79311003"
+      },
+      {
+        "value": "A6004AZC",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN BA ĐÌNH - 01311033"
+      },
+      {
+        "value": "A6004B41",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - HỘI SỞ CHÍNH - 01359001"
+      },
+      {
+        "value": "A6004B42",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hà Nội - SỞ GIAO DỊCH - 01359002"
+      },
+      {
+        "value": "A6004B43",
+        "NOM": "BAOVIETBANK-NGÂN HÀNG TMCP BẢO VIỆT - Hồ Chí Minh - VPĐD TPHCM - 79359003"
+      },
+      {
+        "value": "A6004B44",
+        "NOM": "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA - Hà Nội - CN HÀ NỘI - 01638001"
+      },
+      {
+        "value": "A6004B45",
+        "NOM": "BIDC-NGÂN HÀNG ĐẦU TƯ VÀ PHÁT TRIỂN CAMPUCHIA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79648001"
+      },
+      {
+        "value": "A6004B46",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Cần Thơ - CẦN THƠ PGD KCN TRÀ NÓC - 92202800"
+      },
+      {
+        "value": "A6004B47",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN AN GIANG - 89202001"
+      },
+      {
+        "value": "A6004B48",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BÀ CHIỂU - 79202021"
+      },
+      {
+        "value": "A6004B49",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BA ĐÌNH - 01202013"
+      },
+      {
+        "value": "A6004B4A",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BA MƯƠI THÁNG TƯ - 79202025"
+      },
+      {
+        "value": "A6004B4B",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA - 77202002"
+      },
+      {
+        "value": "A6004AP8",
+        "NOM": "HUANANCOMMERCIALBANK-HUA NAN COMMERCIAL BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79640001"
+      },
+      {
+        "value": "A6004AP9",
+        "NOM": "ICBOFCHINA-ICB OF CHINA - Hà Nội - CN HÀ NỘI - 01649001"
+      },
+      {
+        "value": "A6004APA",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hồ Chí Minh - CN BẾN THÀNH - 79502004"
+      },
+      {
+        "value": "A6004APB",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Bình Dương - CN BÌNH DƯƠNG - 74502001"
+      },
+      {
+        "value": "A6004APC",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Cần Thơ - CN CẦN THƠ - 92502001"
+      },
+      {
+        "value": "A6004APD",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hồ Chí Minh - CN CHỢ LỚN - 79502002"
+      },
+      {
+        "value": "A6004APE",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Đà Nẵng - CN ĐÀ NẴNG - 48502001"
+      },
+      {
+        "value": "A6004APF",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hà Nội - CN ĐỐNG ĐA - 01502002"
+      },
+      {
+        "value": "A6004APG",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Đồng Nai - CN ĐỒNG NAI - 75502001"
+      },
+      {
+        "value": "A6004APH",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hà Nội - CN HÀ NỘI - 01502001"
+      },
+      {
+        "value": "A6004API",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hải Phòng - CN HẢI PHÒNG - 31502001"
+      },
+      {
+        "value": "A6004APJ",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HÀ NỘI - 01317002"
+      },
+      {
+        "value": "A6004AU9",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đồng Nai - CN TỈNH ĐỒNG NAI - 75207001"
+      },
+      {
+        "value": "A6004AUA",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đồng Tháp - CN TỈNH ĐỒNG THÁP - 87207001"
+      },
+      {
+        "value": "A6004AUB",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Gia Lai - CN TỈNH GIA LAI - 64207001"
+      },
+      {
+        "value": "A6004AUC",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Giang - CN TỈNH HÀ GIANG - 02207001"
+      },
+      {
+        "value": "A6004AUD",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nam - CN TỈNH HÀ NAM - 35207001"
+      },
+      {
+        "value": "A6004AUE",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hậu Giang - CN TỈNH HẬU GIANG - 93207001"
+      },
+      {
+        "value": "A6004AUF",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hoà Bình - CN TỈNH HÒA BÌNH - 17207001"
+      },
+      {
+        "value": "A6004AUG",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hưng Yên - CN TỈNH HƯNG YÊN - 33207001"
+      },
+      {
+        "value": "A6004AUH",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Khánh Hòa - CN TINH KHÁNH HÒA - 56207001"
+      },
+      {
+        "value": "A6004AUI",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Kon Tum - CN TỈNH KON TUM - 62207001"
+      },
+      {
+        "value": "A6004AUJ",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68207001"
+      },
+      {
+        "value": "A6004AZD",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bắc Giang - CN BẮC GIANG - 24311001"
+      },
+      {
+        "value": "A6004AZE",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hải Phòng - CN BẮC HẢI - 31311003"
+      },
+      {
+        "value": "A6004AZF",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bắc Ninh - CN BẮC NINH - 27311001"
+      },
+      {
+        "value": "A6004AZG",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN BẮC SÀI GÒN - 79311002"
+      },
+      {
+        "value": "A6004AZH",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bến Tre - CN BẾN TRE - 83311001"
+      },
+      {
+        "value": "A6004AZI",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN BÌNH CHÁNH - 79311021"
+      },
+      {
+        "value": "A6004AZJ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Định - CN BÌNH ĐỊNH - 52311001"
+      },
+      {
+        "value": "A6004AZK",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Dương - CN BÌNH DƯƠNG - 74311001"
+      },
+      {
+        "value": "A6004AZL",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Phước - CN BÌNH PHƯỚC - 70311001"
+      },
+      {
+        "value": "A6004AZM",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bình Thuận - CN BÌNH THUẬN - 60311001"
+      },
+      {
+        "value": "A6004AZN",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Cà Mau - CN CÀ MAU - 96311001"
+      },
+      {
+        "value": "A6004B4C",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA PGD HỒ TRÀM - 77202800"
+      },
+      {
+        "value": "A6004B4D",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77202001"
+      },
+      {
+        "value": "A6004B4E",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hồ Chí Minh - CN BA THÁNG HAI - 79202014"
+      },
+      {
+        "value": "A6004B4F",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN BẮC AN GIANG - 89202002"
+      },
+      {
+        "value": "A6004B4G",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - An Giang - CN BẮC AN GIANG PGD AN PHÚ - 89202800"
+      },
+      {
+        "value": "A6004B4H",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN BẮC DAKLAK - 66202002"
+      },
+      {
+        "value": "A6004B4I",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24202001"
+      },
+      {
+        "value": "A6004B4J",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Giang - CN BẮC GIANG PGD LỤC NGẠN - 24202800"
+      },
+      {
+        "value": "A6004B4K",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Lào Cai - CN BẮC HÀ - 10202002"
+      },
+      {
+        "value": "A6004B4L",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BẮC HÀ - 01202035"
+      },
+      {
+        "value": "A6004APK",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Tĩnh - CN HÀ TĨNH - 42317001"
+      },
+      {
+        "value": "A6004APL",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Phòng - CN HẢI AN - 31317002"
+      },
+      {
+        "value": "A6004APM",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HAI BÀ TRƯNG - 01317007"
+      },
+      {
+        "value": "A6004APN",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Dương - CN HẢI DƯƠNG - 30317001"
+      },
+      {
+        "value": "A6004APO",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hải Phòng - CN HẢI PHÒNG - 31317001"
+      },
+      {
+        "value": "A6004APP",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN HỒ CHÍ MINH - 79317002"
+      },
+      {
+        "value": "A6004APQ",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thừa Thiên Huế - CN HUẾ - 46317001"
+      },
+      {
+        "value": "A6004APR",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Kiên Giang - CN KIÊN GIANG - 91317001"
+      },
+      {
+        "value": "A6004APS",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN LÁNG HẠ - 01317003"
+      },
+      {
+        "value": "A6004APT",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN LONG BIÊN - 01317010"
+      },
+      {
+        "value": "A6004APU",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Nghệ An - CN NGHỆ AN - 40317001"
+      },
+      {
+        "value": "A6004AUK",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lạng Sơn - CN TỈNH LẠNG SƠN - 20207001"
+      },
+      {
+        "value": "A6004AUL",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lào Cai - CN TỈNH LÀO CAI - 10207001"
+      },
+      {
+        "value": "A6004AUM",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Long An - CN TỈNH LONG AN - 80207001"
+      },
+      {
+        "value": "A6004AUN",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Nam Định - CN TỈNH NAM ĐỊNH - 36207001"
+      },
+      {
+        "value": "A6004AUO",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Ninh Thuận - CN TỈNH NINH THUẬN - 58207001"
+      },
+      {
+        "value": "A6004AUP",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Phú Yên - CN TỈNH PHÚ YÊN - 54207001"
+      },
+      {
+        "value": "A6004AUQ",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Bình - CN TỈNH QUẢNG BÌNH - 44207001"
+      },
+      {
+        "value": "A6004AUR",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Ninh - CN TỈNH QUẢNG NINH - 22207001"
+      },
+      {
+        "value": "A6004AUS",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Trị - CN TỈNH QUẢNG TRỊ - 45207001"
+      },
+      {
+        "value": "A6004AUT",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Sóc Trăng - CN TỈNH SÓC TRĂNG - 94207001"
+      },
+      {
+        "value": "A6004AUU",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Tây Ninh - CN TỈNH TÂY NINH - 72207001"
+      },
+      {
+        "value": "A6004AZO",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Khánh Hòa - CN CAM RANH - 56311002"
+      },
+      {
+        "value": "A6004AZP",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Cần Thơ - CN CẦN THƠ - 92311001"
+      },
+      {
+        "value": "A6004AZQ",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hồ Chí Minh - CN CHỢ LỚN - 79311007"
+      },
+      {
+        "value": "A6004AZR",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đà Nẵng - CN ĐÀ NẴNG - 48311001"
+      },
+      {
+        "value": "A6004AZS",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đắk Lắk - CN DAK LAK - 66311001"
+      },
+      {
+        "value": "A6004AZT",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐIỆN BIÊN PHỦ - 01311002"
+      },
+      {
+        "value": "A6004AZU",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐÔNG ANH - 01311035"
+      },
+      {
+        "value": "A6004AZV",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN ĐỐNG ĐA - 01311004"
+      },
+      {
+        "value": "A6004AZW",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Đồng Nai - CN ĐỒNG NAI - 75311001"
+      },
+      {
+        "value": "A6004AZX",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Đồng Nai - CN ĐỒNG NAI - 75358001"
+      },
+      {
+        "value": "A6004AZY",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN HÀ NỘI - 01358002"
+      },
+      {
+        "value": "A6004B4M",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hà Nội - CN BẮC HÀ NỘI - 01202004"
+      },
+      {
+        "value": "A6004B4N",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hải Dương - CN BẮC HẢI DƯƠNG - 30202002"
+      },
+      {
+        "value": "A6004B4O",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Hưng Yên - CN BẮC HƯNG YÊN - 33202001"
+      },
+      {
+        "value": "A6004B4P",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Kạn - CN BẮC KẠN - 06202001"
+      },
+      {
+        "value": "A6004B4Q",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95202001"
+      },
+      {
+        "value": "A6004B4R",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bạc Liêu - CN BẠC LIÊU PGD TRẦN PHÚ - 95202800"
+      },
+      {
+        "value": "A6004B4S",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Nghệ An - CN BẮC NGHỆ AN - 40202003"
+      },
+      {
+        "value": "A6004B4T",
+        "NOM": "BIDV-NGÂN HÀNG TMCP ĐẦU TƯ VÀ PHÁT TRIỂN VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27202001"
+      },
+      {
+        "value": "A6004B4U",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TÂY HỒ - 01311011"
+      },
+      {
+        "value": "A6004B4V",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tây Ninh - CN TÂY NINH - 72311001"
+      },
+      {
+        "value": "A6004B4W",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thái Bình - CN THÁI BÌNH - 34311001"
+      },
+      {
+        "value": "A6004APV",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN NHÀ BÈ - 79317005"
+      },
+      {
+        "value": "A6004APW",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Khánh Hòa - CN NHA TRANG - 56317001"
+      },
+      {
+        "value": "A6004APX",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Quảng Ngãi - CN QUẢNG NGÃI - 51317001"
+      },
+      {
+        "value": "A6004APY",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Quảng Ninh - CN QUẢNG NINH - 22317001"
+      },
+      {
+        "value": "A6004APZ",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN BÌNH - 79317003"
+      },
+      {
+        "value": "A6004AQ0",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN PHÚ - 79317004"
+      },
+      {
+        "value": "A6004AQ1",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN TÂN THÀNH - 79317006"
+      },
+      {
+        "value": "A6004AQ2",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thái Nguyên - CN THÁI NGUYÊN - 19317001"
+      },
+      {
+        "value": "A6004AQ3",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Thanh Hóa - CN THANH HÓA - 38317001"
+      },
+      {
+        "value": "A6004AQ4",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Tiền Giang - CN TIỀN GIANG - 82317001"
+      },
+      {
+        "value": "A6004AQ5",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Vĩnh Phúc - CN VĨNH PHÚC - 26317001"
+      },
+      {
+        "value": "A6004AUV",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thái Bình - CN TỈNH THÁI BÌNH - 34207001"
+      },
+      {
+        "value": "A6004AUW",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thanh Hóa - CN TỈNH THANH HÓA - 38207001"
+      },
+      {
+        "value": "A6004AUX",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thái Nguyên - CN THÁI NGUYÊN - 19348001"
+      },
+      {
+        "value": "A6004AUY",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN THĂNG LONG - 01348003"
+      },
+      {
+        "value": "A6004AUZ",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thanh Hóa - CN THANH HÓA - 38348001"
+      },
+      {
+        "value": "A6004AV0",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tiền Giang - CN TIỀN GIANG - 82348001"
+      },
+      {
+        "value": "A6004AV1",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN TP HCM - 79348001"
+      },
+      {
+        "value": "A6004AV2",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tuyên Quang - CN TUYÊN QUANG - 08348001"
+      },
+      {
+        "value": "A6004AV3",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN VẠN PHÚC - 01348005"
+      },
+      {
+        "value": "A6004AV4",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Vĩnh Phúc - CN VĨNH PHÚC - 26348001"
+      },
+      {
+        "value": "A6004AV5",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77348001"
+      },
+      {
+        "value": "A6004AZZ",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hải Phòng - CN HẢI PHÒNG - 31358001"
+      },
+      {
+        "value": "A6004B00",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN HOÀN KIẾM - 01358003"
+      },
+      {
+        "value": "A6004B01",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN HÓC MÔN - 79358006"
+      },
+      {
+        "value": "A6004B02",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN HÙNG VƯƠNG - 79358004"
+      },
+      {
+        "value": "A6004B03",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Kiên Giang - CN KIÊN GIANG - 91358001"
+      },
+      {
+        "value": "A6004B04",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Nghệ An - CN NGHỆ AN - 40358001"
+      },
+      {
+        "value": "A6004B05",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Khánh Hòa - CN NHA TRANG - 56358001"
+      },
+      {
+        "value": "A6004B06",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN SÀI GÒN - 79358002"
+      },
+      {
+        "value": "A6004B07",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN TÂY HÀ NỘI - 01358006"
+      },
+      {
+        "value": "A6004B08",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THĂNG LONG - 01358004"
+      },
+      {
+        "value": "A6004B09",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THÀNH ĐÔ - 01358005"
+      },
+      {
+        "value": "A6004B0A",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Thanh Hóa - CN THANH HÓA - 38358001"
+      },
+      {
+        "value": "A6004B4X",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thái Nguyên - CN THÁI NGUYÊN - 19311001"
+      },
+      {
+        "value": "A6004B4Y",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THĂNG LONG - 01311006"
+      },
+      {
+        "value": "A6004B4Z",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Thanh Hóa - CN THANH HÓA - 38311001"
+      },
+      {
+        "value": "A6004B50",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THANH TRÌ - 01311036"
+      },
+      {
+        "value": "A6004B51",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN THANH XUÂN - 01311005"
+      },
+      {
+        "value": "A6004B52",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tiền Giang - CN TIỀN GIANG - 82311001"
+      },
+      {
+        "value": "A6004B53",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - CN TRẦN DUY HƯNG - 01311010"
+      },
+      {
+        "value": "A6004B54",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Tuyên Quang - CN TUYÊN QUANG - 08311001"
+      },
+      {
+        "value": "A6004B55",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Phú Thọ - CN VIỆT TRÌ - 25311001"
+      },
+      {
+        "value": "A6004B56",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Vĩnh Phúc - CN VĨNH PHÚC - 26311001"
+      },
+      {
+        "value": "A6004B57",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77311001"
+      },
+      {
+        "value": "A6004AQ6",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77317001"
+      },
+      {
+        "value": "A6004AQ7",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - HỘI SỞ CHÍNH - 01317001"
+      },
+      {
+        "value": "A6004AQ8",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - SỞ GIAO DỊCH - 01317009"
+      },
+      {
+        "value": "A6004AQ9",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN  TRUNG HÒA NHÂN CHÍNH - 01348006"
+      },
+      {
+        "value": "A6004AQA",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - An Giang - CN AN GIANG - 89348001"
+      },
+      {
+        "value": "A6004AQB",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN BA ĐÌNH - 01348009"
+      },
+      {
+        "value": "A6004AQC",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bắc Ninh - CN BẮC NINH - 27348001"
+      },
+      {
+        "value": "A6004AQD",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Định - CN BÌNH ĐỊNH - 52348001"
+      },
+      {
+        "value": "A6004AQE",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Dương - CN BÌNH DƯƠNG - 74348001"
+      },
+      {
+        "value": "A6004AQF",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Phước - CN BÌNH PHƯỚC - 70348001"
+      },
+      {
+        "value": "A6004AQG",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Cà Mau - CN CÀ MAU - 96348001"
+      },
+      {
+        "value": "A6004AV6",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - HỘI SỞ CHÍNH - 01348002"
+      },
+      {
+        "value": "A6004AV7",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN PHÒNG GIAO DỊCH NAM SÀI GÒN - 79616009"
+      },
+      {
+        "value": "A6004AV8",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN AN ĐÔNG - 79616003"
+      },
+      {
+        "value": "A6004AV9",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27616001"
+      },
+      {
+        "value": "A6004AVA",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Đồng Nai - CN BIÊN HÒA - 75616001"
+      },
+      {
+        "value": "A6004AVB",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74503001"
+      },
+      {
+        "value": "A6004AVC",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75503001"
+      },
+      {
+        "value": "A6004AVD",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79616005"
+      },
+      {
+        "value": "A6004AVE",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN GÒ VẤP - 79616004"
+      },
+      {
+        "value": "A6004AVF",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cà Mau - CN CÀ MAU - 96357001"
+      },
+      {
+        "value": "A6004AVG",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cần Thơ - CN CẦN THƠ - 92357001"
+      },
+      {
+        "value": "A6004B0B",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - CN THANH XUÂN - 01358008"
+      },
+      {
+        "value": "A6004B0C",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79358001"
+      },
+      {
+        "value": "A6004B0D",
+        "NOM": "TPBANK-NGÂN HÀNG TMCP TIÊN PHONG - Hà Nội - HỘI SỞ CHÍNH - 01358001"
+      },
+      {
+        "value": "A6004B0E",
+        "NOM": "UOB-UNITED OVERSEA BANK - Hồ Chí Minh - CN HỘI SỞ HCM - 79618001"
+      },
+      {
+        "value": "A6004B0F",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bà Rịa - Vũng Tàu - CN BÀ RỊA-VŨNG TÀU - 77207001"
+      },
+      {
+        "value": "A6004B0G",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Giang - CN BẮC GIANG - 24207001"
+      },
+      {
+        "value": "A6004B0H",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Ninh - CN BẮC NINH - 27207001"
+      },
+      {
+        "value": "A6004B0I",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cao Bằng - CN CAO BẰNG - 04207001"
+      },
+      {
+        "value": "A6004B0J",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đà Nẵng - CN ĐÀ NẴNG - 48207001"
+      },
+      {
+        "value": "A6004B0K",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Đắk Nông - CN ĐẮK NÔNG - 67207001"
+      },
+      {
+        "value": "A6004B0L",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - CN HÀ NỘI - 01207002"
+      },
+      {
+        "value": "A6004B58",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Yên Bái - CN YÊN BÁI - 15311001"
+      },
+      {
+        "value": "A6004B59",
+        "NOM": "MBBANK-NGÂN HÀNG TMCP QUÂN ĐỘI - Hà Nội - SỞ GIAO DỊCH 1 - 01311003"
+      },
+      {
+        "value": "A6004B5A",
+        "NOM": "MEGAICBC-MEGA ICBC - Hồ Chí Minh - TP HỒ CHÍ MINH - 79623001"
+      },
+      {
+        "value": "A6004B5B",
+        "NOM": "MIZUHOBANK-MIZUHO BANK - Hà Nội - CN HÀ NỘI - 01613001"
+      },
+      {
+        "value": "A6004B5C",
+        "NOM": "MIZUHOBANK-MIZUHO BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79639001"
+      },
+      {
+        "value": "A6004B5D",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bắc Giang - CN BẮC GIANG - 24302001"
+      },
+      {
+        "value": "A6004B5E",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bắc Ninh - CN BẮC NINH - 27302001"
+      },
+      {
+        "value": "A6004B5F",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Long An - CN BẾN LỨC - 80302002"
+      },
+      {
+        "value": "A6004B5G",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Định - CN BÌNH ĐỊNH - 52302001"
+      },
+      {
+        "value": "A6004B5H",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Dương - CN BÌNH DƯƠNG - 74302001"
+      },
+      {
+        "value": "A6004B5I",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Thuận - CN BÌNH THUẬN - 60302001"
+      },
+      {
+        "value": "A6004B5J",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cà Mau - CN CÀ MAU - 96302001"
+      },
+      {
+        "value": "A6004AQH",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Cần Thơ - CN CẦN THƠ - 92348001"
+      },
+      {
+        "value": "A6004AQI",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đà Nẵng - CN ĐÀ NẴNG - 48348001"
+      },
+      {
+        "value": "A6004AQJ",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đắk Lắk - CN DAK LAK - 66348001"
+      },
+      {
+        "value": "A6004AQK",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đồng Nai - CN ĐỒNG NAI - 75348001"
+      },
+      {
+        "value": "A6004AQL",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đồng Tháp - CN ĐỒNG THÁP - 87348001"
+      },
+      {
+        "value": "A6004AQM",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Gia Lai - CN GIA LAI - 64348001"
+      },
+      {
+        "value": "A6004AQN",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀ ĐÔNG - 01348007"
+      },
+      {
+        "value": "A6004AQO",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nam - CN HÀ NAM - 35348001"
+      },
+      {
+        "value": "A6004AQP",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀ NỘI - 01348001"
+      },
+      {
+        "value": "A6004AQQ",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Tĩnh - CN HÀ TĨNH - 42348001"
+      },
+      {
+        "value": "A6004AQR",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN HẢI PHÒNG - 31348001"
+      },
+      {
+        "value": "A6004AVH",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Cao Bằng - CN CAO BẰNG - 04357001"
+      },
+      {
+        "value": "A6004AVI",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN CHỢ LỚN - 79357003"
+      },
+      {
+        "value": "A6004AVJ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hồ Chí Minh - CN CỦ CHI - 79357005"
+      },
+      {
+        "value": "A6004AVK",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đà Nẵng - CN ĐÀ NẴNG - 48357001"
+      },
+      {
+        "value": "A6004AVL",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đắk Lắk - CN DAK LAK - 66357001"
+      },
+      {
+        "value": "A6004AVM",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đắk Nông - CN ĐẮK NÔNG - 67357001"
+      },
+      {
+        "value": "A6004AVN",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Điện Biên - CN ĐIỆN BIÊN - 11357001"
+      },
+      {
+        "value": "A6004AVO",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN ĐÔNG ĐÔ - 01357002"
+      },
+      {
+        "value": "A6004AVP",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đồng Nai - CN ĐỒNG NAI - 75357001"
+      },
+      {
+        "value": "A6004AVQ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Đồng Tháp - CN ĐỒNG THÁP - 87357001"
+      },
+      {
+        "value": "A6004AVR",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Ngãi - CN DUNG QUẤT - 51357001"
+      },
+      {
+        "value": "A6004B0M",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Nội - CN HÀ TÂY - 01207003"
+      },
+      {
+        "value": "A6004B0N",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hà Tĩnh - CN HÀ TĨNH - 42207001"
+      },
+      {
+        "value": "A6004B0O",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hải Dương - CN HẢI DƯƠNG - 30207001"
+      },
+      {
+        "value": "A6004B0P",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Hải Phòng - CN HẢI PHÒNG - 31207001"
+      },
+      {
+        "value": "A6004B0Q",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Kiên Giang - CN KIÊN GIANG - 91207001"
+      },
+      {
+        "value": "A6004B0R",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Lai Châu - CN LAI CHÂU - 12207001"
+      },
+      {
+        "value": "A6004B0S",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Nghệ An - CN NGHỆ AN - 40207001"
+      },
+      {
+        "value": "A6004B0T",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Ninh Bình - CN NINH BÌNH - 37207001"
+      },
+      {
+        "value": "A6004B0U",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Phú Thọ - CN PHÚ THỌ - 25207001"
+      },
+      {
+        "value": "A6004B0V",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Nam - CN QUẢNG NAM - 49207001"
+      },
+      {
+        "value": "A6004B0W",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51207001"
+      },
+      {
+        "value": "A6004B5K",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Cần Thơ - CN CẦN THƠ - 92302001"
+      },
+      {
+        "value": "A6004B5L",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN CẦU GIẤY - 01302006"
+      },
+      {
+        "value": "A6004B5M",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - An Giang - CN CHÂU ĐỐC - 89302002"
+      },
+      {
+        "value": "A6004B5N",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN CỘNG HÒA - 79302005"
+      },
+      {
+        "value": "A6004B5O",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đà Nẵng - CN ĐÀ NẴNG - 48302001"
+      },
+      {
+        "value": "A6004B5P",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đắk Lắk - CN DAK LAK - 66302001"
+      },
+      {
+        "value": "A6004B5Q",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN ĐÔ THÀNH - 79302003"
+      },
+      {
+        "value": "A6004B5R",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN ĐỐNG ĐA - 01302004"
+      },
+      {
+        "value": "A6004B5S",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Đồng Nai - CN ĐỒNG NAI - 75302001"
+      },
+      {
+        "value": "A6004B5T",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Bình Dương - CN ĐÔNG NAM BỘ - 74302002"
+      },
+      {
+        "value": "A6004B5U",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN GIA ĐỊNH - 79302006"
+      },
+      {
+        "value": "A6004B5V",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nam - CN HÀ NAM - 35302001"
+      },
+      {
+        "value": "A6004AQS",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀM LONG - 01348012"
+      },
+      {
+        "value": "A6004AQT",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀN THUYÊN - 01348013"
+      },
+      {
+        "value": "A6004AQU",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HÀNG TRỐNG - 01348010"
+      },
+      {
+        "value": "A6004AQV",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN THĂNG LONG - 01309010"
+      },
+      {
+        "value": "A6004AQW",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thanh Hóa - CN THANH HÓA - 38309001"
+      },
+      {
+        "value": "A6004AQX",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Tiền Giang - CN TIỀN GIANG - 82309001"
+      },
+      {
+        "value": "A6004AQY",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hải Phòng - CN TP HẢI PHÒNG - 31309001"
+      },
+      {
+        "value": "A6004AQZ",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN TRẦN HƯNG ĐẠO - 01309013"
+      },
+      {
+        "value": "A6004AR0",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Vĩnh Long - CN VĨNH LONG - 86309001"
+      },
+      {
+        "value": "A6004AR1",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Vĩnh Phúc - CN VĨNH PHÚC - 26309001"
+      },
+      {
+        "value": "A6004AR2",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77309001"
+      },
+      {
+        "value": "A6004AVS",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Gia Lai - CN GIA LAI - 64357001"
+      },
+      {
+        "value": "A6004AVT",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Giang - CN HÀ GIANG - 02357001"
+      },
+      {
+        "value": "A6004AVU",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nam - CN HÀ NAM - 35357001"
+      },
+      {
+        "value": "A6004AVV",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Nội - CN HÀ NỘI - 01357001"
+      },
+      {
+        "value": "A6004AVW",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hà Tĩnh - CN HÀ TĨNH - 42357001"
+      },
+      {
+        "value": "A6004AVX",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hải Dương - CN HẢI DƯƠNG - 30357001"
+      },
+      {
+        "value": "A6004AVY",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hải Phòng - CN HẢI PHÒNG - 31357001"
+      },
+      {
+        "value": "A6004AVZ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hoà Bình - CN HÒA BÌNH - 17357001"
+      },
+      {
+        "value": "A6004AW0",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Thừa Thiên Huế - CN HUẾ - 46357001"
+      },
+      {
+        "value": "A6004AW1",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Hưng Yên - CN HƯNG YÊN - 33357001"
+      },
+      {
+        "value": "A6004AW2",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Khánh Hòa - CN KHÁNH HÒA - 56357001"
+      },
+      {
+        "value": "A6004B0X",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Sơn La - CN SƠN LA - 14207001"
+      },
+      {
+        "value": "A6004B0Y",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thái Nguyên - CN THÁI NGUYÊN - 19207001"
+      },
+      {
+        "value": "A6004B0Z",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46207001"
+      },
+      {
+        "value": "A6004B10",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - An Giang - CN TỈNH AN GIANG - 89207001"
+      },
+      {
+        "value": "A6004B11",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bắc Kạn - CN TỈNH BẮC KẠN - 06207001"
+      },
+      {
+        "value": "A6004B12",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bạc Liêu - CN TỈNH BẠC LIÊU - 95207001"
+      },
+      {
+        "value": "A6004B13",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bến Tre - CN TỈNH BẾN TRE - 83207001"
+      },
+      {
+        "value": "A6004B14",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Định - CN TỈNH BÌNH ĐỊNH - 52207001"
+      },
+      {
+        "value": "A6004B15",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Dương - CN TỈNH BÌNH DƯƠNG - 74207001"
+      },
+      {
+        "value": "A6004B16",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Phước - CN TỈNH BÌNH PHƯỚC - 70207001"
+      },
+      {
+        "value": "A6004B17",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Bình Thuận - CN TỈNH BÌNH THUẬN - 60207001"
+      },
+      {
+        "value": "A6004B5W",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN HÀ NỘI - 01302003"
+      },
+      {
+        "value": "A6004B5X",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Tĩnh - CN HÀ TĨNH - 42302001"
+      },
+      {
+        "value": "A6004B5Y",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Dương - CN HẢI DƯƠNG - 30302001"
+      },
+      {
+        "value": "A6004B5Z",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hồ Chí Minh - CN HỒ CHÍ MINH - 79302001"
+      },
+      {
+        "value": "A6004B60",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN HỒNG BÀNG - 31302002"
+      },
+      {
+        "value": "A6004B61",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Thừa Thiên Huế - CN HUẾ - 46302001"
+      },
+      {
+        "value": "A6004B62",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Khánh Hòa - CN KHÁNH HÒA - 56302001"
+      },
+      {
+        "value": "A6004B63",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Kiên Giang - CN KIÊN GIANG - 91302001"
+      },
+      {
+        "value": "A6004B64",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Lâm Đồng - CN LÂM ĐỒNG - 68302001"
+      },
+      {
+        "value": "A6004B65",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hải Phòng - CN LÊ CHÂN - 31302004"
+      },
+      {
+        "value": "A6004B66",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Khánh Hòa - CN LỘC THỌ - 56302002"
+      },
+      {
+        "value": "A6004B67",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Hà Nội - CN LONG BIÊN HÀ NỘI - 01302007"
+      },
+      {
+        "value": "A6004AR3",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - HỘI SỞ CHÍNH - 01309001"
+      },
+      {
+        "value": "A6004AR4",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - SỞ GIAO DỊCH - 01309012"
+      },
+      {
+        "value": "A6004AR5",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Đà Nẵng - CN ĐÀ NẴNG - 48505001"
+      },
+      {
+        "value": "A6004AR6",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hà Nội - CN HÀ NỘI - 01505001"
+      },
+      {
+        "value": "A6004AR7",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hải Phòng - CN HẢI PHÒNG - 31505001"
+      },
+      {
+        "value": "A6004AR8",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Khánh Hòa - CN KHÁNH HÒA - 56505001"
+      },
+      {
+        "value": "A6004AR9",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79505001"
+      },
+      {
+        "value": "A6004ARA",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77505001"
+      },
+      {
+        "value": "A6004ARB",
+        "NOM": "VRB-NGÂN HÀNG LIÊN DOANH VIỆT NGA - Hà Nội - SỞ GIAO DỊCH - 01505002"
+      },
+      {
+        "value": "A6004ARC",
+        "NOM": "WOORIBANK-WOORI BANK - Hà Nội - CN HÀ NỘI - 01624001"
+      },
+      {
+        "value": "A6004ARD",
+        "NOM": "WOORIBANK-WOORI BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79637001"
+      },
+      {
+        "value": "A6004AW3",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Kiên Giang - CN KIÊN GIANG - 91357001"
+      },
+      {
+        "value": "A6004AW4",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Kon Tum - CN KON TUM - 62357001"
+      },
+      {
+        "value": "A6004AW5",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lai Châu - CN LAI CHÂU - 12357002"
+      },
+      {
+        "value": "A6004AW6",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lâm Đồng - CN LÂM ĐỒNG - 68357001"
+      },
+      {
+        "value": "A6004AW7",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lạng Sơn - CN LẠNG SƠN - 20357001"
+      },
+      {
+        "value": "A6004AW8",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Lào Cai - CN LÀO CAI - 10357001"
+      },
+      {
+        "value": "A6004AW9",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Long An - CN LONG AN - 80357001"
+      },
+      {
+        "value": "A6004AWA",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Nam Định - CN NAM ĐỊNH - 36357001"
+      },
+      {
+        "value": "A6004AWB",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Nghệ An - CN NGHỆ AN - 40357001"
+      },
+      {
+        "value": "A6004AWC",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Ninh Bình - CN NINH BÌNH - 37357001"
+      },
+      {
+        "value": "A6004AWD",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Ninh Thuận - CN NINH THUẬN - 58357001"
+      },
+      {
+        "value": "A6004B18",
+        "NOM": "VBSP-NGÂN HÀNG CHÍNH SÁCH XÃ HỘI - Cà Mau - CN TINH CÀ MAU - 96207001"
+      },
+      {
+        "value": "A6004B19",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - THỊ XÃ KIẾN TƯỜNG - 80204020"
+      },
+      {
+        "value": "A6004B1A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - VPĐD KV MIỀN NAM - 79204017"
+      },
+      {
+        "value": "A6004B1B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - VPĐD KV MIỀN TRUNG - 48204018"
+      },
+      {
+        "value": "A6004B1C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - VPĐD KV TÂY NAM BỘ - 92204012"
+      },
+      {
+        "value": "A6004B1D",
+        "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - CN PHỤ TP HCM - 79644001"
+      },
+      {
+        "value": "A6004B1E",
+        "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79602001"
+      },
+      {
+        "value": "A6004B1F",
+        "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hà Nội - HỘI SỞ - 01602002"
+      },
+      {
+        "value": "A6004B1G",
+        "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hà Nội - SỞ GIAO DỊCH - 01602001"
+      },
+      {
+        "value": "A6004B1H",
+        "NOM": "ANZ-NGÂN HÀNG TNHH ANZ VIỆT NAM - Hồ Chí Minh - TP HCM PGD NAM SÀI GÒN - 79602003"
+      },
+      {
+        "value": "A6004B1I",
+        "NOM": "BACABANK-NGÂN HÀNG TMCP BẮC Á - Bắc Giang - CN BẮC GIANG - 24313001"
+      },
+      {
+        "value": "A6004B68",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - An Giang - CN LONG XUYÊN - 89302001"
+      },
+      {
+        "value": "A6004B69",
+        "NOM": "MSB-NGÂN HÀNG TMCP HÀNG HẢI - Nam Định - CN NAM ĐỊNH - 36302001"
+      },
+      {
+        "value": "A6004B6A",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42208001"
+      },
+      {
+        "value": "A6004B6B",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31208001"
+      },
+      {
+        "value": "A6004B6C",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Cà Mau - CN KHU VỰC MINH HẢI - 96208001"
+      },
+      {
+        "value": "A6004B6D",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91208001"
+      },
+      {
+        "value": "A6004B6E",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Kon Tum - CN KON TUM - 62208001"
+      },
+      {
+        "value": "A6004B6F",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đắk Lắk - CN KV DAK LAK-DAK NÔNG - 66208001"
+      },
+      {
+        "value": "A6004B6G",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Đà Nẵng - CN KV QUẢNG NAM- ĐÀ NẴNG - 48208001"
+      },
+      {
+        "value": "A6004B6H",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Thừa Thiên Huế - CN KV THỪA THIÊN HUẾ QUẢNG TRỊ - 46208001"
+      },
+      {
+        "value": "A6004B6I",
+        "NOM": "VDB-NGÂN HÀNG PHÁT TRIỂN VIỆT NAM - Lai Châu - CN LAI CHÂU - 12208001"
+      },
+      {
+        "value": "A6004ARE",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Quảng Nam - CN HỘI AN - 49502001"
+      },
+      {
+        "value": "A6004ARF",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hà Nội - CN MỸ ĐÌNH - 01502004"
+      },
+      {
+        "value": "A6004ARG",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hồ Chí Minh - CN TÂN BÌNH - 79502003"
+      },
+      {
+        "value": "A6004ARH",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hà Nội - CN THIÊN LONG - 01502003"
+      },
+      {
+        "value": "A6004ARI",
+        "NOM": "INDOVINABANK-INDOVINA BANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79502001"
+      },
+      {
+        "value": "A6004ARJ",
+        "NOM": "INDUSTRIALBANKOFKOREA-INDUSTRIAL BANK OF KOREA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79641001"
+      },
+      {
+        "value": "A6004ARK",
+        "NOM": "JPMORGANCHASEN.A-JPMORGAN CHASE N.A - Hồ Chí Minh - TP HỒ CHÍ MINH - 79627001"
+      },
+      {
+        "value": "A6004ARL",
+        "NOM": "KEBHANA-NGÂN HÀNG KEB HANA - Hà Nội - CN HÀ NỘI - 01626001"
+      },
+      {
+        "value": "A6004ARM",
+        "NOM": "KEBHANA-NGÂN HÀNG KEB HANA - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79656001"
+      },
+      {
+        "value": "A6004ARN",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - An Giang - CN AN GIANG - 89353001"
+      },
+      {
+        "value": "A6004ARO",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bạc Liêu - CN BẠC LIÊU - 95353001"
+      },
+      {
+        "value": "A6004ARP",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bến Tre - CN BẾN TRE - 83353001"
+      },
+      {
+        "value": "A6004AWE",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Phú Thọ - CN PHÚ THỌ - 25357001"
+      },
+      {
+        "value": "A6004AWF",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Phú Yên - CN PHÚ YÊN - 54357001"
+      },
+      {
+        "value": "A6004AWG",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Bình - CN QUẢNG BÌNH - 44357001"
+      },
+      {
+        "value": "A6004AWH",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Nam - CN QUẢNG NAM - 49357001"
+      },
+      {
+        "value": "A6004AWI",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Ninh - CN QUẢNG NINH - 22357001"
+      },
+      {
+        "value": "A6004AWJ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Quảng Trị - CN QUẢNG TRỊ - 45357001"
+      },
+      {
+        "value": "A6004AWK",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31616001"
+      },
+      {
+        "value": "A6004AWL",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 01616003"
+      },
+      {
+        "value": "A6004AWM",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79616001"
+      },
+      {
+        "value": "A6004AWN",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ - 01616006"
+      },
+      {
+        "value": "A6004AWO",
+        "NOM": "SHINHANVIETNAM-NGÂN HÀNG TNHH MTV SHINHAN VIỆT NAM - Hà Nội - CN LÊ THÁI TỔ - PHÒNG GIAO DỊCH CẦU GIẤY - 01616004"
+      },
+      {
+        "value": "A6004BZ8",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN THỦ ĐỨC - 79303009"
+      },
+      {
+        "value": "A6004BZ9",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tiền Giang - CN TIỀN GIANG - 82303001"
+      },
+      {
+        "value": "A6004BZA",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN TÔN THẤT TÙNG - 01303011"
+      },
+      {
+        "value": "A6004BZB",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - An Giang - CN TP LONG XUYÊN - 89303002"
+      },
+      {
+        "value": "A6004BZC",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Khánh Hòa - CN TP NHA TRANG - 56303002"
+      },
+      {
+        "value": "A6004BZD",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bình Thuận - CN TP PHAN THIẾT - 60303002"
+      },
+      {
+        "value": "A6004BZE",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Trà Vinh - CN TRÀ VINH - 84303001"
+      },
+      {
+        "value": "A6004BZF",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TRUNG TÂM - 79303002"
+      },
+      {
+        "value": "A6004BZG",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN TỪ LIÊM - 01303012"
+      },
+      {
+        "value": "A6004BZH",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Long An - CN VÀM CỎ - 80303002"
+      },
+      {
+        "value": "A6004BZI",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hậu Giang - CN VỊ THANH - 93303002"
+      },
+      {
+        "value": "A6004BUB",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TP HÀ NỘI - 01201002"
+      },
+      {
+        "value": "A6004BUC",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bình Thuận - CN BÌNH THUẬN - 60339001"
+      },
+      {
+        "value": "A6004BUD",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Cà Mau - CN CÀ MAU - 96339001"
+      },
+      {
+        "value": "A6004BUE",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92339001"
+      },
+      {
+        "value": "A6004BUF",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48339001"
+      },
+      {
+        "value": "A6004BUG",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75339001"
+      },
+      {
+        "value": "A6004BUH",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87339001"
+      },
+      {
+        "value": "A6004BUI",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hà Nội - CN HÀ NỘI - 01339001"
+      },
+      {
+        "value": "A6004BUJ",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93339001"
+      },
+      {
+        "value": "A6004BUK",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN HỘI SỞ CHÍNH - 80339001"
+      },
+      {
+        "value": "A6004BUL",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91339001"
+      },
+      {
+        "value": "A6004BZJ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Vĩnh Long - CN VĨNH LONG - 86303001"
+      },
+      {
+        "value": "A6004BZK",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN 3 THÁNG 2 - 79308011"
+      },
+      {
+        "value": "A6004BZL",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - An Giang - CN AN GIANG - 89308001"
+      },
+      {
+        "value": "A6004BZM",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÀ CHIỂU - 79308009"
+      },
+      {
+        "value": "A6004BZN",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91201001"
+      },
+      {
+        "value": "A6004BZO",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kon Tum - CN KON TUM - 62201001"
+      },
+      {
+        "value": "A6004BZP",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lai Châu - CN LAI CHÂU - 12201001"
+      },
+      {
+        "value": "A6004BZQ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lâm Đồng - CN LÂM ĐỒNG - 68201001"
+      },
+      {
+        "value": "A6004BZR",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN LÁNG HÒA LẠC - 01201018"
+      },
+      {
+        "value": "A6004BZS",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lạng Sơn - CN LẠNG SƠN - 20201001"
+      },
+      {
+        "value": "A6004BZT",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - null - CN LAO - 99856002"
+      },
+      {
+        "value": "A6004BUM",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hồ Chí Minh - CN LAM GIANG - 79339002"
+      },
+      {
+        "value": "A6004BUN",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN LONG AN - 80339002"
+      },
+      {
+        "value": "A6004BUO",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN LONG HIỆP - 80339004"
+      },
+      {
+        "value": "A6004BUP",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56339001"
+      },
+      {
+        "value": "A6004BUQ",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Long An - CN RẠCH KIẾN - 80339003"
+      },
+      {
+        "value": "A6004BUR",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN ĐÔNG ĐÔ - 01303008"
+      },
+      {
+        "value": "A6004BUS",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Bến Tre - CN ĐỒNG KHỞI - 83303002"
+      },
+      {
+        "value": "A6004BUT",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Nai - CN ĐỒNG NAI - 75303001"
+      },
+      {
+        "value": "A6004BUU",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Tháp - CN ĐỒNG THÁP - 87303001"
+      },
+      {
+        "value": "A6004BUV",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Trà Vinh - CN DUYÊN HẢI - 84303002"
+      },
+      {
+        "value": "A6004BUW",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Gia Lai - CN GIA LAI - 64303001"
+      },
+      {
+        "value": "A6004BZU",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Lào Cai - CN LÀO CAI - 10201001"
+      },
+      {
+        "value": "A6004BZV",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN LÊ CHÂN - 31201004"
+      },
+      {
+        "value": "A6004BZW",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Long An - CN LONG AN - 80201001"
+      },
+      {
+        "value": "A6004BZX",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN LƯU XÁ - 19201002"
+      },
+      {
+        "value": "A6004BZY",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN MÓNG CÁI - 22201004"
+      },
+      {
+        "value": "A6004BZZ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hưng Yên - CN MỸ HÀO - 33201002"
+      },
+      {
+        "value": "A6004C00",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36201001"
+      },
+      {
+        "value": "A6004C01",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nam Định - CN NAM ĐỊNH - 36201002"
+      },
+      {
+        "value": "A6004C02",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN NAM SÀI GÒN - 79201020"
+      },
+      {
+        "value": "A6004C03",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN NAM THĂNG LONG - 01201008"
+      },
+      {
+        "value": "A6004C04",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN NAM THỪA THIÊN HUẾ - 46201002"
+      },
+      {
+        "value": "A6004BUX",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN GIẢNG VÕ - 01303010"
+      },
+      {
+        "value": "A6004BUY",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tiền Giang - CN GÒ CÔNG ĐÔNG - 82303002"
+      },
+      {
+        "value": "A6004BUZ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN GÒ VẤP - 79303011"
+      },
+      {
+        "value": "A6004BV0",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nam - CN HÀ NAM - 35303001"
+      },
+      {
+        "value": "A6004BV1",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN HÀ NỘI - 01303005"
+      },
+      {
+        "value": "A6004BV2",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Tĩnh - CN HÀ TĨNH - 42303001"
+      },
+      {
+        "value": "A6004BV3",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hải Dương - CN HẢI DƯƠNG - 30303001"
+      },
+      {
+        "value": "A6004BV4",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hải Phòng - CN HẢI PHÒNG - 31303001"
+      },
+      {
+        "value": "A6004BV5",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN HÀNG BÀI - 01303009"
+      },
+      {
+        "value": "A6004BV6",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hậu Giang - CN HẬU GIANG - 93303001"
+      },
+      {
+        "value": "A6004BV7",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HOA VIỆT - 79303015"
+      },
+      {
+        "value": "A6004C05",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN NGHỆ AN - 40201001"
+      },
+      {
+        "value": "A6004C06",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN NGÔ QUYỀN - 31201003"
+      },
+      {
+        "value": "A6004C07",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN NGŨ HÀNH SƠN - 48201002"
+      },
+      {
+        "value": "A6004C08",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN NHỊ CHIỂU - 30201002"
+      },
+      {
+        "value": "A6004C09",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN NHƠN TRẠCH - 75201004"
+      },
+      {
+        "value": "A6004C0A",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Bình - CN NINH BÌNH - 37201001"
+      },
+      {
+        "value": "A6004C0B",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Thuận - CN NINH THUẬN - 58201001"
+      },
+      {
+        "value": "A6004C0C",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Kiên Giang - CN PHÚ QUỐC - 91201002"
+      },
+      {
+        "value": "A6004C0D",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN PHÚ THỌ - 25201001"
+      },
+      {
+        "value": "A6004C0E",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Yên - CN PHÚ YÊN - 54201001"
+      },
+      {
+        "value": "A6004C0F",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN PHÚC YÊN - 26201002"
+      },
+      {
+        "value": "A6004BV8",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79303001"
+      },
+      {
+        "value": "A6004BV9",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thừa Thiên Huế - CN HUẾ - 46303001"
+      },
+      {
+        "value": "A6004BVA",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN HƯNG ĐẠO - 79303007"
+      },
+      {
+        "value": "A6004BVB",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hưng Yên - CN HƯNG YÊN - 33303001"
+      },
+      {
+        "value": "A6004BVC",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Khánh Hòa - CN KHÁNH HÒA - 56303001"
+      },
+      {
+        "value": "A6004BVD",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN KIÊN GIANG - 91303001"
+      },
+      {
+        "value": "A6004BVE",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kon Tum - CN KONTUM - 62303001"
+      },
+      {
+        "value": "A6004BVF",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Lâm Đồng - CN LÂM ĐỒNG - 68303001"
+      },
+      {
+        "value": "A6004BVG",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Lạng Sơn - CN LẠNG SƠN - 20303001"
+      },
+      {
+        "value": "A6004BVH",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Lắk - CN LÊ THÁNH TÔNG - 66303002"
+      },
+      {
+        "value": "A6004BVI",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Long An - CN LONG AN - 80303001"
+      },
+      {
+        "value": "A6004C0G",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Bình - CN QUẢNG BÌNH - 44201001"
+      },
+      {
+        "value": "A6004C0H",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN QUANG MINH - 01201025"
+      },
+      {
+        "value": "A6004C0I",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49201001"
+      },
+      {
+        "value": "A6004C0J",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51201001"
+      },
+      {
+        "value": "A6004C0K",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22201001"
+      },
+      {
+        "value": "A6004C0L",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Trị - CN QUẢNG TRỊ - 45201001"
+      },
+      {
+        "value": "A6004C0M",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN KIẾN AN - 31201007"
+      },
+      {
+        "value": "A6004C0N",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN QUANG TRUNG - 01201016"
+      },
+      {
+        "value": "A6004C0O",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Tháp - CN SA ĐÉC - 87201002"
+      },
+      {
+        "value": "A6004C0P",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79201018"
+      },
+      {
+        "value": "A6004C0Q",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN SẦM SƠN - 38201003"
+      },
+      {
+        "value": "A6004BVJ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN LONG BIÊN - 01303002"
+      },
+      {
+        "value": "A6004BVK",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Sóc Trăng - CN LONG PHÚ - 94303002"
+      },
+      {
+        "value": "A6004BVL",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN LƯƠNG NHỮ HỌC - 79303023"
+      },
+      {
+        "value": "A6004BVM",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN LÝ THÁI TỔ - 79303031"
+      },
+      {
+        "value": "A6004BVN",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN MINH PHỤNG - 79303025"
+      },
+      {
+        "value": "A6004BVO",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cần Thơ - CN NAM CẦN THƠ - 92303002"
+      },
+      {
+        "value": "A6004BVP",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Nghệ An - CN NGHỆ AN - 40303001"
+      },
+      {
+        "value": "A6004BVQ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NGUYỄN CÔNG TRỨ - 79303027"
+      },
+      {
+        "value": "A6004BVR",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN NGUYỄN TRUNG TRỰC - 91303003"
+      },
+      {
+        "value": "A6004BVS",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NGUYỄN VĂN TRỖI - 79303028"
+      },
+      {
+        "value": "A6004BVT",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN NHÀ BÈ - 79303024"
+      },
+      {
+        "value": "A6004C0R",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Sóc Trăng - CN SÓC TRĂNG - 94201001"
+      },
+      {
+        "value": "A6004C0S",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Sơn La - CN SƠN LA - 14201001"
+      },
+      {
+        "value": "A6004C0T",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 10 - 79304003"
+      },
+      {
+        "value": "A6004C0U",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 3 - 79304015"
+      },
+      {
+        "value": "A6004C0V",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 4 - 79304013"
+      },
+      {
+        "value": "A6004C0W",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 5 - 79304009"
+      },
+      {
+        "value": "A6004C0X",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 7 - 79304012"
+      },
+      {
+        "value": "A6004C0Y",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 9 - 79304008"
+      },
+      {
+        "value": "A6004C0Z",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Nam - CN QUẢNG NAM - 49304001"
+      },
+      {
+        "value": "A6004C10",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Ngãi - CN QUẢNG NGÃI - 51304001"
+      },
+      {
+        "value": "A6004C11",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Ninh - CN QUẢNG NINH - 22304002"
+      },
+      {
+        "value": "A6004BVU",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Ninh Thuận - CN NINH THUẬN - 58303001"
+      },
+      {
+        "value": "A6004BVV",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Nai - CN PHẠM VĂN THUẬN - 75303002"
+      },
+      {
+        "value": "A6004BVW",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN PHÚ NHUẬN - 79303029"
+      },
+      {
+        "value": "A6004BVX",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79201024"
+      },
+      {
+        "value": "A6004BVY",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN CHƯƠNG DƯƠNG - 01201005"
+      },
+      {
+        "value": "A6004BVZ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN CỬA LÒ - 40201004"
+      },
+      {
+        "value": "A6004BW0",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48201001"
+      },
+      {
+        "value": "A6004BW1",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đắk Nông - CN ĐAK NÔNG - 67201001"
+      },
+      {
+        "value": "A6004BW2",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đắk Lắk - CN DAKLAK - 66201001"
+      },
+      {
+        "value": "A6004BW3",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN ĐỀN HÙNG - 25201003"
+      },
+      {
+        "value": "A6004BW4",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Điện Biên - CN ĐIỆN BIÊN - 11201001"
+      },
+      {
+        "value": "A6004C12",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN TÂN BÌNH - 79304004"
+      },
+      {
+        "value": "A6004C13",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Tây Ninh - CN TÂY NINH - 72304001"
+      },
+      {
+        "value": "A6004C14",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thái Bình - CN THÁI BÌNH - 34304001"
+      },
+      {
+        "value": "A6004C15",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Dương - CN THUẬN AN - 74304002"
+      },
+      {
+        "value": "A6004C16",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Tiền Giang - CN TIỀN GIANG - 82304001"
+      },
+      {
+        "value": "A6004C17",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - An Giang - CN TỈNH AN GIANG - 89304001"
+      },
+      {
+        "value": "A6004C18",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thừa Thiên Huế - CN TP HUẾ - 46304001"
+      },
+      {
+        "value": "A6004C19",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Trà Vinh - CN TRÀ VINH - 84304001"
+      },
+      {
+        "value": "A6004C1A",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Vĩnh Long - CN VĨNH LONG - 86304001"
+      },
+      {
+        "value": "A6004C1B",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77304001"
+      },
+      {
+        "value": "A6004C1C",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - HỒ CHÍ MINH - 79304001"
+      },
+      {
+        "value": "A6004C1D",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - PGD BÌNH TÂY - 79304010"
+      },
+      {
+        "value": "A6004BR8",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đắk Lắk - CN DAKLAK - 66303001"
+      },
+      {
+        "value": "A6004BR9",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN ĐIỆN BIÊN PHỦ - 79303018"
+      },
+      {
+        "value": "A6004BRA",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN ĐỐNG ĐA - 01303004"
+      },
+      {
+        "value": "A6004BRB",
+        "NOM": "VIETCOMBANK-NGÂN HÀNG TMCP NGOẠI THƯƠNG VIỆT NAM - Hà Nội - HỘI SỞ - 01203001"
+      },
+      {
+        "value": "A6004BRC",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN  HỒNG BÀNG - 31201002"
+      },
+      {
+        "value": "A6004BRD",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 1 - TP HCM - 79201002"
+      },
+      {
+        "value": "A6004BRE",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 10 - TP HCM - 79201011"
+      },
+      {
+        "value": "A6004BRF",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 11 - TP HCM - 79201014"
+      },
+      {
+        "value": "A6004BRG",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 12 - TP HCM - 79201016"
+      },
+      {
+        "value": "A6004BRH",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 2 - TP HCM - 79201003"
+      },
+      {
+        "value": "A6004BRI",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 3 - TP HCM - 79201004"
+      },
+      {
+        "value": "A6004BW5",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN ĐỒ SƠN - 31201005"
+      },
+      {
+        "value": "A6004BW6",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG ANH - 01201006"
+      },
+      {
+        "value": "A6004BW7",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 01201003"
+      },
+      {
+        "value": "A6004BW8",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN ĐÔNG HÀ NỘI - 01201010"
+      },
+      {
+        "value": "A6004BW9",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75201001"
+      },
+      {
+        "value": "A6004BWA",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79201015"
+      },
+      {
+        "value": "A6004BWB",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Tháp - CN ĐỒNG THÁP - 87201001"
+      },
+      {
+        "value": "A6004BWC",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN GIA ĐỊNH - 79201023"
+      },
+      {
+        "value": "A6004BWD",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Gia Lai - CN GIA LAI - 64201001"
+      },
+      {
+        "value": "A6004BWE",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Giang - CN HÀ GIANG - 02201001"
+      },
+      {
+        "value": "A6004BWF",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nam - CN HÀ NAM - 35201001"
+      },
+      {
+        "value": "A6004C1E",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Cà Mau - PGD CÀ MAU - 96304001"
+      },
+      {
+        "value": "A6004C1F",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Quảng Nam - PGD HỘI AN - 49304002"
+      },
+      {
+        "value": "A6004C1G",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - PGD LÊ ĐẠI HÀNH - 79304005"
+      },
+      {
+        "value": "A6004C1H",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Khánh Hòa - PGD NHA TRANG - 56304001"
+      },
+      {
+        "value": "A6004C1I",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Ninh Thuận - PGD NINH THUẬN - 58304001"
+      },
+      {
+        "value": "A6004C1J",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Phú Yên - PGD PHÚ YÊN - 54304001"
+      },
+      {
+        "value": "A6004C1K",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Sóc Trăng - PGD SÓC TRĂNG - 94304001"
+      },
+      {
+        "value": "A6004C1L",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Vĩnh Phúc - PGD VĨNH YÊN - 26304001"
+      },
+      {
+        "value": "A6004C1M",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79201001"
+      },
+      {
+        "value": "A6004C1N",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84201001"
+      },
+      {
+        "value": "A6004C1O",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TRÀNG AN - 01201023"
+      },
+      {
+        "value": "A6004BRJ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 4 - TP HCM - 79201005"
+      },
+      {
+        "value": "A6004BRK",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 5 - TP HCM - 79201006"
+      },
+      {
+        "value": "A6004BRL",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 6 - TP HCM - 79201007"
+      },
+      {
+        "value": "A6004BRM",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 7 - TP HCM - 79201008"
+      },
+      {
+        "value": "A6004BRN",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 8 - TP HCM - 79201009"
+      },
+      {
+        "value": "A6004BRO",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN 9 - TP HCM - 79201010"
+      },
+      {
+        "value": "A6004BRP",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - An Giang - CN AN GIANG - 89201001"
+      },
+      {
+        "value": "A6004BRQ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BA ĐÌNH - 01201004"
+      },
+      {
+        "value": "A6004BRR",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77201001"
+      },
+      {
+        "value": "A6004BRS",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN BẮC ĐÀ NẴNG - 48201003"
+      },
+      {
+        "value": "A6004BRT",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24201001"
+      },
+      {
+        "value": "A6004BWG",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HÀ THÀNH - 01201022"
+      },
+      {
+        "value": "A6004BWH",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42201001"
+      },
+      {
+        "value": "A6004BWI",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HAI BÀ TRƯNG - 01201012"
+      },
+      {
+        "value": "A6004BWJ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN HẢI DƯƠNG - 30201001"
+      },
+      {
+        "value": "A6004BWK",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31201001"
+      },
+      {
+        "value": "A6004BWL",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hậu Giang - CN HẬU GIANG - 93201001"
+      },
+      {
+        "value": "A6004BWM",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hoà Bình - CN HÒA BÌNH - 17201001"
+      },
+      {
+        "value": "A6004BWN",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN HÒA THÀNH - 72201003"
+      },
+      {
+        "value": "A6004BWO",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HOÀN KIẾM - 01201011"
+      },
+      {
+        "value": "A6004BWP",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN HOÀNG MAI - 01201014"
+      },
+      {
+        "value": "A6004BWQ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Nam - CN HỘI AN - 49201002"
+      },
+      {
+        "value": "A6004C1P",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TTQLTM - 01201021"
+      },
+      {
+        "value": "A6004C1Q",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN TTQLTM BẮC NINH - 27201005"
+      },
+      {
+        "value": "A6004C1R",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN TTQLTM ĐÀ NẴNG - 48201005"
+      },
+      {
+        "value": "A6004C1S",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN TTQLTM HẢI PHÒNG - 31201008"
+      },
+      {
+        "value": "A6004C1T",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TTQLTM HỒ CHÍ MINH - 79201022"
+      },
+      {
+        "value": "A6004C1U",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tuyên Quang - CN TUYÊN QUANG - 08201001"
+      },
+      {
+        "value": "A6004C1V",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN TX PHÚ THỌ - 25201004"
+      },
+      {
+        "value": "A6004C1W",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN UÔNG BÍ - 22201005"
+      },
+      {
+        "value": "A6004C1X",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Quảng Ninh - CN VÂN ĐỒN - 22201006"
+      },
+      {
+        "value": "A6004C1Y",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86201001"
+      },
+      {
+        "value": "A6004C1Z",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Vĩnh Phúc - CN VĨNH PHÚC - 26201001"
+      },
+      {
+        "value": "A6004BRU",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN BẮC HÀ NỘI - 01201009"
+      },
+      {
+        "value": "A6004BRV",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Kạn - CN BẮC KẠN - 06201001"
+      },
+      {
+        "value": "A6004BRW",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95201001"
+      },
+      {
+        "value": "A6004BRX",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Nghệ An - CN BẮC NGHỆ AN - 40201003"
+      },
+      {
+        "value": "A6004BRY",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN BẮC NINH - 27201001"
+      },
+      {
+        "value": "A6004BRZ",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - An Giang - CN AN GIANG - 89305001"
+      },
+      {
+        "value": "A6004BS0",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN BA ĐÌNH - 01305002"
+      },
+      {
+        "value": "A6004BS1",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77305001"
+      },
+      {
+        "value": "A6004BS2",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bạc Liêu - CN BẠC LIÊU - 95305001"
+      },
+      {
+        "value": "A6004BS3",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bình Dương - CN BÌNH DƯƠNG - 74305001"
+      },
+      {
+        "value": "A6004BS4",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN BÌNH PHÚ - 79305013"
+      },
+      {
+        "value": "A6004BWR",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Phú Thọ - CN HÙNG VƯƠNG - 25201002"
+      },
+      {
+        "value": "A6004BWS",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hưng Yên - CN HƯNG YÊN - 33201001"
+      },
+      {
+        "value": "A6004BWT",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đồng Nai - CN KCN BIÊN HÒA - 75201002"
+      },
+      {
+        "value": "A6004BWU",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Dương - CN KCN BÌNH DƯƠNG - 74201002"
+      },
+      {
+        "value": "A6004BWV",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Dương - CN KCN HẢI DƯƠNG - 30201003"
+      },
+      {
+        "value": "A6004BWW",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bình Định - CN KCN PHÚ TÀI - 52201002"
+      },
+      {
+        "value": "A6004BWX",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - An Giang - CN CHÂU ĐỐC - 89201002"
+      },
+      {
+        "value": "A6004BWY",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN KCN QUẾ VÕ - 27201004"
+      },
+      {
+        "value": "A6004BWZ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN KCN TIÊN SƠN - 27201003"
+      },
+      {
+        "value": "A6004BX0",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN KCN TRẢNG BÀNG - 72201002"
+      },
+      {
+        "value": "A6004BX1",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Khánh Hòa - CN KHÁNH HÒA - 56201001"
+      },
+      {
+        "value": "A6004C20",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Yên Bái - CN YÊN BÁI - 15201001"
+      },
+      {
+        "value": "A6004C21",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - TRỤ SỜ CHÍNH - 01201001"
+      },
+      {
+        "value": "A6004C22",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - An Giang - CN AN GIANG - 89309001"
+      },
+      {
+        "value": "A6004C23",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bắc Giang - CN BẮC GIANG - 24309001"
+      },
+      {
+        "value": "A6004C24",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN HÀ NỘI - 01305001"
+      },
+      {
+        "value": "A6004C25",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hải Phòng - CN HẢI PHÒNG - 31305001"
+      },
+      {
+        "value": "A6004C26",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN HÒA BÌNH HCM - 79305005"
+      },
+      {
+        "value": "A6004C27",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79305001"
+      },
+      {
+        "value": "A6004C28",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Thừa Thiên Huế - CN HUẾ - 46305001"
+      },
+      {
+        "value": "A6004C29",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đà Nẵng - CN HÙNG VƯƠNG ĐN - 48305002"
+      },
+      {
+        "value": "A6004C2A",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Kiên Giang - CN KIÊN GIANG - 91305001"
+      },
+      {
+        "value": "A6004BS5",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Bình Phước - CN BÌNH PHƯỚC - 70305001"
+      },
+      {
+        "value": "A6004BS6",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN BÌNH TÂN - 79305015"
+      },
+      {
+        "value": "A6004BS7",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đắk Lắk - CN BUÔN MA THUỘT - 66305001"
+      },
+      {
+        "value": "A6004BS8",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Cần Thơ - CN CẦN THƠ - 92305001"
+      },
+      {
+        "value": "A6004BS9",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN CẦU GIẤY - 01305005"
+      },
+      {
+        "value": "A6004BSA",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN CHỢ LỚN - 79305007"
+      },
+      {
+        "value": "A6004BSB",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN CỘNG HÒA - 79305012"
+      },
+      {
+        "value": "A6004BSC",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Lâm Đồng - CN ĐÀ LẠT - 68305001"
+      },
+      {
+        "value": "A6004BSD",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đà Nẵng - CN ĐÀ NẴNG - 48305001"
+      },
+      {
+        "value": "A6004BSE",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN ĐỐNG ĐA - 01305006"
+      },
+      {
+        "value": "A6004BSF",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Đồng Nai - CN ĐỒNG NAI - 75305001"
+      },
+      {
+        "value": "A6004BX2",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79339001"
+      },
+      {
+        "value": "A6004BX3",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82339001"
+      },
+      {
+        "value": "A6004BX4",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Trà Vinh - CN TRÀ VINH - 84339001"
+      },
+      {
+        "value": "A6004BX5",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Vĩnh Long - CN VĨNH LONG - 86339001"
+      },
+      {
+        "value": "A6004BX6",
+        "NOM": "CB-NGÂN HÀNG THƯƠNG MẠI TNHH MTV XÂY DỰNG VIỆT NAM - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77339001"
+      },
+      {
+        "value": "A6004BX7",
+        "NOM": "CHIFON BANK - Hồ Chí Minh - TPHCM - 79607001"
+      },
+      {
+        "value": "A6004BX8",
+        "NOM": "CHIFON BANK - Hà Nội - HÀ NỘI - 01607001"
+      },
+      {
+        "value": "A6004BX9",
+        "NOM": "CHINACONSTRUCTIONBANKCORPORATION-CHINA CONSTRUCTION BANK CORPORATION - Hồ Chí Minh - CN TP HCM - 79611001"
+      },
+      {
+        "value": "A6004BXA",
+        "NOM": "CHOHUNGVINABANK-CHOHUNG VINA BANK - Lào Cai - CN HÀ NỘI - 10503018"
+      },
+      {
+        "value": "A6004BXB",
+        "NOM": "CIMB-NGÂN HÀNG TNHH MTV CIMB - Hà Nội - HỘI SỞ - 01661001"
+      },
+      {
+        "value": "A6004BXC",
+        "NOM": "CITIBANK-NGÂN HÀNG CITIBANK - Hà Nội - CN HÀ NỘI - 01605001"
+      },
+      {
+        "value": "A6004C2B",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Long An - CN LONG AN - 80305001"
+      },
+      {
+        "value": "A6004C2C",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN LONG BIÊN - 01305003"
+      },
+      {
+        "value": "A6004C2D",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Tiền Giang - CN MỸ THO - 82305001"
+      },
+      {
+        "value": "A6004C2E",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Khánh Hòa - CN NHA TRANG - 56305001"
+      },
+      {
+        "value": "A6004C2F",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79305014"
+      },
+      {
+        "value": "A6004C2G",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 10 HCM - 79305004"
+      },
+      {
+        "value": "A6004C2H",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 11 HCM - 79305003"
+      },
+      {
+        "value": "A6004C2I",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 3 - 79305017"
+      },
+      {
+        "value": "A6004C2J",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 4 - 79305009"
+      },
+      {
+        "value": "A6004C2K",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN QUẬN 7 - 79305010"
+      },
+      {
+        "value": "A6004C2L",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Nam - CN QUẢNG NAM - 49305001"
+      },
+      {
+        "value": "A6004BSG",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN BA ĐÌNH - 01308006"
+      },
+      {
+        "value": "A6004BSH",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bạc Liêu - CN BẠC LIÊU - 95308001"
+      },
+      {
+        "value": "A6004BSI",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BẾN NGHÉ - 79308004"
+      },
+      {
+        "value": "A6004BSJ",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÌNH CHÁNH - 79308005"
+      },
+      {
+        "value": "A6004BSK",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bình Dương - CN BÌNH DƯƠNG - 74308001"
+      },
+      {
+        "value": "A6004BSL",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN BÌNH HÒA - 79308008"
+      },
+      {
+        "value": "A6004BSM",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Bình Thuận - CN BÌNH THUẬN - 60308001"
+      },
+      {
+        "value": "A6004BSN",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cà Mau - CN CÀ MAU - 96308001"
+      },
+      {
+        "value": "A6004BSO",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cần Thơ - CN CẦN THƠ - 92308001"
+      },
+      {
+        "value": "A6004BSP",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN CẦU GIẤY - 01308003"
+      },
+      {
+        "value": "A6004BSQ",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN CHỢ LỚN - 79308002"
+      },
+      {
+        "value": "A6004BXD",
+        "NOM": "CITIBANK-NGÂN HÀNG CITIBANK - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79654001"
+      },
+      {
+        "value": "A6004BXE",
+        "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Bắc Giang - CN BẮC GIANG - 24901001"
+      },
+      {
+        "value": "A6004BXF",
+        "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Gia Lai - CN GIA LAI - 64901001"
+      },
+      {
+        "value": "A6004BXG",
+        "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Hà Tĩnh - CN HÀ TĨNH - 42901001"
+      },
+      {
+        "value": "A6004BXH",
+        "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Tây Ninh - CN TÂY NINH - 72901001"
+      },
+      {
+        "value": "A6004BXI",
+        "NOM": "CO_OPBANK-NGÂN HÀNG HỢP TÁC XÃ VIỆT NAM - Yên Bái - CN YÊN BÁI - 15901001"
+      },
+      {
+        "value": "A6004BXJ",
+        "NOM": "COMMONWEALTHBANKOFAUSTRALIA-COMMONWEALTH BANK OF AUSTRALIA - Hồ Chí Minh - TP HỒ CHÍ MINH - 79643001"
+      },
+      {
+        "value": "A6004BXK",
+        "NOM": "DBSBANKLTD-DBS BANK LTD - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79650001"
+      },
+      {
+        "value": "A6004BXL",
+        "NOM": "DEUTSCHEBANK-DEUTSCHE BANK - Hồ Chí Minh - TP HỒ CHÍ MINH - 79619001"
+      },
+      {
+        "value": "A6004BXM",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bắc Giang - CN BẮC GIANG - 24304001"
+      },
+      {
+        "value": "A6004BXN",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bạc Liêu - CN BẠC LIÊU - 95304001"
+      },
+      {
+        "value": "A6004C2M",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Ngãi - CN QUẢNG NGÃI - 51305001"
+      },
+      {
+        "value": "A6004C2N",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Quảng Ninh - CN QUẢNG NINH - 22305001"
+      },
+      {
+        "value": "A6004C2O",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN SÀI GÒN - 79305002"
+      },
+      {
+        "value": "A6004C2P",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TÂN ĐỊNH HCM - 79305006"
+      },
+      {
+        "value": "A6004C2Q",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TÂN SƠN NHẤT - 79305016"
+      },
+      {
+        "value": "A6004C2R",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92305002"
+      },
+      {
+        "value": "A6004C2S",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hà Nội - CN THỦ ĐÔ - 01305004"
+      },
+      {
+        "value": "A6004C2T",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79305011"
+      },
+      {
+        "value": "A6004C2U",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79305008"
+      },
+      {
+        "value": "A6004C2V",
+        "NOM": "EXIMBANK-NGÂN HÀNG TMCP XUẤT NHẬP KHẨU VIỆT NAM - Nghệ An - CN VINH - 40305001"
+      },
+      {
+        "value": "A6004C2W",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Bình Dương - CN BÌNH DƯƠNG - 74320001"
+      },
+      {
+        "value": "A6004BSR",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đà Nẵng - CN ĐÀ NẴNG - 48308001"
+      },
+      {
+        "value": "A6004BSS",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đắk Lắk - CN DAKLAK - 66308001"
+      },
+      {
+        "value": "A6004BST",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN ĐỐNG ĐA - 01308004"
+      },
+      {
+        "value": "A6004BSU",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Đồng Nai - CN ĐỒNG NAI - 75308001"
+      },
+      {
+        "value": "A6004BSV",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN HÀ NỘI - 01308001"
+      },
+      {
+        "value": "A6004BSW",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hải Phòng - CN HẢI PHÒNG - 31308001"
+      },
+      {
+        "value": "A6004BSX",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79308001"
+      },
+      {
+        "value": "A6004BSY",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN HOÀN KIẾM - 01308005"
+      },
+      {
+        "value": "A6004BSZ",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Thừa Thiên Huế - CN HUẾ - 46308001"
+      },
+      {
+        "value": "A6004BT0",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN KHÁNH HỘI - 79308012"
+      },
+      {
+        "value": "A6004BT1",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Lào Cai - CN LÀO CAI - 10308001"
+      },
+      {
+        "value": "A6004BXO",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bắc Ninh - CN BẮC NINH - 27304001"
+      },
+      {
+        "value": "A6004BXP",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bến Tre - CN BẾN TRE - 83304001"
+      },
+      {
+        "value": "A6004BXQ",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Định - CN BÌNH ĐỊNH - 52304001"
+      },
+      {
+        "value": "A6004BXR",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Dương - CN BÌNH DƯƠNG - 74304001"
+      },
+      {
+        "value": "A6004BXS",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Phước - CN BÌNH PHƯỚC - 70304001"
+      },
+      {
+        "value": "A6004BXT",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Bình Thuận - CN BÌNH THUẬN - 60304001"
+      },
+      {
+        "value": "A6004BXU",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Cần Thơ - CN CẦN THƠ - 92304001"
+      },
+      {
+        "value": "A6004BXV",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đà Nẵng - CN ĐÀ NẴNG - 48304001"
+      },
+      {
+        "value": "A6004BXW",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đắk Lắk - CN DAK LAK - 66304001"
+      },
+      {
+        "value": "A6004BXX",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đắk Nông - CN ĐAK NÔNG - 67304001"
+      },
+      {
+        "value": "A6004BXY",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN ĐINH TIÊN HOÀNG - 79304006"
+      },
+      {
+        "value": "A6004C2X",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Đà Nẵng - CN ĐÀ NẴNG - 48320001"
+      },
+      {
+        "value": "A6004C2Y",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Gia Lai - CN GIA LAI - 64320001"
+      },
+      {
+        "value": "A6004C2Z",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN HÀ NỘI - 01320005"
+      },
+      {
+        "value": "A6004C30",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hải Phòng - CN HẢI PHÒNG - 31320001"
+      },
+      {
+        "value": "A6004C31",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN HOÀN KIẾM - 01320002"
+      },
+      {
+        "value": "A6004C32",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Nghệ An - CN NGHỆ AN - 40320001"
+      },
+      {
+        "value": "A6004C33",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Ninh Bình - CN NINH BÌNH - 37320001"
+      },
+      {
+        "value": "A6004C34",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Quảng Ninh - CN QUẢNG NINH - 22320001"
+      },
+      {
+        "value": "A6004C35",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hồ Chí Minh - CN SÀI GÒN - 79320002"
+      },
+      {
+        "value": "A6004BT2",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hà Nội - CN LONG BIÊN - 01308002"
+      },
+      {
+        "value": "A6004BT3",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Quảng Ninh - CN QUẢNG NINH - 22308001"
+      },
+      {
+        "value": "A6004BT4",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Sóc Trăng - CN SÓC TRĂNG - 94308001"
+      },
+      {
+        "value": "A6004BT5",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN BÌNH - 79308010"
+      },
+      {
+        "value": "A6004BT6",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN ĐỊNH - 79308003"
+      },
+      {
+        "value": "A6004BT7",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN TÂN PHÚ - 79308007"
+      },
+      {
+        "value": "A6004BT8",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Hồ Chí Minh - CN THÁI BÌNH - 79308006"
+      },
+      {
+        "value": "A6004BT9",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Cần Thơ - CN THỐT NỐT - 92308002"
+      },
+      {
+        "value": "A6004BTA",
+        "NOM": "SAIGONBANK-NGÂN HÀNG TMCP SÀI GÒN CÔNG THƯƠNG - Tiền Giang - CN TIỀN GIANG - 82308001"
+      },
+      {
+        "value": "A6004BTB",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cần Thơ - CN  CẦN THƠ - 92334001"
+      },
+      {
+        "value": "A6004BTC",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Phòng - CN  HỒNG BÀNG - 31334001"
+      },
+      {
+        "value": "A6004BXZ",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đồng Nai - CN ĐỒNG NAI - 75304001"
+      },
+      {
+        "value": "A6004BY0",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Đồng Tháp - CN ĐỒNG THÁP - 87304001"
+      },
+      {
+        "value": "A6004BY1",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Gia Lai - CN GIA LAI - 64304001"
+      },
+      {
+        "value": "A6004BY2",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN GÒ VẤP - 79304007"
+      },
+      {
+        "value": "A6004BY3",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hà Nam - CN HÀ NAM - 35304001"
+      },
+      {
+        "value": "A6004BY4",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hà Nội - CN HÀ NỘI - 01304001"
+      },
+      {
+        "value": "A6004BY5",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hải Phòng - CN HẢI PHÒNG - 31304001"
+      },
+      {
+        "value": "A6004BY6",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hậu Giang - CN HẬU GIANG - 93304001"
+      },
+      {
+        "value": "A6004BY7",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hưng Yên - CN HƯNG YÊN - 33304001"
+      },
+      {
+        "value": "A6004BY8",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Kiên Giang - CN KIÊN GIANG - 91304001"
+      },
+      {
+        "value": "A6004BY9",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Kon Tum - CN KON TUM - 62304001"
+      },
+      {
+        "value": "A6004BYA",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Lâm Đồng - CN LÂM ĐỒNG - 68304001"
+      },
+      {
+        "value": "A6004BTD",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN 20-10 - 79334008"
+      },
+      {
+        "value": "A6004BTE",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - An Giang - CN AN GIANG - 89334001"
+      },
+      {
+        "value": "A6004BTF",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77334002"
+      },
+      {
+        "value": "A6004BTG",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bắc Ninh - CN BẮC NINH - 27334001"
+      },
+      {
+        "value": "A6004BTH",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN BẾN THÀNH - 79334018"
+      },
+      {
+        "value": "A6004BTI",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bến Tre - CN BẾN TRE - 83334001"
+      },
+      {
+        "value": "A6004BTJ",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Định - CN BÌNH ĐỊNH - 52334001"
+      },
+      {
+        "value": "A6004BTK",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Dương - CN BÌNH DƯƠNG - 74334001"
+      },
+      {
+        "value": "A6004BTL",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN BÌNH TÂY - 79334017"
+      },
+      {
+        "value": "A6004BTM",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Bình Thuận - CN BÌNH THUẬN - 60334001"
+      },
+      {
+        "value": "A6004BTN",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cà Mau - CN CÀ MAU - 96334001"
+      },
+      {
+        "value": "A6004BTO",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Long An - CN CẦN GIUỘC - 80334002"
+      },
+      {
+        "value": "A6004BYB",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Long An - CN LONG AN - 80304001"
+      },
+      {
+        "value": "A6004BYC",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Nam Định - CN NAM ĐỊNH - 36304001"
+      },
+      {
+        "value": "A6004BYD",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Thái Nguyên - CN PGD THÁI NGUYÊN - 19304001"
+      },
+      {
+        "value": "A6004BYE",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN PHÚ NHUẬN - 79304011"
+      },
+      {
+        "value": "A6004BYF",
+        "NOM": "DONGABANK-NGÂN HÀNG TMCP ĐÔNG Á - Hồ Chí Minh - CN QUẬN 1 - 79304002"
+      },
+      {
+        "value": "A6004BYG",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Kiên Giang - CN PHÚ QUỐC - 91303002"
+      },
+      {
+        "value": "A6004BYH",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Phú Thọ - CN PHÚ THỌ - 25303001"
+      },
+      {
+        "value": "A6004BYI",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Phú Yên - CN PHÚ YÊN - 54303001"
+      },
+      {
+        "value": "A6004BYJ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN PHƯƠNG NAM - 79303030"
+      },
+      {
+        "value": "A6004BYK",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 1 - 79303022"
+      },
+      {
+        "value": "A6004BYL",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 12 - 79303005"
+      },
+      {
+        "value": "A6004BTP",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN SÔNG CÔNG - 19201003"
+      },
+      {
+        "value": "A6004BTQ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Đà Nẵng - CN SÔNG HÀN - 48201004"
+      },
+      {
+        "value": "A6004BTR",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN SÔNG NHUỆ - 01201015"
+      },
+      {
+        "value": "A6004BTS",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Ninh Bình - CN TAM ĐIỆP - 37201002"
+      },
+      {
+        "value": "A6004BTT",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂN BÌNH - 79201017"
+      },
+      {
+        "value": "A6004BTU",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Cần Thơ - CN TÂY ĐÔ - 92201002"
+      },
+      {
+        "value": "A6004BTV",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN TÂY HÀ NỘI - 01201013"
+      },
+      {
+        "value": "A6004BTW",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tây Ninh - CN TÂY NINH - 72201001"
+      },
+      {
+        "value": "A6004BTX",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN TÂY SÀI GÒN - 79201012"
+      },
+      {
+        "value": "A6004BTY",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tiền Giang - CN TÂY TIỀN GIANG - 82201002"
+      },
+      {
+        "value": "A6004BTZ",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Bình - CN THÁI BÌNH - 34201001"
+      },
+      {
+        "value": "A6004BYM",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 4 - 79303012"
+      },
+      {
+        "value": "A6004BYN",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 5 - 79303020"
+      },
+      {
+        "value": "A6004BYO",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 8 - 79303013"
+      },
+      {
+        "value": "A6004BYP",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN QUẬN 9 - 79303021"
+      },
+      {
+        "value": "A6004BYQ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Bình - CN QUẢNG BÌNH - 44303001"
+      },
+      {
+        "value": "A6004BYR",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Nam - CN QUẢNG NAM - 49303001"
+      },
+      {
+        "value": "A6004BYS",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Ngãi - CN QUẢNG NGÃI - 51303001"
+      },
+      {
+        "value": "A6004BYT",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Ninh - CN QUẢNG NINH - 22303001"
+      },
+      {
+        "value": "A6004BYU",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Quảng Trị - CN QUẢNG TRỊ - 45303001"
+      },
+      {
+        "value": "A6004BYV",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN SÀI GÒN - 79303010"
+      },
+      {
+        "value": "A6004BYW",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đà Nẵng - CN SÔNG HÀN - 48303002"
+      },
+      {
+        "value": "A6004BU0",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thái Nguyên - CN THÁI NGUYÊN - 19201001"
+      },
+      {
+        "value": "A6004BU1",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THĂNG LONG - 01201017"
+      },
+      {
+        "value": "A6004BU2",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THANH AN - 01201019"
+      },
+      {
+        "value": "A6004BU3",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thanh Hóa - CN THANH HÓA - 38201001"
+      },
+      {
+        "value": "A6004BU4",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hà Nội - CN THANH XUÂN - 01201007"
+      },
+      {
+        "value": "A6004BU5",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ ĐỨC - 79201013"
+      },
+      {
+        "value": "A6004BU6",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hồ Chí Minh - CN THỦ THIÊM - 79201021"
+      },
+      {
+        "value": "A6004BU7",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46201001"
+      },
+      {
+        "value": "A6004BU8",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Tiền Giang - CN TIỀN GIANG - 82201001"
+      },
+      {
+        "value": "A6004BU9",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Bắc Ninh - CN TIEN SON - 27201002"
+      },
+      {
+        "value": "A6004BUA",
+        "NOM": "VIETINBANK-NGÂN HÀNG TMCP CÔNG THƯƠNG VIỆT NAM - Hải Phòng - CN TÔ HIỆU - 31201006"
+      },
+      {
+        "value": "A6004BYX",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN BÌNH - 79303008"
+      },
+      {
+        "value": "A6004BYY",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN ĐỊNH - 79303026"
+      },
+      {
+        "value": "A6004BYZ",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hồ Chí Minh - CN TÂN PHÚ - 79303014"
+      },
+      {
+        "value": "A6004BZ0",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Tây Ninh - CN TÂY NINH - 72303001"
+      },
+      {
+        "value": "A6004BZ1",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thái Nguyên - CN THÁI NGUYÊN - 19303001"
+      },
+      {
+        "value": "A6004BZ2",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THĂNG LONG - 01303006"
+      },
+      {
+        "value": "A6004BZ3",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Đồng Tháp - CN THANH BÌNH - 87303002"
+      },
+      {
+        "value": "A6004BZ4",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Thanh Hóa - CN THANH HÓA - 38303001"
+      },
+      {
+        "value": "A6004BZ5",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THANH TRÌ - 01303007"
+      },
+      {
+        "value": "A6004BZ6",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Cà Mau - CN THỚI BÌNH - 96303002"
+      },
+      {
+        "value": "A6004BZ7",
+        "NOM": "SACOMBANK-NGÂN HÀNG TMCP SÀI GÒN THƯƠNG TÍN - Hà Nội - CN THỦ ĐÔ - 01303001"
+      },
+      {
+        "value": "A60049V2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN MỸ LƯƠNG - 89204015"
+      },
+      {
+        "value": "A60049VO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN NGÃ NĂM - 94204008"
+      },
+      {
+        "value": "A60049VP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGA SƠN - 38204029"
+      },
+      {
+        "value": "A60049VQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN NGÂN SƠN - 06204004"
+      },
+      {
+        "value": "A60049VR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN NGHỆ AN - 40204001"
+      },
+      {
+        "value": "A60049VS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGHI SƠN - 38204019"
+      },
+      {
+        "value": "A60049VT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN NGHĨA HÀNH - 51204014"
+      },
+      {
+        "value": "A60049VU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN NGHĨA HƯNG - 36204006"
+      },
+      {
+        "value": "A60049VV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NGÔ QUYỀN - 31204005"
+      },
+      {
+        "value": "A60049VW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN NGỌC HIỂN - 96204006"
+      },
+      {
+        "value": "A60049VX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NGỌC LẶC - 38204032"
+      },
+      {
+        "value": "A60049VY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN NGŨ HÀNH SƠN - 48204006"
+      },
+      {
+        "value": "A60049VZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NGŨ LÃO - 31204017"
+      },
+      {
+        "value": "A60049W0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN TỈNH QUẢNG TRỊ - 45204001"
+      },
+      {
+        "value": "A6004AB8",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thanh Hóa - CN THANH HÓA - 38307001"
+      },
+      {
+        "value": "A60049W1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN TỈNH SÓC TRĂNG - 94204001"
+      },
+      {
+        "value": "A60049W2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TỈNH TÂY NINH - 72204001"
+      },
+      {
+        "value": "A60049W3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TỈNH THÁI BÌNH - 34204001"
+      },
+      {
+        "value": "A6004AB2",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Ninh - CN QUẢNG NINH - 22307001"
+      },
+      {
+        "value": "A60049W4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN TỈNH THÁI NGUYÊN - 19204001"
+      },
+      {
+        "value": "A60049W5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TỈNH THANH HÓA - 38204001"
+      },
+      {
+        "value": "A60049W6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN TỈNH TUYÊN QUANG - 08204001"
+      },
+      {
+        "value": "A60049W7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TỈNH VĨNH LONG - 86204001"
+      },
+      {
+        "value": "A60049V3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN MY THANH - 79204049"
+      },
+      {
+        "value": "A60049V4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN MỸ TÚ - 94204007"
+      },
+      {
+        "value": "A60049V5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN MỸ XUYÊN - 94204006"
+      },
+      {
+        "value": "A60049V6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN NA RÌ - 06204006"
+      },
+      {
+        "value": "A60049V7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN NAM AM - 31204018"
+      },
+      {
+        "value": "A60049V8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN NAM CẨM PHẢ - 22204019"
+      },
+      {
+        "value": "A60049V9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN NĂM CĂN - 96204008"
+      },
+      {
+        "value": "A60049VA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN NAM DONG - 67204007"
+      },
+      {
+        "value": "A60049VB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM GIANG - 49204006"
+      },
+      {
+        "value": "A60049VC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN NAM HÀ NỘI - 01204017"
+      },
+      {
+        "value": "A60049VD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NAM HOA - 79204039"
+      },
+      {
+        "value": "A60049VE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN NAM LÂM ĐỒNG - 68204002"
+      },
+      {
+        "value": "A60049VF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN NAM NHA TRANG - 56204011"
+      },
+      {
+        "value": "A60049VG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN NAM PHAN THIẾT - 60204002"
+      },
+      {
+        "value": "A60049VH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM PHƯỚC - 49204003"
+      },
+      {
+        "value": "A60049VI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN NAM SÁCH - 30204002"
+      },
+      {
+        "value": "A60049VJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NAM SÀI GÒN - 79204026"
+      },
+      {
+        "value": "A60049VK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN NAM SÔNG HƯƠNG HUẾ - 46204002"
+      },
+      {
+        "value": "A60049VL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN NAM TP TUY HÒA - 54204011"
+      },
+      {
+        "value": "A60049VM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NAM TRÀ MY - 49204016"
+      },
+      {
+        "value": "A60049VN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN NAM TRỰC - 36204004"
+      },
+      {
+        "value": "A60049U8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TX BỈM SƠN - 38204022"
+      },
+      {
+        "value": "A60049U9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TX BÌNH MINH - 86204002"
+      },
+      {
+        "value": "A60049UA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TX CAI LẬY - 82204002"
+      },
+      {
+        "value": "A60049UB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TX GÒ CÔNG - 82204011"
+      },
+      {
+        "value": "A60049UC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TX LONG KHÁNH ĐỒNG NAI - 75204008"
+      },
+      {
+        "value": "A60049UD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TX NGHĨA LỘ - 15204011"
+      },
+      {
+        "value": "A60049UE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TX PHÚ THỌ - 25204004"
+      },
+      {
+        "value": "A60049UF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TX SÔNG CẦU - 54204008"
+      },
+      {
+        "value": "A60049UG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TX TÂN CHÂU - 89204008"
+      },
+      {
+        "value": "A60049UH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN U MINH - 96204010"
+      },
+      {
+        "value": "A60049UI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN VÀM LÁNG - 31204021"
+      },
+      {
+        "value": "A60049UJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN VÂN CANH - 52204013"
+      },
+      {
+        "value": "A60049UK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN VĂN CHẤN - 15204004"
+      },
+      {
+        "value": "A60049UL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN VÂN CƠ - 25204003"
+      },
+      {
+        "value": "A60049UM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN VĂN GIANG - 33204004"
+      },
+      {
+        "value": "A60049UN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN VĂN LÂM - 33204006"
+      },
+      {
+        "value": "A60049UO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN VĂN LANG - 20204002"
+      },
+      {
+        "value": "A60049UP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN VĂN QUAN - 20204011"
+      },
+      {
+        "value": "A60049UQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN VĂN YÊN - 15204009"
+      },
+      {
+        "value": "A60049UR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN VỊ THUỶ - 93204005"
+      },
+      {
+        "value": "A60049US",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN VỊ XUYÊN - 02204012"
+      },
+      {
+        "value": "A60049XW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NHƯ THANH - 38204017"
+      },
+      {
+        "value": "A60049XX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NHƯ XUÂN - 38204011"
+      },
+      {
+        "value": "A60049XY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN NINH GIANG - 30204008"
+      },
+      {
+        "value": "A60049XZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN NƠ TRANG LONG - 66204027"
+      },
+      {
+        "value": "A60049Y0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN NÔNG CỐNG - 38204012"
+      },
+      {
+        "value": "A60049Y1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NÔNG SƠN - 49204013"
+      },
+      {
+        "value": "A60049Y2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN NÚI THÀNH - 49204027"
+      },
+      {
+        "value": "A60049Y3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN ÔNG ÍCH KHIÊM - 48204015"
+      },
+      {
+        "value": "A60049Y4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN PÁC NẶM - 06204005"
+      },
+      {
+        "value": "A60049Y5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN PHẢ LẠI - 30204015"
+      },
+      {
+        "value": "A60049Y6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN PHAN CHU TRINH - 66204012"
+      },
+      {
+        "value": "A60049Y7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHAN DINH PHUNG - 79204036"
+      },
+      {
+        "value": "A60049Y8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN PHAN RÍ CỬA - 60204006"
+      },
+      {
+        "value": "A60049Y9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN PHONG THỔ - 12204004"
+      },
+      {
+        "value": "A60049YA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN PHÙ CÁT - 52204006"
+      },
+      {
+        "value": "A60049YB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN PHÙ CỪ - 33204009"
+      },
+      {
+        "value": "A60049YC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN PHÚ HÒA - 54204005"
+      },
+      {
+        "value": "A60049YD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN PHÙ MỸ - 52204007"
+      },
+      {
+        "value": "A60049YE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHÚ MỸ HƯNG - 79204031"
+      },
+      {
+        "value": "A60049YF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHÚ NHUẬN HCM - 79204006"
+      },
+      {
+        "value": "A60049W8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN TỈNH VĨNH PHÚC - 26204001"
+      },
+      {
+        "value": "A60049W9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN TP BẠC LIÊU - 95204002"
+      },
+      {
+        "value": "A60049WA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN TP BẾN TRE - 83204002"
+      },
+      {
+        "value": "A60049WB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TP BUÔN MA THUỘT - 66204020"
+      },
+      {
+        "value": "A60049WC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TP CÀ MAU - 96204005"
+      },
+      {
+        "value": "A60049WD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP CẨM PHẢ - 22204012"
+      },
+      {
+        "value": "A60049WE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TP CAO LÃNH - 87204005"
+      },
+      {
+        "value": "A60049WF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TP CHÂU ĐỐC - 89204013"
+      },
+      {
+        "value": "A60049WG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN TP ĐÀ LẠT - 68204003"
+      },
+      {
+        "value": "A60049WH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN TP ĐÀ NẴNG - 48204001"
+      },
+      {
+        "value": "A60049WI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN TP ĐÔNG HÀ - 45204002"
+      },
+      {
+        "value": "A60049WJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP HẠ LONG - 22204011"
+      },
+      {
+        "value": "A60049WK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79204001"
+      },
+      {
+        "value": "A60049WL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TP HỘI AN - 49204011"
+      },
+      {
+        "value": "A60049WM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TP HƯNG YÊN - 33204012"
+      },
+      {
+        "value": "A60049WN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TP LẠNG SƠN - 20204006"
+      },
+      {
+        "value": "A60049WO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN TP LÀO CAI - 10204009"
+      },
+      {
+        "value": "A60049WP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TP LONG XUYÊN - 89204006"
+      },
+      {
+        "value": "A60049WQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TP MÓNG CÁI - 22204005"
+      },
+      {
+        "value": "A60049WR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TP MỸ THO - 82204005"
+      },
+      {
+        "value": "A60049WS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TP NAM ĐỊNH - 36204015"
+      },
+      {
+        "value": "A60049WT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN TP NHA TRANG - 56204002"
+      },
+      {
+        "value": "A60049WU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TP NINH BÌNH - 37204009"
+      },
+      {
+        "value": "A60049WV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN TP PHAN RANG - 58204002"
+      },
+      {
+        "value": "A60049WW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TP PHAN THIẾT - 60204015"
+      },
+      {
+        "value": "A60049WX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN TP PHỦ LÝ - 35204006"
+      },
+      {
+        "value": "A60049WY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN TP PLEIKU GIA LAI - 64204016"
+      },
+      {
+        "value": "A60049WZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN VĨNH HƯNG - 80204018"
+      },
+      {
+        "value": "A60049X0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN VĨNH LINH - 45204010"
+      },
+      {
+        "value": "A60049X1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN VĨNH THẠNH CẦN THƠ II - 92204005"
+      },
+      {
+        "value": "A60049X2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN VĨNH TƯỜNG - 26204003"
+      },
+      {
+        "value": "A60049X3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN VÕ NHAI - 19204004"
+      },
+      {
+        "value": "A60049X4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN VŨ QUANG - 42204010"
+      },
+      {
+        "value": "A60049X5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN XUÂN LỘC - 75204004"
+      },
+      {
+        "value": "A60049X6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN XUYÊN MỘC - 77204003"
+      },
+      {
+        "value": "A60049X7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN YÊN KHÁNH - 37204004"
+      },
+      {
+        "value": "A60049X8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN YÊN LẠC - 26204004"
+      },
+      {
+        "value": "A60049X9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN YÊN MÔ - 37204005"
+      },
+      {
+        "value": "A60049XA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN YÊN PHONG - 27204008"
+      },
+      {
+        "value": "A60049XB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN YÊN SƠN - 08204002"
+      },
+      {
+        "value": "A60049XC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN YÊN THANH - 40204021"
+      },
+      {
+        "value": "A60049XD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN YÊN THẾ BẮC GIANG II - 24204010"
+      },
+      {
+        "value": "A60049XE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN YÊN THỦY - 17204010"
+      },
+      {
+        "value": "A60049XF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN KCN ĐÀ NẴNG - 48204014"
+      },
+      {
+        "value": "A60049XG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN KCN ĐÌNH TRÁM - 24204005"
+      },
+      {
+        "value": "A60049XH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN KCN HÒA KHÁNH - 48204013"
+      },
+      {
+        "value": "A60049XI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN KCN HÒA PHÚ - 86204008"
+      },
+      {
+        "value": "A60049XJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KCN MINH ĐỨC - 33204002"
+      },
+      {
+        "value": "A60049XK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN KCN MỸ THO - 82204012"
+      },
+      {
+        "value": "A60049XL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN KCN PHÚ TÀI - 52204009"
+      },
+      {
+        "value": "A60049XM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN KCN SÓNG THẦN - 74204002"
+      },
+      {
+        "value": "A60049XN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN KCN TÂN THÀNH BÀ RỊA VŨNG TÀU - 77204005"
+      },
+      {
+        "value": "A60049XO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN KCN TIÊN SƠN - 27204007"
+      },
+      {
+        "value": "A60049XP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN KCN TRẢNG BÀNG - 72204004"
+      },
+      {
+        "value": "A60049XQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN KẾ SÁCH - 94204005"
+      },
+      {
+        "value": "A60049XR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KHOÁI CHÂU - 33204007"
+      },
+      {
+        "value": "A60049XS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN KHU CN ĐIỆN NAM - ĐIỆN NGỌC - 49204022"
+      },
+      {
+        "value": "A60049XT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN KHU KINH TẾ MỞ CHU LAI - 49204010"
+      },
+      {
+        "value": "A60049XU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC 3 - 80204004"
+      },
+      {
+        "value": "A60049XV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN KHU VỰC BÃI CHÁY - 22204009"
+      },
+      {
+        "value": "A60049Z0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN QUẢN BẠ - 02204005"
+      },
+      {
+        "value": "A60049Z1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN QUAN HÓA - 38204016"
+      },
+      {
+        "value": "A60049Z2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN QUẬN Ô MÔN - 92204003"
+      },
+      {
+        "value": "A60049Z3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN QUANG BÌNH - 02204011"
+      },
+      {
+        "value": "A60049Z4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN QUẢNG NGÃI - 51204015"
+      },
+      {
+        "value": "A60049Z5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN QUẢNG NINH - 44204004"
+      },
+      {
+        "value": "A60049Z6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN QUANG TRUNG - 44204007"
+      },
+      {
+        "value": "A60049Z7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN QUANG TRUNG - 62204006"
+      },
+      {
+        "value": "A60049Z8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN QUẢNG XƯƠNG - 38204010"
+      },
+      {
+        "value": "A60049Z9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN QUẾ SƠN - 49204012"
+      },
+      {
+        "value": "A60049ZW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN SÔNG CẦU - 19204008"
+      },
+      {
+        "value": "A60049ZX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN SÔNG ĐÀ - 17204013"
+      },
+      {
+        "value": "A60049ZY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN SÔNG HINH - 54204004"
+      },
+      {
+        "value": "A60049ZZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN SÔNG LÔ - 26204012"
+      },
+      {
+        "value": "A6004A00",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN SÔNG VÂN - 37204008"
+      },
+      {
+        "value": "A6004A01",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN TAM BÌNH - 86204003"
+      },
+      {
+        "value": "A6004A02",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TAM DÂN - 49204014"
+      },
+      {
+        "value": "A6004A03",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN TAM ĐƯỜNG - 12204003"
+      },
+      {
+        "value": "A6004A04",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TAM NÔNG - 25204011"
+      },
+      {
+        "value": "A6004A05",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TAM NÔNG - 87204004"
+      },
+      {
+        "value": "A6004A06",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TAM PHƯỚC ĐỒNG NAI - 75204010"
+      },
+      {
+        "value": "A6004A07",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TAM TRINH - 01204033"
+      },
+      {
+        "value": "A6004A08",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TÂN BIÊN - 72204009"
+      },
+      {
+        "value": "A6004A09",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TÂN BIÊN ĐỒNG NAI - 75204015"
+      },
+      {
+        "value": "A6004A0A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN BÌNH HCM - 79204020"
+      },
+      {
+        "value": "A6004A0B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TÂN CHÂU - 72204006"
+      },
+      {
+        "value": "A6004A0C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN TÂN CHÍNH - 48204017"
+      },
+      {
+        "value": "A6004A0D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN TÂN HIỆP - 91204018"
+      },
+      {
+        "value": "A6004AB3",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN SÀI GÒN - 79307006"
+      },
+      {
+        "value": "A6004A0E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN TÂN HIỆP ĐỒNG NAI - 75204005"
+      },
+      {
+        "value": "A6004A0F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN TÂN HỒNG - 87204003"
+      },
+      {
+        "value": "A60049ZA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN QUYẾT THẮNG - 62204004"
+      },
+      {
+        "value": "A60049ZB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN QUỲNH PHỤ - 34204007"
+      },
+      {
+        "value": "A60049ZC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN RẠCH SỎI - 91204007"
+      },
+      {
+        "value": "A60049ZD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SA HUỲNH - 51204012"
+      },
+      {
+        "value": "A60049ZE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN SÀI GÒN - 79204023"
+      },
+      {
+        "value": "A60049ZF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SẦM SƠN - 38204002"
+      },
+      {
+        "value": "A60049ZG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN SAO ĐỎ - 30204012"
+      },
+      {
+        "value": "A60049ZH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN SÌN HỒ - 12204005"
+      },
+      {
+        "value": "A60049ZI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN SỐ 1 - 84204008"
+      },
+      {
+        "value": "A60049ZJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 2 - 38204013"
+      },
+      {
+        "value": "A60049ZK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN SỐ 2 - 84204009"
+      },
+      {
+        "value": "A60049ZL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 3 - 38204023"
+      },
+      {
+        "value": "A60049ZM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN SỐ 4 - 38204024"
+      },
+      {
+        "value": "A60049ZN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN SỞ SAO - 74204004"
+      },
+      {
+        "value": "A60049ZO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN SÓC SƠN HÀ NỘI - 01204012"
+      },
+      {
+        "value": "A60049ZP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN SÓC TRĂNG - 94204002"
+      },
+      {
+        "value": "A60049ZQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SƠN HÀ - 51204008"
+      },
+      {
+        "value": "A60049ZR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN SƠN HÒA - 54204003"
+      },
+      {
+        "value": "A60049ZS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN SƠN LA - 14204001"
+      },
+      {
+        "value": "A60049ZT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN SƠN LA - 14204008"
+      },
+      {
+        "value": "A60049ZU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN SƠN TỊNH - 51204009"
+      },
+      {
+        "value": "A60049ZV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN SƠN TRÀ DN - 48204007"
+      },
+      {
+        "value": "A60049YG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN PHÚ NINH - 49204026"
+      },
+      {
+        "value": "A60049YH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN PHÙ NINH - 25204006"
+      },
+      {
+        "value": "A60049YI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN PHÚ QUỐC - 91204002"
+      },
+      {
+        "value": "A60049YJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN PHÚ QÚY - 60204009"
+      },
+      {
+        "value": "A60049YK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN PHÚ RIỀNG - 70204014"
+      },
+      {
+        "value": "A60049YL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN PHÚ TÂN - 96204009"
+      },
+      {
+        "value": "A60049YM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN PHÚ TÂN - 89204004"
+      },
+      {
+        "value": "A60049YN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN PHÚ THIỆN - 64204025"
+      },
+      {
+        "value": "A60049YO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN PHÚ THỌ - 25204001"
+      },
+      {
+        "value": "A60049YP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN PHÚC YÊN - 26204002"
+      },
+      {
+        "value": "A60049YQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN PHỤNG HIỆP - 93204008"
+      },
+      {
+        "value": "A60049YR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN PHƯỚC BÌNH - 70204015"
+      },
+      {
+        "value": "A60049YS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN PHƯỚC KIỂN - 79204038"
+      },
+      {
+        "value": "A60049YT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN NHÀ BÈ HCM - 79204011"
+      },
+      {
+        "value": "A60049YU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN PHƯỚC LONG - 95204003"
+      },
+      {
+        "value": "A60049YV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN PHƯỚC SƠN - 49204017"
+      },
+      {
+        "value": "A60049YW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN PHƯƠNG LÂM - 17204004"
+      },
+      {
+        "value": "A60049YX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN PƠNG DRANG - 66204008"
+      },
+      {
+        "value": "A60049YY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN QUẬN 1 - 79204035"
+      },
+      {
+        "value": "A60049YZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN QUẬN 5 - 79204032"
+      },
+      {
+        "value": "A6004A24",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN THỊ XÃ HÀ TIÊN - 91204006"
+      },
+      {
+        "value": "A6004A25",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THỊ XÃ HỒNG LĨNH - 42204008"
+      },
+      {
+        "value": "A6004A26",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THỊ XÃ HỒNG NGỰ - 87204002"
+      },
+      {
+        "value": "A6004A27",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THỊ XÃ KỲ ANH - 42204017"
+      },
+      {
+        "value": "A6004A28",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN THỊ XÃ LAGI - 60204013"
+      },
+      {
+        "value": "A6004A29",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN THỊ XÃ NGÃ BẢY - 93204003"
+      },
+      {
+        "value": "A6004A2A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN THỊ XÃ PHỔ YÊN - 19204002"
+      },
+      {
+        "value": "A6004A2B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN THỊ XÃ QUẢNG TRỊ - 45204007"
+      },
+      {
+        "value": "A6004A2C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN THỊ XÃ QUẢNG YÊN - 22204004"
+      },
+      {
+        "value": "A6004A2D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THỊ XÃ SƠN TÂY - 01204049"
+      },
+      {
+        "value": "A6004A2E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN THỊ XÃ TÂN AN - 80204002"
+      },
+      {
+        "value": "A6004A2F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN THỊ XÃ THÁI HÒA - 40204019"
+      },
+      {
+        "value": "A6004A2G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ THỦ DẦU MỘT BÌNH DƯƠNG - 74204009"
+      },
+      {
+        "value": "A6004A2H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ THUẬN AN SÓNG THẦN - 74204010"
+      },
+      {
+        "value": "A6004A2I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN THỊ XÃ TỪ SƠN - 27204003"
+      },
+      {
+        "value": "A6004A2J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THIỆU HÓA - 38204018"
+      },
+      {
+        "value": "A6004A2K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN THỊNH LONG - 36204007"
+      },
+      {
+        "value": "A6004A2L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN THỔ TANG - 26204009"
+      },
+      {
+        "value": "A6004A2M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THỌ XUÂN - 38204004"
+      },
+      {
+        "value": "A6004A2N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN THOẠI SƠN - 89204002"
+      },
+      {
+        "value": "A6004A0G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TÂN LẬP - 66204019"
+      },
+      {
+        "value": "A6004A0H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TÂN PHÚ ĐÔNG - 82204003"
+      },
+      {
+        "value": "A6004A0I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN PHÚ HCM - 79204004"
+      },
+      {
+        "value": "A6004A0J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TÂN PHƯỚC - 82204004"
+      },
+      {
+        "value": "A6004A0K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TÂN PHƯỚC KHÁNH - 74204005"
+      },
+      {
+        "value": "A6004A0L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN TÂN SƠN - 25204008"
+      },
+      {
+        "value": "A6004A0M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂN TẠO - 79204045"
+      },
+      {
+        "value": "A6004A0N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN TÂN THÀNH - 70204002"
+      },
+      {
+        "value": "A6004A0O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN TÂN UYÊN - 12204008"
+      },
+      {
+        "value": "A6004A0P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TÂN UYÊN - 74204008"
+      },
+      {
+        "value": "A6004A0Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TÁNH LINH - 60204005"
+      },
+      {
+        "value": "A6004A0R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY ĐÔ - 01204031"
+      },
+      {
+        "value": "A6004A0S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TÂY GIANG - 49204007"
+      },
+      {
+        "value": "A6004A0T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY HÀ NỘI - 01204007"
+      },
+      {
+        "value": "A6004A0U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TÂY HỒ - 01204025"
+      },
+      {
+        "value": "A6004A0V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TÂY HÒA - 54204007"
+      },
+      {
+        "value": "A6004A0W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TÂY SÀI GÒN - 79204002"
+      },
+      {
+        "value": "A6004A0X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN TÂY SƠN - 52204005"
+      },
+      {
+        "value": "A6004A0Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN TÂY SƠN HÀ TĨNH - 42204012"
+      },
+      {
+        "value": "A6004A0Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THẠCH THÀNH - 38204030"
+      },
+      {
+        "value": "A6004A10",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN THÁI NGUYÊN - 19204011"
+      },
+      {
+        "value": "A6004A11",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN THÁI THỤY - 34204003"
+      },
+      {
+        "value": "A6004A12",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN THAN UYÊN - 12204007"
+      },
+      {
+        "value": "A6004A13",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN THĂNG BÌNH - 49204018"
+      },
+      {
+        "value": "A6004A14",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THĂNG LONG - 01204011"
+      },
+      {
+        "value": "A6004A15",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH BA - 25204007"
+      },
+      {
+        "value": "A6004A16",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THANH BÌNH - 87204009"
+      },
+      {
+        "value": "A6004A17",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN THÀNH ĐÔ - 79204040"
+      },
+      {
+        "value": "A6004A18",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THÀNH ĐÔNG - 30204013"
+      },
+      {
+        "value": "A6004A19",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THANH HÀ - 30204014"
+      },
+      {
+        "value": "A6004A1A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN THANH KHÊ - 48204005"
+      },
+      {
+        "value": "A6004A1B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN THANH MIỆN - 30204010"
+      },
+      {
+        "value": "A6004A1C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH MIẾU - 25204015"
+      },
+      {
+        "value": "A6004A1D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN THANH NAM - 36204014"
+      },
+      {
+        "value": "A6004A1E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN THÀNH PHỐ TUY HÒA - 54204002"
+      },
+      {
+        "value": "A6004A1F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN THẠNH PHÚ - 83204008"
+      },
+      {
+        "value": "A6004A1G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN THẠNH PHÚ - 94204012"
+      },
+      {
+        "value": "A6004A1H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN THÀNH SEN - 42204016"
+      },
+      {
+        "value": "A6004A1I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH SƠN - 25204010"
+      },
+      {
+        "value": "A6004AJ9",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - PGD BẾN NHỨT - 91353002"
+      },
+      {
+        "value": "A6004A1J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN THANH THUỶ - 25204013"
+      },
+      {
+        "value": "A6004A1K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN THANH THUỶ - 02204009"
+      },
+      {
+        "value": "A6004A1L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN THẠNH TRỊ - 94204004"
+      },
+      {
+        "value": "A6004A1M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THANH TRÌ HÀ NỘI - 01204004"
+      },
+      {
+        "value": "A6004AB9",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN THỦY NGUYÊN - 31307003"
+      },
+      {
+        "value": "A6004A1N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THANH XUÂN - 01204035"
+      },
+      {
+        "value": "A6004A1O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN THÁP CHÀM - 58204006"
+      },
+      {
+        "value": "A6004A1P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN THÁP MƯỜI - 87204011"
+      },
+      {
+        "value": "A6004A1Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN THỊ XÃ AN KHÊ GIA LAI - 64204017"
+      },
+      {
+        "value": "A6004A1R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN THỊ XÃ AN NHƠN - 52204004"
+      },
+      {
+        "value": "A6004A1S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN THỊ XÃ CAM RANH - 56204007"
+      },
+      {
+        "value": "A6004A1T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN THỊ XÃ CỬA LÒ - 40204013"
+      },
+      {
+        "value": "A6004A1U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN THỊ XÃ DĨ AN SÓNG THẦN - 74204011"
+      },
+      {
+        "value": "A6004A1V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN THƯỜNG XUÂN - 38204007"
+      },
+      {
+        "value": "A6004A1W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN THỦY NGUYÊN - 31204009"
+      },
+      {
+        "value": "A6004A1X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN TIỀN GIANG - 82204001"
+      },
+      {
+        "value": "A6004A1Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN TIỀN HẢI - 34204005"
+      },
+      {
+        "value": "A6004A1Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN TIÊN LÃNG - 31204011"
+      },
+      {
+        "value": "A6004A20",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN THỊ XÃ ĐIỆN BÀN - 49204021"
+      },
+      {
+        "value": "A6004A21",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN THỊ XÃ ĐÔNG TRIỀU - 22204003"
+      },
+      {
+        "value": "A6004A22",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN THỊ XÃ ĐỒNG XOÀI - 70204012"
+      },
+      {
+        "value": "A6004A23",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN THỊ XÃ GIA NGHĨA - 67204004"
+      },
+      {
+        "value": "A6004A38",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN TỈNH HÀ GIANG - 02204001"
+      },
+      {
+        "value": "A6004A39",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN TỈNH HÀ NAM - 35204001"
+      },
+      {
+        "value": "A6004A3A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN TỈNH HẢI DƯƠNG - 30204001"
+      },
+      {
+        "value": "A6004A3B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN TỈNH HÒA BÌNH - 17204001"
+      },
+      {
+        "value": "A6004A3C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TỈNH HƯNG YÊN - 33204001"
+      },
+      {
+        "value": "A6004A3D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN TỈNH KHÁNH HÒA - 56204001"
+      },
+      {
+        "value": "A6004A3E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN TỈNH KONTUM - 62204001"
+      },
+      {
+        "value": "A6004A3F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN TỈNH LÂM ĐỒNG - 68204001"
+      },
+      {
+        "value": "A6004A3G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TỈNH LẠNG SƠN - 20204001"
+      },
+      {
+        "value": "A6004A3H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN TỈNH LÀO CAI - 10204001"
+      },
+      {
+        "value": "A6004A42",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HÀ TRUNG - 38204003"
+      },
+      {
+        "value": "A6004A43",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN HẢI AN - 31204015"
+      },
+      {
+        "value": "A6004A44",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN HẢI CHÂU ĐÀ NẴNG - 48204003"
+      },
+      {
+        "value": "A6004A45",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN HẢI DƯƠNG - 30204009"
+      },
+      {
+        "value": "A6004A46",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN HẢI HẬU - 36204012"
+      },
+      {
+        "value": "A6004A47",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN HẢI PHÒNG - 31204001"
+      },
+      {
+        "value": "A6004A48",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM MỸ - 60204011"
+      },
+      {
+        "value": "A6004A49",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM TÂN - 60204014"
+      },
+      {
+        "value": "A6004A4A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM THUẬN BẮC - 60204004"
+      },
+      {
+        "value": "A6004A4B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HÀM THUẬN NAM - 60204012"
+      },
+      {
+        "value": "A6004A4C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN HẬU GIANG - 93204001"
+      },
+      {
+        "value": "A6004A4D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HẬU LỘC - 38204020"
+      },
+      {
+        "value": "A6004A4E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN HIỆP ĐỨC - 49204005"
+      },
+      {
+        "value": "A6004A4F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HIỆP PHƯỚC - 79204050"
+      },
+      {
+        "value": "A6004A4G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN HÒA BÌNH - 95204005"
+      },
+      {
+        "value": "A6004A4H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA KHÁNH - 66204025"
+      },
+      {
+        "value": "A6004A4I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÒA LẠC - 01204038"
+      },
+      {
+        "value": "A6004A4J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HOA LƯ - 64204018"
+      },
+      {
+        "value": "A6004A4K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HÒA NINH - 68204008"
+      },
+      {
+        "value": "A6004A4L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA THẮNG - 66204018"
+      },
+      {
+        "value": "A6004A3I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN TỈNH LONG AN - 80204001"
+      },
+      {
+        "value": "A6004A3J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TỈNH NAM ĐỊNH - 36204001"
+      },
+      {
+        "value": "A6004A3K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN TỈNH NINH BÌNH - 37204001"
+      },
+      {
+        "value": "A6004A3L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN TỈNH NINH THUẬN - 58204001"
+      },
+      {
+        "value": "A6004A3M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN TỈNH PHÚ YÊN - 54204001"
+      },
+      {
+        "value": "A6004ABA",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tiền Giang - CN TIỀN GIANG - 82307001"
+      },
+      {
+        "value": "A6004A3N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN TỈNH QUẢNG BÌNH - 44204001"
+      },
+      {
+        "value": "A6004A3O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TỈNH QUẢNG NAM - 49204001"
+      },
+      {
+        "value": "A6004A3P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN TỈNH QUẢNG NGÃI - 51204001"
+      },
+      {
+        "value": "A6004A3Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN TỈNH QUẢNG NINH - 22204001"
+      },
+      {
+        "value": "A6004A3R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN GÒ CÔNG TÂY - 82204007"
+      },
+      {
+        "value": "A6004A3S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN GÒ DẦU - 72204011"
+      },
+      {
+        "value": "A6004A3T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN GÒ QUAO - 91204010"
+      },
+      {
+        "value": "A6004A3U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN HẠ HÒA - 25204009"
+      },
+      {
+        "value": "A6004A3V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HẠ LONG I - 22204017"
+      },
+      {
+        "value": "A6004A3W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ NỘI - 01204003"
+      },
+      {
+        "value": "A6004A3X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ NỘI-PGD QUẬN HAI BÀ TRƯNG - 01204052"
+      },
+      {
+        "value": "A6004A3Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ TÂY - 01204036"
+      },
+      {
+        "value": "A6004A3Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÀ THÀNH - 01204032"
+      },
+      {
+        "value": "A6004A40",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HÀ TĨNH - 42204001"
+      },
+      {
+        "value": "A6004A41",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HÀ TĨNH - 42204002"
+      },
+      {
+        "value": "A6004A2O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN THỚI BÌNH - 96204003"
+      },
+      {
+        "value": "A6004A2P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN THỐT NỐT - 92204004"
+      },
+      {
+        "value": "A6004A2Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN THỦ ĐÔ - 01204030"
+      },
+      {
+        "value": "A6004A2R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN THỦ ĐỨC HCM - 79204024"
+      },
+      {
+        "value": "A6004A2S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN THỪA THIÊN HUẾ - 46204001"
+      },
+      {
+        "value": "A6004A2T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN TIÊN LỮ - 33204005"
+      },
+      {
+        "value": "A6004A2U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN TIÊN PHƯỚC - 49204024"
+      },
+      {
+        "value": "A6004A2V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN TIỂU CẦN - 84204004"
+      },
+      {
+        "value": "A6004A2W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TỈNH AN GIANG - 89204001"
+      },
+      {
+        "value": "A6004A2X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN TỈNH BẮC KẠN - 06204001"
+      },
+      {
+        "value": "A6004A2Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN TỈNH BẠC LIÊU - 95204001"
+      },
+      {
+        "value": "A6004A2Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN TỈNH BẾN TRE - 83204001"
+      },
+      {
+        "value": "A6004A30",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TỊNH BIÊN - 89204009"
+      },
+      {
+        "value": "A6004A31",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN TỈNH BÌNH DƯƠNG - 74204001"
+      },
+      {
+        "value": "A6004A32",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN TỈNH BÌNH THUẬN - 60204001"
+      },
+      {
+        "value": "A6004A33",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN TỈNH CÀ MAU - 96204001"
+      },
+      {
+        "value": "A6004A34",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN TỈNH CAO BẰNG - 04204001"
+      },
+      {
+        "value": "A6004A35",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN TỈNH ĐAK NÔNG - 67204001"
+      },
+      {
+        "value": "A6004A36",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN TỈNH DAKLAK - 66204001"
+      },
+      {
+        "value": "A6004A37",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TĨNH GIA - 38204015"
+      },
+      {
+        "value": "A6004A6A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHI LĂNG - 89204007"
+      },
+      {
+        "value": "A6004A6B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHI LĂNG - 48204010"
+      },
+      {
+        "value": "A6004A6C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHỢ CỒN - 48204009"
+      },
+      {
+        "value": "A6004A6D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN CHỢ ĐỒN - 06204008"
+      },
+      {
+        "value": "A6004A6E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CHỢ GẠO - 82204008"
+      },
+      {
+        "value": "A6004A6F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN CHỢ LÁCH - 83204009"
+      },
+      {
+        "value": "A6004A6G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CHỢ LỚN HCM - 79204016"
+      },
+      {
+        "value": "A6004A6H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHỢ MỚI - 89204012"
+      },
+      {
+        "value": "A6004A6I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN CHỢ MỚI - 06204007"
+      },
+      {
+        "value": "A6004A6J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CHỢ MỚI - 48204012"
+      },
+      {
+        "value": "A6004A6K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHỢ VÀM - 89204014"
+      },
+      {
+        "value": "A6004A6L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN CHỢ XÓM MỚI - 56204009"
+      },
+      {
+        "value": "A6004A6M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN CHƯ PRÔNG - 64204002"
+      },
+      {
+        "value": "A6004A6N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN CHƯ PƯH - 64204024"
+      },
+      {
+        "value": "A6004A6O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN CHƯƠNG DƯƠNG - 01204296"
+      },
+      {
+        "value": "A6004A6P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CN 10 - 79204018"
+      },
+      {
+        "value": "A6004A6Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN CỒN - 36204016"
+      },
+      {
+        "value": "A6004A6R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CỦ CHI TP HCM - 79204028"
+      },
+      {
+        "value": "A6004A6S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN CƯ JÚT - 67204009"
+      },
+      {
+        "value": "A6004A6T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN CÙ LAO DUNG - 94204011"
+      },
+      {
+        "value": "A6004A4M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN HÒA THÀNH - 72204005"
+      },
+      {
+        "value": "A6004A4N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HÒA THUẬN - 66204029"
+      },
+      {
+        "value": "A6004A4O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN HÒA VANG - 48204002"
+      },
+      {
+        "value": "A6004A4P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN HOÀI AN - 52204010"
+      },
+      {
+        "value": "A6004A4Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN HOÀI NHƠN - 52204008"
+      },
+      {
+        "value": "A6004A4R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN BẾN NHẤT - 91204004"
+      },
+      {
+        "value": "A6004A4S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BẾN THÀNH - 79204051"
+      },
+      {
+        "value": "A6004A4T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN BIỂN HỒ - 64204013"
+      },
+      {
+        "value": "A6004A4U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN BIÊN HÒA - 75204002"
+      },
+      {
+        "value": "A6004A4V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH CHÁNH HCM - 79204022"
+      },
+      {
+        "value": "A6004A4W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN BÌNH ĐẠI - 83204006"
+      },
+      {
+        "value": "A6004A4X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN BÌNH ĐỊNH - 52204001"
+      },
+      {
+        "value": "A6004A4Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN BINH GỈA - 20204012"
+      },
+      {
+        "value": "A6004A4Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN BÌNH GIANG - 30204005"
+      },
+      {
+        "value": "A6004A50",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH PHÚ - 79204052"
+      },
+      {
+        "value": "A6004A51",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN BÌNH PHƯỚC - 70204001"
+      },
+      {
+        "value": "A6004A52",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN BÌNH SƠN - 51204003"
+      },
+      {
+        "value": "A6004A53",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Long - CN BÌNH TÂN - 86204007"
+      },
+      {
+        "value": "A6004A54",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH TÂN HCM - 79204010"
+      },
+      {
+        "value": "A6004A55",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH THẠNH HCM - 79204019"
+      },
+      {
+        "value": "A6004A56",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN BÌNH THỦY - 92204008"
+      },
+      {
+        "value": "A6004A57",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BÌNH TRIỆU - 79204033"
+      },
+      {
+        "value": "A6004A58",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BỐ HẠ BẮC GIANG II - 24204008"
+      },
+      {
+        "value": "A6004A59",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BUÔN ĐÔN - 66204017"
+      },
+      {
+        "value": "A6004A5A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BUÔN HỒ BAC DAK LAK - 66204007"
+      },
+      {
+        "value": "A6004A5B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CÁI BÈ - 82204010"
+      },
+      {
+        "value": "A6004A5C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN CÁI NƯỚC - 96204002"
+      },
+      {
+        "value": "A6004A5D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CAI RĂNG CẦN THƠ - 92204002"
+      },
+      {
+        "value": "A6004A5E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CÁI TẮC - 93204009"
+      },
+      {
+        "value": "A6004A5F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN CAM ĐƯỜNG - 10204005"
+      },
+      {
+        "value": "A6004A5G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN CẨM GIANG - 30204004"
+      },
+      {
+        "value": "A6004A5H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN CẨM KHÊ - 25204002"
+      },
+      {
+        "value": "A6004A5I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN CẨM LỆ - 48204016"
+      },
+      {
+        "value": "A6004A5J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN CẨM THỦY - 38204028"
+      },
+      {
+        "value": "A6004A5K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN CAN GIO TP HCM - 79204027"
+      },
+      {
+        "value": "A6004A5L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CẦN THƠ - 92204001"
+      },
+      {
+        "value": "A6004A5M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN CẦN THƠ II - 92204009"
+      },
+      {
+        "value": "A6004A5N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CÀNG LONG - 84204002"
+      },
+      {
+        "value": "A6004A5O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN CAO BẰNG - 04204013"
+      },
+      {
+        "value": "A6004A5P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN CAO LÃNH - 87204008"
+      },
+      {
+        "value": "A6004A5Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN CAO LỘC - 20204009"
+      },
+      {
+        "value": "A6004A5R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN CAO THẮNG - 22204018"
+      },
+      {
+        "value": "A6004A5S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN CÁT BÀ - 31204003"
+      },
+      {
+        "value": "A6004A5T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN CÁT HẢI - 31204008"
+      },
+      {
+        "value": "A6004A5U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN CÁT TIÊN - 68204006"
+      },
+      {
+        "value": "A6004A5V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN CẦU GIẤY HÀ NỘI - 01204016"
+      },
+      {
+        "value": "A6004A5W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CẦU KÈ - 84204003"
+      },
+      {
+        "value": "A6004A5X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CẦU NGANG - 84204006"
+      },
+      {
+        "value": "A6004A5Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHÂU PHÚ - 89204010"
+      },
+      {
+        "value": "A6004A5Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN CHÂU THÀNH - 72204010"
+      },
+      {
+        "value": "A6004A60",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN CHÂU THÀNH - 84204011"
+      },
+      {
+        "value": "A6004A61",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN CHÂU THÀNH - 82204009"
+      },
+      {
+        "value": "A6004A62",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN CHÂU THÀNH - 83204007"
+      },
+      {
+        "value": "A6004A63",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN CHÂU THÀNH - 87204006"
+      },
+      {
+        "value": "A6004A64",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN CHÂU THÀNH - 89204011"
+      },
+      {
+        "value": "A6004A65",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN CHÂU THÀNH - 91204013"
+      },
+      {
+        "value": "A6004A66",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CHÂU THÀNH - 93204007"
+      },
+      {
+        "value": "A6004A67",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN CHÂU THÀNH - 94204014"
+      },
+      {
+        "value": "A6004A68",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hậu Giang - CN CHÂU THÀNH A - 93204006"
+      },
+      {
+        "value": "A6004A69",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN CHI LĂNG - 20204010"
+      },
+      {
+        "value": "A6004A7E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐÔNG ANH HÀ NỘI - 01204015"
+      },
+      {
+        "value": "A6004A7F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN ĐÔNG BÌNH - 36204013"
+      },
+      {
+        "value": "A6004A7G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đà Nẵng - CN ĐỐNG ĐA - 48204011"
+      },
+      {
+        "value": "A6004A7H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐỐNG ĐA - 01204034"
+      },
+      {
+        "value": "A6004A7I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN ĐỒNG ĐĂNG - 20204005"
+      },
+      {
+        "value": "A6004A7J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN ĐÔNG GIA LAI - 64204020"
+      },
+      {
+        "value": "A6004A7K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN ĐÔNG GIANG - 49204025"
+      },
+      {
+        "value": "A6004A7L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN ĐÔNG HÀ NỘI - 01204008"
+      },
+      {
+        "value": "A6004A7M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN ĐÔNG HẢI - 95204008"
+      },
+      {
+        "value": "A6004A7N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐÔNG HẢI PHÒNG - 31204006"
+      },
+      {
+        "value": "A6004A88",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA HLEO - 66204030"
+      },
+      {
+        "value": "A6004A89",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA KAR - 66204002"
+      },
+      {
+        "value": "A6004A8A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA KNỐP - 66204005"
+      },
+      {
+        "value": "A6004A8B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA PHÊ - 66204014"
+      },
+      {
+        "value": "A6004A8C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA RAL - 66204016"
+      },
+      {
+        "value": "A6004A8D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA SÚP - 66204009"
+      },
+      {
+        "value": "A6004A8E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA TAM - 66204026"
+      },
+      {
+        "value": "A6004A8F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA TOH - 66204021"
+      },
+      {
+        "value": "A6004A8G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN GIA CẨM - 25204014"
+      },
+      {
+        "value": "A6004A8H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN GIA ĐỊNH HCM - 79204021"
+      },
+      {
+        "value": "A6004A8I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN GIA LAI - 64204001"
+      },
+      {
+        "value": "A6004A8J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN GIA LÂM HÀ NỘI - 01204014"
+      },
+      {
+        "value": "A6004A8K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN GIA LỘC - 30204006"
+      },
+      {
+        "value": "A6004A8L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN GÍA RAI - 95204006"
+      },
+      {
+        "value": "A6004A8M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN GIAO THỦY - 36204010"
+      },
+      {
+        "value": "A6004A8N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN GIỒNG RIỀNG - 91204005"
+      },
+      {
+        "value": "A6004A8O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN GIỒNG TRÔM - 83204010"
+      },
+      {
+        "value": "A6004A8P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tiền Giang - CN GÒ CÔNG ĐÔNG - 82204006"
+      },
+      {
+        "value": "A6004A8Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN PHÚ GIÁO - 74204007"
+      },
+      {
+        "value": "A6004A8R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHÚ LỘC - 46204008"
+      },
+      {
+        "value": "A6004A8S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN PHÚ LƯƠNG - 19204009"
+      },
+      {
+        "value": "A6004A7O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN ĐÔNG HÒA - 54204006"
+      },
+      {
+        "value": "A6004A7P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN ĐÔNG HƯNG - 34204006"
+      },
+      {
+        "value": "A6004A7Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN ĐỒNG KHỞI - 83204003"
+      },
+      {
+        "value": "A6004A7R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN ĐÔNG MỸ HẢI - 58204008"
+      },
+      {
+        "value": "A6004A7S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN ĐỒNG NAI - 75204001"
+      },
+      {
+        "value": "A6004A7T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN ĐÔNG SÀI GÒN - 79204014"
+      },
+      {
+        "value": "A6004A7U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN ĐÔNG SƠN - 38204021"
+      },
+      {
+        "value": "A6004A7V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN ĐỒNG THÁP - 87204001"
+      },
+      {
+        "value": "A6004A7W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN ĐỒNG VĂN - 02204002"
+      },
+      {
+        "value": "A6004A7X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN ĐỒNG VĂN HÀ NAM - 35204008"
+      },
+      {
+        "value": "A6004A7Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Yên - CN ĐỒNG XUÂN - 54204010"
+      },
+      {
+        "value": "A6004A7Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN ĐỨC CƠ - 64204009"
+      },
+      {
+        "value": "A6004A80",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN ĐỨC PHỔ - 51204010"
+      },
+      {
+        "value": "A6004A81",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐỨC TRỌNG - LÂM ĐỒNG - 68204007"
+      },
+      {
+        "value": "A6004ABB",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Trà Vinh - CN TRÀ VINH - 84307001"
+      },
+      {
+        "value": "A6004A82",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN DUNG QUẤT - 51204005"
+      },
+      {
+        "value": "A6004A83",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN DƯƠNG KINH - 31204020"
+      },
+      {
+        "value": "A6004A84",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN DƯƠNG MINH CHÂU - 72204008"
+      },
+      {
+        "value": "A6004A85",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN DUY XUYÊN - 49204023"
+      },
+      {
+        "value": "A6004A86",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Trà Vinh - CN DUYÊN HẢI - 84204007"
+      },
+      {
+        "value": "A6004A87",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN EA CPAM - 66204031"
+      },
+      {
+        "value": "A6004A6U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN CU MGAR - 66204023"
+      },
+      {
+        "value": "A6004A6V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN CỬA ĐẠI - 49204002"
+      },
+      {
+        "value": "A6004A6W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐẠ HUOAI - 68204011"
+      },
+      {
+        "value": "A6004A6X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN ĐẠ TẺH - 68204005"
+      },
+      {
+        "value": "A6004A6Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN DAC LAC PGD HCM - 79204029"
+      },
+      {
+        "value": "A6004A6Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐẠI HỢP - 31204025"
+      },
+      {
+        "value": "A6004A70",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN ĐẠI LỘC - 49204008"
+      },
+      {
+        "value": "A6004A71",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN ĐẠI TÂN - 30204016"
+      },
+      {
+        "value": "A6004A72",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DĂK GLONG - 67204005"
+      },
+      {
+        "value": "A6004A73",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DĂK MIL - 67204006"
+      },
+      {
+        "value": "A6004A74",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DAK RLAP - 67204002"
+      },
+      {
+        "value": "A6004A75",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN DAK SONG - 67204003"
+      },
+      {
+        "value": "A6004A76",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cà Mau - CN ĐẦM DƠI - 96204004"
+      },
+      {
+        "value": "A6004A77",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN DI LINH - 68204010"
+      },
+      {
+        "value": "A6004A78",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN ĐIỆN BIÊN - 11204001"
+      },
+      {
+        "value": "A6004A79",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN ĐIỆN BIÊN PHỦ - 11204004"
+      },
+      {
+        "value": "A6004A7A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN DIÊN HỒNG - 64204010"
+      },
+      {
+        "value": "A6004A7B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN DINH LAP - 20204013"
+      },
+      {
+        "value": "A6004A7C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN ĐỒ SƠN - 31204019"
+      },
+      {
+        "value": "A6004A7D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Phú Thọ - CN ĐOAN HÙNG - 25204016"
+      },
+      {
+        "value": "A6004AAH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN VĂN NINH - 56204006"
+      },
+      {
+        "value": "A6004AAI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN VIỆT YÊN - 24204002"
+      },
+      {
+        "value": "A6004AAJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN VĨNH CỬU - 75204012"
+      },
+      {
+        "value": "A6004AAK",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN HẢI PHÒNG - 31307001"
+      },
+      {
+        "value": "A6004AAL",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hậu Giang - CN HẬU GIANG - 93307001"
+      },
+      {
+        "value": "A6004AAM",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN HỒ CHÍ MINH - 79307001"
+      },
+      {
+        "value": "A6004AAN",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Nam - CN HỘI AN - 49307001"
+      },
+      {
+        "value": "A6004AAO",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thừa Thiên Huế - CN HUẾ - 46307001"
+      },
+      {
+        "value": "A6004AAP",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hưng Yên - CN HƯNG YÊN - 33307001"
+      },
+      {
+        "value": "A6004AAQ",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN KHAI NGUYÊN - 79307028"
+      },
+      {
+        "value": "A6004AAR",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Khánh Hòa - CN KHÁNH HÒA - 56307001"
+      },
+      {
+        "value": "A6004AAS",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Kiên Giang - CN KIÊN GIANG - 91307001"
+      },
+      {
+        "value": "A6004AAT",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Kon Tum - CN KON TUM - 62307001"
+      },
+      {
+        "value": "A6004AAU",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Lâm Đồng - CN LÂM ĐỒNG - 68307001"
+      },
+      {
+        "value": "A6004AAV",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Long An - CN LONG AN - 80307001"
+      },
+      {
+        "value": "A6004AAW",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Nam Định - CN NAM ĐỊNH - 36307001"
+      },
+      {
+        "value": "A6004AAX",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Nghệ An - CN NGHỆ AN - 40307001"
+      },
+      {
+        "value": "A6004AAY",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Ninh Thuận - CN NINH THUẬN - 58307001"
+      },
+      {
+        "value": "A6004AAZ",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Phú Yên - CN PHÚ YÊN - 54307001"
+      },
+      {
+        "value": "A6004AB0",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Bình - CN QUẢNG BÌNH - 44307001"
+      },
+      {
+        "value": "A6004AB1",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Quảng Ngãi - CN QUẢNG NGÃI - 51307001"
+      },
+      {
+        "value": "A6004A8T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHÚ VANG - 46204009"
+      },
+      {
+        "value": "A6004A8U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN PHÚ XUYÊN - 01204046"
+      },
+      {
+        "value": "A6004A8V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN PHÙ YÊN - 14204006"
+      },
+      {
+        "value": "A6004A8W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN PHỤC HÒA - 04204011"
+      },
+      {
+        "value": "A6004A8X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN PHÚC THỌ - 01204021"
+      },
+      {
+        "value": "A6004A8Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN PHƯỚC LONG - 70204007"
+      },
+      {
+        "value": "A6004A8Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN QUANG ĐIỀN - 46204006"
+      },
+      {
+        "value": "A6004A90",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN QUẢNG TRẠCH - 44204005"
+      },
+      {
+        "value": "A6004A91",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN QUẢNG UYÊN - 04204009"
+      },
+      {
+        "value": "A6004A92",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUẾ PHONG - 40204007"
+      },
+      {
+        "value": "A6004A93",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN QUẾ VÕ - 27204005"
+      },
+      {
+        "value": "A6004A94",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN QUỐC OAI - 01204043"
+      },
+      {
+        "value": "A6004A95",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QÙY CHÂU - 40204018"
+      },
+      {
+        "value": "A6004A96",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUỲ HỢP - 40204006"
+      },
+      {
+        "value": "A6004A97",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN QUỲNH LƯU - 40204004"
+      },
+      {
+        "value": "A6004A98",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN QUỲNH NHAI - 14204004"
+      },
+      {
+        "value": "A6004A99",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN SA PA - 10204011"
+      },
+      {
+        "value": "A6004A9A",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN SA THẦY - 62204009"
+      },
+      {
+        "value": "A6004A9B",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN SƠN ĐỘNG BẮC GIANG II - 24204014"
+      },
+      {
+        "value": "A6004A9C",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN SƠN DƯƠNG - 08204003"
+      },
+      {
+        "value": "A6004A9D",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN SÔNG MÃ - 14204005"
+      },
+      {
+        "value": "A6004A9E",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN TAM ĐẢO - 26204007"
+      },
+      {
+        "value": "A6004A9F",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN TAM DƯƠNG - 26204006"
+      },
+      {
+        "value": "A6004A9G",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN HƯNG - 80204017"
+      },
+      {
+        "value": "A6004A9H",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN TÂN KỲ - 40204015"
+      },
+      {
+        "value": "A6004A9I",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN TÂN LẠC - 17204008"
+      },
+      {
+        "value": "A6004A9J",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN TÂN PHÚ - 75204011"
+      },
+      {
+        "value": "A6004A9K",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN TÂN THÀNH - 77204004"
+      },
+      {
+        "value": "A6004A9L",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN THÀNH - 80204015"
+      },
+      {
+        "value": "A6004A9M",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN TÂN TRỤ - 80204011"
+      },
+      {
+        "value": "A6004A9N",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN TÂN YÊN - 24204004"
+      },
+      {
+        "value": "A6004A9O",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN THẠCH AN - 04204008"
+      },
+      {
+        "value": "A6004A9P",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN THẠCH HÀ - 42204014"
+      },
+      {
+        "value": "A6004A9Q",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THẠCH THẤT - 01204047"
+      },
+      {
+        "value": "A6004A9R",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN THANH CHƯƠNG - 40204011"
+      },
+      {
+        "value": "A6004A9S",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN THANH HÓA - 80204016"
+      },
+      {
+        "value": "A6004A9T",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN THANH LIÊM - 35204003"
+      },
+      {
+        "value": "A6004A9U",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THANH OAI - 01204039"
+      },
+      {
+        "value": "A6004A9V",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN THỚI LAI CẦN THƠ II - 92204007"
+      },
+      {
+        "value": "A6004A9W",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN THỐNG NHẤT - 75204013"
+      },
+      {
+        "value": "A6004A9X",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN THÔNG NÔNG - 04204007"
+      },
+      {
+        "value": "A6004A9Y",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN THỦ THỪA - 80204005"
+      },
+      {
+        "value": "A6004A9Z",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN THUẬN CHÂU - 14204003"
+      },
+      {
+        "value": "A6004AA0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN THUẬN THÀNH - 27204006"
+      },
+      {
+        "value": "A6004AA1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN THƯỜNG TÍN - 01204042"
+      },
+      {
+        "value": "A6004AA2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN TIÊN DU - 27204010"
+      },
+      {
+        "value": "A6004AA3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN TIÊN YÊN - 22204006"
+      },
+      {
+        "value": "A6004AA4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN TRÀ LINH - 04204010"
+      },
+      {
+        "value": "A6004AA5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN TRẢNG BOM - 75204009"
+      },
+      {
+        "value": "A6004AA6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN TRIỀU PHONG - 45204011"
+      },
+      {
+        "value": "A6004AA7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN TRÙNG KHÁNH - 04204006"
+      },
+      {
+        "value": "A6004AA8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN TỦA CHÙA - 11204003"
+      },
+      {
+        "value": "A6004AA9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN TUẦN GIÁO - 11204005"
+      },
+      {
+        "value": "A6004AAA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN TƯƠNG DƯƠNG - 40204017"
+      },
+      {
+        "value": "A6004AAB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HUYEN TUY PHONG - 60204003"
+      },
+      {
+        "value": "A6004AAC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN TUYÊN HÓA - 44204009"
+      },
+      {
+        "value": "A6004AAD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN HUYỆN U MINH THƯỢNG KIÊN GIANG - 91204019"
+      },
+      {
+        "value": "A6004AAE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN ỨNG HÒA - 01204041"
+      },
+      {
+        "value": "A6004AAF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN VĂN BÀN - 10204006"
+      },
+      {
+        "value": "A6004AAG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN VÂN ĐỒN - 22204015"
+      },
+      {
+        "value": "A6004ABR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN DƯƠNG - 31204002"
+      },
+      {
+        "value": "A6004ABS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN HƯNG - 31204004"
+      },
+      {
+        "value": "A6004ABT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Định - CN AN LÃO - 52204011"
+      },
+      {
+        "value": "A6004ABU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN AN LÃO HP - 31204010"
+      },
+      {
+        "value": "A6004ABV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN AN MINH - 91204017"
+      },
+      {
+        "value": "A6004ABW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN AN PHÚ - 89204003"
+      },
+      {
+        "value": "A6004ABX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN AN PHÚ - 79204042"
+      },
+      {
+        "value": "A6004ABY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN AN SƯƠNG - 79204041"
+      },
+      {
+        "value": "A6004ABZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN ÂN THI - 33204011"
+      },
+      {
+        "value": "A6004AC0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN BA BỂ - 06204003"
+      },
+      {
+        "value": "A6004AC1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN BA ĐÌNH - 38204025"
+      },
+      {
+        "value": "A6004ACM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN BẮC QUẢNG BÌNH - 44204002"
+      },
+      {
+        "value": "A6004ACN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN BẮC SÀI GÒN - 79204046"
+      },
+      {
+        "value": "A6004ACO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN BẮC SƠN - 20204008"
+      },
+      {
+        "value": "A6004ACP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN BẮC SÔNG HƯƠNG - 46204011"
+      },
+      {
+        "value": "A6004ACQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN BẮC TRÀ MY - 49204015"
+      },
+      {
+        "value": "A6004ACR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BÁCH KHOA - 01204026"
+      },
+      {
+        "value": "A6004ACS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Kạn - CN BẠCH THÔNG - 06204002"
+      },
+      {
+        "value": "A6004ACT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN BẢO LÂM NAM LÂM ĐỒNG - 68204015"
+      },
+      {
+        "value": "A6004ACU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN BẾN CẦU - 72204007"
+      },
+      {
+        "value": "A6004ACV",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - CN THĂNG LONG - 01320004"
+      },
+      {
+        "value": "A6004ACW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀN KIẾM - 01204022"
+      },
+      {
+        "value": "A6004ACX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN HOẰNG HÓA - 38204009"
+      },
+      {
+        "value": "A6004ACY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HOÀNG MAI - 40204005"
+      },
+      {
+        "value": "A6004ACZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀNG MAI - 01204020"
+      },
+      {
+        "value": "A6004AD0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HOÀNG QUỐC VIỆT - 01204023"
+      },
+      {
+        "value": "A6004AD1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN HOÀNG SU PHÌ - 02204007"
+      },
+      {
+        "value": "A6004AD2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HÓC MÔN HCM - 79204013"
+      },
+      {
+        "value": "A6004AD3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HỘI THƯƠNG - 64204011"
+      },
+      {
+        "value": "A6004AD4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN HÒN ĐẤT - 91204011"
+      },
+      {
+        "value": "A6004AD5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bạc Liêu - CN HỒNG DÂN - 95204004"
+      },
+      {
+        "value": "A6004AC2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BA ĐÌNH - 01204298"
+      },
+      {
+        "value": "A6004AC3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN BA HÒN - 91204014"
+      },
+      {
+        "value": "A6004AC4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN BÀ RỊA - VŨNG TÀU - 77204001"
+      },
+      {
+        "value": "A6004AC5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN BÁ THƯỚC - 38204027"
+      },
+      {
+        "value": "A6004AC6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ngãi - CN BA TƠ - 51204002"
+      },
+      {
+        "value": "A6004AC7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bến Tre - CN BA TRI - 83204004"
+      },
+      {
+        "value": "A6004AC8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BÀ TRIỆU ĐÔNG HÀ NỘI - 01204295"
+      },
+      {
+        "value": "A6004AC9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sóc Trăng - CN BA XUYÊN - 94204003"
+      },
+      {
+        "value": "A6004ACA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN BẮC BÌNH - 60204007"
+      },
+      {
+        "value": "A6004ACB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN BẮC DAK LAK - 66204011"
+      },
+      {
+        "value": "A6004AJZ",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Ninh Bình - CN NINH BÌNH - 37348001"
+      },
+      {
+        "value": "A6004ACC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN BẮC ĐIỆN BÀN - 49204019"
+      },
+      {
+        "value": "A6004ACD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BẮC GIANG - 24204001"
+      },
+      {
+        "value": "A6004ACE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN BẮC GIANG II - 24204006"
+      },
+      {
+        "value": "A6004ACF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN BẮC HÀ NỘI - 01204006"
+      },
+      {
+        "value": "A6004ACG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN BẮC HẢI PHÒNG - 31204007"
+      },
+      {
+        "value": "A6004ACH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN BẮC MÊ - 02204006"
+      },
+      {
+        "value": "A6004ACI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN BẮC NAM ĐỊNH - 36204002"
+      },
+      {
+        "value": "A6004ACJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN BẮC NINH - 27204001"
+      },
+      {
+        "value": "A6004ACK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN BẮC NINH - 27204002"
+      },
+      {
+        "value": "A6004ACL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Giang - CN BẮC QUANG - 02204008"
+      },
+      {
+        "value": "A6004AB4",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Sóc Trăng - CN SÓC TRĂNG - 94307001"
+      },
+      {
+        "value": "A6004AB5",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tây Ninh - CN TÂY NINH - 72307002"
+      },
+      {
+        "value": "A6004AB6",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Thái Nguyên - CN THÁI NGUYÊN - 19307001"
+      },
+      {
+        "value": "A6004AB7",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nội - CN THĂNG LONG - 01307004"
+      },
+      {
+        "value": "A6004ABC",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Vĩnh Long - CN VĨNH LONG - 86307001"
+      },
+      {
+        "value": "A6004ABD",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Vĩnh Phúc - CN VĨNH PHÚC - 26307001"
+      },
+      {
+        "value": "A6004ABE",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77307001"
+      },
+      {
+        "value": "A6004ABF",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Phước - PGD BÌNH PHƯỚC - 70307001"
+      },
+      {
+        "value": "A6004ABG",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Gia Lai - PGD GIA LAI - 64307001"
+      },
+      {
+        "value": "A6004ABH",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Tây Ninh - PGD LONG HOA - 72307001"
+      },
+      {
+        "value": "A6004ABI",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Thuận - PGD PHAN THIẾT - 60307001"
+      },
+      {
+        "value": "A6004ABJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 11 HCM - 79204003"
+      },
+      {
+        "value": "A6004ABK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 3 HCM - 79204009"
+      },
+      {
+        "value": "A6004ABL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 4 HCM - 79204005"
+      },
+      {
+        "value": "A6004ABM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 6 HCM - 79204008"
+      },
+      {
+        "value": "A6004ABN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 7 - 79204043"
+      },
+      {
+        "value": "A6004ABO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 8 HCM - 79204007"
+      },
+      {
+        "value": "A6004ABP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN 9 HCM - 79204012"
+      },
+      {
+        "value": "A6004ABQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN AN BIÊN - 91204016"
+      },
+      {
+        "value": "A6004AEU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN ĐAN PHƯỢNG - 01204045"
+      },
+      {
+        "value": "A6004AEV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN ĐẤT ĐỎ - 77204008"
+      },
+      {
+        "value": "A6004AEW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN DẦU TIẾNG - 74204006"
+      },
+      {
+        "value": "A6004AEX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN ĐIỆN BIÊN - 11204002"
+      },
+      {
+        "value": "A6004AEY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN ĐIỆN BIÊN ĐÔNG - 11204007"
+      },
+      {
+        "value": "A6004AEZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN DIỄN CHÂU - 40204020"
+      },
+      {
+        "value": "A6004AF0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN DIÊN KHÁNH - 56204008"
+      },
+      {
+        "value": "A6004AF1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐỊNH HÓA - 19204003"
+      },
+      {
+        "value": "A6004AF2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN ĐỊNH QUÁN - 75204014"
+      },
+      {
+        "value": "A6004AF3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN ĐÔ LƯƠNG - 40204014"
+      },
+      {
+        "value": "A6004AF4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN ĐƠN DƯƠNG - 68204013"
+      },
+      {
+        "value": "A6004AF5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐỒNG HỶ - 19204006"
+      },
+      {
+        "value": "A6004AF6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐỒNG PHÚ - 70204003"
+      },
+      {
+        "value": "A6004AF7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN ĐỨC HÒA - 80204008"
+      },
+      {
+        "value": "A6004AF8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN ĐỨC HUỆ - 80204003"
+      },
+      {
+        "value": "A6004AF9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐỨC LIỄU - 70204004"
+      },
+      {
+        "value": "A6004AFA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Thuận - CN HUYỆN ĐỨC LINH - 60204008"
+      },
+      {
+        "value": "A6004AFB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN ĐỨC THỌ - 42204007"
+      },
+      {
+        "value": "A6004AFC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN DUY TIÊN - 35204004"
+      },
+      {
+        "value": "A6004AFD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYỆN GIA BÌNH - 27204009"
+      },
+      {
+        "value": "A6004AD6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HỒNG HÀ - 01204018"
+      },
+      {
+        "value": "A6004AD7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN HƯNG HÀ - 34204011"
+      },
+      {
+        "value": "A6004AD8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN HÙNG VƯƠNG - 79204034"
+      },
+      {
+        "value": "A6004AD9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HÙNG VƯƠNG - 01204028"
+      },
+      {
+        "value": "A6004ADA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Nam - CN HƯƠNG AN - 49204004"
+      },
+      {
+        "value": "A6004ADB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN HỮU LŨNG - 20204004"
+      },
+      {
+        "value": "A6004ADC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN A LƯỚI - 46204010"
+      },
+      {
+        "value": "A6004ADD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN ANH SƠN - 40204022"
+      },
+      {
+        "value": "A6004ADE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN AYUNPA - 64204005"
+      },
+      {
+        "value": "A6004ADF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN BA CHẼ - 22204016"
+      },
+      {
+        "value": "A6004ADG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN BA VÌ - 01204044"
+      },
+      {
+        "value": "A6004ADH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN BÁC ÁI - 58204007"
+      },
+      {
+        "value": "A6004ADI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẮC HÀ - 10204002"
+      },
+      {
+        "value": "A6004ADJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN BẮC YÊN - 14204007"
+      },
+      {
+        "value": "A6004ADK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN BẢO LẠC - 04204014"
+      },
+      {
+        "value": "A6004ADL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN BẢO LÂM - 04204012"
+      },
+      {
+        "value": "A6004ADM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẢO THẮNG - 10204008"
+      },
+      {
+        "value": "A6004ADN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BẢO YÊN - 10204007"
+      },
+      {
+        "value": "A6004ADO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN BÁT XÁT - 10204010"
+      },
+      {
+        "value": "A6004ADP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Dương - CN HUYỆN BẾN CÁT BÌNH DƯƠNG - 74204003"
+      },
+      {
+        "value": "A6004ADQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN BÌNH LIÊU - 22204008"
+      },
+      {
+        "value": "A6004ADR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÌNH LONG - 70204016"
+      },
+      {
+        "value": "A6004ADS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN BÌNH LỤC - 35204002"
+      },
+      {
+        "value": "A6004ADT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN BÌNH XUYÊN - 26204008"
+      },
+      {
+        "value": "A6004ADU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ ĐĂNG - 70204008"
+      },
+      {
+        "value": "A6004ADV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ ĐỐP - 70204009"
+      },
+      {
+        "value": "A6004ADW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ GIA MẬP - 70204017"
+      },
+      {
+        "value": "A6004ADX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN BÙ NHO - 70204010"
+      },
+      {
+        "value": "A6004ADY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN CAM LÂM - 56204010"
+      },
+      {
+        "value": "A6004ADZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN CAM LỘ - 45204005"
+      },
+      {
+        "value": "A6004AE0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN CẨM MỸ - 75204006"
+      },
+      {
+        "value": "A6004AE1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN CẨM XUYÊN - 42204003"
+      },
+      {
+        "value": "A6004AE2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CẦN ĐƯỚC - 80204007"
+      },
+      {
+        "value": "A6004AE3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CẦN GIUỘC - 80204014"
+      },
+      {
+        "value": "A6004AE4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN CAN LỘC - 42204013"
+      },
+      {
+        "value": "A6004AE5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN CAO PHONG - 17204005"
+      },
+      {
+        "value": "A6004AE6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN CHÂU ĐỨC - 77204007"
+      },
+      {
+        "value": "A6004AE7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN HUYỆN CHÂU THÀNH - 80204006"
+      },
+      {
+        "value": "A6004AE8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN CHIÊM HÓA - 08204005"
+      },
+      {
+        "value": "A6004AE9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN CHƠN THÀNH - 70204013"
+      },
+      {
+        "value": "A6004AEA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN CHƯ PĂH - 64204012"
+      },
+      {
+        "value": "A6004AEB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN CHƯ SÊ - 64204003"
+      },
+      {
+        "value": "A6004AEC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN CHƯƠNG MỸ - 01204050"
+      },
+      {
+        "value": "A6004AED",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN CỜ ĐỎ CẦN THƠ II - 92204011"
+      },
+      {
+        "value": "A6004AEE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN CÔ TÔ - 22204002"
+      },
+      {
+        "value": "A6004AEF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN CỐC LẾU - 10204012"
+      },
+      {
+        "value": "A6004AEG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN CON CUÔNG - 40204016"
+      },
+      {
+        "value": "A6004AEH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN CÔN ĐẢO - 77204009"
+      },
+      {
+        "value": "A6004AEI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN HUYỆN CƯ KUIN DAK LAK - 66204003"
+      },
+      {
+        "value": "A6004AEJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN ĐÀ BẮC - 17204002"
+      },
+      {
+        "value": "A6004AEK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN ĐA KIA - 70204005"
+      },
+      {
+        "value": "A6004AEL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN ĐA KRONG - 45204006"
+      },
+      {
+        "value": "A6004AEM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN ĐẮC TÔ - 62204002"
+      },
+      {
+        "value": "A6004AEN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN ĐẠI TỪ - 19204010"
+      },
+      {
+        "value": "A6004AEO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN ĐAK ĐOA - 64204021"
+      },
+      {
+        "value": "A6004AEP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN ĐẮK HÀ - 62204003"
+      },
+      {
+        "value": "A6004AEQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN ĐAK PƠ - 64204015"
+      },
+      {
+        "value": "A6004AER",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN DAKGLEI - 62204007"
+      },
+      {
+        "value": "A6004AES",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN ĐẦM HÀ - 22204007"
+      },
+      {
+        "value": "A6004AET",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN ĐAM RÔNG LÂM ĐỒNG - 68204017"
+      },
+      {
+        "value": "A6004AFY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN IAPA - 64204023"
+      },
+      {
+        "value": "A6004AFZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KBANG - 64204007"
+      },
+      {
+        "value": "A6004AG0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN KHÁNH SƠN - 56204013"
+      },
+      {
+        "value": "A6004AG1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN KHÁNH VĨNH - 56204012"
+      },
+      {
+        "value": "A6004AG2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN KIM BẰNG - 35204005"
+      },
+      {
+        "value": "A6004AG3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN KIM BÔI - 17204012"
+      },
+      {
+        "value": "A6004AG4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN KIM SƠN - 37204006"
+      },
+      {
+        "value": "A6004AG5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN KON RẪY - 62204008"
+      },
+      {
+        "value": "A6004AG6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KÔNG CHRO - 64204014"
+      },
+      {
+        "value": "A6004AG7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN KRÔNG PA - 64204006"
+      },
+      {
+        "value": "A6004AGS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Bình - CN HUYỆN MINH HÓA - 44204010"
+      },
+      {
+        "value": "A6004AGT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MỘC CHÂU - 14204009"
+      },
+      {
+        "value": "A6004AGU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG ẢNG - 11204008"
+      },
+      {
+        "value": "A6004AGV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG CHÀ - 11204006"
+      },
+      {
+        "value": "A6004AGW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN HUYỆN MƯỜNG KHƯƠNG - 10204004"
+      },
+      {
+        "value": "A6004AGX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MƯỜNG LA - 14204002"
+      },
+      {
+        "value": "A6004AGY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG LAY - 11204009"
+      },
+      {
+        "value": "A6004AGZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Điện Biên - CN HUYỆN MƯỜNG NHÉ - 11204010"
+      },
+      {
+        "value": "A6004AH0",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN MỸ ĐỨC - 01204040"
+      },
+      {
+        "value": "A6004AH1",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN HUYỆN MỸ HÀO - 33204010"
+      },
+      {
+        "value": "A6004AH2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN NA HANG - 08204007"
+      },
+      {
+        "value": "A6004AH3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NAM ĐÀN - 40204010"
+      },
+      {
+        "value": "A6004AH4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN NAM ĐÔNG - 46204012"
+      },
+      {
+        "value": "A6004AH5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NGHI LỘC - 40204008"
+      },
+      {
+        "value": "A6004AH6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN NGHI XUÂN - 42204009"
+      },
+      {
+        "value": "A6004AH7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN NGHĨA ĐÀN - 40204003"
+      },
+      {
+        "value": "A6004AH8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kon Tum - CN HUYỆN NGỌC HỒI - 62204005"
+      },
+      {
+        "value": "A6004AH9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN NGUYÊN BINH - 04204003"
+      },
+      {
+        "value": "A6004AHA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN NHO QUAN - 37204003"
+      },
+      {
+        "value": "A6004AHB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Nai - CN HUYỆN NHƠN TRẠCH - 75204007"
+      },
+      {
+        "value": "A6004AG8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN KỲ ANH - 42204011"
+      },
+      {
+        "value": "A6004AG9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN KỲ SƠN - 40204012"
+      },
+      {
+        "value": "A6004AGA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN KỲ SƠN - 17204006"
+      },
+      {
+        "value": "A6004AGB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN LẠC SƠN - 17204009"
+      },
+      {
+        "value": "A6004AGC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN LÂM BÌNH TUYÊN QUANG - 08204008"
+      },
+      {
+        "value": "A6004AGD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN HUYỆN LÂM HÀ - 68204012"
+      },
+      {
+        "value": "A6004AGE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LẠNG GIANG BẮC GIANG II - 24204013"
+      },
+      {
+        "value": "A6004AGF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Vĩnh Phúc - CN HUYỆN LẬP THẠCH - 26204005"
+      },
+      {
+        "value": "A6004AGG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN LỘC HÀ - 42204004"
+      },
+      {
+        "value": "A6004AGH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN LỘC HIỆP - 70204011"
+      },
+      {
+        "value": "A6004AGI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN LỘC NINH - 70204006"
+      },
+      {
+        "value": "A6004AGJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bà Rịa - Vũng Tàu - CN HUYỆN LONG ĐIỀN - 77204006"
+      },
+      {
+        "value": "A6004AK0",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN PHÚ NHUẬN - 79348002"
+      },
+      {
+        "value": "A6004AGK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LỤC NAM BẮC GIANG II - 24204007"
+      },
+      {
+        "value": "A6004AGL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN LỤC NGẠN BẮC GIANG II - 24204011"
+      },
+      {
+        "value": "A6004AGM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN LƯƠNG SƠN - 17204007"
+      },
+      {
+        "value": "A6004AGN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Ninh - CN HUYEN LƯƠNG TÀI - 27204004"
+      },
+      {
+        "value": "A6004AGO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nam - CN HUYỆN LÝ NHÂN - 35204007"
+      },
+      {
+        "value": "A6004AGP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN HUYỆN MAI CHÂU - 17204003"
+      },
+      {
+        "value": "A6004AGQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Sơn La - CN HUYỆN MAI SƠN - 14204011"
+      },
+      {
+        "value": "A6004AGR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN MANG YANG - 64204008"
+      },
+      {
+        "value": "A6004AFE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN GIA VIỄN - 37204007"
+      },
+      {
+        "value": "A6004AFF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN GIO LINH - 45204008"
+      },
+      {
+        "value": "A6004AFG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HẠ LANG - 04204002"
+      },
+      {
+        "value": "A6004AFH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HÀ QUẢNG - 04204005"
+      },
+      {
+        "value": "A6004AFI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN HẢI HÀ - 22204013"
+      },
+      {
+        "value": "A6004AFJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN HẢI LĂNG - 45204004"
+      },
+      {
+        "value": "A6004AFK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tuyên Quang - CN HUYỆN HÀM YÊN - 08204004"
+      },
+      {
+        "value": "A6004AFL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bắc Giang - CN HUYỆN HIỆP HÒA - 24204012"
+      },
+      {
+        "value": "A6004AFM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cao Bằng - CN HUYỆN HÒA AN - 04204004"
+      },
+      {
+        "value": "A6004AFN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN HUYỆN HOA LƯ - 37204002"
+      },
+      {
+        "value": "A6004AFO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN HUYỆN HOÀI ĐỨC - 01204037"
+      },
+      {
+        "value": "A6004AFP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Ninh - CN HUYỆN HOÀNH BỒ - 22204014"
+      },
+      {
+        "value": "A6004AFQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Bình Phước - CN HUYỆN HỚN QUẢN - 70204018"
+      },
+      {
+        "value": "A6004AFR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nghệ An - CN HUYỆN HƯNG NGUYÊN - 40204009"
+      },
+      {
+        "value": "A6004AFS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Quảng Trị - CN HUYỆN HƯỚNG HÓA - 45204009"
+      },
+      {
+        "value": "A6004AFT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN HƯƠNG KHÊ - 42204005"
+      },
+      {
+        "value": "A6004AFU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Tĩnh - CN HUYỆN HƯƠNG SƠN - 42204015"
+      },
+      {
+        "value": "A6004AFV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN HƯƠNG THỦY - 46204007"
+      },
+      {
+        "value": "A6004AFW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN HƯƠNG TRÀ - 46204005"
+      },
+      {
+        "value": "A6004AFX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Gia Lai - CN HUYỆN IA GRAI - 64204004"
+      },
+      {
+        "value": "A6004AJB",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - An Giang - CN AN GIANG - 89357001"
+      },
+      {
+        "value": "A6004AJC",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Giang - CN BẮC GIANG - 24357001"
+      },
+      {
+        "value": "A6004AJD",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Kạn - CN BẮC KẠN - 06357001"
+      },
+      {
+        "value": "A6004AJE",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bạc Liêu - CN BẠC LIÊU - 95357001"
+      },
+      {
+        "value": "A6004AJF",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bắc Ninh - CN BẮC NINH - 27357001"
+      },
+      {
+        "value": "A6004AJG",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bến Tre - CN BẾN TRE - 83357001"
+      },
+      {
+        "value": "A6004AJH",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Định - CN BÌNH ĐỊNH - 52357001"
+      },
+      {
+        "value": "A6004AJI",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Dương - CN BÌNH DƯƠNG - 74357001"
+      },
+      {
+        "value": "A6004AJJ",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Phước - CN BÌNH PHƯỚC - 70357001"
+      },
+      {
+        "value": "A6004AJK",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bình Thuận - CN BÌNH THUẬN - 60357001"
+      },
+      {
+        "value": "A6004AJL",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN HOÀN KIẾM - 01348008"
+      },
+      {
+        "value": "A6004AJM",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ninh - CN HÒN GAI - 22348002"
+      },
+      {
+        "value": "A6004AJN",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN HỒNG BÀNG - 31348003"
+      },
+      {
+        "value": "A6004AJO",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thừa Thiên Huế - CN HUẾ - 46348001"
+      },
+      {
+        "value": "A6004AJP",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hưng Yên - CN HƯNG YÊN - 33348001"
+      },
+      {
+        "value": "A6004AJQ",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Khánh Hòa - CN KHÁNH HÒA - 56348001"
+      },
+      {
+        "value": "A6004AJR",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Kiên Giang - CN KIÊN GIANG - 91348001"
+      },
+      {
+        "value": "A6004AJS",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bắc Ninh - CN KINH BẮC - 27348002"
+      },
+      {
+        "value": "A6004AJT",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lâm Đồng - CN LÂM ĐỒNG - 68348001"
+      },
+      {
+        "value": "A6004AJU",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lạng Sơn - CN LẠNG SƠN - 20348001"
+      },
+      {
+        "value": "A6004AJV",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Lào Cai - CN LÀO CAI - 10348001"
+      },
+      {
+        "value": "A6004AJW",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hải Phòng - CN LÊ CHÂN - 31348002"
+      },
+      {
+        "value": "A6004AHC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH HẢI - 58204004"
+      },
+      {
+        "value": "A6004AHD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Khánh Hòa - CN HUYỆN NINH HÒA - 56204005"
+      },
+      {
+        "value": "A6004AHE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH PHƯỚC - 58204005"
+      },
+      {
+        "value": "A6004AHF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Thuận - CN HUYỆN NINH SƠN - 58204003"
+      },
+      {
+        "value": "A6004AHG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thừa Thiên Huế - CN HUYỆN PHONG ĐIỀN - 46204004"
+      },
+      {
+        "value": "A6004AHH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Cần Thơ - CN HUYỆN PHONG ĐIỀN CẦN THƠ II - 92204006"
+      },
+      {
+        "value": "A6004AHI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Nguyên - CN HUYỆN PHÚ BÌNH - 19204007"
+      },
+      {
+        "value": "A6004AHJ",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - An Giang - CN AN GIANG - 89323001"
+      },
+      {
+        "value": "A6004AHK",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bà Rịa - Vũng Tàu - CN BÀ RỊA VŨNG TÀU - 77323001"
+      },
+      {
+        "value": "A6004AHL",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bạc Liêu - CN BẠC LIÊU - 95323001"
+      },
+      {
+        "value": "A6004AHM",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Dương - CN BÌNH DƯƠNG - 74323001"
+      },
+      {
+        "value": "A6004AHN",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Phước - CN BÌNH PHƯỚC - 70323001"
+      },
+      {
+        "value": "A6004AHO",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bình Thuận - CN BÌNH THUẬN - 60323001"
+      },
+      {
+        "value": "A6004AHP",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Cần Thơ - CN CẦN THƠ - 92323001"
+      },
+      {
+        "value": "A6004AHQ",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đà Nẵng - CN ĐÀ NẴNG - 48323001"
+      },
+      {
+        "value": "A6004AHR",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Điện Biên - CN ĐIỆN BIÊN - 11323002"
+      },
+      {
+        "value": "A6004AHS",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đồng Tháp - CN ĐỒNG THÁP - 87323001"
+      },
+      {
+        "value": "A6004AHT",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Gia Lai - CN GIA LAI - 64323001"
+      },
+      {
+        "value": "A6004AHU",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hà Nội - CN HÀ NỘI - 01323001"
+      },
+      {
+        "value": "A6004AHV",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hải Phòng - CN HẢI PHÒNG - 31323001"
+      },
+      {
+        "value": "A6004AHW",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Khánh Hòa - CN KHÁNH HÒA - 56323001"
+      },
+      {
+        "value": "A6004AHX",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Kiên Giang - CN KIÊN GIANG - 91323001"
+      },
+      {
+        "value": "A6004AHY",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Lạng Sơn - CN LẠNG SƠN - 20323002"
+      },
+      {
+        "value": "A6004AHZ",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Nghệ An - CN NGHỆ AN - 40323001"
+      },
+      {
+        "value": "A6004AI0",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Bắc Ninh - CN PGD BẮC NINH - 27323001"
+      },
+      {
+        "value": "A6004AI1",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Quảng Nam - CN QUẢNG NAM - 49323001"
+      },
+      {
+        "value": "A6004AI2",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Quảng Ninh - CN QUẢNG NINH - 22323001"
+      },
+      {
+        "value": "A6004AI3",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN SÀI GÒN - 79323002"
+      },
+      {
+        "value": "A6004AI4",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN SỎ GIAO DICH - 79323003"
+      },
+      {
+        "value": "A6004AI5",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Sóc Trăng - CN SÓC TRĂNG - 94323001"
+      },
+      {
+        "value": "A6004AI6",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Sơn La - CN SƠN LA - 14323001"
+      },
+      {
+        "value": "A6004AI7",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Tây Ninh - CN TÂY NINH - 72323001"
+      },
+      {
+        "value": "A6004AI8",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thái Bình - CN THÁI BÌNH - 34323002"
+      },
+      {
+        "value": "A6004AI9",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thanh Hóa - CN THANH HÓA - 38323002"
+      },
+      {
+        "value": "A6004AIA",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Tiền Giang - CN TIỀN GIANG - 82323001"
+      },
+      {
+        "value": "A6004AIB",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hồ Chí Minh - CN TPHCM - 79323001"
+      },
+      {
+        "value": "A6004AIC",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Vĩnh Long - CN VĨNH LONG - 86323001"
+      },
+      {
+        "value": "A6004AID",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thừa Thiên Huế - PGD HUẾ - 46323001"
+      },
+      {
+        "value": "A6004AIE",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Long An - PGD LONG AN - 80323001"
+      },
+      {
+        "value": "A6004AIF",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Hưng Yên - PGD MỸ HÀO - 33323001"
+      },
+      {
+        "value": "A6004AIG",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Vĩnh Phúc - PGD PHÚC YÊN - 26323001"
+      },
+      {
+        "value": "A6004AIH",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Đồng Nai - PGD TÂN TIẾN - 75323001"
+      },
+      {
+        "value": "A6004AII",
+        "NOM": "ABBANK-NGÂN HÀNG TMCP AN BÌNH - Thái Nguyên - PGD THÁI NGUYÊN - 19323001"
+      },
+      {
+        "value": "A6004AIJ",
+        "NOM": "ABN - AMRO BANK - Hà Nội - HÀ NỘI - 01610001"
+      },
+      {
+        "value": "A6004AIK",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - An Giang - CN AN GIANG - 89307001"
+      },
+      {
+        "value": "A6004AIL",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bắc Giang - CN BẮC GIANG - 24307001"
+      },
+      {
+        "value": "A6004AIM",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bạc Liêu - CN BẠC LIÊU - 95307001"
+      },
+      {
+        "value": "A6004AIN",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bắc Ninh - CN BẮC NINH - 27307001"
+      },
+      {
+        "value": "A6004AIO",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bến Tre - CN BẾN TRE - 83307001"
+      },
+      {
+        "value": "A6004AIP",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Định - CN BÌNH ĐỊNH - 52307001"
+      },
+      {
+        "value": "A6004AIQ",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Bình Dương - CN BÌNH DƯƠNG - 74307001"
+      },
+      {
+        "value": "A6004AIR",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Cà Mau - CN CÀ MAU - 96307001"
+      },
+      {
+        "value": "A6004AIS",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Cần Thơ - CN CẦN THƠ - 92307001"
+      },
+      {
+        "value": "A6004AIT",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hồ Chí Minh - CN CHỢ LỚN - 79307005"
+      },
+      {
+        "value": "A6004AIU",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đà Nẵng - CN ĐÀ NẴNG - 48307001"
+      },
+      {
+        "value": "A6004AIV",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đắk Lắk - CN DAC LAK - 66307001"
+      },
+      {
+        "value": "A6004AIW",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đồng Nai - CN ĐỒNG NAI - 75307001"
+      },
+      {
+        "value": "A6004AIX",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Đồng Tháp - CN ĐỒNG THÁP - 87307001"
+      },
+      {
+        "value": "A6004AIY",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Phòng - CN DUYÊN HẢI - 31307002"
+      },
+      {
+        "value": "A6004AIZ",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nam - CN HÀ NAM - 35307001"
+      },
+      {
+        "value": "A6004AJ0",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Nội - CN HÀ NỘI - 01307001"
+      },
+      {
+        "value": "A6004AJ1",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hà Tĩnh - CN HÀ TĨNH - 42307001"
+      },
+      {
+        "value": "A6004AJ2",
+        "NOM": "ACB-NGÂN HÀNG TMCP Á CHÂU - Hải Dương - CN HẢI DƯƠNG - 30307001"
+      },
+      {
+        "value": "A6004AJ3",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Tây Ninh - CN TÂY NINH - 72353001"
+      },
+      {
+        "value": "A6004AJ4",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Tiền Giang - CN TIỀN GIANG - 82353001"
+      },
+      {
+        "value": "A6004AJ5",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Trà Vinh - CN TRÀ VINH - 84353001"
+      },
+      {
+        "value": "A6004AJ6",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Vĩnh Long - CN VĨNH LONG - 86353001"
+      },
+      {
+        "value": "A6004AJ7",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77353001"
+      },
+      {
+        "value": "A6004AJ8",
+        "NOM": "KIENLONG-NGÂN HÀNG TMCP KIÊN LONG - Kiên Giang - HỘI SỞ - 91353001"
+      },
+      {
+        "value": "A6004AJA",
+        "NOM": "LIENVIETPOSTBANK-NGÂN HÀNG TMCP BƯU ĐIỆN LIÊN VIỆT - Bà Rịa - Vũng Tàu - CN  VŨNG TÀU - 77357001"
+      },
+      {
+        "value": "A6004AKJ",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN CỘNG HÒA - 79309009"
+      },
+      {
+        "value": "A6004AKK",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Lâm Đồng - CN ĐÀ LẠT - 68309001"
+      },
+      {
+        "value": "A6004AKL",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đà Nẵng - CN ĐÀ NẴNG - 48309001"
+      },
+      {
+        "value": "A6004AKM",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đắk Lắk - CN DAK LAK - 66309001"
+      },
+      {
+        "value": "A6004AKN",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN ĐÔNG ĐÔ - 01309003"
+      },
+      {
+        "value": "A6004AKO",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đồng Nai - CN ĐỒNG NAI - 75309001"
+      },
+      {
+        "value": "A6004AKP",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Đồng Tháp - CN ĐỒNG THÁP - 87309001"
+      },
+      {
+        "value": "A6004AKQ",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN GIA ĐỊNH - 79309010"
+      },
+      {
+        "value": "A6004AKR",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Gia Lai - CN GIA LAI - 64309001"
+      },
+      {
+        "value": "A6004AKS",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN GÒ VẤP - 79309007"
+      },
+      {
+        "value": "A6004AKT",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nam - CN HÀ NAM - 35309001"
+      },
+      {
+        "value": "A6004ALG",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thái Bình - CN THÁI BÌNH - 34309001"
+      },
+      {
+        "value": "A6004ALH",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thái Nguyên - CN THÁI NGUYÊN - 19309001"
+      },
+      {
+        "value": "A6004ALI",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hồ Chí Minh - CN TP HCM - 79320001"
+      },
+      {
+        "value": "A6004ALJ",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Bà Rịa - Vũng Tàu - CN VŨNG TÀU - 77320001"
+      },
+      {
+        "value": "A6004ALK",
+        "NOM": "GPBANK-NGÂN HÀNG THƯƠNG MẠI TNHH MTV DẦU KHÍ TOÀN CẦU - Hà Nội - HỘI SỞ CHÍNH - 01320001"
+      },
+      {
+        "value": "A6004ALL",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - An Giang - CN AN GIANG - 89321001"
+      },
+      {
+        "value": "A6004ALM",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN BA ĐÌNH - 01321003"
+      },
+      {
+        "value": "A6004ALN",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bắc Giang - CN BẮC GIANG - 24321001"
+      },
+      {
+        "value": "A6004ALO",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bắc Ninh - CN BẮC NINH - 27321001"
+      },
+      {
+        "value": "A6004ALP",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bến Tre - CN BẾN TRE - 83321001"
+      },
+      {
+        "value": "A6004ALQ",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Định - CN BÌNH ĐỊNH - 52321001"
+      },
+      {
+        "value": "A6004ALR",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Dương - CN BÌNH DƯƠNG - 74321001"
+      },
+      {
+        "value": "A6004ALS",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Phước - CN BÌNH PHƯỚC - 70321001"
+      },
+      {
+        "value": "A6004ALT",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Bình Thuận - CN BÌNH THUẬN - 60321001"
+      },
+      {
+        "value": "A6004ALU",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Cà Mau - CN CÀ MAU - 96321001"
+      },
+      {
+        "value": "A6004ALV",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Cần Thơ - CN CẦN THƠ - 92321001"
+      },
+      {
+        "value": "A6004ALW",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN CỘNG HÒA - 79321006"
+      },
+      {
+        "value": "A6004ALX",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đà Nẵng - CN ĐÀ NẴNG - 48321001"
+      },
+      {
+        "value": "A6004ALY",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đắk Lắk - CN DAK LAK - 66321001"
+      },
+      {
+        "value": "A6004ALZ",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN ĐỒNG NAI - 75321001"
+      },
+      {
+        "value": "A6004AM0",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Tháp - CN ĐỒNG THÁP - 87321001"
+      },
+      {
+        "value": "A6004AM1",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN GIA ĐỊNH - 79321011"
+      },
+      {
+        "value": "A6004AKU",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN HÀ NỘI - 01309009"
+      },
+      {
+        "value": "A6004AKV",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Tĩnh - CN HÀ TĨNH - 42309001"
+      },
+      {
+        "value": "A6004AKW",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hải Dương - CN HẢI DƯƠNG - 30309001"
+      },
+      {
+        "value": "A6004AKX",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN HỒ CHÍ MINH - 79309001"
+      },
+      {
+        "value": "A6004AKY",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hoà Bình - CN HÒA BÌNH - 17309001"
+      },
+      {
+        "value": "A6004AKZ",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Thừa Thiên Huế - CN HUẾ - 46309001"
+      },
+      {
+        "value": "A6004AL0",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Kiên Giang - CN KIÊN GIANG - 91309001"
+      },
+      {
+        "value": "A6004AL1",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN KINH ĐÔ - 01309008"
+      },
+      {
+        "value": "A6004AL2",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Long An - CN LONG AN - 80309001"
+      },
+      {
+        "value": "A6004AL3",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Nam Định - CN NAM ĐỊNH - 36309001"
+      },
+      {
+        "value": "A6004AL4",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Nghệ An - CN NGHỆ AN - 40309001"
+      },
+      {
+        "value": "A6004AL5",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hà Nội - CN NGÔ QUYỀN - 01309004"
+      },
+      {
+        "value": "A6004AL6",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Khánh Hòa - CN NHA TRANG - 56309001"
+      },
+      {
+        "value": "A6004AL7",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Phú Thọ - CN PHÚ THỌ - 25309001"
+      },
+      {
+        "value": "A6004AL8",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 11 - 79309013"
+      },
+      {
+        "value": "A6004AL9",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 2 - 79309008"
+      },
+      {
+        "value": "A6004ALA",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN QUẬN 7 - 79309012"
+      },
+      {
+        "value": "A6004ALB",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Bình - CN QUẢNG BÌNH - 44309001"
+      },
+      {
+        "value": "A6004ALC",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Nam - CN QUẢNG NAM - 49309001"
+      },
+      {
+        "value": "A6004ALD",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Ninh - CN QUẢNG NINH - 22309001"
+      },
+      {
+        "value": "A6004ALE",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Quảng Trị - CN QUẢNG TRỊ - 45309001"
+      },
+      {
+        "value": "A6004ALF",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN SÀI GÒN - 79309006"
+      },
+      {
+        "value": "A6004AJX",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Long An - CN LONG AN - 80348001"
+      },
+      {
+        "value": "A6004AJY",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Nghệ An - CN NGHỆ AN - 40348001"
+      },
+      {
+        "value": "A6004AK1",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Nam - CN QUẢNG NAM - 49348001"
+      },
+      {
+        "value": "A6004AK2",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ngãi - CN QUẢNG NGÃI - 51348001"
+      },
+      {
+        "value": "A6004AK3",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Quảng Ninh - CN QUẢNG NINH - 22348001"
+      },
+      {
+        "value": "A6004AK4",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hồ Chí Minh - CN SÀI GÒN - 79348003"
+      },
+      {
+        "value": "A6004AK5",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Sóc Trăng - CN SÓC TRĂNG - 94348001"
+      },
+      {
+        "value": "A6004AK6",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Bình Dương - CN SÔNG BÉ - 74348002"
+      },
+      {
+        "value": "A6004AK7",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Đà Nẵng - CN TÂY ĐÀ NẴNG - 48348002"
+      },
+      {
+        "value": "A6004AK8",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN TÂY HÀ NỘI - 01348011"
+      },
+      {
+        "value": "A6004AK9",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Hà Nội - CN TÂY NAM HÀ NỘI - 01348004"
+      },
+      {
+        "value": "A6004AKA",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Tây Ninh - CN TÂY NINH - 72348001"
+      },
+      {
+        "value": "A6004AKB",
+        "NOM": "SHB-NGÂN HÀNG TMCP SÀI GÒN HÀ NỘI - Thái Bình - CN THÁI BÌNH - 34348001"
+      },
+      {
+        "value": "A6004AKC",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bắc Ninh - CN BẮC NINH - 27309001"
+      },
+      {
+        "value": "A6004AKD",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Hồ Chí Minh - CN BẾN THÀNH - 79309011"
+      },
+      {
+        "value": "A6004AKE",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Định - CN BÌNH ĐỊNH - 52309001"
+      },
+      {
+        "value": "A6004AKF",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Dương - CN BÌNH DƯƠNG - 74309001"
+      },
+      {
+        "value": "A6004AKG",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Bình Thuận - CN BÌNH THUẬN - 60309001"
+      },
+      {
+        "value": "A6004AKH",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Cà Mau - CN CÀ MAU - 96309001"
+      },
+      {
+        "value": "A6004AKI",
+        "NOM": "VPBANK-NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG - Cần Thơ - CN CẦN THƠ - 92309001"
+      },
+      {
+        "value": "A6004AO0",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN CẦU GIẤY - 01317005"
+      },
+      {
+        "value": "A6004AO1",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hồ Chí Minh - CN CHỢ LỚN - 79317001"
+      },
+      {
+        "value": "A6004AO2",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đà Nẵng - CN ĐÀ NẴNG - 48317001"
+      },
+      {
+        "value": "A6004AO3",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đắk Lắk - CN DAK LAK - 66317001"
+      },
+      {
+        "value": "A6004AO4",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN ĐỐNG ĐA - 01317006"
+      },
+      {
+        "value": "A6004AO5",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Đồng Nai - CN ĐỒNG NAI - 75317001"
+      },
+      {
+        "value": "A6004AO6",
+        "NOM": "SEABANK-NGÂN HÀNG TMCP ĐÔNG NAM Á - Hà Nội - CN HÀ ĐÔNG - 01317008"
+      },
+      {
+        "value": "A6004AO7",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Khánh Hòa - CN NHA TRANG - 56321001"
+      },
+      {
+        "value": "A6004AO8",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Ninh Bình - CN NINH BÌNH - 37321001"
+      },
+      {
+        "value": "A6004AO9",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN PHÚ NHUẬN - 79321002"
+      },
+      {
+        "value": "A6004AOA",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Phú Yên - CN PHÚ YÊN - 54321001"
+      },
+      {
+        "value": "A6004AOB",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Bình - CN QUẢNG BÌNH - 44321001"
+      },
+      {
+        "value": "A6004AOC",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Nam - CN QUẢNG NAM - 49321001"
+      },
+      {
+        "value": "A6004AOD",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Ngãi - CN QUẢNG NGÃI - 51321001"
+      },
+      {
+        "value": "A6004AOE",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Quảng Ninh - CN QUẢNG NINH - 22321001"
+      },
+      {
+        "value": "A6004AOF",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN SÀI GÒN - 79321009"
+      },
+      {
+        "value": "A6004AOG",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN SGD ĐỒNG NAI - 75321002"
+      },
+      {
+        "value": "A6004AOH",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Sóc Trăng - CN SÓC TRĂNG - 94321001"
+      },
+      {
+        "value": "A6004AOI",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN TAM HIỆP - 75321003"
+      },
+      {
+        "value": "A6004AOJ",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Tây Ninh - CN TÂY NINH - 72321001"
+      },
+      {
+        "value": "A6004AOK",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Thanh Hóa - CN THANH HÓA - 38321001"
+      },
+      {
+        "value": "A6004AOL",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Tiền Giang - CN TIỀN GIANG - 82321001"
+      },
+      {
+        "value": "A6004AM2",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Gia Lai - CN GIA LAI - 64321001"
+      },
+      {
+        "value": "A6004AM3",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HÀ NỘI - 01321001"
+      },
+      {
+        "value": "A6004AM4",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Tĩnh - CN HÀ TĨNH - 42321001"
+      },
+      {
+        "value": "A6004AM5",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Dương - CN HẢI DƯƠNG - 30321001"
+      },
+      {
+        "value": "A6004AM6",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hải Phòng - CN HẢI PHÒNG - 31321001"
+      },
+      {
+        "value": "A6004AM7",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HÀNG XANH - 79321012"
+      },
+      {
+        "value": "A6004AM8",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HIỆP PHÚ - 79321007"
+      },
+      {
+        "value": "A6004AM9",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HỒ GƯƠM - 01321005"
+      },
+      {
+        "value": "A6004AMA",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Đồng Nai - CN HỐ NAI - 75321006"
+      },
+      {
+        "value": "A6004AMB",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HOÀN KIẾM - 01321002"
+      },
+      {
+        "value": "A6004AMC",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN HỘI SỞ CHÍNH - 79321001"
+      },
+      {
+        "value": "A6004AMD",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Thừa Thiên Huế - CN HUẾ - 46321001"
+      },
+      {
+        "value": "A6004AME",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hà Nội - CN HÙNG VƯƠNG - 01321004"
+      },
+      {
+        "value": "A6004AMF",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Kiên Giang - CN KIÊN GIANG - 91321001"
+      },
+      {
+        "value": "A6004AMG",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Kon Tum - CN KON TUM - 62321001"
+      },
+      {
+        "value": "A6004AMH",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lâm Đồng - CN LÂM ĐỒNG - 68321001"
+      },
+      {
+        "value": "A6004AMI",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lạng Sơn - CN LẠNG SƠN - 20321001"
+      },
+      {
+        "value": "A6004AMJ",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN LÃNH BINH THĂNG - 79321003"
+      },
+      {
+        "value": "A6004AMK",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Lào Cai - CN LÀO CAI - 10321001"
+      },
+      {
+        "value": "A6004AML",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Long An - CN LONG AN - 80321001"
+      },
+      {
+        "value": "A6004AMM",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nam Định - CN NAM ĐỊNH - 36321001"
+      },
+      {
+        "value": "A6004AMN",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Nghệ An - CN NGHỆ AN - 40321001"
+      },
+      {
+        "value": "A6004AMO",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN NGUYỄN ĐÌNH CHIỂU - 79321010"
+      },
+      {
+        "value": "A6004AMP",
+        "NOM": "HDBANK-NGÂN HÀNG TMCP PHÁT TRIỂN TPHCM - Hồ Chí Minh - CN NGUYỄN TRÃI - 79321004"
+      },
+      {
+        "value": "A6004AMQ",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN CẦU GIẤY - 01334002"
+      },
+      {
+        "value": "A6004AMR",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đà Nẵng - CN CHỢ HÀN - 48334002"
+      },
+      {
+        "value": "A6004AMS",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CHỢ LỚN - 79334003"
+      },
+      {
+        "value": "A6004AMT",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CN 11 - 79334012"
+      },
+      {
+        "value": "A6004AMU",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CN 6 - 79334013"
+      },
+      {
+        "value": "A6004AMV",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CỐNG QUỲNH - 79334002"
+      },
+      {
+        "value": "A6004AMW",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN CỦ CHI - 79334010"
+      },
+      {
+        "value": "A6004AMX",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đà Nẵng - CN ĐÀ NẴNG - 48334001"
+      },
+      {
+        "value": "A6004AMY",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đắk Lắk - CN DAKLAK - 66334001"
+      },
+      {
+        "value": "A6004AMZ",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đồng Nai - CN ĐỒNG NAI - 75334001"
+      },
+      {
+        "value": "A6004AN0",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Đồng Tháp - CN ĐỒNG THÁP - 87334001"
+      },
+      {
+        "value": "A6004AN1",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN GIA ĐỊNH - 79334005"
+      },
+      {
+        "value": "A6004AN2",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Gia Lai - CN GIA LAI - 64334001"
+      },
+      {
+        "value": "A6004AN3",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN HÀ NỘI - 01334004"
+      },
+      {
+        "value": "A6004AN4",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN HAI BÀ TRƯNG - 01334001"
+      },
+      {
+        "value": "A6004AN5",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Dương - CN HẢI DƯƠNG - 30334001"
+      },
+      {
+        "value": "A6004AN6",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hải Phòng - CN HẢI PHÒNG - 31334002"
+      },
+      {
+        "value": "A6004AN7",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN HÓC MÔN - 79334004"
+      },
+      {
+        "value": "A6004AN8",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Khánh Hòa - CN KHÁNH HÒA - 56334001"
+      },
+      {
+        "value": "A6004AN9",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Kiên Giang - CN KIÊN GIANG - 91334001"
+      },
+      {
+        "value": "A6004ANA",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Long An - CN LONG AN - 80334001"
+      },
+      {
+        "value": "A6004ANB",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Nghệ An - CN NGHỆ AN - 40334001"
+      },
+      {
+        "value": "A6004ANC",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Cần Thơ - CN NINH KIỀU - 92334002"
+      },
+      {
+        "value": "A6004AND",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN PHẠM NGỌC THẠCH - 79334016"
+      },
+      {
+        "value": "A6004ANE",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN PHÙ ĐỔNG - 79334015"
+      },
+      {
+        "value": "A6004ANF",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN QUẬN 10 - 79334009"
+      },
+      {
+        "value": "A6004ANG",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Quảng Ninh - CN QUẢNG NINH - 22334001"
+      },
+      {
+        "value": "A6004ANH",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN SÀI GÒN - 79334014"
+      },
+      {
+        "value": "A6004ANI",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TÂN BÌNH - 79334006"
+      },
+      {
+        "value": "A6004ANJ",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TÂN ĐỊNH - 79334007"
+      },
+      {
+        "value": "A6004ANK",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hà Nội - CN THĂNG LONG - 01334003"
+      },
+      {
+        "value": "A6004ANL",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Thanh Hóa - CN THANH HÓA - 38334001"
+      },
+      {
+        "value": "A6004ANM",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN THỐNG NHẤT - 79334011"
+      },
+      {
+        "value": "A6004ANN",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Tiền Giang - CN TIỀN GIANG - 82334001"
+      },
+      {
+        "value": "A6004ANO",
+        "NOM": "SCB-NGÂN HÀNG TMCP SÀI GÒN - Hồ Chí Minh - CN TP HỒ CHÍ MINH - 79334001"
+      },
+      {
+        "value": "A60049RG",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN KIM THANH - 10204013"
+      },
+      {
+        "value": "A60049RH",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN KINH MÔN - 30204011"
+      },
+      {
+        "value": "A60049RI",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG ANA - 66204022"
+      },
+      {
+        "value": "A60049RJ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG BÔNG - 66204004"
+      },
+      {
+        "value": "A60049RK",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG NĂNG - 66204015"
+      },
+      {
+        "value": "A60049RL",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Nông - CN KRÔNG NÔ - 67204008"
+      },
+      {
+        "value": "A60049RM",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN KRÔNG PAK - 66204013"
+      },
+      {
+        "value": "A60049RN",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV BÌNH MINH NINH BÌNH - 37204011"
+      },
+      {
+        "value": "A60049RO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV GIÁN KHẨU NINH BÌNH - 37204013"
+      },
+      {
+        "value": "A60049RP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN KV MÍA ĐƯỜNG TÂN HƯNG - 72204003"
+      },
+      {
+        "value": "A60049RQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Ninh Bình - CN KV RIA NINH BÌNH - 37204012"
+      },
+      {
+        "value": "A60049RR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KỲ SƠN - 31204024"
+      },
+      {
+        "value": "A60049RS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LẠC DƯƠNG - 68204009"
+      },
+      {
+        "value": "A60049RT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hoà Bình - CN LẠC THỦY - 17204011"
+      },
+      {
+        "value": "A60049RU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN LAI CHÂU - 12204001"
+      },
+      {
+        "value": "A60049RV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lai Châu - CN LAI CHÂU - 12204002"
+      },
+      {
+        "value": "A60049RW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đồng Tháp - CN LAI VUNG - 87204010"
+      },
+      {
+        "value": "A60049RX",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Đắk Lắk - CN LAK - 66204024"
+      },
+      {
+        "value": "A60049RY",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lâm Đồng - CN LÂM ĐỒNG II - 68204004"
+      },
+      {
+        "value": "A60049RZ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN LAM SƠN - 38204006"
+      },
+      {
+        "value": "A60049R2",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC BẾN LỨC - 80204013"
+      },
+      {
+        "value": "A60049R3",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC CẦU VOI - 80204010"
+      },
+      {
+        "value": "A60049R4",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC ĐỨC HÒA - 80204012"
+      },
+      {
+        "value": "A60049R5",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Long An - CN KHU VỰC GÒ ĐEN - 80204009"
+      },
+      {
+        "value": "A60049R6",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN KHU VỰC I - 34204008"
+      },
+      {
+        "value": "A60049R7",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KIẾN AN - 31204014"
+      },
+      {
+        "value": "A60049R8",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN GIANG - 91204001"
+      },
+      {
+        "value": "A60049R9",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN HẢI - 91204003"
+      },
+      {
+        "value": "A60049RA",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Kiên Giang - CN KIÊN LƯƠNG - 91204009"
+      },
+      {
+        "value": "A60049RB",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Phòng - CN KIẾN THỤY - 31204013"
+      },
+      {
+        "value": "A60049RC",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thái Bình - CN KIẾN XƯƠNG - 34204010"
+      },
+      {
+        "value": "A60049RD",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hưng Yên - CN KIM ĐỘNG - 33204008"
+      },
+      {
+        "value": "A60049RE",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lào Cai - CN KIM TÂN - 10204003"
+      },
+      {
+        "value": "A60049RF",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hải Dương - CN KIM THÀNH - 30204003"
+      },
+      {
+        "value": "A60049TO",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Yên Bái - CN TRẤN YÊN - 15204008"
+      },
+      {
+        "value": "A60049TP",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRÀNG AN - 01204029"
+      },
+      {
+        "value": "A60049TQ",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Tây Ninh - CN TRẢNG BÀNG - 72204002"
+      },
+      {
+        "value": "A60049TR",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Lạng Sơn - CN TRÀNG ĐỊNH - 20204003"
+      },
+      {
+        "value": "A60049TS",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hà Nội - CN TRÀNG TIỀN - 01204288"
+      },
+      {
+        "value": "A60049TT",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - An Giang - CN TRI TÔN - 89204005"
+      },
+      {
+        "value": "A60049TU",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Thanh Hóa - CN TRIỆU SƠN - 38204008"
+      },
+      {
+        "value": "A60049TV",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Nam Định - CN TRỰC NINH - 36204008"
+      },
+      {
+        "value": "A60049TW",
+        "NOM": "AGRIBANK-NGÂN HÀNG NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN - Hồ Chí Minh - CN TRUNG TÂM SÀI GÒN - 79204015"
+      }
+    ]
+  }`);

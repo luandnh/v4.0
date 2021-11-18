@@ -197,7 +197,7 @@ hr {
   padding: 10px 20px;
   border-style: solid;
   border-width: 0 1px 1px 1px;
-  border-color: #dde6e9;
+  border-color: #b2a6a6;
 }
 .nav-pills + .tab-content {
   border: 0;
@@ -8550,7 +8550,7 @@ fieldset[disabled] .btn-pink.focus {
 }
 .mda-form-group {
   position: relative;
-  padding: 18px 0 24px 0;
+  padding: 18px 0 12px 0;
 }
 .mda-form-control {
   margin-top: 5px;
@@ -8559,18 +8559,17 @@ fieldset[disabled] .btn-pink.focus {
   font-family: Helvetica;
   width: 100%;
   font-size: 120%;
-  height: 40px;
+  height: 35px;
   font-weight: 500;
-  padding: 5px;
+  padding: 0px 20px;
   color: inherit;
   background: #ffffff00;
   border: 0;
-  border-right: 1px solid #25232347;
-  border-bottom: 1px solid #25232347;
-  border-top: 1px solid #5050501f;
-  border-left: 1px solid #5050501f;
+  border-right: 1px solid #54505066;
+  border-bottom: 1px solid #54505066;
+  border-top: 1px solid #54505066;
+  border-left: 1px solid #54505066;
   border-radius: 4px;
-  box-shadow: none;
 }
 .mda-form-control:focus,
 .mda-form-control.focus {
@@ -8600,7 +8599,7 @@ fieldset[disabled] .btn-pink.focus {
 }
 .mda-form-control.disabled,
 .mda-form-control[disabled] {
-  opacity: .5;
+  opacity: 1;
 }
 .mda-form-control.mda-form-light:focus,
 .mda-form-control.mda-form-light.focus {
@@ -8952,7 +8951,7 @@ md-tabs .md-tab.md-focused md-icon {
 }
 
 .modal-content{
-  border-radius:5px;
+  border-radius:10px !important;
 }
 
 /*****
@@ -8980,10 +8979,8 @@ md-tabs .md-tab.md-focused md-icon {
   background: #afa3a32e;
 }
 .dropdown-menu {
-  max-height: 500px !important;
 }
 .dropdown-menu open{
-  max-height: 500px !important;
 }
 .dropdown.bootstrap-select.ng-pristine.ng-empty.ng-invalid.ng-invalid-required.ng-touched.bs3{
   margin-top: 5px !important;
@@ -8996,20 +8993,20 @@ md-tabs .md-tab.md-focused md-icon {
   top:0
 }
 .mda-form-group >input:required {
-  background: #e8ffba6b;
+  background: #e8ffbacc;
 }
 .mda-form-group >select:required {
-  background: #e8ffba6b;
+  background: #e8ffbacc;
 }
 .selectpicker>select:required{
-  background: #e8ffba6b;
+  background: #e8ffbacc;
 }
 
 .selectpicker:required + button {
-  background: #e8ffba6b;
+  background: #e8ffbacc;
 }
 .selectpicker:required{
-  background: #e8ffba6b;
+  background: #e8ffbacc;
 }
 .bootstrap-select>.dropdown-toggle{
   height: 40px;
@@ -9025,7 +9022,7 @@ md-tabs .md-tab.md-focused md-icon {
   font-family: Helvetica !important;
 }
 .tab-pane{
-  margin-top: 10px;
+  margin-top: 0px;
 }
 label{
 
@@ -9067,4 +9064,78 @@ label{
 }
 .app_status{
   padding: 18px 0px 0px 0px !important;
+}
+#eligible_btn{
+  background: #2d549c;
+  font-family: Helvetica !important;
+}
+#scSubmit{
+  width: 100%;
+}
+/* DEBT STRUCT */
+.padding {
+  padding: 10px !important;
+}
+
+#debt .card {
+  margin-bottom: 1.5rem
+}
+
+#debt .card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #c8ced3;
+  border-radius: .25rem
+}
+
+#debt .card-header:first-child {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0
+}
+
+#debt .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f0f3f5;
+  border-bottom: 1px solid #c8ced3
+}
+
+#debt .card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem
+}
+
+#debt .form-control:focus {
+  color: #5c6873;
+  background-color: #fff;
+  border-color: #c8ced3 !important;
+  outline: 0;
+  box-shadow: 0 0 0 #F44336
+}
+#debt .mda-form-control{
+  margin-top: unset !important;
+  margin-bottom:5px !important;
+  height: unset !important;
+}
+#debt .row{
+  margin:  0px -10px;
+}
+
+#debt input[readonly]{
+  background-color: #222d3214;
+}
+
+#debt .select2-container{
+  width: 100% !important;
+}
+#debt .select2-container--bootstrap .select2-selection--single .select2-selection__rendered{
+  margin-top: -2px !important;
+  font-size: larger !important;
+  font-family: Helvetica !important;
 }

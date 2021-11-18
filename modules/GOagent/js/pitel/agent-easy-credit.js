@@ -1,9 +1,33 @@
+function getCurrentDate(){
+  let date_ob = new Date();
+  let date = ("0" + date_ob.getDate()).slice(-2);
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  let year = date_ob.getFullYear();
+  let hours = date_ob.getHours();
+  let minutes = date_ob.getMinutes();
+  let seconds = date_ob.getSeconds();
+  if (hours < 10){
+    hours = "0"+hours
+  }
+  if (minutes < 10){
+    minutes = "0"+minutes
+  }
+  if (seconds < 10){
+    seconds = "0"+seconds
+  }
+  return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+}
+console.stdlog = console.log.bind(console);
+console.logs = {};
+console.log = function(){
+    console.logs[getCurrentDate()] = Array.from(arguments);
+    console.stdlog.apply(console, arguments);
+}
 console.log("agent-easy-credit-v1");
 var list_doc_collecting = [];
 var is_upload_img_selfie = false;
 var is_upload_id_card = false;
-var selected_product = null;
-var selected_employment_type = null;
+
 const EC_API_USERNAME = "";
 const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
@@ -12,6 +36,8 @@ const formatter = new Intl.NumberFormat("vi-VN", {
 const num_formatter = new Intl.NumberFormat("vi-VN");
 const EC_API_PASSWORD = "";
 const EC_API_TOKEN = "";
+var selected_product = null;
+var selected_employment_type = null;
 var selected_offer_id = "";
 var selected_offer_amount = 0;
 var selected_offer_insurance_type = "";
@@ -97,9 +123,6 @@ let changeLoanAmountRange = (e) => {
   e.form.range_loan_amount.value = e.value;
   simulator(e);
 };
-$("input[type='number]").on("blur", function () {
-  console.log("Sdasdasd");
-});
 $(document).on('blur', 'input[type="date"]', function () {
   var cur_date = new Date($(this)[0].value);
   var today = new Date()
@@ -109,7 +132,6 @@ $(document).on('blur', 'input[type="date"]', function () {
     sweetAlert("Thời gian không được nhỏ hơn 1900 và lớn hơn ngày hôm qua")
   }
 });
-
 
 $(document).on('blur', 'input[tag="phone"]', function () {
   let phone_number = $(this)[0].value;
@@ -127,7 +149,6 @@ function pmt(monthlyRate, monthlyPayments, presentValue, residualValue, advanced
   return (presentValue-(residualValue/t2))/(((1-(1/(t3)))/monthlyRate)+advancedPayments);
 }
 let simulator = (e) => {
-  console.log("simulator");
   let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
   let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
   let sm_insu = $("input[name='simu_insurance']:checked").val();
@@ -184,12 +205,35 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
+  $(document).on("click", "#report_error", function (e) {
+    tata.info('Tạo tập tin log', 'Vui lòng đợi', {
+      position: 'tl',animate: 'slide', duration: 1000
+    })
+    let tsp = getCurrentDate().split("-").join("_").split(":").join("_").split(" ").join("_");
+    var a = document.createElement('a');
+    var blob = new Blob([JSON.stringify(console.logs,null,4)], {'type':'application/octet-stream'});
+    a.href = window.URL.createObjectURL(blob);
+    let fname = 'ReportLog_'+tsp+".json";
+    a.download = fname;
+    a.click();
+    tata.info('Thành công : '+fname, 'Gửi tập tin log đến developer để kiểm tra', {
+      position: 'tl',animate: 'slide', duration: 5000
+    })
+  });
+  try{
+    if (user == 'ngan.pham'){
+      $("#eligible_btn").css("background","#fdbfc0");
+      $("#eligible_btn").css("color","rgb(0 0 0)");
+    }
+  }catch(e){
+
+  }
   $("input[name='simu_insurance']")[0].checked = true;
   $(document).on("click", "#submit_attachment", function (e) {
     e.preventDefault();
     const multiple_files = $(".MultiFile-applied.MultiFile");
     if (multiple_files.length == 0) {
-      sweetAlert("No file to upload");
+      sweetAlert("Chưa có file được chọn");
       return;
     }
     var request_id = $("#request_id").val();
@@ -198,7 +242,16 @@ $(document).ready(() => {
       phone_number = phone_number.slice(1, phone_number.length)
     }
     var attachments = multiple_files[0].MultiFile.files;
+    for (let tmp = 0; tmp < multiple_files.length; tmp++) {
+      if (multiple_files[tmp].MultiFile.files.length != 0){
+          attachments = multiple_files[tmp].MultiFile.files;
+      }
+    }
     list_doc_collecting = [];
+    if (attachments.length == 0) {
+      sweetAlert("Chưa có file được chọn. Nếu là lỗi, vui lòng liên hệ developer");
+      return;
+    }
     attachments.forEach(function (file) {
       var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
       var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
@@ -221,7 +274,7 @@ $(document).ready(() => {
       };
       $.ajax(settings)
         .fail((result, status, error) => {
-          console.log(result);
+          console.log("Submit_attachment failed: ",result);
           let msg = "Please contact developer!";
           isUploadedDocs[2] = false;
           // AllowSelectOffer();
@@ -244,6 +297,7 @@ $(document).ready(() => {
           let resp = JSON.parse(result);
           if (resp.status == "success") {
             var doc = { file_type: resp.file_type, file_name: resp.file_name };
+            console.log("Upload success : ", doc)
             list_doc_collecting.push(doc);
             
             isUploadedDocs[2] = true;
@@ -257,6 +311,89 @@ $(document).ready(() => {
         });
     });
   });
+  $(document).on("click", "#submit_attachment2", function (e) {
+    e.preventDefault();
+    const multiple_files = $("input[id^='attachment_files2_']");
+    if (multiple_files.length == 0) {
+      sweetAlert("Chưa có file được chọn");
+      return;
+    }
+    var request_id = $("#request_id").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var attachments = multiple_files[0].MultiFile.files;
+    for (let tmp = 0; tmp < multiple_files.length; tmp++) {
+      if (multiple_files[tmp].MultiFile.files.length != 0){
+          attachments = multiple_files[tmp].MultiFile.files;
+      }
+    }
+    list_doc_collecting = [];
+    if (attachments.length == 0) {
+      sweetAlert("Chưa có file được chọn. Nếu là lỗi, vui lòng liên hệ developer");
+      return;
+    }
+    attachments.forEach(function (file) {
+      var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
+      var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
+      var formData = new FormData();
+      formData.append("request_id", request_id);
+      formData.append("phone_number", "0" + phone_number);
+      formData.append("identity_number", identity_number);
+      formData.append("file_type", file_type);
+      formData.append("file", file);
+      var upload_status = true;
+      var settings = {
+        url: CRM_API_URL+"/v1/document/upload",
+      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+        method: "POST",
+        timeout: 0,
+        processData: false,
+        mimeType: "multipart/form-data",
+        contentType: false,
+        data: formData,
+      };
+      $.ajax(settings)
+        .fail((result, status, error) => {
+          console.log("Submit_attachment failed: ",result);
+          let msg = "Please contact developer!";
+          isUploadedDocs[2] = false;
+          // AllowSelectOffer();
+          if (result.message !== undefined) {
+            msg = result.message;
+          }
+          if (result.responseText != undefined){
+              try {
+                  let err = JSON.parse(result.responseText);
+                  if (err.error != undefined){
+                    msg = err.error;
+                  }
+              } catch (error) {
+                  msg = result.responseText;
+              }
+          }
+          swal("Upload file fail!", msg, "error");
+        })
+        .success((result, status, error) => {
+          let resp = JSON.parse(result);
+          if (resp.status == "success") {
+            var doc = { file_type: resp.file_type, file_name: resp.file_name };
+            console.log("Upload success : ", doc)
+            list_doc_collecting.push(doc);
+            
+            isUploadedDocs[2] = true;
+            // AllowSelectOffer();
+            swal(
+              "Upload file success!",
+              "Upload attachment success",
+              "success"
+            );
+          }
+        });
+    });
+  });
+  
   // SELECT OFFER
   // Upload img_selfie
   $(document).on("click", "#submit_img_selfie", function (e) {
@@ -271,8 +408,11 @@ $(document).ready(() => {
     // $("#identity_number").val("215491214");
     // 
     var request_id = $("#request_id").val();
-    var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PIC");
@@ -291,7 +431,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.log("Submit_attachment: ",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -312,12 +452,12 @@ $(document).ready(() => {
       })
       .success((result, status, error) => {
         let resp = JSON.parse(result);
+        console.log("Upload success : ", resp);
         if (resp.status == "success") {
           $("input[name='img_selfie']")[0].value = resp.file_name;
           isUploadedDocs[0] = true;
           // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
-          console.log(resp);
         }
       });
   });
@@ -335,8 +475,11 @@ $(document).ready(() => {
     // 
     
     var request_id = $("#request_id").val();
-    var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PID");
@@ -355,7 +498,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.log("Submit_img_id_card: ",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -376,6 +519,7 @@ $(document).ready(() => {
       })
       .success((result, status, error) => {
         let resp = JSON.parse(result);
+        console.log("Upload success : ", resp);
         if (resp.status == "success") {
           $("input[name='img_id_card']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
@@ -384,7 +528,6 @@ $(document).ready(() => {
         }
       });
   });
-
   // 
   // SUBMIT FULLLOAN
   // Upload img_selfie
@@ -400,8 +543,11 @@ $(document).ready(() => {
     // $("#identity_number").val("215491214");
     // 
     var request_id = $("#request_id").val();
-    var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PIC");
@@ -420,7 +566,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.log("Submit_img_selfie2",result);
         isUploadedDocs[0] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -441,12 +587,12 @@ $(document).ready(() => {
       })
       .success((result, status, error) => {
         let resp = JSON.parse(result);
+        console.log("Upload success : ", resp);
         if (resp.status == "success") {
           $("input[name='img_selfie2']")[0].value = resp.file_name;
           isUploadedDocs[0] = true;
           // AllowSelectOffer();
           swal("OK!", "Upload Image Selfie Success", "success");
-          console.log(resp);
         }
       });
   });
@@ -464,8 +610,11 @@ $(document).ready(() => {
     // 
     
     var request_id = $("#request_id").val();
-    var phone_number = $("#phone_number").val();
-    var identity_number = $("#identity_number").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var formData = new FormData();
     formData.append("request_id", request_id);
     formData.append("file_type", "PID");
@@ -484,7 +633,7 @@ $(document).ready(() => {
     };
     $.ajax(settings)
       .fail((result, status, error) => {
-        console.log(result);
+        console.log("Submit_img_id_card2",result);
         isUploadedDocs[1] = false;
         // AllowSelectOffer();
         let msg = "Please contact developer!";
@@ -505,6 +654,7 @@ $(document).ready(() => {
       })
       .success((result, status, error) => {
         let resp = JSON.parse(result);
+        console.log("Upload success : ", resp);
         if (resp.status == "success") {
           $("input[name='img_id_card2']")[0].value = resp.file_name;
           swal("OK!", "Upload Image ID Card Success", "success");
@@ -516,7 +666,7 @@ $(document).ready(() => {
 
   // 
   let fullLoanTab =
-    '<li role="presentation" id="full_loan_tab_href">' +
+    '<li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation" id="full_loan_tab_href">' +
     '<a href="#full-loan" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
     '<span class="fa fa-file-text-o hidden"></span>' +
     "Thông tin khoản vay</a>" +
@@ -535,11 +685,12 @@ let CreateOfferTab = function(){
 $("#agent_tablist").append(offerTab);
 }
 let ECShowProducts = (partner_code, request_id, app_status, status, call_status, reject_reason= "") => {
+  $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   removeElement("offer_tab_href");
   ShowStatusOnForm(status, call_status, app_status,reject_reason);
   $("#hide_div_eligible").hide();
   $("#create-offer-table").empty();
-  SetCustomerOfferDetail();
+  SetProductListForm();
   // $("#offer-datatable").empty();
   removeElement("submit_fullloan_btn");
   removeElement("product_tab_href");
@@ -581,217 +732,17 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
     $("#agent_tablist").append(productTab);
     $("#accordion").empty();
     $("#hide_div_eligible").show();
-    ajaxGetECProducts(partner_code, request_id).done((result) => {
-      //
-      if (result.code == "SUCCESS") {
-        ECProducts = result.data;
-        let color_index = 0;
-        let index = 1;
-        ECProducts.forEach((product) => {
-          let productBox = $("<div></div>", {
-            class: "panel box " + box_color[color_index],
-          });
-          let productBoxHeader =
-            '<div class="box-header with-border">' +
-            '<h4 class="box-title">' +
-            '<a data-toggle="collapse" data-parent="#accordion" href="#collapse' +
-            index +
-            '">' +
-            product.employee_type +
-            " - " +
-            product.employee_description_en;
-          "</a>" + "</h4>" + "</div>";
-          productBox.append(productBoxHeader);
-          tmp_in = index === 1 ? "in" : "";
-          let productBoxBody =
-            '<div id="collapse' +
-            index +
-            `" class="panel-collapse collapse ${tmp_in}">` +
-            '<div class="box-body">' +
-            "<table id=productTable" +
-            index +
-            ' class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">' +
-            "</table>" +
-            "</div>" +
-            "</div>";
-          productBox.append(productBoxBody);
-
-          $("#accordion").append(productBox);
-          console.log(product.product_list);
-          let table = $("#productTable" + index).DataTable({
-            destroy: true,
-            responsive: true,
-            data: product.product_list,
-            columns: [
-              {
-                title: "Mã sản phẩm",
-                data: "product_code",
-              },
-              {
-                title: "Thời hạn vay tối thiểu",
-                data: "loan_min_tenor",
-              },
-              {
-                title: "Thời hạn vay tối đa",
-                data: "loan_max_tenor",
-              },
-              {
-                title: "Khoảng vay tối thiếu",
-                data: "loan_min_amount",
-                render: (data) => {
-                  result =
-                    data != null
-                      ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
-                      : 0;
-                  return result;
-                },
-              },
-              {
-                title: "Khoản vay tối đa",
-                data: "loan_max_amount",
-                render: (data) => {
-                  result =
-                    data != null
-                      ? data.toLocaleString("vi-VN", {
-                        style: "currency",
-                        currency: "VND",
-                      })
-                      : 0;
-                  return result;
-                },
-              },
-              {
-                title: "Tỉ lệ lãi",
-                data: "interest_rate",
-              },
-              {
-                title: "Thao tác",
-                render: () => {
-                  return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
-                },
-              },
-            ],
-          });
-          $("#productTable" + index + " tbody").on(
-            "click",
-            "tr .btn-product-view",
-            function () {
-              clearForm($("#product-detail-form"));
-              $("#product-detail-form-bundle").empty();
-              let tmp_data = table.row($(this).closest("tr")).data();
-              let table_index = 0;
-              for (const property in tmp_data) {
-                if (!Array.isArray(tmp_data[property])) {
-                  let value = tmp_data[property];
-                  if (property.includes("amount")) {
-                    value =
-                      value != null
-                        ? value.toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
-                        : 0;
-                  }
-                  $("#product-detail-form input[name='" + property + "']").val(
-                    value
-                  );
-                  $(
-                    "#product-detail-form textarea[name='" + property + "']"
-                  ).val(value);
-                } else {
-                  tmp_data[property].forEach((elem) => {
-                    table_index++;
-                    let bundle_div =
-                      `<div class="row" id="product-detail-form-bundle-${table_index}">` +
-                      '<div class="col-xs-6">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="bundle_name">Bundle Name</label>` +
-                      `<input name="bundle_name" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      '<div class="col-xs-3">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="bundle_code">Bundle Code</label>` +
-                      `<input name="bundle_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      '<div class="col-xs-3">' +
-                      '<div class="mda-form-group label-floating">' +
-                      `<label for="min_request">Min Request</label>` +
-                      `<input name="min_request" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
-                      "</div></div>" +
-                      "</div>";
-                    $("#product-detail-form-bundle").append(bundle_div);
-                    for (const prop in elem) {
-                      if (!Array.isArray(elem[prop])) {
-                        let value = elem[prop];
-                        $(
-                          "#product-detail-form-bundle-" +
-                          table_index +
-                          " input[name='" +
-                          prop +
-                          "']"
-                        ).val(value);
-                      } else {
-                        let tmp_table =
-                          `<table id="tableProductDetail${table_index}" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">` +
-                          "</table>";
-                        $("#product-detail-form-bundle-" + table_index).append(
-                          tmp_table
-                        );
-                        let table = $(
-                          "#tableProductDetail" + table_index
-                        ).DataTable({
-                          destroy: true,
-                          responsive: true,
-                          searching: false,
-                          lengthChange: false,
-                          data: elem[prop],
-                          columns: [
-                            {
-                              title: "Doc EN",
-                              data: "doc_description_en",
-                            },
-                            {
-                              title: "Doc VI",
-                              data: "doc_description_vi",
-                            },
-                            {
-                              title: "Format",
-                              data: "doc_format_request",
-                            },
-                            {
-                              title: "Type",
-                              data: "doc_type",
-                            },
-                          ],
-                        });
-                      }
-                    }
-                  });
-                }
-                console.log(`${property}: ${tmp_data[property]}`);
-              }
-              $("#product-detail-modal").modal("show");
-              // TEL4VN TEST
-              sync_from_product();
-            }
-          );
-          color_index++;
-          index++;
-          if (color_index >= box_color.length) {
-            color_index = 0;
-          }
-        });
-        lead_id = $(".formMain input[name='lead_id']").val();
-        // TEST
-        // lead_id = "1234";
-        if (lead_id != "" && lead_id.length > 0) {
-          SyncFullLoanFromAPI(lead_id);
-        }
+    ajaxGetECProducts(partner_code, request_id);
+    lead_id = $(".formMain input[name='lead_id']").val();
+    // TEST
+    // lead_id = "1234";
+    if (lead_id != "" && lead_id.length > 0) {
+      try {
+        SyncFullLoanFromAPI(lead_id);
+      } catch (error) {
+        console.log(error);
       }
-    });
+    }
   }
   return request_id;
 };
@@ -813,7 +764,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
       product_line: "BUSINESS",
     }),
   }).fail((result, status, error) => {
-    console.log(result);
+    console.log("Get Product List Failed: ",result);
     let msg = "Please contact developer!";
     if (result.message !== undefined) {
       msg = result.message;
@@ -830,34 +781,376 @@ let ajaxGetECProducts = (partner_code, request_id) => {
       }
     }
     swal("Get products data fail!", msg, "error");
-  });
+  }).done((result) => {
+    //
+    SetProductListForm();
+    if (result.code == "SUCCESS") {
+      ECProducts = result.data;
+      format_log_productlist(ECProducts);
+      let color_index = 0;
+      let index = 1;
+      ECProducts.forEach((product) => {
+        let productBox = $("<div></div>", {
+          class: "panel box " + box_color[color_index],
+        });
+        let productBoxHeader =
+          '<div class="box-header with-border">' +
+          '<h4 class="box-title">' +
+          '<a data-toggle="collapse" data-parent="#accordion" href="#collapse' +
+          index +
+          '">' +
+          product.employee_type +
+          " - " +
+          product.employee_description_en;
+        "</a>" + "</h4>" + "</div>";
+        productBox.append(productBoxHeader);
+        tmp_in = index === 1 ? "in" : "";
+        let productBoxBody =
+          '<div id="collapse' +
+          index +
+          `" class="panel-collapse collapse ${tmp_in}">` +
+          '<div class="box-body">' +
+          "<table id=productTable" +
+          index +
+          ' class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">' +
+          "</table>" +
+          "</div>" +
+          "</div>";
+        productBox.append(productBoxBody);
+
+        $("#accordion").append(productBox);
+        let table = $("#productTable" + index).DataTable({
+          destroy: true,
+          responsive: true,
+          data: product.product_list,
+          columns: [
+            {
+              title: "Mã sản phẩm",
+              data: "product_code",
+            },
+            {
+              title: "Thời hạn vay tối thiểu",
+              data: "loan_min_tenor",
+            },
+            {
+              title: "Thời hạn vay tối đa",
+              data: "loan_max_tenor",
+            },
+            {
+              title: "Khoảng vay tối thiếu",
+              data: "loan_min_amount",
+              render: (data) => {
+                result =
+                  data != null
+                    ? data.toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })
+                    : 0;
+                return result;
+              },
+            },
+            {
+              title: "Khoản vay tối đa",
+              data: "loan_max_amount",
+              render: (data) => {
+                result =
+                  data != null
+                    ? data.toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })
+                    : 0;
+                return result;
+              },
+            },
+            {
+              title: "Tỉ lệ lãi",
+              data: "interest_rate",
+            },
+            {
+              title: "Thao tác",
+              render: () => {
+                return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
+              },
+            },
+          ],
+        });
+        $("#productTable" + index + " tbody").on(
+          "click",
+          "tr .btn-product-view",
+          function () {
+            clearForm($("#product-detail-form"));
+            $("#product-detail-form-bundle").empty();
+            let tmp_data = table.row($(this).closest("tr")).data();
+            let table_index = 0;
+            for (const property in tmp_data) {
+              if (!Array.isArray(tmp_data[property])) {
+                let value = tmp_data[property];
+                if (property.includes("amount")) {
+                  value =
+                    value != null
+                      ? value.toLocaleString("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      })
+                      : 0;
+                }
+                $("#product-detail-form input[name='" + property + "']").val(
+                  value
+                );
+                $(
+                  "#product-detail-form textarea[name='" + property + "']"
+                ).val(value);
+              } else {
+                tmp_data[property].forEach((elem) => {
+                  table_index++;
+                  let bundle_div =
+                    `<div class="row" id="product-detail-form-bundle-${table_index}">` +
+                    '<div class="col-xs-6">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="bundle_name">Bundle Name</label>` +
+                    `<input name="bundle_name" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    '<div class="col-xs-3">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="bundle_code">Bundle Code</label>` +
+                    `<input name="bundle_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    '<div class="col-xs-3">' +
+                    '<div class="mda-form-group label-floating">' +
+                    `<label for="min_request">Min Request</label>` +
+                    `<input name="min_request" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly value="">` +
+                    "</div></div>" +
+                    "</div>";
+                  $("#product-detail-form-bundle").append(bundle_div);
+                  for (const prop in elem) {
+                    if (!Array.isArray(elem[prop])) {
+                      let value = elem[prop];
+                      $(
+                        "#product-detail-form-bundle-" +
+                        table_index +
+                        " input[name='" +
+                        prop +
+                        "']"
+                      ).val(value);
+                    } else {
+                      let tmp_table =
+                        `<table id="tableProductDetail${table_index}" class="display responsive no-wrap table table-responsive table-striped table-bordered" width="100%">` +
+                        "</table>";
+                      $("#product-detail-form-bundle-" + table_index).append(
+                        tmp_table
+                      );
+                      let table = $(
+                        "#tableProductDetail" + table_index
+                      ).DataTable({
+                        destroy: true,
+                        responsive: true,
+                        searching: false,
+                        lengthChange: false,
+                        data: elem[prop],
+                        columns: [
+                          {
+                            title: "Doc EN",
+                            data: "doc_description_en",
+                          },
+                          {
+                            title: "Doc VI",
+                            data: "doc_description_vi",
+                          },
+                          {
+                            title: "Format",
+                            data: "doc_format_request",
+                          },
+                          {
+                            title: "Type",
+                            data: "doc_type",
+                          },
+                        ],
+                      });
+                    }
+                  }
+                });
+              }
+            }
+            $("#product-detail-modal").modal("show");
+            // TEL4VN TEST
+            sync_from_product();
+          }
+        );
+        color_index++;
+        index++;
+        if (color_index >= box_color.length) {
+          color_index = 0;
+        }
+      });
+    }
+  });;
 };
-// let ajaxGetOldFullLoan = (lead_id) =>{
-//       var settings = {
-//         "url": CRM_API_URL+"/v1/fullloan/"+lead_id,
-//         "method": "GET",
-//         "timeout": 0,
-//         "headers": {
-//           "Content-Type": "text/plain"
-//         },
-//       };
-//       $.ajax(settings).done(function (response) {
-//         console.log(response);
-//       });
-// }
+
+let getLeadInfo = (lead_id) => {
+  clearForm($(".formMain"));
+  $("#app_status_block").removeClass("app_status")
+    $("#app_reason").addClass("hiden")
+  var postData = {
+    goAction: "goGetLead",
+    goLeadID: lead_id,
+    responsetype: "json",
+  };
+  $.ajax({
+    type: "POST",
+    url: "https://ec02.tel4vn.com/goAPIv2/goLoadLeads/goAPI.php",
+    processData: true,
+    data: postData,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+    .done(function (result) {
+      if (result.result != "success") {
+        swal("Get products data fail!", "Lead not found", "error");
+        return;
+      }
+      let lead_info = result.data;
+      SyncCustomerInfomation(lead_info);
+    })
+    .fail(function (result) {
+      console.log(result);
+    });
+};
+
+let SyncCustomerInfomation = (thisVdata) => {
+  $("#custormer_tab").click();
+  LeadPrevDispo = thisVdata.status;
+  $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
+  $(".formMain input[name='lead_id']")
+  .val(thisVdata.lead_id)
+  .trigger("change");
+  cust_phone_code = thisVdata.phone_code;
+  $(".formMain input[name='phone_code']")
+    .val(cust_phone_code)
+    .trigger("change");
+  cust_phone_number = thisVdata.phone_number;
+  $(".formMain input[name='phone_number']")
+    .val(cust_phone_number)
+    .trigger("change");
+  if (cust_phone_number === "" && thisVdata.alt_phone !== "") {
+    cust_phone_number = thisVdata.alt_phone;
+    $(".formMain input[name='phone_number']")
+      .val(cust_phone_number)
+      .trigger("change");
+  }
+  if (cust_phone_number === "" && thisVdata.address3 !== "") {
+    cust_phone_number = thisVdata.address3;
+    $(".formMain input[name='phone_number']")
+      .val(cust_phone_number)
+      .trigger("change");
+  }
+  $(".formMain input[name='title']").val(thisVdata.title);
+  cust_first_name = thisVdata.first_name;
+  if (cust_first_name !== "") {
+    //$("#cust_full_name a[id='first_name']").editable('setValue', cust_first_name, true);
+    $(".formMain input[name='first_name']")
+      .val(cust_first_name)
+      .trigger("change");
+    $("#cust_full_name a[id='first_name']").html(cust_first_name);
+  } else {
+    //$("#cust_full_name a[id='first_name']").editable('setValue', null, true);
+    $("#cust_full_name a[id='first_name']").html("");
+  }
+  cust_middle_initial = thisVdata.middle_initial;
+  if (cust_middle_initial != "") {
+    //$("#cust_full_name a[id='middle_initial']").editable('setValue', cust_middle_initial, true);
+    $(".formMain input[name='middle_initial']")
+      .val(cust_middle_initial)
+      .trigger("change");
+    $("#cust_full_name a[id='middle_initial']").html(cust_middle_initial);
+  } else {
+    //$("#cust_full_name a[id='middle_initial']").editable('setValue', null, true);
+    $("#cust_full_name a[id='middle_initial']").html("");
+  }
+  cust_last_name = thisVdata.last_name;
+  if (cust_last_name !== "") {
+    //$("#cust_full_name a[id='last_name']").editable('setValue', cust_last_name, true);
+    $(".formMain input[name='last_name']")
+      .val(cust_last_name)
+      .trigger("change");
+    $("#cust_full_name a[id='last_name']").html(cust_last_name);
+  } else {
+    //$("#cust_full_name a[id='last_name']").editable('setValue', null, true);
+    $("#cust_full_name a[id='last_name']").html("");
+  }
+  //EASY CREDIT
+  //Identity
+  $(".formMain input[name='identity_number']")
+    .val(thisVdata.identity_number)
+    .trigger("change");
+  $(".formMain input[name='identity_issued_on']").val(
+    thisVdata.identity_issued_on
+  );
+  $(".formMain select[name='identity_issued_by']")
+    .val(thisVdata.identity_issued_by)
+    .trigger("change");
+  try {
+    $(".formMain input[name='alt_identity_number']")
+      .val(thisVdata.alt_identity_number)
+      .trigger("change");
+    $(".formMain input[name='alt_identity_issued_on']").val(
+      thisVdata.alt_identity_issued_on
+    );
+    $(".formMain select[name='alt_identity_issued_by']")
+      .val(thisVdata.alt_identity_issued_by)
+      .trigger("change");
+  } catch (error) {}
+  //Vendor
+  $(".formMain input[name='vendor_lead_code']")
+    .val(thisVdata.vendor_lead_code)
+    .trigger("change");
+  $(".formMain input[name='partner_code']")
+    .val(thisVdata.partner_code)
+    .trigger("change");
+  $(".formMain input[name='request_id']")
+    .val(thisVdata.request_id)
+    .trigger("change");
+    $(".formMain input[name='address1']").val(thisVdata.address1).trigger('change');
+    $(".formMain input[name='address2']").val(thisVdata.address2).trigger('change');
+    $(".formMain input[name='city']").val(thisVdata.city).trigger('change');
+    $(".formMain input[name='province']").val(thisVdata.province).trigger('change');
+    $(".formMain input[name='postal_code']").val(thisVdata.postal_code).trigger('change');
+    $(".formMain select[name='country_code']").val(thisVdata.country_code).trigger('change');
+    $(".formMain select[name='gender']").val(thisVdata.gender).trigger('change');
+    var dateOfBirth = thisVdata.date_of_birth;
+    $(".formMain input[name='date_of_birth']").val(dateOfBirth);
+    $(".formMain input[name='alt_phone']").val(thisVdata.alt_phone).trigger('change');
+    $(".formMain input[name='email']").val(thisVdata.email).trigger('change');
+    var REGcommentsNL = new RegExp("!N!","g");
+    if (typeof thisVdata.comments !== 'undefined') {
+        thisVdata.comments = thisVdata.comments.replace(REGcommentsNL, "\n");
+    }
+    $(".formMain textarea[name='comments']").val(thisVdata.comments).trigger('change');
+    
+    ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason)
+    // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
+};
+$(document).on("click", "#btn-application", function (e) {
+  let leadId = $(this).attr("data-leadid");
+  let status = $("#btnResumePause").attr("title");
+  if (status=="Resume Dialing"){
+    $("#returnhome").click();
+    getLeadInfo(leadId);
+  }else{
+    swal("Không thành công", "Vui lòng Pause Dialer", "error");
+    return;
+  }
+  // getLeadInfo("5547595");
+});
 $(document).on("click", "#submit-offer", function (e) {
   e.preventDefault();
   let loan_request_id = $(".formMain input[name='request_id']").val();
   let partner_code = $(".formMain input[name='partner_code']").val();
-  if (
-    selected_offer_insurance_type == undefined ||
-    selected_offer_insurance_type == ""
-  ) {
-    swal("Choose offer fail!", "Please Choose Insurace Type", "error");
-    return;
-  }
   if (selected_offer_insurance_type=="NO"){
-    selected_offer_insurance_type = "";
+    selected_offer_insurance_type = NULL;
   }
   let offer_data = {
     request_id: loan_request_id,
@@ -880,7 +1173,6 @@ $(document).on("click", "#submit-offer", function (e) {
     },
   })
     .fail((result, status, error) => {
-      console.log(result);
       let msg = "Please contact developer!";
       msg = result.responseJSON.message;
       if (result.message !== undefined) {
@@ -889,8 +1181,9 @@ $(document).on("click", "#submit-offer", function (e) {
       if (result.responseText != undefined){
         try {
             let err = JSON.parse(result.responseText);
+            console.log("Select Offer Failed: ",result.responseJSON);
             if (err.error != undefined){
-              msg = err.error;
+              msg +="\n"+ JSON.stringify(err.error);
             }
         } catch (error) {
             msg = result.responseText;
@@ -899,7 +1192,6 @@ $(document).on("click", "#submit-offer", function (e) {
       swal("Send offer data fail!", msg, "error");
     })
     .done((result) => {
-      console.log(result);
       if (result.code == "RECEIVED") {
         swal("Success", result.message, "success");
       } else {
@@ -907,7 +1199,11 @@ $(document).on("click", "#submit-offer", function (e) {
       }
     });
 });
+$(document).on("click", "#scSubmit", function (e){
+    ajaxGetECProducts("TEL","TEL123456789");
+});
 $("#eligible_btn").on("click", (e) => {
+  $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   e.preventDefault();
   let app_status = $(".formMain input[name='app_status']").val();
   if (DO_NOT_REAPP.includes(app_status)){
@@ -925,16 +1221,20 @@ $("#eligible_btn").on("click", (e) => {
     let first_name = $(".formMain input[name='first_name']").val();
     let middle_initial = $(".formMain input[name='middle_initial']").val();
     let last_name = $(".formMain input[name='last_name']").val();
-    let customer_name = first_name;
+    let customer_name = first_name.trim();
     if (middle_initial == ""){
-      customer_name =customer_name+ " " + last_name;
+      customer_name =customer_name.trim()+ " " + last_name.trim();
     }
     else{
       customer_name = customer_name
-      + " " + middle_initial + " " + last_name;
+      + " " + middle_initial.trim() + " " + last_name.trim();
     }
+    customer_name = customer_name.trim();
+    customer_name = customer_name.replace("  "," ")
+    let phone_code = $(".formMain input[name='phone_code']").val();
+    if (phone_code == "") {phone_code = "0"};
     let phone_number =
-      $(".formMain input[name='phone_code']").val() +
+       phone_code+
       $(".formMain input[name='phone_number']").val();
     let date_of_birth = $(".formMain input[name='date_of_birth']").val();
     // 
@@ -971,10 +1271,7 @@ $("#eligible_btn").on("click", (e) => {
       tem_province: tem_province,
       job_type: job_type,
     };
-    console.log(eligible_data);
-    // BUG
-    // eligible_data.customer_name = "TUAN"
-    //
+    console.info("Eligible data: ",eligible_data);
     $.ajax({
       type: "POST",
       url: EC_PROD_API_URL+"/api/eligibleService/v1/eligible/check",
@@ -988,7 +1285,7 @@ $("#eligible_btn").on("click", (e) => {
       },
     })
       .fail((result, status, error) => {
-        console.log(result);
+        console.log("Eligible failed: ",result);
         var erro = result.responseJSON;
         let msg = "Please contact developer!";
         request_id = partner_code + Date.now().toString();
@@ -1012,25 +1309,11 @@ $("#eligible_btn").on("click", (e) => {
         }
       })
       .done((result) => {
-        console.log(result);
+        // TESTING
         if (result.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
           let request_id = result.data.request_id;
           updateRequestId(request_id, lead_id);
-          // $(".formMain input[name='request_id']").val(result.data.request_id);
-          // $.ajax({
-          //   type: "POST",
-          //   url: CRM_API_URL+"/v1/lead/requestId",
-          //   processData: true,
-          //   data: JSON.stringify({
-          //     lead_id: "" + lead_id,
-          //     request_id: request_id,
-          //   }),
-          //   async: true,
-          //   dataType: "json",
-          // }).done((update_result) => {
-          //   swal("Success", "Update request_id success", "success");
-          // });
           SyncFullLoanFromAPI(lead_id);
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
@@ -1087,7 +1370,7 @@ let getProductType = () => {
     tmp_product_names += `</div><hr style="margin : 10px">`;
     product_names+= tmp_product_names;
     if (!is_uploaded_docs){
-      offder_product_names+= tmp_product_names.replaceAll("1/ ","- ").replaceAll("2/ ","- ").replaceAll("3/ ","- ")
+      offder_product_names+= tmp_product_names.replace("1/ ","- ").replace("2/ ","- ").replace("3/ ","- ")
     }
     // offder_product_names += `</div><hr style="margin : 10px">`;
     if (i != selected_product.document_collecting.length - 1) {
@@ -1097,12 +1380,9 @@ let getProductType = () => {
   $("input[name='product_required_document']").val(docs_string);
   $("#product_name_detail").empty();
   $("#product_name_detail")[0].innerHTML = product_names;
-// 
   // $("input[name='product_required_document_offer']").val(docs_string);
   $("#product_name_detail_offer").empty();
   $("#product_name_detail_offer")[0].innerHTML = offder_product_names;
-
-  console.log(docs_string);
 };
 let validateFullloan = () => {
   let check = true;
@@ -1144,7 +1424,7 @@ let SyncFullLoanFromAPI = (request_id) => {
       try {
         let data = result.data;
         let document = data.document;
-        
+        console.info(document)
         for (const property in document) {
           $("#full-loan-form input[name='" + property + "']")
             .val(document[property])
@@ -1237,7 +1517,6 @@ let SyncFullLoanFromAPI = (request_id) => {
         $(".formMain input[name='city']").val(document.tem_ward)
         $(".formMain input[name='address1']").val(document.tem_address)
         $(".formMain select[name='gender']").val(document.gender);
-        console.log(document);
         $("input[name='tem_address']").val(document.tem_address);
         // 
         if (document['check_same_address'] == 'on'){
@@ -1258,16 +1537,19 @@ let SyncFullLoanFromAPI = (request_id) => {
             .selectpicker("refresh");
         }
         $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
+        $("#img_id_card2").val("")
+        $("#img_selfie2").val("")
         getProductType();
         SyncFullLoanFromContact();
       } catch (error) {
+        console.log("SyncFullLoan",error)
         SyncFullLoanFromContact();
       }
     }
     );
   } catch (err) {
     SyncFullLoanFromContact();
-    console.log(err);
+    console.log("SyncFullLoanFromAPI error : ",err);
   }
 };
 
@@ -1298,7 +1580,7 @@ let SyncFullLoanFromAPIOld = (request_id) => {
       }
     });
   } catch (err) {
-    console.log(err);
+    console.log("SyncFullLoanFromAPIOld error : ",err);
   }
 };
 
@@ -1315,7 +1597,7 @@ let ajaxGetOldFullLoan = (request_id) => {
     },
   }).fail((result, status, error) => {
     SyncFullLoanFromContact();
-    console.log(result);
+    console.log("SyncFullLoanFromContact error : ",result);
   });
 };
 
@@ -1331,7 +1613,7 @@ let ajaxGetOffer = (request_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.log("ajaxGetOffer",result);
   });
 };
 
@@ -1345,7 +1627,7 @@ let ajaxGetStatus = (lead_id) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.warn("ajaxGetStatus: ",result);
   });
 };
 
@@ -1418,14 +1700,16 @@ let SyncFullLoanFromContact = () => {
   let first_name = $(".formMain input[name='first_name']").val();
   let middle_initial = $(".formMain input[name='middle_initial']").val();
   let last_name = $(".formMain input[name='last_name']").val();
-  let customer_name = first_name;
+  let customer_name = first_name.trim();
     if (middle_initial == ""){
-      customer_name =customer_name+ " " + last_name;
+      customer_name =customer_name.trim()+ " " + last_name.trim();
     }
     else{
       customer_name = customer_name
-      + " " + middle_initial + " " + last_name;
+      + " " + middle_initial.trim() + " " + last_name.trim();
     }
+    customer_name = customer_name.trim();
+    customer_name = customer_name.replace("  "," ")
   let phone_number =
     $(".formMain input[name='phone_code']").val() +
     $(".formMain input[name='phone_number']").val();
@@ -1591,7 +1875,7 @@ function clearForm($form) {
   list_doc_collecting = [];
 }
 
-function SetCustomerOfferDetail() {
+function SetProductListForm() {
   $("#create-offer-table")[0].innerHTML = `
   <tr>
     <th colspan="2">Offer Detail</th>
@@ -1687,73 +1971,85 @@ $(document).on("change", 'select[name="employment_type"]', function () {
   selected_employment_type = null;
   let em_type = this.value;
   if (ECProducts != undefined) {
+    let select_product_type = $("select[name='product_type']")[0];
+    select_product_type.innerHTML = "";
     ECProducts.forEach((et) => {
       if (et.employee_type == em_type) {
-        selected_employment_type = et;
+        if (selected_employment_type == null){
+          selected_employment_type = et;
+        }else{
+          selected_employment_type.product_list = [].concat(selected_employment_type.product_list,et.product_list);
+        }
         let product_lists = et.product_list.sort(function (a, b) {
           return a.product_code.localeCompare(b.product_code)
         });
-        let select_product_type = $("select[name='product_type']")[0];
-        select_product_type.innerHTML = "";
         $(`<option value=""></option>`).appendTo(select_product_type);
         for (prd of product_lists) {
           $(
             `<option des="${prd.product_description}" value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
           ).appendTo(select_product_type);
         }
-        return;
       }
     });
   }
 });
 
 $(document).on("keyup", 'input[tag="currency"]', function () {
-  if (this.value == "" || this.value == undefined) { }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  let val = this.value;
+  if ( val== "" || val == undefined) { }
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
 });
 
 $(document).on("blur", 'input[tag="currency"]', function () {
   if (this.value == "" || this.value == undefined) { }
   this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = this.value.split(".").join("");
   this.value = formatter.format(this.value);
 });
 
 $(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
 });
 
 $(document).on("keyup", 'input[name^="customer-offer"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
 });
 $(document).on("blur", 'input[name="customer-offer-amount"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 
 $(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 $(document).on("blur", 'input[name="customer-offer-total"]', function () {
-  if (this.value == "" || this.value == undefined) {
+  let val = this.value;
+  if (val == "" || val == undefined) {
   }
-  this.value = this.value.replace(/[^0-9\.]/g, "");
-  this.value = this.value.replaceAll(".", "");
-  this.value = formatter.format(this.value);
+  this.value = val.replace(/[^0-9\.]/g, "");
+  this.value = this.value.split(".").join("");
+  let fmv = formatter.format(this.value);
+  this.value = fmv;
 });
 
 $(document).on("click", 'input[name="select_insurance"]', function () {
@@ -1766,7 +2062,7 @@ $(document).on("click", 'input[name="select_insurance"]', function () {
   selected_offer_insurance_type = tmp_data2.insurance_type; // Exp : BASC
   percent_insurance = tmp_data2.percentage_insurance; // Exp : 6
   insurance_amount = tmp_data2.insurance_amount;  // Exp : 115000
-  // SetCustomerOfferDetail();
+  // SetProductListForm();
 });
 
 $("#submit-docs").on("click", (e) => {
@@ -1783,6 +2079,7 @@ function creat_full_loan(form_data, mode){
   if (selected_product != undefined){
       product_des = selected_product.split("(")[0].trim();
   }
+  form_data.user_name = user;
   form_data.type = mode;
   form_data.product_name = product_des;
   let post_data = JSON.stringify(form_data);
@@ -1798,10 +2095,10 @@ function creat_full_loan(form_data, mode){
     },
   })
     .fail((result, status, error) => {
-      console.log(result);
+      console.warn("Fullloan data : ",result);
     })
     .done((result) => {
-      console.log(result);
+      console.log("Fullloan data : ",result);
     });
 }
 $("#full-loan-form").on("submit", (e) => {
@@ -1810,9 +2107,9 @@ $("#full-loan-form").on("submit", (e) => {
   e.preventDefault();
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").split(".").join(""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
@@ -1829,7 +2126,6 @@ $("#full-loan-form").on("submit", (e) => {
     "DD-MM-YYYY"
   );
   form_data.doc_collecting_list = form_data.list_doc_collecting;
-  console.log(form_data);
   // TEST
   // form_data = getFormData();
   form_data.request_id = request_id.value;
@@ -1843,8 +2139,13 @@ $("#full-loan-form").on("submit", (e) => {
     form_data.img_id_card = form_data.img_id_card2;
   }
   // form_data.dsa_agent_code = "trainee.01";
+  if (form_data.phone_number)
+  if (form_data.phone_number[0] == '0') {
+    form_data.phone_number = form_data.phone_number.slice(1, form_data.phone_number.length)
+  }
+  form_data.phone_number = "0"+form_data.phone_number
   let post_data = JSON.stringify(form_data);
-
+  console.log("Fullloan data : ", form_data);
   $("#offer-waiting").attr("hidden", false);
   // post to EC
   $.ajax({
@@ -1860,7 +2161,10 @@ $("#full-loan-form").on("submit", (e) => {
     .fail((result, status, error) => {
       creat_full_loan(form_data, "update");
       var er_data = result.responseJSON.body;
-      console.log(er_data.body);
+      try{
+        console.log("Submit fullloan failed : ", er_data);
+      }catch(e){
+      }
       let msg = "Please contact developer!";
       if (result.message !== undefined) {
         msg = result.message;
@@ -1961,8 +2265,11 @@ function PollingOfferFromEC(request_id, lead_id) {
 }
 
 function SetOfferDetail(offerList) {
-  console.log(offerList);
-  // $("#offer-datatable").removeClass("hidden");
+  console.log("Offerlist data : ",offerList);
+  try {
+    offerinsurancetable.clear().draw();
+  } catch (error) {
+  }
   var offerTable = $("#offer-list-table").DataTable({
     destroy: true,
     responsive: true,
@@ -2056,6 +2363,10 @@ function SetOfferDetail(offerList) {
   });
 
   $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function (e) {
+    try {
+      offerinsurancetable.clear().draw();
+    } catch (error) {
+    }
     e.preventDefault();
     $("#create-offer-table").empty();
     $("#create-offer-table").attr("hidden", true);
@@ -2067,7 +2378,7 @@ function SetOfferDetail(offerList) {
     selected_offer_tenor = tmp_data.offer_tenor;
     selected_monthly_installment = tmp_data.monthly_installment;
     // let no_insurance  = {base_calculation: "",insurance_amount: 0,insurance_type: "NO",percentage_insurance: 0}
-    tmp_data.insurance_list.push({base_calculation: "",insurance_amount: 0,insurance_type: "NO",percentage_insurance: 0})
+    tmp_data.insurance_list.push({base_calculation: "",insurance_amount: 0,insurance_type: "NONE",percentage_insurance: 0})
     offerinsurancetable = $("#offer-insurance-list-table").DataTable({
       order: [[ 3, "asc" ]],
       destroy: true,
@@ -2095,11 +2406,11 @@ function SetOfferDetail(offerList) {
         },
         {
           title: "Thanh toán hàng tháng có bảo hiểm",
-          data: "insurance_amount",
+          data: "percentage_insurance",
           render: (data) => {
             result =
               data != null
-                ? (data+selected_monthly_installment).toLocaleString("vi-VN", {
+                ? (parseInt(selected_monthly_installment / 100*data)+selected_monthly_installment).toLocaleString("vi-VN", {
                   style: "currency",
                   currency: "VND",
                 })
@@ -2151,15 +2462,12 @@ $(function () {
   //
   $("#attachment_files").MultiFile({
     onFileRemove: function (element, value, master_element) {
-      console.log("Remove");
       $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
     },
     afterFileRemove: function (element, value, master_element) {
-      console.log("After remove");
       $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
     },
     onFileAppend: function (element, value, master_element) {
-      console.log("After Append");
     },
     afterFileAppend: function (element, value, master_element) {
       var last_mdf = element.files[0].lastModified + element.files[0].name;
@@ -2268,15 +2576,12 @@ $(function () {
   
   $("#attachment_files2").MultiFile({
     onFileRemove: function (element, value, master_element) {
-      console.log("Remove");
       $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
     },
     afterFileRemove: function (element, value, master_element) {
-      console.log("After remove");
       $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
     },
     onFileAppend: function (element, value, master_element) {
-      console.log("After Append");
     },
     afterFileAppend: function (element, value, master_element) {
       var last_mdf = element.files[0].lastModified + element.files[0].name;
@@ -2387,9 +2692,9 @@ var saveFullLoan = () => {
   lead_id = $(".formMain input[name='lead_id']").val() * 1;
   let form_data = $("#full-loan-form").serializeFormJSON();
   form_data.lead_id = parseInt(lead_id);
-  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
-  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").replaceAll(".", ""));
+  form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").split(".").join(""));
+  form_data.monthly_expense = parseInt(form_data.monthly_expense.replace(/[^0-9\.]/g, "").split(".").join(""));
   form_data.loan_amount = parseInt(form_data.loan_amount);
   form_data.annual_revenue = parseInt(form_data.annual_revenue);
   form_data.annual_profit = parseInt(form_data.annual_profit);
@@ -2431,13 +2736,11 @@ var saveFullLoan = () => {
   };
   $.ajax(settings)
     .done(function (response) {
-      console.log("Done");
       swal("Save full loan success", "success", "success");
     })
     .fail(function (response) {
-      console.log("Fail");
       swal("Save full loan erro", response.responseJSON.erro, "success");
-      console.log();
+      console.log("Save full loan erro: ",response);
     });
 };
 $(document).ready(() => {
@@ -2466,12 +2769,6 @@ $(document).ready(() => {
         $("#full-loan-form").submit();
       }
     });
-
-  // var validate_each = ()=>{
-  //   console.log("Sdasdas");
-  //   $("#full-loan-form").submit();
-  // }
-
   let validateStep = (step) => {
     let msg = "";
     $(`#step-${step}`).find('input:required').each(function () {
@@ -2533,25 +2830,18 @@ $(document).ready(() => {
   for (const [key, value] of Object.entries(PROVINCE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(live_province);
   }
-  SetPermanentAddress();
-  SetTemAddress();
-  SetWorkAddress();
-
   let bankMainCode = $("select[name='bank_code']")[0];
   $(`<option value="" selected></option>`).appendTo(bankMainCode);
   for (const [key, value] of Object.entries(BANK_CODE)) {
     $(`<option value="${key}">${value}</option>`).appendTo(bankMainCode);
   }
   $("select[name='bank_code']").selectpicker("refresh");
-
   let bankArea = $("select[name='bank_area']")[0];
   $(`<option value="" selected></option>`).appendTo(bankArea);
-
   for (const [key, value] of Object.entries(BANK_AREA)) {
     $(`<option value="${value}">${value}</option>`).appendTo(bankArea);
   }
   $("select[name='bank_area']").selectpicker("refresh");
-
   $("select[name='bank_code']").on("change", () => {
     let bankAreaValue = $("select[name='bank_area']").val();
     let bankMainCodeId = $("select[name='bank_code']").val();
@@ -2586,8 +2876,11 @@ $(document).ready(() => {
       $("select[name='bank_branch_code']").selectpicker("refresh");
     }
   });
-});
+  SetPermanentAddress();
+  SetTemAddress();
+  SetWorkAddress();
 
+});
 let SetPermanentAddress = () => {
   let permanentProvince = $("select[name='permanent_province']")[0];
   $("select[name='permanent_province']").empty();
@@ -2750,6 +3043,27 @@ let ajaxGetCallStatus = (status) => {
       "Content-Type": "application/json",
     },
   }).fail((result, status, error) => {
-    console.log(result);
+    console.warn("ajaxGetCallStatus: ",result);
   });
 };
+// DEV AREA
+let format_log_productlist = function(product_list){
+  console.log(product_list)
+  let log_products = {};
+  log_products.list = [];
+  log_products.total = 0;
+  for (let index = 0; index < product_list.length; index++) {
+    let products = [];
+    let type_products = product_list[index].product_list;
+    for (let j = 0; j < type_products.length; j++) {
+      let product = {};
+      product.product_code = type_products[j].product_code;
+      product.product_descriptio = type_products[j].product_description;
+      products.push(product);
+    }
+    log_products.list.push(products);
+    log_products.total += products.length;
+  }
+  console.info("Products: ",log_products);
+}
+// END DEV AREA

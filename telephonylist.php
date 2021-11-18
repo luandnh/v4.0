@@ -849,13 +849,46 @@ $next_listdesc = "Auto-generated - ListID - " . $datenow;
 
 		if (list_read == 1) {
 			$(document).on('click', '.download-list', function() {
-				var url = 'php/ExportList.php';
 				var id = $(this).attr('data-id');
 				console.log(id);
-				var form = $('<form action="' + url + '" method="post"><input type="hidden" name="listid" value="' + id + '" /></form>');
-				$('body').append(form); // This line is not necessary
-				$(form).submit();
-			});
+				$.ajax({
+					url: "./php/crm/API_downloadList.php",
+					type: "POST",
+					data: {
+						list_id: id,
+					},
+					success: function(data) {
+						console.log(data);
+					},
+					error: function(data) {
+						console.log(data);
+					},
+				});
+				swal({
+						title: "Download is in process",
+						text: "Do you want to go to download list!",
+						type: "success",
+						showCancelButton: true,
+						confirmButtonColor: "#DD6B55",
+						confirmButtonText: "Yes",
+						cancelButtonText: "<?php $lh->translateText("cancel_please"); ?>",
+						closeOnConfirm: false,
+						closeOnCancel: true
+					},
+					function(isConfirm) {
+						if (isConfirm) {
+							window.location.replace("/downloads.php")
+						}
+					})
+				});
+			// $(document).on('click', '.download-list', function() {
+			// 	var url = 'php/ExportList.php';
+			// 	var id = $(this).attr('data-id');
+			// 	console.log(id);
+			// 	var form = $('<form action="' + url + '" method="post"><input type="hidden" name="listid" value="' + id + '" /></form>');
+			// 	$('body').append(form); // This line is not necessary
+			// 	$(form).submit();
+			// });
 		}
 
 		// delete

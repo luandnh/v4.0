@@ -71,8 +71,8 @@
                         <div class="row">
                             <div class="col-sm-12" style="padding-bottom: 10px;">
                                 <label class="form_label" for="img_selfie">Image Selfie</label>
-                                    <input type="text" name="img_selfie" class="id_img_hide" required />
-                                    <input type="file" id="img_selfie" class="id_img custom-file-input" />
+                                <input type="text" name="img_selfie" class="id_img_hide" required />
+                                <input type="file" id="img_selfie" class="id_img custom-file-input" />
                             </div>
                         </div>
                         <div class="row">
@@ -133,7 +133,7 @@
                         <button class="btn btn-primary" id="submit-docs" > Gửi Chứng Từ </button>
                     </div> -->
                     <div class="col-xl-6 col-lg-6">
-                        <button class="btn btn-primary" id="submit-offer" hidden> <?= $lh->translationFor('submit_offer') ?></button>
+                        <button class="btn btn-primary" id="submit-offer"> <?= $lh->translationFor('submit_offer') ?></button>
                     </div>
                 </div>
             </div>
@@ -750,7 +750,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="tem_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="100" type="text" name="tem_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="tem_address"><?= $lh->translationFor('address') ?></label>
                                         </div>
                                     </div>
@@ -1050,7 +1050,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="workplace_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="100" type="text" name="workplace_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="workplace_name"><?= $lh->translationFor('workplace_name') ?></label>
                                         </div>
                                     </div>
@@ -1086,7 +1086,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="workplace_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="100" type="text" name="workplace_address" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="workplace_address"><?= $lh->translationFor('workplace_address') ?></label>
                                         </div>
                                     </div>
@@ -1224,7 +1224,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="bank_account" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                                <input maxlength="50" type="text" name="bank_account" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                                 <label class="form_label" for="bank_account"><?= $lh->translationFor('bank_account') ?></label>
                                             </div>
                                         </div>
@@ -1233,7 +1233,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input readonly type="text" name="beneficiary_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input maxlength="80" readonly type="text" name="beneficiary_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label for="beneficiary_name"><?= $lh->translationFor('beneficiary_name') ?></label>
                                         </div>
                                     </div>
@@ -1309,7 +1309,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="relation_1_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                                <input maxlength="80" type="text" name="relation_1_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                                 <label class="form_label" for="relation_1_name"><?= $lh->translationFor('relation_1_name') ?></label>
                                             </div>
                                         </div>
@@ -1339,7 +1339,7 @@
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="mda-form-group label-floating">
-                                                <input type="text" name="relation_2_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                                <input maxlength="80" type="text" name="relation_2_name" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                                 <label class="form_label" for="relation_2_name"><?= $lh->translationFor('relation_2_name') ?></label>
                                             </div>
                                         </div>
@@ -1451,13 +1451,268 @@
                                         <input multiple type="file" id="attachment_files2" class="attachment-input" />
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="btn btn-warning" id="submit_attachment"><?= $lh->translationFor('submit_attachment') ?></button>
+                                        <button class="btn btn-warning" id="submit_attachment2"><?= $lh->translationFor('submit_attachment') ?></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="debt-restruct" role="tabpanel" class="tab-pane">
+    <div id="debt" class="padding">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                        <div class="card">
+                            <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
+                                <strong>DANH SÁCH TÌM THẤY</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- CUSTOMER INFO -->
+                                <div class="row" id="debt_customer_list">
+                                    <div class="col-sm-5"><label>Mã hợp đồng</label></div>
+                                    <div class="col-sm-7">
+                                        <select name="exist_contract_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-5"><label>Mã khách hàng</label></div>
+                                    <div class="col-sm-7"><input name="exist_cust_id" readonly type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-user"></i></span>
+                            <strong>THÔNG TIN KHÁCH HÀNG</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- CUSTOMER INFO -->
+                            <div class="row" id="customer_info">
+                                <div hidden class="col-sm-4"><label>Cust_ID</label></div>
+                                <div hidden class="col-sm-8"><input name="cust_id" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                
+                                <div  class="col-sm-4"><label>Request ID</label></div>
+                                <div  class="col-sm-8"><input name="request_id" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Họ và tên</label></div>
+                                <div class="col-sm-8"><input name="full_name" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Ngày sinh</label></div>
+                                <div class="col-sm-8"><input name="dob" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Số điện thoại</label></div>
+                                <div class="col-sm-8"><input name="phone_number" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>CMND/CCCD</label></div>
+                                <div class="col-sm-8"><input name="identity_card" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Ngày cấp</label></div>
+                                <div class="col-sm-8"><input name="issue_date" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Nơi cấp</label></div>
+                                <div class="col-sm-8"><input name="issue_place" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Địa chỉ hộ khẩu</label></div>
+                                <div class="col-sm-8"><input name="permanent_address" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Địa chỉ tạm trú</label></div>
+                                <div class="col-sm-8"><input name="current_address" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Loại hình công việc</label></div>
+                                <div class="col-sm-8"><input name="job_type" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Tên công ty</label></div>
+                                <div class="col-sm-8"><input name="company_name" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Thu nhập chính</label></div>
+                                <div class="col-sm-8"><input tag="currency2" name="monthly_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Thu nhập khác</label></div>
+                                <div class="col-sm-8"><input tag="currency2" name="other_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-4"><label>Chi phí hằng tháng</label></div>
+                                <div class="col-sm-8"><input tag="currency2" name="monthly_expense" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-calculator"></i></span>
+                            <strong>CƠ CẤU NỢ</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- CƠ CẤU NỢ -->
+                            <div class="row" id="debt_restructuring">
+                                <div class="col-sm-7"><label>Lựa chọn cơ cấu nợ</label></div>
+                                <div class="col-sm-5"><input name="restructuring_option" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-7"><label>Hình thức áp dụng với phần lãi/phí</label></div>
+                                <div class="col-sm-5"><input name="offer_interest_fees" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div> <!--  -->
+                                <div class="col-sm-7"><label>Hình thức áp dụng với dư nợ còn lại</label></div>
+                                <div class="col-sm-5"><input name="offer_interest_principal" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-7"><label>Ngày đến hạn cần thanh toán</label></div>
+                                <div class="col-sm-5"><input name="expired_date" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-7"><label>Số tiền cần thanh toán </label></div>
+                                <div class="col-sm-5"><input tag="currency2" name="temporary_payment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-7"><label>Số kỳ kéo dãn</label></div>
+                                <div class="col-sm-3">
+                                    <select name="ext_payment_term" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled">
+                                    </select>
+                                </div>
+                                <div class="col-sm-2"><button style="background: #1c4694 ; width:100%;font-family: Helvetica !important;" class="btn btn-sm btn-success float-right" type="button" id="debt-calculate-emi">Tính EMI</button></div>
+                                <!--  -->
+                                <div class="col-sm-12"><label style=" font-style: oblique;color: #2300ff;">SAU CƠ CẤU</label></div>
+                                <div class="col-sm-7"><label>Số tiền thanh toán hàng tháng trong ân hạn</label></div>
+                                <div class="col-sm-5"><input tag="currency2" name="grace_period" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-7"><label>Số tiền thanh toán hàng tháng sau ân hạn</label></div>
+                                <div class="col-sm-5"><input tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
+                            <strong>YÊU CẦU CƠ CẤU</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- CUSTOMER INFO -->
+                            <div class="row" id="current_request">
+                                <div class="col-sm-5"><label>Mã request đã yêu cầu cơ cấu</label></div>
+                                <div class="col-sm-7"><input name="request_ref" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Trạng thái yêu cầu</label></div>
+                                <div class="col-sm-7"><input name="request_status" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-money"></i></span>
+                            <strong>THÔNG TIN HỢP ĐỒNG ĐÃ TỒN TẠI</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- LOAN INFO -->
+                            <div class="row" id="loan_info">
+                                <div class="col-sm-5"><label>Mã hợp đồng</label></div>
+                                <div class="col-sm-7"><input name="contract_number" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Số tiền vay</label></div>
+                                <div class="col-sm-7"><input tag="currency2" name="loan_amount" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Số kỳ vay ban đầu</label></div>
+                                <div class="col-sm-7"><input name="loan_tenor" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Ngày quá hạn hiện tại</label></div>
+                                <div class="col-sm-7"><input name="current_dpd" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Ngày quá hạn hiện tại(lịch)</label></div>
+                                <div class="col-sm-7"><input name="dpd_vas" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Tiền thanh toán hàng tháng</label></div>
+                                <div class="col-sm-7"><input  tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Nhóm nợ nội bộ</label></div>
+                                <div class="col-sm-7"><input name="bucket" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-info-circle"></i></span>
+                            <strong>THÔNG TIN CẬP NHẬT</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- UPDATE INFO -->
+                            <div class="row" id="updated_info">
+                                <div class="col-sm-5"><label>Loại hình công việc hiện tại</label></div>
+                                <div class="col-sm-7"><input name="job_type" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Tên công ty hiện tại</label></div>
+                                <div class="col-sm-7"><input name="company_name" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!--  -->
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        
+                                        <div style="padding: 0px 10px;margin-bottom: 5px;" class="col-sm-4">
+                                            <div class="mda-form-group label-floating" style="padding:22px 0px 0px 0px">
+                                                <select name="company_province" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" style="height:30px!important">
+                                                    <option value="" selected></option>
+                                                </select>
+                                                <label for="title">Tỉnh/Thành phố</label>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 0px 10px;margin-bottom: 5px;" class="col-sm-4">
+                                            <div class="mda-form-group label-floating" style="padding:22px 0px 0px 0px">
+                                                <select name="company_district" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" style="height: 30px!important">
+                                                    <option value="" selected></option>
+                                                </select>
+                                                <label for="title">Quận/Huyện</label>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 0px 10px;margin-bottom: 5px;" class="col-sm-4">
+                                            <div class="mda-form-group label-floating" style="padding:22px 0px 0px 0px">
+                                                <select name="company_ward" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" style="height: 30px!important">
+                                                    <option value="" selected></option>
+                                                </select>
+                                                <label for="title">Phường/Xã</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-5"><label>Địa chỉ chi tiết công ty hiện tại</label></div>
+                                <div class="col-sm-7"><input name="company_address" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Thu nhập chính hiện tại</label></div>
+                                <div class="col-sm-7"><input  tag="currency2"  name="monthly_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Chi phí hiện tại</label></div>
+                                <div class="col-sm-7"><input  tag="currency2"  name="monthly_expense" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Thu nhập khác hiện tại</label></div>
+                                <div class="col-sm-7"><input  tag="currency2"  name="other_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <!-- DOC -->
+                                <div class="col-sm-12"><label>Cung cấp chứng từ</label></div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>CMND/CCCD</label></div>
+                                        <div class="col-sm-7"><input class="deb_file" name="id_card_image" accept=".pdf" type="file"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Ảnh chân dung</label></div>
+                                        <div class="col-sm-7"><input class="deb_file" name="pic_image" accept=".pdf" type="file"></div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12">
+                                        <button id="submit-docs-debt" style="background:#1c4694;width:100%;font-family: Helvetica !important;" class="btn btn-sm btn-warning float-right" type="button">Tải lên chứng từ</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button id="save-debt" style="background:#1c4694; width:100%;font-family: Helvetica !important;" class="btn btn-sm btn-success float-right" type="submit">Lưu</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button id="submit-debt" style="background:#1c4694;width:100%;font-family: Helvetica !important;" class="btn btn-sm btn-success float-right" type="submit">Lưu và gửi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

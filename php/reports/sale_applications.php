@@ -29,7 +29,8 @@
 	$request									= NULL;
 	$userID										= NULL;
 	$userGroup									= NULL;
-	$statuses									= NULL;
+	$listID									= NULL;
+	$leadCode = NULL;
 	
 	if (isset($_POST['pageTitle']) && $pageTitle != "call_export_report") {
 		$pageTitle = $_POST['pageTitle'];
@@ -48,27 +49,28 @@
 		$userID = $_POST["userID"];
 		$userID = stripslashes($userID);
 	}
-	if (isset($_POST["campaignID"])) {
-		$campaign_id = $_POST["campaignID"];
-		$campaign_id = stripslashes($campaign_id);
+	if (isset($_POST["leadCode"])) {
+		$leadCode = $_POST["leadCode"];
+		$leadCode = stripslashes($leadCode);
+	}
+	if (isset($_POST["listID"])) {
+		$listID = $_POST["listID"];
+		$listID = stripslashes($listID);
 	}
 	if (isset($_POST["userGroup"])) {
 		$userGroup = $_POST["userGroup"];
 		$userGroup = stripslashes($userGroup);
 	}
 		
-	if (isset($_POST["statuses"])) {
-		$statuses = $_POST["statuses"];
-		$statuses = stripslashes($statuses);
-	}
-		
 	$postfields = array(
-		'goAction' => 'goProductivityCallStatus',		
+		'goAction' => 'goSaleApplications',		
 		'pageTitle' => $pageTitle,
 		'fromDate' => $fromDate,
 		'toDate' => $toDate,
-		'campaignID'=>$campaign_id,
+		'userGroup'=>$userGroup,
+		'listID'=>$listID,
 		'userId' => $userID,
+		'leadCode' => $leadCode,
 		'request' => $request
 	);
 
@@ -84,45 +86,44 @@
 		echo '</div>';
 */
 
-// <th > Day </th>
-                $inbound_report .= '
+                $sale_performance_report .= '
 				<div>
-						<legend><small><em class="fa fa-arrow-right"></em><i> Report by call status</i></small></legend>
-								<table class="display responsive no-wrap table table-striped table-bordered table-hover"  id="productivity_call_status">
-										<thead>
-												<tr>
-														<th > Time</th>
-														<th > Team</th>
-														<th > User</th>
-														<th > Total call </th>
-														<th > Answer</th>
-														<th > Customer</th>
-														<th > No Answer </th>
-														<th > Congestion </th>
-														<th > Busy </th>
-														<th > Denied </th>
-														<th > Erro Sip</th>
-														<th > Cancel </th>
-														<th > Unknown </th>
-														<th > Answer not in queue </th>
-														<th > Answer in queue no agent</th>
-												</tr>
-										</thead>
-										<tbody>
+					<table class="display responsive no-wrap table table-striped table-bordered table-hover" id="application_table">
+						<thead>
+							<tr>
+								<th>LeadID</th>
+								<th>RequestID</th>
+								<th>Sale</th>
+								<th>Team</th>
+								<th>Lead Code</th>
+								<th>Created At</th>
+								<th>Updated At</th>
+								<th>Phone</th>
+								<th>IdentityID</th>
+								<th>App Status</th>
+								<th>Reject Code</th>
+								<th>Reject Reason</th>
+								<th>Product Name</th>
+								<th>Loan Amount</th>
+								<th>ProposalID</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
 				';
                 if ($output->TOPsorted_output != NULL) {
 			foreach($output->TOPsorted_output as $row){
-		                $inbound_report .= $row;
+		                $sale_performance_report .= $row;
 			}
                 }else{
- 	               $inbound_report .= "";
+ 	               $sale_performance_report .= "";
                 }
 
-     	        $inbound_report .= '</tbody>';
-                $inbound_report .= '</table></div>';
+     	        $sale_performance_report .= '</tbody>';
+                $sale_performance_report .= '</table></div>';
 		
 		echo '<div class="animated slideInLeft">';
-			echo '<div>'.$inbound_report.'</div>';
+			echo '<div>'.$sale_performance_report.'</div>';
 		echo '</div>';
 	//	var_dump($output->TOPsorted_output);
         }

@@ -78,6 +78,7 @@ if (!isset($_REQUEST['action']) && !isset($_REQUEST['module_name'])) {
     echo "// {$sess_vars}\n";
 ?>
 var isLoadStatus = false;
+var TMP_STATUS = "";
 // Settings
 var phone;
 var phoneRegistered = false;
@@ -1341,11 +1342,9 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                 } else if(e.shiftKey && e.key == "Home") {
                     hotkeysReady = false;
                       if (is_logged_in && ((use_webrtc && phoneRegistered) || !use_webrtc)) {
-                          swal({
-                              title: '<?=$lh->translationFor('error') ?>',
-                              text: '<?=$lh->translationFor('phone_already_logged_in') ?>',
-                              type: 'error'
-                          });
+                          tata.info('<?=$lh->translationFor('phone_already_logged_in') ?>', '', {
+                                position: 'tr',animate: 'slide', duration: 2500
+                            })
                       } else {
                           btnLogMeIn();
                       }
@@ -2323,18 +2322,12 @@ function btnLogMeIn () {
     alertLogout = true;
     registrationFailed = false;
     if (is_logged_in && ((use_webrtc && !phoneRegistered) || !use_webrtc)) {
-        swal({
-            title: '<?=$lh->translationFor('error') ?>',
-            text: "<?=$lh->translationFor('phone_already_logged_in') ?>",
-            type: 'error',
-            html: true,
-            closeOnConfirm: false
-        }, function() {
-            logging_in = false;
-            swal.close();
-            sendLogout(true);
-        });
-        
+        logging_in = false;
+        <!-- swal.close(); -->
+        sendLogout(true);
+        tata.info('<?=$lh->translationFor('phone_already_logged_in') ?>', '', {
+            position: 'tr',animate: 'slide', duration: 6000
+        })
         return;
     }
     
@@ -2411,6 +2404,7 @@ function btnLogMeOut () {
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "<?=$lh->translationFor('log_me_out') ?>",
+                cancelButtonText: "<?=$lh->translationFor('cancel') ?>",
                 closeOnConfirm: false
             }, function(isConfirm){
                 swal.close();
@@ -4661,7 +4655,7 @@ function DialLog(taskMDstage, nodeletevdac) {
 // ################################################################################
 // Send MonitorConf/StopMonitorConf command for recording of conferences
 function ConfSendRecording(taskconfrectype, taskconfrec, taskconffile, taskfromapi) {
-    console.log('Start recording of this call');
+    //console.log('Start recording of this call');
     
     if (inOUT == 'OUT') {
         tmp_vicidial_id = $(".formMain input[name='uniqueid']").val();
@@ -6249,7 +6243,7 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
             }
             `;
             dispo_HTML = dispo_HTML + "</script>";
-            dispo_HTML = dispo_HTML + "<p style='font-size: large;font-weight: bold;'>SELECT DISPOSITION GROUP</p>";
+            dispo_HTML = dispo_HTML + "<p style='font-size: large;font-weight: bold;'>CHỌN NHÓM TRẠNG THÁI</p>";
             dispo_HTML = dispo_HTML + "<select style='    font-weight: 500;font-size: large;margin-bottom: 10px;' id='select-category' class='mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select'>";
             var vsc_loop = 0;
             while (vsc_loop < vsc_id.length){
@@ -6262,7 +6256,7 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
             }
             dispo_HTML = dispo_HTML + "</select>";
             if (!isLoadStatus){
-            dispo_HTML = dispo_HTML + "<table cellpadding='5' cellspacing='5' width='100%' style='-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin: 0 auto;'><tr><td colspan='2'>&nbsp; <b><?=$lh->translationFor('call_dispositions') ?></b><br><br></td></tr><tr><td bgcolor='#FFFFFF' height='300px' width='auto' valign='top' class='DispoSelectA' style='white-space: nowrap;'>";
+            dispo_HTML = dispo_HTML + "<table cellpadding='5' cellspacing='5' width='100%' style='-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin: 0 auto;'><tr><td colspan='2'>&nbsp; <b><?=$lh->translationFor('call_dispositions') ?></b><br><br></td></tr><tr><td bgcolor='#FFFFFF' height='300px' width='auto' valign='top' class='DispoSelectA' style='padding:0px 30px;white-space: nowrap;'>";
             var loop_ct = 0;
             statuses_count = statuses.length;
             var statuses_ct_half = parseInt(statuses_count / 2);
@@ -6325,9 +6319,13 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
             $('[id^=dispo-add-]').css('font-size','unset');
             $('[id^=dispo-add-]').css('font-style','unset');
             $("#DispoSelection").val('');
+            TMP_STATUS  = '';
             $("#select-category").val("UNDEFINED");
         }
-        else {$("#DispoSelection").val(taskDSgrp);}
+        else {
+            $("#DispoSelection").val(taskDSgrp);
+            TMP_STATUS  = taskDSgrp;
+        }
         if (focus_blur_enabled == 1) {
             //document.inert_form.inert_button.focus();
             //document.inert_form.inert_button.blur();
@@ -6358,7 +6356,7 @@ function DispoSelectContent_create(taskDSgrp,taskDSstage, currentCategory) {
                 }
             })
             .done(function (result) {
-                console.log("Loaded statuses");
+                // console.log("Loaded statuses");
                 $(".DispoSelectA")[0].empty;
                 bodyString = ``;
                 if (result.data.length>0){
@@ -6403,7 +6401,6 @@ function DispoSelectSubmit() {
     toggleButton('HangupBothLines', 'on');
 
     var DispoChoice = $("#DispoSelection").val().toString();
-
     if (DispoChoice.length < 1) {
      	swal("<?=$lh->translationFor('must_select_disposition') ?>.");
         //console.log("Dispo Choice: Must select disposition.");
@@ -6438,7 +6435,7 @@ function DispoSelectSubmit() {
                 show: true
             });
         } else {
-            console.log('Disposing call...');
+            // console.log('Disposing call...');
             var postData = {
                 goServerIP: server_ip,
                 goSessionName: session_name,
@@ -6523,6 +6520,7 @@ function DispoSelectSubmit() {
             $('[id^=dispo-add-]').css('font-size','unset');
             $('[id^=dispo-add-]').css('font-style','unset');
             $("#DispoSelection").val('');
+            TMP_STATUS  = '';
             $("#call_notes").val('');
             // 
             $(".formMain input[name='lead_id']").val('');
@@ -6987,7 +6985,7 @@ function CustomerData_update() {
         }
     })
     .done(function (result) {
-        console.log('Customer data updated...');
+        // console.log('Customer data updated...');
         
         $('.input-disabled').prop('disabled', true);
         $('.input-phone-disabled').prop('disabled', true);
@@ -7513,6 +7511,7 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
             }
         })
         .done(function (result) {
+            console.log(result);
             //dialingINprogress = 0;
             //console.log(result);
 
@@ -7581,8 +7580,6 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                     $(".formMain input[name='lead_id']").val(lead_id);
                     try {
                         thisVdata.request_id = ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason);
-                        console.log(thisVdata.request_id)
-                        console.log(thisVdata.status)
                     }
                     catch (err) {
                         console.log(err);
@@ -10163,7 +10160,7 @@ function minutesBetween( date1, date2 ) {
 function displaytime(){
     serverdate.setSeconds(serverdate.getSeconds()+1)
     var todaystring = todayarray[serverdate.getDay()];
-    var datestring = montharray[serverdate.getMonth()]+" "+padlength(serverdate.getDate())+", "+serverdate.getFullYear();
+    var datestring = padlength(serverdate.getDate())+"/"+montharray[serverdate.getMonth()]+"/"+serverdate.getFullYear()+",";
     var AmPm = 'AM';
     var dispHour = serverdate.getHours();
     if (dispHour > 11) {AmPm = 'PM';}
@@ -10903,7 +10900,7 @@ function minimizeModal(modal_id) {
     $.AdminLTE.options.controlSidebarOptions.minimizedDispo = true;
     $("#"+modal_id).css('overflow', 'hidden');
     $("#"+modal_id+" div.modal-dialog").animate({ 'margin-top': '5px' }, 500);
-    $("#"+modal_id).animate({ 'top': '94%' }, 500, function() {
+    $("#"+modal_id).animate({ 'top': '92%' }, 500, function() {
         $("body").css('overflow-y', 'auto');
         $(".max-modal").removeClass('hidden');
         $(".min-modal").addClass('hidden');

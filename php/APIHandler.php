@@ -633,6 +633,14 @@ class APIHandler
 		);
 		return $this->API_Request("goDashboard", $postfields);
 	}
+	
+	public function API_getVendorLeadsMonitoring()
+	{
+		$postfields = array(
+			'goAction' => 'goGetVendorLeadsMonitoring'
+		);
+		return $this->API_Request("goDashboard", $postfields);
+	}
 
 	public function API_getRealtimeCallsMonitoring()
 	{
@@ -1892,5 +1900,28 @@ class APIHandler
 	{
 		$postfields["goAction"] = 'goAssignUsers';
 		return $this->API_Request("goUsers", $postfields);
+	}
+	public function API_customDownloadList($list_id)
+	{
+		$postfields["goAction"] = 'goListExport';
+		$postfields = array(
+			'goAction' => 'goListExport',
+			'list_id' => $list_id
+		);
+		return $this->API_Request("goCustomExport", $postfields);
+	}
+	public function API_removeDownnload($file_name, $file_path)
+	{
+		$postfields = array(
+			'goAction' => 'goRemoveDownload',
+			'file_name' => $file_name,
+			'path' => $file_path,
+		);
+		return $this->API_Request("goCustomExport", $postfields);
+	}
+	
+	public function API_getListsDownload($postfields)
+	{
+		return $this->API_Request("goCustomExport", $postfields);
 	}
 }
