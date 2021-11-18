@@ -1573,7 +1573,7 @@ error_reporting(E_ERROR | E_PARSE);
 					</li>
 					
 					<li id="topbar-callbacks" class="dropdown notifications-menu">
-					<a href="#" id="debt_test" data-toggle="tooltip" data-placement="top" title="TEST"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bug"></i></a>
+					<a href="#" id="debt_test" data-toggle="tooltip" data-placement="top" title="TEST"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-hand-peace-o"></i></a>
 					</li>
 	                    		'.$moduleTopbarElements.'
 	                    		'.$this->getTopbarMessagesMenu($user).'

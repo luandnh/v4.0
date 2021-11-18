@@ -1971,21 +1971,24 @@ $(document).on("change", 'select[name="employment_type"]', function () {
   selected_employment_type = null;
   let em_type = this.value;
   if (ECProducts != undefined) {
+    let select_product_type = $("select[name='product_type']")[0];
+    select_product_type.innerHTML = "";
     ECProducts.forEach((et) => {
       if (et.employee_type == em_type) {
-        selected_employment_type = et;
+        if (selected_employment_type == null){
+          selected_employment_type = et;
+        }else{
+          selected_employment_type.product_list = [].concat(selected_employment_type.product_list,et.product_list);
+        }
         let product_lists = et.product_list.sort(function (a, b) {
           return a.product_code.localeCompare(b.product_code)
         });
-        let select_product_type = $("select[name='product_type']")[0];
-        select_product_type.innerHTML = "";
         $(`<option value=""></option>`).appendTo(select_product_type);
         for (prd of product_lists) {
           $(
             `<option des="${prd.product_description}" value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
           ).appendTo(select_product_type);
         }
-        return;
       }
     });
   }
@@ -3045,6 +3048,7 @@ let ajaxGetCallStatus = (status) => {
 };
 // DEV AREA
 let format_log_productlist = function(product_list){
+  console.log(product_list)
   let log_products = {};
   log_products.list = [];
   log_products.total = 0;

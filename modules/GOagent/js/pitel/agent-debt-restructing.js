@@ -492,13 +492,13 @@ $(document).ready(function ()
   SetComapyAddress();
   
   $(document).on("keyup", '#debt input[tag="currency2"]', function () {
-    if ( val== "" || val == undefined) { }
-    this.value = val.replace(/[^0-9\.]/g, "");
+    if (this.value == "" || this.value == undefined) {return }
+    this.value = this.value.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(",").join("");
   });
 
   $(document).on("blur", '#debt input[tag="currency2"]', function () {
-    if (this.value == "" || this.value == undefined) { }
+    if (this.value == "" || this.value == undefined) {return }
     this.value = this.value.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(",").join("");
     this.value = currency_vnd(this.value);
@@ -510,27 +510,29 @@ $(document).ready(function ()
   $("select[name='exist_contract_number']").select2({
     tags: true
   });;
-  //  TEST DATA
-  let phone_number = "0969133718";
-  let identity_card = "187708921";
-  // END TEST
-  var body_object = {
-    phone_number: phone_number,
-    identity_card: identity_card
-  }
   clearFormDebt(true);
-  CreateDebtFullData(body_object);
+  // TEST
+  let phone_number = "0969133718";
+  let identity_card = "023114456";
+  // END TEST
+  // var body_object = {
+  //   phone_number: phone_number,
+  //   identity_card: identity_card
+  // }
+  // CreateDebtFullData(body_object);
+  // END-TEST
   $(document).on("click", "#debt_test", function (e)
   {
-      //  TEST DATA
+    // TEST
     let phone_number = "0969133718";
-    let identity_card = "187708921";
+    let identity_card = "023114456";
     let body_object_request = {
       phone_number: phone_number,
       identity_card: identity_card
     }
     clearFormDebt(true);
     CreateDebtFullData(body_object_request);
+  // END TEST
   });
   $(document).on("click", "#submit-docs-debt", function (e)
   {
@@ -547,8 +549,6 @@ $(document).ready(function ()
       let pic_image = $(`#debt-restruct #updated_info input[name='pic_image']`)[0].files[0];
       var form = new FormData();
       // TESTING
-      debt_update_info.contract_number = "hihi19";
-      // 
       form.append("request_id", `${debt_update_info.request_id}`);
       form.append("contract_number", `${debt_update_info.contract_number}`);
       form.append("cust_id", `${debt_update_info.cust_id}`);
@@ -558,9 +558,9 @@ $(document).ready(function ()
       form.append("company_province", `${debt_update_info.company_province}`);
       form.append("company_district", `${debt_update_info.company_district}`);
       form.append("company_ward", `${debt_update_info.company_ward}`);
-      form.append("monthy_income", `${debt_update_info.monthly_income}`);
-      form.append("other_income", `${debt_update_info.other_income}`);
-      form.append("monthy_expense", `${debt_update_info.monthly_expense}`);
+      form.append("monthy_income", `${debt_update_info.monthly_income.split(",").join("").split(".").join("").replace("đ")}`);
+      form.append("other_income", `${debt_update_info.other_income.split(",").join("").split(".").join("").replace("đ")}`);
+      form.append("monthy_expense", `${debt_update_info.monthly_expense.split(",").join("").split(".").join("").replace("đ")}`);
       form.append("PIC", pic_image, `PIC_${debt_update_info.request_id}.pdf`);
       form.append("extension_payment_terms", `${debt_update_info.ext_payment_term}`);
       form.append("PID", id_card_image, `PID_${debt_update_info.request_id}.pdf`);
@@ -610,6 +610,13 @@ $(document).ready(function ()
         try {
             error_msg(translate(response.message), "Không thành công");
         } catch (error) {
+          try {
+              let tmp = JSON.parse(response.responseText)
+              console.log(tmp);
+              error_msg(translate(tmp.message), "Không thành công");
+          } catch (error) {
+            
+          }
           error_msg("Đã có lỗi xảy ra. Vui lòng liên hệ admin!",3000, "Lỗi");
         }
         return;
