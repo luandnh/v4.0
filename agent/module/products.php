@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="col-lg-10">
                                     <h3 class="text-light-blue">
-                                        UPLOAD CHECK DOCS
+                                        UPLOAD CHECK DOCSS
                                     </h3>
                                 </div>
                             </div>
@@ -104,18 +104,6 @@
                     </div>
                     <div class="col-sm-12">
                         <div id="product_detail" class="row">
-                            <!-- <div class="col-xl-12 col-lg-12">
-                                <label style="font-size: large;" id="product_required_description_offer">Chứng từ bắt buộc </label>
-                            </div>
-                            <div class="col-xl-12 col-lg-12">
-                                <hr style="margin: 5px !important;">
-                            </div> -->
-                            <!-- <div class="col-xl-12 col-lg-12">
-                                <div class="mda-form-group label-floating">
-                                    <input type="text" name="product_required_document_offer" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
-                                    <label style="font-size: large;">Mã chứng từ bắt buộc: </label>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="col-sm-12" id="product_name_detail_offer">
@@ -141,6 +129,61 @@
     </div>
 </div>
 
+<div id="resubmit" role="tabpanel" class="tab-pane">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Resubmit</h3>
+                </div>
+                <!-- /.box-header -->
+                <!--  -->
+                <!-- PRODUCT DETAIL DEBUG-->
+                <!--  -->
+                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="col-lg-2">
+                                    <div class="iconCircle">
+                                        <i class="fa fa-envelope fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <h3 class="text-light-blue">
+                                        UPLOAD RESUBMIT DOCS
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div id="resubmit_detail" class="row">
+                        </div>
+                    </div>
+                    <div class="col-sm-12" style="padding-bottom: 10px;">
+                        <label class="form_label" for="attachment_files">DOCUMENTS</label>
+                    </div>
+                    <div class="col-sm-12" style="padding-bottom: 10px;" id="list_resubmit">
+                    
+                    </div>
+                    <div class="col-sm-12">
+                        <input id="contract_number" value="" hidden>
+                        <button class="btn btn-warning" id="submit_file_resubmit">Upload Docs</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div class="col-xl-6 col-lg-6">
+                        <button class="btn btn-primary" id="submit-docs" > Gửi Chứng Từ </button>
+                    </div> -->
+                    <div class="col-xl-6 col-lg-6">
+                        <button class="btn btn-primary" id="resubmit_btn"> Resubmit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="product-detail-modal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <!-- Modal content-->
@@ -1383,12 +1426,14 @@
                                         <div class="row">
                                             <div class="col-sm-12" style="padding-bottom: 10px;">
                                                 <label class="form_label" for="img_id_card2"><?= $lh->translationFor('img_id_card') ?></label>
-                                                <input type="text" name="img_id_card2" class="id_img_hide" required />
+                                                <input type="text" name="img_id_card2" class="id_img_hide" />
                                                 <input type="file" id="img_id_card2" class="id_img custom-file-input" />
                                             </div>
                                         </div>
                                         <div class="row" style="margin-bottom: 10px;">
                                             <div class="col-sm-12">
+                                                <input id="submit_img_id_card2_docid" disabled hidden readonly value="" >
+                                                <input id="submit_img_id_card2_docurl" disabled hidden readonly value="" >
                                                 <button id="submit_img_id_card2" class="btn btn-warning"><?= $lh->translationFor('submit_img_id_card') ?></button>
                                             </div>
                                         </div>
@@ -1397,12 +1442,15 @@
                                         <div class="row">
                                             <div class="col-sm-12" style="padding-bottom: 10px;">
                                                 <label class="form_label" for="img_selfie2"><?= $lh->translationFor('img_selfie') ?></label>
-                                                <input type="text" name="img_selfie2" class="id_img_hide" required />
+                                                <input type="text" name="img_selfie2" class="id_img_hide" />
+                                                <input name="submit_img_selfie2" disabled hidden readonly value="" >
                                                 <input type="file" id="img_selfie2" class="id_img custom-file-input" />
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
+                                                <input id="submit_img_selfie2_docid" disabled hidden readonly value="" >
+                                                <input id="submit_img_selfie2_docurl" disabled hidden readonly value="" >
                                                 <button id="submit_img_selfie2" class="btn btn-warning"><?= $lh->translationFor('submit_img_selfie') ?></button>
                                             </div>
                                         </div>
@@ -1411,7 +1459,7 @@
                                 <!--  -->
                                 <!-- PRODUCT DETAIL DEBUG-->
                                 <!--  -->
-                                <div class="row" style="margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
+                                <div class="row" style="display:none; margin-bottom: 10px;padding: 20px 10px; border: 1px solid #5cb85c;">
                                     <div class="col-xl-6 col-lg-12">
                                         <div class="row">
                                             <div class="col-xl-4 col-lg-4">

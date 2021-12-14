@@ -2018,6 +2018,7 @@ input:checked + .slider:before {
 						</div><!-- /.row -->
 						<!-- End Contacts -->
 						<?php include_once "agent/module/calllogs.php" ?>
+						<?php include_once "agent/module/partner_baominh.php" ?>
 						<?php include_once "agent/module/productivity.php" ?>
 						<?php include_once "agent/module/performance.php" ?>
 
@@ -2184,6 +2185,7 @@ input:checked + .slider:before {
 				echo $ui->getSidebarItem("#call-logs", "", "History", null, "", "agent-call-log");
 				echo $ui->getSidebarItem("#productivity", "", "Productivity", null, "", "productivity");
 				echo $ui->getSidebarItem("#performance", "", "Performance", null, "", "performance");
+				echo $ui->getSidebarItem("#partner-baominh", "", "Bảo Minh", null, "", "agent-partner-baominh");
 			}
 			?>
 			<li id="pause_code_link" class="hidden">
@@ -3256,5 +3258,6 @@ dding-top: 10px;">
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js?v=2" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-call-log.js?v=4" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-partner-baominh.js?v=1" defer></script>
     </body>
 </html>
