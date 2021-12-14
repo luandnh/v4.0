@@ -1,36 +1,32 @@
-const CRM_API_HOST = "https://ec-api-dev.tel4vn.com/ec";
+const CRM_API_HOST = "http://ec-api-dev.tel4vn.com:8005/ec";
 const DEBT_API_HOST = "https://uatapis.easycredit.vn"
 const PARTNER_CODE = "TEL";
 const LANGUAGE = {
-  "Data not found by search anything field":"Dữ liệu không được tìm thấy bằng cách tìm kiếm bất kỳ trường nào"
+  "Data not found by search anything field": "Dữ liệu không được tìm thấy bằng cách tìm kiếm bất kỳ trường nào"
 }
 function currency_vnd(x) {
-  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")+"đ";
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + "đ";
 }
 var DEBT_RESTUCT_DATA = null;
 var PIC_IMAGE = "";
 var ID_CARD_IMAGE = "";
-function error_msg(msg, seconds = 2500, title = "Lỗi")
-{
+function error_msg(msg, seconds = 2500, title = "Lỗi") {
   tata.error(title, msg, {
     position: 'tl', animate: 'slide', duration: seconds
   })
 }
-function info_msg(msg, seconds = 2500, title = "Thông báo")
-{
+function info_msg(msg, seconds = 2500, title = "Thông báo") {
   tata.info(title, msg, {
     position: 'tl', animate: 'slide', duration: seconds
   })
 }
-let upload_pic_image = function ()
-{
+let upload_pic_image = function () {
   if (PIC_IMAGE != "") {
     return;
   }
   let fileIn = $(`#debt-restruct #updated_info input[name='pic_image']`)[0].files[0];
   const reader = new FileReader();
-  reader.addEventListener("load", function ()
-  {
+  reader.addEventListener("load", function () {
     info_msg("Thành công", 1000, "Tải chân dung");
     PIC_IMAGE = reader.result;
   }, false);
@@ -38,15 +34,13 @@ let upload_pic_image = function ()
     reader.readAsDataURL(fileIn);
   }
 }
-let upload_id_image = function ()
-{
+let upload_id_image = function () {
   if (ID_CARD_IMAGE != "") {
     return;
   }
   let fileIn = $(`#debt-restruct #updated_info input[name='id_card_image']`)[0].files[0];
   const reader = new FileReader();
-  reader.addEventListener("load", function ()
-  {
+  reader.addEventListener("load", function () {
     info_msg("Thành công", 3000, "Tải CMND/CCCD");
     ID_CARD_IMAGE = reader.result;
   }, false);
@@ -54,16 +48,14 @@ let upload_id_image = function ()
     reader.readAsDataURL(fileIn);
   }
 }
-let SetPaymentTerm = (term_arr) =>
-{
+let SetPaymentTerm = (term_arr) => {
   let paymentSelect = $("select[name='ext_payment_term']");
   paymentSelect.empty();
   for (let t = 0; t < term_arr.length; t++) {
     $(`<option value="${term_arr[t]}">${term_arr[t]}</option>`).appendTo(paymentSelect);
   }
 }
-function clearFormDebt(clear_all = false)
-{
+function clearFormDebt(clear_all = false) {
   if (clear_all) {
     let exist_contracts = $("select[name='exist_contract_number']");
     exist_contracts.empty();
@@ -91,20 +83,20 @@ function clearFormDebt(clear_all = false)
     .not(":button,:reset, :hidden, :checkbox, :radio")
     .val("");
 }
-let SetExistCustomer = (cust_arr) =>
-{
+let SetExistCustomer = (cust_arr) => {
   DEBT_RESTUCT_DATA = {}
   let exist_contracts = $("select[name='exist_contract_number']");
   exist_contracts.empty();
   $(`<option cust_id ="" value="" selected>Trống</option>`).appendTo(exist_contracts);
-  cust_arr.forEach(element =>
-  {
-    DEBT_RESTUCT_DATA[element.loan_info.contract_number] = element;
-    $(`<option cust_id ="${element.customer_info.cust_id}" value="${element.loan_info.contract_number}">${element.loan_info.contract_number}</option>`).appendTo(exist_contracts);
+
+  cust_arr.forEach(element => {
+    if (element.loan_info != undefined) {
+      DEBT_RESTUCT_DATA[element.loan_info.contract_number] = element;
+      $(`<option cust_id ="${element.customer_info.cust_id}" value="${element.loan_info.contract_number}">${element.loan_info.contract_number}</option>`).appendTo(exist_contracts);
+    }
   });
 
-  $("#debt-restruct select[name='exist_contract_number']").on("change", (e) =>
-  {
+  $("#debt-restruct select[name='exist_contract_number']").on("change", (e) => {
     let tmp = $("select[name='exist_contract_number'] :selected").attr("cust_id");
     $("#debt_customer_list input[name='exist_cust_id']").val(tmp);
     FillDebtForm(DEBT_RESTUCT_DATA[$("select[name='exist_contract_number'] :selected").val()]);
@@ -115,8 +107,7 @@ let SetExistCustomer = (cust_arr) =>
     $("select[name='exist_contract_number']").trigger('change');
   }
 }
-let SetComapyAddress = () =>
-{
+let SetComapyAddress = () => {
   var companyProvince = $("#debt-restruct select[name='company_province']");
   var companyDistrict = $("#debt-restruct select[name='company_district']");
   var companyWard = $("#debt-restruct select[name='company_ward']");
@@ -130,8 +121,7 @@ let SetComapyAddress = () =>
     $(`<option value="${key}">${value}</option>`).appendTo(companyProvince);
   }
   // 
-  $("#debt-restruct select[name='company_province']").on("change", (e) =>
-  {
+  $("#debt-restruct select[name='company_province']").on("change", (e) => {
     let province_id = companyProvince.val();
     companyDistrict.empty();
     companyWard.empty();
@@ -146,8 +136,7 @@ let SetComapyAddress = () =>
     }
   });
   // 
-  $("#debt-restruct select[name='company_district']").on("change", () =>
-  {
+  $("#debt-restruct select[name='company_district']").on("change", () => {
     let districtID = companyDistrict.val();
     console.info(districtID);
     companyWard.empty();
@@ -161,24 +150,20 @@ let SetComapyAddress = () =>
     }
   });
 };
-let translate = function (input)
-{
+let translate = function (input) {
   let text = LANGUAGE[input];
   if (text == "" || text == undefined) {
     return input;
   }
   return text;
 }
-let generate_requestID = () =>
-{
+let generate_requestID = () => {
   return PARTNER_CODE + new Date().getTime();
 }
-$.fn.serializeObject = function ()
-{
+$.fn.serializeObject = function () {
   var o = {};
   var a = this.serializeArray();
-  $.each(a, function ()
-  {
+  $.each(a, function () {
     if (o[this.name]) {
       if (!o[this.name].push) {
         o[this.name] = [o[this.name]];
@@ -190,16 +175,14 @@ $.fn.serializeObject = function ()
   });
   return o;
 };
-function getDateNow()
-{
+function getDateNow() {
   var today = new Date();
   var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   var dateTime = date + ' ' + time;
   return dateTime
 }
-function create_debt_restructing()
-{
+function create_debt_restructing() {
   let debtTab =
     '<li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation" id="debt-restruct_href">' +
     '<a href="#debt-restruct" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
@@ -210,10 +193,9 @@ function create_debt_restructing()
 }
 
 
-let ajaxGetToken = () =>
-{
+let ajaxGetToken = () => {
   return $.ajax(settings = {
-    "url":  DEBT_API_HOST+"/aaa/v02/oauth2/token",
+    "url": DEBT_API_HOST + "/aaa/v02/oauth2/token",
     "method": "POST",
     "timeout": 0,
     "headers": {
@@ -223,15 +205,13 @@ let ajaxGetToken = () =>
     "data": {
       "grant_type": "client_credentials"
     }
-  }).fail((result, status, error) =>
-  {
+  }).fail((result, status, error) => {
     console.log("Query error : ", result);
     error_msg("Không thể xác thực");
   });
 };
 
-let ajaxQueryCI = (body_data) =>
-{
+let ajaxQueryCI = (body_data) => {
   let access_token = body_data.access_token;
   if (access_token == "" || access_token == undefined) {
     error_msg("Không thể xác thực")
@@ -241,7 +221,7 @@ let ajaxQueryCI = (body_data) =>
   return $.ajax({
     type: "POST",
     method: "POST",
-    url:  DEBT_API_HOST+"/los-united/v1/debt-restructuring/customer-info",
+    url: DEBT_API_HOST + "/los-united/v1/debt-restructuring/customer-info",
     processData: true,
     async: true,
     dataType: "json",
@@ -250,25 +230,21 @@ let ajaxQueryCI = (body_data) =>
       "Content-Type": "application/json"
     },
     data: JSON.stringify(body_data),
-  }).fail((result, status, error) =>
-  {
+  }).fail((result, status, error) => {
     console.log("Query error : ", result);
   });
 };
 
-function FillDebtForm(json_data)
-{
+function FillDebtForm(json_data) {
   if (json_data == null || json_data == undefined) {
     clearFormDebt();
     return;
   }
   try {
-    Object.keys(json_data).forEach((val, ix) =>
-    {
+    Object.keys(json_data).forEach((val, ix) => {
       let per_form = json_data[val];
       let form_name = val;
-      Object.keys(json_data[val]).forEach((key, iy) =>
-      {
+      Object.keys(json_data[val]).forEach((key, iy) => {
         $(`#${form_name} input[name='${key}']`).val(per_form[key]);
       })
     })
@@ -286,14 +262,11 @@ function FillDebtForm(json_data)
     console.log("FillDebtForm", error)
   }
 }
-function CreateDebtFullData(body_object)
-{
-  ajaxGetToken().done((token_result) =>
-  {
+function CreateDebtFullData(body_object) {
+  ajaxGetToken().done((token_result) => {
     let access_token = token_result.access_token;
     body_object['access_token'] = access_token;
-    ajaxQueryCI(body_object).done((result) =>
-    {
+    ajaxQueryCI(body_object).done((result) => {
       console.log("Query response", result);
       let request_id = $(`#debt-restruct input[name='request_id']`).val();
       if (request_id == "" || request_id == undefined) {
@@ -324,16 +297,15 @@ function CreateDebtFullData(body_object)
         // 
         FillDebtForm(json_data)
       } else {
-        error_msg(`${translate(result.message)}`, 2500,"Không thành công");
+        error_msg(`${translate(result.message)}`, 2500, "Không thành công");
         return;
       }
     });
   });
 }
-function create_debt_info(body_data, save_type)
-{
+function create_debt_info(body_data, save_type) {
   let saveSetting = {
-    "url": CRM_API_HOST+ "/restruct",
+    "url": CRM_API_HOST + "/restruct",
     "method": "POST",
     "timeout": 0,
     "headers": {
@@ -349,16 +321,13 @@ function create_debt_info(body_data, save_type)
       "create_type": save_type
     }),
   };
-  $.ajax(saveSetting).done(function (response)
-  {
-    console.log("Save debt",response);
-  }).fail(function (response)
-  {
-    console.log("Save debt",response);
+  $.ajax(saveSetting).done(function (response) {
+    console.log("Save debt", response);
+  }).fail(function (response) {
+    console.log("Save debt", response);
   });
 }
-let validate_emi_info = function ()
-{
+let validate_emi_info = function () {
   let emi_info = {};
   let contract_number = $(`#debt-restruct input[name='contract_number']`).val();
   let ext_payment_term = $(`#debt-restruct select[name='ext_payment_term']`).val();
@@ -391,8 +360,7 @@ let validate_emi_info = function ()
   emi_info["date"] = getDateNow();
   return emi_info;
 }
-let validate_debt_restruct_request_data = () =>
-{
+let validate_debt_restruct_request_data = () => {
   let request_id = $(`#debt-restruct input[name='request_id']`).val();
   if (request_id == "" || request_id == undefined) {
     request_id = generate_requestID();
@@ -487,18 +455,17 @@ let validate_debt_restruct_request_data = () =>
   raw_info['request_id'] = request_id;
   return raw_info;
 }
-$(document).ready(function ()
-{
+$(document).ready(function () {
   SetComapyAddress();
-  
+
   $(document).on("keyup", '#debt input[tag="currency2"]', function () {
-    if (this.value == "" || this.value == undefined) {return }
+    if (this.value == "" || this.value == undefined) { return }
     this.value = this.value.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(",").join("");
   });
 
   $(document).on("blur", '#debt input[tag="currency2"]', function () {
-    if (this.value == "" || this.value == undefined) {return }
+    if (this.value == "" || this.value == undefined) { return }
     this.value = this.value.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(",").join("");
     this.value = currency_vnd(this.value);
@@ -513,7 +480,7 @@ $(document).ready(function ()
   clearFormDebt(true);
   // TEST
   let phone_number = "0969133718";
-  let identity_card = "023114456";
+  let identity_card = "187708991";
   // END TEST
   // var body_object = {
   //   phone_number: phone_number,
@@ -521,26 +488,33 @@ $(document).ready(function ()
   // }
   // CreateDebtFullData(body_object);
   // END-TEST
-  $(document).on("click", "#debt_test", function (e)
-  {
+  $(document).on("click", "#search-debt", function (e) {
     // TEST
-    let phone_number = "0969133718";
-    let identity_card = "023114456";
-    let body_object_request = {
-      phone_number: phone_number,
-      identity_card: identity_card
+    let body_object_request = {}
+    let phone_number = $("input[name='debt_phone_number']").val();
+    let identity_card = $("input[name='debt_id_card']").val();
+    if (phone_number != "") {
+      body_object_request["phone_number"] = phone_number;
+    } else {
+      return;
+    }
+    if (identity_card != "") {
+      body_object_request["identity_card"] = identity_card;
     }
     clearFormDebt(true);
     CreateDebtFullData(body_object_request);
-  // END TEST
+    // END TEST
   });
-  $(document).on("click", "#submit-docs-debt", function (e)
-  {
+  $(document).on("click", "#submit-docs-debt", function (e) {
     upload_id_image();
     upload_pic_image();
   });
-  $(document).on("click", "#submit-debt", function (e)
-  {
+  function currency_convert(cur_str){
+      let tmp = cur_str.split(",").join("").replace("đ", "");
+      let point = tmp.split(".");
+      return point[0];
+  }
+  $(document).on("click", "#submit-debt", function (e) {
     let debt_update_info = validate_debt_restruct_request_data();
     if (debt_update_info != false) {
       let request_id = debt_update_info.request_id;
@@ -558,14 +532,14 @@ $(document).ready(function ()
       form.append("company_province", `${debt_update_info.company_province}`);
       form.append("company_district", `${debt_update_info.company_district}`);
       form.append("company_ward", `${debt_update_info.company_ward}`);
-      form.append("monthy_income", `${debt_update_info.monthly_income.split(",").join("").split(".").join("").replace("đ")}`);
-      form.append("other_income", `${debt_update_info.other_income.split(",").join("").split(".").join("").replace("đ")}`);
-      form.append("monthy_expense", `${debt_update_info.monthly_expense.split(",").join("").split(".").join("").replace("đ")}`);
+      form.append("monthy_income", `${currency_convert(debt_update_info.monthly_income)}`);
+      form.append("other_income", `${currency_convert(debt_update_info.other_income)}`);
+      form.append("monthy_expense", `${currency_convert(debt_update_info.monthly_expense)}`);
       form.append("PIC", pic_image, `PIC_${debt_update_info.request_id}.pdf`);
       form.append("extension_payment_terms", `${debt_update_info.ext_payment_term}`);
       form.append("PID", id_card_image, `PID_${debt_update_info.request_id}.pdf`);
       var settings = {
-        "url": DEBT_API_HOST+ "/los-united/v1/debt-restructuring/register-debt-restructuring",
+        "url": DEBT_API_HOST + "/los-united/v1/debt-restructuring/register-debt-restructuring",
         "method": "POST",
         "timeout": 0,
         "processData": false,
@@ -573,8 +547,7 @@ $(document).ready(function ()
         "contentType": false,
         "data": form
       };
-      $.ajax(settings).done(function (resp)
-      {
+      $.ajax(settings).done(function (resp) {
         let response = resp;
         try {
           response = JSON.parse(resp);
@@ -604,27 +577,25 @@ $(document).ready(function ()
         } else {
           error_msg(translate(response.message), "Không thành công");
         }
-      }).fail(function (response)
-      {
+      }).fail(function (response) {
         console.log("DEBT_REQUEST", response);
         try {
-            error_msg(translate(response.message), "Không thành công");
+          error_msg(translate(response.message), "Không thành công");
         } catch (error) {
           try {
-              let tmp = JSON.parse(response.responseText)
-              console.log(tmp);
-              error_msg(translate(tmp.message), "Không thành công");
+            let tmp = JSON.parse(response.responseText)
+            console.log(tmp);
+            error_msg(translate(tmp.message), "Không thành công");
           } catch (error) {
-            
+
           }
-          error_msg("Đã có lỗi xảy ra. Vui lòng liên hệ admin!",3000, "Lỗi");
+          error_msg("Đã có lỗi xảy ra. Vui lòng liên hệ admin!", 3000, "Lỗi");
         }
         return;
       });
     }
   });
-  $(document).on("click", "#save-debt", function (e)
-  {
+  $(document).on("click", "#save-debt", function (e) {
     let body_data = {
       "lead_id": lead_id + "",
       "user": user,
@@ -634,8 +605,7 @@ $(document).ready(function ()
     }
     create_debt_info(body_data, "UPDATE");
   });
-  $(document).on("click", "#debt-calculate-emi", function (e)
-  {
+  $(document).on("click", "#debt-calculate-emi", function (e) {
     let emi_info = validate_emi_info();
     console.log("EMI body", emi_info);
     CreateDebtFullData(emi_info);
