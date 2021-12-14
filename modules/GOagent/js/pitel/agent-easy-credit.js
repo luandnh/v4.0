@@ -1,3 +1,71 @@
+var RequireResubmit = {}
+
+var proposal_id = ""
+var isUploadPIC = false;
+var isUploadPID = false;
+var RequiredDocs = {
+  "PID" : false,
+  "PIC" : false
+}
+function generate_url(request_id,file_name,doc_type, proposal_id = ""){
+  let param = {
+    file_name: file_name,
+    request_id: request_id,
+    partner_code: 'TEL',
+    doc_type: doc_type,
+    proposal_id:proposal_id
+  };
+  return $.ajax({
+    type: "GET",
+    url:
+      EC_PROD_API_URL +
+      "/los-united/v1/document/presinged-url" +
+      "?" +
+      $.param(param, true),
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).fail((result, status, error) => {
+    RequireResubmit[doc_type] = false
+    console.log("generate_url error : ",result);
+    let msg = result.responseJSON.msg;
+    RequiredDocs[doc_type] = (msg.includes("đã được upload trước đó"));
+    tata.error('Get url error',  msg, {
+      position: 'tl',animate: 'slide', duration: 2500
+    })
+  });
+}
+function put_file_s3(doc_type, url, file, file_name, doc_id = ""){
+  var form = new FormData();
+  form.append(doc_type, file, file_name);
+  var settings = {
+    "url": url,
+    "method": "PUT",
+    "timeout": 0,
+    "processData": false,
+    "mimeType": "multipart/form-data",
+    "contentType": false,
+    "data": form
+  };
+  $.ajax(settings).done(function (response) {
+    tata.info('Upload file success',  "", {
+      position: 'tl',animate: 'slide', duration: 2500
+    })
+    console.log(response);
+    RequiredDocs[doc_type] = true
+    RequireResubmit[doc_type] = doc_id
+  }).fail(function(res){
+    // alert("Push to s3 failed");
+    RequiredDocs[doc_type] = false
+    RequireResubmit[doc_type] = false
+    tata.error('Upload file fail',  res.toString(), {
+      position: 'tl',animate: 'slide', duration: 2500
+    })
+    console.log(res)
+});
+}
 function getCurrentDate(){
   let date_ob = new Date();
   let date = ("0" + date_ob.getDate()).slice(-2);
@@ -229,6 +297,75 @@ $(document).ready(() => {
 
   }
   $("input[name='simu_insurance']")[0].checked = true;
+  
+  $(document).on("click", "#submit_file_resubmit", function (e) {
+    var request_id = $("#request_id").val();
+    var phone_number = $("#full-loan-form input[name='phone_number']").val();
+    if (phone_number[0] == '0') {
+      phone_number = phone_number.slice(1, phone_number.length)
+    }
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
+      
+    var ls = $("input[mark='resubmit']")
+    for (let index = 0; index < ls.length; index++) {
+      let file_input = ls[index];
+      let files = file_input.files;
+      if (files.length == 0){
+        alert("Required all file input")
+          return;
+      }
+    }
+    for (let index = 0; index < ls.length; index++) {
+      let file_input = ls[index];
+      let file = file_input.files[0];
+      let file_type = file_input.getAttribute("file_type");
+      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+      generate_url(request_id,file_name,file_type, $("#contract_number").val()).done((result) => {
+        if (result.code != 0){
+          swal("Upload file fail!", result.msg, "error");
+          RequireResubmit[doc_type] = false
+          return;
+        }
+        let data = result.data;
+        let url = data.url;
+        let docs_id = data.doc_id;
+        put_file_s3(file_type,url,file,file_name, docs_id)
+      });
+    }
+  });
+  $(document).on("click", "#resubmit_btn", function (e) {
+    let list_docs = []
+    for (const [key, value] of Object.entries(RequireResubmit)) {
+      if (RequireResubmit[key]==false){
+        alert(key +" is not upload success");
+        return;
+      }
+      list_docs.push({
+        "doc_id": value,
+        "doc_type": key
+      })
+    }
+    var settings = {
+      "url": EC_PROD_API_URL+ "/los-united/v1/dsa/docs/resubmit",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify({
+        "request_id": $("#request_id").val(),
+        "contract_number": $("#contract_number").val(),
+        "doc_id_list": list_docs
+      }),
+    };
+    $.ajax(settings).done(function (response) {
+      alert("OK")
+      console.log(response);
+    }).fail(function (response) {
+      console.log(response);
+      alert("FAIL")
+    });
+  });
   $(document).on("click", "#submit_attachment", function (e) {
     e.preventDefault();
     const multiple_files = $(".MultiFile-applied.MultiFile");
@@ -255,60 +392,16 @@ $(document).ready(() => {
     attachments.forEach(function (file) {
       var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
       var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
-      var formData = new FormData();
-      formData.append("request_id", request_id);
-      formData.append("phone_number", "0" + phone_number);
-      formData.append("identity_number", identity_number);
-      formData.append("file_type", file_type);
-      formData.append("file", file);
-      var upload_status = true;
-      var settings = {
-        url: CRM_API_URL+"/v1/document/upload",
-      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
-        method: "POST",
-        timeout: 0,
-        processData: false,
-        mimeType: "multipart/form-data",
-        contentType: false,
-        data: formData,
-      };
-      $.ajax(settings)
-        .fail((result, status, error) => {
-          console.log("Submit_attachment failed: ",result);
-          let msg = "Please contact developer!";
-          isUploadedDocs[2] = false;
-          // AllowSelectOffer();
-          if (result.message !== undefined) {
-            msg = result.message;
-          }
-          if (result.responseText != undefined){
-              try {
-                  let err = JSON.parse(result.responseText);
-                  if (err.error != undefined){
-                    msg = err.error;
-                  }
-              } catch (error) {
-                  msg = result.responseText;
-              }
-          }
-          swal("Upload file fail!", msg, "error");
-        })
-        .success((result, status, error) => {
-          let resp = JSON.parse(result);
-          if (resp.status == "success") {
-            var doc = { file_type: resp.file_type, file_name: resp.file_name };
-            console.log("Upload success : ", doc)
-            list_doc_collecting.push(doc);
-            
-            isUploadedDocs[2] = true;
-            // AllowSelectOffer();
-            swal(
-              "Upload file success!",
-              "Upload attachment success",
-              "success"
-            );
-          }
-        });
+      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+      generate_url(request_id,file_name,"PIC").done((result) => {
+        if (result.code != 0){
+          swal("Upload file fail!", result.msg, "error");
+          return;
+        }
+        let data = result.data;
+        let url = data.url;
+        put_file_s3(file_type,url,file,file_name)
+      });
     });
   });
   $(document).on("click", "#submit_attachment2", function (e) {
@@ -538,63 +631,24 @@ $(document).ready(() => {
       sweetAlert("No img_selfie file to upload");
       return;
     }
-    // TEST 
-    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
-    // $("#identity_number").val("215491214");
-    // 
+    // •	[file_type]_[identity_card_id]_[phone_number]_[partner_code][timestamp]
     var request_id = $("#request_id").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var phone_number = $("#full-loan-form input[name='phone_number']").val();
-    if (phone_number[0] == '0') {
+    if (phone_number[0] = '0') {
       phone_number = phone_number.slice(1, phone_number.length)
     }
-    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
-    var formData = new FormData();
-    formData.append("request_id", request_id);
-    formData.append("file_type", "PIC");
-    formData.append("phone_number", "0" + phone_number);
-    formData.append("file", files[0]);
-    formData.append("identity_number", identity_number);
-    var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
-      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
-      method: "POST",
-      timeout: 0,
-      processData: false,
-      mimeType: "multipart/form-data",
-      contentType: false,
-      data: formData,
-    };
-    $.ajax(settings)
-      .fail((result, status, error) => {
-        console.log("Submit_img_selfie2",result);
-        isUploadedDocs[0] = false;
-        // AllowSelectOffer();
-        let msg = "Please contact developer!";
-        if (result.message !== undefined) {
-          msg = result.message;
+    let file_name = `PIC_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+    generate_url(request_id,file_name,"PIC").done((result) => {
+        if (result.code != 0){
+          swal("Upload file fail!", result.msg, "error");
+          return;
         }
-        if (result.responseText != undefined){
-          try {
-              let err = JSON.parse(result.responseText);
-              if (err.error != undefined){
-                msg = err.error;
-              }
-          } catch (error) {
-              msg = result.responseText;
-          }
-        }
-        swal("Upload file fail!", msg, "error");
-      })
-      .success((result, status, error) => {
-        let resp = JSON.parse(result);
-        console.log("Upload success : ", resp);
-        if (resp.status == "success") {
-          $("input[name='img_selfie2']")[0].value = resp.file_name;
-          isUploadedDocs[0] = true;
-          // AllowSelectOffer();
-          swal("OK!", "Upload Image Selfie Success", "success");
-        }
-      });
+        let data = result.data;
+        let url = data.url;
+        let docs_id = data.doc_id;
+        put_file_s3("PIC",url,files[0],file_name)
+    });
   });
   // Upload img_id_card
   $(document).on("click", "#submit_img_id_card2", function (e) {
@@ -604,66 +658,27 @@ $(document).ready(() => {
       sweetAlert("No img_id_card file to upload");
       return;
     }
-    // TEST
-    // $("#full-loan-form input[name='identity_card_id']").val("215491214");
-    // $("#identity_number").val("215491214");
-    // 
-    
     var request_id = $("#request_id").val();
+    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var phone_number = $("#full-loan-form input[name='phone_number']").val();
-    if (phone_number[0] == '0') {
+    if (phone_number[0] = '0') {
       phone_number = phone_number.slice(1, phone_number.length)
     }
-    var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
-    var formData = new FormData();
-    formData.append("request_id", request_id);
-    formData.append("file_type", "PID");
-    formData.append("phone_number", "0" + phone_number);
-    formData.append("file", files[0]);
-    formData.append("identity_number", identity_number);
-    var settings = {
-      url: CRM_API_URL+"/v1/document/upload",
-      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
-      method: "POST",
-      timeout: 0,
-      processData: false,
-      mimeType: "multipart/form-data",
-      contentType: false,
-      data: formData,
-    };
-    $.ajax(settings)
-      .fail((result, status, error) => {
-        console.log("Submit_img_id_card2",result);
-        isUploadedDocs[1] = false;
-        // AllowSelectOffer();
-        let msg = "Please contact developer!";
-        if (result.message !== undefined) {
-          msg = result.message;
+    let file_name = `PID_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+    generate_url(request_id,file_name,"PID").done((result) => {
+        if (result.code != 0){
+          // swal("Upload file fail!", result.msg, "error");
+          tata.error('Upload file fail',  result.msg, {
+            position: 'tl',animate: 'slide', duration: 2500
+          })
+          return;
         }
-        if (result.responseText != undefined){
-          try {
-              let err = JSON.parse(result.responseText);
-              if (err.error != undefined){
-                msg = err.error;
-              }
-          } catch (error) {
-              msg = result.responseText;
-          }
-        }
-        swal("Upload file fail!", msg, "error");
-      })
-      .success((result, status, error) => {
-        let resp = JSON.parse(result);
-        console.log("Upload success : ", resp);
-        if (resp.status == "success") {
-          $("input[name='img_id_card2']")[0].value = resp.file_name;
-          swal("OK!", "Upload Image ID Card Success", "success");
-          isUploadedDocs[1] = true;
-          // AllowSelectOffer();
-        }
-      });
+        let data = result.data;
+        let url = data.url;
+        let docs_id = data.doc_id;
+        put_file_s3("PID",url,files[0],file_name)
+    });
   });
-
   // 
   let fullLoanTab =
     '<li  style="border: 1px solid #b0b0b0ad;border-radius: 5px;font-family: Helvetica !important;font-size: large;" role="presentation" id="full_loan_tab_href">' +
@@ -681,6 +696,30 @@ let CreateOfferTab = function(){
   '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
   '<span class="fa fa-file-text-o hidden"></span>' +
   "Offer</a>" +
+  "</li>";
+$("#agent_tablist").append(offerTab);
+}
+let fill_file_requier = function(data){
+  let list_files = data.list_error_file;
+  $("#list_resubmit").html(``);
+  let b_html = ``;
+    for (let index = 0; index < list_files.length; index++) {
+      let element = list_files[index];
+      RequireResubmit[element.doc_type] = false
+      b_html += `
+      <div class="mda-form-group label-floating">
+        <label class="form_label" for="product_code">${element.doc_type}</label>
+        <input mark="resubmit" type="file" file_type="${element.doc_type}" style="color: black;background: transparent;width: 100%;"/>
+      </div>`
+    }
+  $("#list_resubmit").html(b_html);
+}
+let ResubmitTab = function(){
+  let offerTab =
+  '<li role="presentation" id="offer_tab_href">' +
+  '<a href="#resubmit" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
+  '<span class="fa fa-file-text-o hidden"></span>' +
+  "Resubmit</a>" +
   "</li>";
 $("#agent_tablist").append(offerTab);
 }
@@ -709,11 +748,27 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
   if (app_status == "VALIDATED") {
     CreateOfferTab();
     ajaxGetOffer(request_id).done((result) => {
-      if (result.data.document != undefined && result.data.document != null) {
+      if (result.data.offer_list != undefined && result.data.offer_list != null) {
         IsSuccessPolled = true;
-        offer = result.data.document;
-        offerList = offer.data.offer_list;
+        // offer = result.data.document;
+        offerList = result.data.offer_list;
+        proposal_id = result.data.proposal_id;
         SetOfferDetail(offerList);
+      }else{
+        proposal_id = "";
+      }
+    });
+  }else if(app_status == "RESUBMIT"){
+    RequireResubmit = {}
+    ResubmitTab()
+    ajaxGetDoc(request_id).done((result) => {
+      if (
+        result.data != undefined &&
+        result.data.document != undefined
+      ) {
+        let record = result.data.document.data;
+        $("#contract_number").val(record.contract_number);
+        fill_file_requier(record);
       }
     });
   }
@@ -1168,7 +1223,7 @@ $(document).on("click", "#submit-offer", function (e) {
 
   $.ajax({
     type: "POST",
-    url: EC_PROD_API_URL+"/los-united/v1/dsa/select-offer",
+    url: EC_PROD_API_URL+"/los-united/v2/dsa/select-offer",
     processData: true,
     data: JSON.stringify(offer_data),
     async: true,
@@ -1259,20 +1314,22 @@ $("#eligible_btn").on("click", (e) => {
     }
     let tem_province = $(".formMain input[name='province']").val();
     let job_type = $(".formMain input[name='job_type']").val();
-    date_of_birth = moment(date_of_birth, "YYYY-MM-DD").format("DD-MM-YYYY");
-    issue_date = moment(issue_date, "YYYY-MM-DD").format("DD-MM-YYYY");
+    let gender_v = $(".formMain select[name='gender']").val();
+    // date_of_birth = moment(date_of_birth, "YYYY-MM-DD").format("DD-MM-YYYY");
+    // issue_date = moment(issue_date, "YYYY-MM-DD").format("DD-MM-YYYY");
     let eligible_data = {
       lead_id: "" + lead_id,
       request_id: request_id,
       channel: "DSA",
       partner_code: partner_code,
       // dsa_agent_code: DSA_CODE,
-      identity_card_id: id_number,
+      identity_card: id_number,
       date_of_birth: date_of_birth,
       customer_name: customer_name,
       issue_date: issue_date,
       phone_number: phone_number,
       issue_place: id_place,
+      gender : gender_v
       // email: $(".formMain input[name='email']").val(),
       // tem_province: tem_province,
       // job_type: job_type,
@@ -1280,7 +1337,7 @@ $("#eligible_btn").on("click", (e) => {
     console.info("Eligible data: ",eligible_data);
     $.ajax({
       type: "POST",
-      url: EC_PROD_API_URL+"/ec/los-united/v1/dsa/basic-info",
+      url: EC_PROD_API_URL+"/los-united/v1/dsa/basic-info",
       processData: true,
       data: JSON.stringify(eligible_data),
       async: true,
@@ -1302,7 +1359,7 @@ $("#eligible_btn").on("click", (e) => {
         if (erro != undefined){
           swal(
             "Send eligible data fail!",
-            erro.error.error_message + "Please try again",
+            erro.body.message + "Please try again",
             "error"
           );
         }
@@ -1318,33 +1375,19 @@ $("#eligible_btn").on("click", (e) => {
         // TESTING
         if (result.body.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
-          let request_id = result.data.request_id;
+          let request_id = $(".formMain input[name='request_id']").val();
           updateRequestId(request_id, lead_id);
           SyncFullLoanFromAPI(lead_id);
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
           $("#full-loan-form input[name='term_confirm']").prop('checked', true);
         } else {
-          swal("Error!", result.message, "error");
+          swal("NOT ELIGIBLE!", result.body.message, "error");
         }
       });
   }
 });
-let getProductType = () => {
-  var docs_string = "";
-  var offder_product_names;
-  var offder_docs_string = "";
-  var uploaded_docs = ["SPID","SFRB"]
-  var product_names = `<div class="row">
-                          <div class="col-lg-12">
-                            <label style="font-size: large;">Chứng từ bắt buộc </label>
-                          </div>
-                        </div>`;
-  var offder_product_names = `<div class="row">
-  <div class="col-lg-12">
-    <label style="font-size: large;">Chứng từ bổ sung</label>
-  </div>
-</div>`;   
+let set_offer_upload_docs = () =>{
   for (var i = 0; i < selected_product.document_collecting.length; i++) {
     let is_uploaded_docs = false;
     let docs = selected_product.document_collecting[i];
@@ -1383,6 +1426,60 @@ let getProductType = () => {
       docs_string += " && ";
     }
   }
+}
+let getProductType = () => {
+  var docs_string = "";
+  var offder_product_names;
+  var offder_docs_string = "";
+  var uploaded_docs = ["SPID","SFRB"]
+  var product_names = `<div class="row">
+                          <div class="col-lg-12">
+                            <label style="font-size: large;">Chứng từ bắt buộc </label>
+                          </div>
+                        </div>`;
+  var offder_product_names = `<div class="row">
+  <div class="col-lg-12">
+    <label style="font-size: large;">Chứng từ bổ sung</label>
+  </div>
+</div>`;   
+  for (var i = 0; i < selected_product.document_collecting.length; i++) {
+    let is_uploaded_docs = false;
+    let docs = selected_product.document_collecting[i];
+    tmp_product_names = "";
+    tmp_product_names += `<div class="row">`;
+    tmp_product_names += `
+    <div class="col-lg-12">
+      <label>${i + 1}/ ${docs.bundle_code} -  ${docs.bundle_name} . Tối thiểu: ${docs.min_request} loại giấy tờ</label>
+    </div>`;
+    let tmp_string = "[";
+    for (var j = 0; j < docs.doc_list.length; j++) {
+      tmp_string += docs.doc_list[j].doc_type;
+      if (uploaded_docs.includes(docs.doc_list[j].doc_type))
+      {
+        is_uploaded_docs = true;
+      }
+      tmp_product_names += `
+        <div class="col-lg-12">
+          <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_description_vi}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
+        </div>
+      `
+      if (j != docs.doc_list.length - 1) {
+        tmp_string += "|";
+      }
+    }
+    tmp_string += "]";
+    docs_string += tmp_string;
+
+    tmp_product_names += `</div><hr style="margin : 10px">`;
+    product_names+= tmp_product_names;
+    if (!is_uploaded_docs){
+      offder_product_names+= tmp_product_names.replace("1/ ","- ").replace("2/ ","- ").replace("3/ ","- ")
+    }
+    // offder_product_names += `</div><hr style="margin : 10px">`;
+    if (i != selected_product.document_collecting.length - 1) {
+      docs_string += " && ";
+    }
+  }
   $("input[name='product_required_document']").val(docs_string);
   $("#product_name_detail").empty();
   $("#product_name_detail")[0].innerHTML = product_names;
@@ -1393,6 +1490,14 @@ let getProductType = () => {
 let validateFullloan = () => {
   let check = true;
   let msg = "";
+  if (RequiredDocs["PIC"] == false){
+    check = false;
+    msg += "Chua up PIC\n";
+  }
+  if (RequiredDocs["PID"] == false){
+    check = false;
+    msg += "Chua up PID\n";
+  }
   $("#full-loan-form").find('input:required').each(function () {
     let element = $(this);
     if (element[0].validationMessage != "") {
@@ -1612,7 +1717,7 @@ let ajaxGetOffer = (request_id) => {
   // request_id = "SPO1610530540234"
   return $.ajax({
     type: "GET",
-    url: TEL4VN_API_URL + `/v1/offer/${request_id}`,
+    url: EC_PROD_API_URL + `/los-united/v1/dsa/offers?request_id=${request_id}`,
     async: true,
     dataType: "json",
     headers: {
@@ -1623,6 +1728,20 @@ let ajaxGetOffer = (request_id) => {
   });
 };
 
+let ajaxGetDoc = (request_id) => {
+  // TEST
+  return $.ajax({
+    type: "GET",
+    url: TEL4VN_API_URL + `/tel4vn/v1/resubmit/${request_id}`,
+    async: true,
+    dataType: "json",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).fail((result, status, error) => {
+    console.log("ajaxGetOffer",result);
+  });
+};
 let ajaxGetStatus = (lead_id) => {
   return $.ajax({
     type: "GET",
@@ -2155,7 +2274,7 @@ $("#full-loan-form").on("submit", (e) => {
   $("#offer-waiting").attr("hidden", false);
   // post to EC
   $.ajax({
-    url: EC_PROD_API_URL+"/los-united/v1/dsa/send-loan-application",
+    url: EC_PROD_API_URL+"/los-united/v2/dsa/send-loan-application",
     method: "POST",
     timeout: 0,
     headers: {
