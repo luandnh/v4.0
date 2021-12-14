@@ -264,7 +264,7 @@ $(document).ready(() => {
       var upload_status = true;
       var settings = {
         url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -346,7 +346,7 @@ $(document).ready(() => {
       var upload_status = true;
       var settings = {
         url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -421,7 +421,7 @@ $(document).ready(() => {
     formData.append("identity_number", identity_number);
     var settings = {
       url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -488,7 +488,7 @@ $(document).ready(() => {
     formData.append("identity_number", identity_number);
     var settings = {
       url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",0
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",0
       method: "POST",
       timeout: 0,
       processData: false,
@@ -556,7 +556,7 @@ $(document).ready(() => {
     formData.append("identity_number", identity_number);
     var settings = {
       url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -623,7 +623,7 @@ $(document).ready(() => {
     formData.append("identity_number", identity_number);
     var settings = {
       url: CRM_API_URL+"/v1/document/upload",
-      // url: "https://ec-api-dev.tel4vn.com/v1/document/upload",
+      // url: "http://ec-api-dev.tel4vn.com/v1/document/upload",
       method: "POST",
       timeout: 0,
       processData: false,
@@ -749,8 +749,14 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
 let ECProducts = null;
 
 let ajaxGetECProducts = (partner_code, request_id) => {
+  console.log({
+    request_id: request_id,
+    channel: "DSA",
+    partner_code: partner_code,
+    product_line: "BUSINESS",
+  });
   return $.ajax({
-    url: EC_PROD_API_URL+"/api/loanServices/v1/product-list",
+    url: EC_PROD_API_URL+"/los-united/v1/product-list",
     method: "POST",
     timeout: 0,
     headers: {
@@ -1162,7 +1168,7 @@ $(document).on("click", "#submit-offer", function (e) {
 
   $.ajax({
     type: "POST",
-    url: EC_PROD_API_URL+"/api/loanRequestServices/v1/dsa/select-offer",
+    url: EC_PROD_API_URL+"/los-united/v1/dsa/select-offer",
     processData: true,
     data: JSON.stringify(offer_data),
     async: true,
@@ -1260,21 +1266,21 @@ $("#eligible_btn").on("click", (e) => {
       request_id: request_id,
       channel: "DSA",
       partner_code: partner_code,
-      dsa_agent_code: DSA_CODE,
+      // dsa_agent_code: DSA_CODE,
       identity_card_id: id_number,
       date_of_birth: date_of_birth,
       customer_name: customer_name,
       issue_date: issue_date,
       phone_number: phone_number,
       issue_place: id_place,
-      email: $(".formMain input[name='email']").val(),
-      tem_province: tem_province,
-      job_type: job_type,
+      // email: $(".formMain input[name='email']").val(),
+      // tem_province: tem_province,
+      // job_type: job_type,
     };
     console.info("Eligible data: ",eligible_data);
     $.ajax({
       type: "POST",
-      url: EC_PROD_API_URL+"/api/eligibleService/v1/eligible/check",
+      url: EC_PROD_API_URL+"/ec/los-united/v1/dsa/basic-info",
       processData: true,
       data: JSON.stringify(eligible_data),
       async: true,
@@ -1290,8 +1296,8 @@ $("#eligible_btn").on("click", (e) => {
         let msg = "Please contact developer!";
         request_id = partner_code + Date.now().toString();
         $(".formMain input[name='request_id']").val(request_id);
-        if (result.message !== undefined) {
-          msg = result.message;
+        if (result.body !== undefined) {
+            msg = result.body.message;
         }
         if (erro != undefined){
           swal(
@@ -1310,7 +1316,7 @@ $("#eligible_btn").on("click", (e) => {
       })
       .done((result) => {
         // TESTING
-        if (result.code == "ELIGIBLE") {
+        if (result.body.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
           let request_id = result.data.request_id;
           updateRequestId(request_id, lead_id);
@@ -2149,7 +2155,7 @@ $("#full-loan-form").on("submit", (e) => {
   $("#offer-waiting").attr("hidden", false);
   // post to EC
   $.ajax({
-    url: EC_PROD_API_URL+"/api/loanRequestServices/v1/dsa/send-loan-application",
+    url: EC_PROD_API_URL+"/los-united/v1/dsa/send-loan-application",
     method: "POST",
     timeout: 0,
     headers: {
