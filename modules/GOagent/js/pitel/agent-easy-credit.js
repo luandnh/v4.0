@@ -1945,6 +1945,7 @@ let SyncFullLoanFromContact = () => {
     $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='alt_identity_number']").val()).trigger("change");
     $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='alt_identity_issued_on']").val()).trigger("change");
     $("#full-loan-form select[name='issue_place']").val($(".formMain select[name='alt_identity_issued_by']").val()).trigger("change").selectpicker("refresh");
+    $("#full-loan-form input[name='identity_card_id_other']").val($(".formMain input[name='identity_number']").val()).trigger("change");
   } else{
     $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='identity_number']").val()).trigger("change");
     $("#full-loan-form input[name='issue_date']").val($(".formMain input[name='identity_issued_on']").val()).trigger("change");
