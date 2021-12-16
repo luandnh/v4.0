@@ -613,10 +613,16 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xl-12 col-lg-12">
+                                    <div class="col-xl-6 col-lg-6">
                                         <div class="mda-form-group label-floating">
                                             <input readonly type="text" name="identity_card_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
                                             <label class="form_label" for="identity_card_id"><?= $lh->translationFor('identity_card_id') ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="mda-form-group label-floating">
+                                            <input readonly type="text" name="identity_card_id_other" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                            <label class="form_label" for="identity_card_id_other"><?= $lh->translationFor('identity_card_id') ?> thay thế</label>
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-lg-12">
@@ -965,6 +971,22 @@
                                             <h3 class="text-light-blue">
                                                 Thu nhập của bạn
                                             </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12">
+                                        <div class="mda-form-group label-floating">
+                                            <input type="text" name="other_ref" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <label class="form_label" for="other_ref">Mã số khác</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12">
+                                        <div class="mda-form-group label-floating">
+                                            <input type="text" name="scoring" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <label class="form_label" for="scoring">Điểm tín dụng</label>
                                         </div>
                                     </div>
                                 </div>
