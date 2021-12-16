@@ -1539,22 +1539,22 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="row">
-                        <div class="card">
-                            <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
-                                <strong>DANH SÁCH TÌM THẤY</strong>
-                            </div>
-                            <div class="card-body">
-                                <!-- CUSTOMER INFO -->
-                                <div class="row" id="debt_customer_list">
-                                    <div class="col-sm-5"><label>Mã hợp đồng</label></div>
-                                    <div class="col-sm-7">
-                                        <select name="exist_contract_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled">
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-5"><label>Mã khách hàng</label></div>
-                                    <div class="col-sm-7"><input name="exist_cust_id" readonly type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
+                            <strong>TÌM KIẾM HỢP ĐỒNG</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- CUSTOMER INFO -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input name="debt_phone_number"  type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                 </div>
+                                <div class="col-sm-6">
+                                    <input name="debt_id_card"  type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                </div>
+                                <div class="col-sm-12"><button id="search-debt" style="background:#1c4694; width:100%;font-family: Helvetica !important;" class="btn btn-sm btn-success float-right" type="button">Tìm kiếm</button></div>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -1567,9 +1567,9 @@
                             <div class="row" id="customer_info">
                                 <div hidden class="col-sm-4"><label>Cust_ID</label></div>
                                 <div hidden class="col-sm-8"><input name="cust_id" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
-                                
-                                <div  class="col-sm-4"><label>Request ID</label></div>
-                                <div  class="col-sm-8"><input name="request_id" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+
+                                <div class="col-sm-4"><label>Request ID</label></div>
+                                <div class="col-sm-8"><input name="request_id" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <!--  -->
                                 <div class="col-sm-4"><label>Họ và tên</label></div>
                                 <div class="col-sm-8"><input name="full_name" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
@@ -1659,6 +1659,25 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
+                            <strong>DANH SÁCH TÌM THẤY</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- CUSTOMER INFO -->
+                            <div class="row" id="debt_customer_list">
+                                <div class="col-sm-5"><label>Mã hợp đồng</label></div>
+                                <div class="col-sm-7">
+                                    <select name="exist_contract_number" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled">
+                                    </select>
+                                </div>
+                                <div class="col-sm-5"><label>Mã khách hàng</label></div>
+                                <div class="col-sm-7"><input name="exist_cust_id" readonly type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><span style="margin-right: 10px;"><i class="fa fa-briefcase"></i></span>
                             <strong>YÊU CẦU CƠ CẤU</strong>
                         </div>
                         <div class="card-body">
@@ -1693,7 +1712,7 @@
                                 <div class="col-sm-5"><label>Ngày quá hạn hiện tại(lịch)</label></div>
                                 <div class="col-sm-7"><input name="dpd_vas" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Tiền thanh toán hàng tháng</label></div>
-                                <div class="col-sm-7"><input  tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-7"><input tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Nhóm nợ nội bộ</label></div>
                                 <div class="col-sm-7"><input name="bucket" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                             </div>
@@ -1715,7 +1734,7 @@
                                 <!--  -->
                                 <div class="col-sm-12">
                                     <div class="row">
-                                        
+
                                         <div style="padding: 0px 10px;margin-bottom: 5px;" class="col-sm-4">
                                             <div class="mda-form-group label-floating" style="padding:22px 0px 0px 0px">
                                                 <select name="company_province" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" style="height:30px!important">
@@ -1746,11 +1765,11 @@
                                 <div class="col-sm-5"><label>Địa chỉ chi tiết công ty hiện tại</label></div>
                                 <div class="col-sm-7"><input name="company_address" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Thu nhập chính hiện tại</label></div>
-                                <div class="col-sm-7"><input  tag="currency2"  name="monthly_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-7"><input tag="currency2" name="monthly_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Chi phí hiện tại</label></div>
-                                <div class="col-sm-7"><input  tag="currency2"  name="monthly_expense" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-7"><input tag="currency2" name="monthly_expense" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Thu nhập khác hiện tại</label></div>
-                                <div class="col-sm-7"><input  tag="currency2"  name="other_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-7"><input tag="currency2" name="other_income" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <!-- DOC -->
                                 <div class="col-sm-12"><label>Cung cấp chứng từ</label></div>
                                 <div class="col-sm-12">
