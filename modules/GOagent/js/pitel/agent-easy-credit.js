@@ -32,9 +32,14 @@ function generate_url(request_id,file_name,doc_type, proposal_id = ""){
     console.log("generate_url error : ",result);
     let msg = result.responseJSON.msg;
     RequiredDocs[doc_type] = (msg.includes("đã được upload trước đó"));
-    tata.error('Get url error',  msg, {
-      position: 'tl',animate: 'slide', duration: 2500
-    })
+    if (msg.includes("đã được upload trước đó")){
+      tata.info('Đã gửi',  msg, {
+        position: 'tl',animate: 'slide', duration: 2500
+      })
+    }else{
+      tata.error('Không thành công',  msg, {
+        position: 'tl',animate: 'slide', duration: 2500
+      })}
   });
 }
 function put_file_s3(doc_type, url, file, file_name, doc_id = ""){
@@ -319,7 +324,7 @@ $(document).ready(() => {
       let file_input = ls[index];
       let file = file_input.files[0];
       let file_type = file_input.getAttribute("file_type");
-      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL${Date.now().toString()}.pdf`
       generate_url(request_id,file_name,file_type, $("#contract_number").val()).done((result) => {
         if (result.code != 0){
           swal("Upload file fail!", result.msg, "error");
@@ -392,8 +397,8 @@ $(document).ready(() => {
     attachments.forEach(function (file) {
       var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
       var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
-      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
-      generate_url(request_id,file_name,"PIC").done((result) => {
+      let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL${Date.now().toString()}.pdf`
+      generate_url(request_id,file_name,file_type,$("#contract_number").val()).done((result) => {
         if (result.code != 0){
           swal("Upload file fail!", result.msg, "error");
           return;
@@ -635,10 +640,10 @@ $(document).ready(() => {
     var request_id = $("#request_id").val();
     var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var phone_number = $("#full-loan-form input[name='phone_number']").val();
-    if (phone_number[0] = '0') {
+    if (phone_number[0] == '0') {
       phone_number = phone_number.slice(1, phone_number.length)
     }
-    let file_name = `PIC_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+    let file_name = `PIC_${identity_number}_0${phone_number}_TEL${Date.now().toString()}.pdf`
     generate_url(request_id,file_name,"PIC").done((result) => {
         if (result.code != 0){
           swal("Upload file fail!", result.msg, "error");
@@ -661,10 +666,10 @@ $(document).ready(() => {
     var request_id = $("#request_id").val();
     var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
     var phone_number = $("#full-loan-form input[name='phone_number']").val();
-    if (phone_number[0] = '0') {
+    if (phone_number[0] == '0') {
       phone_number = phone_number.slice(1, phone_number.length)
     }
-    let file_name = `PID_${identity_number}_0${phone_number}_TEL_${Date.now().toString()}.pdf`
+    let file_name = `PID_${identity_number}_0${phone_number}_TEL${Date.now().toString()}.pdf`
     generate_url(request_id,file_name,"PID").done((result) => {
         if (result.code != 0){
           // swal("Upload file fail!", result.msg, "error");
@@ -753,6 +758,7 @@ let ECShowProducts = (partner_code, request_id, app_status, status, call_status,
         // offer = result.data.document;
         offerList = result.data.offer_list;
         proposal_id = result.data.proposal_id;
+        $("#contract_number").val(proposal_id);
         SetOfferDetail(offerList);
       }else{
         proposal_id = "";
@@ -1998,6 +2004,15 @@ function clearForm($form) {
     list_docs[index].click();
   }
   list_doc_collecting = [];
+  RequireResubmit = {}
+  proposal_id = ""
+  $("#contract_number").val("");
+  isUploadPIC = false;
+  isUploadPID = false;
+  RequiredDocs = {
+    "PID" : false,
+    "PIC" : false
+  }
 }
 
 function SetProductListForm() {
@@ -2269,6 +2284,7 @@ $("#full-loan-form").on("submit", (e) => {
     form_data.phone_number = form_data.phone_number.slice(1, form_data.phone_number.length)
   }
   form_data.phone_number = "0"+form_data.phone_number
+  form_data.lead_code = $("#vendor_lead_code").val();
   let post_data = JSON.stringify(form_data);
   console.log("Fullloan data : ", form_data);
   $("#offer-waiting").attr("hidden", false);
