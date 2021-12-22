@@ -7,6 +7,13 @@ var RequiredDocs = {
   "PID" : false,
   "PIC" : false
 }
+function get_main_phone_number(){
+  let alt_phone =  $(".formMain input[name='alt_phone']").val();
+  if (alt_phone == "" || alt_phone == undefined){
+    return $(".formMain input[name='phone_number']").val();
+  }
+  return alt_phone;
+}
 function generate_url(request_id,file_name,doc_type, proposal_id = ""){
   let param = {
     file_name: file_name,
@@ -1264,6 +1271,7 @@ $(document).on("click", "#scSubmit", function (e){
     ajaxGetECProducts("TEL","TEL123456789");
 });
 $("#eligible_btn").on("click", (e) => {
+  $("#eligible_btn").attr("disabled", true);
   $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   e.preventDefault();
   let app_status = $(".formMain input[name='app_status']").val();
@@ -1294,9 +1302,7 @@ $("#eligible_btn").on("click", (e) => {
     customer_name = customer_name.replace("  "," ")
     let phone_code = $(".formMain input[name='phone_code']").val();
     if (phone_code == "") {phone_code = "0"};
-    let phone_number =
-       phone_code+
-      $(".formMain input[name='phone_number']").val();
+    let phone_number = phone_code+ get_main_phone_number();
     let date_of_birth = $(".formMain input[name='date_of_birth']").val();
     // 
     let issue_date = $(".formMain input[name='identity_issued_on']").val();
@@ -1348,11 +1354,10 @@ $("#eligible_btn").on("click", (e) => {
       },
     })
       .fail((result, status, error) => {
+        $("#eligible_btn").attr("disabled", false);
         console.log("Eligible failed: ",result);
         var erro = result.responseJSON;
         let msg = "Please contact developer!";
-        request_id = partner_code + Date.now().toString();
-        $(".formMain input[name='request_id']").val(request_id);
         if (result.body !== undefined) {
             msg = result.body.message;
         }
@@ -1372,6 +1377,7 @@ $("#eligible_btn").on("click", (e) => {
         }
       })
       .done((result) => {
+        $("#eligible_btn").attr("disabled", false);
         // TESTING
         if (result.body.code == "ELIGIBLE") {
           swal("Success", result.message, "success");
@@ -1381,8 +1387,12 @@ $("#eligible_btn").on("click", (e) => {
           $("#full-loan-form select[name='employment_type']").trigger('change');
           $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
           $("#full-loan-form input[name='term_confirm']").prop('checked', true);
-        } else {
+        } else if (result.body.code == "NOT_ELIGIBLE") {
+          request_id = partner_code + Date.now().toString();
+          $(".formMain input[name='request_id']").val(request_id);
           swal("NOT ELIGIBLE!", result.body.message, "error");
+        }else{
+          swal("SOMETHING ERROR", result.body.message, "error");
         }
       });
   }
@@ -1609,6 +1619,7 @@ let SyncFullLoanFromAPI = (request_id) => {
           moment(document["date_of_birth"], "DD-MM-YYYY").format("YYYY-MM-DD")
         );
         // 
+        $("#full-loan-form input[name='phone_number']").val("0"+get_main_phone_number())
         $("#full-loan-form input[name='issue_date']")
           .val($(".formMain input[name='identity_issued_on']").val())
           .trigger("change");
@@ -1836,11 +1847,7 @@ let SyncFullLoanFromContact = () => {
     customer_name = customer_name.trim();
     customer_name = customer_name.replace("  "," ")
   let phone_number =
-    $(".formMain input[name='phone_code']").val() +
-    $(".formMain input[name='phone_number']").val();
-  if ($(".formMain input[name='alt_phone']").val()){
-    phone_number = $(".formMain input[name='alt_phone']").val();
-  }
+    $(".formMain input[name='phone_code']").val() +get_main_phone_number();
   tmp_data = {
     request_id: $(".formMain input[name='request_id']").val(),
     partner_code: $(".formMain input[name='partner_code']").val(),
@@ -2270,6 +2277,7 @@ $("#full-loan-form").on("submit", (e) => {
     form_data.phone_number = form_data.phone_number.slice(1, form_data.phone_number.length)
   }
   form_data.phone_number = "0"+form_data.phone_number
+  form_data.lead_code = $("#vendor_lead_code").val();
   let post_data = JSON.stringify(form_data);
   console.log("Fullloan data : ", form_data);
   $("#offer-waiting").attr("hidden", false);
