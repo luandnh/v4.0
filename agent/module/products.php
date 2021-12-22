@@ -977,7 +977,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="other_ref" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input type="text" name="other_ref" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
                                             <label class="form_label" for="other_ref">Mã số khác</label>
                                         </div>
                                     </div>
@@ -985,7 +985,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12">
                                         <div class="mda-form-group label-floating">
-                                            <input type="text" name="scoring" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>
+                                            <input type="text" name="scoring" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
                                             <label class="form_label" for="scoring">Điểm tín dụng</label>
                                         </div>
                                     </div>
