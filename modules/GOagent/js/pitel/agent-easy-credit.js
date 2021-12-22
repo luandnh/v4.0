@@ -7,6 +7,14 @@ var RequiredDocs = {
   "PID" : false,
   "PIC" : false
 }
+function get_select_options(id_name){
+  var ddlArray= new Array();
+  var ddl = document.getElementById(id_name);
+  for (i = 0; i < ddl.options.length; i++) {
+    ddlArray[i] = ddl .options[i].value;
+  }
+  return ddlArray;
+}
 function get_main_phone_number(){
   let alt_phone =  $(".formMain input[name='alt_phone']").val();
   if (alt_phone == "" || alt_phone == undefined){
@@ -1196,14 +1204,23 @@ let SyncCustomerInfomation = (thisVdata) => {
 };
 
 $(document).on("click", "#mapping_af1", function (e) {
+  let existed_basic_id = get_select_options("basic_request_id");
+  if (existed_basic_id.includes(request_id)==false || $("#request_id").val() == ""){
+    swal("Không thành công", "RequestID chưa check basic info", "error");
+    return;
+  }
+  SyncFullLoanFromContact()
   tata.info('Đã map',  "Information --> AF1", {
     position: 'tl',animate: 'slide', duration: 2500
   })
-  SyncFullLoanFromContact()
 });
 
 $(document).on("click", "#change_request_btn", function (e) {
   let tmp = "TEL"+ Date.now().toString();
+  $(".formMain input[name='request_id']").val(tmp);
+});
+$(document).on("click", "#select_request_btn", function (e) {
+  let tmp = $("#basic_request_id")[0].value;
   $(".formMain input[name='request_id']").val(tmp);
 });
 $(document).on("click", "#btn-application", function (e) {
@@ -1276,6 +1293,9 @@ $(document).on("click", "#scSubmit", function (e){
     ajaxGetECProducts("TEL","TEL123456789");
 });
 $("#eligible_btn").on("click", (e) => {
+  // 
+
+  // 
   $("#eligible_btn").attr("disabled", true);
   $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
   e.preventDefault();
@@ -1291,6 +1311,16 @@ $("#eligible_btn").on("click", (e) => {
     let request_id = $(".formMain input[name='request_id']").val();
     if (request_id == "") {
       request_id = partner_code + Date.now().toString();
+    }
+    let existed_basic_id = get_select_options("basic_request_id");
+    if (existed_basic_id.includes(request_id)==true){
+      swal(
+        "RequestID đã tồn tại.",
+        "Vui lòng đổi requestID mới",
+        "error"
+      );
+      $("#eligible_btn").attr("disabled", false);
+      return;
     }
     let first_name = $(".formMain input[name='first_name']").val();
     let middle_initial = $(".formMain input[name='middle_initial']").val();
@@ -2320,6 +2350,8 @@ function updateRequestId(request_id, lead_id) {
   }).done((update_result) => {
     // $("#submit-full-loan")[0].disabled = false;
     swal("Success", "Update request_id success", "success");
+    let tmp = $(".formMain select[name='basic_request_id']").html();
+              $(".formMain select[name='basic_request_id']").html(tmp+`<option value='${request_id}' selected>${request_id}</option>`)
   });
 }
 let IsSuccessPolled = false;

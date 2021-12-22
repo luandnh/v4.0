@@ -880,27 +880,37 @@ input:checked + .slider:before {
 													</div>
 												</div>
 												<div class="row">
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="first_name" name="first_name" type="text" maxlength="30"  value="<?php echo $first_name;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
 															<label for="first_name"><?=$lh->translationFor('first_name')?></label>
 														</div>
 													</div>
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="middle_initial" name="middle_initial" type="text" maxlength="30" value="<?php echo $middle_initial;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 															<label for="middle_initial"><?=$lh->translationFor('middle_initial')?></label>
 														</div>
 													</div>
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="last_name" name="last_name" type="text" maxlength="30" value="<?php echo $last_name;?>"
 																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
 															<label for="last_name"><?=$lh->translationFor('last_name')?></label>
 														</div>
 													</div>
+													<div class="col-sm-3">
+															<div class="mda-form-group label-floating">
+																<select id="gender" name="gender" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" disabled>
+																	<option disabled value=""<?php if ($gender != 'M' && $gender != 'F') { echo " selected"; }?>></option>
+																	<option value="M"<?php if ($gender == 'M') { echo " selected"; }?>><?=$lh->translationFor('male')?></option>
+																	<option value="F"<?php if ($gender == 'F') { echo " selected"; }?>><?=$lh->translationFor('female')?></option>
+																</select>
+																<label for="gender"><?=$lh->translationFor('gender')?></label>
+															</div>
+														</div>
 												</div>
 												</form>
 												
@@ -1009,36 +1019,43 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
-																<select id="gender" name="gender" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" disabled>
-																	<option disabled value=""<?php if ($gender != 'M' && $gender != 'F') { echo " selected"; }?>></option>
-																	<option value="M"<?php if ($gender == 'M') { echo " selected"; }?>><?=$lh->translationFor('male')?></option>
-																	<option value="F"<?php if ($gender == 'F') { echo " selected"; }?>><?=$lh->translationFor('female')?></option>
-																</select>
-																<label for="gender"><?=$lh->translationFor('gender')?></label>
-															</div>
-														</div>
-														<div class="col-sm-3">
-															<div class="mda-form-group label-floating">
 																<input type="date" id="date_of_birth" value="" name="date_of_birth" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
 																<label for="date_of_birth"><?=$lh->translationFor('date_of_birth')?></label>
 															</div>
 														</div>
-														<div class="col-sm-2" hidden>
+														<div class="col-sm-3" hidden>
 															<div class="mda-form-group label-floating">
 																<input id="partner_code" name="partner_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" readonly>
 																<label required for="partner_code"><?php $lh->translateText("partner_code"); ?></label>
 															</div>
 														</div>
-														<div class="col-sm-2">
+														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
 																<input readonly id="vendor_lead_code" name="vendor_lead_code" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
 																<label for="vendor_lead_code"><?php $lh->translateText("vendor_lead_code"); ?></label>
 															</div>
 														</div>
-														<div class="col-sm-4">
+														<div class="col-sm-2">
 															<div class="mda-form-group label-floating">
 																<input readonly required id="request_id" name="request_id" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" >
 																<label for="request_id">Mã yêu cầu</label>
+															</div>
+														</div>
+														<div class="col-sm-1">
+															<div class="mda-form-group label-floating">
+																	<button style="margin:5px 0px" data-toggle="tooltip" data-placement="bottom" title="Change Request ID" type="button" name="change_request" id="change_request_btn" class="btn btn-primary btn-block btn-flat">Thay đổi</button>
+															</div>
+														</div>
+														<div class="col-sm-2">
+															<div class="mda-form-group label-floating">
+																<select id="basic_request_id" name="basic_request_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" >
+																</select>
+																<label for="gender">RequestID đã check</label>
+															</div>
+														</div>
+														<div class="col-sm-1">
+															<div class="mda-form-group label-floating">
+															<button style="margin:5px 0px" data-toggle="tooltip" data-placement="bottom" title="Select Request ID" type="button" name="select_request" id="select_request_btn" class="btn btn-primary btn-block btn-flat">Chọn</button>
 															</div>
 														</div>
 													</div>
@@ -1230,7 +1247,14 @@ input:checked + .slider:before {
 													
 												</form>
 												<div id="hide_div_eligible" style="display: none;">
-													<button data-toggle="tooltip" data-placement="bottom" title="Check Eligile" type="button" name="eligible_btn" id="eligible_btn" class="btn btn-warning btn-block btn-flat"><?= $lh->translationFor('eligible') ?></button>
+													<button data-toggle="tooltip" data-placement="bottom" title="Check Eligile" type="button" name="eligible_btn" id="eligible_btn" class="btn btn-warning btn-block btn-flat">CHECK BASIC INFO</button>
+												</div>
+												<div class="row">
+													<div class="col-sm-12">	
+														<button data-toggle="tooltip" data-placement="bottom" title="Mapping" type="button" name="mapping_af1" id="mapping_af1" class="btn btn-warning btn-block btn-flat">Map Information To AF1</button>
+													</div>
+													<!-- <div class="col-sm-6">
+													</div> -->
 												</div>
 												</form>
 													<div id="call_notes_content" class="col-sm-12">
