@@ -189,7 +189,7 @@ $upass = htmlentities($upass);
 	</div><!-- /.login-box -->
 	</center>
 	<footer>
-		<div style="text-align: center; font-weight: 600; margin-top: -40px;">Copyright &copy; <?= date("Y") ?> <a href="https://tongdaivoip.com" target="_blank">PITEL</a> All rights reserved.</div>
+		<div style="text-align: center; font-weight: 600; margin-top: -40px;">Copyright &copy; <?= date("Y") ?> <a href="https://tongdaivoip.com" target="_blank">TEL4VN</a> All rights reserved.</div>
 	</footer>
 	<!--<div class="margin text-center">
         <span><?php $lh->translateText("never_heard_of_creamy"); ?></span>

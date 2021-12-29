@@ -14,7 +14,7 @@
  *
  *  This program is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See theFirst Name
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Affero General Public License for more details.
  *
  *  You should have received a copy of the GNU Affero General Public License
@@ -94,7 +94,7 @@ $user_info = $api->API_getUserInfo($_SESSION['user'], "userInfo");
 
 // ECCS Customization
 if(ECCS_BLIND_MODE != "y"){
-	$html_title = CRM_GOAGENT_TITLE;
+	$html_title = CRM_GOAGENT_TITLE." - ".$lh->translationFor('GOautodial')." " .CRM_GO_VERSION;
 }else{
 	$html_title = "ECCS | Agent";
 }
@@ -148,7 +148,7 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 <html>
     <head>
         <meta charset="UTF-8">
-       <!-- <title><?=CRM_GOAGENT_TITLE?></title> -->
+       <!-- <title><?=CRM_GOAGENT_TITLE?> - <?=$lh->translateText('GOautodial')." ".CRM_GO_VERSION?></title> -->
 	<!-- ECCS Customization -->
 	<title><?php echo $html_title; ?></title>
 	<!-- /.ECCS Customization -->
@@ -770,7 +770,7 @@ input:checked + .slider:before {
 												<!--ADDRESS3-->
 												<input type="hidden" value="<?php echo $address3;?>" name="address3">
 												
-												<div  style="display:none" class="row">
+												<div class="row">
 													<div class="col-sm-4">
 														<div class="mda-form-group label-floating">
 															<input id="first_name" name="first_name" type="text" maxlength="30"  value="<?php echo $first_name;?>"
@@ -820,7 +820,7 @@ input:checked + .slider:before {
 													</div>
 													<!-- /.phonenumber & alt phonenumber -->
 													<!-- address1 & address2 -->
-													<div style="display:none"  class="row">
+													<div class="row">
 														<div class="col-xl-12 col-lg-6">
 															<div class="mda-form-group label-floating">
 																<input id="address1" name="address1" type="text" maxlength="100" width="auto" value="<?php echo $address1;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
@@ -837,7 +837,7 @@ input:checked + .slider:before {
 														</div>
 													</div>
 													<!-- /.address1 & address2 -->
-													<div style="display:none"  class="row">
+													<div class="row">
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
 																<input id="city" name="city" type="text" maxlength="50" value="<?php echo $city;?>" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
@@ -860,7 +860,7 @@ input:checked + .slider:before {
 													<!-- /.city,state,postalcode -->
 												
 	 												<!-- country_code & email -->
-                                                                                                        <div  style="display:none"  class="row">
+                                                                                                        <div class="row">
                                                                                                                 <div class="col-xl-12 col-lg-6">
 															<div class="mda-form-group label-floating">
 																<select id="country_code" name="country_code" type="text" maxlength="3"	class="mda-form-control select2 ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select input-disabled" title="<?=$lh->translationFor('select_country_code')?>" disabled>
@@ -881,7 +881,7 @@ input:checked + .slider:before {
 													</div>
 													<!-- /.country_code & email -->
 												</form> 
-												<form style="display:none" role="form" id="gender_form" class="formMain form-inline" >
+												<form role="form" id="gender_form" class="formMain form-inline" >
 													<div class="row">
 														<div class="col-sm-3">
 															<div class="mda-form-group label-floating">
@@ -908,7 +908,7 @@ input:checked + .slider:before {
 														</div>
 													</div>
 													<!-- /.gender & title -->
-												<form  style="display:none"  role="form" id="vendor_form" class="formMain form-inline">
+												<form role="form" id="vendor_form" class="formMain form-inline">
 													<div class="row">
 														<!-- <div class="col-sm-4">
 															<div class="mda-form-group label-floating">
@@ -930,7 +930,7 @@ input:checked + .slider:before {
 														</div> -->
 													</div>
 												</form>
-												<form  style="display:none"   role="form" id="identity_form" class="formMain form-inline">
+												<form role="form" id="identity_form" class="formMain form-inline">
 													<div class="row">
 														<div class="col-sm-4">
 															<div class="mda-form-group label-floating">
