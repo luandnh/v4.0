@@ -2337,7 +2337,7 @@ function btnLogMeIn () {
             goAction: 'goGetAllowedCampaigns',
             goUser: uName,
             goPass: uPass,
-            has_location : true,
+            <!-- has_location : false, -->
             responsetype: 'json'
         };
     
