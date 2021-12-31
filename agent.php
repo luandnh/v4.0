@@ -290,10 +290,9 @@ $whatsapp_status = $ui->API_getWhatsappActivation();
 			$(document).ready(function() {
 				$("#GoToTop").click(function(event) {
 					event.preventDefault();
-					$("html, body").animate({ scrollTop: 0 }, "slow");
+					// $("html, body").animate({ scrollTop: 0 }, "slow");
 					return false;
 				});
-
 			});
 			history.pushState('', document.title, window.location.pathname);
 			
@@ -1043,7 +1042,7 @@ input:checked + .slider:before {
 														</div>
 														<div class="col-sm-1">
 															<div class="mda-form-group label-floating">
-																	<button style="margin:5px 0px" data-toggle="tooltip" data-placement="bottom" title="Change Request ID" type="button" name="change_request" id="change_request_btn" class="btn btn-primary btn-block btn-flat">Thay đổi</button>
+																	<button style="margin:5px 0px" data-toggle="tooltip" data-placement="bottom" title="Change Request ID" type="button" name="change_request" id="change_request_btn" class="btn btn-primary btn-block btn-flat">Đổi</button>
 															</div>
 														</div>
 														<div class="col-sm-2">
@@ -1250,8 +1249,8 @@ input:checked + .slider:before {
 													<button data-toggle="tooltip" data-placement="bottom" title="Check Eligile" type="button" name="eligible_btn" id="eligible_btn" class="btn btn-warning btn-block btn-flat">CHECK BASIC INFO</button>
 												</div>
 												<div class="row">
-													<div class="col-sm-12">	
-														<button data-toggle="tooltip" data-placement="bottom" title="Mapping" type="button" name="mapping_af1" id="mapping_af1" class="btn btn-warning btn-block btn-flat">Map Information To AF1</button>
+													<div class="col-sm-12" style="margin: 10px 0px;">	
+														<button data-toggle="tooltip" data-placement="bottom" title="Mapping" type="button" name="mapping_af1" id="mapping_af1" class="btn btn-warning btn-block btn-flat">Sao chép thông tin khách hàng vào AF1</button>
 													</div>
 													<!-- <div class="col-sm-6">
 													</div> -->
@@ -3276,7 +3275,7 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/pitel/dsa_update_status.js?v=3" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=61" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=100" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-debt-restructing.js?v=3" defer></script>	
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>

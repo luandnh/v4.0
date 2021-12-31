@@ -922,7 +922,8 @@ let getLeadInfo = (lead_id) => {
         return;
       }
       let lead_info = result.data;
-      SyncCustomerInfomation(lead_info);
+      let basic = result.basic_requestid;
+      SyncCustomerInfomation(lead_info,basic);
     })
     .fail(function (result) {
       console.log(result);
@@ -964,7 +965,7 @@ let ajaxGetCallStatus = (status) => {
     console.warn("ajaxGetCallStatus: ", result);
   });
 };
-let SyncCustomerInfomation = (thisVdata) => {
+let SyncCustomerInfomation = (thisVdata,basic_requestid) => {
   $("#custormer_tab").click();
   LeadPrevDispo = thisVdata.status;
   ShowStatusOnForm(
@@ -1071,12 +1072,18 @@ let SyncCustomerInfomation = (thisVdata) => {
     $(".formMain input[name='date_of_birth']").val(dateOfBirth);
     $(".formMain input[name='alt_phone']").val(thisVdata.alt_phone).trigger('change');
     $(".formMain input[name='email']").val(thisVdata.email).trigger('change');
+    $(".formMain select[name='basic_request_id']").html("");
+    basic_requestid.forEach(element => {
+        let tmp = $(".formMain select[name='basic_request_id']").html();
+        $(".formMain select[name='basic_request_id']").html(tmp+`<option value='${element.request_id}' selected>${element.request_id}</option>`)
+    });
     var REGcommentsNL = new RegExp("!N!","g");
     if (typeof thisVdata.comments !== 'undefined') {
         thisVdata.comments = thisVdata.comments.replace(REGcommentsNL, "\n");
     }
     $(".formMain textarea[name='comments']").val(thisVdata.comments).trigger('change');
     // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
+    
 };
 $(document).ready(function () {
   $.fn.select2.defaults.set("theme", "bootstrap");
