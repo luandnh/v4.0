@@ -232,7 +232,7 @@ echo $display;
 		form.append("fromDate", startdate_string);
 		form.append("toDate", enddate_string);
 		var settings = {
-			"url": "https://ec02.tel4vn.com/goAPIv2/goCustomExport/goAPI.php",
+			"url": "/goAPIv2/goCustomExport/goAPI.php",
 			"method": "POST",
 			"timeout": 0,
 			"processData": false,

@@ -1,4 +1,4 @@
-const API_HOST = "https://ec-api.tel4vn.com"
+const API_HOST = "https://demo-api.tel4vn.com"
 
 const MAP_STATUS = {
   "A1": "A1",

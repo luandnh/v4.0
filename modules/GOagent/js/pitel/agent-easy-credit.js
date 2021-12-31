@@ -1086,7 +1086,7 @@ let getLeadInfo = (lead_id) => {
     };
     $.ajax({
             type: "POST",
-            url: "https://ec02.tel4vn.com/goAPIv2/goLoadLeads/goAPI.php",
+            url: "/goAPIv2/goLoadLeads/goAPI.php",
             processData: true,
             data: postData,
             dataType: "json",

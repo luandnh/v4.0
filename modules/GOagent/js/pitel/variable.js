@@ -1,6 +1,6 @@
-var CRM_API_URL = "https://ec-api.tel4vn.com";
+var CRM_API_URL = "https://demo-api.tel4vn.com";
 // var EC_PROD_API_URL = "https://api.easycredit.vn";
-var EC_PROD_API_URL = "https://ec-api.tel4vn.com/ec";
+var EC_PROD_API_URL = "https://demo-api.tel4vn.com/ec";
 var CRM_TOKEN = "06eee053-dc2b-484f-90f9-4a68b9114920";
 var translator = {
     'term_confirm' : 'Cam kết thông tin',
