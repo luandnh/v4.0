@@ -882,21 +882,21 @@ input:checked + .slider:before {
 													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="first_name" name="first_name" type="text" maxlength="30"  value="<?php echo $first_name;?>"
-																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
+																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched " required>
 															<label for="first_name"><?=$lh->translationFor('first_name')?></label>
 														</div>
 													</div>
 													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="middle_initial" name="middle_initial" type="text" maxlength="30" value="<?php echo $middle_initial;?>"
-																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled>
+																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
 															<label for="middle_initial"><?=$lh->translationFor('middle_initial')?></label>
 														</div>
 													</div>
 													<div class="col-sm-3">
 														<div class="mda-form-group label-floating">
 															<input id="last_name" name="last_name" type="text" maxlength="30" value="<?php echo $last_name;?>"
-																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" disabled required>
+																class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched " required>
 															<label for="last_name"><?=$lh->translationFor('last_name')?></label>
 														</div>
 													</div>
@@ -3275,7 +3275,7 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/pitel/dsa_update_status.js?v=3" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=100" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=111" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-debt-restructing.js?v=3" defer></script>	
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>

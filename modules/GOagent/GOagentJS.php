@@ -1238,7 +1238,7 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
     $("#AgentDialPad").append("<button type='button' id='dialer-pad-undo' class='btn btn-default btn-lg btn-raised' style='padding: 12.5px 22.6px; margin: 0 0 5px 0; font-size: 16px; font-family: monospace;' title='<?=$lh->translationFor('undo') ?>'> <i class='fa fa-undo'></i> </button>");
     $("#AgentDialPad").append("<span id='for_dtmf' style='display: block;' class='hidden'><small>(<?=$lh->translationFor('for_dtmf') ?>)</small></span>");
     
-    $("#go_agent_manualdial").append("<li><div class='input-group' style='padding: 0 3px;'><input type='text' maxlength='18' name='MDPhonENumbeR' id='MDPhonENumbeR' class='form-control phonenumbers-only' value='' placeholder='<?=$lh->translationFor('enter_phone_number') ?>' onkeyup='activateLinks();' onchange='activateLinks();' onkeydown='enableDialOnEnter(event);' style='padding: 3px 2px; color: #222; height: 30px;' aria-label='...' /><div class='input-group-btn' role='group'><button type='button' class='btn btn-success btn-raised' id='manual-dial-now' style='padding: 6px 10px; height: 30px;'><i class='fa fa-phone'></i></button><button type='button' class='btn btn-success dropdown-toggle' style='padding: 0 6px; height: 30px;' data-toggle='dropdown' id='manual-dial-dropdown'>&nbsp;<span id='code_flag' class='flag flag-us'></span><span class='sr-only'>Toggle Dropdown</span>&nbsp;</button><ul id='country_codes' class='dropdown-menu dropdown-menu-right scrollable-menu' role='menu'></ul></div></div><input type='hidden' name='MDDiaLCodE' id='MDDiaLCodE' class='digits-only' value='1' /><input type='hidden' name='MDPhonENumbeRHiddeN' id='MDPhonENumbeRHiddeN' value='' /><input type='hidden' name='MDLeadID' id='MDLeadID' value='' /><input type='hidden' name='MDType' id='MDType' value='' /><input type='checkbox' name='LeadLookUP' id='LeadLookUP' size='1' value='0' class='hidden' disabled /><input type='hidden' size='24' maxlength='20' name='MDDiaLOverridE' id='MDDiaLOverridE' class='cust_form' value='' /></li>");
+    $("#go_agent_manualdial").append("<li><div class='input-group' style='padding: 0 3px;'><input type='text' maxlength='120' name='MDPhonENumbeR' id='MDPhonENumbeR' class='form-control phonenumbers-only' value='' placeholder='<?=$lh->translationFor('enter_phone_number') ?>' onkeyup='activateLinks();' onchange='activateLinks();' onkeydown='enableDialOnEnter(event);' style='padding: 3px 2px; color: #222; height: 30px;' aria-label='...' /><div class='input-group-btn' role='group'><button type='button' class='btn btn-success btn-raised' id='manual-dial-now' style='padding: 6px 10px; height: 30px;'><i class='fa fa-phone'></i></button><button type='button' class='btn btn-success dropdown-toggle' style='padding: 0 6px; height: 30px;' data-toggle='dropdown' id='manual-dial-dropdown'>&nbsp;<span id='code_flag' class='flag flag-us'></span><span class='sr-only'>Toggle Dropdown</span>&nbsp;</button><ul id='country_codes' class='dropdown-menu dropdown-menu-right scrollable-menu' role='menu'></ul></div></div><input type='hidden' name='MDDiaLCodE' id='MDDiaLCodE' class='digits-only' value='1' /><input type='hidden' name='MDPhonENumbeRHiddeN' id='MDPhonENumbeRHiddeN' value='' /><input type='hidden' name='MDLeadID' id='MDLeadID' value='' /><input type='hidden' name='MDType' id='MDType' value='' /><input type='checkbox' name='LeadLookUP' id='LeadLookUP' size='1' value='0' class='hidden' disabled /><input type='hidden' size='24' maxlength='20' name='MDDiaLOverridE' id='MDDiaLOverridE' class='cust_form' value='' /></li>");
 
     $("#go_agent_login").append("<li><button id='btnLogMeIn' class='btn btn-warning btn-lg center-block' style='margin-top: 2px;'><i class='fa fa-sign-in'></i> <?=$lh->translationFor('login_on_phone') ?></button></li>");
     $("#go_agent_logout").append("<li><button id='btnLogMeOut' class='btn btn-warning center-block' style='margin-top: 2px; padding: 5px 12px;'><i class='fa fa-sign-out'></i> <?=$lh->translationFor('logout_from_phone') ?></button></li>");
@@ -2667,7 +2667,7 @@ function enableDialOnEnter(e) {
     
     if (live_customer_call < 1 && !minimizedDispo) {
         var phoneNumber = $('#MDPhonENumbeR').val();
-    
+        console.log(phoneNumber);
         if (phoneNumber.length >= manual_dial_min_digits && agentcall_manual > 0) {
             NewManualDialCall('NOW');
             activateLinks();
@@ -2683,7 +2683,11 @@ function activateLinks() {
         $('#MDPhonENumbeR').prop('readonly', false);
     }
     var phoneNumber = $('#MDPhonENumbeR').val();
-
+    phoneNumber = phoneNumber.replace(/\D/g, '');
+    if (phoneNumber[0] == "0"){
+        phoneNumber = phoneNumber.substring(1);
+    }
+    $('#MDPhonENumbeR').val(phoneNumber)
     if (phoneNumber.length >= manual_dial_min_digits && agentcall_manual > 0) {
         $("a[id^='manual-dial-'], button[id^='manual-dial-']").removeClass('disabled');
     } else {
@@ -3040,7 +3044,7 @@ function checkIfStillLoggedIn(logged_out, last_call) {
             goCheckLastCall: checkLastCall,
             responsetype: 'json'
         };
-        return;
+        <!-- return; -->
         $.ajax({
             type: 'POST',
             url: '<?=$goSubAPI ?>/v1/agent/checkifloggedin',
@@ -3654,6 +3658,9 @@ function CheckForIncoming () {
                 <!-- this_VDIC_data.app_status = "VALIDATED"; -->
                 lead_id = this_VDIC_data.lead_id;
                 <!-- this_VDIC_data.request_id = "SPO1610530540234"; -->
+                $(".formMain input[name='first_name']").val("");
+                $(".formMain input[name='middle_initial']").val("");
+                $(".formMain input[name='last_name']").val("");
                 $(".formMain input[name='lead_id']").val(this_VDIC_data.lead_id);
                 this_VDIC_data.request_id = ECShowProducts(this_VDIC_data.partner_code, this_VDIC_data.request_id,this_VDIC_data.app_status, this_VDIC_data.status, this_VDIC_data.call_status, this_VDIC_data.reject_reason);
                 console.log(this_VDIC_data.request_id)
@@ -7580,6 +7587,9 @@ function ManualDialNext(mdnCBid, mdnBDleadid, mdnDiaLCodE, mdnPhonENumbeR, mdnSt
                 } else {
                     
                     var thisVdata = result.data;
+                    $(".formMain input[name='first_name']").val("");
+                    $(".formMain input[name='middle_initial']").val("");
+                    $(".formMain input[name='last_name']").val("");
                     //Integrate EASYCREDIT
                     lead_id                                 = thisVdata.lead_id;
                     $(".formMain input[name='lead_id']").val(lead_id);

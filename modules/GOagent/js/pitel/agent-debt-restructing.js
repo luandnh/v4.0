@@ -1,4 +1,4 @@
-const CRM_API_HOST = "http://ec-api-dev.tel4vn.com:8005/ec";
+const CRM_API_HOST = "https://ec-api-dev.tel4vn.com/ec";
 const DEBT_API_HOST = "https://uatapis.easycredit.vn"
 const PARTNER_CODE = "TEL";
 const LANGUAGE = {
@@ -10,12 +10,12 @@ function currency_vnd(x) {
 var DEBT_RESTUCT_DATA = null;
 var PIC_IMAGE = "";
 var ID_CARD_IMAGE = "";
-function error_msg(msg, seconds = 2500, title = "Lỗi") {
+function error_msg(msg, seconds = 10000, title = "Lỗi") {
   tata.error(title, msg, {
     position: 'tl', animate: 'slide', duration: seconds
   })
 }
-function info_msg(msg, seconds = 2500, title = "Thông báo") {
+function info_msg(msg, seconds = 10000, title = "Thông báo") {
   tata.info(title, msg, {
     position: 'tl', animate: 'slide', duration: seconds
   })
@@ -138,7 +138,6 @@ let SetComapyAddress = () => {
   // 
   $("#debt-restruct select[name='company_district']").on("change", () => {
     let districtID = companyDistrict.val();
-    console.info(districtID);
     companyWard.empty();
     $(`<option value="" selected></option>`).appendTo(companyWard);
     if (districtID != "") {
@@ -176,11 +175,15 @@ $.fn.serializeObject = function () {
   return o;
 };
 function getDateNow() {
-  var today = new Date();
-  var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var dateTime = date + ' ' + time;
-  return dateTime
+  var date = new Date();
+  var dateStr = date.getFullYear() + "-" +
+    ("00" + (date.getMonth() + 1)).slice(-2) + "-" +
+    ("00" + date.getDate()).slice(-2) + " " +
+
+    ("00" + date.getHours()).slice(-2) + ":" +
+    ("00" + date.getMinutes()).slice(-2) + ":" +
+    ("00" + date.getSeconds()).slice(-2);
+  return dateStr;
 }
 function create_debt_restructing() {
   let debtTab =
@@ -217,7 +220,6 @@ let ajaxQueryCI = (body_data) => {
     error_msg("Không thể xác thực")
     return;
   }
-  console.log("Query body", body_data);
   return $.ajax({
     type: "POST",
     method: "POST",
@@ -235,6 +237,33 @@ let ajaxQueryCI = (body_data) => {
   });
 };
 
+let ajaxQueryEMI = (body_data) => {
+  let access_token = body_data.access_token;
+  if (access_token == "" || access_token == undefined) {
+    error_msg("Không thể xác thực")
+    return;
+  }
+  let request_data = {
+    "contractNumber": body_data.contract_number,
+    "tenorDebtStruct": body_data.tenorDebtStruct,
+    "date": getDateNow()
+  }
+  return $.ajax({
+    type: "POST",
+    method: "POST",
+    url: DEBT_API_HOST + "/los-united/v1/debt-restructuring/emi-caculate",
+    processData: true,
+    async: true,
+    dataType: "json",
+    "headers": {
+      "Authorization": "Bearer " + access_token,
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify(request_data),
+  }).fail((result, status, error) => {
+    console.log("Query error : ", result);
+  });
+};
 function FillDebtForm(json_data) {
   if (json_data == null || json_data == undefined) {
     clearFormDebt();
@@ -248,8 +277,22 @@ function FillDebtForm(json_data) {
         $(`#${form_name} input[name='${key}']`).val(per_form[key]);
       })
     })
+    console.log("FillDebtForm", json_data);
     // $(`#debt-restruct select[name='ext_payment_term']`).val(json_data.debt_restructuring.ext_payment_term).trigger('change');
+    let selected_term = json_data.debt_restructuring.ext_payment_term_selected;
+    if (selected_term == undefined || selected_term =="" || selected_term == null) {
+      let default_term = 3;
+      if (json_data.debt_restructuring.ext_payment_term.includes(default_term) == false) {
+        try {
+          default_term = json_data.debt_restructuring.ext_payment_term[json_data.debt_restructuring.ext_payment_term.length - 1]
+        } catch (error) {
+          default_term = 0;
+        }
+      }
+      selected_term = default_term;
+    }
     SetPaymentTerm(json_data.debt_restructuring.ext_payment_term);
+    $("select[name='ext_payment_term']").val(selected_term).change()
     $(`#debt-restruct select[name='company_province']`).val(json_data.updated_info.company_province).trigger('change');;
     $(`#debt-restruct select[name='company_district']`).val(json_data.updated_info.company_district).trigger('change');;
     $(`#debt-restruct select[name='company_ward']`).val(json_data.updated_info.company_ward).trigger('change');;
@@ -267,7 +310,6 @@ function CreateDebtFullData(body_object) {
     let access_token = token_result.access_token;
     body_object['access_token'] = access_token;
     ajaxQueryCI(body_object).done((result) => {
-      console.log("Query response", result);
       let request_id = $(`#debt-restruct input[name='request_id']`).val();
       if (request_id == "" || request_id == undefined) {
         request_id = generate_requestID();
@@ -297,7 +339,25 @@ function CreateDebtFullData(body_object) {
         // 
         FillDebtForm(json_data)
       } else {
-        error_msg(`${translate(result.message)}`, 2500, "Không thành công");
+        error_msg(`${translate(result.message)}`, 10000, "Không thành công");
+        return;
+      }
+    });
+  });
+}
+
+function CalculateEMI(body_object) {
+  ajaxGetToken().done((token_result) => {
+    let access_token = token_result.access_token;
+    body_object['access_token'] = access_token;
+    ajaxQueryEMI(body_object).done((result) => {
+      console.log(result);
+      if (result.code == 0) {
+        let body_data = result.data;
+        $("input[name='grace_period']").val(body_data.grace_period);
+        $("input[name='monthly_installment']").val(body_data.monthly_installment).trigger("blur");
+      } else {
+        error_msg(`${translate(result.message)}`, 10000, "Không thành công");
         return;
       }
     });
@@ -323,6 +383,7 @@ function create_debt_info(body_data, save_type) {
   };
   $.ajax(saveSetting).done(function (response) {
     console.log("Save debt", response);
+    info_msg("Thành công", 3000, "Lưu thành công");
   }).fail(function (response) {
     console.log("Save debt", response);
   });
@@ -509,91 +570,97 @@ $(document).ready(function () {
     upload_id_image();
     upload_pic_image();
   });
-  function currency_convert(cur_str){
-      let tmp = cur_str.split(",").join("").replace("đ", "");
-      let point = tmp.split(".");
-      return point[0];
+  function currency_convert(cur_str) {
+    let tmp = cur_str.split(",").join("").replace("đ", "");
+    let point = tmp.split(".");
+    return point[0];
   }
   $(document).on("click", "#submit-debt", function (e) {
-    let debt_update_info = validate_debt_restruct_request_data();
-    if (debt_update_info != false) {
-      let request_id = debt_update_info.request_id;
-      $("#customer_info input[name='request_id']").val(request_id);
-      let id_card_image = $(`#debt-restruct #updated_info input[name='id_card_image']`)[0].files[0];
-      let pic_image = $(`#debt-restruct #updated_info input[name='pic_image']`)[0].files[0];
-      var form = new FormData();
-      // TESTING
-      form.append("request_id", `${debt_update_info.request_id}`);
-      form.append("contract_number", `${debt_update_info.contract_number}`);
-      form.append("cust_id", `${debt_update_info.cust_id}`);
-      form.append("job_type", `${debt_update_info.job_type}`);
-      form.append("company_name", `${debt_update_info.company_name}`);
-      form.append("company_address", `${debt_update_info.company_address}`);
-      form.append("company_province", `${debt_update_info.company_province}`);
-      form.append("company_district", `${debt_update_info.company_district}`);
-      form.append("company_ward", `${debt_update_info.company_ward}`);
-      form.append("monthy_income", `${currency_convert(debt_update_info.monthly_income)}`);
-      form.append("other_income", `${currency_convert(debt_update_info.other_income)}`);
-      form.append("monthy_expense", `${currency_convert(debt_update_info.monthly_expense)}`);
-      form.append("PIC", pic_image, `PIC_${debt_update_info.request_id}.pdf`);
-      form.append("extension_payment_terms", `${debt_update_info.ext_payment_term}`);
-      form.append("PID", id_card_image, `PID_${debt_update_info.request_id}.pdf`);
-      var settings = {
-        "url": DEBT_API_HOST + "/los-united/v1/debt-restructuring/register-debt-restructuring",
-        "method": "POST",
-        "timeout": 0,
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
-      };
-      $.ajax(settings).done(function (resp) {
-        let response = resp;
-        try {
-          response = JSON.parse(resp);
-        } catch (error) {
-        }
-        info_msg("Thành công", 3000, "Gửi thông tin cập nhật");
-        console.log(response);
-        let code = response.code;
-        let request_ref = response.request_ref;
-        $("#current_request input[name='request_ref']").val(request_ref);
-        if (code == 0) {
-          info_msg("Mã cơ cấu: " + response.request_ref, translate(response.message));
-          if (lead_id == "" || lead_id == undefined) {
-            error_msg("Thiếu lead_id");
-            // TEST 
-            lead_id = "1234";
-          }
-          let body_data = {
-            "lead_id": lead_id + "",
-            "user": user,
-            "request_id": $("#customer_info input[name='request_id']").val(),
-            "document": "",
-            "request_ref": $("#current_request input[name='request_ref']").val()
-          }
-          create_debt_info(body_data, "SENT");
-          return;
-        } else {
-          error_msg(translate(response.message), "Không thành công");
-        }
-      }).fail(function (response) {
-        console.log("DEBT_REQUEST", response);
-        try {
-          error_msg(translate(response.message), "Không thành công");
-        } catch (error) {
+    ajaxGetToken().done((token_result) => {
+      let debt_update_info = validate_debt_restruct_request_data();
+      if (debt_update_info != false) {
+        let request_id = debt_update_info.request_id;
+        $("#customer_info input[name='request_id']").val(request_id);
+        let id_card_image = $(`#debt-restruct #updated_info input[name='id_card_image']`)[0].files[0];
+        let pic_image = $(`#debt-restruct #updated_info input[name='pic_image']`)[0].files[0];
+        var form = new FormData();
+        // TESTING
+        form.append("request_id", `${debt_update_info.request_id}`);
+        form.append("contract_number", `${debt_update_info.contract_number}`);
+        form.append("cust_id", `${debt_update_info.cust_id}`);
+        form.append("job_type", `${debt_update_info.job_type}`);
+        form.append("company_name", `${debt_update_info.company_name}`);
+        form.append("company_address", `${debt_update_info.company_address}`);
+        form.append("company_province", `${debt_update_info.company_province}`);
+        form.append("company_district", `${debt_update_info.company_district}`);
+        form.append("company_ward", `${debt_update_info.company_ward}`);
+        form.append("monthy_income", `${currency_convert(debt_update_info.monthly_income)}`);
+        form.append("other_income", `${currency_convert(debt_update_info.other_income)}`);
+        form.append("monthy_expense", `${currency_convert(debt_update_info.monthly_expense)}`);
+        form.append("PIC", pic_image, `PIC_${debt_update_info.request_id}.pdf`);
+        form.append("extension_payment_terms", `${debt_update_info.ext_payment_term}`);
+        form.append("PID", id_card_image, `PID_${debt_update_info.request_id}.pdf`);
+        let access_token = token_result.access_token;
+        var settings = {
+          "url": DEBT_API_HOST + "/los-united/v1/debt-restructuring/register-debt-restructuring",
+          "method": "POST",
+          "timeout": 0,
+          "processData": false,
+          "mimeType": "multipart/form-data",
+          "contentType": false,
+          "data": form,
+          "headers": {
+            "Authorization": "Bearer " + access_token
+          },
+        };
+        $.ajax(settings).done(function (resp) {
+          let response = resp;
           try {
-            let tmp = JSON.parse(response.responseText)
-            console.log(tmp);
-            error_msg(translate(tmp.message), "Không thành công");
+            response = JSON.parse(resp);
           } catch (error) {
-
           }
-          error_msg("Đã có lỗi xảy ra. Vui lòng liên hệ admin!", 3000, "Lỗi");
-        }
-        return;
-      });
-    }
+          info_msg("Thành công", 3000, "Gửi thông tin cập nhật");
+          let code = response.code;
+          let request_ref = response.request_ref;
+          $("#current_request input[name='request_ref']").val(request_ref);
+          if (code == 0) {
+            info_msg("Mã cơ cấu: " + response.request_ref, translate(response.message));
+            lead_id = "0";
+            let body_data = {
+              "lead_id": lead_id + "",
+              "user": user,
+              "request_id": $("#customer_info input[name='request_id']").val(),
+              "document": "",
+              "request_ref": $("#current_request input[name='request_ref']").val()
+            }
+            create_debt_info(body_data, "SENT");
+            return;
+          } else {
+            error_msg(translate(response.message),4000, "Không thành công");
+          }
+        }).fail(function (response) {
+          console.log("DEBT_REQUEST", response);
+          try {
+            try {
+              response = JSON.parse(response.responseText);
+            } catch (error) {
+              
+            }
+            error_msg(translate(response.message),4000, "Không thành công");
+          } catch (error) {
+            try {
+              let tmp = JSON.parse(response.responseText)
+              console.log(tmp);
+              error_msg(translate(tmp.message),4000, "Không thành công");
+            } catch (error) {
+
+            }
+            error_msg("Đã có lỗi xảy ra. Vui lòng liên hệ admin!", 3000, "Lỗi");
+          }
+          return;
+        });
+      }
+    });
   });
   $(document).on("click", "#save-debt", function (e) {
     let body_data = {
@@ -607,8 +674,8 @@ $(document).ready(function () {
   });
   $(document).on("click", "#debt-calculate-emi", function (e) {
     let emi_info = validate_emi_info();
-    console.log("EMI body", emi_info);
-    CreateDebtFullData(emi_info);
+    console.log(emi_info);
+    CalculateEMI(emi_info);
   });
   if (user == 'quangtran') {
     create_debt_restructing();

@@ -1109,6 +1109,9 @@ let getLeadInfo = (lead_id) => {
 };
 
 let SyncCustomerInfomation = (thisVdata, basic_requestid) => {
+    $(".formMain input[name='first_name']").val("");
+    $(".formMain input[name='middle_initial']").val("");
+    $(".formMain input[name='last_name']").val("");
     $("#custormer_tab").click();
     LeadPrevDispo = thisVdata.status;
     $(".formMain input[name='vendor_lead_code']").val(thisVdata.vendor_lead_code);
@@ -1267,6 +1270,7 @@ $(document).on("click", "#btn-application", function(e) {
 });
 $(document).on("click", "#submit-offer", function(e) {
     e.preventDefault();
+    $(this).attr('disabled', 'disabled');
     let loan_request_id = $(".formMain input[name='request_id']").val();
     let partner_code = $(".formMain input[name='partner_code']").val();
     if (selected_offer_insurance_type == "NO") {
@@ -1293,6 +1297,8 @@ $(document).on("click", "#submit-offer", function(e) {
             },
         })
         .fail((result, status, error) => {
+            
+            $(this).removeAttr('disabled');
             let msg = "Please contact developer!";
             msg = result.responseJSON.message;
             if (result.message !== undefined) {
@@ -1312,6 +1318,7 @@ $(document).on("click", "#submit-offer", function(e) {
             swal("Send offer data fail!", msg, "error");
         })
         .done((result) => {
+            $(this).removeAttr('disabled');
             if (result.code == "RECEIVED") {
                 swal("Success", result.message, "success");
             } else {
@@ -1462,6 +1469,7 @@ $("#eligible_btn").on("click", (e) => {
                     SyncFullLoanFromAPI(lead_id);
                     $("#full-loan-form select[name='employment_type']").trigger('change');
                     $("#full-loan-form input[name='condition_confirm']").prop('checked', true);
+                    $("#full-loan-form input[name='other_confirm']").prop('checked', true);
                     $("#full-loan-form input[name='term_confirm']").prop('checked', true);
                 } else if (result.body.code == "NOT_ELIGIBLE") {
                     request_id = partner_code + Date.now().toString();
@@ -1601,6 +1609,10 @@ let validateFullloan = () => {
         msg += "Chưa đồng ý điều khoản\n";
     }
     if ($("input[name='term_confirm']")[0].checked == false) {
+        check = false;
+        msg += "Chưa đồng ý điều khoản\n";
+    }
+    if ($("input[name='other_confirm']")[0].checked == false) {
         check = false;
         msg += "Chưa đồng ý điều khoản\n";
     }
@@ -1997,9 +2009,13 @@ function clearAFForm() {
     $("#full-loan-form input[name='to']").val(2021).trigger("blur");
     $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
     $("#full-loan-form input[name='term_confirm']").prop('checked', true)
+    $("#full-loan-form input[name='other_confirm']").prop('checked', true)
 }
 
 function clearForm($form) {
+    $(".formMain input[name='first_name']").val("");
+    $(".formMain input[name='middle_initial']").val("");
+    $(".formMain input[name='last_name']").val("");
     $form
         .find(":input")
         .not(":button, :submit, :reset, :hidden, :checkbox, :radio")
@@ -2324,19 +2340,19 @@ $("#full-loan-form").on("submit", (e) => {
             try {
                 console.log("Submit fullloan failed : ", er_data);
             } catch (e) {}
-            let msg = "Please contact developer!";
-            if (result.message !== undefined) {
-                msg = result.message;
-            }
-            let temp_code = translator[er_data.code];
-            if (temp_code == undefined) {
-                temp_code = er_data.code
-            }
-            let temp_msg = translator[er_data.message];
-            if (temp_msg == undefined) {
-                temp_msg = er_data.message
-            }
-            swal("Gửi hồ sơ không thành công!", temp_code + " : " + temp_msg, "error");
+            let msg = er_data.code + " " +er_data.message;
+            // if (result.message !== undefined) {
+            //     msg = result.message;
+            // }
+            // let temp_code = translator[er_data.code];
+            // if (temp_code == undefined) {
+            //     temp_code = er_data.code
+            // }
+            // let temp_msg = translator[er_data.message];
+            // if (temp_msg == undefined) {
+            //     temp_msg = er_data.message
+            // }
+            swal("Gửi hồ sơ không thành công!", msg, "error");
             $("#offer-waiting").attr("hidden", true);
         })
         .done((result) => {

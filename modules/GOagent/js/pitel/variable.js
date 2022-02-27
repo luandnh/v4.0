@@ -5,6 +5,7 @@ var CRM_TOKEN = "06eee053-dc2b-484f-90f9-4a68b9114920";
 var translator = {
     'term_confirm' : 'Cam kết thông tin',
     'condition_confirm' : 'Đồng ý điều khoản',
+    'other_confirm' : 'Khách hàng đồng ý vay',
     "Please check this box if you want to proceed." : "Vui lòng chọn",
     'issue_date' : 'Ngày cấp CMND',
     'Please select an item in the list' : 'Vui lòng chọn',

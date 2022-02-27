@@ -1133,6 +1133,16 @@ $goAPI = (empty($_SERVER['HTTPS'])) ? str_replace('https:', 'http:', gourl) : st
 																						</label>
 																					</div>
 																				</div>
+																				<div class="col-xl-12 col-lg-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="other_confirm" checked="true" required>
+                                                <p>Khách hàng chấp thuận để EASY CREDIT thu thập và sử dụng, cung cấp thông tin của Khách hàng cho bên thứ ba (bao gồm nhưng không giới hạn các cá nhân, tổ chức mà EASY CREDIT sử dụng sản phẩm và/hoặc dịch vụ) nhằm phục vụ cho hoạt động cho vay phù hợp với thỏa thuận giữa EASY CREDIT và bên thứ ba.</p>
+                                                <p>Khách hàng đồng ý ủy quyền cho EASY CREDIT cho phép bên thứ ba được cung cấp các thông tin của Khách hàng phục vụ cho việc thẩm định hồ sơ trên cơ sở yêu cầu từ EASY CREDIT theo Đơn đề nghị vay này.</p>
+                                                <p>Thông tin Khách hàng là thông tin do Khách hàng cung cấp trong quá trình Khách hàng đăng ký vay và/hoặc thông tin liên quan đến khoản vay phát sinh trong quá trình EASY CREDIT cung ứng các sản phẩm, dịch vụ của EASY CREDIT cho Khách hàng.</p>
+                                            </label>
+                                        </div>
+                                    </div>
 																			</div>
 																		</div>
 																		<div id="step-3" class="tab-pane active" role="tabpanel">

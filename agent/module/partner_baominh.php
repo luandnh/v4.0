@@ -73,7 +73,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-6">
                             <div class="mda-form-group label-floating">
-                                <input value="0378580738" id="Dienthoai" name="Dienthoai" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                <input value="" id="Dienthoai" name="Dienthoai" type="text" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
                                 <label class="form_label" for="Dienthoai">Số điện thoại</label>
                             </div>
                         </div>

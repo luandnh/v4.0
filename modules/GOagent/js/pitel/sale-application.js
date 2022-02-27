@@ -618,6 +618,7 @@ function clearAFForm() {
   $("#full-loan-form input[name='from']").val(2021).trigger("blur");
   $("#full-loan-form input[name='to']").val(2021).trigger("blur");
   $("#full-loan-form input[name='condition_confirm']").prop("checked", true);
+  $("#full-loan-form input[name='other_confirm']").prop("checked", true);
   $("#full-loan-form input[name='term_confirm']").prop("checked", true);
   $("#list_upload_docs").empty();
 }

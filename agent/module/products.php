@@ -751,6 +751,15 @@
                                             </label>
                                         </div>
                                     </div>
+                                    
+                                    <div class="col-xl-12 col-lg-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="other_confirm" checked="true" required>
+                                                <p>Khách hàng chấp thuận để EASY CREDIT thu thập và sử dụng, cung cấp thông tin của Khách hàng nhằm phục vụ các mục đích sau đây: (1) cung cấp cho công ty bảo hiểm, nhà cung cấp các dịch vụ liên quan đến hệ thống, nhà cung cấp dịch vụ chuyển phát, tin nhắn; (2) cung cấp cho bên cung cấp dịch vụ nhắc nợ, thu hồi nợ; (3) cung cấp cho bên mua nợ theo quy định của Ngân hàng nhà nước Việt Nam; (4) cung cấp cho bên cung cấp dịch vụ thông tin tín dụng Việt Nam; (5) các mục đích khác phục vụ cho hoạt động cho vay phù hợp với thỏa thuận giữa EASY CREDIT và các đối tác khác.</p><p>Khách hàng chấp thuận để EASY CREDIT thu thập và sử dụng, cung cấp thông tin của Khách hàng cho bên thứ ba (bao gồm nhưng không giới hạn các cá nhân, tổ chức mà EASY CREDIT sử dụng sản phẩm và/hoặc dịch vụ) nhằm phục vụ cho hoạt động cho vay phù hợp với thỏa thuận giữa EASY CREDIT và bên thứ ba.</p><p> Khách hàng đồng ý ủy quyền cho EASY CREDIT cho phép bên thứ ba được cung cấp các thông tin của Khách hàng phục vụ cho việc thẩm định hồ sơ trên cơ sở yêu cầu từ EASY CREDIT theo Đơn đề nghị vay này.</p><p>Thông tin Khách hàng là thông tin do Khách hàng cung cấp trong quá trình Khách hàng đăng ký vay và/hoặc thông tin liên quan đến khoản vay phát sinh trong quá trình EASY CREDIT cung ứng các sản phẩm, dịch vụ của EASY CREDIT cho Khách hàng.</p>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="step-3" class="tab-pane active" role="tabpanel">
@@ -1645,7 +1654,7 @@
                                 <!--  -->
                                 <div class="col-sm-12"><label style=" font-style: oblique;color: #2300ff;">SAU CƠ CẤU</label></div>
                                 <div class="col-sm-7"><label>Số tiền thanh toán hàng tháng trong ân hạn</label></div>
-                                <div class="col-sm-5"><input tag="currency2" name="grace_period" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><input name="grace_period" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <!--  -->
                                 <div class="col-sm-7"><label>Số tiền thanh toán hàng tháng sau ân hạn</label></div>
                                 <div class="col-sm-5"><input tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
@@ -1715,6 +1724,11 @@
                                 <div class="col-sm-7"><input tag="currency2" name="monthly_installment" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
                                 <div class="col-sm-5"><label>Nhóm nợ nội bộ</label></div>
                                 <div class="col-sm-7"><input name="bucket" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Số kỳ đã trả</label></div>
+                                <div class="col-sm-7"><input name="instal_num_paid" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                                <div class="col-sm-5"><label>Số kỳ chưa trả</label></div>
+                                <div class="col-sm-7"><input name="instal_num_late" type="text" value="" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched input-disabled" required=""></div>
+                            
                             </div>
                         </div>
                     </div>
