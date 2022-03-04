@@ -613,6 +613,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="mda-form-group label-floating">
+                                            <input readonly hidden type="text" name="request_id_ref" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                            <label class="form_label" for="request_id_ref">Request_id REF</label>
+                                        </div>
+                                    </div>
                                     <div class="col-xl-6 col-lg-6">
                                         <div class="mda-form-group label-floating">
                                             <input readonly type="text" name="identity_card_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>

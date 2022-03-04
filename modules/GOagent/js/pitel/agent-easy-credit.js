@@ -655,6 +655,10 @@ $(document).ready(() => {
     // Upload img_selfie
     $(document).on("click", "#submit_img_selfie2", function(e) {
         e.preventDefault();
+        if (list_id==VTA_List){
+            sweetAlert("Không upload ảnh với VTA lead");
+            return;
+        }
         const files = $("#img_selfie2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_selfie file to upload");
@@ -682,6 +686,11 @@ $(document).ready(() => {
     // Upload img_id_card
     $(document).on("click", "#submit_img_id_card2", function(e) {
         e.preventDefault();
+        
+        if (list_id==VTA_List){
+            sweetAlert("Không upload ảnh với VTA lead");
+            return;
+        }
         const files = $("#img_id_card2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_id_card file to upload");
@@ -1582,13 +1591,15 @@ let getProductType = () => {
 let validateFullloan = () => {
     let check = true;
     let msg = "";
-    if (RequiredDocs["PIC"] == false) {
-        check = false;
-        msg += "Chua up PIC\n";
-    }
-    if (RequiredDocs["PID"] == false) {
-        check = false;
-        msg += "Chua up PID\n";
+    if (list_id != VTA_List){
+        if (RequiredDocs["PIC"] == false) {
+            check = false;
+            msg += "Chưa upload ảnh Sefie\n";
+        }
+        if (RequiredDocs["PID"] == false) {
+            check = false;
+            msg += "Chưa upload ảnh CMND\n";
+        }
     }
     $("#full-loan-form").find('input:required').each(function() {
         let element = $(this);
@@ -1624,21 +1635,29 @@ let validateFullloan = () => {
 let SyncFullLoanFromAPI = (request_id) => {
     try {
         ajaxGetOldFullLoan(request_id).done((result) => {
+            try { result = JSON.parse(result);} catch (error) {}
             if (result.error == "Not found") {
                 SyncFullLoanFromContact()
                 return;
             }
             try {
                 let data = result.data;
+                try { data = JSON.parse(data);} catch (error) {}
                 let document = data.document;
-                console.info(document)
+                try { document = JSON.parse(document);} catch (error) {}
                 for (const property in document) {
+                    try {
+                        
                     $("#full-loan-form input[name='" + property + "']")
                         .val(document[property])
                         .trigger("change");
                     $("#full-loan-form select[name='" + property + "']")
                         .val(document[property])
                         .trigger("change");
+                        
+                    } catch (error) {
+                        
+                    }
                 }
                 $("select[name='tem_province']")
                     .val(document["tem_province"])
