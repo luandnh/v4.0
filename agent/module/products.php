@@ -369,7 +369,7 @@
                                     <div class="col-xl-1 col-lg-12">
                                         <div class="mda-form-group label-floating" data-children-count="1">
                                             <select name="employment_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" data-live-search="true" required>
-                                                <option value=""></option>
+                                                <option value="">Chọn loại hình công việc</option>
                                                 <option value="E">Đi làm hưởng lương</option>
                                                 <option value="SE">Tự kinh doanh</option>
                                                 <option value="RP">Hưởng lương hưu</option>
@@ -383,7 +383,7 @@
                                         <div class="mda-form-group label-floating" data-children-count="1">
                                             <!-- <select name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched select" required>
                                         </select> -->
-                                            <select name="product_type" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required></select>
+                                            <select name="product_code" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required></select>
                                             <label class="form_label" for="product_type"><?= $lh->translationFor('product_type') ?></label>
                                         </div>
                                     </div>
@@ -613,6 +613,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="mda-form-group label-floating">
+                                            <input readonly hidden type="text" name="request_id_ref" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                                            <label class="form_label" for="request_id_ref">Request_id REF</label>
+                                        </div>
+                                    </div>
                                     <div class="col-xl-6 col-lg-6">
                                         <div class="mda-form-group label-floating">
                                             <input readonly type="text" name="identity_card_id" class="mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" required>

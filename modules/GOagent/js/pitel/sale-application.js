@@ -711,8 +711,12 @@ let SyncFullLoanFromAPI = (request_id) => {
         );
         $("#full-loan-form input[name='term_confirm']").prop("checked", true);
         $("input[tag='currency']").trigger("blur");
-        $("input[name='range_loan_tenor']").trigger("input");
-        $("input[name='range_loan_amount']").trigger("input");
+        try{
+          $("input[name='range_loan_tenor']").val($("#full-loan-form input[name='loan_tenor']").val()).trigger("input");
+          $("input[name='range_loan_amount']").val($("#full-loan-form input[name='loan_amount']").val()).trigger("input");
+        } catch (error) {
+          
+        }
         $(`input[name='simu_insurance']`)[0].value = "0";
         $(`input[name='simu_insurance']`)[1].value = "6";
         $(`input[name='simu_insurance']`)[2].value = "8";
