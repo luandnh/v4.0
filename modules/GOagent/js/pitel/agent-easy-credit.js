@@ -77,7 +77,7 @@ function put_file_s3(doc_type, url, file, file_name, doc_id = "") {
         "contentType": false,
         "data": form
     };
-    $.ajax(settings).done(function(response) {
+    $.ajax(settings).done(function (response) {
         tata.info('Upload file success', "", {
             position: 'tl',
             animate: 'slide',
@@ -86,7 +86,7 @@ function put_file_s3(doc_type, url, file, file_name, doc_id = "") {
         console.log(response);
         RequiredDocs[doc_type] = true
         RequireResubmit[doc_type] = doc_id
-    }).fail(function(res) {
+    }).fail(function (res) {
         // alert("Push to s3 failed");
         RequiredDocs[doc_type] = false
         RequireResubmit[doc_type] = false
@@ -120,7 +120,7 @@ function getCurrentDate() {
 }
 console.stdlog = console.log.bind(console);
 console.logs = {};
-console.log = function() {
+console.log = function () {
     console.logs[getCurrentDate()] = Array.from(arguments);
     console.stdlog.apply(console, arguments);
 }
@@ -151,14 +151,14 @@ var offerinsurancetable;
 var insurance_amount = 0;
 // 
 var isUploadedDocs = [false, false, false];
-let AllowSelectOffer = function() {
-        if (isUploadedDocs[0] & isUploadedDocs[1] & isUploadedDocs[2]) {
-            $("#submit-offer").attr('disabled', false);
-        } else {
-            $("#submit-offer").attr('disabled', true);
-        }
+let AllowSelectOffer = function () {
+    if (isUploadedDocs[0] & isUploadedDocs[1] & isUploadedDocs[2]) {
+        $("#submit-offer").attr('disabled', false);
+    } else {
+        $("#submit-offer").attr('disabled', true);
     }
-    //
+}
+//
 let box_color = [
     "box-primary",
     "box-danger",
@@ -223,7 +223,7 @@ let changeLoanAmountRange = (e) => {
     e.form.range_loan_amount.value = e.value;
     simulator(e);
 };
-$(document).on('blur', 'input[type="date"]', function() {
+$(document).on('blur', 'input[type="date"]', function () {
     var cur_date = new Date($(this)[0].value);
     var today = new Date()
     var yesterday = new Date(today)
@@ -233,7 +233,7 @@ $(document).on('blur', 'input[type="date"]', function() {
     }
 });
 
-$(document).on('blur', 'input[tag="phone"]', function() {
+$(document).on('blur', 'input[tag="phone"]', function () {
     let phone_number = $(this)[0].value;
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
     if (phone_number !== '') {
@@ -250,34 +250,39 @@ function pmt(monthlyRate, monthlyPayments, presentValue, residualValue, advanced
     return (presentValue - (residualValue / t2)) / (((1 - (1 / (t3))) / monthlyRate) + advancedPayments);
 }
 let simulator = (e) => {
-    let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
-    let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
-    let sm_insu = $("input[name='simu_insurance']:checked").val();
-    if (sm_insu == undefined) {
-        $("input[name='simu_insurance']")[0].checked = true;
-        sm_insu = 0;
-    }
-    let ir = selected_product.interest_rate;
-    let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
-    // let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
-    // let sm_monthly = parseInt( (sm_total_offer / sm_loan_tenor) + sm_total_offer*(ir/100)/12)+ "";
-    // pmt(0.35/12,0.5*12,10000000,1,0)
-    let sm_monthly = parseInt(pmt((ir / 100) / 12, sm_loan_tenor, sm_total_offer, 1, 0)) + "";
+    try {
 
-    //
-    $("#full-loan-form input[name='customer-offer-amount']")
-        .val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", ""))
-        .trigger("blur");
-    $("#full-loan-form input[name='customer-offer-tenor']")
-        .val(sm_loan_tenor.replace(/[^0-9\.]/g, "").replace(".", ""))
-        .trigger("blur");
-    $("#full-loan-form input[name='customer-offer-percent']").val(sm_insu + "%");
-    $("#full-loan-form input[name='customer-offer-total']")
-        .val(sm_total_offer.replace(/[^0-9\.]/g, "").replace(".", ""))
-        .trigger("blur");
-    $("#full-loan-form input[name='customer-offer-monthly']")
-        .val(sm_monthly.replace(/[^0-9\.]/g, "").replace(".", ""))
-        .trigger("blur");
+        let sm_loan_amount = $("#full-loan-form input[name='loan_amount']").val();
+        let sm_loan_tenor = $("#full-loan-form input[name='loan_tenor']").val();
+        let sm_insu = $("input[name='simu_insurance']:checked").val();
+        if (sm_insu == undefined) {
+            $("input[name='simu_insurance']")[0].checked = true;
+            sm_insu = 0;
+        }
+        let ir = selected_product.interest_rate;
+        let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
+        // let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
+        // let sm_monthly = parseInt( (sm_total_offer / sm_loan_tenor) + sm_total_offer*(ir/100)/12)+ "";
+        // pmt(0.35/12,0.5*12,10000000,1,0)
+        let sm_monthly = parseInt(pmt((ir / 100) / 12, sm_loan_tenor, sm_total_offer, 1, 0)) + "";
+
+        //
+        $("#full-loan-form input[name='customer-offer-amount']")
+            .val(sm_loan_amount.replace(/[^0-9\.]/g, "").replace(".", ""))
+            .trigger("blur");
+        $("#full-loan-form input[name='customer-offer-tenor']")
+            .val(sm_loan_tenor.replace(/[^0-9\.]/g, "").replace(".", ""))
+            .trigger("blur");
+        $("#full-loan-form input[name='customer-offer-percent']").val(sm_insu + "%");
+        $("#full-loan-form input[name='customer-offer-total']")
+            .val(sm_total_offer.replace(/[^0-9\.]/g, "").replace(".", ""))
+            .trigger("blur");
+        $("#full-loan-form input[name='customer-offer-monthly']")
+            .val(sm_monthly.replace(/[^0-9\.]/g, "").replace(".", ""))
+            .trigger("blur");
+    } catch (error) {
+
+    }
     //
 };
 let removeElement = (btn_id) => {
@@ -287,11 +292,11 @@ let removeElement = (btn_id) => {
     }
 };
 
-(function($) {
-    $.fn.serializeFormJSON = function() {
+(function ($) {
+    $.fn.serializeFormJSON = function () {
         var o = {};
         var a = this.serializeArray();
-        $.each(a, function() {
+        $.each(a, function () {
             if (o[this.name]) {
                 if (!o[this.name].push) {
                     o[this.name] = [o[this.name]];
@@ -306,7 +311,7 @@ let removeElement = (btn_id) => {
 })(jQuery);
 
 $(document).ready(() => {
-    $(document).on("click", "#report_error", function(e) {
+    $(document).on("click", "#report_error", function (e) {
         tata.info('Tạo tập tin log', 'Vui lòng đợi', {
             position: 'tl',
             animate: 'slide',
@@ -327,7 +332,7 @@ $(document).ready(() => {
     });
     $("input[name='simu_insurance']")[0].checked = true;
 
-    $(document).on("click", "#submit_file_resubmit", function(e) {
+    $(document).on("click", "#submit_file_resubmit", function (e) {
         var request_id = $("#request_id").val();
         var phone_number = $("#full-loan-form input[name='phone_number']").val();
         if (phone_number[0] == '0') {
@@ -362,7 +367,7 @@ $(document).ready(() => {
             });
         }
     });
-    $(document).on("click", "#resubmit_btn", function(e) {
+    $(document).on("click", "#resubmit_btn", function (e) {
         let list_docs = []
         for (const [key, value] of Object.entries(RequireResubmit)) {
             if (RequireResubmit[key] == false) {
@@ -387,15 +392,15 @@ $(document).ready(() => {
                 "doc_id_list": list_docs
             }),
         };
-        $.ajax(settings).done(function(response) {
+        $.ajax(settings).done(function (response) {
             alert("OK")
             console.log(response);
-        }).fail(function(response) {
+        }).fail(function (response) {
             console.log(response);
             alert("FAIL")
         });
     });
-    $(document).on("click", "#submit_attachment", function(e) {
+    $(document).on("click", "#submit_attachment", function (e) {
         e.preventDefault();
         const multiple_files = $(".MultiFile-applied.MultiFile");
         if (multiple_files.length == 0) {
@@ -418,7 +423,7 @@ $(document).ready(() => {
             sweetAlert("Chưa có file được chọn. Nếu là lỗi, vui lòng liên hệ developer");
             return;
         }
-        attachments.forEach(function(file) {
+        attachments.forEach(function (file) {
             var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
             var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
             let file_name = `${file_type}_${identity_number}_0${phone_number}_TEL${Date.now().toString()}.pdf`
@@ -433,7 +438,7 @@ $(document).ready(() => {
             });
         });
     });
-    $(document).on("click", "#submit_attachment2", function(e) {
+    $(document).on("click", "#submit_attachment2", function (e) {
         e.preventDefault();
         const multiple_files = $("input[id^='attachment_files2_']");
         if (multiple_files.length == 0) {
@@ -456,7 +461,7 @@ $(document).ready(() => {
             sweetAlert("Chưa có file được chọn. Nếu là lỗi, vui lòng liên hệ developer");
             return;
         }
-        attachments.forEach(function(file) {
+        attachments.forEach(function (file) {
             var file_type = $(`select[name='${file.lastModified + file.name}']`)[0].value;
             var identity_number = $("#full-loan-form input[name='identity_card_id']").val();
             var formData = new FormData();
@@ -518,7 +523,7 @@ $(document).ready(() => {
 
     // SELECT OFFER
     // Upload img_selfie
-    $(document).on("click", "#submit_img_selfie", function(e) {
+    $(document).on("click", "#submit_img_selfie", function (e) {
         e.preventDefault();
         const files = $("#img_selfie")[0].files;
         if (files.length == 0) {
@@ -584,7 +589,7 @@ $(document).ready(() => {
             });
     });
     // Upload img_id_card
-    $(document).on("click", "#submit_img_id_card", function(e) {
+    $(document).on("click", "#submit_img_id_card", function (e) {
         e.preventDefault();
         const files = $("#img_id_card")[0].files;
         if (files.length == 0) {
@@ -653,9 +658,9 @@ $(document).ready(() => {
     // 
     // SUBMIT FULLLOAN
     // Upload img_selfie
-    $(document).on("click", "#submit_img_selfie2", function(e) {
+    $(document).on("click", "#submit_img_selfie2", function (e) {
         e.preventDefault();
-        if (list_id==VTA_List){
+        if (list_id == VTA_List) {
             sweetAlert("Không upload ảnh với VTA lead");
             return;
         }
@@ -684,10 +689,10 @@ $(document).ready(() => {
         });
     });
     // Upload img_id_card
-    $(document).on("click", "#submit_img_id_card2", function(e) {
+    $(document).on("click", "#submit_img_id_card2", function (e) {
         e.preventDefault();
-        
-        if (list_id==VTA_List){
+
+        if (list_id == VTA_List) {
             sweetAlert("Không upload ảnh với VTA lead");
             return;
         }
@@ -730,7 +735,7 @@ $(document).ready(() => {
     clearForm($("#full-loan-form"));
     clearAFForm();
 });
-let CreateOfferTab = function() {
+let CreateOfferTab = function () {
     let offerTab =
         '<li role="presentation" id="offer_tab_href">' +
         '<a href="#offer" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
@@ -739,7 +744,7 @@ let CreateOfferTab = function() {
         "</li>";
     $("#agent_tablist").append(offerTab);
 }
-let fill_file_requier = function(data) {
+let fill_file_requier = function (data) {
     let list_files = data.list_error_file;
     $("#list_resubmit").html(``);
     let b_html = ``;
@@ -754,7 +759,7 @@ let fill_file_requier = function(data) {
     }
     $("#list_resubmit").html(b_html);
 }
-let ResubmitTab = function() {
+let ResubmitTab = function () {
     let offerTab =
         '<li role="presentation" id="offer_tab_href">' +
         '<a href="#resubmit" aria-controls="home" role="tab" data-toggle="tab" class="bb0">' +
@@ -848,19 +853,13 @@ let ECProducts = null;
 
 let ajaxGetECProducts = (partner_code, request_id) => {
     return $.ajax({
-        url: EC_PROD_API_URL + "/los-united/v1/product-list",
-        method: "POST",
+        url: EC_PROD_API_URL + "/los-united/v1/product/vtman/product-list?partner_code=VTM",
+        method: "GET",
         timeout: 0,
         headers: {
             // Authorization: "Bearer "+CRM_TOKEN,
             "Content-Type": "application/json",
-        },
-        data: JSON.stringify({
-            request_id: request_id,
-            channel: "DSA",
-            partner_code: partner_code,
-            product_line: "BUSINESS",
-        }),
+        }
     }).fail((result, status, error) => {
         console.log("Get Product List Failed: ", result);
         let msg = "Please contact developer!";
@@ -882,11 +881,22 @@ let ajaxGetECProducts = (partner_code, request_id) => {
     }).done((result) => {
         //
         SetProductListForm();
-        if (result.code == "SUCCESS") {
+        if (result.code == 0) {
             ECProducts = result.data;
             format_log_productlist(ECProducts);
             let color_index = 0;
             let index = 1;
+            let select_product_code = $("select[name='product_code']")[0];
+            let product_lists = ECProducts.sort(function (a, b) {
+                return a.product_code.localeCompare(b.product_code)
+            });
+            $(`<option value="">Chọn sản phẩm</option>`).appendTo(select_product_code);
+            for (prd of product_lists) {
+                $(
+                    `<option des="${prd.mkt_desc}" value="${prd.product_code}">${prd.product_code} - ${prd.mkt_desc}</option>`
+                ).appendTo(select_product_code);
+            }
+            return;
             ECProducts.forEach((product) => {
                 let productBox = $("<div></div>", {
                     class: "panel box " + box_color[color_index],
@@ -922,61 +932,61 @@ let ajaxGetECProducts = (partner_code, request_id) => {
                     responsive: true,
                     data: product.product_list,
                     columns: [{
-                            title: "Mã sản phẩm",
-                            data: "product_code",
-                        },
-                        {
-                            title: "Thời hạn vay tối thiểu",
-                            data: "loan_min_tenor",
-                        },
-                        {
-                            title: "Thời hạn vay tối đa",
-                            data: "loan_max_tenor",
-                        },
-                        {
-                            title: "Khoảng vay tối thiếu",
-                            data: "loan_min_amount",
-                            render: (data) => {
-                                result =
-                                    data != null ?
+                        title: "Mã sản phẩm",
+                        data: "product_code",
+                    },
+                    {
+                        title: "Thời hạn vay tối thiểu",
+                        data: "loan_min_tenor",
+                    },
+                    {
+                        title: "Thời hạn vay tối đa",
+                        data: "loan_max_tenor",
+                    },
+                    {
+                        title: "Khoảng vay tối thiếu",
+                        data: "loan_min_amount",
+                        render: (data) => {
+                            result =
+                                data != null ?
                                     data.toLocaleString("vi-VN", {
                                         style: "currency",
                                         currency: "VND",
                                     }) :
                                     0;
-                                return result;
-                            },
+                            return result;
                         },
-                        {
-                            title: "Khoản vay tối đa",
-                            data: "loan_max_amount",
-                            render: (data) => {
-                                result =
-                                    data != null ?
+                    },
+                    {
+                        title: "Khoản vay tối đa",
+                        data: "loan_max_amount",
+                        render: (data) => {
+                            result =
+                                data != null ?
                                     data.toLocaleString("vi-VN", {
                                         style: "currency",
                                         currency: "VND",
                                     }) :
                                     0;
-                                return result;
-                            },
+                            return result;
                         },
-                        {
-                            title: "Tỉ lệ lãi",
-                            data: "interest_rate",
+                    },
+                    {
+                        title: "Tỉ lệ lãi",
+                        data: "interest_rate",
+                    },
+                    {
+                        title: "Thao tác",
+                        render: () => {
+                            return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
                         },
-                        {
-                            title: "Thao tác",
-                            render: () => {
-                                return '<button class="btn btn-sm btn-success btn-product-view"><i class="fa fa-fw fa-eye"></i></button>';
-                            },
-                        },
+                    },
                     ],
                 });
                 $("#productTable" + index + " tbody").on(
                     "click",
                     "tr .btn-product-view",
-                    function() {
+                    function () {
                         clearForm($("#product-detail-form"));
                         $("#product-detail-form-bundle").empty();
                         let tmp_data = table.row($(this).closest("tr")).data();
@@ -987,11 +997,11 @@ let ajaxGetECProducts = (partner_code, request_id) => {
                                 if (property.includes("amount")) {
                                     value =
                                         value != null ?
-                                        value.toLocaleString("vi-VN", {
-                                            style: "currency",
-                                            currency: "VND",
-                                        }) :
-                                        0;
+                                            value.toLocaleString("vi-VN", {
+                                                style: "currency",
+                                                currency: "VND",
+                                            }) :
+                                            0;
                                 }
                                 $("#product-detail-form input[name='" + property + "']").val(
                                     value
@@ -1047,21 +1057,21 @@ let ajaxGetECProducts = (partner_code, request_id) => {
                                                 lengthChange: false,
                                                 data: elem[prop],
                                                 columns: [{
-                                                        title: "Doc EN",
-                                                        data: "doc_description_en",
-                                                    },
-                                                    {
-                                                        title: "Doc VI",
-                                                        data: "doc_description_vi",
-                                                    },
-                                                    {
-                                                        title: "Format",
-                                                        data: "doc_format_request",
-                                                    },
-                                                    {
-                                                        title: "Type",
-                                                        data: "doc_type",
-                                                    },
+                                                    title: "Doc EN",
+                                                    data: "doc_description_en",
+                                                },
+                                                {
+                                                    title: "Doc VI",
+                                                    data: "doc_name",
+                                                },
+                                                {
+                                                    title: "Format",
+                                                    data: "doc_format_request",
+                                                },
+                                                {
+                                                    title: "Type",
+                                                    data: "doc_type",
+                                                },
                                                 ],
                                             });
                                         }
@@ -1094,16 +1104,16 @@ let getLeadInfo = (lead_id) => {
         responsetype: "json",
     };
     $.ajax({
-            type: "POST",
-            url: "https://ec02.tel4vn.com/goAPIv2/goLoadLeads/goAPI.php",
-            processData: true,
-            data: postData,
-            dataType: "json",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-        })
-        .done(function(result) {
+        type: "POST",
+        url: "https://ec02.tel4vn.com/goAPIv2/goLoadLeads/goAPI.php",
+        processData: true,
+        data: postData,
+        dataType: "json",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    })
+        .done(function (result) {
             if (result.result != "success") {
                 swal("Get products data fail!", "Lead not found", "error");
                 return;
@@ -1112,12 +1122,14 @@ let getLeadInfo = (lead_id) => {
             let basic = result.basic_requestid;
             SyncCustomerInfomation(lead_info, basic);
         })
-        .fail(function(result) {
+        .fail(function (result) {
             console.log(result);
         });
 };
 
 let SyncCustomerInfomation = (thisVdata, basic_requestid) => {
+    console.log(thisVdata)
+    console.log(basic_requestid)
     $(".formMain input[name='first_name']").val("");
     $(".formMain input[name='middle_initial']").val("");
     $(".formMain input[name='last_name']").val("");
@@ -1202,7 +1214,7 @@ let SyncCustomerInfomation = (thisVdata, basic_requestid) => {
         $(".formMain select[name='alt_identity_issued_by']")
             .val(thisVdata.alt_identity_issued_by)
             .trigger("change");
-    } catch (error) {}
+    } catch (error) { }
     //Vendor
     $(".formMain input[name='vendor_lead_code']")
         .val(thisVdata.vendor_lead_code)
@@ -1240,10 +1252,10 @@ let SyncCustomerInfomation = (thisVdata, basic_requestid) => {
         $(".formMain select[name='basic_request_id']").html(tmp + `<option value='${element.request_id}' selected>${element.request_id}</option>`)
     });
     ECShowProducts(thisVdata.partner_code, thisVdata.request_id, thisVdata.app_status, thisVdata.status, thisVdata.call_status, thisVdata.reject_reason)
-        // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
+    // $(".formMain textarea[name='call_notes']").val(thisVdata.call_notes).trigger('change');
 };
 
-$(document).on("click", "#mapping_af1", function(e) {
+$(document).on("click", "#mapping_af1", function (e) {
     let existed_basic_id = get_select_options("basic_request_id");
     if (existed_basic_id.includes($("#request_id").val()) == false || $("#request_id").val() == "") {
         swal("Không thành công", "RequestID chưa check basic info", "error");
@@ -1257,15 +1269,15 @@ $(document).on("click", "#mapping_af1", function(e) {
     })
 });
 
-$(document).on("click", "#change_request_btn", function(e) {
+$(document).on("click", "#change_request_btn", function (e) {
     let tmp = "TEL" + Date.now().toString();
     $(".formMain input[name='request_id']").val(tmp);
 });
-$(document).on("click", "#select_request_btn", function(e) {
+$(document).on("click", "#select_request_btn", function (e) {
     let tmp = $("#basic_request_id")[0].value;
     $(".formMain input[name='request_id']").val(tmp);
 });
-$(document).on("click", "#btn-application", function(e) {
+$(document).on("click", "#btn-application", function (e) {
     let leadId = $(this).attr("data-leadid");
     let status = $("#btnResumePause").attr("title");
     if (status == "Resume Dialing") {
@@ -1277,7 +1289,7 @@ $(document).on("click", "#btn-application", function(e) {
     }
     // getLeadInfo("5547595");
 });
-$(document).on("click", "#submit-offer", function(e) {
+$(document).on("click", "#submit-offer", function (e) {
     e.preventDefault();
     $(this).attr('disabled', 'disabled');
     let loan_request_id = $(".formMain input[name='request_id']").val();
@@ -1294,19 +1306,19 @@ $(document).on("click", "#submit-offer", function(e) {
     };
 
     $.ajax({
-            type: "POST",
-            url: EC_PROD_API_URL + "/los-united/v2/dsa/select-offer",
-            processData: true,
-            data: JSON.stringify(offer_data),
-            async: true,
-            dataType: "json",
-            headers: {
-                // Authorization: "Bearer "+CRM_TOKEN,
-                "Content-Type": "application/json",
-            },
-        })
+        type: "POST",
+        url: EC_PROD_API_URL + "/los-united/v2/dsa/select-offer",
+        processData: true,
+        data: JSON.stringify(offer_data),
+        async: true,
+        dataType: "json",
+        headers: {
+            // Authorization: "Bearer "+CRM_TOKEN,
+            "Content-Type": "application/json",
+        },
+    })
         .fail((result, status, error) => {
-            
+
             $(this).removeAttr('disabled');
             let msg = "Please contact developer!";
             msg = result.responseJSON.message;
@@ -1335,7 +1347,7 @@ $(document).on("click", "#submit-offer", function(e) {
             }
         });
 });
-$(document).on("click", "#scSubmit", function(e) {
+$(document).on("click", "#scSubmit", function (e) {
     ajaxGetECProducts("TEL", "TEL123456789");
 });
 $("#eligible_btn").on("click", (e) => {
@@ -1417,9 +1429,9 @@ $("#eligible_btn").on("click", (e) => {
             phone_number: phone_number,
             issue_place: id_place,
             gender: gender_v
-                // email: $(".formMain input[name='email']").val(),
-                // tem_province: tem_province,
-                // job_type: job_type,
+            // email: $(".formMain input[name='email']").val(),
+            // tem_province: tem_province,
+            // job_type: job_type,
         };
         let eligible_string = JSON.stringify(eligible_data);
         // if (tmp_eligible== eligible_string){
@@ -1433,17 +1445,17 @@ $("#eligible_btn").on("click", (e) => {
         // tmp_eligible = eligible_string;
         console.info("Eligible data: ", eligible_data);
         $.ajax({
-                type: "POST",
-                url: EC_PROD_API_URL + "/los-united/v1/dsa/basic-info",
-                processData: true,
-                data: eligible_string,
-                async: true,
-                dataType: "json",
-                headers: {
-                    "Content-Type": "application/json",
-                    // Authorization: "Bearer "+CRM_TOKEN,
-                },
-            })
+            type: "POST",
+            url: EC_PROD_API_URL + "/los-united/v1/dsa/basic-info",
+            processData: true,
+            data: eligible_string,
+            async: true,
+            dataType: "json",
+            headers: {
+                "Content-Type": "application/json",
+                // Authorization: "Bearer "+CRM_TOKEN,
+            },
+        })
             .fail((result, status, error) => {
                 $("#eligible_btn").attr("disabled", false);
                 console.log("Eligible failed: ", result);
@@ -1491,9 +1503,9 @@ $("#eligible_btn").on("click", (e) => {
     }
 });
 let set_offer_upload_docs = () => {
-    for (var i = 0; i < selected_product.document_collecting.length; i++) {
+    for (var i = 0; i < selected_product.bundles.length; i++) {
         let is_uploaded_docs = false;
-        let docs = selected_product.document_collecting[i];
+        let docs = selected_product.bundles[i];
         tmp_product_names = "";
         tmp_product_names += `<div class="row">`;
         tmp_product_names += `
@@ -1508,7 +1520,7 @@ let set_offer_upload_docs = () => {
             }
             tmp_product_names += `
         <div class="col-lg-3">
-          <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_description_vi}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
+          <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_name}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
         </div>
       `
             if (j != docs.doc_list.length - 1) {
@@ -1524,7 +1536,7 @@ let set_offer_upload_docs = () => {
             offder_product_names += tmp_product_names.replace("1/ ", "- ").replace("2/ ", "- ").replace("3/ ", "- ")
         }
         // offder_product_names += `</div><hr style="margin : 10px">`;
-        if (i != selected_product.document_collecting.length - 1) {
+        if (i != selected_product.bundles.length - 1) {
             docs_string += " && ";
         }
     }
@@ -1544,14 +1556,14 @@ let getProductType = () => {
     <label style="font-size: large;">Chứng từ bổ sung</label>
   </div>
 </div>`;
-    for (var i = 0; i < selected_product.document_collecting.length; i++) {
+    for (var i = 0; i < selected_product.bundles.length; i++) {
         let is_uploaded_docs = false;
-        let docs = selected_product.document_collecting[i];
+        let docs = selected_product.bundles[i];
         tmp_product_names = "";
         tmp_product_names += `<div class="row">`;
         tmp_product_names += `
     <div class="col-lg-12">
-      <label>${i + 1}/ ${docs.bundle_code} -  ${docs.bundle_name} . Tối thiểu: ${docs.min_request} loại giấy tờ</label>
+      <label>${i + 1}/ ${docs.bundle_name} -  ${docs.bundle_name_vi} . Tối thiểu: ${docs.min_request} loại giấy tờ</label>
     </div>`;
         let tmp_string = "[";
         for (var j = 0; j < docs.doc_list.length; j++) {
@@ -1561,7 +1573,7 @@ let getProductType = () => {
             }
             tmp_product_names += `
         <div class="col-lg-12">
-          <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_description_vi}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
+          <input type="text" value="${docs.doc_list[j].doc_type} - ${docs.doc_list[j].doc_name}" class="mda-form-control ng-pristine ng-empty ng-invalid ng-touched" readonly disabled>
         </div>
       `
             if (j != docs.doc_list.length - 1) {
@@ -1577,7 +1589,7 @@ let getProductType = () => {
             offder_product_names += tmp_product_names.replace("1/ ", "- ").replace("2/ ", "- ").replace("3/ ", "- ")
         }
         // offder_product_names += `</div><hr style="margin : 10px">`;
-        if (i != selected_product.document_collecting.length - 1) {
+        if (i != selected_product.bundles.length - 1) {
             docs_string += " && ";
         }
     }
@@ -1591,7 +1603,7 @@ let getProductType = () => {
 let validateFullloan = () => {
     let check = true;
     let msg = "";
-    if (list_id != VTA_List){
+    if (list_id != VTA_List) {
         if (RequiredDocs["PIC"] == false) {
             check = false;
             msg += "Chưa upload ảnh Sefie\n";
@@ -1601,18 +1613,20 @@ let validateFullloan = () => {
             msg += "Chưa upload ảnh CMND\n";
         }
     }
-    $("#full-loan-form").find('input:required').each(function() {
+    $("#full-loan-form").find('input:required').each(function () {
         let element = $(this);
-        if (element[0].validationMessage != "") {
-            msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
-            check = false;
+        if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
+            if (element[0].validationMessage != "") {
+                msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+            }
         }
     })
-    $("#full-loan-form").find('select:required').each(function() {
+    $("#full-loan-form").find('select:required').each(function () {
         let element = $(this);
-        if (element[0].validationMessage != "") {
-            msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
-            check = false;
+        if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
+            if (element[0].validationMessage != "") {
+                msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+            }
         }
     })
     if ($("input[name='condition_confirm']")[0].checked == false) {
@@ -1635,28 +1649,31 @@ let validateFullloan = () => {
 let SyncFullLoanFromAPI = (request_id) => {
     try {
         ajaxGetOldFullLoan(request_id).done((result) => {
-            try { result = JSON.parse(result);} catch (error) {}
+            try { result = JSON.parse(result); } catch (error) { }
             if (result.error == "Not found") {
                 SyncFullLoanFromContact()
                 return;
             }
             try {
                 let data = result.data;
-                try { data = JSON.parse(data);} catch (error) {}
+                try { data = JSON.parse(data); } catch (error) { }
                 let document = data.document;
-                try { document = JSON.parse(document);} catch (error) {}
+                try { document = JSON.parse(document); } catch (error) { }
                 for (const property in document) {
+                    if (property == "loan_tenor" || property == "loan_amount") {
+                        console.log(property, ":", document[property])
+                    }
                     try {
-                        
-                    $("#full-loan-form input[name='" + property + "']")
-                        .val(document[property])
-                        .trigger("change");
-                    $("#full-loan-form select[name='" + property + "']")
-                        .val(document[property])
-                        .trigger("change");
-                        
+
+                        $("#full-loan-form input[name='" + property + "']")
+                            .val(document[property])
+                            .trigger("change");
+                        $("#full-loan-form select[name='" + property + "']")
+                            .val(document[property])
+                            .trigger("change");
+
                     } catch (error) {
-                        
+
                     }
                 }
                 $("select[name='tem_province']")
@@ -1710,6 +1727,45 @@ let SyncFullLoanFromAPI = (request_id) => {
                         .trigger("change")
                         .selectpicker("refresh");
                 }
+                if (list_id == VTA_List) {
+                    try {
+                        $("select[name='bank_code']")
+                            .val(document["bank_code"])
+                            .trigger("change")
+                            .selectpicker("refresh");
+                        if (document["bank_branch_code"] != null && document["bank_branch_code"] != undefined) {
+                            let tmp_branch = BANK_BRANCH_CODE[document["bank_branch_code"]];
+                            $("select[name='bank_area']")
+                                .val(tmp_branch["area"])
+                                .trigger("change")
+                                .selectpicker("refresh");
+                            $("select[name='bank_branch_code']")
+                                .val(document["bank_branch_code"])
+                                .trigger("change")
+                                .selectpicker("refresh");
+                        } else {
+                            try {
+
+                                $("select[name='bank_area']").val($("select[name='bank_area'] option")[1].value);
+                                $("select[name='bank_area']").trigger("change").selectpicker("refresh");
+                                $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[1].value);
+                                $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
+                                
+                            } catch (error) {
+                                
+                                $("select[name='bank_area']").val($("select[name='bank_area'] option")[2].value);
+                                $("select[name='bank_area']").trigger("change").selectpicker("refresh");
+                                $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[2].value);
+                                $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
+                                
+
+                            }
+                        }
+                    } catch (error) {
+
+                    }
+
+                }
                 // CHECK ALT IDENTITY
                 if ($(".formMain input[name='alt_identity_number']").val() != "") {
                     $("#full-loan-form input[name='identity_card_id']").val($(".formMain input[name='alt_identity_number']").val()).trigger("change");
@@ -1734,8 +1790,15 @@ let SyncFullLoanFromAPI = (request_id) => {
                 $("#full-loan-form input[name='condition_confirm']").prop('checked', true)
                 $("#full-loan-form input[name='term_confirm']").prop('checked', true)
                 $("input[tag='currency']").trigger('blur');
-                $("input[name='range_loan_tenor']").trigger('input');
-                $("input[name='range_loan_amount']").trigger('input');
+                try {
+                    let current_tenor = document['loan_tenor'];
+                    let current_amount = document['loan_amount'];
+                    console.log(current_amount, current_tenor)
+                    $("input[name='range_loan_tenor']").val(current_tenor).trigger("input");
+                    $("input[name='range_loan_amount']").val(current_amount).trigger("input");
+                } catch (error) {
+                    console.log(error)
+                }
                 $(`input[name='simu_insurance']`)[0].value = "0";
                 $(`input[name='simu_insurance']`)[1].value = "6";
                 $(`input[name='simu_insurance']`)[2].value = "8";
@@ -1766,6 +1829,13 @@ let SyncFullLoanFromAPI = (request_id) => {
                 $("#full-loan-form input[name='dsa_agent_code']").val(DSA_CODE);
                 $("#img_id_card2").val("")
                 $("#img_selfie2").val("")
+                // MISS MATCH PRODUCT LIST OLD
+                if (document["product_type"] != undefined){
+                    $("select[name='product_code']")
+                    .val(document["product_type"])
+                    .trigger("change")
+                }
+                // 
                 getProductType();
                 SyncFullLoanFromContact();
             } catch (error) {
@@ -2001,7 +2071,7 @@ function clearInputFile(f) {
     if (f.value) {
         try {
             f.value = ""; //for IE11, latest Chrome/Firefox/Opera...
-        } catch (err) {}
+        } catch (err) { }
         if (f.value) {
             //for IE5 ~ IE10
             var form = document.createElement("form"),
@@ -2092,58 +2162,58 @@ function SetProductListForm() {
     $("input[name='simu_insurance']")[0].checked = true;
 }
 
-$(document).on("click", 'input[name="simu_insurance"]', function(e) {
+$(document).on("click", 'input[name="simu_insurance"]', function (e) {
     simulator(e);
 });
-$(document).on("change", 'select[name="product_type"]', function(e) {
+$(document).on("change", 'select[name="product_code"]', function (e) {
     let product_code = this.value;
     $("input[name='simu_insurance']")[0].checked = true;
-    selected_employment_type.product_list.forEach((prd) => {
+    ECProducts.forEach((prd) => {
         if (prd.product_code == product_code) {
             selected_product = prd;
             //
             // Loan tenor
             $("#full-loan-form input[name='range_loan_tenor']")[0].max =
-                prd.loan_max_tenor;
+                prd.max_tenor;
             $("#full-loan-form input[name='range_loan_tenor']")[0].min =
-                prd.loan_min_tenor;
+                prd.min_tenor;
             $("#full-loan-form input[name='range_loan_tenor']")[0].value =
-                prd.loan_min_tenor;
+                prd.min_tenor;
             //
-            $("#full-loan-form input[name='loan_tenor']")[0].max = prd.loan_max_tenor;
-            $("#full-loan-form input[name='loan_tenor']")[0].min = prd.loan_min_tenor;
+            $("#full-loan-form input[name='loan_tenor']")[0].max = prd.max_tenor;
+            $("#full-loan-form input[name='loan_tenor']")[0].min = prd.min_tenor;
             $("#full-loan-form input[name='loan_tenor']")[0].value =
-                prd.loan_min_tenor;
+                prd.min_tenor;
             //
             // Loan amount
             $("#full-loan-form input[name='range_loan_amount']")[0].max =
-                prd.loan_max_amount;
+                prd.max_amt;
             $("#full-loan-form input[name='range_loan_amount']")[0].min =
-                prd.loan_min_amount;
+                prd.min_amt;
             $("#full-loan-form input[name='range_loan_amount']")[0].value =
-                prd.loan_min_amount;
+                prd.min_amt;
             //
             $("#full-loan-form input[name='loan_amount']")[0].max =
-                prd.loan_max_amount;
+                prd.max_amt;
             $("#full-loan-form input[name='loan_amount']")[0].min =
-                prd.loan_min_amount;
+                prd.min_amt;
             $("#full-loan-form input[name='loan_amount']")[0].value =
-                prd.loan_min_amount;
+                prd.min_amt;
             //
             simulator(e)
             return;
         }
     });
-    if (selected_employment_type.employee_type != "SE") {
-        $("#bussiness_se").attr('hidden', true)
-    } else {
-        $("#bussiness_se").attr('hidden', false)
-    }
+    // if (selected_employment_type.employee_type != "SE") {
+    //     $("#bussiness_se").attr('hidden', true)
+    // } else {
+    //     $("#bussiness_se").attr('hidden', false)
+    // }
     getProductType();
-    $("#product_required_description").text(selected_product.product_description);
+    $("#product_required_description").text(selected_product.mkt_desc);
 });
 
-$(document).on("change", 'select[name="disbursement_method"]', function() {
+$(document).on("change", 'select[name="disbursement_method"]', function () {
     let dis_method = this.value;
     let req = false;
     if (dis_method == "bank") {
@@ -2155,87 +2225,97 @@ $(document).on("change", 'select[name="disbursement_method"]', function() {
     $("#full-loan-form input[name='bank_account']").attr("required", req);
     $("#disbursement_method_bank").attr('hidden', !req)
 });
-$(document).on("change", 'select[name="employment_type"]', function() {
-    selected_employment_type = null;
-    let em_type = this.value;
-    if (ECProducts != undefined) {
-        let select_product_type = $("select[name='product_type']")[0];
-        select_product_type.innerHTML = "";
-        ECProducts.forEach((et) => {
-            if (et.employee_type == em_type) {
-                if (selected_employment_type == null) {
-                    selected_employment_type = et;
-                } else {
-                    selected_employment_type.product_list = [].concat(selected_employment_type.product_list, et.product_list);
-                }
-                let product_lists = et.product_list.sort(function(a, b) {
-                    return a.product_code.localeCompare(b.product_code)
-                });
-                $(`<option value=""></option>`).appendTo(select_product_type);
-                for (prd of product_lists) {
-                    $(
-                        `<option des="${prd.product_description}" value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
-                    ).appendTo(select_product_type);
-                }
-            }
-        });
+
+$(document).on("change", 'select[name="employment_type"]', function () {
+    selected_employment_type = $(this).val();
+    console.log(selected_employment_type);
+    if (selected_employment_type != "SE") {
+        $("#bussiness_se").attr('hidden', true)
+    } else {
+        $("#bussiness_se").attr('hidden', false)
     }
 });
+// $(document).on("change", 'select[name="employment_type"]', function () {
+//     selected_employment_type = null;
+//     let em_type = this.value;
+//     if (ECProducts != undefined) {
+//         let select_product_code = $("select[name='product_code']")[0];
+//         select_product_code.innerHTML = "";
+//         ECProducts.forEach((et) => {
+//             if (et.employee_type == em_type) {
+//                 if (selected_employment_type == null) {
+//                     selected_employment_type = et;
+//                 } else {
+//                     selected_employment_type.product_list = [].concat(selected_employment_type.product_list, et.product_list);
+//                 }
+//                 let product_lists = et.product_list.sort(function (a, b) {
+//                     return a.product_code.localeCompare(b.product_code)
+//                 });
+//                 $(`<option value=""></option>`).appendTo(select_product_code);
+//                 for (prd of product_lists) {
+//                     $(
+//                         `<option des="${prd.product_description}" value="${prd.product_code}">${prd.product_code} - ${prd.product_description}</option>`
+//                     ).appendTo(select_product_code);
+//                 }
+//             }
+//         });
+//     }
+// });
 
-$(document).on("keyup", 'input[tag="currency"]', function() {
+$(document).on("keyup", 'input[tag="currency"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
 });
 
-$(document).on("blur", 'input[tag="currency"]', function() {
-    if (this.value == "" || this.value == undefined) {}
+$(document).on("blur", 'input[tag="currency"]', function () {
+    if (this.value == "" || this.value == undefined) { }
     this.value = this.value.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
     this.value = formatter.format(this.value);
 });
 
-$(document).on("keyup", 'input[name="customer-offer-amount"]', function() {
+$(document).on("keyup", 'input[name="customer-offer-amount"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
 });
 
-$(document).on("keyup", 'input[name^="customer-offer"]', function() {
+$(document).on("keyup", 'input[name^="customer-offer"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
 });
-$(document).on("blur", 'input[name="customer-offer-amount"]', function() {
+$(document).on("blur", 'input[name="customer-offer-amount"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
     let fmv = formatter.format(this.value);
     this.value = fmv;
 });
 
-$(document).on("blur", 'input[name="customer-offer-monthly"]', function() {
+$(document).on("blur", 'input[name="customer-offer-monthly"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
     let fmv = formatter.format(this.value);
     this.value = fmv;
 });
-$(document).on("blur", 'input[name="customer-offer-total"]', function() {
+$(document).on("blur", 'input[name="customer-offer-total"]', function () {
     let val = this.value;
-    if (val == "" || val == undefined) {}
+    if (val == "" || val == undefined) { }
     this.value = val.replace(/[^0-9\.]/g, "");
     this.value = this.value.split(".").join("");
     let fmv = formatter.format(this.value);
     this.value = fmv;
 });
 
-$(document).on("click", 'input[name="select_insurance"]', function() {
+$(document).on("click", 'input[name="select_insurance"]', function () {
     $("#create-offer-table").empty();
     $("#create-offer-table").attr("hidden", false);
     let tmp_data2 = offerinsurancetable.row(this).data();
@@ -2256,10 +2336,10 @@ $("#submit-docs").on("click", (e) => {
     $("#submit_attachment").click();
     $("#submit_img_id_card").click();
 });
-
+// TẠO HỒ SƠ DB
 function creat_full_loan(form_data, mode) {
     let product_des = "";
-    let selected_product = $("select[name='product_type'] :selected").attr("des");
+    let selected_product = $("select[name='product_code'] :selected").attr("des");
     if (selected_product != undefined) {
         product_des = selected_product.split("(")[0].trim();
     }
@@ -2268,16 +2348,16 @@ function creat_full_loan(form_data, mode) {
     form_data.product_name = product_des;
     let post_data = JSON.stringify(form_data);
     $.ajax({
-            type: "POST",
-            url: TEL4VN_API_URL + "/v1/fullloan",
-            processData: true,
-            data: post_data,
-            async: true,
-            dataType: "json",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
+        type: "POST",
+        url: TEL4VN_API_URL + "/v1/fullloan",
+        processData: true,
+        data: post_data,
+        async: true,
+        dataType: "json",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
         .fail((result, status, error) => {
             console.warn("Fullloan data : ", result);
         })
@@ -2285,8 +2365,8 @@ function creat_full_loan(form_data, mode) {
             console.log("Fullloan data : ", result);
         });
 }
+// GỬI HỒ SƠ
 $("#full-loan-form").on("submit", (e) => {
-
     lead_id = $(".formMain input[name='lead_id']").val() * 1;
     e.preventDefault();
     let form_data = $("#full-loan-form").serializeFormJSON();
@@ -2316,7 +2396,7 @@ $("#full-loan-form").on("submit", (e) => {
     form_data.request_id = request_id.value;
     form_data.partner_code = partner_code.value
     form_data.identity_card_id = $('#full-loan-form input[name="identity_card_id"]').val()
-        //
+    //
     if (form_data.img_selfie == undefined || form_data.img_selfie == "") {
         form_data.img_selfie = form_data.img_selfie2;
     }
@@ -2338,28 +2418,46 @@ $("#full-loan-form").on("submit", (e) => {
         form_data.bank_code = "";
         form_data.bank_branch_code = "";
     }
+    if (list_id == VTA_List) {
+        // workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward
+        if (form_data.workplace_address == "" || form_data.workplace_address == undefined) {
+            form_data.workplace_address = "VTA";
+        }
+        if (form_data.workplace_district == "" || form_data.workplace_district == undefined) {
+            form_data.workplace_district = "VTA";
+        }
+        if (form_data.workplace_province == "" || form_data.workplace_province == undefined) {
+            form_data.workplace_province = "VTA";
+        }
+        if (form_data.workplace_ward == "" || form_data.workplace_ward == undefined) {
+            form_data.workplace_ward = "VTA";
+        }
+        if (form_data.workplace_name == "" || form_data.workplace_name == undefined) {
+            form_data.workplace_name = "VTA";
+        }
+    }
     // 
     let post_data = JSON.stringify(form_data);
     // console.log("Fullloan data : ", form_data);
     $("#offer-waiting").attr("hidden", false);
     // post to EC
     $.ajax({
-            url: EC_PROD_API_URL + "/los-united/v2/dsa/send-loan-application",
-            method: "POST",
-            timeout: 0,
-            headers: {
-                // Authorization: "Bearer "+CRM_TOKEN,
-                "Content-Type": "application/json",
-            },
-            data: post_data,
-        })
+        url: EC_PROD_API_URL + "/los-united/v2/dsa/send-loan-application",
+        method: "POST",
+        timeout: 0,
+        headers: {
+            // Authorization: "Bearer "+CRM_TOKEN,
+            "Content-Type": "application/json",
+        },
+        data: post_data,
+    })
         .fail((result, status, error) => {
             creat_full_loan(form_data, "update");
             var er_data = result.responseJSON.body;
             try {
                 console.log("Submit fullloan failed : ", er_data);
-            } catch (e) {}
-            let msg = er_data.code + " " +er_data.message;
+            } catch (e) { }
+            let msg = er_data.code + " " + er_data.message;
             // if (result.message !== undefined) {
             //     msg = result.message;
             // }
@@ -2466,7 +2564,7 @@ function SetOfferDetail(offerList) {
     console.log("Offerlist data : ", offerList);
     try {
         offerinsurancetable.clear().draw();
-    } catch (error) {}
+    } catch (error) { }
     var offerTable = $("#offer-list-table").DataTable({
         destroy: true,
         responsive: true,
@@ -2474,94 +2572,94 @@ function SetOfferDetail(offerList) {
         lengthChange: false,
         data: offerList,
         columns: [{
-                title: "Mã offer",
-                data: "offer_id",
-            },
-            {
-                title: "Khoản vay",
-                data: "offer_amount",
-                render: (data) => {
-                    result =
-                        data != null ?
+            title: "Mã offer",
+            data: "offer_id",
+        },
+        {
+            title: "Khoản vay",
+            data: "offer_amount",
+            render: (data) => {
+                result =
+                    data != null ?
                         data.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",
                         }) :
                         0;
-                    return result;
-                },
+                return result;
             },
-            {
-                title: "Interest Rate",
-                data: "interest_rate",
-            },
-            {
-                title: "Khoản thanh toán hằng tháng",
-                data: "monthly_installment",
-                render: (data) => {
-                    result =
-                        data != null ?
+        },
+        {
+            title: "Interest Rate",
+            data: "interest_rate",
+        },
+        {
+            title: "Khoản thanh toán hằng tháng",
+            data: "monthly_installment",
+            render: (data) => {
+                result =
+                    data != null ?
                         data.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",
                         }) :
                         0;
-                    return result;
-                },
+                return result;
             },
-            {
-                title: "Kỳ hạn",
-                data: "offer_tenor",
-            },
-            {
-                title: "Số tiền vay ít nhất",
-                data: "min_financed_amount",
-                render: (data) => {
-                    result =
-                        data != null ?
+        },
+        {
+            title: "Kỳ hạn",
+            data: "offer_tenor",
+        },
+        {
+            title: "Số tiền vay ít nhất",
+            data: "min_financed_amount",
+            render: (data) => {
+                result =
+                    data != null ?
                         data.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",
                         }) :
                         0;
-                    return result;
-                },
+                return result;
             },
-            {
-                title: "Số tiền vay cao nhất",
-                data: "max_financed_amount",
-                render: (data) => {
-                    result =
-                        data != null ?
+        },
+        {
+            title: "Số tiền vay cao nhất",
+            data: "max_financed_amount",
+            render: (data) => {
+                result =
+                    data != null ?
                         data.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",
                         }) :
                         0;
-                    return result;
-                },
+                return result;
             },
-            {
-                title: "Offer Variant",
-                data: "offer_variant",
+        },
+        {
+            title: "Offer Variant",
+            data: "offer_variant",
+        },
+        {
+            title: "Loại",
+            data: "offer_type",
+        },
+        {
+            title: "Bảo hiểm",
+            render: () => {
+                return '<button class="btn btn-sm btn-success btn-offer-view"><i class="fa fa-fw fa-eye"></i></button>';
             },
-            {
-                title: "Loại",
-                data: "offer_type",
-            },
-            {
-                title: "Bảo hiểm",
-                render: () => {
-                    return '<button class="btn btn-sm btn-success btn-offer-view"><i class="fa fa-fw fa-eye"></i></button>';
-                },
-            },
+        },
         ],
     });
 
-    $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function(e) {
+    $("#offer-list-table tbody").on("click", "tr .btn-offer-view", function (e) {
         try {
             offerinsurancetable.clear().draw();
-        } catch (error) {}
+        } catch (error) { }
         e.preventDefault();
         $("#create-offer-table").empty();
         $("#create-offer-table").attr("hidden", true);
@@ -2584,61 +2682,61 @@ function SetOfferDetail(offerList) {
             lengthChange: false,
             data: tmp_data.insurance_list,
             columns: [{
-                    title: "Loại",
-                    data: "insurance_type",
-                }, {
-                    title: "Tổng khoản vay",
-                    data: "percentage_insurance",
-                    render: (data) => {
-                        result =
-                            data != null ?
+                title: "Loại",
+                data: "insurance_type",
+            }, {
+                title: "Tổng khoản vay",
+                data: "percentage_insurance",
+                render: (data) => {
+                    result =
+                        data != null ?
                             (data * selected_offer_amount / 100 + selected_offer_amount).toLocaleString("vi-VN", {
                                 style: "currency",
                                 currency: "VND",
                             }) :
                             0;
-                        return result;
-                    },
+                    return result;
                 },
-                {
-                    title: "Thanh toán hàng tháng có bảo hiểm",
-                    data: "percentage_insurance",
-                    render: (data) => {
-                        result =
-                            data != null ?
+            },
+            {
+                title: "Thanh toán hàng tháng có bảo hiểm",
+                data: "percentage_insurance",
+                render: (data) => {
+                    result =
+                        data != null ?
                             (parseInt(selected_monthly_installment / 100 * data) + selected_monthly_installment).toLocaleString("vi-VN", {
                                 style: "currency",
                                 currency: "VND",
                             }) :
                             0;
-                        return result;
-                    },
+                    return result;
                 },
-                {
-                    title: "Tỉ lệ",
-                    data: "percentage_insurance",
-                    render: (data) => {
-                        return data + "%";
-                    },
+            },
+            {
+                title: "Tỉ lệ",
+                data: "percentage_insurance",
+                render: (data) => {
+                    return data + "%";
                 },
-                {
-                    title: "BC",
-                    data: "base_calculation",
+            },
+            {
+                title: "BC",
+                data: "base_calculation",
+            },
+            {
+                title: "Chọn bảo hiểm",
+                data: "insurance_type",
+                render: (data) => {
+                    return `<input type="radio" name="select_insurance" value="${data}" />`;
                 },
-                {
-                    title: "Chọn bảo hiểm",
-                    data: "insurance_type",
-                    render: (data) => {
-                        return `<input type="radio" name="select_insurance" value="${data}" />`;
-                    },
+            },
+            {
+                visible: false,
+                data: "insurance_amount",
+                render: (data) => {
+                    return `<input type="text" name="select_insurance_amount" value="${data}" />`;
                 },
-                {
-                    visible: false,
-                    data: "insurance_amount",
-                    render: (data) => {
-                        return `<input type="text" name="select_insurance_amount" value="${data}" />`;
-                    },
-                },
+            },
             ],
         });
     });
@@ -2654,17 +2752,17 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 //
-$(function() {
+$(function () {
     //
     $("#attachment_files").MultiFile({
-        onFileRemove: function(element, value, master_element) {
+        onFileRemove: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
         },
-        afterFileRemove: function(element, value, master_element) {
+        afterFileRemove: function (element, value, master_element) {
             $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
         },
-        onFileAppend: function(element, value, master_element) {},
-        afterFileAppend: function(element, value, master_element) {
+        onFileAppend: function (element, value, master_element) { },
+        afterFileAppend: function (element, value, master_element) {
             var last_mdf = element.files[0].lastModified + element.files[0].name;
             $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
                 `<SELECT name='${last_mdf}' class="select_file_type">
@@ -2746,38 +2844,38 @@ $(function() {
                 allowClear: true,
             });
         },
-        onFileSelect: function(element, value, master_element) {
+        onFileSelect: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileSelect - " + value + "</li>");
         },
-        afterFileSelect: function(element, value, master_element) {
+        afterFileSelect: function (element, value, master_element) {
             $("#F9-Log").append("<li>afterFileSelect - " + value + "</li>");
         },
-        onFileInvalid: function(element, value, master_element) {
+        onFileInvalid: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileInvalid - " + value + "</li>");
         },
-        onFileDuplicate: function(element, value, master_element) {
+        onFileDuplicate: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileDuplicate - " + value + "</li>");
         },
-        onFileTooMany: function(element, value, master_element) {
+        onFileTooMany: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooMany - " + value + "</li>");
         },
-        onFileTooBig: function(element, value, master_element) {
+        onFileTooBig: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooBig - " + value + "</li>");
         },
-        onFileTooMuch: function(element, value, master_element) {
+        onFileTooMuch: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
         },
     });
 
     $("#attachment_files2").MultiFile({
-        onFileRemove: function(element, value, master_element) {
+        onFileRemove: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileRemove - " + value + "</li>");
         },
-        afterFileRemove: function(element, value, master_element) {
+        afterFileRemove: function (element, value, master_element) {
             $("#F9-Log").append("<li>afterFileRemove - " + value + "</li>");
         },
-        onFileAppend: function(element, value, master_element) {},
-        afterFileAppend: function(element, value, master_element) {
+        onFileAppend: function (element, value, master_element) { },
+        afterFileAppend: function (element, value, master_element) {
             var last_mdf = element.files[0].lastModified + element.files[0].name;
             $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
                 `<SELECT name='${last_mdf}' class="select_file_type">
@@ -2859,25 +2957,25 @@ $(function() {
                 allowClear: true,
             });
         },
-        onFileSelect: function(element, value, master_element) {
+        onFileSelect: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileSelect - " + value + "</li>");
         },
-        afterFileSelect: function(element, value, master_element) {
+        afterFileSelect: function (element, value, master_element) {
             $("#F9-Log").append("<li>afterFileSelect - " + value + "</li>");
         },
-        onFileInvalid: function(element, value, master_element) {
+        onFileInvalid: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileInvalid - " + value + "</li>");
         },
-        onFileDuplicate: function(element, value, master_element) {
+        onFileDuplicate: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileDuplicate - " + value + "</li>");
         },
-        onFileTooMany: function(element, value, master_element) {
+        onFileTooMany: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooMany - " + value + "</li>");
         },
-        onFileTooBig: function(element, value, master_element) {
+        onFileTooBig: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooBig - " + value + "</li>");
         },
-        onFileTooMuch: function(element, value, master_element) {
+        onFileTooMuch: function (element, value, master_element) {
             $("#F9-Log").append("<li>onFileTooMuch - " + value + "</li>");
         },
     });
@@ -2913,7 +3011,7 @@ var saveFullLoan = () => {
     form_data.request_id = $('input[name="request_id"]').val();
     form_data.partner_code = $('input[name="partner_code"]').val();
     let product_des = "";
-    let selected_product = $("select[name='product_type'] :selected").attr("des");
+    let selected_product = $("select[name='product_code'] :selected").attr("des");
     if (selected_product != undefined) {
         product_des = selected_product.split("(")[0].trim();
     }
@@ -2929,10 +3027,10 @@ var saveFullLoan = () => {
         data: JSON.stringify(form_data),
     };
     $.ajax(settings)
-        .done(function(response) {
+        .done(function (response) {
             swal("Save full loan success", "success", "success");
         })
-        .fail(function(response) {
+        .fail(function (response) {
             swal("Save full loan erro", response.responseJSON.erro, "success");
             console.log("Save full loan erro: ", response);
         });
@@ -2941,7 +3039,7 @@ $(document).ready(() => {
     var btnSave = $("<button></button>")
         .text("Lưu lại")
         .addClass("btn sw-btn-save")
-        .on("click", function(e) {
+        .on("click", function (e) {
             e.preventDefault();
             saveFullLoan();
         });
@@ -2949,7 +3047,7 @@ $(document).ready(() => {
     var btnFinish = $("<button></button>")
         .text("Gửi hồ sơ")
         .addClass("btn sw-btn-finish disabled")
-        .on("click", function(e) {
+        .on("click", function (e) {
             e.preventDefault();
             let app_status = $(".formMain input[name='app_status']").val();
             if (DO_NOT_REAPP.includes(app_status)) {
@@ -2964,16 +3062,32 @@ $(document).ready(() => {
         });
     let validateStep = (step) => {
         let msg = "";
-        $(`#step-${step}`).find('input:required').each(function() {
+        $(`#step-${step}`).find('input:required').each(function () {
             let element = $(this);
-            if (element[0].validationMessage != "") {
-                msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+            if (list_id == VTA_List) {
+                if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
+                    if (element[0].validationMessage != "") {
+                        msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+                    }
+                }
+            } else {
+                if (element[0].validationMessage != "") {
+                    msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+                }
             }
         })
-        $(`#step-${step}`).find('select:required').each(function() {
+        $(`#step-${step}`).find('select:required').each(function () {
             let element = $(this);
-            if (element[0].validationMessage != "") {
-                msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+            if (list_id == VTA_List) {
+                if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
+                    if (element[0].validationMessage != "") {
+                        msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+                    }
+                }
+            } else {
+                if (element[0].validationMessage != "") {
+                    msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
+                }
             }
         })
         return msg;
@@ -2993,7 +3107,7 @@ $(document).ready(() => {
         },
         enableURLhash: false,
     });
-    $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+    $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
         // if (!true){
         //   e.preventDefault();
         // }
@@ -3007,7 +3121,7 @@ $(document).ready(() => {
     });
     $("#smartwizard").on(
         "showStep",
-        function(e, anchorObject, stepNumber, stepDirection) {
+        function (e, anchorObject, stepNumber, stepDirection) {
             if (stepDirection == "forward" && stepNumber == 4) {
                 if ($(".btn.sw-btn-finish").hasClass("disabled")) {
                     $(".btn.sw-btn-finish").removeClass("disabled");
@@ -3051,6 +3165,18 @@ $(document).ready(() => {
             }
             $("select[name='bank_branch_code']").selectpicker("refresh");
         }
+        try {
+            $("select[name='bank_area']").val($("select[name='bank_area'] option")[1].value);
+            $("select[name='bank_area']").trigger("change").selectpicker("refresh");
+            $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[1].value);
+            $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
+        } catch (error) {
+            $("select[name='bank_area']").val($("select[name='bank_area'] option")[2].value);
+            $("select[name='bank_area']").trigger("change").selectpicker("refresh");
+            $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[2].value);
+            $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
+        }
+            
     });
     $("select[name='bank_area']").on("change", () => {
         let bankAreaValue = $("select[name='bank_area']").val();
@@ -3240,23 +3366,18 @@ let ajaxGetCallStatus = (status) => {
     });
 };
 // DEV AREA
-let format_log_productlist = function(product_list) {
-        // console.log(product_list)
-        let log_products = {};
-        log_products.list = [];
-        log_products.total = 0;
-        for (let index = 0; index < product_list.length; index++) {
-            let products = [];
-            let type_products = product_list[index].product_list;
-            for (let j = 0; j < type_products.length; j++) {
-                let product = {};
-                product.product_code = type_products[j].product_code;
-                product.product_descriptio = type_products[j].product_description;
-                products.push(product);
-            }
-            log_products.list.push(products);
-            log_products.total += products.length;
-        }
-        // console.info("Products: ",log_products);
+let format_log_productlist = function (product_list) {
+    // console.log(product_list)
+    let log_products = {};
+    log_products.list = [];
+    log_products.total = 0;
+    for (let j = 0; j < product_list.length; j++) {
+        let product = {};
+        product.product_code = product_list[j].product_code;
+        product.product_descriptio = product_list[j].mkt_desc;
+        log_products.list.push(products);
     }
+    log_products.total += log_products.list.length;
+    console.info("Products: ", log_products);
+}
     // END DEV AREA
