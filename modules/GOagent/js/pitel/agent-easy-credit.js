@@ -47,7 +47,7 @@ function generate_url(request_id, file_name, doc_type, proposal_id = "") {
     }).fail((result, status, error) => {
         RequireResubmit[doc_type] = false
         console.log("generate_url error : ", result);
-        let msg = result.responseJSON.msg;
+        let msg = result.responseJSON.message;
         RequiredDocs[doc_type] = (msg.includes("đã được upload trước đó"));
         if (msg.includes("đã được upload trước đó")) {
             tata.info('Đã gửi', msg, {
