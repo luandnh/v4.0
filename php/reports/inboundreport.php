@@ -102,9 +102,10 @@
                                                                 <th nowrap> Call Date </th>
                                                                 <th nowrap> Agent </th>
                                                                 <th nowrap> Phone Number </th>
-                                                                <th nowrap> Time </th>
                                                                 <th nowrap> Length </th>
-                                                                <th nowrap> Status </th>
+																<th nowrap> Status </th>
+																<th nowrap> Start Time </th>
+																<th nowrap> End Time </th>
                                                         </tr>
                                                 </thead>
                                                 <tbody>
