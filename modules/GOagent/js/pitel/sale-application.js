@@ -265,7 +265,7 @@ function SetProductListForm() {
 
 let ajaxGetECProducts = (partner_code, request_id) => {
   return $.ajax({
-    url: EC_PROD_API_URL + "/api/loanServices/v1/product-list",
+    url: EC_PROD_API_URL + "/los-united/v1/product-list",
     method: "POST",
     timeout: 0,
     headers: {

@@ -101,7 +101,7 @@ $(document).ready(function () {
       let vstatus = MAP_STATUS[vsub_status];
       if (vstatus == "" || vstatus == undefined) {
         console.log("Not found  lead_status for sub_status : " + vsub_status);
-        tata.info('Cập nhật trạng thái VTA', 'Không gửi trạng thái: ' + "D1", {
+        tata.info('Cập nhật trạng thái VTA', 'Không gửi trạng thái: ' + vstatus, {
           position: 'tl', animate: 'slide', duration: 2500
         })
         return;
