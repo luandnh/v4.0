@@ -1563,7 +1563,6 @@ $('#callback-datepicker').on('shown.bs.modal', function(){
                     goCloserBlended: ($("#closerSelectBlended").is(':checked') ? 1 : 0),
                     goUseWebRTC: use_webrtc
                 };
-        
                 $.ajax({
                     type: 'POST',
                     url: '<?=$goAPI ?>/goAgent/goAPI.php',
@@ -3058,6 +3057,7 @@ function checkIfStillLoggedIn(logged_out, last_call) {
         .done(function (result) {
             if (result.result == 'success') {
                 if (!result.logged_in) {
+                    return;
                     if (alertLogout) {
                         sendLogout(true);
                         swal({
@@ -3136,10 +3136,10 @@ function CheckForConfCalls (confnum, force) {
         if (result.result == 'success') {
             var LMAforce = force;
             var confArray = result.data.conf_output;
-                UnixTime = confArray.unixtime;
-                UnixTime = parseInt(UnixTime);
-                UnixTimeMS = (UnixTime * 1000);
-                t.setTime(UnixTimeMS);
+            UnixTime = confArray.unixtime;
+            UnixTime = parseInt(UnixTime);
+            UnixTimeMS = (UnixTime * 1000);
+            t.setTime(UnixTimeMS);
             if ( (callholdstatus == '1') || (agentcallsstatus == '1') || (vicidial_agent_disable != 'NOT_ACTIVE') ) {
                 var AGLogin = confArray.logged_in;
                 var CampCalls = confArray.camp_calls;
@@ -8986,6 +8986,8 @@ function GetCustomFields(listid, show, getData, viewFields) {
                                         customHTML += '<span id="' + field_prefix + thisField.field_label + '" data-type="' + field_type.toLowerCase() + '" class="' + field_prefix + field_type.toLowerCase() + '">' + display_content.replace(/(?:\r\n|\r|\n)/g, '<br>') + '</span>';
                                         if (field_type != 'SCRIPT') {
                                             customHTML += '<div class="customform-label">' + thisField.field_name + '</div>';
+                                        }else{
+                                            customHTML += '<label style="position: absolute;top: 0;left: 0;font-family: Helvetica !important;z-index: 0;display: inline-block;font-size: 1em;opacity: 1;-webkit-transition: all 0.2s ease;-o-transition: all 0.2s ease;transition: all 0.2s ease;">' + thisField.field_name + '</div>';
                                         }
                                         customHTML += '</div>';
                                     }
@@ -9176,6 +9178,7 @@ function replaceCustomFields(view) {
         getCFields = $("[id^='viewCustom_']");
     }
     $.each(getCFields, function() {
+        try {
         var fieldType = $(this).data('type');
         if (/checkbox|radio|multi|select/.test(fieldType)) return true;
         var pattern = /--A--\w+--B--/g;
@@ -9226,6 +9229,11 @@ function replaceCustomFields(view) {
                     $(this).val(newValue);
                 }
             }
+        }
+        
+            
+    } catch (error) {
+            
         }
     });
     
