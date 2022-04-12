@@ -722,9 +722,13 @@ $custDefaultAvatar = "https://www.gravatar.com/avatar/{$avatarHash}?rating=PG&si
 													 * Mau dung: $custom_fields_values->{$A_field_label}
 													 */
 													if($list_id_ct == 1152) {
-														$binding = strip_tags($custom_fields_values->{$A_field_label});
-														$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$binding}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+														$binding = $custom_fields_values->{$A_field_label};
 														$field_HTML .= "<label for=\"$A_field_label\">$A_field_name</label>";
+														if($A_field_label == "list_doc_collecting") {
+															$field_HTML .= $binding;
+														}else {
+															$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$binding}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+														}
 													}
 													else {
 														if ($A_field_type == 'TEXT') {

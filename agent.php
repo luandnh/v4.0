@@ -1342,10 +1342,16 @@ input:checked + .slider:before {
 								</div>
 								
 						        <div id="custom_fields_content" class="card-body" style="border: 1px solid rgb(221, 230, 233); margin: 0 32px 0 22px; display: none;">
-									<h4 style="font-weight: 600;">
-										<?=$lh->translationFor('custom_forms')?>
-									</h4>
-									<br>
+									<div class="row">
+										<div class="col-md-6">
+											<h4 style="font-weight: 600;">
+												<?=$lh->translationFor('custom_forms')?>
+											</h4>
+										</div>
+										<div class="col-md-6">
+											<button class="btn btn-warning pull-right" type="button" onclick="GetCustomFields(list_id,true,true,true)">Refresh</button>
+										</div>
+									</div>
 									<form role="form" id="custom_form" class="formMain">
 										<div id="custom_fields">
 											
@@ -3275,8 +3281,8 @@ dding-top: 10px;">
 		<script type="text/javascript" src="modules/GOagent/js/pitel/dsa_update_status.js?v=3" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/bank_code.js" defer></script>
 		<script type="text/javascript" src="modules/GOagent/js/pitel/tel4vn.test.js" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=113" defer></script>
-		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-debt-restructing.js?v=3" defer></script>	
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-easy-credit.js?v=212" defer></script>
+		<script type="text/javascript" src="modules/GOagent/js/pitel/agent-debt-restructing.js?v=4" defer></script>	
 		<script src="modules/GOagent/js/jquery.smartWizard.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/pitel/location_dictionary.js?v=6" defer></script>
 		<script type="text/javascript" src="js/pitel/bank_dictionary.js?v=2" defer></script>
