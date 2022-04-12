@@ -7,7 +7,7 @@ var RequiredDocs = {
     "PID": false,
     "PIC": false
 }
-
+var allow_check_docs = []
 function get_select_options(id_name) {
     var ddlArray = new Array();
     var ddl = document.getElementById(id_name);
@@ -853,7 +853,7 @@ let ECProducts = null;
 
 let ajaxGetECProducts = (partner_code, request_id) => {
     return $.ajax({
-        url: EC_PROD_API_URL + "/los-united/v1/product/vtman/product-list?partner_code=VTM",
+        url: EC_PROD_API_URL + "/los-united/v1/product/vtman/product-list?partner_code=TEL",
         method: "GET",
         timeout: 0,
         headers: {
@@ -1542,6 +1542,7 @@ let set_offer_upload_docs = () => {
     }
 }
 let getProductType = () => {
+    allow_check_docs = []
     var docs_string = "";
     var offder_product_names;
     var offder_docs_string = "";
@@ -1567,6 +1568,9 @@ let getProductType = () => {
     </div>`;
         let tmp_string = "[";
         for (var j = 0; j < docs.doc_list.length; j++) {
+            let dt = docs.doc_list[j].doc_type;
+            let dn = docs.doc_list[j].doc_name;
+            allow_check_docs.push({"doc_type":dt,"doc_name":dn})
             tmp_string += docs.doc_list[j].doc_type;
             if (uploaded_docs.includes(docs.doc_list[j].doc_type)) {
                 is_uploaded_docs = true;
@@ -2764,82 +2768,15 @@ $(function () {
         onFileAppend: function (element, value, master_element) { },
         afterFileAppend: function (element, value, master_element) {
             var last_mdf = element.files[0].lastModified + element.files[0].name;
+            let option_html = '';
+            for (let index = 0; index < allow_check_docs.length; index++) {
+                const element = allow_check_docs[index];
+                option_html += `<OPTION VALUE="SSPIN">${element.doc_type} - ${element.doc_name}</OPTION>`;
+            }
             $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
                 `<SELECT name='${last_mdf}' class="select_file_type">
-        <OPTION VALUE="BPM">BPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
-        <OPTION VALUE="GDN">GDN - PHIẾU XUẤT KHO</OPTION>
-        <OPTION VALUE="HK9">HK9 - SỔ TẠM TRÚ HK09</OPTION>
-        <OPTION VALUE="KT3">KT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
-        <OPTION VALUE="PBL">PBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
-        <OPTION VALUE="PLW">PLW - HÌNH ẢNH WEBSITE</OPTION>
-        <OPTION VALUE="POG">POG - HÌNH ẢNH HÀNG HÓA</OPTION>
-        <OPTION VALUE="PPA">PPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
-        <OPTION VALUE="PTC">PTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
-        <OPTION VALUE="RIN">RIN - HÓA ĐƠN BÁN LẺ</OPTION>
-        <OPTION VALUE="SBAS">SBAS - Sao kê lương/ Bank account statement</OPTION>
-        <OPTION VALUE="SBIZ">SBIZ - Giấy phép kinh doanh/ Business license</OPTION>
-        <OPTION VALUE="SBPM">SBPM - HÓA ĐƠN TỪ MÁY THANH TOÁN</OPTION>
-        <OPTION VALUE="SCCS">SCCS - Sao kê thẻ tín dụng/ Credit card statement</OPTION>
-        <OPTION VALUE="SCDR">SCDR - BIÊN BẢN BÀN GIAO HÀNG HÓA</OPTION>
-        <OPTION VALUE="SCFC">SCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
-        <OPTION VALUE="SCOV">SCOV - BẢN SAO HÓA ĐƠN GIÁ TRỊ GIA TĂNG</OPTION>
-        <OPTION VALUE="SDEB">SDEB - PHIẾU GIAO HÀNG</OPTION>
-        <OPTION VALUE="SDRL">SDRL - Giấy phép lái xe (GPLX)/ Driving license</OPTION>
-        <OPTION VALUE="SEB1">SEB1 - Hóa đơn điện dưới 600,000 VND/ Electricity bill less 600</OPTION>
-        <OPTION VALUE="SEB2">SEB2 - Hóa đơn điện từ 600,000 VND/ Electricity bill more 600</OPTION>
-        <OPTION VALUE="SFRB">SFRB - Sổ hộ khẩu (SHK)/ Family registration book</OPTION>
-        <OPTION VALUE="SGDN">SGDN - PHIẾU XUẤT KHO</OPTION>
-        <OPTION VALUE="SGOD">SGOD - CHỨNG TỪ GIAO HÀNG</OPTION>
-        <OPTION VALUE="SHIC">SHIC - Thẻ BHYT/ Health insurance card</OPTION>
-        <OPTION VALUE="SHK9">SHK9 - SỔ TẠM TRÚ HK09</OPTION>
-        <OPTION VALUE="SICS">SICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
-        <OPTION VALUE="SINP">SINP - HĐBH/ Insurance policy</OPTION>
-        <OPTION VALUE="SKT3">SKT3 - SỔ TẠM TRÚ DÀI HẠN KT3</OPTION>
-        <OPTION VALUE="SLBC">SLBC - HĐLĐ (LB)/ Labor contract</OPTION>
-        <OPTION VALUE="SLCT">SLCT - Hợp đồng vay (HĐV)/ Loan contract</OPTION>
-        <OPTION VALUE="SLIC">SLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
-        <OPTION VALUE="SLICE">SLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
-        <OPTION VALUE="SMBFP">SMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
-        <OPTION VALUE="SMCA">SMCA - THẺ HỘI VIÊN</OPTION>
-        <OPTION VALUE="SMIN">SMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
-        <OPTION VALUE="SNID">SNID - Chứng minh nhân nhân (CMND)/ National ID</OPTION>
-        <OPTION VALUE="SPAD">SPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
-        <OPTION VALUE="SPBL">SPBL - HÌNH ẢNH ĐỊA ĐIỂM KINH DOANH</OPTION>
-        <OPTION VALUE="SPEC">SPEC - BIÊN NHẬN SỐ TIỀN TRẢ TRƯỚC CỦA KH</OPTION>
-        <OPTION VALUE="SPEN">SPEN - Sổ hưu trí/ Pension book</OPTION>
-        <OPTION VALUE="SPIC">SPIC - Hình khách hàng/ Client photo</OPTION>
-        <OPTION VALUE="SPID">SPID - Thẻ căn cước công dân/ People's Identity card</OPTION>
-        <OPTION VALUE="SPIN">SPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
-        <OPTION VALUE="SPLW">SPLW - HÌNH ẢNH WEBSITE</OPTION>
-        <OPTION VALUE="SPMS">SPMS - LỊCH THANH TOÁN</OPTION>
-        <OPTION VALUE="SPOG">SPOG - HÌNH ẢNH HÀNG HÓA</OPTION>
-        <OPTION VALUE="SPPA">SPPA - HÌNH ẢNH TÀI SẢN MUA SẮM ĐẦU TƯ</OPTION>
-        <OPTION VALUE="SPPT">SPPT - Hộ chiếu (PP)/ Passport</OPTION>
-        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
-        <OPTION VALUE="SPTC">SPTC - HÌNH ẢNH HỢP ĐỒNG MUA BÁN</OPTION>
-        <OPTION VALUE="SRIN">SRIN - HÓA ĐƠN BÁN LẺ</OPTION>
-        <OPTION VALUE="SSCFC">SSCFC - HỢP ĐỒNG TÍN DỤNG TẠI TCTD KHÁC</OPTION>
-        <OPTION VALUE="SSICS">SSICS - MÀN HÌNH THÔNG TIN ICIC</OPTION>
-        <OPTION VALUE="SSIW">SSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
-        <OPTION VALUE="SSLIC">SSLIC - HỢP ĐỒNG BẢO HIỂM NHÂN THỌ</OPTION>
-        <OPTION VALUE="SSLICE">SSLICE - GIẤY CHỨNG NHẬN BẢO HIỂM NHÂN THỌ</OPTION>
-        <OPTION VALUE="SSMBFP">SSMBFP - HÌNH ẢNH THÔNG TIN THUÊ BAO MOBIFIONE</OPTION>
-        <OPTION VALUE="SSMCA">SSMCA - THẺ HỘI VIÊN</OPTION>
-        <OPTION VALUE="SSMIN">SSMIN - PHIẾU THÔNG TIN HỘI VIÊN</OPTION>
-        <OPTION VALUE="SSPAD">SSPAD - HÓA ĐƠN/BIÊN NHẬN/PHIẾU THU THANH TOÁN PHÍ</OPTION>
-        <OPTION VALUE="SSPIN">SSPIN - HÓA ĐƠN NỘP TIỀN</OPTION>
-        <OPTION VALUE="SSPMS">SSPMS - LỊCH THANH TOÁN</OPTION>
-        <OPTION VALUE="SSSIW">SSSIW - MÀN HÌNH TRA CỨU THÔNG TIN TRÊN WEB</OPTION>
-        <OPTION VALUE="SSUPA">SSUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
-        <OPTION VALUE="STAX">STAX - Chứng từ thuế/ Tax invoice</OPTION>
-        <OPTION VALUE="STCA">STCA - THẺ TẠM TRÚ</OPTION>
-        <OPTION VALUE="STRC">STRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
-        <OPTION VALUE="SUPA">SUPA - TÊN ĐĂNG NHẬP VÀ MẬT KHẨU</OPTION>
-        <OPTION VALUE="SVAT">SVAT - HÓA ĐƠN VAT</OPTION>
-        <OPTION VALUE="TCA">TCA - THẺ TẠM TRÚ</OPTION>
-        <OPTION VALUE="TRC">TRC - GIẤY XÁC NHẬN TẠM TRÚ</OPTION>
-        <OPTION VALUE="VAT">VAT - HÓA ĐƠN VAT</OPTION>
-      </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML;
+                    ${option_html}
+                </SELECT>` + $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML;
             $(".select_file_type").select2({
                 allowClear: true,
             });
