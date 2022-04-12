@@ -1095,6 +1095,7 @@ let ajaxGetECProducts = (partner_code, request_id) => {
 };
 
 let getLeadInfo = (lead_id) => {
+console.log(lead_id)
     clearForm($(".formMain"));
     $("#app_status_block").removeClass("app_status")
     $("#app_reason").addClass("hiden")
@@ -1119,7 +1120,7 @@ let getLeadInfo = (lead_id) => {
                 return;
             }
             let lead_info = result.data;
-            let basic = result.basic_requestid;
+            let basic = result.basic_requestid;console.log("Basic "+basic)
             SyncCustomerInfomation(lead_info, basic);
         })
         .fail(function (result) {
@@ -1607,7 +1608,7 @@ let getProductType = () => {
 let validateFullloan = () => {
     let check = true;
     let msg = "";
-    if ($("#vendor_lead_code").val()  != VTA_List) {
+    /*if ($("#vendor_lead_code").val()  != VTA_List) {
         if (RequiredDocs["PIC"] == false) {
             check = false;
             msg += "Chưa upload ảnh Sefie\n";
@@ -1616,7 +1617,7 @@ let validateFullloan = () => {
             check = false;
             msg += "Chưa upload ảnh CMND\n";
         }
-    }
+    }*/
     $("#full-loan-form").find('input:required').each(function () {
         let element = $(this);
         if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
