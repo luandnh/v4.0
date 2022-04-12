@@ -2,7 +2,11 @@ var CRM_API_URL = "https://ec-vta-api.tel4vn.com";
 // var EC_PROD_API_URL = "https://api.easycredit.vn";
 var EC_PROD_API_URL = "https://ec-vta-api.tel4vn.com/ec";
 var CRM_TOKEN = "06eee053-dc2b-484f-90f9-4a68b9114920";
+<<<<<<< HEAD
 var VTA_List = '1152';
+=======
+var VTA_List = 'VTA';
+>>>>>>> 30f1e66b2dcfe2e02806e6322d03439b5fb904f4
 var translator = {
     'term_confirm' : 'Cam kết thông tin',
     'condition_confirm' : 'Đồng ý điều khoản',

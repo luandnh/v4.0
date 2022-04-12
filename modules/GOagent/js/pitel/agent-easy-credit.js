@@ -660,10 +660,10 @@ $(document).ready(() => {
     // Upload img_selfie
     $(document).on("click", "#submit_img_selfie2", function (e) {
         e.preventDefault();
-        if (list_id == VTA_List) {
-            sweetAlert("Không upload ảnh với VTA lead");
-            return;
-        }
+        // if ($("#vendor_lead_code").val() == VTA_List) {
+        //     sweetAlert("Không upload ảnh với VTA lead");
+        //     return;
+        // }
         const files = $("#img_selfie2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_selfie file to upload");
@@ -692,10 +692,10 @@ $(document).ready(() => {
     $(document).on("click", "#submit_img_id_card2", function (e) {
         e.preventDefault();
 
-        if (list_id == VTA_List) {
-            sweetAlert("Không upload ảnh với VTA lead");
-            return;
-        }
+        // if ($("#vendor_lead_code").val() == VTA_List) {
+        //     sweetAlert("Không upload ảnh với VTA lead");
+        //     return;
+        // }
         const files = $("#img_id_card2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_id_card file to upload");
@@ -1607,7 +1607,7 @@ let getProductType = () => {
 let validateFullloan = () => {
     let check = true;
     let msg = "";
-    if (list_id != VTA_List) {
+    if ($("#vendor_lead_code").val()  != VTA_List) {
         if (RequiredDocs["PIC"] == false) {
             check = false;
             msg += "Chưa upload ảnh Sefie\n";
@@ -1731,7 +1731,7 @@ let SyncFullLoanFromAPI = (request_id) => {
                         .trigger("change")
                         .selectpicker("refresh");
                 }
-                if (list_id == VTA_List) {
+                if ($("#vendor_lead_code").val() == VTA_List) {
                     try {
                         $("select[name='bank_code']")
                             .val(document["bank_code"])
@@ -2118,6 +2118,7 @@ function clearForm($form) {
     $("#submit-offer").attr("hidden", true);
     $("#offer-waiting").attr("hidden", true);
     $("#full-loan-form input[name='identity_card_id_other']").val("").trigger("change");
+    $("input[name='request_id_ref']").val("");
     clearInputFile($("#img_selfie")[0]);
     clearInputFile($("#img_id_card")[0]);
     selected_offer_insurance_type = "";
@@ -2422,22 +2423,22 @@ $("#full-loan-form").on("submit", (e) => {
         form_data.bank_code = "";
         form_data.bank_branch_code = "";
     }
-    if (list_id == VTA_List) {
+    if ($("#vendor_lead_code").val() == VTA_List) {
         // workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward
         if (form_data.workplace_address == "" || form_data.workplace_address == undefined) {
-            form_data.workplace_address = "VTA";
+            form_data.workplace_address = "";
         }
         if (form_data.workplace_district == "" || form_data.workplace_district == undefined) {
-            form_data.workplace_district = "VTA";
+            form_data.workplace_district = "";
         }
         if (form_data.workplace_province == "" || form_data.workplace_province == undefined) {
-            form_data.workplace_province = "VTA";
+            form_data.workplace_province = "";
         }
         if (form_data.workplace_ward == "" || form_data.workplace_ward == undefined) {
-            form_data.workplace_ward = "VTA";
+            form_data.workplace_ward = "";
         }
         if (form_data.workplace_name == "" || form_data.workplace_name == undefined) {
-            form_data.workplace_name = "VTA";
+            form_data.workplace_name = "";
         }
     }
     // 
@@ -3001,7 +3002,7 @@ $(document).ready(() => {
         let msg = "";
         $(`#step-${step}`).find('input:required').each(function () {
             let element = $(this);
-            if (list_id == VTA_List) {
+            if ($("#vendor_lead_code").val() == VTA_List) {
                 if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
                     if (element[0].validationMessage != "") {
                         msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
@@ -3015,7 +3016,7 @@ $(document).ready(() => {
         })
         $(`#step-${step}`).find('select:required').each(function () {
             let element = $(this);
-            if (list_id == VTA_List) {
+            if ($("#vendor_lead_code").val() == VTA_List) {
                 if (["workplace_address", "workplace_district", "workplace_name", "workplace_province", "workplace_ward"].includes(element.attr('name')) == false) {
                     if (element[0].validationMessage != "") {
                         msg += translator[element.attr('name')] + " : " + translator[element[0].validationMessage] + "\n";
@@ -3108,10 +3109,13 @@ $(document).ready(() => {
             $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[1].value);
             $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
         } catch (error) {
-            $("select[name='bank_area']").val($("select[name='bank_area'] option")[2].value);
-            $("select[name='bank_area']").trigger("change").selectpicker("refresh");
-            $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[2].value);
-            $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");
+            try{
+                $("select[name='bank_area']").val($("select[name='bank_area'] option")[2].value);
+                $("select[name='bank_area']").trigger("change").selectpicker("refresh");
+                $("select[name='bank_branch_code']").val($("select[name='bank_branch_code'] option")[2].value);
+                $("select[name='bank_branch_code']").trigger("change").selectpicker("refresh");}
+            catch (error) {
+            }
         }
             
     });

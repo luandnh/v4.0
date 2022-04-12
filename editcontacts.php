@@ -44,6 +44,7 @@ $lead_id = $_POST['modifyid'];
 $output = $api->API_getLeadsInfo($lead_id);
 $list_id_ct = $output->data->list_id;
 
+// print_r($output);exit;
 if ($output->result !== "success") {
 	die($output->result);
 }
@@ -709,13 +710,36 @@ $custDefaultAvatar = "https://www.gravatar.com/avatar/{$avatarHash}?rating=PG&si
 														$field_HTML .= "</select>\n";
 														$field_HTML .= "<label for=\"$A_field_label\">$A_field_name</label>";
 													}
-													if ($A_field_type == 'TEXT') {
-														if ($A_field_default == 'NULL') {
-															$A_field_default = '';
-														}
-														$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$custom_fields_values->{$A_field_label}}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+													// if ($A_field_type == 'TEXT') {
+													// 	if ($A_field_default == 'NULL') {
+													// 		$A_field_default = '';
+													// 	}
+													// 	$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$custom_fields_values->{$A_field_label}}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+													// 	$field_HTML .= "<label for=\"$A_field_label\">$A_field_name</label>";
+													// }
+													/**
+													 * Sua loi khong binding duoc data dung
+													 * Mau dung: $custom_fields_values->{$A_field_label}
+													 */
+													if($list_id_ct == 1152) {
+														$binding = $custom_fields_values->{$A_field_label};
 														$field_HTML .= "<label for=\"$A_field_label\">$A_field_name</label>";
+														if($A_field_label == "list_doc_collecting") {
+															$field_HTML .= $binding;
+														}else {
+															$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$binding}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+														}
 													}
+													else {
+														if ($A_field_type == 'TEXT') {
+															if ($A_field_default == 'NULL') {
+																$A_field_default = '';
+															}
+															$field_HTML .= "<input type=text size=$A_field_size maxlength=$A_field_max name=$A_field_label id=$A_field_label value=\"{$custom_fields_values->{$A_field_label}}\" class=\"mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched\">\n";
+															$field_HTML .= "<label for=\"$A_field_label\">$A_field_name</label>";
+														}
+													}
+													//end fix
 													if ($A_field_type == 'AREA') {
 														$field_COL = 12;
 														$field_HTML .= "<textarea name=$A_field_label id=$A_field_label maxlength=$A_field_max rows=$A_field_size style='min-width: 90%' class='mda-form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched textarea'>{$custom_fields_values->{$A_field_label}}</textarea>\n";
@@ -728,7 +752,7 @@ $custDefaultAvatar = "https://www.gravatar.com/avatar/{$avatarHash}?rating=PG&si
 														$field_COL = 12;
 														$field_HTML .= nl2br($A_field_default) . "\n";
 													}
-													if ($A_field_type == 'SCRIPT') {
+													if ($A_field_type == 'SCRIPT' && $list_id_ct != 1152) {
 														if ($A_field_options == 'NULL') {
 															$A_field_options = '';
 														}
