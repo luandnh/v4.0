@@ -273,29 +273,14 @@ $usergroups = $api->API_getUserGroups();
 										$tmp_usergroups = $usergroups->data;
 										$tmp_group = null;
 										$tmp_subgroups = null;
-										for ($i = 0; $i < count($tmp_usergroups); $i++) {
-											if (strtoupper($_SESSION['usergroup']) !== 'ADMIN' && strtoupper($_SESSION['usergroup']) === strtoupper($tmp_usergroups[$i]->user_group)) {
-												$tmp_group = $tmp_usergroups[$i];
-												if ($tmp_group->sub_user_groups != null) {
-													$tmp_subgroups = explode(",", $tmp_group->sub_user_groups);
-												}
-												break;
+										foreach($user_groups->group_name as $val) {
+											if($val === "ADMINISTRATORS") {
+												echo "<option value='ADMIN'>".$val."</option>";
+											}
+											else {
+												echo "<option value='".$val."'>".$val."</option>";
 											}
 										}
-										for ($i = 0; $i < count($tmp_usergroups); $i++) {
-											if (strtoupper($_SESSION['usergroup']) !== 'ADMIN' && strtoupper($_SESSION['usergroup']) !== strtoupper($tmp_usergroups[$i]->user_group)) {
-												if (in_array($tmp_usergroups[$i]->user_group, $tmp_subgroups)) {
-										?>
-													<option value="<?php echo $tmp_usergroups[$i]->user_group; ?>"> <?php echo $tmp_usergroups[$i]->group_name; ?> </option>
-											<?php
-												}
-												continue;
-											}
-											?>
-											<option value="<?php echo $tmp_usergroups[$i]->user_group; ?>" <?php if ($tmp_usergroups[$i]->user_group == "AGENTS") {
-																												echo "selected";
-																											} ?>> <?php echo $tmp_usergroups[$i]->group_name; ?> </option>
-										<?php	}
 										?>
 									</select>
 								</div>

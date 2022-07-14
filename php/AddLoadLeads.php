@@ -48,8 +48,10 @@
                         $postfields["goAction"]       = "goUploadMe";
                 elseif(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "1")
                         $postfields["goAction"]       = "goUploadMe"; 
-		elseif(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "0")
-                        $postfields["goAction"]       = "goReadUpload";
+		elseif(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "0"){
+			// $postfields["goAction"]       = "goReadUpload";
+			$postfields["goAction"]       = "goUploadMe";
+		}
 		else
 			die("Couldn't catch Action");
         /*}else{
@@ -57,7 +59,7 @@
         }*/
 	
 	//if(LEADUPLOAD_LEAD_MAPPING === "y" && isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "1"){
-	if(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "1"){
+	if((isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "1") || (isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "0")){
                 $map_data = $_POST["map_data"];
 		$map_data = implode(",",$map_data);
 		$postfields["lead_mapping_data"] = $map_data;
@@ -75,7 +77,7 @@
 	$data = $return["data"];
 	
 	//if(LEADUPLOAD_LEAD_MAPPING === "y" && $_POST["LeadMapSubmit"] === "0"){
-	if(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "0"){
+	if(isset($_POST["LeadMapSubmit"]) && $_POST["LeadMapSubmit"] === "0" && false){
 		print_r($data);
 	}else{
 		

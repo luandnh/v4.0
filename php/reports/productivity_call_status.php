@@ -84,22 +84,26 @@
 		echo '</div>';
 */
 
+// <th > Day </th>
                 $inbound_report .= '
 				<div>
 						<legend><small><em class="fa fa-arrow-right"></em><i> Report by call status</i></small></legend>
 								<table class="display responsive no-wrap table table-striped table-bordered table-hover"  id="productivity_call_status">
 										<thead>
 												<tr>
+														<th > Time</th>
 														<th > Team</th>
 														<th > User</th>
 														<th > Total call </th>
 														<th > Answer</th>
+														<th > Customer</th>
 														<th > No Answer </th>
 														<th > Congestion </th>
 														<th > Busy </th>
 														<th > Denied </th>
 														<th > Erro Sip</th>
 														<th > Cancel </th>
+														<th > Unknown </th>
 														<th > Answer not in queue </th>
 														<th > Answer in queue no agent</th>
 												</tr>
