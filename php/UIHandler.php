@@ -1560,7 +1560,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 		$avatarElement = $this->getVueAvatar($user->getUserName(), $user->getUserAvatar(), 22, true);
 		return '<header class="main-header">
-				<a href="./index.php" class="logo"><img src="'.$logo.'" width="auto" height="45" style="padding-top:10px;"></a>
+				<a  id="returnhome" href="./index.php" class="logo"><img src="'.$logo.'" width="auto" height="45" style="padding-top:10px;"></a>
 	            <nav class="navbar navbar-static-top" role="navigation">
 	                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" style="display:none;">
 	                    <span class="sr-only">Toggle navigation</span>
@@ -1568,6 +1568,13 @@ error_reporting(E_ERROR | E_PARSE);
 	                </a>
 	                <div class="navbar-custom-menu">
 	                    <ul class="nav navbar-nav">
+					<li id="topbar-callbacks" class="dropdown notifications-menu">
+					<a href="#" id="report_error" data-toggle="tooltip" data-placement="top" title="Report Bug"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bug"></i></a>
+					</li>
+					
+					<li id="topbar-callbacks" class="dropdown notifications-menu">
+					<a href="#" id="debt_test" data-toggle="tooltip" data-placement="top" title="TEST"  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-hand-peace-o"></i></a>
+					</li>
 	                    		'.$moduleTopbarElements.'
 	                    		'.$this->getTopbarMessagesMenu($user).'
 		                    	<li>
@@ -2075,6 +2082,9 @@ error_reporting(E_ERROR | E_PARSE);
 			
 			if ($perms->recordings->recordings_display == 'Y') {
 				$callreports .= $this-> getSidebarItem("./callrecordings.php", "phone-square", $this->lh->translationFor("call_recordings"));
+				// $callreports .= $this-> getSidebarItem("./sale_application.php", "file-pdf-o", $this->lh->translationFor("sale_application"));
+				// $callreports .= $this-> getSidebarItem("./collabrator.php", "suitcase", $this->lh->translationFor("collabrator"));
+				
 			}
 			
 			$callreports .= '</ul></li>';
@@ -2093,6 +2103,7 @@ error_reporting(E_ERROR | E_PARSE);
 			// $eventsArea .= $this->getSidebarItem("events.php", "calendar-o", $this->lh->translationFor("events"));
 
 			$crm .= $this->getSidebarItem("crm.php", "group", $this->lh->translationFor("contacts"));
+			$crm .= $this->getSidebarItem("downloads.php", "cloud-download", $this->lh->translationFor("download_list"));
 		}
 
 		$agentmenu = NULL;

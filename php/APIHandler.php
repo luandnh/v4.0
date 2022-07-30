@@ -142,7 +142,6 @@ class APIHandler
 			'log_pass' => log_pass,
 			'hostname' => $_SERVER['REMOTE_ADDR']
 		);
-
 		$postdata = array_merge($default_entries, $postfields);
 
 		// Call the API
@@ -158,6 +157,7 @@ class APIHandler
 		curl_close($ch);
 		$output = json_decode($data);
 
+		// var_dump($output );
 		if ($request_data === true)
 			return $data;
 		else
@@ -633,6 +633,14 @@ class APIHandler
 		);
 		return $this->API_Request("goDashboard", $postfields);
 	}
+	
+	public function API_getVendorLeadsMonitoring()
+	{
+		$postfields = array(
+			'goAction' => 'goGetVendorLeadsMonitoring'
+		);
+		return $this->API_Request("goDashboard", $postfields);
+	}
 
 	public function API_getRealtimeCallsMonitoring()
 	{
@@ -927,11 +935,13 @@ class APIHandler
 		return $this->API_Request("goLists", $postfields);
 	}
 
-	public function API_listExport($list_id)
+	public function API_listExport($list_id, $offset, $limit)
 	{
 		$postfields = array(
 			'goAction' => 'goListExport',
-			'list_id' => $list_id
+			'list_id' => $list_id,
+			'offset' => $offset,
+			'limit' => $limit
 		);
 		return $this->API_Request("goLists", $postfields);
 	}
@@ -1890,5 +1900,28 @@ class APIHandler
 	{
 		$postfields["goAction"] = 'goAssignUsers';
 		return $this->API_Request("goUsers", $postfields);
+	}
+	public function API_customDownloadList($list_id)
+	{
+		$postfields["goAction"] = 'goListExport';
+		$postfields = array(
+			'goAction' => 'goListExport',
+			'list_id' => $list_id
+		);
+		return $this->API_Request("goCustomExport", $postfields);
+	}
+	public function API_removeDownnload($file_name, $file_path)
+	{
+		$postfields = array(
+			'goAction' => 'goRemoveDownload',
+			'file_name' => $file_name,
+			'path' => $file_path,
+		);
+		return $this->API_Request("goCustomExport", $postfields);
+	}
+	
+	public function API_getListsDownload($postfields)
+	{
+		return $this->API_Request("goCustomExport", $postfields);
 	}
 }

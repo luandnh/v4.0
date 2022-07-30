@@ -87,7 +87,7 @@ $row_output = $api->API_Request("goReports", $postfields);
 $postfields["goAction"] = "goExportCallReport";
 
 $data_header = [];
-$data_row = "";
+$data_row = [];
 $display = "";
 $display2 = "";
 
@@ -97,7 +97,7 @@ if($row_output->result == "success"){
 	if($count > $limit){
 		$postfields["limit"] = $limit;
 		$postfields["offset"] = $offset;
-		while($last_row_offset <= $count){
+		while($offset <= $count){
 			$postfields["offset"] = $offset;
 			$output = $api->API_Request("goReports", $postfields);
 
@@ -107,9 +107,10 @@ if($row_output->result == "success"){
 					$data_header = $output->header;
 				}
                 //$data_row[] = json_decode(json_encode($output->rows), true);
-                $data_row .= $output->rows;
+                // $data_row .= $output->rows;
+                // join($data_row,$output->rows);
+                $data_row = array_merge($data_row,$output->rows);
 			}
-			$last_row_offset = $offset;
 			$offset = $offset + $limit;
 			// $data_row = array_merge($data_row);
 		}
