@@ -759,7 +759,7 @@
 				$("#password").attr('maxlength','20');
 				$("#password").val('');
 			}else {
-				$("#password").attr('maxlength','10');
+				$("#password").attr('maxlength','20');
 				$("#password").val('');
 			}
 		});

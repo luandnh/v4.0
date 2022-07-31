@@ -199,12 +199,24 @@ $perm = $api->goGetPermissions('recordings');
 									<div class="add_callrecording_filters">
 										<select multiple="multiple" class="select2-3 form-control add_filters2" style="width:100%;">
 											<option value="filter_agent" class="contacts_filters"><?php $lh->translateText("agent"); ?> </option>
-											<option value="filter_list" class="contacts_filters"><?php $lh->translateText("filter_list_id"); ?></option>
+											<?php
+											if($user->getUserRole() != 2) {
+											?>
+												<option value="filter_list" class="contacts_filters"><?php $lh->translateText("filter_list_id"); ?></option>
+											<?php
+											}
+											?>
 											<option value="filter_phone" class="contacts_filters"><?php $lh->translateText("filter_phone"); ?> </option>
 											<option value="filter_identity" class="contacts_filters"><?php $lh->translateText("filter_identity"); ?></option>
 											<option value="filter_leadcode" class="contacts_filters"><?php $lh->translateText("filter_leadcode"); ?></option>
 											<option value="filter_leadsubid" class="contacts_filters"><?php $lh->translateText("filter_leadsubid"); ?></option>
-											<option value="filter_direction" class="contacts_filters"><?php $lh->translateText("filter_direction"); ?></option>
+											<?php
+											if($user->getUserRole() != 2) {
+												?>
+												<option value="filter_direction" class="contacts_filters"><?php $lh->translateText("filter_direction"); ?></option>
+												<?php
+											}
+											?>
 										</select>
 									</div>
 								</div>

@@ -1427,7 +1427,7 @@ $gopackage = $api->API_getGOPackage();
 							<div class="form-group mt">
 								<label class="col-sm-3 control-label" for="leadrecycling_status"><?php $lh->translateText("status"); ?>: </label>
 								<div class="col-sm-9 mb">
-									<select id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%; height:100%;">
+									<select multiple id="leadrecycling_status" name="leadrecycling_status" class="form-control select2" size="" onmousedown="if(this.options.length>8){this.size=8;}" onchange='this.size=0;' onblur="this.size=0;" style="width:100%; height:100%;">
 										<optgroup label="System Statuses">
 											<?php
 											//$dialStatus = $api->API_getAllDialStatuses('ALL', 1);
@@ -3780,12 +3780,18 @@ echo $modalForm;
 
 				$('#finish').text("Loading...");
 				$('#finish').attr("disabled", true);
-
+				let data = {
+					"session_user": $("input[name='session_user']").val(),
+					"leadrecycling_campaign": $("select[name='leadrecycling_campaign']").val(),
+					"leadrecycling_status": $("select[name='leadrecycling_status']").val().join(","),
+					"attempt_delay": $("input[name='attempt_maximum']").val(),
+					"attempt_maximum": $("select[name='attempt_maximum']").val(),
+				}
 				// submit
 				$.ajax({
 					url: "./php/AddLeadRecycling.php",
 					type: 'POST',
-					data: $("#create_leadrecycling").serialize(),
+					data: data,
 					success: function(data) {
 						console.log(data);
 						//console.log($("#create_leadrecycling").serialize());

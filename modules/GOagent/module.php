@@ -64,7 +64,7 @@ class GOagent extends Module {
 		$this->userrole = \creamy\CreamyUser::currentUser()->getUserRole();
 		$this->userName = \creamy\CreamyUser::currentUser()->getUserName();
 
-		if ($this->userrole > 1) {
+		if ($this->userrole > 2) {
 			$_SESSION['is_logged_in'] = $this->checkIfLoggedOnPhone();
 			
 			$this->goDB->where('setting', 'GO_agent_sip_server');

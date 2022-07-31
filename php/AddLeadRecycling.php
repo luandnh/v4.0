@@ -25,7 +25,6 @@
 	
 	$campaign_id = $_POST['leadrecycling_campaign'];
 	$leadrecycling_status	= $_POST['leadrecycling_status'];
-	
 	$postfields = array(
 		'goAction' => 'goAddLeadRecycling',
 		'campaign_id' => $campaign_id,
@@ -36,7 +35,6 @@
 	);
 
 	$output = $api->API_addLeadRecycling($postfields);
-
 	if ($output->result=="success") { $status = 1; } 
 		else { $status = $output->result; }
 
