@@ -259,6 +259,8 @@ let simulator = (e) => {
             $("input[name='simu_insurance']")[0].checked = true;
             sm_insu = 0;
         }
+	console.log("insu",sm_insu)
+        $("input[name='simu_insurance']")[sm_insu == 0 ? 0 : (sm_insu == 6 ? 1 : 2)].checked = true;
         let ir = selected_product.interest_rate;
         let sm_total_offer = parseInt(sm_loan_amount * (1 + sm_insu / 100)) + "";
         // let sm_monthly = parseInt(sm_total_offer / sm_loan_tenor) + "";
@@ -660,10 +662,10 @@ $(document).ready(() => {
     // Upload img_selfie
     $(document).on("click", "#submit_img_selfie2", function (e) {
         e.preventDefault();
-        // if ($("#vendor_lead_code").val() == VTA_List) {
-        //     sweetAlert("Không upload ảnh với VTA lead");
-        //     return;
-        // }
+        /*if ($("#vendor_lead_code").val() == VTA_List) {
+             sweetAlert("Không upload ảnh với VTA lead");
+             return;
+        }*/
         const files = $("#img_selfie2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_selfie file to upload");
@@ -692,10 +694,10 @@ $(document).ready(() => {
     $(document).on("click", "#submit_img_id_card2", function (e) {
         e.preventDefault();
 
-        // if ($("#vendor_lead_code").val() == VTA_List) {
-        //     sweetAlert("Không upload ảnh với VTA lead");
-        //     return;
-        // }
+        /*if ($("#vendor_lead_code").val() == VTA_List) {
+             sweetAlert("Không upload ảnh với VTA lead");
+             return;
+        }*/
         const files = $("#img_id_card2")[0].files;
         if (files.length == 0) {
             sweetAlert("No img_id_card file to upload");
@@ -1120,7 +1122,8 @@ console.log(lead_id)
                 return;
             }
             let lead_info = result.data;
-            let basic = result.basic_requestid;console.log("Basic "+basic)
+            let basic = result.basic_requestid;
+            console.log("Basic "+basic)
             SyncCustomerInfomation(lead_info, basic);
         })
         .fail(function (result) {
@@ -2165,7 +2168,7 @@ function SetProductListForm() {
         <td><input name="customer-offer-monthly" value="" type="text" class="customer-offer-input-readonly" readonly></td>
     </tr>
   `;
-    $("input[name='simu_insurance']")[0].checked = true;
+    //$("input[name='simu_insurance']")[0].checked = true;
 }
 
 $(document).on("click", 'input[name="simu_insurance"]', function (e) {
@@ -2376,6 +2379,13 @@ $("#full-loan-form").on("submit", (e) => {
     lead_id = $(".formMain input[name='lead_id']").val() * 1;
     e.preventDefault();
     let form_data = $("#full-loan-form").serializeFormJSON();
+    console.log("form_data",form_data);
+    console.log("lead_id",lead_id);
+    if(form_data.phone_number == "0347422666" || form_data.phone_number == "347422666") {
+        console.log("ref", form_data.request_id_ref)
+        form_data.request_id_ref = "VTM1654754006636"
+    }
+    console.log("ref2 ", form_data.request_id_ref); 
     form_data.lead_id = parseInt(lead_id);
     form_data.monthly_income = parseInt(form_data.monthly_income.replace(/[^0-9\.]/g, "").split(".").join(""));
     form_data.other_income = parseInt(form_data.other_income.replace(/[^0-9\.]/g, "").split(".").join(""));
@@ -2444,7 +2454,7 @@ $("#full-loan-form").on("submit", (e) => {
     }
     // 
     let post_data = JSON.stringify(form_data);
-    // console.log("Fullloan data : ", form_data);
+    console.log("Fullloan data : ", form_data);
     $("#offer-waiting").attr("hidden", false);
     // post to EC
     $.ajax({
@@ -2773,7 +2783,10 @@ $(function () {
             let option_html = '';
             for (let index = 0; index < allow_check_docs.length; index++) {
                 const element = allow_check_docs[index];
-                option_html += `<OPTION VALUE="SSPIN">${element.doc_type} - ${element.doc_name}</OPTION>`;
+                console.log("element", element)
+                console.log("doc_type", element.doc_type)
+                console.log("doc_name", element.doc_name)
+                option_html += `<OPTION VALUE="${element.doc_type}">${element.doc_type} - ${element.doc_name}</OPTION>`;
             }
             $(`span[tag='multifile'][name='${last_mdf}']`)[0].innerHTML =
                 `<SELECT name='${last_mdf}' class="select_file_type">
